@@ -1,0 +1,1 @@
+This directory holds files created by the Neo4j team.

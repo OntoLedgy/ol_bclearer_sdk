@@ -1,0 +1,18 @@
+{
+  "neo4j": {
+    "uri": "neo4j://127.0.0.1:7687",
+    "dbname": "datasheets",
+    "user": "neo4j",
+    "password": "Numark234"
+  },
+  "parameters": {
+    "batch_size": 1000,
+    "concurrency": 10,
+    "csv_file_delimiter": ",",
+    "csv_file_quote_character": "\"",
+    "csv_file_encoding": "ISO-8859-1",
+    "csv_escape_character": "\\",
+    "emptyIsNull": true,
+    "debug": false
+  }
+}

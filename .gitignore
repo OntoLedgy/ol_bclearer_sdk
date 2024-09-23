@@ -1,0 +1,14 @@
+.vs/
+.vscode/
+.idea/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+#wheel related
+*.egg-info
+
+
+pipelines

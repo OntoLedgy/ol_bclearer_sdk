@@ -1,0 +1,4 @@
+{
+  "uri": "mongodb://192.168.0.3:27017",
+  "database_name": "default"
+}
