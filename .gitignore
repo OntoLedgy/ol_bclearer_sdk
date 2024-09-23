@@ -12,3 +12,5 @@ __pycache__/
 
 
 pipelines
+
+/tests/data/output/
