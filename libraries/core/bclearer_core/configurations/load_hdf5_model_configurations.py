@@ -1,6 +1,5 @@
-from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
-    DigitalisationLevelStereotypeMatchedEaObjects,
-)
+from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import \
+    DigitalisationLevelStereotypeMatchedEaObjects
 
 
 class LoadHdf5ModelConfigurations:

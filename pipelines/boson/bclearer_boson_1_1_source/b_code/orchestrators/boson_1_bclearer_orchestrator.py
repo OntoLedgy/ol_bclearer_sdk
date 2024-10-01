@@ -1,27 +1,18 @@
 import os
 
-from bclearer_boson_1_1_source.b_code.orchestrators.boson_1_bclearer_stages_orchestrator import (
-    orchestrate_boson_1_bclearer_stages,
-)
+from bclearer_boson_1_1_source.b_code.orchestrators.boson_1_bclearer_stages_orchestrator import \
+    orchestrate_boson_1_bclearer_stages
 from bclearer_boson_1_1_source.b_code.services.logging.set_up_and_close_out_logging import (
-    close_log_file,
-    set_up_logger_and_output_folder,
-)
-from bnop_source.b_code.bnop_facades import (
-    BnopFacades,
-)
-from nf_common_source.code.services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
-from nf_common_source.code.services.file_system_service.folder_selector import (
-    select_folder,
-)
-from nf_ea_com_bnop_source.b_code.nf_ea_com_bnop_facades import (
-    NfEaComBnopFacades,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
+    close_log_file, set_up_logger_and_output_folder)
+from bnop_source.b_code.bnop_facades import BnopFacades
+from nf_common_source.code.services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
+from nf_common_source.code.services.file_system_service.folder_selector import \
+    select_folder
+from nf_ea_com_bnop_source.b_code.nf_ea_com_bnop_facades import \
+    NfEaComBnopFacades
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
 
 
 def orchestrate_boson1_bclearer():

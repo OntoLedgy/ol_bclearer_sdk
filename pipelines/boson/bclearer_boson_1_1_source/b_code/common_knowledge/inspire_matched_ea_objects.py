@@ -1,8 +1,7 @@
 from enum import auto, unique
 
-from bclearer_source.b_code.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_source.b_code.common_knowledge.matched_objects import \
+    MatchedEaObjects
 
 
 @unique

@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def replace_string_in_file(

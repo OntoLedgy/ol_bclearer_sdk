@@ -1,9 +1,6 @@
-from bclearer_core.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
-from bclearer_interop_services.dataframe_service.dataframe_mergers import (
-    left_merge_dataframes,
-)
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_interop_services.dataframe_service.dataframe_mergers import \
+    left_merge_dataframes
 from pandas import DataFrame
 
 

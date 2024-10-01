@@ -3,15 +3,9 @@ import os
 import sys
 
 import pandas
-from bclearer_core.constants.standard_constants import (
-    UTF_8_ENCODING_NAME,
-)
-from bclearer_interop_services.file_system_service.encoding import (
-    detect,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
+from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_interop_services.file_system_service.encoding import detect
+from bclearer_interop_services.file_system_service.objects.files import Files
 
 
 def convert_utf_8_csv_with_header_file_to_dataframe(

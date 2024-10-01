@@ -1,6 +1,5 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 from pandas import DataFrame
 
 

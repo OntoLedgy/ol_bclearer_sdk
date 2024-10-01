@@ -1,14 +1,11 @@
 import os
 
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
-    read_cypher_query_from_file,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_to_neo4j_data_load import (
-    orchestrate_csv_to_neo4j_load,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.prepare_dataset_dictionary_from_folder import (
-    generate_load_dataset_from_folder,
-)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import \
+    read_cypher_query_from_file
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_to_neo4j_data_load import \
+    orchestrate_csv_to_neo4j_load
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.prepare_dataset_dictionary_from_folder import \
+    generate_load_dataset_from_folder
 
 
 def orchestrate_neo4j_load_dataset(

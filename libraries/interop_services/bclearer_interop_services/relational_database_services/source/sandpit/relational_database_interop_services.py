@@ -1,9 +1,8 @@
 import json
 
 import pandas as pd
-from storage_interop_services_source.code.object_models.RelationalDatabaseClients import (
-    RelationalDatabaseClient,
-)
+from storage_interop_services_source.code.object_models.RelationalDatabaseClients import \
+    RelationalDatabaseClient
 
 
 def fetch_data_in_chunks(

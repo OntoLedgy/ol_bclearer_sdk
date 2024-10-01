@@ -1,30 +1,21 @@
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import (
-    BEngProjectFolderLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import (
-    BEngProjectFolders,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couple_ordered_indexed_lists import (
-    BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import (
-    BEngWorkspaceFileSystemObjectCouples,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import (
-    BEngWorkspaceFileSystemObjects,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import (
-    BEngWorkspaceFolders,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_workspace_with_file_system_object_couples_ordered_indexed_lists import (
-    BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configuration_flag_sets import (
-    MoveAndReplaceConfigurationFlagSets,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configurations import (
-    MoveAndReplaceConfigurations,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import \
+    BEngProjectFolderLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import \
+    BEngProjectFolders
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couple_ordered_indexed_lists import \
+    BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import \
+    BEngWorkspaceFileSystemObjectCouples
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import \
+    BEngWorkspaceFileSystemObjects
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import \
+    BEngWorkspaceFolders
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_workspace_with_file_system_object_couples_ordered_indexed_lists import \
+    BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configuration_flag_sets import \
+    MoveAndReplaceConfigurationFlagSets
+from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configurations import \
+    MoveAndReplaceConfigurations
 
 
 def create_move_and_replace_configuration(

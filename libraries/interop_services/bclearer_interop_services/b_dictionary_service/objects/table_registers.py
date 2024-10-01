@@ -1,15 +1,11 @@
-from bclearer_interop_services.b_dictionary_service.common_knowledge.table_register_b_dictionary_return_types import (
-    TableRegisterBDictionaryReturnTypes,
-)
-from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import (
-    BDictionaries,
-)
-from bclearer_interop_services.b_dictionary_service.objects.table_b_dictionaries import (
-    TableBDictionaries,
-)
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import (
-    BieIds,
-)
+from bclearer_interop_services.b_dictionary_service.common_knowledge.table_register_b_dictionary_return_types import \
+    TableRegisterBDictionaryReturnTypes
+from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import \
+    BDictionaries
+from bclearer_interop_services.b_dictionary_service.objects.table_b_dictionaries import \
+    TableBDictionaries
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import \
+    BieIds
 
 
 class TableRegisters(BDictionaries):

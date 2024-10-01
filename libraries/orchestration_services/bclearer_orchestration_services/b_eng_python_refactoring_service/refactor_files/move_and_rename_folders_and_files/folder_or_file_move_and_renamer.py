@@ -1,18 +1,13 @@
-from bclearer_interop_services.file_system_service.file_or_folder_mover import (
-    move_file_or_folder_and_create_sub_folders,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import (
-    BEngWorkspaceFileSystemObjectCouples,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.move_and_rename_folders_and_files.folder_or_file_move_and_rename_checker import (
-    move_and_rename_file_or_folder_checks,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.move_and_rename_folders_and_files.folders_init_adder import (
-    add_init_files_if_required,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_interop_services.file_system_service.file_or_folder_mover import \
+    move_file_or_folder_and_create_sub_folders
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import \
+    BEngWorkspaceFileSystemObjectCouples
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.move_and_rename_folders_and_files.folder_or_file_move_and_rename_checker import \
+    move_and_rename_file_or_folder_checks
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.move_and_rename_folders_and_files.folders_init_adder import \
+    add_init_files_if_required
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def move_and_rename_file_or_folder(

@@ -1,8 +1,6 @@
 from enum import auto, unique
 
-from bclearer_core.common_knowledge.operation_types import (
-    OperationTypes,
-)
+from bclearer_core.common_knowledge.operation_types import OperationTypes
 
 
 @unique

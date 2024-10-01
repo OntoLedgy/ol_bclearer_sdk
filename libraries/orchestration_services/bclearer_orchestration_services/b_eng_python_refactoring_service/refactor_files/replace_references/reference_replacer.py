@@ -1,15 +1,11 @@
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import (
-    BEngProjectFolderLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import (
-    BEngWorkspaceFileSystemObjectCouples,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.replace_references.b_eng_projects_python_reference_replacer import (
-    replace_python_reference_in_b_eng_projects,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import \
+    BEngProjectFolderLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import \
+    BEngWorkspaceFileSystemObjectCouples
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.replace_references.b_eng_projects_python_reference_replacer import \
+    replace_python_reference_in_b_eng_projects
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def replace_references_in_python_code(

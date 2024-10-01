@@ -1,9 +1,8 @@
 import glob
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
 
 
 def get_directory_subfolders(

@@ -1,11 +1,9 @@
 from pathlib import Path
 
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.reporting_service.reporters.log_file import \
+    LogFiles
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def set_up_logger_and_output_folder(

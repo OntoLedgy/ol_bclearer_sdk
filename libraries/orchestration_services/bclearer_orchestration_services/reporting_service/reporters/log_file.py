@@ -1,8 +1,7 @@
 from os import path
 
-from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
+from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
 
 
 class LogFiles:

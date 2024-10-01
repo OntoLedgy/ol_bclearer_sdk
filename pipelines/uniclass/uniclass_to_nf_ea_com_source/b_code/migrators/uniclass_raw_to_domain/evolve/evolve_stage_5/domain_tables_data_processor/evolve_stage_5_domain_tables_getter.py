@@ -1,24 +1,13 @@
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
+from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
+    create_new_uuid
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CHILD_CODE_COLUMN_NAME,
-    CHILD_TITLE_COLUMN_NAME,
-    CHILD_UUID_COLUMN_NAME,
-    CODE_COLUMN_NAME,
-    NF_UUIDS_COLUMN_NAME,
-    PARENT_CODE_COLUMN_NAME,
-    PARENT_TITLE_COLUMN_NAME,
-    PARENT_UUID_COLUMN_NAME,
-    TITLE_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
-    UNICLASS_ITEM_NAME,
-    UUID_COLUMN_NAME,
-)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_5.domain_tables_data_processor.areas_to_top_item_links_to_uniclass_parent_child_link_table_adder import (
-    add_areas_to_top_item_links_to_uniclass_parent_child_link_table,
-)
+    CHILD_CODE_COLUMN_NAME, CHILD_TITLE_COLUMN_NAME, CHILD_UUID_COLUMN_NAME,
+    CODE_COLUMN_NAME, NF_UUIDS_COLUMN_NAME, PARENT_CODE_COLUMN_NAME,
+    PARENT_TITLE_COLUMN_NAME, PARENT_UUID_COLUMN_NAME, TITLE_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS_ITEM_NAME, UUID_COLUMN_NAME)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_5.domain_tables_data_processor.areas_to_top_item_links_to_uniclass_parent_child_link_table_adder import \
+    add_areas_to_top_item_links_to_uniclass_parent_child_link_table
 
 
 def get_evolve_stage_5_domain_tables(

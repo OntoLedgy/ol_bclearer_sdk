@@ -1,6 +1,5 @@
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.int_to_base32_converter import (
-    convert_int_to_base32,
-)
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.int_to_base32_converter import \
+    convert_int_to_base32
 
 
 class BieIds:

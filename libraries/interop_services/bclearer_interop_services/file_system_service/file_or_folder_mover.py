@@ -1,9 +1,8 @@
 import os
 import shutil
 
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import (
-    BEngWorkspaceFileSystemObjects,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import \
+    BEngWorkspaceFileSystemObjects
 
 
 def move_file_or_folder_and_create_sub_folders(

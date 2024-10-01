@@ -1,6 +1,5 @@
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_sessions import (
-    Neo4jSession,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_sessions import \
+    Neo4jSession
 from neo4j import GraphDatabase
 
 

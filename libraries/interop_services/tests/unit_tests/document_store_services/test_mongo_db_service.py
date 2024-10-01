@@ -1,7 +1,6 @@
 import pytest
-from bclearer_interop_services.document_store_services.mongo_db_service.mongo_db_wrapper import (
-    MongoDBWrapper,
-)
+from bclearer_interop_services.document_store_services.mongo_db_service.mongo_db_wrapper import \
+    MongoDBWrapper
 
 
 class TestMongoDBService:

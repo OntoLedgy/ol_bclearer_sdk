@@ -1,20 +1,15 @@
 from typing import Optional
 
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import (
-    BIdentityFileSystemObjectUniverseRegisters,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import (
-    BIdentityFolders,
-)
-from bclearer_interop_services.file_system_service.new_folder_creator import (
-    create_new_folder,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from nf_common.code.services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import \
+    BIdentityFileSystemObjectUniverseRegisters
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import \
+    BIdentityFolders
+from bclearer_interop_services.file_system_service.new_folder_creator import \
+    create_new_folder
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
 
 
 class BIdentityFileSystemObjectUniverses:

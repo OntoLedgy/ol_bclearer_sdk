@@ -2,32 +2,23 @@ from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resource
     ADJUSTMENT_UNIVERSE_OS_INSPIRE_ATTRIBUTES_TO_CONVERT_FILENAME,
     ADJUSTMENT_UNIVERSE_OS_INSPIRE_ATTRIBUTES_TO_CONVERT_FILENAME_HDF5,
     ADJUSTMENT_UNIVERSE_OS_INSPIRE_ATTRIBUTES_TO_REMOVE_FILENAME,
-    ADJUSTMENT_UNIVERSE_OS_INSPIRE_ATTRIBUTES_TO_REMOVE_FILENAME_HDF5,
-)
-from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_namespace_constants import (
-    ADJUSTMENT_OPERATIONS_RESOURCES_NAMESPACE,
-)
-from bclearer_source.b_code.common_knowledge.adjustment_operation_types import (
-    AdjustmentOperationTypes,
-)
-from bclearer_source.b_code.configurations.adjustment_operation_configurations import (
-    AdjustmentOperationConfigurations,
-)
-from bclearer_source.b_code.configurations.adjustment_operations_substage_configurations import (
-    AdjustmentOperationsSubstageConfigurations,
-)
-from bclearer_source.b_code.configurations.attribute_to_association_adjustment_operation_configurations import (
-    AttributeToAssociationAdjustmentOperationConfigurations,
-)
-from bclearer_source.b_code.configurations.load_ea_model_configurations import (
-    LoadEaModelConfigurations,
-)
-from bclearer_source.b_code.configurations.load_hdf5_model_configurations import (
-    LoadHdf5ModelConfigurations,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
-    EaAssociationDirectionTypes,
-)
+    ADJUSTMENT_UNIVERSE_OS_INSPIRE_ATTRIBUTES_TO_REMOVE_FILENAME_HDF5)
+from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_namespace_constants import \
+    ADJUSTMENT_OPERATIONS_RESOURCES_NAMESPACE
+from bclearer_source.b_code.common_knowledge.adjustment_operation_types import \
+    AdjustmentOperationTypes
+from bclearer_source.b_code.configurations.adjustment_operation_configurations import \
+    AdjustmentOperationConfigurations
+from bclearer_source.b_code.configurations.adjustment_operations_substage_configurations import \
+    AdjustmentOperationsSubstageConfigurations
+from bclearer_source.b_code.configurations.attribute_to_association_adjustment_operation_configurations import \
+    AttributeToAssociationAdjustmentOperationConfigurations
+from bclearer_source.b_code.configurations.load_ea_model_configurations import \
+    LoadEaModelConfigurations
+from bclearer_source.b_code.configurations.load_hdf5_model_configurations import \
+    LoadHdf5ModelConfigurations
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import \
+    EaAssociationDirectionTypes
 
 
 def get_boson_1_2e_b1_configuration_load_ea_attributes_to_convert() -> (

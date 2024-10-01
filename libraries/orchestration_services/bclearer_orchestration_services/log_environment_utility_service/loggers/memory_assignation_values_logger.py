@@ -1,11 +1,9 @@
 import psutil
 from nf_common.code.services.log_environment_utility_service.common_knowledge.constants import *
-from nf_common.code.services.log_environment_utility_service.common_loggers import (
-    CommonLoggers,
-)
-from nf_common.code.services.log_environment_utility_service.helpers.units_converter import (
-    convert_units,
-)
+from nf_common.code.services.log_environment_utility_service.common_loggers import \
+    CommonLoggers
+from nf_common.code.services.log_environment_utility_service.helpers.units_converter import \
+    convert_units
 
 
 def log_memory_assignation_values(

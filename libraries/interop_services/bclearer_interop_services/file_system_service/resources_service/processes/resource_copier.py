@@ -2,12 +2,9 @@ import importlib
 import os
 import shutil
 
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
 
 
 def copy_resource_and_rename(

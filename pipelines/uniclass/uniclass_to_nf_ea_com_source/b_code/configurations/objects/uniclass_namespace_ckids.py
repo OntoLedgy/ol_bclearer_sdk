@@ -1,8 +1,6 @@
 from enum import auto, unique
 
-from nf_common_source.code.nf.types.collection_types import (
-    CollectionTypes,
-)
+from nf_common_source.code.nf.types.collection_types import CollectionTypes
 
 
 @unique

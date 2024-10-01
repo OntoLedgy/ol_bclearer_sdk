@@ -1,27 +1,19 @@
-from bclearer_boson_1_1_source.b_code.common_knowledge.boson_1_matched_ea_objects import (
-    Boson1MatchedEaObjects,
-)
-from bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import (
-    InspireMatchedEaObjects,
-)
-from bclearer_boson_1_1_source.b_code.common_knowledge.os_matched_ea_objects import (
-    OsMatchedEaObjects,
-)
-from bclearer_source.b_code.common_knowledge.bclearer_matched_ea_objects import (
-    BclearerMatchedEaObjects,
-)
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import (
-    ConventionShiftOperationTypes,
-)
-from bclearer_source.b_code.configurations.attribute_name_to_name_object_configuration_objects import (
-    AttributeNameToNameObjectConfigurationObjects,
-)
-from bclearer_source.b_code.configurations.convention_shift_operation_configurations import (
-    ConventionShiftOperationConfigurations,
-)
-from bclearer_source.b_code.configurations.uml_name_to_named_object_configuration_objects import (
-    UmlNameToNamedObjectConfigurationObjects,
-)
+from bclearer_boson_1_1_source.b_code.common_knowledge.boson_1_matched_ea_objects import \
+    Boson1MatchedEaObjects
+from bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import \
+    InspireMatchedEaObjects
+from bclearer_boson_1_1_source.b_code.common_knowledge.os_matched_ea_objects import \
+    OsMatchedEaObjects
+from bclearer_source.b_code.common_knowledge.bclearer_matched_ea_objects import \
+    BclearerMatchedEaObjects
+from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import \
+    ConventionShiftOperationTypes
+from bclearer_source.b_code.configurations.attribute_name_to_name_object_configuration_objects import \
+    AttributeNameToNameObjectConfigurationObjects
+from bclearer_source.b_code.configurations.convention_shift_operation_configurations import \
+    ConventionShiftOperationConfigurations
+from bclearer_source.b_code.configurations.uml_name_to_named_object_configuration_objects import \
+    UmlNameToNamedObjectConfigurationObjects
 
 
 def get_boson_1_2e_h1_configuration_uml_names_to_named_objects() -> (

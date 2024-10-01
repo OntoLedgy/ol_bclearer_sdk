@@ -1,15 +1,11 @@
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import (
-    BEngWorkspaceFileSystemObjectCouples,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import (
-    BEngWorkspaceFileSystemObjects,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import \
+    BEngWorkspaceFileSystemObjectCouples
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import \
+    BEngWorkspaceFileSystemObjects
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def move_and_rename_file_or_folder_checks(

@@ -1,8 +1,6 @@
 from enum import auto, unique
 
-from nf_common_source.code.nf.types.column_types import (
-    ColumnTypes,
-)
+from nf_common_source.code.nf.types.column_types import ColumnTypes
 
 
 @unique

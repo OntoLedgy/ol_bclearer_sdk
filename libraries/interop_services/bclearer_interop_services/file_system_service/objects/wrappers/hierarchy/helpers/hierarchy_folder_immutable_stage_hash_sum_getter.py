@@ -1,12 +1,8 @@
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
-    HierarchyFileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-    HierarchyFolders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
+    HierarchyFileSystemObjects
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+    HierarchyFolders
 
 
 def get_hierarchy_folder_immutable_stage_hash_sum(
@@ -14,9 +10,8 @@ def get_hierarchy_folder_immutable_stage_hash_sum(
     hierarchy_folder: HierarchyFolders,
     hierarchy_folder_immutable_stage_hash_sum: int,
 ) -> int:
-    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import (
-        HierarchyFileSystemObjectRegisters,
-    )
+    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import \
+        HierarchyFileSystemObjectRegisters
 
     if not isinstance(
         hierarchy_file_system_object_universe_register,

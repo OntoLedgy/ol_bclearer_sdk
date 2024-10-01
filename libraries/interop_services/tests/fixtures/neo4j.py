@@ -1,9 +1,7 @@
-from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_configurations import (
-    Neo4jConfigurations,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
+from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_configurations import \
+    Neo4jConfigurations
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
 from tests.fixtures.paths import *
 
 

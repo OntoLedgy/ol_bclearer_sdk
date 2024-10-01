@@ -1,39 +1,25 @@
 import pandas
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
-    dataframe_filter_and_rename,
-)
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
-    left_merge_dataframes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_attribute_table_column_types import (
-    StandardAttributeTableColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import (
-    StandardConnectorTableColumnTypes,
-)
+from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import \
+    dataframe_filter_and_rename
+from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
+    left_merge_dataframes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_attribute_table_column_types import \
+    StandardAttributeTableColumnTypes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import \
+    StandardConnectorTableColumnTypes
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     ATTRIBUTE_TABLE_HIGHER_LEVELS_NAME_SPACES_TABLE_NAME,
-    ATTRIBUTE_TYPE_NAMES_COLUMN_NAME,
-    ATTRIBUTE_TYPE_PACKAGE_NAMES_COLUMN_NAME,
-    ATTRIBUTE_TYPE_UUIDS_COLUMN_NAME,
-    ATTRIBUTE_VALUES_COLUMN_NAME,
+    ATTRIBUTE_TYPE_NAMES_COLUMN_NAME, ATTRIBUTE_TYPE_PACKAGE_NAMES_COLUMN_NAME,
+    ATTRIBUTE_TYPE_UUIDS_COLUMN_NAME, ATTRIBUTE_VALUES_COLUMN_NAME,
     ATTRIBUTED_OBJECT_NAMES_COLUMN_NAME,
     ATTRIBUTED_OBJECT_PACKAGE_NAMES_COLUMN_NAME,
-    ATTRIBUTED_OBJECT_UUIDS_COLUMN_NAME,
-    CHILD_NAMES_COLUMN_NAME,
-    CHILD_PACKAGE_NAME_COLUMN_NAME,
-    CHILD_UUIDS_COLUMN_NAME,
-    LINK_NAMES_COLUMN_NAME,
-    LINK_TYPES_COLUMN_NAME,
-    OBJECT_NAME_COLUMN_NAME,
-    PARENT_NAMES_COLUMN_NAME,
-    PARENT_PACKAGE_NAME_COLUMN_NAME,
-    PARENT_UUIDS_COLUMN_NAME,
-    STEREOTYPE_NAMES_COLUMN_NAME,
-    STEREOTYPE_UUIDS_COLUMN_NAME,
-    UML_VISIBILITY_KIND_COLUMN_NAME,
-    UUID_COLUMN_NAME,
-)
+    ATTRIBUTED_OBJECT_UUIDS_COLUMN_NAME, CHILD_NAMES_COLUMN_NAME,
+    CHILD_PACKAGE_NAME_COLUMN_NAME, CHILD_UUIDS_COLUMN_NAME,
+    LINK_NAMES_COLUMN_NAME, LINK_TYPES_COLUMN_NAME, OBJECT_NAME_COLUMN_NAME,
+    PARENT_NAMES_COLUMN_NAME, PARENT_PACKAGE_NAME_COLUMN_NAME,
+    PARENT_UUIDS_COLUMN_NAME, STEREOTYPE_NAMES_COLUMN_NAME,
+    STEREOTYPE_UUIDS_COLUMN_NAME, UML_VISIBILITY_KIND_COLUMN_NAME,
+    UUID_COLUMN_NAME)
 
 
 def populate_child_parent_uuids_in_evolve_8_input_linked_tables(

@@ -1,17 +1,13 @@
 import os
 
-from bclearer_interop_services.dataframe_service.dataframe_mergers import (
-    left_merge_dataframes,
-)
-from bclearer_interop_services.excel_services.interop.excel_write import (
-    save_table_in_excel,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.graph_services.network_service.graph_to_nodes_and_edges_tables_converter import (
-    convert_graph_to_nodes_and_edges_tables,
-)
+from bclearer_interop_services.dataframe_service.dataframe_mergers import \
+    left_merge_dataframes
+from bclearer_interop_services.excel_services.interop.excel_write import \
+    save_table_in_excel
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.graph_services.network_service.graph_to_nodes_and_edges_tables_converter import \
+    convert_graph_to_nodes_and_edges_tables
 
 
 def export_graph_to_excel_with_human_readable_edges(

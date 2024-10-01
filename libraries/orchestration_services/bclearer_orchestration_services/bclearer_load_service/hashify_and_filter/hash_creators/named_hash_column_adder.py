@@ -1,7 +1,6 @@
 import pandas
-from bclearer_orchestration_services.identification_services.hash_service.hash_creator import (
-    create_hash_with_sorted_inputs,
-)
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import \
+    create_hash_with_sorted_inputs
 
 
 def add_named_hash_column(

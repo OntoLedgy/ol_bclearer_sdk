@@ -1,6 +1,5 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionary_try_get_results import (
-    NfDictionaryTryGetResults,
-)
+from nf_common.code.nf.python_extensions.collections.nf_dictionary_try_get_results import \
+    NfDictionaryTryGetResults
 
 
 class NfDictionaries(dict):

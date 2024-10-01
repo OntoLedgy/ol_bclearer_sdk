@@ -1,9 +1,7 @@
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_1.domain_tables_data_processor.top_level_items_rows_adder import (
-    add_top_level_item_rows_to_dictionary_of_dataframes,
-)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_1.domain_tables_data_processor.top_level_items_table_remover import (
-    remove_top_level_items_table_from_dataframes_dictionary,
-)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_1.domain_tables_data_processor.top_level_items_rows_adder import \
+    add_top_level_item_rows_to_dictionary_of_dataframes
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_1.domain_tables_data_processor.top_level_items_table_remover import \
+    remove_top_level_items_table_from_dataframes_dictionary
 
 
 def get_evolve_stage_1_domain_tables(

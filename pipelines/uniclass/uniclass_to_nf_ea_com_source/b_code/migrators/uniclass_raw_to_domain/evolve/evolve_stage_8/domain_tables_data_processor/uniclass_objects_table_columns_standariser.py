@@ -1,10 +1,6 @@
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CODE_COLUMN_NAME,
-    OBJECT_NAME_COLUMN_NAME,
-    PARENT_NAMES_COLUMN_NAME,
-    PARENT_PACKAGE_NAME_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
-)
+    CODE_COLUMN_NAME, OBJECT_NAME_COLUMN_NAME, PARENT_NAMES_COLUMN_NAME,
+    PARENT_PACKAGE_NAME_COLUMN_NAME, UNICLASS2015_OBJECT_TABLE_NAME)
 
 
 def standardise_uniclass_objects_table_columns(

@@ -1,33 +1,23 @@
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_clean_inspire_os_model_runner import (
-    run_visualization_substage_clean_inspire_os_model,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_generalise_names_runner import (
-    run_visualization_substage_generalise_names,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_generalise_runner import (
-    run_visualization_substage_generalise,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_load_gml_data_runner import (
-    run_visualization_substage_load_gml_data,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_instances_and_exemplars_runner import (
-    run_visualization_substage_separate_instances_and_exemplars,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_names_and_instances_runner import (
-    run_visualization_substage_separate_names_and_instances,
-)
-from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_objects_and_names_runner import (
-    run_visualization_substage_separate_objects_and_names,
-)
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_clean_inspire_os_model_runner import \
+    run_visualization_substage_clean_inspire_os_model
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_generalise_names_runner import \
+    run_visualization_substage_generalise_names
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_generalise_runner import \
+    run_visualization_substage_generalise
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_load_gml_data_runner import \
+    run_visualization_substage_load_gml_data
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_instances_and_exemplars_runner import \
+    run_visualization_substage_separate_instances_and_exemplars
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_names_and_instances_runner import \
+    run_visualization_substage_separate_names_and_instances
+from bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_separate_objects_and_names_runner import \
+    run_visualization_substage_separate_objects_and_names
+from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
 
 
 @run_and_log_function

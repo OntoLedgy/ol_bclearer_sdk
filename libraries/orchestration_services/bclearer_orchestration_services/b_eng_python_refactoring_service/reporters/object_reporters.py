@@ -1,10 +1,8 @@
 import pandas
-from nf_common.code.services.b_eng_python_refactoring_service.reporters.file_objects_reporters import (
-    add_files_to_nodes,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.reporters.folder_node_reporters import (
-    add_folders_to_nodes,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.reporters.file_objects_reporters import \
+    add_files_to_nodes
+from nf_common.code.services.b_eng_python_refactoring_service.reporters.folder_node_reporters import \
+    add_folders_to_nodes
 
 
 def report_objects():

@@ -1,21 +1,14 @@
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
-from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
-    get_nf_uuid_from_ea_guid_from_collection,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import \
+    get_nf_uuid_from_ea_guid_from_collection
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import \
+    EaConnectorTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
+    NfEaComColumnTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 
 
 def get_instances_nf_uuids_of_matched_type(

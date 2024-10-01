@@ -1,6 +1,4 @@
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
 
 
 class BespokeNameToInstanceConfigurationObjects:

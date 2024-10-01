@@ -1,6 +1,5 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionaries import (
-    NfDictionaries,
-)
+from nf_common.code.nf.python_extensions.collections.nf_dictionaries import \
+    NfDictionaries
 
 
 class NfBimappings:

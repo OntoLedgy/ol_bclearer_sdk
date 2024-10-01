@@ -1,12 +1,9 @@
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_file_as_b_dataset_row_dictionary_getter import (
-    get_hierarchy_file_as_b_dataset_row_dictionary,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_information_as_b_dataset_row_dictionary_getter import (
-    get_hierarchy_folder_information_as_b_dataset_row_dictionary,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-    HierarchyFolders,
-)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_file_as_b_dataset_row_dictionary_getter import \
+    get_hierarchy_file_as_b_dataset_row_dictionary
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_information_as_b_dataset_row_dictionary_getter import \
+    get_hierarchy_folder_information_as_b_dataset_row_dictionary
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+    HierarchyFolders
 
 
 def add_hierarchy_folder_to_b_dataset_format(
@@ -14,9 +11,8 @@ def add_hierarchy_folder_to_b_dataset_format(
     hierarchy_folder: HierarchyFolders,
     b_dataset_format_dictionary: dict,
 ) -> dict:
-    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import (
-        HierarchyFileSystemObjectRegisters,
-    )
+    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import \
+        HierarchyFileSystemObjectRegisters
 
     if not isinstance(
         hierarchy_file_system_object_register,

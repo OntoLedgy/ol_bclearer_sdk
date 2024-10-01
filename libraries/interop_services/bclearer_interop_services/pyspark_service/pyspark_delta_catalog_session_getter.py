@@ -1,7 +1,5 @@
 import pyspark
-from delta.pip_utils import (
-    configure_spark_with_delta_pip,
-)
+from delta.pip_utils import configure_spark_with_delta_pip
 
 
 def get_pyspark_delta_catalog_session() -> (

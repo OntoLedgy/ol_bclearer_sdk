@@ -9,9 +9,7 @@ from io import BytesIO
 from pathlib import Path
 
 import pandas as pd
-from src.blob_storage_helper import (
-    BlobStorageHelper,
-)
+from src.blob_storage_helper import BlobStorageHelper
 from src.utils import read_yaml
 
 

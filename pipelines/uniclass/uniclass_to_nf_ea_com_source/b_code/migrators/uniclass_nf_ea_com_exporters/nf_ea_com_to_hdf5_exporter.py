@@ -1,14 +1,11 @@
 import os
 
-from nf_common_source.code.services.file_system_service.objects.files import (
-    Files,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
+from nf_common_source.code.services.file_system_service.objects.files import \
+    Files
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 
 
 def export_nf_ea_com_to_hdf5(

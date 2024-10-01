@@ -1,6 +1,4 @@
-from openpyxl.cell.cell import (
-    Cell as OpenpyxlCell,
-)
+from openpyxl.cell.cell import Cell as OpenpyxlCell
 
 
 class Cells:

@@ -1,12 +1,9 @@
-from bclearer_core.common_knowledge.universe_modification_operation_types import (
-    UniverseModificationOperationTypes,
-)
-from bclearer_core.configurations.add_dependency_to_instances_of_type_configuration_objects import (
-    AddDependencyToInstancesOfTypeConfigurationObjects,
-)
-from bclearer_core.configurations.operation_configurations import (
-    OperationConfigurations,
-)
+from bclearer_core.common_knowledge.universe_modification_operation_types import \
+    UniverseModificationOperationTypes
+from bclearer_core.configurations.add_dependency_to_instances_of_type_configuration_objects import \
+    AddDependencyToInstancesOfTypeConfigurationObjects
+from bclearer_core.configurations.operation_configurations import \
+    OperationConfigurations
 
 
 class AddDependencyToInstancesOfTypeConfigurations(

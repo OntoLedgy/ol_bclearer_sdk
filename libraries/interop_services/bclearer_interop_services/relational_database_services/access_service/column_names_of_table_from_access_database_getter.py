@@ -1,9 +1,6 @@
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.relational_database_services.access_service.access_database_connection_getter import (
-    get_access_database_connection,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.relational_database_services.access_service.access_database_connection_getter import \
+    get_access_database_connection
 
 
 # TODO: OXi - Still to be reviewed

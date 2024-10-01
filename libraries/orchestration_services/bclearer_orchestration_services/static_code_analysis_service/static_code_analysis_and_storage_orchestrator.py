@@ -1,12 +1,9 @@
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_flow_configurations import (
-    StaticCodeAnalysisFlowConfigurations,
-)
-from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_dataframes_access_exporter import (
-    export_analysis_dataframes_to_access,
-)
-from nf_common.code.services.static_code_analysis_service.static_code_analysis_orchestrator import (
-    orchestrate_static_code_analysis,
-)
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_flow_configurations import \
+    StaticCodeAnalysisFlowConfigurations
+from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_dataframes_access_exporter import \
+    export_analysis_dataframes_to_access
+from nf_common.code.services.static_code_analysis_service.static_code_analysis_orchestrator import \
+    orchestrate_static_code_analysis
 
 
 def orchestrate_static_code_analysis_and_store_analysis_results(

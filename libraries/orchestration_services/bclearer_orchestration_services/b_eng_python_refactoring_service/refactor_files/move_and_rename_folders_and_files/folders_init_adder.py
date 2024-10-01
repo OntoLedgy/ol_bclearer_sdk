@@ -1,11 +1,9 @@
 import os
 
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import (
-    BEngWorkspaceFileSystemObjects,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_objects import \
+    BEngWorkspaceFileSystemObjects
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def add_init_files_if_required(

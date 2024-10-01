@@ -1,21 +1,15 @@
-from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import (
-    convert_table_as_dictionary_to_dataframe,
-)
-from bclearer_interop_services.dataframe_service.all_cells_to_string_converter import (
-    convert_all_cells_to_string,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.relational_database_services.sqlite_service.dataframe_to_sqlite_writer import (
-    write_dataframe_to_sqlite,
-)
-from bclearer_interop_services.relational_database_services.sqlite_service.sqlite_database_creator import (
-    create_sqlite_database,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import \
+    convert_table_as_dictionary_to_dataframe
+from bclearer_interop_services.dataframe_service.all_cells_to_string_converter import \
+    convert_all_cells_to_string
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.relational_database_services.sqlite_service.dataframe_to_sqlite_writer import \
+    write_dataframe_to_sqlite
+from bclearer_interop_services.relational_database_services.sqlite_service.sqlite_database_creator import \
+    create_sqlite_database
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def export_register_into_sqlite(

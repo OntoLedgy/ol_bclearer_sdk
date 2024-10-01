@@ -1,6 +1,5 @@
-from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_all_nan_with_empty_string_replacer import (
-    replace_dataframe_all_nan_with_empty_string,
-)
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_all_nan_with_empty_string_replacer import \
+    replace_dataframe_all_nan_with_empty_string
 from pandas import DataFrame
 
 

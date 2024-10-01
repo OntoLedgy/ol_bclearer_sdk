@@ -1,15 +1,11 @@
-from bclearer_boson_1_1_source.b_code.common_knowledge.boson_1_matched_ea_objects import (
-    Boson1MatchedEaObjects,
-)
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import (
-    ConventionShiftOperationTypes,
-)
-from bclearer_source.b_code.configurations.attribute_name_to_name_object_configuration_objects import (
-    AttributeNameToNameObjectConfigurationObjects,
-)
-from bclearer_source.b_code.configurations.convention_shift_operation_configurations import (
-    ConventionShiftOperationConfigurations,
-)
+from bclearer_boson_1_1_source.b_code.common_knowledge.boson_1_matched_ea_objects import \
+    Boson1MatchedEaObjects
+from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import \
+    ConventionShiftOperationTypes
+from bclearer_source.b_code.configurations.attribute_name_to_name_object_configuration_objects import \
+    AttributeNameToNameObjectConfigurationObjects
+from bclearer_source.b_code.configurations.convention_shift_operation_configurations import \
+    ConventionShiftOperationConfigurations
 
 
 def get_boson_1_2e_i1_configuration_name_attributes_to_name_objects() -> (

@@ -1,42 +1,29 @@
-from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
-    DigitalisationLevelStereotypeMatchedEaObjects,
-)
-from bclearer_core.configurations.bespoke_instance_to_exemplar_configuration_objects import (
-    BespokeInstanceToExemplarConfigurationObjects,
-)
-from bclearer_core.substages.operations.b_evolve.common.new_root_package_creator import (
-    create_root_package,
-)
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.instances_and_exemplars_separator import (
-    separate_instances_and_exemplars,
-)
-from bclearer_core.substages.operations.common.instances_nf_uuids_getter import (
-    get_instances_nf_uuids_of_matched_type,
-)
-from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import (
-    create_new_ea_objects_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import (
-    update_nf_ea_com_universe_with_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
-    get_nf_uuid_from_ea_guid_from_collection,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
+from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import \
+    DigitalisationLevelStereotypeMatchedEaObjects
+from bclearer_core.configurations.bespoke_instance_to_exemplar_configuration_objects import \
+    BespokeInstanceToExemplarConfigurationObjects
+from bclearer_core.substages.operations.b_evolve.common.new_root_package_creator import \
+    create_root_package
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.instances_and_exemplars_separator import \
+    separate_instances_and_exemplars
+from bclearer_core.substages.operations.common.instances_nf_uuids_getter import \
+    get_instances_nf_uuids_of_matched_type
+from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import \
+    create_new_ea_objects_dictionary
+from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import \
+    update_nf_ea_com_universe_with_dictionary
+from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import \
+    get_nf_uuid_from_ea_guid_from_collection
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import \
+    EaConnectorTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
+    NfEaComColumnTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 from pandas import DataFrame
 
 

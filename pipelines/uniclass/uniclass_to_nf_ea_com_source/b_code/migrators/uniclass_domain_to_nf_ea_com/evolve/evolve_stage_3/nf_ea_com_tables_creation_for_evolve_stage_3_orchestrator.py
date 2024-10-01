@@ -1,26 +1,18 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.processes.nf_ea_com_initialiser import (
-    initialise_nf_ea_com_dictionary,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_converter import (
-    convert_standard_object_table_to_classifiers,
-)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.processes.nf_ea_com_initialiser import \
+    initialise_nf_ea_com_dictionary
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_converter import \
+    convert_standard_object_table_to_classifiers
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    UNICLASS2015_OBJECT_TABLE_NAME,
-    UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
-    UUIDIFIED_PACKAGES_TABLE_NAME,
-)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_converter import (
-    convert_uniclass_naming_spaces_table_to_attributes,
-)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_order_converter import (
-    convert_uniclass_naming_spaces_table_to_attributes_order,
-)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import (
-    convert_uniclass_table_to_classifiers_in_common_package,
-)
+    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
+    UUIDIFIED_PACKAGES_TABLE_NAME)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_converter import \
+    convert_uniclass_naming_spaces_table_to_attributes
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_order_converter import \
+    convert_uniclass_naming_spaces_table_to_attributes_order
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import \
+    convert_uniclass_table_to_classifiers_in_common_package
 
 
 def orchestrate_nf_ea_com_tables_creation_for_evolve_stage_3(

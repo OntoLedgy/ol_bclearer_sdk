@@ -1,21 +1,15 @@
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.non_null_object_to_bie_consumable_object_item_converter import (
-    convert_non_null_object_to_bie_consumable_object_item,
-)
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import (
-    BieIdentitySpaces,
-)
-from bclearer_orchestration_services.identification_services.pandas_null_values.cell_is_string_based_null_value_checker import (
-    check_cell_is_string_based_null_value,
-)
-from bclearer_orchestration_services.identification_services.pandas_null_values.null_type_recognition import (
-    NullTypeRecognition,
-)
-from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import (
-    PandasNullValueTypes,
-)
-from bclearer_orchestration_services.identification_services.pandas_null_values.string_based_null_type_recognition import (
-    StringBasedNullTypeRecognition,
-)
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.non_null_object_to_bie_consumable_object_item_converter import \
+    convert_non_null_object_to_bie_consumable_object_item
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
+    BieIdentitySpaces
+from bclearer_orchestration_services.identification_services.pandas_null_values.cell_is_string_based_null_value_checker import \
+    check_cell_is_string_based_null_value
+from bclearer_orchestration_services.identification_services.pandas_null_values.null_type_recognition import \
+    NullTypeRecognition
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import \
+    PandasNullValueTypes
+from bclearer_orchestration_services.identification_services.pandas_null_values.string_based_null_type_recognition import \
+    StringBasedNullTypeRecognition
 
 
 def get_null_processed_input_object(

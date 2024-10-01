@@ -1,9 +1,7 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.creators.file_b_identity_immutable_stage_base_creator import (
-    create_file_b_identity_immutable_stage_base,
-)
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.creators.file_b_identity_immutable_stage_base_creator import \
+    create_file_b_identity_immutable_stage_base
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
 
 
 class Files(FileSystemObjects):
@@ -12,9 +10,8 @@ class Files(FileSystemObjects):
         absolute_path_string: str,
         parent_folder: object = None,
     ):
-        from bclearer_interop_services.file_system_service.objects.folders import (
-            Folders,
-        )
+        from bclearer_interop_services.file_system_service.objects.folders import \
+            Folders
 
         if (
             parent_folder

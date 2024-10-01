@@ -1,12 +1,9 @@
 from typing import Optional
 
 from BaseXClient import BaseXClient
-from BaseXClient.BaseXClient import (
-    Session,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from BaseXClient.BaseXClient import Session
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def create_basex_session_hard_crash_wrapper(

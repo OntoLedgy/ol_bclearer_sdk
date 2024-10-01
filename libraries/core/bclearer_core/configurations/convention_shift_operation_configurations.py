@@ -1,9 +1,7 @@
-from bclearer_core.common_knowledge.convention_shift_operation_types import (
-    ConventionShiftOperationTypes,
-)
-from bclearer_core.configurations.operation_configurations import (
-    OperationConfigurations,
-)
+from bclearer_core.common_knowledge.convention_shift_operation_types import \
+    ConventionShiftOperationTypes
+from bclearer_core.configurations.operation_configurations import \
+    OperationConfigurations
 
 
 class ConventionShiftOperationConfigurations(

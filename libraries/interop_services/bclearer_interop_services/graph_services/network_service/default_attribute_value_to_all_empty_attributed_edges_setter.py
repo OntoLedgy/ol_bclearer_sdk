@@ -1,6 +1,5 @@
-from bclearer_interop_services.graph_services.network_service.attribute_to_edge_setter import (
-    set_attribute_to_edge,
-)
+from bclearer_interop_services.graph_services.network_service.attribute_to_edge_setter import \
+    set_attribute_to_edge
 from networkx import DiGraph
 
 

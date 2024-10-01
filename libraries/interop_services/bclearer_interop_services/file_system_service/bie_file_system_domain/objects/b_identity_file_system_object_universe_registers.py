@@ -1,44 +1,31 @@
 from typing import Optional
 
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_objects import (
-    BIdentityFileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import (
-    BIdentityFolders,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_access_exporter import (
-    export_b_dataset_register_into_access,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_sqlite_exporter import (
-    export_register_into_sqlite,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_columns_to_register_in_b_dataset_format_adder import (
-    add_b_identity_columns_to_register_in_b_dataset_format,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_folder_id_b_identity_component_id_sum_getter import (
-    get_b_identity_folder_id_b_identity_component_id_sum,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_to_hierarchy_register_map_entry_to_dictionary_adder import (
-    add_b_identity_to_hierarchy_register_map_entry_to_dictionary,
-)
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import (
-    HierarchyFileSystemObjectRegisters,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
-    HierarchyFileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-    HierarchyFolders,
-)
-from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_objects import \
+    BIdentityFileSystemObjects
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import \
+    BIdentityFolders
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_access_exporter import \
+    export_b_dataset_register_into_access
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_sqlite_exporter import \
+    export_register_into_sqlite
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_columns_to_register_in_b_dataset_format_adder import \
+    add_b_identity_columns_to_register_in_b_dataset_format
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_folder_id_b_identity_component_id_sum_getter import \
+    get_b_identity_folder_id_b_identity_component_id_sum
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_identity_to_hierarchy_register_map_entry_to_dictionary_adder import \
+    add_b_identity_to_hierarchy_register_map_entry_to_dictionary
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import \
+    HierarchyFileSystemObjectRegisters
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
+    HierarchyFileSystemObjects
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+    HierarchyFolders
+from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
 
 
 class BIdentityFileSystemObjectUniverseRegisters:
@@ -48,9 +35,8 @@ class BIdentityFileSystemObjectUniverseRegisters:
         root_file_system_object: FileSystemObjects,
         root_b_identity_folder: BIdentityFolders,
     ):
-        from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universes import (
-            BIdentityFileSystemObjectUniverses,
-        )
+        from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universes import \
+            BIdentityFileSystemObjectUniverses
 
         if not isinstance(
             owning_b_identity_file_system_object_universe,

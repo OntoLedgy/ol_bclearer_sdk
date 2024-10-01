@@ -1,27 +1,19 @@
-from bclearer_boson_1_1_source.b_code.configurations.getters.boson_1_2e_f_configuration_getter_load_and_merge_gml import (
-    get_boson_1_2e_f1_configuration_load_gml_data,
-)
-from bclearer_boson_1_1_source.b_code.configurations.getters.boson_1_2e_g_configuration_getter_objects_to_classes import (
-    get_boson_1_2e_g1_configuration_objects_to_classes,
-)
-from bclearer_boson_1_1_source.b_code.substages.operations.b_evolve.runners.boson_1_merge_gml_data_content_operations_substage_runner import (
-    run_boson_1_merge_gml_data_content_operations_substage,
-)
-from bclearer_source.b_code.substages.operations.b_evolve.convention_shift_operations.runners.convention_shift_operations_substage_runner import (
-    run_convention_shift_operation_substage,
-)
-from bclearer_source.b_code.substages.visualizations.instrumentation_and_visualization_runner import (
-    instrument_and_visualize,
-)
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
+from bclearer_boson_1_1_source.b_code.configurations.getters.boson_1_2e_f_configuration_getter_load_and_merge_gml import \
+    get_boson_1_2e_f1_configuration_load_gml_data
+from bclearer_boson_1_1_source.b_code.configurations.getters.boson_1_2e_g_configuration_getter_objects_to_classes import \
+    get_boson_1_2e_g1_configuration_objects_to_classes
+from bclearer_boson_1_1_source.b_code.substages.operations.b_evolve.runners.boson_1_merge_gml_data_content_operations_substage_runner import \
+    run_boson_1_merge_gml_data_content_operations_substage
+from bclearer_source.b_code.substages.operations.b_evolve.convention_shift_operations.runners.convention_shift_operations_substage_runner import \
+    run_convention_shift_operation_substage
+from bclearer_source.b_code.substages.visualizations.instrumentation_and_visualization_runner import \
+    instrument_and_visualize
+from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
 
 
 @run_and_log_function

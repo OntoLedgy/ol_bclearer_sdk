@@ -1,7 +1,6 @@
 import pandas
-from bclearer_orchestration_services.bclearer_load_service.summarize.summary_hash_dataframe_creator import (
-    create_summary_hash_dataframe,
-)
+from bclearer_orchestration_services.bclearer_load_service.summarize.summary_hash_dataframe_creator import \
+    create_summary_hash_dataframe
 
 
 def orchestrate_bclearer_load_summarize(

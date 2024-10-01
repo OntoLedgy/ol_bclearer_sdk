@@ -1,10 +1,7 @@
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import (
-    ENVIRONMENT_PREFIX,
-    NAME_VALUE_DELIMITER,
-)
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+    ENVIRONMENT_PREFIX, NAME_VALUE_DELIMITER)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def print_header(

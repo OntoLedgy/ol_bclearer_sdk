@@ -1,8 +1,6 @@
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    AREA_COLUMN_NAME,
-    CODE_COLUMN_NAME,
-)
+    AREA_COLUMN_NAME, CODE_COLUMN_NAME)
 
 
 def populate_area_column(

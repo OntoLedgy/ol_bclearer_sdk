@@ -1,9 +1,7 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.common_knowledge.enum_b_eng_folder_types import (
-    EnumBEngFolderTypes,
-)
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.b_eng_python_refactoring_service.common_knowledge.enum_b_eng_folder_types import \
+    EnumBEngFolderTypes
 
 
 class BEngFolders(Folders):

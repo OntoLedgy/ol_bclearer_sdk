@@ -1,8 +1,7 @@
 # from neo4j_object_models.neo4j_connections import Neo4jConnection
 
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
 
 
 class Neo4jWrapper:

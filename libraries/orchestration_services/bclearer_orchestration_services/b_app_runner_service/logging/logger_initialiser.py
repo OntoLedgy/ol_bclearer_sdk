@@ -1,19 +1,13 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_orchestration_services.b_app_runner_service.logging.output_folder_and_logger_set_upper import (
-    set_up_output_folder_and_logger,
-)
-from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.environment_log_level_types import (
-    EnvironmentLogLevelTypes,
-)
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_orchestration_services.b_app_runner_service.logging.output_folder_and_logger_set_upper import \
+    set_up_output_folder_and_logger
+from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.environment_log_level_types import \
+    EnvironmentLogLevelTypes
 from bclearer_orchestration_services.log_environment_utility_service.loggers.environment_logger import (
-    log_filtered_environment,
-    log_full_environment,
-)
-from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    log_timing_header,
-)
+    log_filtered_environment, log_full_environment)
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    log_timing_header
 
 
 def initialise_logger(

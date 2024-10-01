@@ -1,10 +1,8 @@
 from pandas import concat
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    UUIDIFIED_PACKAGES_TABLE_NAME,
-)
-from uniclass_to_nf_ea_com_source.b_code.services.uniclass_common.uuidifed_packages_parent_ea_element_populator import (
-    populate_uuidified_packages_parent_uuids_column,
-)
+from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
+    UUIDIFIED_PACKAGES_TABLE_NAME
+from uniclass_to_nf_ea_com_source.b_code.services.uniclass_common.uuidifed_packages_parent_ea_element_populator import \
+    populate_uuidified_packages_parent_uuids_column
 
 
 def add_evolve_7_packages_to_evolve_8_input_object_tables_and_uuidify_parents_column(

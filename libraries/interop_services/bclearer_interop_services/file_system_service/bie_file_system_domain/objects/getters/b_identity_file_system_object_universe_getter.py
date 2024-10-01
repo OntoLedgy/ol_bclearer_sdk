@@ -1,12 +1,9 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universes import (
-    BIdentityFileSystemObjectUniverses,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universes import \
+    BIdentityFileSystemObjectUniverses
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
 
 
 @run_and_log_function

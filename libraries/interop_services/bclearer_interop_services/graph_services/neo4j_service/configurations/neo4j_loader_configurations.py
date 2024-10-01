@@ -1,9 +1,8 @@
 import json
 import os
 
-from neo4j_orchestrator_helpers.read_cypher_queries import (
-    read_cypher_query_from_file,
-)
+from neo4j_orchestrator_helpers.read_cypher_queries import \
+    read_cypher_query_from_file
 
 
 class CSVConfigurations:

@@ -1,24 +1,17 @@
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import (
-    BEngProjectFolderLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_workspace_with_file_system_object_couples_ordered_indexed_lists import (
-    BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configurations import (
-    MoveAndReplaceConfigurations,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.b_eng_folder_or_file_refactorer import (
-    move_and_rename_file_or_folder_then_find_and_replace_references_in_python_code,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.b_eng_folders_and_files_refactor_checker import (
-    b_eng_folders_and_files_refactor_checks,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.commit_and_push_refactors.refactor_commiter import (
-    commit_refactors,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import \
+    BEngProjectFolderLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_workspace_with_file_system_object_couples_ordered_indexed_lists import \
+    BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.configurations.move_and_replace_configurations import \
+    MoveAndReplaceConfigurations
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.b_eng_folder_or_file_refactorer import \
+    move_and_rename_file_or_folder_then_find_and_replace_references_in_python_code
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.b_eng_folders_and_files_refactor_checker import \
+    b_eng_folders_and_files_refactor_checks
+from nf_common.code.services.b_eng_python_refactoring_service.refactor_files.commit_and_push_refactors.refactor_commiter import \
+    commit_refactors
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def move_and_rename_files_or_folders_then_find_and_replace_references_in_python_code(

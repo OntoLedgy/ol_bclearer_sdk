@@ -1,8 +1,7 @@
 import pandas as pd
 import psycopg2
-from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import (
-    DatabaseFacade,
-)
+from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import \
+    DatabaseFacade
 
 
 class PostgresqlFacade(DatabaseFacade):

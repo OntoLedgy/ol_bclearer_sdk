@@ -1,8 +1,6 @@
 import gzip
 
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
 from lxml import etree
 
 

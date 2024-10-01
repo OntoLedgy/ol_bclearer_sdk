@@ -1,23 +1,17 @@
 import os
 
-from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_loader_configurations import (
-    Neo4jLoaderConfigurations,
-)
-from bclearer_interop_services.graph_services.neo4j_service.constants import (
-    LoaderDataFolderNames,
-)
-from bclearer_interop_services.graph_services.neo4j_service.constants.GraphDataObjectTypes import (
-    GraphObjectTypes,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import (
-    get_load_dataset_by_graph_object_type,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_file_to_neo4j_data_load import (
-    orchestrate_csv_to_neo4j_data_load,
-)
+from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_loader_configurations import \
+    Neo4jLoaderConfigurations
+from bclearer_interop_services.graph_services.neo4j_service.constants import \
+    LoaderDataFolderNames
+from bclearer_interop_services.graph_services.neo4j_service.constants.GraphDataObjectTypes import \
+    GraphObjectTypes
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import \
+    get_load_dataset_by_graph_object_type
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_file_to_neo4j_data_load import \
+    orchestrate_csv_to_neo4j_data_load
 
 # from neo4j_constants import LoaderDataFolderNames
 # from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes

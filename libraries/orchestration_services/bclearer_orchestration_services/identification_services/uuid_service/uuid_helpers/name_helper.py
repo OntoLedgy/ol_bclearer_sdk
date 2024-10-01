@@ -1,7 +1,5 @@
 from bclearer_orchestration_services.identification_services.uuid_service.constants.uuidification_constants import (
-    UUID_COLUMN_NAME_SEPARATOR,
-    UUIDIFIED_DATAFRAME_PREFIX,
-)
+    UUID_COLUMN_NAME_SEPARATOR, UUIDIFIED_DATAFRAME_PREFIX)
 
 
 def get_uuidified_dataframe_name(

@@ -1,24 +1,17 @@
-from bclearer_core.common_knowledge.universe_modification_operation_types import (
-    UniverseModificationOperationTypes,
-)
-from bclearer_core.configurations.add_dependency_to_instances_of_type_configuration_objects import (
-    AddDependencyToInstancesOfTypeConfigurationObjects,
-)
-from bclearer_core.configurations.universe_modification_operation_configurations import (
-    UniverseModificationOperationConfigurations,
-)
-from bclearer_core.substages.operations.b_evolve.universe_modification_operations.universe_modifiers.dependency_to_instances_of_type_adder import (
-    add_dependency_to_instances_of_type,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
-    create_empty_nf_ea_universe,
-)
+from bclearer_core.common_knowledge.universe_modification_operation_types import \
+    UniverseModificationOperationTypes
+from bclearer_core.configurations.add_dependency_to_instances_of_type_configuration_objects import \
+    AddDependencyToInstancesOfTypeConfigurationObjects
+from bclearer_core.configurations.universe_modification_operation_configurations import \
+    UniverseModificationOperationConfigurations
+from bclearer_core.substages.operations.b_evolve.universe_modification_operations.universe_modifiers.dependency_to_instances_of_type_adder import \
+    add_dependency_to_instances_of_type
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import \
+    create_empty_nf_ea_universe
 
 
 class UniverseModificationOperationsSubstages:

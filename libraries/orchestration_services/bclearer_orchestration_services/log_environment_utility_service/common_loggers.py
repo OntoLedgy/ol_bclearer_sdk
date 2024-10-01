@@ -1,23 +1,16 @@
 import logging
 import sys
 from logging import Logger
-from logging.handlers import (
-    TimedRotatingFileHandler,
-)
+from logging.handlers import TimedRotatingFileHandler
 
 import pandas
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from nf_common.code.services.log_environment_utility_service.loggers.environment_logger import (
-    log_filtered_environment,
-)
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
-from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    log_timing_header,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from nf_common.code.services.log_environment_utility_service.loggers.environment_logger import \
+    log_filtered_environment
+from nf_common.code.services.reporting_service.reporters.log_file import \
+    LogFiles
+from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    log_timing_header
 
 LOG_FORMAT = "%(asctime)s: %(name)s - %(levelname)s - %(threadName)s - %(message)s"
 

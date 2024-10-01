@@ -4,9 +4,8 @@ import sys
 from typing import List, Optional, Union
 
 import pandas
-from bclearer_interop_services.file_system_service.encoding.file_encoding_detector import (
-    detect,
-)
+from bclearer_interop_services.file_system_service.encoding.file_encoding_detector import \
+    detect
 
 
 def get_table_from_csv_with_header(

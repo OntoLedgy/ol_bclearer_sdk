@@ -1,13 +1,8 @@
-from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import (
-    export_table_as_dictionary_to_csv,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from networkx import (
-    DiGraph,
-    simple_cycles,
-)
+from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import \
+    export_table_as_dictionary_to_csv
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from networkx import DiGraph, simple_cycles
 
 
 def check_directed_graph_cycles(

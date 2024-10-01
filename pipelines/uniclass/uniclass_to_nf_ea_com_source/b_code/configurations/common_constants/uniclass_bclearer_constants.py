@@ -1,12 +1,9 @@
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_attribute_table_column_types import (
-    StandardAttributeTableColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import (
-    StandardConnectorTableColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
-    StandardObjectTableColumnTypes,
-)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_attribute_table_column_types import \
+    StandardAttributeTableColumnTypes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import \
+    StandardConnectorTableColumnTypes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import \
+    StandardObjectTableColumnTypes
 
 ROOT_OUTPUT_FOLDER_TITLE_MESSAGE = (
     "Please select root output folder"

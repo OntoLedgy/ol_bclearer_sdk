@@ -1,6 +1,5 @@
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    AREA_NAME,
-)
+from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
+    AREA_NAME
 
 
 def add_area_column(

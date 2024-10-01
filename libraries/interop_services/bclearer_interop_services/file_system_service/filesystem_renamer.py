@@ -1,8 +1,7 @@
 import os
 
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def rename_all_files_and_folders(

@@ -1,13 +1,9 @@
 import concurrent
 import logging
 import time
-from concurrent.futures import (
-    ThreadPoolExecutor,
-)
+from concurrent.futures import ThreadPoolExecutor
 
-from neo4j_object_models.Neo4jWrapper import (
-    Neo4jWrapper,
-)
+from neo4j_object_models.Neo4jWrapper import Neo4jWrapper
 
 logging.basicConfig(level=logging.DEBUG)
 

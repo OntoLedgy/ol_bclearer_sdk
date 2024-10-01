@@ -1,15 +1,10 @@
-from bclearer_interop_services.file_system_service.file_system_objects_from_paths_getter import (
-    get_file_system_objects_from_paths,
-)
-from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import (
-    get_all_files_of_extension_from_folder,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.file_system_objects_from_paths_getter import \
+    get_file_system_objects_from_paths
+from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import \
+    get_all_files_of_extension_from_folder
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
 
 
 def get_all_files_from_file_system_object_paths(

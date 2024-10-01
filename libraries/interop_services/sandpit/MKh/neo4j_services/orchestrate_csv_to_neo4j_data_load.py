@@ -4,9 +4,8 @@ import sys
 import threading
 import time
 
-from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jLoader import (
-    Neo4jLoader,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jLoader import \
+    Neo4jLoader
 
 
 def synchronized(func):

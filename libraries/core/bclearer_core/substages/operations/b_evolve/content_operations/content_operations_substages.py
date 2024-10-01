@@ -1,21 +1,15 @@
-from bclearer_core.common_knowledge.content_operation_types import (
-    ContentOperationTypes,
-)
-from bclearer_core.configurations.content_operation_configurations import (
-    ContentOperationConfigurations,
-)
-from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.universe_merger import (
-    merge_universes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
-    create_empty_nf_ea_universe,
-)
+from bclearer_core.common_knowledge.content_operation_types import \
+    ContentOperationTypes
+from bclearer_core.configurations.content_operation_configurations import \
+    ContentOperationConfigurations
+from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.universe_merger import \
+    merge_universes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import \
+    create_empty_nf_ea_universe
 
 
 class ContentOperationsSubstages:

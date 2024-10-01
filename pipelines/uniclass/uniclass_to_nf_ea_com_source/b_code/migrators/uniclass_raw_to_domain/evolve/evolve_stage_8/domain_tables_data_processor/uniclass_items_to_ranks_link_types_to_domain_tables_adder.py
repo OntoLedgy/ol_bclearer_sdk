@@ -1,14 +1,9 @@
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
-    left_merge_dataframes,
-)
+from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
+    left_merge_dataframes
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS,
-    OBJECT_NAME_COLUMN_NAME,
-    RELATION_TYPE_NAMES_COLUMN_NAME,
-    RELATION_TYPE_UUIDS_COLUMN_NAME,
-    UNICLASS_CLASSIFICATION_TYPE_OF_RELATION,
-    UUID_COLUMN_NAME,
-)
+    LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS, OBJECT_NAME_COLUMN_NAME,
+    RELATION_TYPE_NAMES_COLUMN_NAME, RELATION_TYPE_UUIDS_COLUMN_NAME,
+    UNICLASS_CLASSIFICATION_TYPE_OF_RELATION, UUID_COLUMN_NAME)
 
 
 def add_uniclass_items_to_ranks_link_types_to_domain_tables(

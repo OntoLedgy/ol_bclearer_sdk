@@ -1,22 +1,16 @@
 from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_filename_constants import (
     CONTENT_UNIVERSE_BCLEARER_OS_INSPIRE_LINK_FILENAME,
-    CONTENT_UNIVERSE_BCLEARER_OS_INSPIRE_LINK_FILENAME_HDF5,
-)
-from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_namespace_constants import (
-    CONTENT_OPERATIONS_RESOURCES_NAMESPACE,
-)
-from bclearer_source.b_code.common_knowledge.content_operation_types import (
-    ContentOperationTypes,
-)
-from bclearer_source.b_code.configurations.content_operation_configurations import (
-    ContentOperationConfigurations,
-)
-from bclearer_source.b_code.configurations.load_ea_model_configurations import (
-    LoadEaModelConfigurations,
-)
-from bclearer_source.b_code.configurations.load_hdf5_model_configurations import (
-    LoadHdf5ModelConfigurations,
-)
+    CONTENT_UNIVERSE_BCLEARER_OS_INSPIRE_LINK_FILENAME_HDF5)
+from bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_namespace_constants import \
+    CONTENT_OPERATIONS_RESOURCES_NAMESPACE
+from bclearer_source.b_code.common_knowledge.content_operation_types import \
+    ContentOperationTypes
+from bclearer_source.b_code.configurations.content_operation_configurations import \
+    ContentOperationConfigurations
+from bclearer_source.b_code.configurations.load_ea_model_configurations import \
+    LoadEaModelConfigurations
+from bclearer_source.b_code.configurations.load_hdf5_model_configurations import \
+    LoadHdf5ModelConfigurations
 
 
 def get_2e_d1_configuration_load_ea_inspire_bclearer_link() -> (

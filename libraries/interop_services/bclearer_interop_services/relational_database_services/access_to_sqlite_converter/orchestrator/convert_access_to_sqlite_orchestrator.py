@@ -1,20 +1,14 @@
 import os
 
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.relational_database_services.access_service.access import (
-    read_access_into_dictionary_of_dataframes,
-)
-from bclearer_interop_services.relational_database_services.sqlite_service.dictionary_of_dataframes_to_sqlite_exporter import (
-    export_dictionary_of_dataframes_to_sqlite,
-)
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.relational_database_services.access_service.access import \
+    read_access_into_dictionary_of_dataframes
+from bclearer_interop_services.relational_database_services.sqlite_service.dictionary_of_dataframes_to_sqlite_exporter import \
+    export_dictionary_of_dataframes_to_sqlite
+from nf_common.code.services.reporting_service.reporters.log_file import \
+    LogFiles
 
 
 # TODO: Add runner for this method (run_bapp)

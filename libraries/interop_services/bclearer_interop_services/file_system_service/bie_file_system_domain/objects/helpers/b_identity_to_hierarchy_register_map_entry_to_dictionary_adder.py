@@ -1,24 +1,16 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_files import (
-    BIdentityFiles,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import (
-    BIdentityFolders,
-)
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
-    HierarchyFileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-    HierarchyFolders,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_files import \
+    BIdentityFiles
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import \
+    BIdentityFolders
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
+    HierarchyFileSystemObjects
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+    HierarchyFolders
 
 
 def add_b_identity_to_hierarchy_register_map_entry_to_dictionary(
@@ -26,9 +18,8 @@ def add_b_identity_to_hierarchy_register_map_entry_to_dictionary(
     hierarchy_file_system_object: HierarchyFileSystemObjects,
     file_system_object: FileSystemObjects,
 ) -> None:
-    from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import (
-        BIdentityFileSystemObjectUniverseRegisters,
-    )
+    from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import \
+        BIdentityFileSystemObjectUniverseRegisters
 
     if not isinstance(
         b_identity_file_system_object_universe_register,

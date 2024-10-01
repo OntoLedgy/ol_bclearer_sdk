@@ -1,6 +1,5 @@
-from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import (
-    convert_table_as_dictionary_to_dataframe,
-)
+from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import \
+    convert_table_as_dictionary_to_dataframe
 from pandas import DataFrame
 
 
