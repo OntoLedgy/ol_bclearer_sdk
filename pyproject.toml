@@ -89,16 +89,16 @@ ignore = [
     "ICN001",  #unconventional-import-alias*
     "PTH118",  #os-path-join
     "FIX002",  #line-contains-todo
-    #"TD002",  #missing-todo-author
-    #"TD003",  #missing-todo-link
+    "TD002",  #missing-todo-author
+    "TD003",  #missing-todo-link
     "N803",  #invalid-argument-name
     "N802",  #invalid-function-name
     "FBT001",  #boolean-type-hint-positional-argument
     "PTH123",  #builtin-open
     "PLR0913",  #too-many-arguments
     "PD002",  #pandas-use-of-inplace-argument*
-    #"W291",  #trailing-whitespace*
-    #"N999",  #invalid-module-name
+    "W291",  #trailing-whitespace*
+    "N999",  #invalid-module-name
     "S101",  #assert
     #"RUF013",  #implicit-optional*
     "B007",  #unused-loop-control-variable*
