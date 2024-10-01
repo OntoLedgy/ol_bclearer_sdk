@@ -1,7 +1,7 @@
 import pandas
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.bclearer_load_hashifier import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.bclearer_load_hashifier import \
     hashify_bclearer_load
-from nf_common.code.services.bclearer_load_service.summarize.summary_hash_dataframe_creator import \
+from bclearer_orchestration_services.bclearer_load_service.summarize.summary_hash_dataframe_creator import \
     create_summary_hash_dataframe
 
 

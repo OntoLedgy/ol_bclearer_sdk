@@ -27,3 +27,4 @@ neo4j
 graphviz
 
 psycopg2
+pymongo

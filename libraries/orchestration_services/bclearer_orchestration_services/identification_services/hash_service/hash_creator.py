@@ -1,6 +1,6 @@
 import hashlib
 
-from storage_interop_services_source.code.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
 
 
 def create_tiny_hash_string(

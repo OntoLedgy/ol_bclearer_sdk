@@ -1,6 +1,6 @@
-from nf_common.code.services.identification_services.b_identity_ecosystem.converters.object_to_bie_consumable_object_item_converter import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.object_to_bie_consumable_object_item_converter import \
     convert_object_to_bie_consumable_object_item
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
     BieIdentitySpaces
 
 

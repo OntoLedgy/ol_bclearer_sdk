@@ -1,9 +1,12 @@
-from neo4j_object_models.Neo4jConnection import Neo4jConnection
+# from neo4j_object_models.neo4j_connections import Neo4jConnection
+
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import Neo4jConnections
+
 
 class Neo4jWrapper:
     def __init__(
             self, 
-            neo4jconnection:Neo4jConnection):
+            neo4jconnection:Neo4jConnections):
         
         self.driver = neo4jconnection.driver
         self.neo4jconnection = neo4jconnection        

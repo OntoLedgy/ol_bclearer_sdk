@@ -1,5 +1,5 @@
 import pandas
-from nf_common.code.services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
+from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
     CONTENT_HASHES_CONFIGURATION_NAME, CORE_CONTENT_HASHES_CONFIGURATION_NAME, \
     ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME, IDENTITY_HASHES_CONFIGURATION_NAME
 

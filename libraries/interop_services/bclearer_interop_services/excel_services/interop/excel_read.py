@@ -1,6 +1,6 @@
 from pandas import read_excel
 
-from storage_interop_services_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 from nf_common.code.services.reporting_service.reporters.log_with_datetime import log_message
 
 

@@ -1,6 +1,6 @@
 import numpy
 from nf_common.code.services.reporting_service.reporters.log_with_datetime import log_message
-from nf_common.code.services.identification_services.pandas_null_values.pandas_null_value_types import PandasNullValueTypes
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import PandasNullValueTypes
 
 
 def get_cell_pandas_null_value_type(

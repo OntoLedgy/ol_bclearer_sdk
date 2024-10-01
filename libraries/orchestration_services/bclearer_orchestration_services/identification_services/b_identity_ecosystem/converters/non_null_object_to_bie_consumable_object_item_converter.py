@@ -1,6 +1,6 @@
-from nf_common.code.services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import \
     DataTypeRecognition
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
     BieIdentitySpaces
 
 

@@ -1,14 +1,19 @@
+from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_loader_configurations import Neo4jLoaderConfigurations
+from bclearer_interop_services.graph_services.neo4j_service.constants.GraphDataObjectTypes import GraphObjectTypes
 import bclearer_interop_services.graph_services.neo4j_service.object_models as neo4j_object_models
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import Neo4jDataLoadOrchestrator
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.nodes_load_information_getter import get_graph_object_load_information
 
-from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
-from neo4j_object_models.Neo4jConnection import Neo4jConnection
-from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
-from neo4j_orchestrators.DataLoadOrchestrator import Neo4jDataLoadOrchestrator
-from neo4j_orchestrators.helpers.nodes_load_information_getter import get_graph_object_load_information
+# from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
+# from neo4j_object_models.neo4j_connections import Neo4jConnection
+# from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
+# from neo4j_orchestrators.DataLoadOrchestrator import Neo4jDataLoadOrchestrator
+# from neo4j_orchestrators.helpers.nodes_load_information_getter import get_graph_object_load_information
 
 
 def orchestrate_csv_to_neo4j_data_load(
-        neo4j_connection:Neo4jConnection,
+        neo4j_connection:Neo4jConnections,
         neo4j_loader_configuration:Neo4jLoaderConfigurations,
         object_type: GraphObjectTypes):
     

@@ -1,7 +1,6 @@
-from nf_common.code.services.identification_services.b_identity_service.b_identity_registries import \
-    BIdentityRegistries
-from nf_common.code.services.identification_services.b_identity_service.initialise.b_identity_universe_initialiser import \
-    initialise_b_identity_universe
+
+from libraries.orchestration_services.bclearer_orchestration_services.identification_services.b_identity_service.b_identity_registries import BIdentityRegistries
+from libraries.orchestration_services.bclearer_orchestration_services.identification_services.b_identity_service.initialise.b_identity_universe_initialiser import initialise_b_identity_universe
 
 
 class BIdentityUniverses:

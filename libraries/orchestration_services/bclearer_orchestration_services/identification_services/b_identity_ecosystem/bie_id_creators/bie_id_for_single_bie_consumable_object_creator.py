@@ -1,10 +1,10 @@
-from nf_common.code.services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_base_from_bie_encoding_creator import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_base_from_bie_encoding_creator import \
     create_bie_id_base_from_bie_encoding
-from nf_common.code.services.identification_services.b_identity_ecosystem.converters.bie_consumable_object_to_bie_encoding_converter import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.converters.bie_consumable_object_to_bie_encoding_converter import \
     convert_bie_consumable_object_to_bie_encoding
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
     BieIdentitySpaces
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
 
 
 def create_bie_id_for_single_bie_consumable_object(

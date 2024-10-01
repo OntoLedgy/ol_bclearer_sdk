@@ -1,7 +1,7 @@
 from bclearer_interop_services.file_system_service.bie_file_system_domain.common_knowledge.file_system_b_identity_types import \
     FileSystemBIdentityTypes
 from bclearer_interop_services.file_system_service.objects.file_system_objects import FileSystemObjects
-from nf_common.code.services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_strings_creator import \
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_strings_creator import \
     create_b_identity_sum_from_strings
 
 

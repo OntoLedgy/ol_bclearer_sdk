@@ -1,12 +1,12 @@
 import pandas
-from nf_common.code.services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
+from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
     IDENTITY_HASHES_CONFIGURATION_NAME, ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME, \
     CORE_CONTENT_HASHES_CONFIGURATION_NAME, CONTENT_HASHES_CONFIGURATION_NAME
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.hash_creators.content_hash_column_using_all_columns_adder import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.hash_creators.content_hash_column_using_all_columns_adder import \
     add_content_hash_column_using_all_columns
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.hash_creators.named_hash_column_adder import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.hash_creators.named_hash_column_adder import \
     add_named_hash_column
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configurations import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configurations import \
     BclearerLoadConfigurations
 
 

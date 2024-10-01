@@ -1,9 +1,9 @@
 import pandas
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configuration_creator import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configuration_creator import \
     create_bclearer_load_configuration
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.hashified_target_dataframe_filterer import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.hashified_target_dataframe_filterer import \
     filter_hashified_target_dataframe
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.target_dataframe_hashifier import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.target_dataframe_hashifier import \
     hashify_target_dataframe
 
 

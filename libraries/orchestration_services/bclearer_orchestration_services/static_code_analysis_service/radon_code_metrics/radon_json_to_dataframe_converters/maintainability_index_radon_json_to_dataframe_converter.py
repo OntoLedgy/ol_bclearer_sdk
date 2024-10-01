@@ -1,6 +1,6 @@
 import pandas
 
-from nf_common.code.services.identification_services.uuid_service.uuid_from_list_factory import \
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_from_list_factory import \
     create_uuid_from_list
 
 

@@ -1,10 +1,10 @@
 import pandas
-from nf_common.code.services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
+from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
     IDENTITY_HASHES_CONFIGURATION_NAME, ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME, \
     CORE_CONTENT_HASHES_CONFIGURATION_NAME, \
     COLUMNS_IN_SCOPE_CONFIGURATION_NAME, VALUES_CONFIGURATION_COLUMN_NAME, KEY_NAMES_CONFIGURATION_COLUMN_NAME, \
     CONTENT_HASHES_CONFIGURATION_NAME
-from nf_common.code.services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configurations import \
+from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.configuration.bclearer_load_configurations import \
     BclearerLoadConfigurations
 
 

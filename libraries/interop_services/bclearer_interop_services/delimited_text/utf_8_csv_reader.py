@@ -3,7 +3,7 @@ import sys
 import os
 import pandas
 
-from storage_interop_services_source.code.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
 from bclearer_interop_services.file_system_service.encoding import detect
 from bclearer_interop_services.file_system_service.objects.files import Files
 

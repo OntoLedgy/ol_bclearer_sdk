@@ -1,5 +1,5 @@
 from pandas import DataFrame
-from storage_interop_services_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 from bclearer_interop_services.dataframe_service.dataframe_mergers import left_merge_dataframes
 
 

@@ -7,7 +7,7 @@ from collections import deque
 import pandas as pd
 import configparser
 
-from source.code.services.storage_interop_services.graph_processing_services.neo4j_services.object_models.Neo4jLoader import Neo4jLoader
+from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jLoader import Neo4jLoader
 
 def synchronized(func):
 

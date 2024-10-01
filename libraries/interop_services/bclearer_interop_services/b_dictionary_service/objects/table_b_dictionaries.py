@@ -2,9 +2,9 @@ from bclearer_interop_services.b_dictionary_service.common_knowledge.table_b_dic
     TableBDictionaryReturnTypes
 from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import BDictionaries
 from bclearer_interop_services.b_dictionary_service.objects.row_b_dictionaries import RowBDictionaries
-from nf_common.code.services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_for_multiple_objects_creator import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_for_multiple_objects_creator import \
     create_bie_id_for_multiple_objects
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
 
 
 class TableBDictionaries(

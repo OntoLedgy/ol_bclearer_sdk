@@ -1,6 +1,6 @@
 import pandas
-from nf_common.code.services.identification_services.hash_service.hash_creator import create_hash_with_sorted_inputs
-from nf_common.code.services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import create_hash_with_sorted_inputs
+from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
     CONTENT_HASHES_CONFIGURATION_NAME
 
 

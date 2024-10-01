@@ -1,7 +1,7 @@
 import os
 import pyspark
 from bclearer_interop_services.file_system_service.objects.folders import Folders
-from nf_common.code.services.identification_services.hash_service.hash_creator import create_identity_hash_string
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import create_identity_hash_string
 
 
 # TODO: to further work of collapsing the similar methods and parametrize the engine and the compression (for example)

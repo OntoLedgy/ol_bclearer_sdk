@@ -1,5 +1,5 @@
 from bclearer_interop_services.file_system_service.objects.files import Files
-from nf_common.code.services.bclearer_load_service.bclearer_load_hashify_and_summarize_orchestrator import \
+from bclearer_orchestration_services.bclearer_load_service.bclearer_load_hashify_and_summarize_orchestrator import \
     orchestrate_bclearer_load_hashify_and_summarize
 from bclearer_interop_services.delimited_text.utf_8_csv_reader import \
     convert_utf_8_csv_with_header_file_to_dataframe

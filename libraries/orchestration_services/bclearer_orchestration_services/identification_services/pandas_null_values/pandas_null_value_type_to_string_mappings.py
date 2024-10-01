@@ -1,5 +1,5 @@
-from nf_common.code.services.identification_services.pandas_null_values.pandas_null_value_types import PandasNullValueTypes
-from nf_common.code.services.identification_services.pandas_null_values.pandas_null_value_swap_between_types import PandasNullValueSwapBetweenTypes
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import PandasNullValueTypes
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_swap_between_types import PandasNullValueSwapBetweenTypes
 
 
 # TODO - Oscar to add the ones we need

@@ -1,5 +1,5 @@
-from storage_interop_services_source.code.constants.standard_constants import UTF_8_ENCODING_NAME
-from nf_common.code.services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_bytes_creator import \
+from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_bytes_creator import \
     create_b_identity_base_from_bytes
 
 

@@ -1,12 +1,12 @@
 
-from source.code.services.storage_interop_services.graph_processing_services.neo4j_services.orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset, get_load_dataset_by_graph_object_type
-from source.code.services.storage_interop_services.graph_processing_services.neo4j_services.orchestrators.helpers.read_cypher_queries import generate_list_from_text
-from source.code.services.storage_interop_services.graph_processing_services.neo4j_services.object_models.Neo4jConnection import Neo4jConnection
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset, get_load_dataset_by_graph_object_type
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import generate_list_from_text
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import Neo4jConnections
 
 class TestNeo4jStandardOperations():
     def test_delete_neo4j_database(
             self,
-            neo4j_connection:Neo4jConnection):
+            neo4j_connection:Neo4jConnections):
       
         self.cypher_query = "MATCH (n) DETACH DELETE n"
 

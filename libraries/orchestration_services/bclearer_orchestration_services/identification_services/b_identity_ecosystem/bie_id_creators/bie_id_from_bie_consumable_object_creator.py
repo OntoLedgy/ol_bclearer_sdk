@@ -1,11 +1,11 @@
 from typing import List
-from nf_common.code.services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_for_single_bie_consumable_object_creator import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.bie_id_creators.bie_id_for_single_bie_consumable_object_creator import \
     create_bie_id_for_single_bie_consumable_object
-from nf_common.code.services.identification_services.b_identity_ecosystem.bie_id_creators.sum_bie_id_from_multiple_bie_ids_creator import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.bie_id_creators.sum_bie_id_from_multiple_bie_ids_creator import \
     create_sum_bie_id_from_multiple_bie_ids
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_consumable_objects import \
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_consumable_objects import \
     BieConsumableObjects
-from nf_common.code.services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import BieIds
 
 
 def create_bie_id_from_bie_consumable_object(

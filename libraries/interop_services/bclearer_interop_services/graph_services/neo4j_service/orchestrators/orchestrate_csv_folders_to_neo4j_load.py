@@ -1,11 +1,18 @@
 import os
 
-from neo4j_constants import LoaderDataFolderNames
-from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
-from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
-from neo4j_object_models.Neo4jConnection import Neo4jConnection
-from neo4j_orchestrators.orchestrate_csv_file_to_neo4j_data_load import orchestrate_csv_to_neo4j_data_load
-from neo4j_orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset_by_graph_object_type
+from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_loader_configurations import Neo4jLoaderConfigurations
+from bclearer_interop_services.graph_services.neo4j_service.constants import LoaderDataFolderNames
+from bclearer_interop_services.graph_services.neo4j_service.constants.GraphDataObjectTypes import GraphObjectTypes
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset_by_graph_object_type
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_file_to_neo4j_data_load import orchestrate_csv_to_neo4j_data_load
+
+# from neo4j_constants import LoaderDataFolderNames
+# from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
+# from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
+# from neo4j_object_models.neo4j_connections import Neo4jConnection
+# from neo4j_orchestrators.orchestrate_csv_file_to_neo4j_data_load import orchestrate_csv_to_neo4j_data_load
+# from neo4j_orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset_by_graph_object_type
 
 def orchestrate_csv_folders_to_neo4j_load(
 		neo4j_loader_configuration_path,     				
@@ -32,7 +39,7 @@ def orchestrate_csv_folders_to_neo4j_load(
         graph_object_type=GraphObjectTypes.EDGES)  
     
 def orchestrate_graph_object_load(
-        neo4j_connection:Neo4jConnection,
+        neo4j_connection:Neo4jConnections,
         neo4j_loader_configuration:Neo4jLoaderConfigurations,   
         graph_object_load_dataset,
         graph_object_type:GraphObjectTypes):

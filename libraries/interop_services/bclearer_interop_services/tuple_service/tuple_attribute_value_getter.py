@@ -1,4 +1,4 @@
-from storage_interop_services_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 
 
 def get_tuple_attribute_value_if_required(

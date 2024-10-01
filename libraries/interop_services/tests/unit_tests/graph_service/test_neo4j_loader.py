@@ -1,5 +1,5 @@
-from neo4j_service.object_models.Neo4jLoader import Neo4jLoader
-from neo4j_service.object_models.Neo4jConnection import Neo4jConnection
+# from bclearer_interop_services.graph_services.neo4j_service.object_models. import Neo4jLoader
+# from neo4j_service.object_models.neo4j_connections import Neo4jConnection
 
 import unittest
 from unittest.mock import Mock, patch
@@ -12,7 +12,7 @@ class TestNeo4jLoader(unittest.TestCase):
         self.mock_session = Mock()
         self.mock_connection = Mock(return_value=self.mock_session)
 
-        patcher = patch('source.code.neo4j_services.object_models.Neo4jConnection', self.mock_connection)
+        patcher = patch('source.code.neo4j_services.object_models.neo4j_connections', self.mock_connection)
         patcher.start()
         self.addCleanup(patcher.stop)
 
