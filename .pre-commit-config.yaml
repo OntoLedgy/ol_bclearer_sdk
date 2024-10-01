@@ -17,7 +17,7 @@ repos:
     hooks:
     - id: pytest
       name: pytest
-      entry: ../../environments/env_ol_bclearer_sdk/Scripts/pytest.exe
-      exclude: ^migrations
-      language: system
+      entry: pytest
+      language: python
       types: [python]
+      args: ["tests/"]
