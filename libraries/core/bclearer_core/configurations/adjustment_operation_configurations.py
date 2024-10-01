@@ -1,32 +1,40 @@
-from bclearer_core.common_knowledge.adjustment_operation_types import AdjustmentOperationTypes
-from bclearer_core.configurations.load_hdf5_model_configurations import LoadHdf5ModelConfigurations
-from bclearer_core.configurations.operation_configurations import OperationConfigurations
+from bclearer_core.common_knowledge.adjustment_operation_types import (
+    AdjustmentOperationTypes,
+)
+from bclearer_core.configurations.load_hdf5_model_configurations import (
+    LoadHdf5ModelConfigurations,
+)
+from bclearer_core.configurations.operation_configurations import (
+    OperationConfigurations,
+)
 
 
 class AdjustmentOperationConfigurations(
-        OperationConfigurations):
+    OperationConfigurations,
+):
     def __init__(
-            self,
-            adjustment_operation_type: AdjustmentOperationTypes,
-            adjustment_universe_load_hdf5_model_configuration: LoadHdf5ModelConfigurations,
-            output_universe_short_name: str):
+        self,
+        adjustment_operation_type: AdjustmentOperationTypes,
+        adjustment_universe_load_hdf5_model_configuration: LoadHdf5ModelConfigurations,
+        output_universe_short_name: str,
+    ):
         super().__init__(
-            operation_type=adjustment_operation_type)
+            operation_type=adjustment_operation_type,
+        )
 
-        self.adjustment_universe_load_hdf5_model_configuration = \
-            adjustment_universe_load_hdf5_model_configuration
+        self.adjustment_universe_load_hdf5_model_configuration = adjustment_universe_load_hdf5_model_configuration
 
-        self.output_universe_short_name = \
+        self.output_universe_short_name = (
             output_universe_short_name
+        )
 
-    def __enter__(
-            self):
-        return \
-            self
+    def __enter__(self):
+        return self
 
     def __exit__(
-            self,
-            exception_type,
-            exception_value,
-            traceback):
+        self,
+        exception_type,
+        exception_value,
+        traceback,
+    ):
         pass

@@ -1,5 +1,9 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import NfEaComColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
 
 LIST_OF_NF_UUID_COLUMN_NAMES = [
     NfColumnTypes.NF_UUIDS.column_name,
@@ -12,17 +16,17 @@ LIST_OF_NF_UUID_COLUMN_NAMES = [
     NfEaComColumnTypes.ELEMENTS_SUPPLIER_PLACE1_END_CONNECTORS.column_name,
     # It is used in the data both as uuid field and uuid list field
     NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS.column_name,
-    'provider',
-    'dependent',
-    'specialisation',
-    'generalisation',
-    'child',
-    'parent',
-    'ea_client',
-    'ea_stereotype',
+    "provider",
+    "dependent",
+    "specialisation",
+    "generalisation",
+    "child",
+    "parent",
+    "ea_client",
+    "ea_stereotype",
     NfEaComColumnTypes.STEREOTYPE_EA_STEREOTYPE_GROUP.column_name,
     NfEaComColumnTypes.STEREOTYPE_CLIENT_NF_UUIDS.column_name,
-    'stereotype_nf_uuids'
+    "stereotype_nf_uuids",
 ]
 
 LIST_OF_NF_UUID_LISTS_COLUMN_NAMES = [
@@ -36,5 +40,5 @@ LIST_OF_NF_UUID_LISTS_COLUMN_NAMES = [
     NfEaComColumnTypes.ELEMENTS_CONTAINED_EA_CLASSIFIERS.column_name,
     NfEaComColumnTypes.STEREOTYPEABLE_OBJECTS_EA_OBJECT_STEREOTYPES.column_name,
     NfEaComColumnTypes.PACKAGES_CONTAINED_EA_PACKAGES.column_name,
-    'paths'
+    "paths",
 ]

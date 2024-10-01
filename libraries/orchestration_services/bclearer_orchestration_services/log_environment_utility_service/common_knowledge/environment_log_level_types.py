@@ -1,17 +1,11 @@
-from enum import auto
-from enum import Enum
+from enum import Enum, auto
 
 
-class EnvironmentLogLevelTypes(
-        Enum):
-    NOT_SET = \
-        auto()
+class EnvironmentLogLevelTypes(Enum):
+    NOT_SET = auto()
 
-    NONE = \
-        auto()
+    NONE = auto()
 
-    FULL = \
-        auto()
+    FULL = auto()
 
-    FILTERED = \
-        auto()
+    FILTERED = auto()

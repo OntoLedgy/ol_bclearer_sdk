@@ -49,14 +49,16 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-poetry-${{ matrix.python-version }}
 
+
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        poetry install
+
     - name: Test CI Trigger
       run: echo "triggered successfully checked out"
 
-#    # Step 3: Install dependencies
-#    - name: Install dependencies
-#      run: |
-#        poetry install
-#
 #    # Step 4: Run linters and code formatters (ruff)
 #    - name: Lint with ruff
 #      run: |

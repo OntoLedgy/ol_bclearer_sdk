@@ -1,8 +1,19 @@
 from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
-from bclearer_interop_services.excel_services.object_model.Cells import Cells
+
+from bclearer_interop_services.excel_services.object_model.Cells import (
+    Cells,
+)
+
 
 class Ranges:
-    def __init__(self, sheet: OpenpyxlWorksheet, min_row: int, min_col: int, max_row: int, max_col: int):
+    def __init__(
+        self,
+        sheet: OpenpyxlWorksheet,
+        min_row: int,
+        min_col: int,
+        max_row: int,
+        max_col: int,
+    ):
         self.sheet = sheet
         self.min_row = min_row
         self.min_col = min_col
@@ -10,5 +21,13 @@ class Ranges:
         self.max_col = max_col
 
     def __iter__(self):
-        for row in self.sheet.iter_rows(min_row=self.min_row, max_row=self.max_row, min_col=self.min_col, max_col=self.max_col):
-            yield [Cells(cell) for cell in row]
+        for row in self.sheet.iter_rows(
+            min_row=self.min_row,
+            max_row=self.max_row,
+            min_col=self.min_col,
+            max_col=self.max_col,
+        ):
+            yield [
+                Cells(cell)
+                for cell in row
+            ]

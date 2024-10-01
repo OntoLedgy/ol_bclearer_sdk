@@ -1,5 +1,3 @@
 class BDictionaries:
-    def __init__(
-            self):
-        self.dictionary = \
-            dict()
+    def __init__(self):
+        self.dictionary = dict()

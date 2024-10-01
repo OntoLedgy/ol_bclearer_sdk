@@ -1,5 +1,6 @@
 import re
 
+
 class CypherQueryWrapper:
     def __init__(self, query=""):
         self.query = query
@@ -7,33 +8,50 @@ class CypherQueryWrapper:
     # Read Cypher query from file
     def read_from_file(self, file_path):
         try:
-            with open(file_path, 'r') as file:
+            with open(
+                file_path,
+            ) as file:
                 self.query = file.read()
-            print("Query successfully read from file.")
+            print(
+                "Query successfully read from file.",
+            )
         except FileNotFoundError:
-            print(f"Error: {file_path} not found.")
+            print(
+                f"Error: {file_path} not found.",
+            )
         except Exception as e:
-            print(f"Error reading file: {e}")
+            print(
+                f"Error reading file: {e}",
+            )
 
     # Write Cypher query to file
     def write_to_file(self, file_path):
         try:
-            with open(file_path, 'w') as file:
+            with open(
+                file_path, "w",
+            ) as file:
                 file.write(self.query)
-            print(f"Query successfully written to {file_path}.")
+            print(
+                f"Query successfully written to {file_path}.",
+            )
         except Exception as e:
-            print(f"Error writing to file: {e}")
+            print(
+                f"Error writing to file: {e}",
+            )
 
     # Validate the Cypher query structure using a simple regex pattern
     def validate(self):
         # Basic validation to check if it's a valid Cypher query structure
         pattern = r"MATCH|CREATE|RETURN|WITH|SET|DELETE|MERGE"
-        if re.search(pattern, self.query, re.IGNORECASE):
+        if re.search(
+            pattern,
+            self.query,
+            re.IGNORECASE,
+        ):
             print("Query is valid.")
             return True
-        else:
-            print("Invalid Cypher query.")
-            return False
+        print("Invalid Cypher query.")
+        return False
 
     # Generate Cypher query to find all nodes of a specific label
     @staticmethod
@@ -42,11 +60,20 @@ class CypherQueryWrapper:
 
     # Generate Cypher query to find all edges of a specific type
     @staticmethod
-    def generate_find_all_edges(edge_type):
+    def generate_find_all_edges(
+        edge_type,
+    ):
         return f"MATCH ()-[r:{edge_type}]->() RETURN r"
 
     # Generate Cypher query to create a node with properties
     @staticmethod
-    def generate_create_node(label, properties):
-        prop_string = ", ".join([f"{key}: '{value}'" for key, value in properties.items()])
+    def generate_create_node(
+        label, properties,
+    ):
+        prop_string = ", ".join(
+            [
+                f"{key}: '{value}'"
+                for key, value in properties.items()
+            ],
+        )
         return f"CREATE (n:{label} {{ {prop_string} }}) RETURN n"

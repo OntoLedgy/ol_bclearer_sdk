@@ -1,13 +1,13 @@
 from enum import Enum, auto
 
 
-class DataTypeRecognition(
-        Enum):
-    NOT_SET = \
-        auto()
+class DataTypeRecognition(Enum):
+    NOT_SET = auto()
 
-    INCLUDE_DATA_TYPES_IN_BIE_CALCULATION = \
+    INCLUDE_DATA_TYPES_IN_BIE_CALCULATION = (
         auto()
+    )
 
-    DO_NOT_INCLUDE_DATA_TYPES_IN_BIE_CALCULATION = \
+    DO_NOT_INCLUDE_DATA_TYPES_IN_BIE_CALCULATION = (
         auto()
+    )

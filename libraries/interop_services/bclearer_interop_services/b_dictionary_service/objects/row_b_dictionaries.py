@@ -1,12 +1,12 @@
-from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import BDictionaries
+from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import (
+    BDictionaries,
+)
 
 
-class RowBDictionaries(
-        BDictionaries):
+class RowBDictionaries(BDictionaries):
     def __init__(
-            self,
-            dictionary: dict):
+        self, dictionary: dict,
+    ):
         super().__init__()
 
-        self.dictionary = \
-            dictionary
+        self.dictionary = dictionary

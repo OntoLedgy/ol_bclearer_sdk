@@ -1,50 +1,48 @@
-from platform import node
-import networkx as nx
 import matplotlib.pyplot as plt
+import networkx as nx
 
-class Networks(object):
 
-	def __init__(
-		self):
+class Networks:
 
-		self.network_graph = \
-			nx.Graph()
+    def __init__(self):
 
-	def add_node_list(
-		self,
-		nodes):
+        self.network_graph = nx.Graph()
 
-		self.network_graph.add_nodes_from(
-			nodes_for_adding = nodes)
-	
-	def add_edge_list(
-		self):
+    def add_node_list(self, nodes):
 
-		for node in list(self.network_graph.nodes):
+        self.network_graph.add_nodes_from(
+            nodes_for_adding=nodes,
+        )
 
-			for connected_node in node.connected_nodes:
+    def add_edge_list(self):
 
-				self.network_graph.add_edge(
-					node,
-					connected_node)
-	
-	def report_connected_nodes(
-		self):
-		
-		connected_node_list = \
-			nx.connected_components(
-				self.network_graph)
-		
-		return connected_node_list
+        for node in list(
+            self.network_graph.nodes,
+        ):
 
-	def show_graph(
-		self):
+            for (
+                connected_node
+            ) in node.connected_nodes:
 
-		print(
-			"drawing graph")
+                self.network_graph.add_edge(
+                    node, connected_node,
+                )
 
-		nx.draw(
-			self.network_graph)
+    def report_connected_nodes(self):
 
-		plt.draw()
-		plt.show()
+        connected_node_list = (
+            nx.connected_components(
+                self.network_graph,
+            )
+        )
+
+        return connected_node_list
+
+    def show_graph(self):
+
+        print("drawing graph")
+
+        nx.draw(self.network_graph)
+
+        plt.draw()
+        plt.show()

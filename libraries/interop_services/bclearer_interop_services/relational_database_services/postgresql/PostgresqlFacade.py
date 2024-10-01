@@ -1,79 +1,146 @@
-import psycopg2
-from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import DatabaseFacade
 import pandas as pd
+import psycopg2
+
+from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import (
+    DatabaseFacade,
+)
+
 
 class PostgresqlFacade(DatabaseFacade):
     def connect(self):
-        self.connection = psycopg2.connect(
-            host=self.host,
-            database=self.database,
-            user=self.user,
-            password=self.password
+        self.connection = (
+            psycopg2.connect(
+                host=self.host,
+                database=self.database,
+                user=self.user,
+                password=self.password,
+            )
         )
 
     def disconnect(self):
         if self.connection:
             self.connection.close()
 
-    def execute_query(self, query, params=None):
+    def execute_query(
+        self, query, params=None,
+    ):
         with self.connection.cursor() as cursor:
-            cursor.execute(query, params)
+            cursor.execute(
+                query, params,
+            )
             self.connection.commit()
 
-    def fetch_results(self, query, params=None)-> pd.DataFrame:
+    def fetch_results(
+        self, query, params=None,
+    ) -> pd.DataFrame:
         with self.connection.cursor() as cursor:
-            cursor.execute(query, params)
-            columns = [desc[0] for desc in cursor.description]
+            cursor.execute(
+                query, params,
+            )
+            columns = [
+                desc[0]
+                for desc in cursor.description
+            ]
             results = cursor.fetchall()
-        return pd.DataFrame(results, columns=columns)
+        return pd.DataFrame(
+            results, columns=columns,
+        )
 
-    def store_dataframe(self, dataframe, table_name):
-        cursor = self.connection.cursor()
+    def store_dataframe(
+        self, dataframe, table_name,
+    ):
+        cursor = (
+            self.connection.cursor()
+        )
 
         # Check if table exists
-        cursor.execute(f"""
+        cursor.execute(
+            """
             SELECT EXISTS (
                 SELECT FROM information_schema.tables 
                 WHERE table_schema = 'public' 
                 AND table_name = %s
             );
-        """, (table_name,))
+        """,
+            (table_name,),
+        )
 
-        table_exists = cursor.fetchone()[0]
+        table_exists = (
+            cursor.fetchone()[0]
+        )
 
         if table_exists:
             # Check schema conformity
-            cursor.execute(f"""
+            cursor.execute(
+                """
                 SELECT column_name, data_type 
                 FROM information_schema.columns 
                 WHERE table_name = %s;
-            """, (table_name,))
+            """,
+                (table_name,),
+            )
 
-            db_schema = cursor.fetchall()
-            df_schema = [(col, str(dtype)) for col, dtype in zip(dataframe.columns, dataframe.dtypes)]
+            db_schema = (
+                cursor.fetchall()
+            )
+            df_schema = [
+                (col, str(dtype))
+                for col, dtype in zip(
+                    dataframe.columns,
+                    dataframe.dtypes,
+                )
+            ]
 
-            db_schema_dict = {col: dtype for col, dtype in db_schema}
-            df_schema_dict = {col: dtype for col, dtype in df_schema}
+            db_schema_dict = {
+                col: dtype
+                for col, dtype in db_schema
+            }
+            df_schema_dict = {
+                col: dtype
+                for col, dtype in df_schema
+            }
 
-            if db_schema_dict != df_schema_dict:
-                raise ValueError("Schema of DataFrame does not match schema of the table.")
+            if (
+                db_schema_dict
+                != df_schema_dict
+            ):
+                raise ValueError(
+                    "Schema of DataFrame does not match schema of the table.",
+                )
 
             # Insert DataFrame into the existing table
-            for row in dataframe.itertuples(index=False, name=None):
+            for (
+                row
+            ) in dataframe.itertuples(
+                index=False, name=None,
+            ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",
-                    row
+                    row,
                 )
         else:
             # Create table and insert DataFrame
             col_defs = ", ".join(
-                [f"{col} {self._map_dtype(dtype)}" for col, dtype in zip(dataframe.columns, dataframe.dtypes)])
-            cursor.execute(f"CREATE TABLE {table_name} ({col_defs});")
+                [
+                    f"{col} {self._map_dtype(dtype)}"
+                    for col, dtype in zip(
+                        dataframe.columns,
+                        dataframe.dtypes,
+                    )
+                ],
+            )
+            cursor.execute(
+                f"CREATE TABLE {table_name} ({col_defs});",
+            )
 
-            for row in dataframe.itertuples(index=False, name=None):
+            for (
+                row
+            ) in dataframe.itertuples(
+                index=False, name=None,
+            ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",
-                    row
+                    row,
                 )
 
         self.connection.commit()
@@ -82,11 +149,12 @@ class PostgresqlFacade(DatabaseFacade):
     def _map_dtype(self, dtype):
         if "int" in str(dtype):
             return "INTEGER"
-        elif "float" in str(dtype):
+        if "float" in str(dtype):
             return "REAL"
-        elif "object" in str(dtype):
+        if "object" in str(dtype):
             return "TEXT"
-        elif "datetime" in str(dtype):
+        if "datetime" in str(dtype):
             return "TIMESTAMP"
-        else:
-            raise ValueError(f"Unrecognized dtype: {dtype}")
+        raise ValueError(
+            f"Unrecognized dtype: {dtype}",
+        )

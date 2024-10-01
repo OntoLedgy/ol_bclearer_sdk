@@ -2,18 +2,17 @@ from pandas import DataFrame
 
 
 def replace_dataframe_all_nan_with_empty_string(
-        dataframe: DataFrame,
-        columns: list = None) \
-        -> DataFrame:
+    dataframe: DataFrame,
+    columns: list = None,
+) -> DataFrame:
     if not columns:
-        columns = \
+        columns = (
             dataframe.columns.tolist()
+        )
 
-    for dataframe_column \
-            in columns:
-        dataframe[dataframe_column].fillna(
-            value=str(),
-            inplace=True)
+    for dataframe_column in columns:
+        dataframe[
+            dataframe_column
+        ].fillna(value="", inplace=True)
 
-    return \
-        dataframe
+    return dataframe

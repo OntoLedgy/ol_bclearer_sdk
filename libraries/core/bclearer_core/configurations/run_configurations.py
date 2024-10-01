@@ -1,6 +1,4 @@
 class RunConfigurations:
-    hdf5_output = \
-        False
+    hdf5_output = False
 
-    csv_output = \
-        True
+    csv_output = True

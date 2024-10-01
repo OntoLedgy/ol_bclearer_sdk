@@ -1,4 +1,7 @@
 import sys
-import bclearer_orchestration_services.log_environment_utility_service.loggers as loggers
+
+from bclearer_orchestration_services.log_environment_utility_service import (
+    loggers,
+)
 
 sys.modules["loggers"] = loggers

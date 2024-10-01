@@ -1,38 +1,43 @@
-from bclearer_core.common_knowledge.universe_modification_operation_types import \
-    UniverseModificationOperationTypes
-from bclearer_core.configurations.operation_configurations import OperationConfigurations
-from bclearer_core.configurations.universe_modification_configuration_objects import \
-    UniverseModificationConfigurationObjects
+from bclearer_core.common_knowledge.universe_modification_operation_types import (
+    UniverseModificationOperationTypes,
+)
+from bclearer_core.configurations.operation_configurations import (
+    OperationConfigurations,
+)
+from bclearer_core.configurations.universe_modification_configuration_objects import (
+    UniverseModificationConfigurationObjects,
+)
 
 
 class UniverseModificationOperationConfigurations(
-        OperationConfigurations):
+    OperationConfigurations,
+):
     def __init__(
-            self,
-            universe_modification_operation_type: UniverseModificationOperationTypes,
-            output_universe_short_name: str,
-            universe_modification_configuration_object: UniverseModificationConfigurationObjects = None,
-            package_name: str = None):
+        self,
+        universe_modification_operation_type: UniverseModificationOperationTypes,
+        output_universe_short_name: str,
+        universe_modification_configuration_object: UniverseModificationConfigurationObjects = None,
+        package_name: str = None,
+    ):
         super().__init__(
-            operation_type=universe_modification_operation_type)
+            operation_type=universe_modification_operation_type,
+        )
 
-        self.output_universe_short_name = \
+        self.output_universe_short_name = (
             output_universe_short_name
+        )
 
-        self.universe_modification_configuration_object = \
-            universe_modification_configuration_object
+        self.universe_modification_configuration_object = universe_modification_configuration_object
 
-        self.package_name = \
-            package_name
+        self.package_name = package_name
 
-    def __enter__(
-            self):
-        return \
-            self
+    def __enter__(self):
+        return self
 
     def __exit__(
-            self,
-            exception_type,
-            exception_value,
-            traceback):
+        self,
+        exception_type,
+        exception_value,
+        traceback,
+    ):
         pass

@@ -1,94 +1,132 @@
-from storage_interop_services_source.code.object_models.RelationalDatabaseClients import RelationalDatabaseClient
 import json
+
 import pandas as pd
+from storage_interop_services_source.code.object_models.RelationalDatabaseClients import (
+    RelationalDatabaseClient,
+)
+
 
 def fetch_data_in_chunks(
-			cursor, 
-			base_query:str,          
-			filter_list:[],
-			csv_file_path: str,                    
-			chunk_size=5):
-    
+    cursor,
+    base_query: str,
+    filter_list: [],
+    csv_file_path: str,
+    chunk_size=5,
+):
+
     columns_written = False
-    
+
     for i in range(
-         0, 
-         len(filter_list), 
-         chunk_size):
-        
-        chunk = filter_list[i:i + chunk_size]
-        
+        0, len(filter_list), chunk_size,
+    ):
+
+        chunk = filter_list[
+            i : i + chunk_size
+        ]
+
         filter_tuple = tuple(chunk)
-        
-        placeholders = ', '.join('?' for _ in filter_tuple)
-        query = base_query+f" IN ({placeholders})"
-        
+
+        placeholders = ", ".join(
+            "?" for _ in filter_tuple
+        )
+        query = (
+            base_query
+            + f" IN ({placeholders})"
+        )
+
         cursor.execute(
-             query, 
-             filter_tuple)
-        
-        columns = [column[0] for column in cursor.description]
-        
+            query, filter_tuple,
+        )
+
+        columns = [
+            column[0]
+            for column in cursor.description
+        ]
+
         results = cursor.fetchall()
-        
-        df_chunk = pd.DataFrame.from_records(
-             results, 
-             columns=columns)
 
-        if not columns_written:			
+        df_chunk = (
+            pd.DataFrame.from_records(
+                results, columns=columns,
+            )
+        )
+
+        if not columns_written:
 
             df_chunk.to_csv(
-				csv_file_path, 
-				index=False, 
-				mode='w', 
-				header=True)
+                csv_file_path,
+                index=False,
+                mode="w",
+                header=True,
+            )
 
-                        
             columns_written = True
-            
+
         else:
-			
+
             print("wrote chunk to csv")
-				
+
             df_chunk.to_csv(
-					csv_file_path, 
-					index=False, 
-					mode='a', 
-					header=False)
+                csv_file_path,
+                index=False,
+                mode="a",
+                header=False,
+            )
 
-configuration_file = \
-	r"C:\Apps\S\bclearer_common_services\relational_database_interop_services\source\sandpit\configuration.json_service"
 
-with open(configuration_file) as configuration_file:
-	configuration = json.load(configuration_file)
+configuration_file = r"C:\Apps\S\bclearer_common_services\relational_database_interop_services\source\sandpit\configuration.json_service"
 
-relational_database_client = RelationalDatabaseClient(
-	configuration['connection_string'])
+with open(
+    configuration_file,
+) as configuration_file:
+    configuration = json.load(
+        configuration_file,
+    )
 
-cursor = relational_database_client.cursor
+relational_database_client = (
+    RelationalDatabaseClient(
+        configuration[
+            "connection_string"
+        ],
+    )
+)
+
+cursor = (
+    relational_database_client.cursor
+)
 
 lubricants_sharepoint_sites_sheet = pd.read_excel(
-	r'C:\Apps\S\bclearer_common_services\relational_database_interop_services\source\data\PTX-T sites - Finalize.xlsx',
-	"PTXT Data")
+    r"C:\Apps\S\bclearer_common_services\relational_database_interop_services\source\data\PTX-T sites - Finalize.xlsx",
+    "PTXT Data",
+)
 
-lubricants_site_filter_list = lubricants_sharepoint_sites_sheet['WebURl'].tolist()
+lubricants_site_filter_list = (
+    lubricants_sharepoint_sites_sheet[
+        "WebURl"
+    ].tolist()
+)
 
-print ("searching for data in the following sites: ", 
-	lubricants_site_filter_list)
+print(
+    "searching for data in the following sites: ",
+    lubricants_site_filter_list,
+)
 
 base_query = "SELECT * FROM SPO_ItemLevel_Data WHERE SiteURL"
 
 fetch_data_in_chunks(
-	cursor=cursor,
-	base_query=base_query,
-	filter_list=lubricants_site_filter_list,
-	csv_file_path=r'bclearer_interop_services\data\filtered_data.csv',
-	chunk_size=1    )
+    cursor=cursor,
+    base_query=base_query,
+    filter_list=lubricants_site_filter_list,
+    csv_file_path=r"bclearer_interop_services\data\filtered_data.csv",
+    chunk_size=1,
+)
 
-print("The filtered data has been successfully written to 'filtered_data.csv'")
+print(
+    "The filtered data has been successfully written to 'filtered_data.csv'",
+)
 
 
-'''
+"""
 CREATE TABLE [dbo].[Teams_ItemLevel_Data](
 	[TeamUrl] [nvarchar](1000) NULL,
 	[TeamsName] [nvarchar](255) NULL,
@@ -138,4 +176,4 @@ CREATE TABLE [dbo].[SPO_ItemLevel_Data](
 	[Modifed By] [nvarchar](1024) NULL
 ) ON [PRIMARY]
 GO
-'''
+"""

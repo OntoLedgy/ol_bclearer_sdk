@@ -1,17 +1,13 @@
-from enum import Enum
-from enum import auto
+from enum import Enum, auto
 
 
 class TableRegisterBDictionaryReturnTypes(
-        Enum):
-    NOT_SET = \
-        auto()
+    Enum,
+):
+    NOT_SET = auto()
 
-    TABLE_ALREADY_EXISTS = \
-        auto()
+    TABLE_ALREADY_EXISTS = auto()
 
-    TABLE_CREATED = \
-        auto()
+    TABLE_CREATED = auto()
 
-    TABLE_ADDED = \
-        auto()
+    TABLE_ADDED = auto()

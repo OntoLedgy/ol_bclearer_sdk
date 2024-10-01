@@ -1,10 +1,15 @@
-import psycopg2
 from abc import ABC, abstractmethod
 
 
 # Abstract base class for the database facade
 class DatabaseFacade(ABC):
-    def __init__(self, host, database, user, password):
+    def __init__(
+        self,
+        host,
+        database,
+        user,
+        password,
+    ):
         self.host = host
         self.database = database
         self.user = user
@@ -20,15 +25,13 @@ class DatabaseFacade(ABC):
         pass
 
     @abstractmethod
-    def execute_query(self, query, params=None):
+    def execute_query(
+        self, query, params=None,
+    ):
         pass
 
     @abstractmethod
-    def fetch_results(self, query, params=None):
+    def fetch_results(
+        self, query, params=None,
+    ):
         pass
-
-
-
-
-
-

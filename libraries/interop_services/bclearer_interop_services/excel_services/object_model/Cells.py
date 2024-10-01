@@ -2,7 +2,9 @@ from openpyxl.cell.cell import Cell as OpenpyxlCell
 
 
 class Cells:
-    def __init__(self, cell: OpenpyxlCell):
+    def __init__(
+        self, cell: OpenpyxlCell,
+    ):
         self.cell = cell
 
     @property

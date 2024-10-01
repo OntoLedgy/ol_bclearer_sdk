@@ -39,6 +39,11 @@ openpyxl = "^3.1.5"
 neo4j = "^5.24.0"
 graphviz = "^0.20.3"
 psycopg2 = "^2.9.9"
+ruff = "^0.6.8"
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+isort = "^5.13.2"
+pymongo = "^4.10.0"
 
 [tool.poetry.group.dev.dependencies]
 #bclearer_core = { path = "libraries/core/", develop = true }
@@ -54,3 +59,174 @@ python_files = "test_*.py"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+fix = true
+
+select = ["ALL"]
+exclude = ["build", "dist"]
+ignore = [
+    "E501",  #line-too-long
+    "ANN001",  #missing-type-function-argument
+    "ANN101", #Missing type annotation for `self` in method
+    "D100",  #undocumented-public-module
+    "D103",  #undocumented-public-function
+    "ANN201",  #missing-return-type-undocumented-public-function
+    "RET504",  #unnecessary-assign*
+    #"W191",  #tab-indentation
+    "D102",  #undocumented-public-method
+    "D104",  #undocumented-public-package
+    "T201",  #print*
+    "ANN204",  #missing-return-type-special-method
+    "D101",  #undocumented-public-class
+    "F405",  #undefined-local-with-import-star-usage
+    "ANN202",  #missing-return-type-private-function
+    "N806",  #non-lowercase-variable-in-function
+    "D107",  #undocumented-public-init
+    "ERA001",  #commented-out-code*
+    "C408",  #unnecessary-collection-call*
+    "D105",  #undocumented-magic-method
+    "ICN001",  #unconventional-import-alias*
+    "PTH118",  #os-path-join
+    #"FIX002",  #line-contains-todo
+    #"TD002",  #missing-todo-author
+    #"TD003",  #missing-todo-link
+    "N803",  #invalid-argument-name
+    "N802",  #invalid-function-name
+    "FBT001",  #boolean-type-hint-positional-argument
+    "PTH123",  #builtin-open
+    "PLR0913",  #too-many-arguments
+    "PD002",  #pandas-use-of-inplace-argument*
+    #"W291",  #trailing-whitespace*
+    #"N999",  #invalid-module-name
+    "S101",  #assert
+    #"RUF013",  #implicit-optional*
+    "B007",  #unused-loop-control-variable*
+    "F821",  #undefined-name
+    "FBT002",  #boolean-default-value-positional-argument
+    #"FA100",  #future-rewritable-type-annotation
+    "PTH110",  #os-path-exists
+    "TRY003",  #raise-vanilla-args
+    "BLE001",  #blind-except
+    "F403",  #undefined-local-with-import-star
+    #"PERF401",  #manual-list-comprehension
+    "N816",  #mixed-case-variable-in-global-scope
+    "ANN205",  #missing-return-type-static-method
+    #"PERF102",  #incorrect-dict-iterator*
+    "PTH113",  #os-path-isfile
+    "F841",  #unused-variable*
+    "EM102",  #f-string-in-exception*
+    "SIM118",  #in-dict-keys*
+    "C901",  #complex-structure
+    "PD901",  #pandas-df-variable-name
+    #"TD004",  #missing-todo-colon
+    "E712",  #true-false-comparison*
+    "SIM115",  #open-file-with-context-handler
+    "ARG002",  #unused-method-argument
+    "PD011",  #pandas-use-of-dot-values
+    "PLR0912",  #too-many-branches
+    "PLR0915",  #too-many-statements
+    "EM101",  #raw-string-in-exception*
+    "PTH103",  #os-makedirs
+    "D205",  #blank-line-after-summary
+    "D400",  #ends-in-period
+    "D415",  #ends-in-punctuation
+    "PLR2004",  #magic-value-comparison
+    "ANN003",  #missing-type-kwargs
+    "B008",  #function-call-in-default-argument
+    "A002",  #builtin-argument-shadowing
+    "G004",  #logging-f-string
+    "RET503",  #implicit-return*
+    #"PTH207",  #glob
+    #"PERF403",  #manual-dict-comprehension
+    #"W293",  #blank-line-with-whitespace*
+    "D401",  #non-imperative-mood
+    "TRY300",  #try-consider-else
+    "S608",  #hardcoded-sql-expression
+    "SLF001",  #private-member-access
+    "SIM102",  #collapsible-if
+    "SIM103",  #needless-bool*
+    "ARG001",  #unused-function-argument
+    "PTH102",  #os-mkdir
+    "PTH112",  #os-path-isdir
+    "RUF005",  #collection-literal-concatenation*
+    "RUF004",  #Keyword argument must come after starred arguments
+    "ANN002",  #missing-type-args
+    #"S307",  #suspicious-eval-usage
+    "B006",  #mutable-argument-default*
+    "SIM112",  #uncapitalized-environment-variables
+    "E101",  #mixed-spaces-and-tabs
+    "UP031",  #printf-string-formatting*
+    #"RUF012",  #mutable-class-default
+    "A001",  #builtin-variable-shadowing
+    "C416",  #unnecessary-comprehension*
+    "ISC003",  #explicit-string-concatenation
+    "INP001",  #implicit-namespace-package
+    "PTH119",  #os-path-basename
+    #"PTH202",  #os-path-getsize
+    "PD008",  #pandas-use-of-dot-at
+    #"PERF203",  #try-except-in-loop
+    "D404",  #docstring-starts-with-this
+    #"PLR1714",  #repeated-equality-comparison*
+    "ANN206",  #missing-return-type-class-method
+    #"S603",  #subprocess-without-shell-equals-true
+    #"PYI024",  #collections-named-tuple
+    "PT009",  #pytest-unittest-assertion*
+    "SIM117",  #multiple-with-statements
+    "PTH100",  #os-path-abspath
+    "PTH107",  #os-remove
+    "PTH120",  #os-path-dirname
+    "PTH122",  #os-path-splitext
+    #"FLY002",  #static-join-to-f-string*
+    "E721",  #type-comparison
+    "E722",  #bare-except
+    "D200",  #fits-on-one-line*
+    "PLR0911",  #too-many-return-statements
+    #"PLW2901",  #redefined-loop-name
+    #"TRY401",  #verbose-log-message
+    "S105",  #hardcoded-password-string
+    "S110",  #try-except-pass
+    #"S320",  #suspicious-xmle-tree-usage
+    "S324",  #hashlib-insecure-hash-function
+    #"S607",  #start-process-with-partial-path
+    "B026",  #star-arg-unpacking-after-keyword-arg
+    "ISC002",  #multi-line-implicit-string-concatenation
+    "G003",  #logging-string-concat
+    "PIE810",  #multiple-starts-ends-with*
+    "SIM101",  #duplicate-isinstance-call*
+    "SIM105",  #suppressible-exception*
+    "SIM108",  #if-else-block-instead-of-if-exp*
+    "TCH002",  #typing-only-third-party-import*
+    "ARG005",  #unused-lambda-argument
+    "PTH101",  #os-chmod
+    "PTH104",  #os-rename
+    "PTH108",  #os-unlink
+    #"PTH203",  #os-path-getatime
+    #"PTH204",  #os-path-getmtime
+    #"PTH205",  #os-path-getctime
+    #"PTH206",  #os-sep-split
+    "N805",  #invalid-first-argument-name-for-method*
+    "PD003",  #pandas-use-of-dot-is-null
+    #"PERF402",  #manual-list-copy
+    "E711",  #none-comparison*
+    "F401",  #unused-import
+    "F811",  #redefined-while-unused
+    #"PLE0704",  #misplaced-bare-raise
+    "PLR1722",  #sys-exit-alias*
+    "RUF001",  #ambiguous-unicode-character-string
+    #"RUF015",  #unnecessary-iterable-allocation-for-first-element*
+    "TRY002",  #raise-vanilla-class
+    "PGH001", #No builtin `eval()` allowed
+    "TCH003", # Move standard library import  into a type-checking block
+    "PT004", #Fixture does not return anything, add leading underscore
+    "TCH001", #Move application import  into a type-checking block
+    "ANN102", #Missing type annotation for in classmethod
+    "E999", #SyntaxError: invalid syntax. Got unexpected token
+    "B905",
+    "E402", #Module level import not at top of file
+    "A003", #Class attribute `range` is shadowing a python builtin
+    "RET505", #Unnecessary `else` after `return` statement
+]
+
+[tool.black]
+line-length = 40  # Black's default is 88, but you can adjust it here

@@ -1,13 +1,10 @@
-from enum import Enum
-from enum import unique
-from enum import auto
+from enum import Enum, auto, unique
 
 
 @unique
 class EnumMoveAndReplaceResultTypes(
-        Enum):
-    SUCCESS = \
-        auto()
+    Enum,
+):
+    SUCCESS = auto()
 
-    FAILURE = \
-        auto()
+    FAILURE = auto()

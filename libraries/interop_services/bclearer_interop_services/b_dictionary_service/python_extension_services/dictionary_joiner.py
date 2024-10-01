@@ -1,11 +1,11 @@
 def join_dictionaries(
-        dictionaries: list) -> dict:
-    joined_dictionary = \
-        dict()
+    dictionaries: list,
+) -> dict:
+    joined_dictionary = dict()
 
     for dictionary in dictionaries:
         joined_dictionary.update(
-            dictionary)
+            dictionary,
+        )
 
-    return \
-        joined_dictionary
+    return joined_dictionary
