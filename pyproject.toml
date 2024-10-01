@@ -88,7 +88,7 @@ ignore = [
     "D105",  #undocumented-magic-method
     "ICN001",  #unconventional-import-alias*
     "PTH118",  #os-path-join
-    #"FIX002",  #line-contains-todo
+    "FIX002",  #line-contains-todo
     #"TD002",  #missing-todo-author
     #"TD003",  #missing-todo-link
     "N803",  #invalid-argument-name
