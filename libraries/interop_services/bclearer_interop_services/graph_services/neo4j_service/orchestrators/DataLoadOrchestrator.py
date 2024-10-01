@@ -19,8 +19,10 @@ class Neo4jDataLoadOrchestrator:
         neo4j_connection: Neo4jConnections,
         batch_size: int = 1000,
     ):
-        self.neo4j_wrapper = Neo4jWrapper(
-            neo4j_connection,
+        self.neo4j_wrapper = (
+            Neo4jWrapper(
+                neo4j_connection,
+            )
         )
 
         self.node_loader = NodeLoader(
@@ -39,8 +41,12 @@ class Neo4jDataLoadOrchestrator:
     ):
         if nodes_info:
             for node in nodes_info:
-                node_dataframe = pd.read_csv(
-                    node["csv_file"],
+                node_dataframe = (
+                    pd.read_csv(
+                        node[
+                            "csv_file"
+                        ],
+                    )
                 )
 
                 node_dataframe.fillna(
@@ -55,8 +61,12 @@ class Neo4jDataLoadOrchestrator:
 
         if edges_info:
             for edge in edges_info:
-                edge_dataframe = pd.read_csv(
-                    edge["csv_file"],
+                edge_dataframe = (
+                    pd.read_csv(
+                        edge[
+                            "csv_file"
+                        ],
+                    )
                 )
 
                 edge_dataframe.fillna(

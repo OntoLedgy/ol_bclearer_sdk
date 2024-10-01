@@ -24,17 +24,17 @@ def add_uniclass_parent_child_link_types_to_domain_tables(
         UNICLASS_PARENT_CHILD_LINK_TABLE_NAME
     ]
 
-    uniclass_objects_table = evolve_8_domain_tables[UNICLASS2015_OBJECT_TABLE_NAME]
+    uniclass_objects_table = evolve_8_domain_tables[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ]
 
     parent_child_subtypes_table = evolve_8_domain_tables[
         PARENT_CHILD_SUBTYPES_TABLE_NAME
     ]
 
-    uniclass_parent_child_link_table_with_ranks = (
-        __add_rank_column_to_uniclass_parent_child_link_table(
-            uniclass_parent_child_link_table=uniclass_parent_child_link_table,
-            uniclass_objects_table=uniclass_objects_table,
-        )
+    uniclass_parent_child_link_table_with_ranks = __add_rank_column_to_uniclass_parent_child_link_table(
+        uniclass_parent_child_link_table=uniclass_parent_child_link_table,
+        uniclass_objects_table=uniclass_objects_table,
     )
 
     uniclass_parent_child_link_table_with_connector_types = __add_connector_types_to_uniclass_parent_child_link_table(
@@ -42,9 +42,9 @@ def add_uniclass_parent_child_link_types_to_domain_tables(
         parent_child_subtypes_table=parent_child_subtypes_table,
     )
 
-    evolve_8_domain_tables[UNICLASS_PARENT_CHILD_LINK_TABLE_NAME] = (
-        uniclass_parent_child_link_table_with_connector_types
-    )
+    evolve_8_domain_tables[
+        UNICLASS_PARENT_CHILD_LINK_TABLE_NAME
+    ] = uniclass_parent_child_link_table_with_connector_types
 
     return evolve_8_domain_tables
 

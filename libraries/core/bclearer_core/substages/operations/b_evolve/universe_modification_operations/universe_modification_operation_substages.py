@@ -28,13 +28,15 @@ class UniverseModificationOperationsSubstages:
         universe_modification_operation_configuration: UniverseModificationOperationConfigurations,
         content_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = ea_tools_session_manager
-
-        self.universe_modification_operation_configuration = (
-            universe_modification_operation_configuration
+        self.ea_tools_session_manager = (
+            ea_tools_session_manager
         )
 
-        self.content_universe = content_universe
+        self.universe_modification_operation_configuration = universe_modification_operation_configuration
+
+        self.content_universe = (
+            content_universe
+        )
 
     def __enter__(self):
         return self
@@ -53,7 +55,9 @@ class UniverseModificationOperationsSubstages:
             short_name=self.universe_modification_operation_configuration.output_universe_short_name,
         )
 
-        universe_modification_configuration_object = self.universe_modification_operation_configuration.universe_modification_configuration_object
+        universe_modification_configuration_object = (
+            self.universe_modification_operation_configuration.universe_modification_configuration_object
+        )
 
         if (
             self.universe_modification_operation_configuration.operation_type

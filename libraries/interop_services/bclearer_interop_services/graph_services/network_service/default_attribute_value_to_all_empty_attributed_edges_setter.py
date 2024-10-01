@@ -14,10 +14,13 @@ def set_default_attribute_value_to_all_empty_attributed_edges(
         for source_node, target_node, attribute_dictionary in graph.edges(
             data=True,
         )
-        if attribute_dictionary == dict()
+        if attribute_dictionary
+        == dict()
     ]
 
-    for empty_attributed_edge in empty_attributed_edges:
+    for (
+        empty_attributed_edge
+    ) in empty_attributed_edges:
         set_attribute_to_edge(
             graph=graph,
             edge=empty_attributed_edge,

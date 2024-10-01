@@ -19,10 +19,8 @@ def orchestrate_domain_tables_creation_for_load_stage_4(
     folder_path: str,
     uniclass_source_data_resource_namespace: str,
 ) -> dict:
-    uniclass2015_dataframe_dictionary = (
-        load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
-            resource_namespace=uniclass_source_data_resource_namespace,
-        )
+    uniclass2015_dataframe_dictionary = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
+        resource_namespace=uniclass_source_data_resource_namespace,
     )
 
     uniclass2015_uuidified_dataframe_dictionary = uuidify_dictionary_of_dataframes(

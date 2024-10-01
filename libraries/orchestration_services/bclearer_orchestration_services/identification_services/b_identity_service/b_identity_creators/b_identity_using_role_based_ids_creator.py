@@ -15,7 +15,9 @@ def create_b_identity_using_role_based_ids(
 ) -> int:
     b_identity_role_components = list()
 
-    for b_identity_component in b_identity_components:
+    for (
+        b_identity_component
+    ) in b_identity_components:
         __add_component_to_components(
             role_based_type_instance=role_based_type_instance,
             b_identity_component=b_identity_component,

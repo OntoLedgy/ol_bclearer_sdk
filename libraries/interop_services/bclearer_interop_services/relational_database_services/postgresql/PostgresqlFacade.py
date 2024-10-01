@@ -7,11 +7,13 @@ from bclearer_interop_services.relational_database_services.RelationaDatabaseFac
 
 class PostgresqlFacade(DatabaseFacade):
     def connect(self):
-        self.connection = psycopg2.connect(
-            host=self.host,
-            database=self.database,
-            user=self.user,
-            password=self.password,
+        self.connection = (
+            psycopg2.connect(
+                host=self.host,
+                database=self.database,
+                user=self.user,
+                password=self.password,
+            )
         )
 
     def disconnect(self):
@@ -40,7 +42,10 @@ class PostgresqlFacade(DatabaseFacade):
                 query,
                 params,
             )
-            columns = [desc[0] for desc in cursor.description]
+            columns = [
+                desc[0]
+                for desc in cursor.description
+            ]
             results = cursor.fetchall()
         return pd.DataFrame(
             results,
@@ -52,7 +57,9 @@ class PostgresqlFacade(DatabaseFacade):
         dataframe,
         table_name,
     ):
-        cursor = self.connection.cursor()
+        cursor = (
+            self.connection.cursor()
+        )
 
         # Check if table exists
         cursor.execute(
@@ -66,7 +73,9 @@ class PostgresqlFacade(DatabaseFacade):
             (table_name,),
         )
 
-        table_exists = cursor.fetchone()[0]
+        table_exists = (
+            cursor.fetchone()[0]
+        )
 
         if table_exists:
             # Check schema conformity
@@ -79,7 +88,9 @@ class PostgresqlFacade(DatabaseFacade):
                 (table_name,),
             )
 
-            db_schema = cursor.fetchall()
+            db_schema = (
+                cursor.fetchall()
+            )
             df_schema = [
                 (col, str(dtype))
                 for col, dtype in zip(
@@ -88,16 +99,27 @@ class PostgresqlFacade(DatabaseFacade):
                 )
             ]
 
-            db_schema_dict = {col: dtype for col, dtype in db_schema}
-            df_schema_dict = {col: dtype for col, dtype in df_schema}
+            db_schema_dict = {
+                col: dtype
+                for col, dtype in db_schema
+            }
+            df_schema_dict = {
+                col: dtype
+                for col, dtype in df_schema
+            }
 
-            if db_schema_dict != df_schema_dict:
+            if (
+                db_schema_dict
+                != df_schema_dict
+            ):
                 raise ValueError(
                     "Schema of DataFrame does not match schema of the table.",
                 )
 
             # Insert DataFrame into the existing table
-            for row in dataframe.itertuples(
+            for (
+                row
+            ) in dataframe.itertuples(
                 index=False,
                 name=None,
             ):
@@ -120,7 +142,9 @@ class PostgresqlFacade(DatabaseFacade):
                 f"CREATE TABLE {table_name} ({col_defs});",
             )
 
-            for row in dataframe.itertuples(
+            for (
+                row
+            ) in dataframe.itertuples(
                 index=False,
                 name=None,
             ):

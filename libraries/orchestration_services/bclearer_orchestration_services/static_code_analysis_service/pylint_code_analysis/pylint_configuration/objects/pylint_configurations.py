@@ -25,13 +25,17 @@ class PylintConfigurations(
             enum_code_analysis_types_to_table_names_mapping=PYLINT_ANALYSIS_TYPES_TO_TABLE_NAMES_MAPPING,
         )
 
-        self.excluded_pylint_check_codes = excluded_pylint_check_codes
+        self.excluded_pylint_check_codes = (
+            excluded_pylint_check_codes
+        )
 
         self.pylint_report_flag = self.__get_pylint_report_flag(
             report_flag=report_flag,
         )
 
-        self.pylint_output_file_type = pylint_output_file_type
+        self.pylint_output_file_type = (
+            pylint_output_file_type
+        )
 
     @staticmethod
     def __get_pylint_report_flag(

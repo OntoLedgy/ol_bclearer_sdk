@@ -12,7 +12,11 @@ def convert_uniclass_stereotypes_table_to_stereotypes(
     input_stereotypes_table_name: str,
     nf_ea_com_stereotypes_collection_type: NfEaComCollectionTypes,
 ) -> dict:
-    uniclass_stereotypes_table = uniclass_dictionary[input_stereotypes_table_name]
+    uniclass_stereotypes_table = (
+        uniclass_dictionary[
+            input_stereotypes_table_name
+        ]
+    )
 
     nf_ea_com_dictionary = append_nf_ea_com_table(
         nf_ea_com_dictionary=nf_ea_com_dictionary,

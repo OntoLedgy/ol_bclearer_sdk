@@ -16,7 +16,9 @@ from uniclass_to_nf_ea_com_source.b_code.configurations.resource_constants.resou
 )
 
 
-def create_stereotypes_table() -> DataFrame:
+def create_stereotypes_table() -> (
+    DataFrame
+):
     uniclass_stereotypes_table_file = get_resource_file(
         resource_namespace=EVOLVE_4_INPUT_FOLDER_NAMESPACE,
         resource_name=EVOLVE_4_UNICLASS_STEREOTYPES_TYPE_OF_FILE_NAME,

@@ -28,10 +28,8 @@ def get_evolve_stage_3_domain_tables(
         dataframe_dictionary=dictionary_of_dataframes,
     )
 
-    evolve_stage_3_input_tables = (
-        load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
-            resource_namespace=EVOLVE_3_INPUT_FOLDER_NAMESPACE,
-        )
+    evolve_stage_3_input_tables = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
+        resource_namespace=EVOLVE_3_INPUT_FOLDER_NAMESPACE,
     )
 
     uuidified_evolve_stage_3_input_tables = uuidify_dictionary_of_dataframes(
@@ -39,14 +37,12 @@ def get_evolve_stage_3_domain_tables(
         uuid_column_name=StandardObjectTableColumnTypes.NF_UUIDS.column_name,
     )
 
-    evolve_stage_3_domain_tables = (
-        populate_evolve_stage_3_domain_tables_parent_package_columns(
-            dictionary_of_dataframes=uuidified_evolve_stage_3_input_tables,
-        )
+    evolve_stage_3_domain_tables = populate_evolve_stage_3_domain_tables_parent_package_columns(
+        dictionary_of_dataframes=uuidified_evolve_stage_3_input_tables,
     )
 
-    evolve_stage_3_domain_tables[UNICLASS2015_OBJECT_TABLE_NAME] = (
-        uniclass2015_object_table
-    )
+    evolve_stage_3_domain_tables[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = uniclass2015_object_table
 
     return evolve_stage_3_domain_tables

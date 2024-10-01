@@ -36,7 +36,9 @@ def b_eng_folders_and_files_refactor_checks(
 def __check_b_eng_workspace_folder_exists(
     b_eng_workspace_folder: BEngWorkspaceFolders,
 ) -> bool:
-    workspace_exists = b_eng_workspace_folder.exists()
+    workspace_exists = (
+        b_eng_workspace_folder.exists()
+    )
 
     if not workspace_exists:
         __report_file_system_object_does_not_exist(
@@ -50,7 +52,9 @@ def __check_b_eng_workspace_folder_exists(
 def __check_b_eng_project_folders_exist(
     b_eng_project_folder_list: BEngProjectFolderLists,
 ) -> bool:
-    for b_eng_project_folder in b_eng_project_folder_list.list:
+    for (
+        b_eng_project_folder
+    ) in b_eng_project_folder_list.list:
         b_eng_project_exists = __check_b_eng_project_folder_exists(
             b_eng_project_folder=b_eng_project_folder,
         )
@@ -64,7 +68,9 @@ def __check_b_eng_project_folders_exist(
 def __check_b_eng_project_folder_exists(
     b_eng_project_folder: BEngProjectFolders,
 ) -> bool:
-    bitbucket_project_exists = b_eng_project_folder.exists()
+    bitbucket_project_exists = (
+        b_eng_project_folder.exists()
+    )
 
     if not bitbucket_project_exists:
         __report_file_system_object_does_not_exist(
@@ -79,6 +85,10 @@ def __report_file_system_object_does_not_exist(
     type_name: str,
     file_system_object: FileSystemObjects,
 ):
-    message = type_name + " does not exist: " + file_system_object.absolute_path_string
+    message = (
+        type_name
+        + " does not exist: "
+        + file_system_object.absolute_path_string
+    )
 
     log_message(message)

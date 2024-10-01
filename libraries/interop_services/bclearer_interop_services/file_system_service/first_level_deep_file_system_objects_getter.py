@@ -17,4 +17,6 @@ def get_first_level_children_file_system_object_paths(
         recursive=True,
     )
 
-    return input_file_system_object_paths
+    return (
+        input_file_system_object_paths
+    )

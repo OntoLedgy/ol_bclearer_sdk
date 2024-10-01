@@ -14,7 +14,9 @@ from tests.fixtures.paths import *
 def neo4j_connection(
     configurations_folder,
 ):
-    neo4j_configuration_file_name = "neo4j_configuration.json"
+    neo4j_configuration_file_name = (
+        "neo4j_configuration.json"
+    )
 
     neo4j_configuration_file = os.path.normpath(
         os.path.join(
@@ -23,8 +25,10 @@ def neo4j_connection(
         ),
     )
 
-    neo4j_configuration = Neo4jConfigurations(
-        neo4j_configuration_file,
+    neo4j_configuration = (
+        Neo4jConfigurations(
+            neo4j_configuration_file,
+        )
     )
 
     neo4j_connection = Neo4jConnections(
@@ -41,7 +45,9 @@ def neo4j_connection(
 def neo4j_loader_configuration_path(
     configurations_folder,
 ):
-    neo4j_loader_configuration_file_name = "csv_loader_configuration.json"
+    neo4j_loader_configuration_file_name = (
+        "csv_loader_configuration.json"
+    )
     neo4j_loader_configuration_file_absolute_path = os.path.normpath(
         os.path.join(
             configurations_folder,
@@ -79,8 +85,10 @@ def nodes_info(
         data_input_folder_absolute_path,
         "graph\\cypher_queries\\01_nodes\\r_01_neo4j_workbooks_nodes_all.cypher",
     )
-    query_1 = read_cypher_query_from_file(
-        query_file_path_1,
+    query_1 = (
+        read_cypher_query_from_file(
+            query_file_path_1,
+        )
     )
 
     csv_file_2 = os.path.join(
@@ -91,8 +99,10 @@ def nodes_info(
         data_input_folder_absolute_path,
         "graph\\cypher_queries\\01_nodes\\r_02_neo4j_sheets_nodes_all.cypher",
     )
-    query_2 = read_cypher_query_from_file(
-        query_file_path_1,
+    query_2 = (
+        read_cypher_query_from_file(
+            query_file_path_1,
+        )
     )
 
     nodes_info = {

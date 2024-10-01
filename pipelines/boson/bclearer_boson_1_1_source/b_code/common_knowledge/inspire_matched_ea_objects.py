@@ -1,6 +1,8 @@
 from enum import auto, unique
 
-from bclearer_source.b_code.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_source.b_code.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 
 
 @unique
@@ -28,7 +30,9 @@ class InspireMatchedEaObjects(
     TEXT_ATTRIBUTE = auto()
 
     def __object_name(self) -> str:
-        object_name = object_name_mapping[self]
+        object_name = (
+            object_name_mapping[self]
+        )
 
         return object_name
 

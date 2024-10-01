@@ -30,19 +30,27 @@ def create_parent_child_link_table(
 
     link_table_dataframe = DataFrame()
 
-    link_table_dataframe[CHILD_UUID_COLUMN_NAME] = uniclass_2015_object_table[
+    link_table_dataframe[
+        CHILD_UUID_COLUMN_NAME
+    ] = uniclass_2015_object_table[
         UUID_COLUMN_NAME
     ]
 
-    link_table_dataframe[CHILD_CODE_COLUMN_NAME] = uniclass_2015_object_table[
+    link_table_dataframe[
+        CHILD_CODE_COLUMN_NAME
+    ] = uniclass_2015_object_table[
         CODE_COLUMN_NAME
     ]
 
-    link_table_dataframe[CHILD_TITLE_COLUMN_NAME] = uniclass_2015_object_table[
+    link_table_dataframe[
+        CHILD_TITLE_COLUMN_NAME
+    ] = uniclass_2015_object_table[
         TITLE_COLUMN_NAME
     ]
 
-    link_table_dataframe[PARENT_CODE_COLUMN_NAME] = uniclass_2015_object_table[
+    link_table_dataframe[
+        PARENT_CODE_COLUMN_NAME
+    ] = uniclass_2015_object_table[
         PARENT_CODE_COLUMN_NAME
     ]
 
@@ -51,10 +59,8 @@ def create_parent_child_link_table(
         uniclass_objects_dataframe=uniclass_2015_object_table,
     )
 
-    parent_child_link_table_clean = (
-        __remove_rows_with_no_parent_code_values_from_dataframe(
-            dataframe=parent_child_link_base_table,
-        )
+    parent_child_link_table_clean = __remove_rows_with_no_parent_code_values_from_dataframe(
+        dataframe=parent_child_link_base_table,
     )
 
     parent_child_link_table = uuidify_dataframe(
@@ -62,9 +68,9 @@ def create_parent_child_link_table(
         uuid_column_name=NF_UUIDS_COLUMN_NAME,
     )
 
-    dictionary_of_dataframes[UNICLASS_PARENT_CHILD_LINK_TABLE_NAME] = (
-        parent_child_link_table
-    )
+    dictionary_of_dataframes[
+        UNICLASS_PARENT_CHILD_LINK_TABLE_NAME
+    ] = parent_child_link_table
 
     return dictionary_of_dataframes
 
@@ -108,6 +114,10 @@ def __create_parent_child_link_table(
 def __remove_rows_with_no_parent_code_values_from_dataframe(
     dataframe: DataFrame,
 ) -> DataFrame:
-    dataframe = dataframe[~dataframe[PARENT_CODE_COLUMN_NAME].isnull()]
+    dataframe = dataframe[
+        ~dataframe[
+            PARENT_CODE_COLUMN_NAME
+        ].isnull()
+    ]
 
     return dataframe

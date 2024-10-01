@@ -16,13 +16,15 @@ def populate_dataframes_dictionary_parent_package_columns(
     for (
         dataframe_name,
         dataframe,
-    ) in dictionary_of_dataframes.items():
-        dictionary_of_dataframes[dataframe_name] = (
-            populate_parent_package_uuid_column_in_dataframe(
-                dataframe_name=dataframe_name,
-                dataframe=dataframe,
-                uuidified_packages_dataframe=uuidified_packages_dataframe,
-            )
+    ) in (
+        dictionary_of_dataframes.items()
+    ):
+        dictionary_of_dataframes[
+            dataframe_name
+        ] = populate_parent_package_uuid_column_in_dataframe(
+            dataframe_name=dataframe_name,
+            dataframe=dataframe,
+            uuidified_packages_dataframe=uuidified_packages_dataframe,
         )
 
     return dictionary_of_dataframes

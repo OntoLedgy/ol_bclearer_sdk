@@ -22,20 +22,16 @@ def get_radon_json_results(
         message="\tRetrieving cyclomatic complexity results",
     )
 
-    cyclomatic_complexity_radon_json_results = (
-        get_cyclomatic_complexity_radon_json_results(
-            folders_to_analyse=folders_to_analyse,
-        )
+    cyclomatic_complexity_radon_json_results = get_cyclomatic_complexity_radon_json_results(
+        folders_to_analyse=folders_to_analyse,
     )
 
     log_message(
         message="\tRetrieving maintainability index results",
     )
 
-    maintainability_index_radon_json_results = (
-        get_maintainability_index_radon_json_results(
-            folders_to_analyse=folders_to_analyse,
-        )
+    maintainability_index_radon_json_results = get_maintainability_index_radon_json_results(
+        folders_to_analyse=folders_to_analyse,
     )
 
     log_message(

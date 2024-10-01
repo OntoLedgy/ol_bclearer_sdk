@@ -1,6 +1,8 @@
 import pandas as pd
 import pytest
-from bclearer_interop_services.excel_services.ExcelFacade import ExcelFacade
+from bclearer_interop_services.excel_services.ExcelFacade import (
+    ExcelFacade,
+)
 
 
 class TestExcelInteropServices:
@@ -29,10 +31,13 @@ class TestExcelInteropServices:
                 sheet_name,
             )
             assert (
-                cfi_categories is not None
+                cfi_categories
+                is not None
             ), f"Sheet {sheet_name} not found in the workbook."
 
-            cfi_categories_dataframe = cfi_categories.read_to_dataframe()
+            cfi_categories_dataframe = (
+                cfi_categories.read_to_dataframe()
+            )
             print(
                 f"DataFrame successfully read from the {sheet_name} sheet:",
             )
@@ -46,19 +51,29 @@ class TestExcelInteropServices:
                 cfi_categories_dataframe,
             )
 
-            assert cfi_categories_dataframe.shape == (
-                14,
-                5,
+            assert (
+                cfi_categories_dataframe.shape
+                == (
+                    14,
+                    5,
+                )
             ), "DataFrame does not have the expected shape (14, 5)."
 
-            assert not cfi_categories_dataframe.empty, "DataFrame is empty."
+            assert (
+                not cfi_categories_dataframe.empty
+            ), "DataFrame is empty."
 
             print(
                 f"DataFrame shape: {cfi_categories_dataframe.shape}",
             )
 
             assert (
-                cfi_categories_dataframe.iloc[0]["Code"] == "E"
+                cfi_categories_dataframe.iloc[
+                    0
+                ][
+                    "Code"
+                ]
+                == "E"
             ), "First row 'Code' column value is not 'E' as expected."
 
         except Exception as e:
@@ -84,10 +99,13 @@ class TestExcelInteropServices:
                 sheet_name,
             )
             assert (
-                cfi_categories is not None
+                cfi_categories
+                is not None
             ), f"Sheet {sheet_name} not found in the workbook."
 
-            cfi_categories_dataframe = cfi_categories.read_to_dataframe()
+            cfi_categories_dataframe = (
+                cfi_categories.read_to_dataframe()
+            )
             print(
                 f"DataFrame successfully read from the {sheet_name} sheet:",
             )
@@ -101,19 +119,29 @@ class TestExcelInteropServices:
                 cfi_categories_dataframe,
             )
 
-            assert cfi_categories_dataframe.shape == (
-                14,
-                5,
+            assert (
+                cfi_categories_dataframe.shape
+                == (
+                    14,
+                    5,
+                )
             ), "DataFrame does not have the expected shape (14, 5)."
 
-            assert not cfi_categories_dataframe.empty, "DataFrame is empty."
+            assert (
+                not cfi_categories_dataframe.empty
+            ), "DataFrame is empty."
 
             print(
                 f"DataFrame shape: {cfi_categories_dataframe.shape}",
             )
 
             assert (
-                cfi_categories_dataframe.iloc[0]["Code"] == "E"
+                cfi_categories_dataframe.iloc[
+                    0
+                ][
+                    "Code"
+                ]
+                == "E"
             ), "First row 'Code' column value is not 'E' as expected."
 
         except Exception as e:

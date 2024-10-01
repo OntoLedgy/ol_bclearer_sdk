@@ -8,7 +8,9 @@ from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_da
 from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_name_appender import (
     append_gn_name,
 )
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
@@ -30,12 +32,17 @@ def append_named_place(
         ].gn_GeographicalName.gn_spelling.gn_SpellingOfName.gn_text.cdata
 
     else:
-        presentation_prefix = named_place.gn_name.gn_GeographicalName.gn_spelling.gn_SpellingOfName.gn_text.cdata
+        presentation_prefix = (
+            named_place.gn_name.gn_GeographicalName.gn_spelling.gn_SpellingOfName.gn_text.cdata
+        )
 
-    os_open_names_dictionary["named_places"][named_place_uuid] = {
+    os_open_names_dictionary[
+        "named_places"
+    ][named_place_uuid] = {
         NfColumnTypes.NF_UUIDS.column_name: named_place_uuid,
         "file_uuids": file_uuid,
-        "name": presentation_prefix + " Named Place",
+        "name": presentation_prefix
+        + " Named Place",
     }
 
     os_open_names_dictionary = append_gml_identifier(
@@ -55,7 +62,9 @@ def append_named_place(
         named_place.gn_name,
         list,
     ):
-        for gn_name in named_place.gn_name:
+        for (
+            gn_name
+        ) in named_place.gn_name:
             os_open_names_dictionary = append_gn_name(
                 gn_name=gn_name,
                 named_place_uuid=named_place_uuid,

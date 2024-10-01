@@ -7,21 +7,27 @@ from bclearer_boson_1_1_source.b_code.services.logging.set_up_and_close_out_logg
     close_log_file,
     set_up_logger_and_output_folder,
 )
-from bnop_source.b_code.bnop_facades import BnopFacades
+from bnop_source.b_code.bnop_facades import (
+    BnopFacades,
+)
 from nf_common_source.code.services.datetime_service.time_helpers.time_getter import (
     now_time_as_string_for_files,
 )
 from nf_common_source.code.services.file_system_service.folder_selector import (
     select_folder,
 )
-from nf_ea_com_bnop_source.b_code.nf_ea_com_bnop_facades import NfEaComBnopFacades
+from nf_ea_com_bnop_source.b_code.nf_ea_com_bnop_facades import (
+    NfEaComBnopFacades,
+)
 from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
 
 
 def orchestrate_boson1_bclearer():
-    output_root_folder_path = __get_output_root_folder_path()
+    output_root_folder_path = (
+        __get_output_root_folder_path()
+    )
 
     gml_data_folder = select_folder(
         title="Select GML folder",
@@ -39,12 +45,16 @@ def orchestrate_boson1_bclearer():
     close_log_file()
 
 
-def __get_output_root_folder_path() -> str:
+def __get_output_root_folder_path() -> (
+    str
+):
     output_folder = select_folder(
         title="Select output folder",
     )
 
-    output_folder_path = output_folder.absolute_path_string
+    output_folder_path = (
+        output_folder.absolute_path_string
+    )
 
     output_root_folder_path = os.path.join(
         output_folder_path,
@@ -81,7 +91,9 @@ def __export_to_xml(
     evolved_universe,
     output_folder_name,
 ) -> None:
-    nf_ea_com_bnop_facade = NfEaComBnopFacades()
+    nf_ea_com_bnop_facade = (
+        NfEaComBnopFacades()
+    )
 
     nf_ea_com_bnop_facade.migrate_nf_ea_com_universe_to_bnop(
         nf_ea_com_universe=evolved_universe,

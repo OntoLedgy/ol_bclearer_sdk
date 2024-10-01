@@ -6,4 +6,6 @@ class SeparatedLists:
     ):
         self.separator = separator
 
-        self.separated_results = separated_results
+        self.separated_results = (
+            separated_results
+        )

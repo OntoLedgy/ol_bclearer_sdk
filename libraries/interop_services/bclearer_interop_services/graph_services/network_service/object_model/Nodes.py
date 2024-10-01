@@ -1,5 +1,7 @@
 class Node:
-    _registry = {}  # registry for keeping a list of nodes
+    _registry = (
+        {}
+    )  # registry for keeping a list of nodes
 
     def __init__(
         self,
@@ -18,8 +20,10 @@ class Node:
         self,
         node_uuid_for_appending,
     ):  # adds a node and node luid to the nodes connected nodes list
-        node_for_appending = self.convert_uuid_to_node(
-            node_uuid_for_appending,
+        node_for_appending = (
+            self.convert_uuid_to_node(
+                node_uuid_for_appending,
+            )
         )  # retreive node using uuid
 
         self.connected_nodes.add(
@@ -41,8 +45,13 @@ class Node:
     def convert_uuid_to_node(
         node_uuid_for_appending,
     ):
-        if node_uuid_for_appending in Node._registry:  # check nodes exists
-            return Node._registry[node_uuid_for_appending]  # return node if found
+        if (
+            node_uuid_for_appending
+            in Node._registry
+        ):  # check nodes exists
+            return Node._registry[
+                node_uuid_for_appending
+            ]  # return node if found
         return Node(
             node_uuid_for_appending,
             [],

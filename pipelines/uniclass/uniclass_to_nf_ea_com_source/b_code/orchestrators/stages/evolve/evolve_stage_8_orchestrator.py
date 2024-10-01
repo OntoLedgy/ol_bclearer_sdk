@@ -22,10 +22,8 @@ def orchestrate_evolve_stage_8(
         evolve_stage_7_dictionary_of_dataframes=evolve_stage_7_dictionary_of_dataframes,
     )
 
-    evolve_stage_8_nf_ea_com_tables = (
-        orchestrate_nf_ea_com_tables_creation_for_evolve_stage_8(
-            dictionary_of_dataframes=uniclass2015_domain_tables,
-        )
+    evolve_stage_8_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_evolve_stage_8(
+        dictionary_of_dataframes=uniclass2015_domain_tables,
     )
 
     orchestrate_export_nf_ea_com(

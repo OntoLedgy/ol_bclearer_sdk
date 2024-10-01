@@ -25,20 +25,16 @@ def run_visualization_substage_separate_names_and_instances(
     output_folder_name: str,
     content_universe: NfEaComUniverses,
 ) -> NfEaComUniverses:
-    separated_standard_names_and_instances_universe = (
-        __separate_standard_names_and_instances(
-            ea_tools_session_manager=ea_tools_session_manager,
-            content_universe=content_universe,
-            output_folder_name=output_folder_name,
-        )
+    separated_standard_names_and_instances_universe = __separate_standard_names_and_instances(
+        ea_tools_session_manager=ea_tools_session_manager,
+        content_universe=content_universe,
+        output_folder_name=output_folder_name,
     )
 
-    separated_bespoke_names_and_instances_universe = (
-        __separate_bespoke_names_and_instances(
-            ea_tools_session_manager=ea_tools_session_manager,
-            content_universe=separated_standard_names_and_instances_universe,
-            output_folder_name=output_folder_name,
-        )
+    separated_bespoke_names_and_instances_universe = __separate_bespoke_names_and_instances(
+        ea_tools_session_manager=ea_tools_session_manager,
+        content_universe=separated_standard_names_and_instances_universe,
+        output_folder_name=output_folder_name,
     )
 
     return separated_bespoke_names_and_instances_universe

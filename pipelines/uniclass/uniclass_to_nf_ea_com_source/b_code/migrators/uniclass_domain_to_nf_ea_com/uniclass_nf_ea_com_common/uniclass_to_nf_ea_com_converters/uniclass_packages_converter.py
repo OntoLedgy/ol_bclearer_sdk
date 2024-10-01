@@ -1,6 +1,8 @@
 import numpy
 import pandas
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
@@ -20,9 +22,13 @@ def convert_dictionary_keys_to_packages(
     nf_ea_com_dictionary: dict,
     nf_ea_com_packages_collection_type: NfEaComCollectionTypes,
 ) -> dict:
-    nf_uuids_column_name = NfColumnTypes.NF_UUIDS.column_name
+    nf_uuids_column_name = (
+        NfColumnTypes.NF_UUIDS.column_name
+    )
 
-    ea_object_type_column_name = NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
+    ea_object_type_column_name = (
+        NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
+    )
 
     ea_object_name_column_name = (
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name
@@ -34,7 +40,9 @@ def convert_dictionary_keys_to_packages(
 
     object_names_list = []
 
-    for dataframe_key in uniclass_dictionary.keys():
+    for (
+        dataframe_key
+    ) in uniclass_dictionary.keys():
         nf_uuids_list.append(
             create_new_uuid(),
         )

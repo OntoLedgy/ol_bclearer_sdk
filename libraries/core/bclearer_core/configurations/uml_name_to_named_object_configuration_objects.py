@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 
 
 class UmlNameToNamedObjectConfigurationObjects:
@@ -7,9 +9,13 @@ class UmlNameToNamedObjectConfigurationObjects:
         matched_package: MatchedEaObjects,
         matched_naming_space: MatchedEaObjects,
     ):
-        self.matched_package = matched_package
+        self.matched_package = (
+            matched_package
+        )
 
-        self.matched_naming_space = matched_naming_space
+        self.matched_naming_space = (
+            matched_naming_space
+        )
 
     def __enter__(self):
         return self

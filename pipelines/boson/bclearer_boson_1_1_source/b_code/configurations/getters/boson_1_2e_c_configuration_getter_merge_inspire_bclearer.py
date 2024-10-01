@@ -51,4 +51,6 @@ def get_boson_1_2e_c1_configuration_merge_inspire_bclearer() -> (
         output_universe_short_name="2e_c1_output_merge_bclearer",
     )
 
-    return content_operation_configuration
+    return (
+        content_operation_configuration
+    )

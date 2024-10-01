@@ -1,7 +1,9 @@
 import glob
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 def get_directory_subfolders(
@@ -10,14 +12,21 @@ def get_directory_subfolders(
 ) -> list:
     subfolders = list()
 
-    recursive_globs_pattern = "/**/*" if looks_into_subfolders else "/*"
+    recursive_globs_pattern = (
+        "/**/*"
+        if looks_into_subfolders
+        else "/*"
+    )
 
     file_system_object_paths = glob.glob(
-        pathname=input_root_folder.absolute_path_string + recursive_globs_pattern,
+        pathname=input_root_folder.absolute_path_string
+        + recursive_globs_pattern,
         recursive=True,
     )
 
-    for file_system_object_path in file_system_object_paths:
+    for (
+        file_system_object_path
+    ) in file_system_object_paths:
         __add_subfolder(
             file_system_object_path=file_system_object_path,
             subfolders=subfolders,

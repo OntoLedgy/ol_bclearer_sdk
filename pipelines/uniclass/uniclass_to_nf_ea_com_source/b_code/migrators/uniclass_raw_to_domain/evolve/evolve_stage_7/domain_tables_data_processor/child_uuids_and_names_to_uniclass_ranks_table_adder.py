@@ -21,7 +21,9 @@ def add_child_uuids_and_names_to_uniclass_ranks_table(
         UNICLASS2015_RANKS_TABLE_NAME
     ].copy()
 
-    uniclass_ranks_parent_child_table = dataframe.copy()
+    uniclass_ranks_parent_child_table = (
+        dataframe.copy()
+    )
 
     uniclass_ranks_table_with_child_names = left_merge_dataframes(
         master_dataframe=uniclass_ranks_table,

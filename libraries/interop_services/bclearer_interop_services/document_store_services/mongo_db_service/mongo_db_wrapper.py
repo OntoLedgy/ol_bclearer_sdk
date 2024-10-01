@@ -12,13 +12,17 @@ class MongoDBWrapper:
     ):
         self.client = MongoClient(uri)
 
-        self.db = self.client[database_name]
+        self.db = self.client[
+            database_name
+        ]
 
     def access_collection(
         self,
         collection_name,
     ):
-        collection = self.db[collection_name]
+        collection = self.db[
+            collection_name
+        ]
 
         return collection
 
@@ -27,21 +31,29 @@ class MongoDBWrapper:
         collection_name,
         documents,
     ):
-        collection = self.access_collection(
-            collection_name,
+        collection = (
+            self.access_collection(
+                collection_name,
+            )
         )
 
         if isinstance(documents, list):
-            result = collection.insert_many(
-                documents,
+            result = (
+                collection.insert_many(
+                    documents,
+                )
             )
 
         else:
-            result = collection.insert_one(
-                documents,
+            result = (
+                collection.insert_one(
+                    documents,
+                )
             )
 
-        inserted_ids = result.inserted_id
+        inserted_ids = (
+            result.inserted_id
+        )
 
         return inserted_ids
 
@@ -91,12 +103,16 @@ class MongoDBWrapper:
         document,
         primary_key_field,
     ):
-        collection = self.access_collection(
-            collection_name,
+        collection = (
+            self.access_collection(
+                collection_name,
+            )
         )
 
         filter_query = {
-            primary_key_field: document[primary_key_field],
+            primary_key_field: document[
+                primary_key_field
+            ],
         }
 
         update_operation = {
@@ -110,10 +126,14 @@ class MongoDBWrapper:
         )
 
         upserted_id_or_match_count = (
-            result.upserted_id if result.upserted_id else result.matched_count
+            result.upserted_id
+            if result.upserted_id
+            else result.matched_count
         )
 
-        return upserted_id_or_match_count
+        return (
+            upserted_id_or_match_count
+        )
 
     def upsert_documents(
         self,
@@ -121,13 +141,17 @@ class MongoDBWrapper:
         documents,
         primary_key_field,
     ):
-        collection = self.access_collection(
-            collection_name,
+        collection = (
+            self.access_collection(
+                collection_name,
+            )
         )
 
         for document in documents:
             filter_query = {
-                primary_key_field: document[primary_key_field],
+                primary_key_field: document[
+                    primary_key_field
+                ],
             }
 
             update_operation = {
@@ -147,8 +171,10 @@ class MongoDBWrapper:
         collection_name,
         query={},
     ):
-        collection = self.access_collection(
-            collection_name,
+        collection = (
+            self.access_collection(
+                collection_name,
+            )
         )
 
         documents = list(
@@ -188,8 +214,10 @@ class MongoDBWrapper:
         collection_name,
         pipeline,
     ):
-        collection = self.access_collection(
-            collection_name,
+        collection = (
+            self.access_collection(
+                collection_name,
+            )
         )
 
         results = list(
@@ -216,7 +244,9 @@ class MongoDBWrapper:
             with open(
                 file_path,
             ) as file:
-                pipeline = yaml.safe_load(file)
+                pipeline = (
+                    yaml.safe_load(file)
+                )
         else:
             raise ValueError(
                 "Unsupported file type. Use 'json' or 'yaml'.",
@@ -232,9 +262,13 @@ class MongoDBWrapper:
         for stage in pipeline:
             # Check if the stage is a $group stage
             if "$group" in stage:
-                group_stage = stage["$group"]
+                group_stage = stage[
+                    "$group"
+                ]
                 # The group by column is the "_id" field in the $group stage
-                group_by_field = group_stage["_id"]
+                group_by_field = (
+                    group_stage["_id"]
+                )
                 # Clean up the group by field to remove the leading "$"
                 if isinstance(
                     group_by_field,
@@ -242,7 +276,9 @@ class MongoDBWrapper:
                 ) and group_by_field.startswith(
                     "$",
                 ):
-                    return group_by_field[1:]  # Remove the leading '$'
+                    return group_by_field[
+                        1:
+                    ]  # Remove the leading '$'
                 return group_by_field
 
     def run_aggregation_from_file(
@@ -255,8 +291,10 @@ class MongoDBWrapper:
             file_path,
         )
 
-        group_by_field = self._get_group_by_field(
-            pipeline,
+        group_by_field = (
+            self._get_group_by_field(
+                pipeline,
+            )
         )
 
         results = self.run_aggregation(

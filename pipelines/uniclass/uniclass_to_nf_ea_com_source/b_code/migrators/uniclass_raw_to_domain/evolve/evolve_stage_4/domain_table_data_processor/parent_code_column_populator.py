@@ -14,15 +14,19 @@ def populate_parent_code_column_in_uniclass_object_table(
         UNICLASS2015_OBJECT_TABLE_NAME
     ]
 
-    for index in uniclass_2015_object_table.index:
+    for (
+        index
+    ) in (
+        uniclass_2015_object_table.index
+    ):
         __add_value_to_parent_code_column(
             dataframe=uniclass_2015_object_table,
             index=index,
         )
 
-    dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME] = (
-        uniclass_2015_object_table
-    )
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = uniclass_2015_object_table
 
     return dictionary_of_dataframes
 
@@ -60,6 +64,8 @@ def __add_value_to_parent_code_column(
         ] = dataframe.loc[
             index,
             CODE_COLUMN_NAME,
-        ][:-3]
+        ][
+            :-3
+        ]
 
     return dataframe

@@ -15,15 +15,19 @@ class Networks:
         for node in list(
             self.network_graph.nodes,
         ):
-            for connected_node in node.connected_nodes:
+            for (
+                connected_node
+            ) in node.connected_nodes:
                 self.network_graph.add_edge(
                     node,
                     connected_node,
                 )
 
     def report_connected_nodes(self):
-        connected_node_list = nx.connected_components(
-            self.network_graph,
+        connected_node_list = (
+            nx.connected_components(
+                self.network_graph,
+            )
         )
 
         return connected_node_list

@@ -17,12 +17,19 @@ def convert_non_null_object_to_bie_consumable_object_item(
     )
 
     match bie_identity_space.data_type_recognition:
-        case (DataTypeRecognition.DO_NOT_INCLUDE_DATA_TYPES_IN_BIE_CALCULATION,):
-            return input_object_as_string
+        case (
+            DataTypeRecognition.DO_NOT_INCLUDE_DATA_TYPES_IN_BIE_CALCULATION,
+        ):
+            return (
+                input_object_as_string
+            )
 
-        case (DataTypeRecognition.INCLUDE_DATA_TYPES_IN_BIE_CALCULATION,):
+        case (
+            DataTypeRecognition.INCLUDE_DATA_TYPES_IN_BIE_CALCULATION,
+        ):
             object_as_concatenated_type_and_content_string = (
-                str(object_type) + input_object_as_string
+                str(object_type)
+                + input_object_as_string
             )
 
             return object_as_concatenated_type_and_content_string

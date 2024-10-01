@@ -22,9 +22,9 @@ def add_uniclass_items_to_ranks_link_types_to_domain_tables(
         LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS
     ]
 
-    linked_table_uniclass_items_to_ranks[RELATION_TYPE_NAMES_COLUMN_NAME] = (
-        UNICLASS_CLASSIFICATION_TYPE_OF_RELATION
-    )
+    linked_table_uniclass_items_to_ranks[
+        RELATION_TYPE_NAMES_COLUMN_NAME
+    ] = UNICLASS_CLASSIFICATION_TYPE_OF_RELATION
 
     linked_table_uniclass_items_to_ranks_with_link_type_uuids = left_merge_dataframes(
         master_dataframe=linked_table_uniclass_items_to_ranks,
@@ -41,8 +41,8 @@ def add_uniclass_items_to_ranks_link_types_to_domain_tables(
         },
     )
 
-    evolve_8_domain_tables[LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS] = (
-        linked_table_uniclass_items_to_ranks_with_link_type_uuids
-    )
+    evolve_8_domain_tables[
+        LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS
+    ] = linked_table_uniclass_items_to_ranks_with_link_type_uuids
 
     return evolve_8_domain_tables

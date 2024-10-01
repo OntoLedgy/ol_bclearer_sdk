@@ -8,7 +8,9 @@ from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_
 
 class DataLoaderOrchestrator:
     def __init__(self, neo4j_wrapper):
-        self.neo4j_wrapper = neo4j_wrapper
+        self.neo4j_wrapper = (
+            neo4j_wrapper
+        )
         self.node_loader = NodeLoader(
             neo4j_wrapper,
         )

@@ -95,13 +95,11 @@ def get_boson_1_2e_b_configuration_clean_inspire() -> (
         output_universe_short_name="2e_b2_output_remove",
     )
 
-    clean_inspire_adjustment_operations_substage_configuration = (
-        AdjustmentOperationsSubstageConfigurations(
-            operation_configurations={
-                convert_attributes_to_associations_adjustment_operation_configuration,
-                remove_attributes_adjustment_operation_configuration,
-            },
-        )
+    clean_inspire_adjustment_operations_substage_configuration = AdjustmentOperationsSubstageConfigurations(
+        operation_configurations={
+            convert_attributes_to_associations_adjustment_operation_configuration,
+            remove_attributes_adjustment_operation_configuration,
+        },
     )
 
     return clean_inspire_adjustment_operations_substage_configuration

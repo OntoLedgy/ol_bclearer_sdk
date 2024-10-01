@@ -24,10 +24,8 @@ def analyse_code_using_pylint(
         pylint_options_string=pylint_options_string,
     )
 
-    analysis_dictionary_of_dataframes = (
-        __transform_pylint_results_json_to_dictionary_of_pylint_result_dataframes(
-            pylint_results_as_json=pylint_results_as_json,
-        )
+    analysis_dictionary_of_dataframes = __transform_pylint_results_json_to_dictionary_of_pylint_result_dataframes(
+        pylint_results_as_json=pylint_results_as_json,
     )
 
     return analysis_dictionary_of_dataframes
@@ -36,23 +34,32 @@ def analyse_code_using_pylint(
 def __get_pylint_options_string_from_configuration(
     b_pylint_configuration: PylintConfigurations,
 ) -> str:
-    input_file_system_object_paths_list = []
+    input_file_system_object_paths_list = (
+        []
+    )
 
     for (
         input_file_system_object
-    ) in b_pylint_configuration.common_configuration.input_file_system_objects:
+    ) in (
+        b_pylint_configuration.common_configuration.input_file_system_objects
+    ):
         input_file_system_object_paths_list.append(
             input_file_system_object.absolute_path_string,
         )
 
-    pylint_options = input_file_system_object_paths_list + [
-        "--output-format=" + b_pylint_configuration.pylint_output_file_type,
-        "--reports=" + b_pylint_configuration.pylint_report_flag,
-        "--disable="
-        + ",".join(
-            b_pylint_configuration.excluded_pylint_check_codes,
-        ),
-    ]
+    pylint_options = (
+        input_file_system_object_paths_list
+        + [
+            "--output-format="
+            + b_pylint_configuration.pylint_output_file_type,
+            "--reports="
+            + b_pylint_configuration.pylint_report_flag,
+            "--disable="
+            + ",".join(
+                b_pylint_configuration.excluded_pylint_check_codes,
+            ),
+        ]
+    )
 
     pylint_options_string = " ".join(
         pylint_options,
@@ -76,7 +83,9 @@ def __get_pylint_analysis_as_json(
         return_std=True,
     )
 
-    pylint_results_as_json = pylint_analysis_output
+    pylint_results_as_json = (
+        pylint_analysis_output
+    )
 
     return pylint_results_as_json
 
@@ -84,8 +93,10 @@ def __get_pylint_analysis_as_json(
 def __transform_pylint_results_json_to_dictionary_of_pylint_result_dataframes(
     pylint_results_as_json: json,
 ) -> dict:
-    pylint_results_as_dataframe = pandas.read_json(
-        pylint_results_as_json,
+    pylint_results_as_dataframe = (
+        pandas.read_json(
+            pylint_results_as_json,
+        )
     )
 
     pylint_results_as_dataframe.rename(

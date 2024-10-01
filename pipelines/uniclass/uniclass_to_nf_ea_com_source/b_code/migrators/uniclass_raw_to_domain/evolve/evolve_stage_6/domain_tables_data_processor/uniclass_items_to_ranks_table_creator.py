@@ -42,9 +42,9 @@ def create_uniclass_items_to_ranks_table_and_add_to_dictionary(
         uuid_column_name=NF_UUIDS_COLUMN_NAME,
     )
 
-    dictionary_of_dataframes[LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS] = (
-        uuidified_uniclass_items_to_ranks_table
-    )
+    dictionary_of_dataframes[
+        LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS
+    ] = uuidified_uniclass_items_to_ranks_table
 
     return dictionary_of_dataframes
 
@@ -52,13 +52,21 @@ def create_uniclass_items_to_ranks_table_and_add_to_dictionary(
 def __get_uniclass_items_to_ranks_table(
     dictionary_of_dataframes: dict,
 ) -> DataFrame:
-    uniclass_items_to_ranks_table = DataFrame()
+    uniclass_items_to_ranks_table = (
+        DataFrame()
+    )
 
-    uniclass_objects_table = dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME]
+    uniclass_objects_table = dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ]
 
-    ranks_table = dictionary_of_dataframes[UNICLASS2015_RANKS_TABLE_NAME]
+    ranks_table = dictionary_of_dataframes[
+        UNICLASS2015_RANKS_TABLE_NAME
+    ]
 
-    for index in uniclass_objects_table.index:
+    for (
+        index
+    ) in uniclass_objects_table.index:
         uniclass_items_to_ranks_table.loc[
             index,
             CHILD_UUID_COLUMN_NAME,

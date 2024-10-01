@@ -7,7 +7,9 @@ from bclearer_core.substages.operations.b_evolve.convention_shift_operations.con
 from bclearer_core.substages.operations.common.connector_adder import (
     add_new_connector_to_dictionary,
 )
-from bclearer_core.substages.operations.common.connector_rename import rename_connector
+from bclearer_core.substages.operations.common.connector_rename import (
+    rename_connector,
+)
 from bclearer_core.substages.operations.common.intersection_getter import (
     get_intersection_of_dependency_and_association_linked,
 )
@@ -63,9 +65,13 @@ def __generalise_naming_spaces(
     list_of_configuration_objects: list,
     nf_ea_com_universe: NfEaComUniverses,
 ):
-    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = (
+        create_new_ea_objects_dictionary()
+    )
 
-    for configuration_object in list_of_configuration_objects:
+    for (
+        configuration_object
+    ) in list_of_configuration_objects:
         __generalise_naming_space(
             configuration_object=configuration_object,
             nf_ea_com_universe=nf_ea_com_universe,

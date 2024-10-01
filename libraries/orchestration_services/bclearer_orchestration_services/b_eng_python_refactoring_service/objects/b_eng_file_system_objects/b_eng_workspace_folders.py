@@ -15,4 +15,6 @@ class BEngWorkspaceFolders(BEngFolders):
             absolute_path_string=absolute_path_string,
         )
 
-        self.b_eng_folder_type = EnumBEngFolderTypes.WORKSPACE
+        self.b_eng_folder_type = (
+            EnumBEngFolderTypes.WORKSPACE
+        )

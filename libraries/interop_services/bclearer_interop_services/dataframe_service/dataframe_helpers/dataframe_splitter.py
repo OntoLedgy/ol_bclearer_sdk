@@ -13,6 +13,8 @@ def split_dataframe(
     ) in dataframe.groupby(
         column_to_split_on,
     ):
-        dataframe_split_dictionary[value_split] = dataframe_split
+        dataframe_split_dictionary[
+            value_split
+        ] = dataframe_split
 
     return dataframe_split_dictionary

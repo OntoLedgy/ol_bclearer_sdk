@@ -10,25 +10,33 @@ def replace_nf_uuids_in_collection(
     nf_uuid_mapping_dictionary: dict,
     collection: DataFrame,
 ) -> DataFrame:
-    column_has_lists = __check_column_has_lists(
-        column_name=column_name,
-        dataframe=collection,
+    column_has_lists = (
+        __check_column_has_lists(
+            column_name=column_name,
+            dataframe=collection,
+        )
     )
 
     if column_has_lists:
-        if column_name in LIST_OF_NF_UUID_LISTS_COLUMN_NAMES:
-            collection_with_nf_uuids_replaced = (
-                __update_nf_uuids_list_column_in_dataframe(
-                    nf_uuid_mapping_dictionary=nf_uuid_mapping_dictionary,
-                    dataframe=collection,
-                    uuid_list_column_name=column_name,
-                )
+        if (
+            column_name
+            in LIST_OF_NF_UUID_LISTS_COLUMN_NAMES
+        ):
+            collection_with_nf_uuids_replaced = __update_nf_uuids_list_column_in_dataframe(
+                nf_uuid_mapping_dictionary=nf_uuid_mapping_dictionary,
+                dataframe=collection,
+                uuid_list_column_name=column_name,
             )
 
         else:
-            collection_with_nf_uuids_replaced = collection
+            collection_with_nf_uuids_replaced = (
+                collection
+            )
 
-    elif column_name in LIST_OF_NF_UUID_COLUMN_NAMES:
+    elif (
+        column_name
+        in LIST_OF_NF_UUID_COLUMN_NAMES
+    ):
         collection_with_nf_uuids_replaced = __update_nf_uuids_column_in_dataframe(
             nf_uuid_mapping_dictionary=nf_uuid_mapping_dictionary,
             dataframe=collection,
@@ -36,7 +44,9 @@ def replace_nf_uuids_in_collection(
         )
 
     else:
-        collection_with_nf_uuids_replaced = collection
+        collection_with_nf_uuids_replaced = (
+            collection
+        )
 
     return collection_with_nf_uuids_replaced
 
@@ -45,13 +55,22 @@ def __check_column_has_lists(
     column_name: str,
     dataframe: DataFrame,
 ) -> bool:
-    dataframe_of_types = dataframe.applymap(type)
+    dataframe_of_types = (
+        dataframe.applymap(type)
+    )
 
-    dataframe_of_lists = dataframe_of_types.loc[
-        dataframe_of_types[column_name].astype(str) == "<class 'list'>"
-    ]
+    dataframe_of_lists = (
+        dataframe_of_types.loc[
+            dataframe_of_types[
+                column_name
+            ].astype(str)
+            == "<class 'list'>"
+        ]
+    )
 
-    column_has_lists = dataframe_of_lists.shape[0] > 0
+    column_has_lists = (
+        dataframe_of_lists.shape[0] > 0
+    )
 
     return column_has_lists
 
@@ -63,7 +82,11 @@ def __update_nf_uuids_column_in_dataframe(
 ) -> DataFrame:
     updated_dataframe = dataframe.copy()
 
-    updated_dataframe[uuid_column_name] = updated_dataframe[uuid_column_name].apply(
+    updated_dataframe[
+        uuid_column_name
+    ] = updated_dataframe[
+        uuid_column_name
+    ].apply(
         lambda original_nf_uuid: __replace_original_nf_uuid_by_new_nf_uuid(
             original_nf_uuid=original_nf_uuid,
             nf_uuid_mapping_dictionary=nf_uuid_mapping_dictionary,
@@ -80,7 +103,11 @@ def __update_nf_uuids_list_column_in_dataframe(
 ) -> DataFrame:
     updated_dataframe = dataframe.copy()
 
-    updated_dataframe[uuid_list_column_name] = dataframe[uuid_list_column_name].apply(
+    updated_dataframe[
+        uuid_list_column_name
+    ] = dataframe[
+        uuid_list_column_name
+    ].apply(
         lambda list_of_uuids: __replace_list_of_uuids(
             list_of_uuids=list_of_uuids,
             nf_uuid_mapping_dictionary=nf_uuid_mapping_dictionary,
@@ -118,7 +145,11 @@ def __replace_original_nf_uuid_by_new_nf_uuid(
     nf_uuid_mapping_dictionary: dict,
 ) -> str:
     try:
-        new_nf_uuid = nf_uuid_mapping_dictionary[original_nf_uuid]
+        new_nf_uuid = (
+            nf_uuid_mapping_dictionary[
+                original_nf_uuid
+            ]
+        )
 
     except KeyError:
         new_nf_uuid = original_nf_uuid

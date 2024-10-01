@@ -8,15 +8,19 @@ def read_csv_files_from_folder_to_dataframe_dictionary(
 ) -> dict:
     dataframe_dictionary = dict()
 
-    csv_files = __get_all_csv_files_from_folder(
-        folder,
+    csv_files = (
+        __get_all_csv_files_from_folder(
+            folder,
+        )
     )
 
     for csv_file in csv_files:
-        dataframe_dictionary = __add_dataframe(
-            csv_file,
-            folder,
-            dataframe_dictionary,
+        dataframe_dictionary = (
+            __add_dataframe(
+                csv_file,
+                folder,
+                dataframe_dictionary,
+            )
         )
 
     return dataframe_dictionary

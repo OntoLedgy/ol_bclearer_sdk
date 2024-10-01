@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
 )
@@ -38,10 +40,14 @@ def get_instances_nf_uuids_of_type_nf_uuid(
     nf_ea_com_universe: NfEaComUniverses,
     nf_uuid: str,
 ) -> set:
-    ea_connectors = nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    ea_connectors = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    )
 
     ea_dependencies = ea_connectors[
-        ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        ea_connectors[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.DEPENDENCY.type_name
     ]
 

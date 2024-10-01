@@ -1,4 +1,6 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -30,7 +32,11 @@ def convert_one_to_many_to_connectors(
     connector_name: str,
     connector_type: str,
 ) -> NfEaComUniverses:
-    os_open_names = os_open_names_dictionary[os_open_names_table_name]
+    os_open_names = (
+        os_open_names_dictionary[
+            os_open_names_table_name
+        ]
+    )
 
     log_message(
         message="adding "
@@ -70,14 +76,16 @@ def __create_new_ea_connectors(
         filter_and_rename_dictionary=filter_and_rename_dictionary,
     )
 
-    new_ea_connectors[NfColumnTypes.NF_UUIDS.column_name] = new_ea_connectors.apply(
+    new_ea_connectors[
+        NfColumnTypes.NF_UUIDS.column_name
+    ] = new_ea_connectors.apply(
         lambda row: create_new_uuid(),
         axis=1,
     )
 
-    new_ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name] = (
-        connector_type
-    )
+    new_ea_connectors[
+        NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+    ] = connector_type
 
     new_ea_connectors[
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name

@@ -32,19 +32,30 @@ class TableBDictionaries(BDictionaries):
         bie_row_id: BieIds,
         row_b_dictionary: RowBDictionaries,
     ) -> TableBDictionaryReturnTypes:
-        if bie_row_id in self.dictionary:
-            return TableBDictionaryReturnTypes.ROW_ALREADY_EXISTS
+        if (
+            bie_row_id
+            in self.dictionary
+        ):
+            return (
+                TableBDictionaryReturnTypes.ROW_ALREADY_EXISTS
+            )
 
-        self.dictionary[bie_row_id] = row_b_dictionary
+        self.dictionary[bie_row_id] = (
+            row_b_dictionary
+        )
 
-        return TableBDictionaryReturnTypes.ROW_ADDED
+        return (
+            TableBDictionaryReturnTypes.ROW_ADDED
+        )
 
     def add_new_or_update_row_b_dictionary(
         self,
         bie_row_id: BieIds,
         row_b_dictionary: RowBDictionaries,
     ) -> None:
-        self.dictionary[bie_row_id] = row_b_dictionary
+        self.dictionary[bie_row_id] = (
+            row_b_dictionary
+        )
 
     def get_next_bie_row_id(
         self,

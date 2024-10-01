@@ -15,9 +15,11 @@ def build_structure(
             item,
         )
 
-        item_relative_path = os.path.join(
-            relative_path,
-            item,
+        item_relative_path = (
+            os.path.join(
+                relative_path,
+                item,
+            )
         )
 
         if os.path.isdir(item_path):
@@ -39,12 +41,16 @@ def build_structure(
                 structure[key] = {}
 
             if item.endswith(".csv"):
-                structure[key]["data"] = item_relative_path
+                structure[key][
+                    "data"
+                ] = item_relative_path
 
             elif item.endswith(
                 ".cypher",
             ):
-                structure[key]["cypher"] = item_relative_path
+                structure[key][
+                    "cypher"
+                ] = item_relative_path
 
     return structure
 
@@ -70,26 +76,40 @@ def merge_structures(
                     query_dict[key],
                     dict,
                 ):
-                    merged[key] = merge_recursive(
-                        load_dict[key],
-                        query_dict[key],
+                    merged[key] = (
+                        merge_recursive(
+                            load_dict[
+                                key
+                            ],
+                            query_dict[
+                                key
+                            ],
+                        )
                     )
                 else:
                     merged[key] = {
-                        "data": load_dict[key].get(
+                        "data": load_dict[
+                            key
+                        ].get(
                             "data",
                             None,
                         ),
-                        "cypher": query_dict[key].get(
+                        "cypher": query_dict[
+                            key
+                        ].get(
                             "cypher",
                             None,
                         ),
                     }
             else:
-                merged[key] = load_dict[key]
+                merged[key] = load_dict[
+                    key
+                ]
         for key in query_dict:
             if key not in merged:
-                merged[key] = query_dict[key]
+                merged[key] = (
+                    query_dict[key]
+                )
         return merged
 
     merged_structure = merge_recursive(
@@ -112,7 +132,9 @@ def generate_load_dataset_from_folder(
         "queries",
     )
 
-    load_files_structure = build_structure(load_files_dir)
+    load_files_structure = (
+        build_structure(load_files_dir)
+    )
     queries_structure = build_structure(
         queries_dir,
     )
@@ -144,9 +166,17 @@ def iterate_structure(structure):
             value,
         ) in structure.items():
             if isinstance(value, dict):
-                if "data" in value and "cypher" in value:
-                    csv_path = value["data"]
-                    cypher_path = value["cypher"]
+                if (
+                    "data" in value
+                    and "cypher"
+                    in value
+                ):
+                    csv_path = value[
+                        "data"
+                    ]
+                    cypher_path = value[
+                        "cypher"
+                    ]
                     result.append(
                         {
                             "data": csv_path,
@@ -185,18 +215,32 @@ def categorize_structure(structure):
                     path,
                     key,
                 )
-                if "data" in value and "cypher" in value:
+                if (
+                    "data" in value
+                    and "cypher"
+                    in value
+                ):
                     pair = {
-                        "data": value["data"],
-                        "cypher": value["cypher"],
+                        "data": value[
+                            "data"
+                        ],
+                        "cypher": value[
+                            "cypher"
+                        ],
                     }
 
-                    if "01_nodes" in new_path:
+                    if (
+                        "01_nodes"
+                        in new_path
+                    ):
                         nodes.append(
                             pair,
                         )
 
-                    elif "02_edges" in new_path:
+                    elif (
+                        "02_edges"
+                        in new_path
+                    ):
                         edges.append(
                             pair,
                         )

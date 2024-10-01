@@ -43,12 +43,14 @@ def neo4j_docker_driver(
 
     uri = "bolt://localhost:7687"
 
-    neo4j_docker_driver = GraphDatabase.driver(
-        uri,
-        auth=(
-            "neo4j",
-            "testpassword",
-        ),
+    neo4j_docker_driver = (
+        GraphDatabase.driver(
+            uri,
+            auth=(
+                "neo4j",
+                "testpassword",
+            ),
+        )
     )
 
     yield neo4j_docker_driver

@@ -1,4 +1,6 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
     inner_merge_dataframes,
 )
@@ -29,17 +31,23 @@ def add_stereotype_to_instances_associations(
     ]
 
     connectors_to_type = connectors[
-        connectors[NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS.column_name]
+        connectors[
+            NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS.column_name
+        ]
         == type_nf_uuid
     ]
 
     dependencies_to_type = connectors_to_type[
-        connectors_to_type[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        connectors_to_type[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.DEPENDENCY.type_name
     ]
 
     associations = connectors[
-        connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        connectors[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.ASSOCIATION.type_name
     ]
 
@@ -67,11 +75,15 @@ def add_stereotype_to_instances_associations(
         ],
     )
 
-    new_stereotype_usages[NfEaComColumnTypes.STEREOTYPE_PROPERTY_TYPE.column_name] = (
+    new_stereotype_usages[
+        NfEaComColumnTypes.STEREOTYPE_PROPERTY_TYPE.column_name
+    ] = (
         EaPropertyTypes.CONNECTOR_PROPERTY.type_name
     )
 
-    new_stereotype_usages["stereotype_nf_uuids"] = stereotype_nf_uuid
+    new_stereotype_usages[
+        "stereotype_nf_uuids"
+    ] = stereotype_nf_uuid
 
     nf_ea_com_universe.nf_ea_com_registry.update(
         collection_type=NfEaComCollectionTypes.STEREOTYPE_USAGE,

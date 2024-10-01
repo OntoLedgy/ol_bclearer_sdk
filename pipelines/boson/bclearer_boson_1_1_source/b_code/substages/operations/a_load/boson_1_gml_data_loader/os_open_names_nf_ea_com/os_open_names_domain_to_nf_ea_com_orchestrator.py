@@ -22,7 +22,9 @@ from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_da
 from bclearer_source.b_code.substages.operations.b_evolve.common.new_root_package_creator import (
     create_root_package,
 )
-from nf_common_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from nf_common_source.code.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
 from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
     EaConnectorTypes,
 )
@@ -52,10 +54,16 @@ def orchestrate_os_open_names_domain_to_nf_ea_com(
         content_universe.nf_ea_com_registry.dictionary_of_collections
     )
 
-    for key in dictionary_of_collections.keys():
-        gml_data_content_universe.nf_ea_com_registry.dictionary_of_collections[key] = (
-            dictionary_of_collections[key]
-        )
+    for (
+        key
+    ) in (
+        dictionary_of_collections.keys()
+    ):
+        gml_data_content_universe.nf_ea_com_registry.dictionary_of_collections[
+            key
+        ] = dictionary_of_collections[
+            key
+        ]
 
     gml_data_content_universe = __convert_domain(
         nf_ea_com_universe=gml_data_content_universe,

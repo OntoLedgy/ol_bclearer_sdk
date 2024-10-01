@@ -7,7 +7,9 @@ from bclearer_interop_services.graph_services.neo4j_service.object_models.cypher
 class TestCypherServices:
     @pytest.fixture(autouse=True)
     def setup_method(self):
-        self.cypher_wrapper = CypherQueryWrapper()
+        self.cypher_wrapper = (
+            CypherQueryWrapper()
+        )
 
     # Example usage:
     def test_cypher_wrapper_read_write(

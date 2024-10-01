@@ -20,9 +20,13 @@ def hashify_target_dataframe(
     target_dataframe: pandas.DataFrame,
     bclearer_load_configuration: BclearerLoadConfigurations,
 ) -> pandas.DataFrame:
-    hashified_target_dataframe = target_dataframe.copy()
+    hashified_target_dataframe = (
+        target_dataframe.copy()
+    )
 
-    if bclearer_load_configuration.content_hash_configuration_list:
+    if (
+        bclearer_load_configuration.content_hash_configuration_list
+    ):
         add_named_hash_column(
             hashified_target_dataframe=hashified_target_dataframe,
             column_name=CONTENT_HASHES_CONFIGURATION_NAME,
@@ -40,14 +44,18 @@ def hashify_target_dataframe(
         configuration_list=bclearer_load_configuration.identity_hash_configuration_list,
     )
 
-    if bclearer_load_configuration.alternative_identity_hash_configuration_list:
+    if (
+        bclearer_load_configuration.alternative_identity_hash_configuration_list
+    ):
         add_named_hash_column(
             hashified_target_dataframe=hashified_target_dataframe,
             column_name=ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME,
             configuration_list=bclearer_load_configuration.alternative_identity_hash_configuration_list,
         )
 
-    if bclearer_load_configuration.core_content_hash_configuration_list:
+    if (
+        bclearer_load_configuration.core_content_hash_configuration_list
+    ):
         add_named_hash_column(
             hashified_target_dataframe=hashified_target_dataframe,
             column_name=CORE_CONTENT_HASHES_CONFIGURATION_NAME,

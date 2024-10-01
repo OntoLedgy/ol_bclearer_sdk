@@ -59,7 +59,9 @@ def shift_convention_separate_bespoke_instances_and_exemplars(
         content_universe.nf_ea_com_registry.dictionary_of_collections.copy()
     )
 
-    for configuration_object in list_of_configuration_objects:
+    for (
+        configuration_object
+    ) in list_of_configuration_objects:
         __separate_instances_and_exemplars(
             configuration_object=configuration_object,
             nf_ea_com_universe=output_universe,
@@ -78,7 +80,9 @@ def __separate_instances_and_exemplars(
     nf_ea_com_universe: NfEaComUniverses,
     package_nf_uuid: str,
 ):
-    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = (
+        create_new_ea_objects_dictionary()
+    )
 
     name_instance_instances = get_instances_nf_uuids_of_matched_type(
         nf_ea_com_universe=nf_ea_com_universe,
@@ -91,7 +95,9 @@ def __separate_instances_and_exemplars(
         ea_guid=DigitalisationLevelStereotypeMatchedEaObjects.DIGITALISATION_LEVEL_1_CLASS_STEREOTYPE.ea_guid,
     )
 
-    for name_instance_instance_nf_uuid in name_instance_instances:
+    for (
+        name_instance_instance_nf_uuid
+    ) in name_instance_instances:
         __separate_name_exemplars(
             nf_ea_com_universe=nf_ea_com_universe,
             name_instance_instance_nf_uuid=name_instance_instance_nf_uuid,
@@ -136,10 +142,14 @@ def __get_name_exemplar_attributes(
     name_instance_instance_nf_uuid: str,
     name_exemplar_attribute_name: str,
 ) -> DataFrame:
-    ea_connectors = nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    ea_connectors = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    )
 
     ea_dependencies = ea_connectors[
-        ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        ea_connectors[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.DEPENDENCY.type_name
     ]
 
@@ -156,7 +166,9 @@ def __get_name_exemplar_attributes(
         ],
     )
 
-    ea_attributes = nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    ea_attributes = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    )
 
     name_instance_attributes = ea_attributes.loc[
         ea_attributes[

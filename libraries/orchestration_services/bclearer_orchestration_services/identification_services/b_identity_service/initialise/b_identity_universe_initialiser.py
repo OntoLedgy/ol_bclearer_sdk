@@ -19,7 +19,9 @@ def initialise_b_identity_universe(
     ):
         raise TypeError
 
-    b_identity_registry = b_identity_universe.b_identity_registry
+    b_identity_registry = (
+        b_identity_universe.b_identity_registry
+    )
 
     __create_tables(
         b_identity_registry=b_identity_registry,
@@ -29,6 +31,6 @@ def initialise_b_identity_universe(
 def __create_tables(
     b_identity_registry: BIdentityRegistries,
 ) -> None:
-    b_identity_registry.table_dictionary["b_identity_types_table"] = (
-        create_b_identity_types_table()
-    )
+    b_identity_registry.table_dictionary[
+        "b_identity_types_table"
+    ] = create_b_identity_types_table()

@@ -17,11 +17,19 @@ class LogFiles:
         folder_path=None,
         now_time=now_time_as_string_for_files(),
     ):
-        LogFiles.folder_path = folder_path
+        LogFiles.folder_path = (
+            folder_path
+        )
 
-        LogFiles.first_open_time = now_time
+        LogFiles.first_open_time = (
+            now_time
+        )
 
-        file_name = "log_file" + LogFiles.first_open_time + ".txt"
+        file_name = (
+            "log_file"
+            + LogFiles.first_open_time
+            + ".txt"
+        )
 
         file_path = path.join(
             folder_path,

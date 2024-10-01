@@ -8,8 +8,8 @@ def add_stereotypes_table_to_dataframes_dictionary(
     dictionary_of_dataframes: dict,
     stereotypes_table: DataFrame,
 ):
-    dictionary_of_dataframes[UNICLASS_STEREOTYPES_TYPE_OF_TABLE_NAME] = (
-        stereotypes_table
-    )
+    dictionary_of_dataframes[
+        UNICLASS_STEREOTYPES_TYPE_OF_TABLE_NAME
+    ] = stereotypes_table
 
     return dictionary_of_dataframes

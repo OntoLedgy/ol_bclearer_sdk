@@ -44,11 +44,9 @@ def populate_child_parent_uuids_in_evolve_8_input_linked_tables(
         ATTRIBUTE_TABLE_HIGHER_LEVELS_NAME_SPACES_TABLE_NAME,
     )
 
-    evolve_8_input_linked_tables_with_child_uuids_populated = (
-        __populate_child_uuid_columns_in_linked_tables(
-            evolve_8_input_linked_tables=evolve_8_input_linked_tables,
-            evolve_8_domain_tables=evolve_8_domain_tables,
-        )
+    evolve_8_input_linked_tables_with_child_uuids_populated = __populate_child_uuid_columns_in_linked_tables(
+        evolve_8_input_linked_tables=evolve_8_input_linked_tables,
+        evolve_8_domain_tables=evolve_8_domain_tables,
     )
 
     evolve_8_input_linked_tables_with_child_parent_uuids_populated = __populate_parent_uuid_columns_in_linked_tables(
@@ -77,7 +75,9 @@ def __populate_child_uuid_columns_in_linked_tables(
     evolve_8_input_linked_tables: dict,
     evolve_8_domain_tables: dict,
 ) -> dict:
-    evolve_8_input_linked_tables_with_child_uuids_populated = {}
+    evolve_8_input_linked_tables_with_child_uuids_populated = (
+        {}
+    )
 
     populated_dataframe_columns = {
         UUID_COLUMN_NAME: UUID_COLUMN_NAME,
@@ -96,8 +96,13 @@ def __populate_child_uuid_columns_in_linked_tables(
     for (
         linked_table_name,
         linked_table,
-    ) in evolve_8_input_linked_tables.items():
-        if PARENT_PACKAGE_NAME_COLUMN_NAME in linked_table:
+    ) in (
+        evolve_8_input_linked_tables.items()
+    ):
+        if (
+            PARENT_PACKAGE_NAME_COLUMN_NAME
+            in linked_table
+        ):
             linked_table_dataframe_with_child_uuids_values = __add_uuids_to_linked_table_columns(
                 linked_table=linked_table,
                 evolve_8_domain_tables=evolve_8_domain_tables,
@@ -124,7 +129,9 @@ def __populate_parent_uuid_columns_in_linked_tables(
     evolve_8_input_linked_tables: dict,
     evolve_8_domain_tables: dict,
 ) -> dict:
-    evolve_8_input_linked_tables_with_parent_uuids_populated = {}
+    evolve_8_input_linked_tables_with_parent_uuids_populated = (
+        {}
+    )
 
     populated_dataframe_columns = {
         UUID_COLUMN_NAME: UUID_COLUMN_NAME,
@@ -143,8 +150,13 @@ def __populate_parent_uuid_columns_in_linked_tables(
     for (
         table_name_linked_table,
         dataframe_linked_table,
-    ) in evolve_8_input_linked_tables.items():
-        if PARENT_PACKAGE_NAME_COLUMN_NAME in dataframe_linked_table:
+    ) in (
+        evolve_8_input_linked_tables.items()
+    ):
+        if (
+            PARENT_PACKAGE_NAME_COLUMN_NAME
+            in dataframe_linked_table
+        ):
             linked_table_dataframe_with_parent_uuids_values = __add_uuids_to_linked_table_columns(
                 linked_table=dataframe_linked_table,
                 evolve_8_domain_tables=evolve_8_domain_tables,
@@ -232,7 +244,9 @@ def __add_attributed_type_uuids_to_table(
         column_renaming_dictionary=populated_dataframe_columns,
     )
 
-    return table_with_attributed_type_uuids
+    return (
+        table_with_attributed_type_uuids
+    )
 
 
 def __add_uuids_to_linked_table_columns(
@@ -244,19 +258,28 @@ def __add_uuids_to_linked_table_columns(
     column_renaming_dictionary: dict,
 ) -> pandas.DataFrame:
     linked_table_uuids_unpopulated_slice = linked_table[
-        linked_table[linked_table_column_name].isnull()
+        linked_table[
+            linked_table_column_name
+        ].isnull()
     ]
 
     linked_table_uuids_populated_slice = linked_table[
-        linked_table[linked_table_column_name].notnull()
+        linked_table[
+            linked_table_column_name
+        ].notnull()
     ]
 
     for (
         evolve_8_domain_table_name,
         evolve_8_domain_table,
     ) in evolve_8_domain_tables.items():
-        if OBJECT_NAME_COLUMN_NAME in evolve_8_domain_table.columns:
-            if not linked_table_uuids_unpopulated_slice.empty:
+        if (
+            OBJECT_NAME_COLUMN_NAME
+            in evolve_8_domain_table.columns
+        ):
+            if (
+                not linked_table_uuids_unpopulated_slice.empty
+            ):
                 temporary_dataframe_with_child_uuids_populated = left_merge_dataframes(
                     master_dataframe=linked_table_uuids_unpopulated_slice,
                     master_dataframe_key_columns=master_dataframe_key_columns,
@@ -271,22 +294,18 @@ def __add_uuids_to_linked_table_columns(
                     },
                 )
 
-                dataframe_with_child_uuid_column_populated_dictionary = (
-                    column_renaming_dictionary
-                )
+                dataframe_with_child_uuid_column_populated_dictionary = column_renaming_dictionary
 
                 temporary_dataframe_with_child_uuids_populated = dataframe_filter_and_rename(
                     dataframe=temporary_dataframe_with_child_uuids_populated,
                     filter_and_rename_dictionary=dataframe_with_child_uuid_column_populated_dictionary,
                 )
 
-                linked_table_uuids_unpopulated_slice = (
+                linked_table_uuids_unpopulated_slice = temporary_dataframe_with_child_uuids_populated[
                     temporary_dataframe_with_child_uuids_populated[
-                        temporary_dataframe_with_child_uuids_populated[
-                            linked_table_column_name
-                        ].isnull()
-                    ]
-                )
+                        linked_table_column_name
+                    ].isnull()
+                ]
 
                 linked_table_uuids_populated_slice = pandas.concat(
                     [

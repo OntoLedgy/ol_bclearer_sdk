@@ -1,9 +1,13 @@
 import concurrent
 import logging
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import (
+    ThreadPoolExecutor,
+)
 
-from neo4j_object_models.Neo4jWrapper import Neo4jWrapper
+from neo4j_object_models.Neo4jWrapper import (
+    Neo4jWrapper,
+)
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -16,7 +20,9 @@ class NodeLoader:
         max_retries=3,
         retry_delay=1,
     ):
-        self.neo4j_wrapper = neo4j_wrapper
+        self.neo4j_wrapper = (
+            neo4j_wrapper
+        )
         self.batch_size = batch_size
         self.max_retries = max_retries
         self.retru_delay = retry_delay
@@ -30,7 +36,10 @@ class NodeLoader:
             futures = [
                 executor.submit(
                     self._load_node_batch,
-                    node_data[i : i + self.batch_size],
+                    node_data[
+                        i : i
+                        + self.batch_size
+                    ],
                     mapping_query,
                 )
                 for i in range(
@@ -73,8 +82,15 @@ class NodeLoader:
                     f"Error executing query: {e} \n Query: {mapping_query} \n Data: \n {batch}",
                 )
 
-                if "DeadlockDetected" in str(e):
-                    if attempt < self.max_retries - 1:
+                if (
+                    "DeadlockDetected"
+                    in str(e)
+                ):
+                    if (
+                        attempt
+                        < self.max_retries
+                        - 1
+                    ):
                         logging.warning(
                             f"Deadlock detected. Retrying in {self.retry_delay} seconds...",
                         )

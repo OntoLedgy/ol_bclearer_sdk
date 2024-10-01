@@ -11,7 +11,10 @@ def get_levelled_uuids(
 
     rep_level = 8
 
-    if parent_folder.absolute_level < rep_level:
+    if (
+        parent_folder.absolute_level
+        < rep_level
+    ):
         return ["", "", "", "", "", ""]
 
     levelled_uuids = []
@@ -23,7 +26,9 @@ def get_levelled_uuids(
             focus_folder.uuid,
         )
 
-        focus_folder = focus_folder.parent_folder
+        focus_folder = (
+            focus_folder.parent_folder
+        )
 
     levelled_uuids.reverse()
 
@@ -31,6 +36,8 @@ def get_levelled_uuids(
         ["", "", "", "", "", ""],
     )
 
-    levelled_uuids = levelled_uuids[5:10]
+    levelled_uuids = levelled_uuids[
+        5:10
+    ]
 
     return levelled_uuids

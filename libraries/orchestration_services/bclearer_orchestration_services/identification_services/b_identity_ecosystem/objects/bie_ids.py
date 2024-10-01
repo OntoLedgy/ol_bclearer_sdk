@@ -19,7 +19,10 @@ class BieIds:
         ):
             return NotImplemented
 
-        return self.int_value == other.int_value
+        return (
+            self.int_value
+            == other.int_value
+        )
 
     def __lt__(self, other):
         if not isinstance(
@@ -28,7 +31,10 @@ class BieIds:
         ):
             return NotImplemented
 
-        return self.int_value < other.int_value
+        return (
+            self.int_value
+            < other.int_value
+        )
 
     def __hash__(self):
         return hash(self.int_value)

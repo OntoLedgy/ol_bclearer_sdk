@@ -1,6 +1,8 @@
 import os
 
-from nf_common_source.code.services.file_system_service.objects.folders import Folders
+from nf_common_source.code.services.file_system_service.objects.folders import (
+    Folders,
+)
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -20,7 +22,9 @@ def export_nf_ea_com_to_ea(
     nf_ea_com_universe: NfEaComUniverses,
     folder_path: str,
 ):
-    bclearer_stage = nf_ea_com_universe.ea_repository.short_name
+    bclearer_stage = (
+        nf_ea_com_universe.ea_repository.short_name
+    )
 
     current_stage_ea_export_folder_path = os.path.join(
         folder_path,
@@ -36,7 +40,8 @@ def export_nf_ea_com_to_ea(
         )
 
     log_message(
-        "STARTING EA EXPORT (XML) FOR " + bclearer_stage,
+        "STARTING EA EXPORT (XML) FOR "
+        + bclearer_stage,
     )
 
     orchestrate_nf_ea_com_universe_to_eapx_migration(
@@ -49,5 +54,6 @@ def export_nf_ea_com_to_ea(
     )
 
     log_message(
-        "EA EXPORT DONE (XML) - " + bclearer_stage,
+        "EA EXPORT DONE (XML) - "
+        + bclearer_stage,
     )

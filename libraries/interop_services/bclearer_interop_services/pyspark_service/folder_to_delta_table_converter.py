@@ -1,5 +1,7 @@
 import pyspark.sql
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.pyspark_service.pyspark_delta_catalog_session_getter import (
     get_pyspark_delta_catalog_session,
 )
@@ -11,7 +13,9 @@ def convert_folder_to_delta_table(
     spark_session: pyspark.sql.SparkSession = None,
 ) -> None:
     if not spark_session:
-        spark_session = get_pyspark_delta_catalog_session()
+        spark_session = (
+            get_pyspark_delta_catalog_session()
+        )
 
     DeltaTable.convertToDelta(
         spark_session,

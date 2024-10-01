@@ -10,8 +10,10 @@ from nf_common.code.services.b_eng_python_refactoring_service.reporters.folder_n
 def report_objects():
     objects_table = pandas.DataFrame()
 
-    objects_table = add_folders_to_nodes(
-        node_table=objects_table,
+    objects_table = (
+        add_folders_to_nodes(
+            node_table=objects_table,
+        )
     )
 
     objects_table = add_files_to_nodes(

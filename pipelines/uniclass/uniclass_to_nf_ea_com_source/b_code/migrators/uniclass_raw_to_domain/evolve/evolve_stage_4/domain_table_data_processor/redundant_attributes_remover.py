@@ -13,15 +13,21 @@ from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclas
 def remove_redundant_attributes_from_object_table(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass_object_table = dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME]
+    uniclass_object_table = dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ]
 
-    for index in uniclass_object_table.index:
+    for (
+        index
+    ) in uniclass_object_table.index:
         __remove_redundant_attributes_from_object_table(
             uniclass_object_table=uniclass_object_table,
             index=index,
         )
 
-    dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME] = uniclass_object_table
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = uniclass_object_table
 
     return dictionary_of_dataframes
 

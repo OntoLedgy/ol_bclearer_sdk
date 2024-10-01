@@ -44,16 +44,20 @@ def __collect_child_file_if_required(
     parent_folder: BEngFolders,
     b_eng_python_reference_dictionary: BEngPythonReferenceDictionaries,
 ):
-    file_is_required = __check_if_file_is_required(
-        file_name=file_name,
+    file_is_required = (
+        __check_if_file_is_required(
+            file_name=file_name,
+        )
     )
 
     if not file_is_required:
         return
 
-    alternative_name = get_b_eng_file_alternative_name(
-        file_name=file_name,
-        parent_folder=parent_folder,
+    alternative_name = (
+        get_b_eng_file_alternative_name(
+            file_name=file_name,
+            parent_folder=parent_folder,
+        )
     )
 
     b_eng_file = BEngFiles(

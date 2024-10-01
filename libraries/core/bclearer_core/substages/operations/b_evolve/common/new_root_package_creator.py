@@ -1,8 +1,12 @@
 from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
     create_ea_guid_from_nf_uuid,
 )
-from nf_common_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
@@ -27,19 +31,21 @@ def create_root_package(
     nf_ea_com_universe: NfEaComUniverses,
     package_name: str,
 ) -> str:
-    package_collection = (
-        nf_ea_com_universe.nf_ea_com_registry.dictionary_of_collections[
-            NfEaComCollectionTypes.EA_PACKAGES
-        ]
-    )
+    package_collection = nf_ea_com_universe.nf_ea_com_registry.dictionary_of_collections[
+        NfEaComCollectionTypes.EA_PACKAGES
+    ]
 
     package_nf_uuid = create_new_uuid()
 
-    package_ea_guid = create_ea_guid_from_nf_uuid(
-        nf_uuid=package_nf_uuid,
+    package_ea_guid = (
+        create_ea_guid_from_nf_uuid(
+            nf_uuid=package_nf_uuid,
+        )
     )
 
-    package_ea_package_path = package_name
+    package_ea_package_path = (
+        package_name
+    )
 
     ea_package_dictionary = {
         EaTPackageColumnTypes.T_PACKAGE_EA_GUIDS.nf_column_name: package_ea_guid,
@@ -59,9 +65,11 @@ def create_root_package(
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name: package_ea_guid,
     }
 
-    updated_package_collection = package_collection.append(
-        ea_package_dictionary,
-        ignore_index=True,
+    updated_package_collection = (
+        package_collection.append(
+            ea_package_dictionary,
+            ignore_index=True,
+        )
     )
 
     nf_ea_com_universe.nf_ea_com_registry.dictionary_of_collections[

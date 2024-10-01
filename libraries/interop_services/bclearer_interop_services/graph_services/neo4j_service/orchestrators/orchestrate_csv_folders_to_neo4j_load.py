@@ -63,7 +63,9 @@ def orchestrate_graph_object_load(
     graph_object_load_dataset,
     graph_object_type: GraphObjectTypes,
 ):
-    for pair in graph_object_load_dataset:
+    for (
+        pair
+    ) in graph_object_load_dataset:
         csv_relative_path = os.path.join(
             LoaderDataFolderNames.DATA,
             pair["data"],

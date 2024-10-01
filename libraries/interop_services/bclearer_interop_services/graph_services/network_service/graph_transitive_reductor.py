@@ -3,7 +3,10 @@ import sys
 from bclearer_interop_services.graph_services.network_service.directed_graph_cycles_checker import (
     check_directed_graph_cycles,
 )
-from networkx import DiGraph, transitive_reduction
+from networkx import (
+    DiGraph,
+    transitive_reduction,
+)
 
 
 def transitively_reduce_graph(

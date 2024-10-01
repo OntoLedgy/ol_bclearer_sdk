@@ -1,6 +1,8 @@
 from enum import auto, unique
 
-from nf_common_source.code.nf.types.collection_types import CollectionTypes
+from nf_common_source.code.nf.types.collection_types import (
+    CollectionTypes,
+)
 
 
 @unique
@@ -15,8 +17,12 @@ class UniclassNamespaceCkIds(
     OBJECT = auto()
     TITLE = auto()
     UNICLASS_DOMAIN_NAMES = auto()
-    UNICLASS_CLASSIFICATION_RANKS_NAMES = auto()
-    UNICLASS_CLASSIFICATION_TYPE_OF_RELATION_SUB_TYPE_NAMES = auto()
+    UNICLASS_CLASSIFICATION_RANKS_NAMES = (
+        auto()
+    )
+    UNICLASS_CLASSIFICATION_TYPE_OF_RELATION_SUB_TYPE_NAMES = (
+        auto()
+    )
     RANK_TYPE_NAME = auto()
 
     def __collection_name(self) -> str:

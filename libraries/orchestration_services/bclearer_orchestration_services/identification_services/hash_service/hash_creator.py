@@ -1,6 +1,8 @@
 import hashlib
 
-from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_core.constants.standard_constants import (
+    UTF_8_ENCODING_NAME,
+)
 
 
 def create_tiny_hash_string(
@@ -59,6 +61,8 @@ def __create_hash_string(
         digest_size=digest_size,
     )
 
-    hash_string = hash_blake2b.hexdigest()
+    hash_string = (
+        hash_blake2b.hexdigest()
+    )
 
     return hash_string

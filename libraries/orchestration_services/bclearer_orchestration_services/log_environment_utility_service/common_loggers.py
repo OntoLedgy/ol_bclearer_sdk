@@ -1,14 +1,20 @@
 import logging
 import sys
 from logging import Logger
-from logging.handlers import TimedRotatingFileHandler
+from logging.handlers import (
+    TimedRotatingFileHandler,
+)
 
 import pandas
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 from nf_common.code.services.log_environment_utility_service.loggers.environment_logger import (
     log_filtered_environment,
 )
-from nf_common.code.services.reporting_service.reporters.log_file import LogFiles
+from nf_common.code.services.reporting_service.reporters.log_file import (
+    LogFiles,
+)
 from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
     log_timing_header,
 )
@@ -31,12 +37,16 @@ class CommonLoggers(Logger):
             **kwargs,
         )
 
-        self.formatter = logging.Formatter(
-            log_format,
-            "%Y-%m-%d %H:%M:%S",
+        self.formatter = (
+            logging.Formatter(
+                log_format,
+                "%Y-%m-%d %H:%M:%S",
+            )
         )
 
-        self.log_file_path = log_file_path
+        self.log_file_path = (
+            log_file_path
+        )
 
         self.addHandler(
             self.get_console_handler(),
@@ -59,8 +69,10 @@ class CommonLoggers(Logger):
     def get_console_handler(
         self,
     ) -> logging.StreamHandler:
-        console_handler = logging.StreamHandler(
-            sys.stdout,
+        console_handler = (
+            logging.StreamHandler(
+                sys.stdout,
+            )
         )
 
         console_handler.setFormatter(
@@ -72,9 +84,11 @@ class CommonLoggers(Logger):
     def get_file_handler(
         self,
     ) -> TimedRotatingFileHandler:
-        file_handler = TimedRotatingFileHandler(
-            self.log_file_path,
-            when="midnight",
+        file_handler = (
+            TimedRotatingFileHandler(
+                self.log_file_path,
+                when="midnight",
+            )
         )
 
         file_handler.setFormatter(
@@ -84,7 +98,9 @@ class CommonLoggers(Logger):
         return file_handler
 
     def read_log_file_content(self):
-        file_handler_path = self.get_file_handler().baseFilename
+        file_handler_path = (
+            self.get_file_handler().baseFilename
+        )
 
         file_handler = Files(
             absolute_path_string=file_handler_path,
@@ -93,7 +109,9 @@ class CommonLoggers(Logger):
         with open(
             file_handler.absolute_path_string,
         ) as text_io_wrapper_file:
-            log_lines = text_io_wrapper_file.readlines()
+            log_lines = (
+                text_io_wrapper_file.readlines()
+            )
 
             text_io_wrapper_file.close()
 
@@ -103,11 +121,15 @@ class CommonLoggers(Logger):
         self,
         log_type: str,
     ) -> pandas.DataFrame:
-        log_lines = self.read_log_file_content()
+        log_lines = (
+            self.read_log_file_content()
+        )
 
-        log_datatable = pandas.DataFrame(
-            log_lines,
-            columns=["log_message"],
+        log_datatable = (
+            pandas.DataFrame(
+                log_lines,
+                columns=["log_message"],
+            )
         )
 
         log_datatable_by_error_type = log_datatable[
@@ -116,4 +138,6 @@ class CommonLoggers(Logger):
             )
         ]
 
-        return log_datatable_by_error_type
+        return (
+            log_datatable_by_error_type
+        )

@@ -1,4 +1,6 @@
-from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_core.constants.standard_constants import (
+    UTF_8_ENCODING_NAME,
+)
 from kafka import KafkaProducer
 
 
@@ -13,13 +15,22 @@ class NfKafkaProducers:
     def log_to_kafka_producer(
         message: str,
     ):
-        if NfKafkaProducers.__kafka_producer is None:
+        if (
+            NfKafkaProducers.__kafka_producer
+            is None
+        ):
             return
 
-        if NfKafkaProducers.__topic_name is None:
+        if (
+            NfKafkaProducers.__topic_name
+            is None
+        ):
             return
 
-        if NfKafkaProducers.__key is None:
+        if (
+            NfKafkaProducers.__key
+            is None
+        ):
             return
 
         try:
@@ -38,7 +49,8 @@ class NfKafkaProducers:
 
         except Exception as exception:
             print(
-                "Exception logging message in Kafka: " + str(exception),
+                "Exception logging message in Kafka: "
+                + str(exception),
             )
 
     @staticmethod
@@ -47,7 +59,9 @@ class NfKafkaProducers:
         topic_name: str,
         key: str,
     ):
-        NfKafkaProducers.__topic_name = topic_name
+        NfKafkaProducers.__topic_name = (
+            topic_name
+        )
 
         NfKafkaProducers.__key = bytes(
             key,
@@ -62,12 +76,16 @@ class NfKafkaProducers:
 
         except Exception as exception:
             print(
-                "Exception while connecting Kafka: " + str(exception),
+                "Exception while connecting Kafka: "
+                + str(exception),
             )
 
     @staticmethod
     def close_kafka_producer():
-        if NfKafkaProducers.__kafka_producer is None:
+        if (
+            NfKafkaProducers.__kafka_producer
+            is None
+        ):
             return
 
         NfKafkaProducers.__kafka_producer.close()

@@ -5,7 +5,9 @@ import pytest
 
 @pytest.fixture(scope="session")
 def data_input_folder_absolute_path():
-    data_input_relative_path = "../data/input"
+    data_input_relative_path = (
+        "../data/input"
+    )
     base_path = os.path.dirname(
         os.path.abspath(__file__),
     )
@@ -15,12 +17,16 @@ def data_input_folder_absolute_path():
             data_input_relative_path,
         ),
     )
-    return data_input_folder_absolute_path
+    return (
+        data_input_folder_absolute_path
+    )
 
 
 @pytest.fixture(scope="session")
 def configurations_folder():
-    configurations_folder_relative_path = "../configurations"
+    configurations_folder_relative_path = (
+        "../configurations"
+    )
     base_path = os.path.dirname(
         os.path.abspath(__file__),
     )
@@ -35,14 +41,18 @@ def configurations_folder():
 
 @pytest.fixture(scope="session")
 def log_folder():
-    log_folder_relative_path = "./data/logs"
+    log_folder_relative_path = (
+        "./data/logs"
+    )
 
     return log_folder_relative_path
 
 
 @pytest.fixture(scope="session")
 def storage_interop_services_source_folder():
-    storage_interop_services_source_folder_relative_path = "./data/input"
+    storage_interop_services_source_folder_relative_path = (
+        "./data/input"
+    )
 
     return storage_interop_services_source_folder_relative_path
 
@@ -67,7 +77,5 @@ def csv_file_name_and_path():
 
 @pytest.fixture(scope="session")
 def csv_file_name_and_path_no_header():
-    csv_file_path_relative_path = (
-        "./data/input/delimited_text/cfi-20210507-current_no_header.csv"
-    )
+    csv_file_path_relative_path = "./data/input/delimited_text/cfi-20210507-current_no_header.csv"
     return csv_file_path_relative_path

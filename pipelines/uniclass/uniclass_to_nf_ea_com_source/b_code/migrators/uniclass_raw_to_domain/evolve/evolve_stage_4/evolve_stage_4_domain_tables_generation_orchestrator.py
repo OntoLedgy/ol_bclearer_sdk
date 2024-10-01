@@ -28,7 +28,8 @@ def orchestrate_domain_tables_creation_for_evolve_4(
 
     evolve_stage_4_domain_tables_folder_path = create_new_folder(
         parent_folder_path=evolve_stage_4_folder_path,
-        new_folder_name=EVOLVE_STAGE_4_NAME + "_domain_tables",
+        new_folder_name=EVOLVE_STAGE_4_NAME
+        + "_domain_tables",
     )
 
     export_dataframes_dictionary_to_csv_and_access(

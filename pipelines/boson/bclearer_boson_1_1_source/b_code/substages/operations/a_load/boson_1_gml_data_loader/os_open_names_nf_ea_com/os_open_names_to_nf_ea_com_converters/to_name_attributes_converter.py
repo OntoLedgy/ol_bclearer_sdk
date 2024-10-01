@@ -1,5 +1,9 @@
-from bclearer_source.b_code.common_knowledge.matched_objects import MatchedEaObjects
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from bclearer_source.b_code.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -31,7 +35,11 @@ def convert_to_name_attributes(
     os_open_names_table_name: str,
     matched_classifying_ea_classifier: MatchedEaObjects,
 ) -> NfEaComUniverses:
-    os_open_names = os_open_names_dictionary[os_open_names_table_name]
+    os_open_names = (
+        os_open_names_dictionary[
+            os_open_names_table_name
+        ]
+    )
 
     log_message(
         message="adding "
@@ -70,7 +78,9 @@ def __create_new_ea_attributes(
     ]
 
     classifying_ea_classifier_id = ea_classifiers.at[
-        ea_classifiers[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name]
+        ea_classifiers[
+            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
+        ]
         .eq(
             matched_classifying_ea_classifier.ea_guid,
         )
@@ -79,7 +89,9 @@ def __create_new_ea_attributes(
     ]
 
     classifying_ea_classifier_name = ea_classifiers.at[
-        ea_classifiers[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name]
+        ea_classifiers[
+            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
+        ]
         .eq(
             matched_classifying_ea_classifier.ea_guid,
         )
@@ -97,7 +109,9 @@ def __create_new_ea_attributes(
         filter_and_rename_dictionary=filter_and_rename_dictionary,
     )
 
-    new_ea_attributes[NfColumnTypes.NF_UUIDS.column_name] = create_new_uuid()
+    new_ea_attributes[
+        NfColumnTypes.NF_UUIDS.column_name
+    ] = create_new_uuid()
 
     new_ea_attributes[
         NfEaComColumnTypes.ELEMENT_COMPONENTS_CLASSIFYING_EA_CLASSIFIER.column_name
@@ -107,8 +121,8 @@ def __create_new_ea_attributes(
         NfEaComColumnTypes.ELEMENT_COMPONENTS_UML_VISIBILITY_KIND.column_name
     ] = "Public"
 
-    new_ea_attributes[NfEaComColumnTypes.ELEMENT_COMPONENTS_TYPE.column_name] = (
-        classifying_ea_classifier_name
-    )
+    new_ea_attributes[
+        NfEaComColumnTypes.ELEMENT_COMPONENTS_TYPE.column_name
+    ] = classifying_ea_classifier_name
 
     return new_ea_attributes

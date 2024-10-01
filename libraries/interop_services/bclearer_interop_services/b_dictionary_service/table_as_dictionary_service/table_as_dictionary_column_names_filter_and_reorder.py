@@ -30,11 +30,21 @@ def __filter_row_and_add_to_filtered_dictionary(
         row_dictionary_key,
         row_dictionary_value,
     ) in row_dictionary.items():
-        if row_dictionary_key in column_names:
-            filtered_dictionary_row[row_dictionary_key] = row_dictionary_value
+        if (
+            row_dictionary_key
+            in column_names
+        ):
+            filtered_dictionary_row[
+                row_dictionary_key
+            ] = row_dictionary_value
 
     filtered_and_reordered_dictionary_row = {
-        key: filtered_dictionary_row[key] for key in column_names
+        key: filtered_dictionary_row[
+            key
+        ]
+        for key in column_names
     }
 
-    filtered_dictionary[key] = filtered_and_reordered_dictionary_row
+    filtered_dictionary[key] = (
+        filtered_and_reordered_dictionary_row
+    )

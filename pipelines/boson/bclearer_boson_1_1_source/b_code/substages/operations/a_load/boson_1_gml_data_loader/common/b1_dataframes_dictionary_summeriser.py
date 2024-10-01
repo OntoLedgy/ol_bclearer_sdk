@@ -11,5 +11,8 @@ def summarise_dataframes_dictionary(
         value,
     ) in dataframes_dictionary.items():
         log_message(
-            message="dataframe " + str(key) + " has shape " + str(value.shape),
+            message="dataframe "
+            + str(key)
+            + " has shape "
+            + str(value.shape),
         )

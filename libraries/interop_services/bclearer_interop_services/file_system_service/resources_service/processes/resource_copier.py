@@ -2,8 +2,12 @@ import importlib
 import os
 import shutil
 
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 def copy_resource_and_rename(
@@ -16,11 +20,15 @@ def copy_resource_and_rename(
         name=database_template_folder_path,
     )
 
-    module_path_string = module.__path__[0]
+    module_path_string = (
+        module.__path__[0]
+    )
 
-    resource_full_file_name = os.path.join(
-        module_path_string,
-        database_template_name,
+    resource_full_file_name = (
+        os.path.join(
+            module_path_string,
+            database_template_name,
+        )
     )
 
     target_full_file_name = os.path.join(

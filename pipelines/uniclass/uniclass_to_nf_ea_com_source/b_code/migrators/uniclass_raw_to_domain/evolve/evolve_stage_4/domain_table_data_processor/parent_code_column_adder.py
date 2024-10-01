@@ -12,10 +12,12 @@ def add_parent_code_column_to_uniclass_objects_table(
         UNICLASS2015_OBJECT_TABLE_NAME
     ]
 
-    uniclass_2015_object_table[PARENT_CODE_COLUMN_NAME] = np.nan
+    uniclass_2015_object_table[
+        PARENT_CODE_COLUMN_NAME
+    ] = np.nan
 
-    dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME] = (
-        uniclass_2015_object_table
-    )
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = uniclass_2015_object_table
 
     return dictionary_of_dataframes

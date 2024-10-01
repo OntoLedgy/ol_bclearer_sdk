@@ -15,7 +15,9 @@ class TestNeo4jStandardOperations:
         self,
         neo4j_connection: Neo4jConnections,
     ):
-        self.cypher_query = "MATCH (n) DETACH DELETE n"
+        self.cypher_query = (
+            "MATCH (n) DETACH DELETE n"
+        )
 
         session = neo4j_connection.get_new_session(
             neo4j_connection.database_name,
@@ -29,9 +31,7 @@ class TestNeo4jStandardOperations:
         self,
         neo4j_connection,
     ):
-        self.cypher_query = (
-            "CREATE INDEX index_name_for_cell_value FOR (cv:CellValue) ON (cv.uuid);"
-        )
+        self.cypher_query = "CREATE INDEX index_name_for_cell_value FOR (cv:CellValue) ON (cv.uuid);"
 
         records = neo4j_connection.execute_cypher_query(
             self.cypher_query,
@@ -51,11 +51,15 @@ class TestNeo4jStandardOperations:
                                CREATE INDEX index_name_for_standard_unit_of_measure FOR (standard_unit_of_measure:StandardUnitOfMeasure) ON (standard_unit_of_measure.standard_unit_of_measure_uuids);\
                                CREATE INDEX index_name_for_property_type FOR (property_type:PropertyType) ON (property_type.property_type_uuids);"
 
-        self.cypher_query_list = generate_list_from_text(
-            self.cypher_queries,
+        self.cypher_query_list = (
+            generate_list_from_text(
+                self.cypher_queries,
+            )
         )
 
-        for item in self.cypher_query_list:
+        for (
+            item
+        ) in self.cypher_query_list:
             try:
                 with neo4j_connection.get_new_session(
                     neo4j_connection.database_name,

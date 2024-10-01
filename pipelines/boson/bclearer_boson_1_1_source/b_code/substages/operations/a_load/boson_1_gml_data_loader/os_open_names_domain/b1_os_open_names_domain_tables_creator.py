@@ -13,13 +13,17 @@ from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_da
 from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_dictionary_appender import (
     append_os_open_names_dictionary,
 )
-from nf_common_source.code.services.file_system_service.objects.files import Files
+from nf_common_source.code.services.file_system_service.objects.files import (
+    Files,
+)
 
 
 def create_os_open_names_domain_tables(
     folder_path: str,
 ) -> dict:
-    os_open_names_dictionary_dictionary = initialise_os_open_names_dictionary()
+    os_open_names_dictionary_dictionary = (
+        initialise_os_open_names_dictionary()
+    )
 
     for (
         root,
@@ -32,10 +36,8 @@ def create_os_open_names_domain_tables(
             file_names=file_names,
         )
 
-    os_open_names_dataframe_dictionary = (
-        convert_os_open_names_dictionary_dictionary_to_dataframe_dictionary(
-            os_open_names_dictionary_dictionary=os_open_names_dictionary_dictionary,
-        )
+    os_open_names_dataframe_dictionary = convert_os_open_names_dictionary_dictionary_to_dataframe_dictionary(
+        os_open_names_dictionary_dictionary=os_open_names_dictionary_dictionary,
     )
 
     summarise_dataframes_dictionary(

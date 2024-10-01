@@ -9,7 +9,9 @@ def add_area_column(
     for (
         table,
         dataframe,
-    ) in dictionary_of_dataframes.items():
+    ) in (
+        dictionary_of_dataframes.items()
+    ):
         dataframe.insert(
             2,
             AREA_NAME,

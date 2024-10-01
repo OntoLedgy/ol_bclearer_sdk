@@ -25,7 +25,10 @@ def write_dataframe_to_csv_file(
     dataframe: pandas.DataFrame,
 ):
     dataframe.to_csv(
-        path_or_buf=folder_name + os.sep + dataframe_name + ".csv",
+        path_or_buf=folder_name
+        + os.sep
+        + dataframe_name
+        + ".csv",
         sep=",",
         quotechar='"',
         index=False,

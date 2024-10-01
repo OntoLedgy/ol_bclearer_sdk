@@ -4,8 +4,12 @@ from bclearer_interop_services.file_system_service.bie_file_system_domain.object
 from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.getters.b_identity_file_system_object_universe_getter import (
     get_b_identity_file_system_object_universe,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
-from nf_common.code.services.reporting_service.reporters.log_file import LogFiles
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from nf_common.code.services.reporting_service.reporters.log_file import (
+    LogFiles,
+)
 from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
     run_and_log_function,
 )
@@ -27,10 +31,8 @@ def run_windows_file_system_utility(
         root_file_system_object=input_folder,
     )
 
-    universe_output_root_folder = (
-        b_identity_file_system_object_universe.get_universe_output_root_folder(
-            universe_output_parent_folder=output_folder,
-        )
+    universe_output_root_folder = b_identity_file_system_object_universe.get_universe_output_root_folder(
+        universe_output_parent_folder=output_folder,
     )
 
     if export_hierarchy_register:

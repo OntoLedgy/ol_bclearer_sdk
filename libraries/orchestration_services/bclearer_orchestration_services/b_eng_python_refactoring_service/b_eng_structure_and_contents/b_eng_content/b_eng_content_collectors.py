@@ -9,7 +9,9 @@ from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file
 def collect_content(
     b_eng_python_reference_dictionary: BEngPythonReferenceDictionaries,
 ):
-    files = BEngFiles.registry_keyed_on_full_paths.values()
+    files = (
+        BEngFiles.registry_keyed_on_full_paths.values()
+    )
 
     for file in files:
         __add_references_from_file(
@@ -34,9 +36,13 @@ def __add_references_from_file(
         ) or trimmed_line.startswith(
             "from ",
         ):
-            line_parts = trimmed_line.split(" ")
+            line_parts = (
+                trimmed_line.split(" ")
+            )
 
-            reference_string = line_parts[1].rstrip()
+            reference_string = (
+                line_parts[1].rstrip()
+            )
 
             referenced_file = b_eng_python_reference_dictionary.get_reference(
                 reference_string=reference_string,
@@ -51,7 +57,9 @@ def __add_references_from_file(
 def __get_lines(file_path):
     file_content = open(file_path, "r+")
 
-    file_content_lines = file_content.readlines()
+    file_content_lines = (
+        file_content.readlines()
+    )
 
     file_content.close()
 

@@ -14,7 +14,9 @@ def merge_tables_as_dictionaries_on_index(
     ):
         __merge_table(
             merged_table=merged_table,
-            table_to_merge=tables_to_merge[index],
+            table_to_merge=tables_to_merge[
+                index
+            ],
         )
 
     return merged_table

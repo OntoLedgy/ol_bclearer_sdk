@@ -5,7 +5,9 @@ import pandas as pd
 
 class EdgeLoader:
     def __init__(self, neo4j_wrapper):
-        self.neo4j_wrapper = neo4j_wrapper
+        self.neo4j_wrapper = (
+            neo4j_wrapper
+        )
 
     def load_edges(
         self,

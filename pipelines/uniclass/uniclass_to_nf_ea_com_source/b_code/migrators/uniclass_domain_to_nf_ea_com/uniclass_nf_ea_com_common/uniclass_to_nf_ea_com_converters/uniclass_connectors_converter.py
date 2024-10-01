@@ -1,5 +1,7 @@
 import numpy
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -24,7 +26,9 @@ def convert_uniclass_items_parent_child_table_to_connectors(
     input_linked_table_name: str,
     nf_ea_com_connectors_collection_type: NfEaComCollectionTypes,
 ) -> dict:
-    ea_connectors_nf_uuids_column_name = NfColumnTypes.NF_UUIDS.column_name
+    ea_connectors_nf_uuids_column_name = (
+        NfColumnTypes.NF_UUIDS.column_name
+    )
 
     uniclass_items_parent_child_filter_and_rename_dictionary = {
         ea_connectors_nf_uuids_column_name: ea_connectors_nf_uuids_column_name,
@@ -33,7 +37,9 @@ def convert_uniclass_items_parent_child_table_to_connectors(
     }
 
     uniclass_items_parent_child_table_filtered_and_renamed = dataframe_filter_and_rename(
-        dataframe=uniclass_dictionary[input_linked_table_name],
+        dataframe=uniclass_dictionary[
+            input_linked_table_name
+        ],
         filter_and_rename_dictionary=uniclass_items_parent_child_filter_and_rename_dictionary,
     )
 

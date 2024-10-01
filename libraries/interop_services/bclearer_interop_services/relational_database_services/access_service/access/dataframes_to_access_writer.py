@@ -2,8 +2,12 @@ import pyodbc
 from bclearer_interop_services.delimited_text.dataframe_dictionary_to_csv_files_writer import (
     write_dataframe_dictionary_to_csv_files,
 )
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -26,15 +30,19 @@ def write_dataframes_to_access(
         + ";"
     )
 
-    database_connection = pyodbc.connect(
-        database_connection_string,
-        autocommit=True,
+    database_connection = (
+        pyodbc.connect(
+            database_connection_string,
+            autocommit=True,
+        )
     )
 
     for (
         dataframe_name,
         dataframe,
-    ) in dataframes_dictionary_keyed_on_string.items():
+    ) in (
+        dataframes_dictionary_keyed_on_string.items()
+    ):
         if not dataframe.empty:
             __write_dataframe_to_access(
                 dataframe_name=dataframe_name,
@@ -55,7 +63,9 @@ def __write_dataframe_to_access(
         f"Database={temporary_csv_folder.absolute_path_string}].{dataframe_name}.csv"
     )
 
-    cursor = database_connection.cursor()
+    cursor = (
+        database_connection.cursor()
+    )
 
     log_message("Executing SQL Query:")
 

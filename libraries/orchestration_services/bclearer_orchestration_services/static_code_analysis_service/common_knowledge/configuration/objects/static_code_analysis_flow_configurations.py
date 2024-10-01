@@ -19,11 +19,17 @@ class StaticCodeAnalysisFlowConfigurations:
         radon_configuration: RadonConfigurations,
         flow_common_configuration: StaticCodeAnalysisCommonConfigurations,
     ):
-        self.pylint_configuration = pylint_configuration
+        self.pylint_configuration = (
+            pylint_configuration
+        )
 
-        self.radon_configuration = radon_configuration
+        self.radon_configuration = (
+            radon_configuration
+        )
 
-        self.flow_common_configuration = flow_common_configuration
+        self.flow_common_configuration = (
+            flow_common_configuration
+        )
 
         self.joined_enum_code_analysis_types_to_table_names_mapping = join_dictionaries(
             dictionaries=[

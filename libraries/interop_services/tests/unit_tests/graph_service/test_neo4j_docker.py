@@ -33,7 +33,9 @@ class TestNeo4jDocker:
         self,
         neo4j_docker_connection,
     ):
-        session = neo4j_docker_connection.get_new_session()
+        session = (
+            neo4j_docker_connection.get_new_session()
+        )
 
         result = session.execute_cypher_query(
             "RETURN 1 AS number",

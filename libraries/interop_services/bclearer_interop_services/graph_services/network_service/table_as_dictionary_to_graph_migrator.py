@@ -10,7 +10,9 @@ def migrate_table_as_dictionary_to_graph(
 ) -> DiGraph:
     edges_container = list()
 
-    for row_dictionary in table_as_dictionary.values():
+    for (
+        row_dictionary
+    ) in table_as_dictionary.values():
         __add_row_dictionary_to_edges_container(
             edges_container=edges_container,
             row_dictionary=row_dictionary,
@@ -43,15 +45,25 @@ def __add_row_dictionary_to_edges_container(
         )
 
     if edge_attribute_column_names:
-        for edge_attribute_column_name in edge_attribute_column_names:
-            edge_attributes_dictionary[edge_attribute_column_name] = row_dictionary[
+        for (
+            edge_attribute_column_name
+        ) in (
+            edge_attribute_column_names
+        ):
+            edge_attributes_dictionary[
+                edge_attribute_column_name
+            ] = row_dictionary[
                 edge_attribute_column_name
             ]
 
     edges_container.append(
         (
-            row_dictionary[source_id_column_name],
-            row_dictionary[target_id_column_name],
+            row_dictionary[
+                source_id_column_name
+            ],
+            row_dictionary[
+                target_id_column_name
+            ],
             edge_attributes_dictionary,
         ),
     )

@@ -10,7 +10,8 @@ def convert_relative_path_to_absolute(
         base_root_path,
     ):
         absolute_path = str(
-            Path(base_root_path) / input_path,
+            Path(base_root_path)
+            / input_path,
         )
 
         return absolute_path
@@ -30,8 +31,13 @@ def is_relative_to_base_root(
         base_root_path,
     ).resolve()
 
-    if not input_path_instance.is_absolute():
-        absolute_input_path = (base_root_path_obj / input_path_instance).resolve()
+    if (
+        not input_path_instance.is_absolute()
+    ):
+        absolute_input_path = (
+            base_root_path_obj
+            / input_path_instance
+        ).resolve()
 
         is_relative_to_base_root_bool = (
             absolute_input_path.parts[

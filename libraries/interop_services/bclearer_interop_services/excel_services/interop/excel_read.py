@@ -1,4 +1,6 @@
-from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
 from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )

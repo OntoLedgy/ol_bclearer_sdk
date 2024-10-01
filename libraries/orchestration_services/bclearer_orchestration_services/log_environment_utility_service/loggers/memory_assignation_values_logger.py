@@ -11,7 +11,9 @@ from nf_common.code.services.log_environment_utility_service.helpers.units_conve
 def log_memory_assignation_values(
     logger: CommonLoggers,
 ) -> None:
-    virtual_memory_information = psutil.virtual_memory()
+    virtual_memory_information = (
+        psutil.virtual_memory()
+    )
 
     swap = psutil.swap_memory()
 
@@ -47,7 +49,11 @@ def __log_environment_section(
     name_values: dict,
 ) -> None:
     logger.info(
-        msg="=" * 40 + " " + header_title + " " + "=" * 40,
+        msg="=" * 40
+        + " "
+        + header_title
+        + " "
+        + "=" * 40,
     )
 
     for name in names_to_log:

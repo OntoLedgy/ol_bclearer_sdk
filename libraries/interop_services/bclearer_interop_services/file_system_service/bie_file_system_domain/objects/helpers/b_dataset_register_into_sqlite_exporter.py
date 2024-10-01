@@ -4,7 +4,9 @@ from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.
 from bclearer_interop_services.dataframe_service.all_cells_to_string_converter import (
     convert_all_cells_to_string,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.relational_database_services.sqlite_service.dataframe_to_sqlite_writer import (
     write_dataframe_to_sqlite,
 )
@@ -22,7 +24,9 @@ def export_register_into_sqlite(
     register_output_string_name_root: str,
     register_in_b_datasets_format: dict = None,
 ) -> None:
-    if not register_in_b_datasets_format:
+    if (
+        not register_in_b_datasets_format
+    ):
         register_in_b_datasets_format = (
             register_object.export_register_in_b_datasets_format()
         )
@@ -49,7 +53,8 @@ def export_register_into_sqlite(
 
     sqlite_database_file = create_sqlite_database(
         sqlite_database_folder=output_folder,
-        sqlite_database_base_name=register_output_string_name_root + "_register",
+        sqlite_database_base_name=register_output_string_name_root
+        + "_register",
     )
 
     log_message(
@@ -58,7 +63,8 @@ def export_register_into_sqlite(
 
     write_dataframe_to_sqlite(
         dataframe=dictionary_as_table_string_cells,
-        table_name=register_output_string_name_root + "_register",
+        table_name=register_output_string_name_root
+        + "_register",
         sqlite_database_file=sqlite_database_file,
         append=False,
     )

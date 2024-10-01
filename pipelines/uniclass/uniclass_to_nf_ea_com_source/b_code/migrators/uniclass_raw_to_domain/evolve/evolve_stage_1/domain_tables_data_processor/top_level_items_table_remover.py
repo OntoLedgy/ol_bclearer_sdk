@@ -12,7 +12,14 @@ def remove_top_level_items_table_from_dataframes_dictionary(
         table,
         dataframe,
     ) in dataframe_dictionary.items():
-        if table != UNICLASS2015_TOP_LEVEL_OBJECTS_TABLE_NAME:
-            top_level_dataframe_dictionary[table] = dataframe
+        if (
+            table
+            != UNICLASS2015_TOP_LEVEL_OBJECTS_TABLE_NAME
+        ):
+            top_level_dataframe_dictionary[
+                table
+            ] = dataframe
 
-    return top_level_dataframe_dictionary
+    return (
+        top_level_dataframe_dictionary
+    )

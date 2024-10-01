@@ -15,10 +15,8 @@ def get_reduced_parquet_table_as_pyspark_dataframe(
         number_of_rows_to_keep=number_of_rows_to_keep,
     )
 
-    repartitioned_parquet_table_as_pyspark_dataframe = (
-        reduced_parquet_table_as_pyspark_dataframe.repartition(
-            numPartitions=1,
-        )
+    repartitioned_parquet_table_as_pyspark_dataframe = reduced_parquet_table_as_pyspark_dataframe.repartition(
+        numPartitions=1,
     )
 
     return repartitioned_parquet_table_as_pyspark_dataframe

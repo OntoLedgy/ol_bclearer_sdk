@@ -10,13 +10,13 @@ from bclearer_orchestration_services.identification_services.hash_service.hash_c
 def add_content_hash_column_using_all_columns(
     hashified_target_dataframe: pandas.DataFrame,
 ) -> None:
-    hashified_target_dataframe[CONTENT_HASHES_CONFIGURATION_NAME] = (
-        hashified_target_dataframe.apply(
-            lambda row: __get_content_hash(
-                row,
-            ),
-            axis=1,
-        )
+    hashified_target_dataframe[
+        CONTENT_HASHES_CONFIGURATION_NAME
+    ] = hashified_target_dataframe.apply(
+        lambda row: __get_content_hash(
+            row,
+        ),
+        axis=1,
     )
 
 
@@ -34,8 +34,10 @@ def __get_content_hash(
             column_name=column_name,
         )
 
-    hash_string = create_hash_with_sorted_inputs(
-        inputs=hash_components,
+    hash_string = (
+        create_hash_with_sorted_inputs(
+            inputs=hash_components,
+        )
     )
 
     return hash_string

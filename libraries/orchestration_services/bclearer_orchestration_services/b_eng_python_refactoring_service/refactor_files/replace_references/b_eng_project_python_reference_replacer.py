@@ -94,7 +94,11 @@ def __replace_reference_with_prefix_in_file(
 ):
     replace_string_in_file(
         file_path=file_path,
-        source_string=prefix + " " + source_reference,
-        target_string=prefix + " " + target_reference,
+        source_string=prefix
+        + " "
+        + source_reference,
+        target_string=prefix
+        + " "
+        + target_reference,
         file_extension=file_extension,
     )

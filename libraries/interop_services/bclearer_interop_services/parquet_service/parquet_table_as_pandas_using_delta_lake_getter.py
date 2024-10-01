@@ -11,6 +11,8 @@ def get_parquet_table_as_pandas_using_delta_lake(
         absolute_table_name_folder_path=absolute_table_name_folder_path,
     )
 
-    table = delta_table.to_pyarrow_table().to_pandas()
+    table = (
+        delta_table.to_pyarrow_table().to_pandas()
+    )
 
     return table

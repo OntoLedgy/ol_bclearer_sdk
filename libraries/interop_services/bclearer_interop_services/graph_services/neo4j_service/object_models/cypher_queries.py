@@ -73,6 +73,9 @@ class CypherQueryWrapper:
         properties,
     ):
         prop_string = ", ".join(
-            [f"{key}: '{value}'" for key, value in properties.items()],
+            [
+                f"{key}: '{value}'"
+                for key, value in properties.items()
+            ],
         )
         return f"CREATE (n:{label} {{ {prop_string} }}) RETURN n"

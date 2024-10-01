@@ -17,13 +17,19 @@ from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclas
 def add_uniclass_ranks_package_row_to_uuidified_packages(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uuidified_packages_table = dictionary_of_dataframes[UUIDIFIED_PACKAGES_TABLE_NAME]
+    uuidified_packages_table = dictionary_of_dataframes[
+        UUIDIFIED_PACKAGES_TABLE_NAME
+    ]
 
-    uniclass_ranks_package_uuid = create_new_uuid()
+    uniclass_ranks_package_uuid = (
+        create_new_uuid()
+    )
 
     uniclass_ranks_package_parent_ea_element_nf_uuid = (
         uuidified_packages_table.loc[
-            uuidified_packages_table[EA_OBJECT_NAME_COLUMN_NAME]
+            uuidified_packages_table[
+                EA_OBJECT_NAME_COLUMN_NAME
+            ]
             == UNICLASS_PACKAGE_NAME,
             UUID_COLUMN_NAME,
         ]
@@ -46,6 +52,8 @@ def add_uniclass_ranks_package_row_to_uuidified_packages(
         uniclass_rank_item_dataframe,
     )
 
-    dictionary_of_dataframes[UUIDIFIED_PACKAGES_TABLE_NAME] = uuidified_packages
+    dictionary_of_dataframes[
+        UUIDIFIED_PACKAGES_TABLE_NAME
+    ] = uuidified_packages
 
     return dictionary_of_dataframes

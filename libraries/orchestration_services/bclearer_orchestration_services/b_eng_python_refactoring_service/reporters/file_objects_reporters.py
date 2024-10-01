@@ -13,7 +13,9 @@ from nf_common.code.services.b_eng_python_refactoring_service.reporters.node_add
 def add_files_to_nodes(
     objects_table: pandas.DataFrame,
 ):
-    files = BEngFiles.registry_keyed_on_full_paths.values()
+    files = (
+        BEngFiles.registry_keyed_on_full_paths.values()
+    )
 
     for file in files:
         objects_table = __add_file_to_objects(
@@ -44,7 +46,9 @@ def __add_file_to_objects(
         git_repository_name=file.git_repository_name,
         folder_type="",
         absolute_level=file.absolute_level,
-        repository_root_uuid=levelled_uuids[0],
+        repository_root_uuid=levelled_uuids[
+            0
+        ],
         level_1_uuid=levelled_uuids[1],
         level_2_uuid=levelled_uuids[2],
         level_3_uuid=levelled_uuids[3],

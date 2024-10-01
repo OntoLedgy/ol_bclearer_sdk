@@ -17,7 +17,11 @@ def commit_refactors(
     in_scope_b_eng_project_folder_list: BEngProjectFolderLists,
     commit_message: str,
 ):
-    for b_eng_project_folder in in_scope_b_eng_project_folder_list.list:
+    for (
+        b_eng_project_folder
+    ) in (
+        in_scope_b_eng_project_folder_list.list
+    ):
         __commit_refactors_in_b_eng_project_folder(
             branch_name=branch_name,
             b_eng_project_folder=b_eng_project_folder,

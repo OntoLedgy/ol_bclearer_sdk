@@ -11,7 +11,11 @@ def print_header(
     header_title: str,
 ) -> None:
     log_message(
-        message="=" * 40 + " " + header_title + " " + "=" * 40,
+        message="=" * 40
+        + " "
+        + header_title
+        + " "
+        + "=" * 40,
     )
 
 

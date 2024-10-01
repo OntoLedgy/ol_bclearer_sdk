@@ -13,12 +13,16 @@ from nf_common.code.services.b_eng_python_refactoring_service.reporters.node_add
 def add_folders_to_nodes(
     node_table: pandas.DataFrame,
 ):
-    folders = BEngFolders.registry_keyed_on_full_paths.values()
+    folders = (
+        BEngFolders.registry_keyed_on_full_paths.values()
+    )
 
     for folder in folders:
-        node_table = __add_folder_to_nodes(
-            node_table=node_table,
-            folder=folder,
+        node_table = (
+            __add_folder_to_nodes(
+                node_table=node_table,
+                folder=folder,
+            )
         )
 
     return node_table
@@ -44,7 +48,9 @@ def __add_folder_to_nodes(
         git_repository_name=folder.git_repository_name,
         folder_type=folder.b_eng_folder_type,
         absolute_level=folder.absolute_level,
-        repository_root_uuid=levelled_uuids[0],
+        repository_root_uuid=levelled_uuids[
+            0
+        ],
         level_1_uuid=levelled_uuids[1],
         level_2_uuid=levelled_uuids[2],
         level_3_uuid=levelled_uuids[3],

@@ -58,7 +58,8 @@ def loadmysqltoneo4j(
             for i in range(concurrency):
                 thr = Neo4jLoader(
                     i,
-                    "neo4j loader " + str(i),
+                    "neo4j loader "
+                    + str(i),
                     aDriver.session(
                         database=aDBName,
                     ),
@@ -84,7 +85,9 @@ def loadmysqltoneo4j(
                 "---------------------------",
             )
         pcnt += 1
-        neo4jLoadThreads[threadIndex].addRow(row)
+        neo4jLoadThreads[
+            threadIndex
+        ].addRow(row)
         if concurrency > 1:
             if threadIndex < maxC:
                 threadIndex += 1
@@ -99,18 +102,38 @@ def loadmysqltoneo4j(
     for loader in neo4jLoadThreads:
         loader.finish()
         loader.join()
-        labelsCreated += loader.labelsCreated
-        nodesCreated += loader.nodesCreated
-        propertiesSet += loader.propertiesSet
-        relationshipsCreated += loader.relationshipsCreated
+        labelsCreated += (
+            loader.labelsCreated
+        )
+        nodesCreated += (
+            loader.nodesCreated
+        )
+        propertiesSet += (
+            loader.propertiesSet
+        )
+        relationshipsCreated += (
+            loader.relationshipsCreated
+        )
 
     # reporting duration result is an integer (milliseconds) due to the usage of //
-    duration = (time.perf_counter_ns() - tStart) // 1000000
+    duration = (
+        time.perf_counter_ns() - tStart
+    ) // 1000000
     if duration == 0:
         duration = 1
-    nplusr = nodesCreated + relationshipsCreated
+    nplusr = (
+        nodesCreated
+        + relationshipsCreated
+    )
     nrPerSecond = math.floor(
-        ((nodesCreated + relationshipsCreated) / duration) * 1000,
+        (
+            (
+                nodesCreated
+                + relationshipsCreated
+            )
+            / duration
+        )
+        * 1000,
     )
     out.finished(str(pcnt))
     if debug:

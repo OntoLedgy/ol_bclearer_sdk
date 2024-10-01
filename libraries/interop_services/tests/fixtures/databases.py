@@ -16,9 +16,13 @@ def db_connection_postgresql():
     db = DatabaseFactory.get_database(
         db_type,
         host=configuration["host"],
-        database=configuration["database"],
+        database=configuration[
+            "database"
+        ],
         user=configuration["user"],
-        password=configuration["password"],
+        password=configuration[
+            "password"
+        ],
     )
     db.connect()
     yield db

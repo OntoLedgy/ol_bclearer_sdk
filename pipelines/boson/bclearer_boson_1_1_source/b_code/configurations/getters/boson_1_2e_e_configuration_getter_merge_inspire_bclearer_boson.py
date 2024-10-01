@@ -19,7 +19,9 @@ from bclearer_source.b_code.configurations.load_hdf5_model_configurations import
 )
 
 
-def get_boson_1_2e_e1_configuration_load_ea_boson() -> LoadEaModelConfigurations:
+def get_boson_1_2e_e1_configuration_load_ea_boson() -> (
+    LoadEaModelConfigurations
+):
     load_ea_model_configuration = LoadEaModelConfigurations(
         resource_namespace=CONTENT_OPERATIONS_RESOURCES_NAMESPACE,
         resource_name=CONTENT_UNIVERSE_BOSON_FILENAME,
@@ -29,7 +31,9 @@ def get_boson_1_2e_e1_configuration_load_ea_boson() -> LoadEaModelConfigurations
     return load_ea_model_configuration
 
 
-def get_boson_1_2e_e1_configuration_load_hdf5_boson() -> LoadHdf5ModelConfigurations:
+def get_boson_1_2e_e1_configuration_load_hdf5_boson() -> (
+    LoadHdf5ModelConfigurations
+):
     load_hdf5_model_configuration = LoadHdf5ModelConfigurations(
         resource_namespace=CONTENT_OPERATIONS_RESOURCES_NAMESPACE,
         resource_file_name=CONTENT_UNIVERSE_BOSON_FILENAME_HDF5,
@@ -47,4 +51,6 @@ def get_boson_1_2e_e1_configuration_merge_inspire_bclearer_boson() -> (
         output_universe_short_name="2e_e1_output_merge_boson",
     )
 
-    return content_operation_configuration
+    return (
+        content_operation_configuration
+    )

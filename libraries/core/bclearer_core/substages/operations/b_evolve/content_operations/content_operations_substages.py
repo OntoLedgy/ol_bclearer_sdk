@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.content_operation_types import ContentOperationTypes
+from bclearer_core.common_knowledge.content_operation_types import (
+    ContentOperationTypes,
+)
 from bclearer_core.configurations.content_operation_configurations import (
     ContentOperationConfigurations,
 )
@@ -24,13 +26,19 @@ class ContentOperationsSubstages:
         content_1_universe: NfEaComUniverses,
         content_2_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = ea_tools_session_manager
+        self.ea_tools_session_manager = (
+            ea_tools_session_manager
+        )
 
         self.content_operation_configuration = content_operation_configuration
 
-        self.content_1_universe = content_1_universe
+        self.content_1_universe = (
+            content_1_universe
+        )
 
-        self.content_2_universe = content_2_universe
+        self.content_2_universe = (
+            content_2_universe
+        )
 
     def __enter__(self):
         return self

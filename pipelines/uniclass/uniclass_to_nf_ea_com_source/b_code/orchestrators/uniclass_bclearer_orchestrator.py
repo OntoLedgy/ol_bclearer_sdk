@@ -46,7 +46,9 @@ from uniclass_to_nf_ea_com_source.b_code.services.input_output.set_up_and_close_
 def orchestrate_uniclass_bclearer(
     uniclass_source_data_resource_namespace: str,
 ):
-    root_folder_path = __get_output_root_folder_path()
+    root_folder_path = (
+        __get_output_root_folder_path()
+    )
 
     set_up_logger_and_output_folder(
         output_folder_name=root_folder_path,
@@ -65,12 +67,16 @@ def orchestrate_uniclass_bclearer(
     close_log_file()
 
 
-def __get_output_root_folder_path() -> str:
+def __get_output_root_folder_path() -> (
+    str
+):
     root_folder = select_folder(
         title=ROOT_OUTPUT_FOLDER_TITLE_MESSAGE,
     )
 
-    root_folder_path = root_folder.absolute_path_string
+    root_folder_path = (
+        root_folder.absolute_path_string
+    )
 
     output_root_folder_path = os.path.join(
         root_folder_path,

@@ -71,7 +71,9 @@ def __log_finish(
 
     end_time = time.time()
 
-    duration = f"{end_time - start_time:.2f}"
+    duration = (
+        f"{end_time - start_time:.2f}"
+    )
 
     message_list.append(duration)
 
@@ -86,7 +88,9 @@ def __get_standard_list(
     action: str,
     function,
 ):
-    total_cpu_usage = f"{psutil.cpu_percent()}%"
+    total_cpu_usage = (
+        f"{psutil.cpu_percent()}%"
+    )
 
     svmem = psutil.virtual_memory()
 
@@ -110,6 +114,8 @@ def __get_standard_list(
 
 
 def __get_gigabytes(byte_count: int):
-    gigabytes = byte_count / 1024 / 1024 / 1024
+    gigabytes = (
+        byte_count / 1024 / 1024 / 1024
+    )
 
     return gigabytes

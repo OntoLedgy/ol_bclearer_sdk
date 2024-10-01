@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.operation_types import OperationTypes
+from bclearer_core.common_knowledge.operation_types import (
+    OperationTypes,
+)
 
 
 class OperationConfigurations:
@@ -6,7 +8,9 @@ class OperationConfigurations:
         self,
         operation_type: OperationTypes,
     ):
-        self.operation_type = operation_type
+        self.operation_type = (
+            operation_type
+        )
 
     def __enter__(self):
         return self

@@ -7,8 +7,14 @@ def run_check(
 ) -> pandas.DataFrame:
     set_table_copy = set_table.copy()
 
-    for identity_set_index in identity_set_indices:
-        set_table_copy[identity_set_index] = set_table_copy[identity_set_index].astype(
+    for (
+        identity_set_index
+    ) in identity_set_indices:
+        set_table_copy[
+            identity_set_index
+        ] = set_table_copy[
+            identity_set_index
+        ].astype(
             str,
         )
 

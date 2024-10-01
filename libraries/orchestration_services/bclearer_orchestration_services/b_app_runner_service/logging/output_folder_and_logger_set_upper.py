@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import (
     now_time_as_string_for_files,
 )
@@ -55,14 +57,24 @@ def __get_output_folder_name(
     output_folder_prefix: str,
     output_folder_suffix: str,
 ) -> str:
-    datetime_stamp = now_time_as_string_for_files()
+    datetime_stamp = (
+        now_time_as_string_for_files()
+    )
 
     output_folder_name = datetime_stamp
 
     if output_folder_prefix:
-        output_folder_name = output_folder_prefix + "_" + output_folder_name
+        output_folder_name = (
+            output_folder_prefix
+            + "_"
+            + output_folder_name
+        )
 
     if output_folder_suffix:
-        output_folder_name = output_folder_name + "_" + output_folder_suffix
+        output_folder_name = (
+            output_folder_name
+            + "_"
+            + output_folder_suffix
+        )
 
     return output_folder_name

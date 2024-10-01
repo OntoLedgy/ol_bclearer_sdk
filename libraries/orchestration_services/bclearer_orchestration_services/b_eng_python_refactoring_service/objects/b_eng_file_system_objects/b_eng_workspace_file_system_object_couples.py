@@ -9,10 +9,6 @@ class BEngWorkspaceFileSystemObjectCouples:
         place_1_b_eng_workspace_file_system_object: BEngWorkspaceFileSystemObjects,
         place_2_b_eng_workspace_file_system_object: BEngWorkspaceFileSystemObjects,
     ):
-        self.place_1_b_eng_workspace_file_system_object = (
-            place_1_b_eng_workspace_file_system_object
-        )
+        self.place_1_b_eng_workspace_file_system_object = place_1_b_eng_workspace_file_system_object
 
-        self.place_2_b_eng_workspace_file_system_object = (
-            place_2_b_eng_workspace_file_system_object
-        )
+        self.place_2_b_eng_workspace_file_system_object = place_2_b_eng_workspace_file_system_object

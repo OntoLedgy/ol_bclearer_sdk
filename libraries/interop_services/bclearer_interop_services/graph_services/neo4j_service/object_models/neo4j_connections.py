@@ -19,12 +19,18 @@ class Neo4jConnections:
             user_name,
             password,
         )
-        self.database_name = database_name
-        self.external_driver = external_driver
+        self.database_name = (
+            database_name
+        )
+        self.external_driver = (
+            external_driver
+        )
 
         # Use the external driver if provided, otherwise create a new one
         if self.external_driver:
-            self.driver = self.external_driver
+            self.driver = (
+                self.external_driver
+            )
         else:
             self.driver = self.get_driver(
                 max_connection_pool_size,

@@ -1,7 +1,9 @@
 from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.content_adjustment_universes_nf_uuids_mapper import (
     get_mapped_nf_uuid_from_mapped_universe,
 )
-from nf_common_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from nf_common_source.code.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -111,18 +113,30 @@ def __log_failed_conversions(
         == DEFAULT_NULL_VALUE
     ]
 
-    if not attributes_with_no_attributed_object.empty:
+    if (
+        not attributes_with_no_attributed_object.empty
+    ):
         for (
             bad_attributed_objects_row
-        ) in attributes_with_no_attributed_object.iterrows():
+        ) in (
+            attributes_with_no_attributed_object.iterrows()
+        ):
             log_message(
                 message="Attribute with name: "
                 + str(
-                    bad_attributed_objects_row[1][1],
+                    bad_attributed_objects_row[
+                        1
+                    ][
+                        1
+                    ],
                 )
                 + " - and EA GUID: "
                 + str(
-                    bad_attributed_objects_row[1][0],
+                    bad_attributed_objects_row[
+                        1
+                    ][
+                        0
+                    ],
                 )
                 + " - cannot be converted. It has no attributed object.",
             )
@@ -134,16 +148,30 @@ def __log_failed_conversions(
         == DEFAULT_NULL_VALUE
     ]
 
-    if not attributes_with_no_attribute_type.empty:
-        for bad_attribute_types_row in attributes_with_no_attribute_type.iterrows():
+    if (
+        not attributes_with_no_attribute_type.empty
+    ):
+        for (
+            bad_attribute_types_row
+        ) in (
+            attributes_with_no_attribute_type.iterrows()
+        ):
             log_message(
                 message="Attribute with name: "
                 + str(
-                    bad_attribute_types_row[1][1],
+                    bad_attribute_types_row[
+                        1
+                    ][
+                        1
+                    ],
                 )
                 + " - and EA GUID: "
                 + str(
-                    bad_attribute_types_row[1][0],
+                    bad_attribute_types_row[
+                        1
+                    ][
+                        0
+                    ],
                 )
                 + " - cannot be converted. It has no attribute type.",
             )

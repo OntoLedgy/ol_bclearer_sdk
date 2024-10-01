@@ -17,13 +17,17 @@ def get_b_identity_folder_id_b_identity_component_id_sum(
     ):
         raise TypeError
 
-    b_identity_folder_id_b_identity_component_id_sum = 0
+    b_identity_folder_id_b_identity_component_id_sum = (
+        0
+    )
 
     # TODO: Temporary bIdentity given, based on the addition of the id identities of the folder's children (one level)
     #  - to be discussed
     for (
         hierarchy_folder_child_object
-    ) in hierarchy_folder.child_hierarchy_file_system_objects:
+    ) in (
+        hierarchy_folder.child_hierarchy_file_system_objects
+    ):
         b_identity_child_object = b_identity_file_system_object_registry.get_identity_b_identity_file_system_object_from_hierarchy_object(
             hierarchy_file_system_object=hierarchy_folder_child_object,
         )

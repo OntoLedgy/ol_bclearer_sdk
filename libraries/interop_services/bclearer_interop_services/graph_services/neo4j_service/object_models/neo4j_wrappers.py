@@ -10,8 +10,12 @@ class Neo4jWrapper:
         self,
         neo4jconnection: Neo4jConnections,
     ):
-        self.driver = neo4jconnection.driver
-        self.neo4jconnection = neo4jconnection
+        self.driver = (
+            neo4jconnection.driver
+        )
+        self.neo4jconnection = (
+            neo4jconnection
+        )
 
     def close(self):
         self.driver.close()

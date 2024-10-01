@@ -1,7 +1,9 @@
 from bclearer_interop_services.dataframe_service.parquet_as_dataframe_services.pyspark_dataframe_as_parquet_table_using_pyarrow_exporter import (
     export_pyspark_dataframe_as_parquet_table_using_pyarrow,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.parquet_service.reducer.reduced_parquet_table_as_pyspark_dataframe_getter import (
     get_reduced_parquet_table_as_pyspark_dataframe,
 )
@@ -18,14 +20,14 @@ def reduce_and_export_parquet_table_as_pyspark_dataframe_using_pyarrow(
     parquet_folder_path: str,
     output_root_folder: Folders,
 ) -> None:
-    spark_session = get_pyspark_delta_catalog_session()
+    spark_session = (
+        get_pyspark_delta_catalog_session()
+    )
 
-    reduced_parquet_table_as_pyspark_dataframe = (
-        get_reduced_parquet_table_as_pyspark_dataframe(
-            spark_session=spark_session,
-            number_of_rows_to_keep=number_of_rows_to_keep,
-            parquet_folder_path=parquet_folder_path,
-        )
+    reduced_parquet_table_as_pyspark_dataframe = get_reduced_parquet_table_as_pyspark_dataframe(
+        spark_session=spark_session,
+        number_of_rows_to_keep=number_of_rows_to_keep,
+        parquet_folder_path=parquet_folder_path,
     )
 
     export_pyspark_dataframe_as_parquet_table_using_pyarrow(

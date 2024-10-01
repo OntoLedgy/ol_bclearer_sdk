@@ -48,7 +48,10 @@ def create_name_instance(
         attribute_name=BclearerAdditionalColumnTypes.OWNING_OBJECT_NAMES.column_name,
     )
 
-    name_instance_name = attributed_object_name + " Instance"
+    name_instance_name = (
+        attributed_object_name
+        + " Instance"
+    )
 
     name_instance_nf_uuid = add_new_class_to_dictionary(
         new_classifier_dictionary=new_ea_objects_dictionary[

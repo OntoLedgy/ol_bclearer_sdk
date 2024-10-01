@@ -17,7 +17,9 @@ class BEngWorkspaceFileSystemObjects(
         b_eng_workspace_folder: BEngWorkspaceFolders,
         relative_path_from_workspace_string: str,
     ):
-        self.b_eng_workspace_folder = b_eng_workspace_folder
+        self.b_eng_workspace_folder = (
+            b_eng_workspace_folder
+        )
 
         absolute_path_string = b_eng_workspace_folder.extend_path(
             path_extension=relative_path_from_workspace_string,
@@ -28,24 +30,43 @@ class BEngWorkspaceFileSystemObjects(
         )
 
     def get_code_folders(self):
-        b_eng_workspace_folder_index = self.b_eng_workspace_folder.item_count()
+        b_eng_workspace_folder_index = (
+            self.b_eng_workspace_folder.item_count()
+        )
 
         code_start_index = (
-            b_eng_workspace_folder_index + RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION
+            b_eng_workspace_folder_index
+            + RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION
         )
 
-        code_folder_components = self.list_of_components()[code_start_index:]
+        code_folder_components = (
+            self.list_of_components()[
+                code_start_index:
+            ]
+        )
 
-        if code_folder_components[-1].endswith(".py"):
-            code_folder_components = code_folder_components[:-1]
+        if code_folder_components[
+            -1
+        ].endswith(".py"):
+            code_folder_components = (
+                code_folder_components[
+                    :-1
+                ]
+            )
 
-        relative_code_folder_path_strings = []
+        relative_code_folder_path_strings = (
+            []
+        )
 
         relative_path_from_workspace_string = "/".join(
-            self.list_of_components()[b_eng_workspace_folder_index:code_start_index],
+            self.list_of_components()[
+                b_eng_workspace_folder_index:code_start_index
+            ],
         )
 
-        for code_folder_component in code_folder_components:
+        for (
+            code_folder_component
+        ) in code_folder_components:
             relative_path_from_workspace_string = "/".join(
                 [
                     relative_path_from_workspace_string,
@@ -74,13 +95,20 @@ class BEngWorkspaceFileSystemObjects(
     def get_reference_from_b_eng_workspace_file_system_object(
         self,
     ) -> str:
-        b_eng_workspace_folder_index = self.b_eng_workspace_folder.item_count()
-
-        code_start_index = (
-            b_eng_workspace_folder_index + RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION
+        b_eng_workspace_folder_index = (
+            self.b_eng_workspace_folder.item_count()
         )
 
-        code_folder_components = self.list_of_components()[code_start_index:]
+        code_start_index = (
+            b_eng_workspace_folder_index
+            + RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION
+        )
+
+        code_folder_components = (
+            self.list_of_components()[
+                code_start_index:
+            ]
+        )
 
         reference_string = ".".join(
             code_folder_components,
@@ -89,6 +117,8 @@ class BEngWorkspaceFileSystemObjects(
         if reference_string.endswith(
             ".py",
         ):
-            reference_string = reference_string[:-3]
+            reference_string = (
+                reference_string[:-3]
+            )
 
         return reference_string

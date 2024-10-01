@@ -6,7 +6,9 @@ def get_all_user_tables_from_database(
 ) -> list:
     table_names = list()
 
-    cursor = database_connection.cursor()
+    cursor = (
+        database_connection.cursor()
+    )
 
     if "pyodbc" in str(
         type(database_connection),

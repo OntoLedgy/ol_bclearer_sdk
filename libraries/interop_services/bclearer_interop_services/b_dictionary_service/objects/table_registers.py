@@ -21,37 +21,59 @@ class TableRegisters(BDictionaries):
         table_name: str,
         bie_table_id: BieIds,
     ) -> TableRegisterBDictionaryReturnTypes:
-        if bie_table_id in self.dictionary:
-            return TableRegisterBDictionaryReturnTypes.TABLE_ALREADY_EXISTS
+        if (
+            bie_table_id
+            in self.dictionary
+        ):
+            return (
+                TableRegisterBDictionaryReturnTypes.TABLE_ALREADY_EXISTS
+            )
 
         table_b_dictionary = TableBDictionaries(
             table_name=table_name,
             bie_table_id=bie_table_id,
         )
 
-        self.dictionary[bie_table_id] = table_b_dictionary
+        self.dictionary[
+            bie_table_id
+        ] = table_b_dictionary
 
-        return TableRegisterBDictionaryReturnTypes.TABLE_CREATED
+        return (
+            TableRegisterBDictionaryReturnTypes.TABLE_CREATED
+        )
 
     def get_table_b_dictionary(
         self,
         bie_table_id: BieIds,
     ) -> TableBDictionaries:
-        return self.dictionary[bie_table_id]
+        return self.dictionary[
+            bie_table_id
+        ]
 
     def add_new_table_b_dictionary(
         self,
         table_b_dictionary: TableBDictionaries,
     ) -> TableRegisterBDictionaryReturnTypes:
-        if table_b_dictionary.bie_table_id in self.dictionary:
-            return TableRegisterBDictionaryReturnTypes.TABLE_ALREADY_EXISTS
+        if (
+            table_b_dictionary.bie_table_id
+            in self.dictionary
+        ):
+            return (
+                TableRegisterBDictionaryReturnTypes.TABLE_ALREADY_EXISTS
+            )
 
-        self.dictionary[table_b_dictionary.bie_table_id] = table_b_dictionary
+        self.dictionary[
+            table_b_dictionary.bie_table_id
+        ] = table_b_dictionary
 
-        return TableRegisterBDictionaryReturnTypes.TABLE_ADDED
+        return (
+            TableRegisterBDictionaryReturnTypes.TABLE_ADDED
+        )
 
     def add_new_or_update_table_b_dictionary(
         self,
         table_b_dictionary: TableBDictionaries,
     ) -> None:
-        self.dictionary[table_b_dictionary.bie_table_id] = table_b_dictionary
+        self.dictionary[
+            table_b_dictionary.bie_table_id
+        ] = table_b_dictionary

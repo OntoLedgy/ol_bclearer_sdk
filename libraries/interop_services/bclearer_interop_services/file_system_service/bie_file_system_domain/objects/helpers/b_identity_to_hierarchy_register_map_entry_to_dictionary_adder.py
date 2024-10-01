@@ -7,8 +7,12 @@ from bclearer_interop_services.file_system_service.bie_file_system_domain.object
 from bclearer_interop_services.file_system_service.objects.file_system_objects import (
     FileSystemObjects,
 )
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
     HierarchyFileSystemObjects,
 )

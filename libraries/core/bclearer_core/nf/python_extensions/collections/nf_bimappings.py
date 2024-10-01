@@ -31,22 +31,30 @@ class NfBimappings:
         return domain_value
 
     def get_range(self):
-        range = self.__domain_keyed_on_range.keys()
+        range = (
+            self.__domain_keyed_on_range.keys()
+        )
 
         return range
 
     def get_domain(self):
-        domain = self.__range_keyed_on_domain.keys()
+        domain = (
+            self.__range_keyed_on_domain.keys()
+        )
 
         return domain
 
     def get_range_keyed_on_domain(self):
-        range_keyed_on_domain = self.__range_keyed_on_domain
+        range_keyed_on_domain = (
+            self.__range_keyed_on_domain
+        )
 
         return range_keyed_on_domain
 
     def get_domain_keyed_on_range(self):
-        domain_keyed_on_range = self.__domain_keyed_on_range
+        domain_keyed_on_range = (
+            self.__domain_keyed_on_range
+        )
 
         return domain_keyed_on_range
 
@@ -54,9 +62,13 @@ class NfBimappings:
         self,
         map: dict,
     ):
-        self.__domain_keyed_on_range = NfDictionaries()
+        self.__domain_keyed_on_range = (
+            NfDictionaries()
+        )
 
-        self.__range_keyed_on_domain = NfDictionaries()
+        self.__range_keyed_on_domain = (
+            NfDictionaries()
+        )
 
         for (
             domain_value,
@@ -72,20 +84,28 @@ class NfBimappings:
         domain_value,
         range_value,
     ):
-        self.__domain_keyed_on_range[range_value] = domain_value
+        self.__domain_keyed_on_range[
+            range_value
+        ] = domain_value
 
-        self.__range_keyed_on_domain[domain_value] = range_value
+        self.__range_keyed_on_domain[
+            domain_value
+        ] = range_value
 
     @staticmethod
     def __populate_range_keyed_on_range(
         map: NfDictionaries,
     ) -> NfDictionaries:
-        domain_keyed_on_range = NfDictionaries()
+        domain_keyed_on_range = (
+            NfDictionaries()
+        )
 
         for (
             domain_value,
             range_value,
         ) in map:
-            domain_keyed_on_range[range_value] = domain_value
+            domain_keyed_on_range[
+                range_value
+            ] = domain_value
 
         return domain_keyed_on_range

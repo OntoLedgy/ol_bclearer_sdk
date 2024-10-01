@@ -8,7 +8,9 @@ from bclearer_orchestration_services.identification_services.b_identity_service.
 def create_file_b_identity_immutable_stage_base(
     file,
 ) -> int:
-    from bclearer_interop_services.file_system_service.objects.files import Files
+    from bclearer_interop_services.file_system_service.objects.files import (
+        Files,
+    )
 
     if not isinstance(file, Files):
         raise TypeError
@@ -22,7 +24,9 @@ def create_file_b_identity_immutable_stage_base(
         file.absolute_path_string,
         mode="rb",
     ) as python_native_file:
-        file_content_as_bytes = python_native_file.read()
+        file_content_as_bytes = (
+            python_native_file.read()
+        )
 
     hash_as_integer = create_b_identity_base_from_bytes(
         input_bytes=file_content_as_bytes,

@@ -40,7 +40,8 @@ def rename_all_folders(
             )
 
             all_renames_were_successes = (
-                all_renames_were_successes and rename_was_success
+                all_renames_were_successes
+                and rename_was_success
             )
 
     if not all_renames_were_successes:
@@ -80,18 +81,28 @@ def rename_filesystem_element(
     old: str,
     new: str,
 ) -> bool:
-    if old not in filesystem_element_name:
+    if (
+        old
+        not in filesystem_element_name
+    ):
         return True
 
-    old_filesystem_element = filesystem_element_path
+    old_filesystem_element = (
+        filesystem_element_path
+    )
 
-    new_filesystem_element = filesystem_element_path.replace(
-        old,
-        new,
+    new_filesystem_element = (
+        filesystem_element_path.replace(
+            old,
+            new,
+        )
     )
 
     log_message(
-        message="Renaming " + old_filesystem_element + " to " + new_filesystem_element,
+        message="Renaming "
+        + old_filesystem_element
+        + " to "
+        + new_filesystem_element,
     )
 
     try:

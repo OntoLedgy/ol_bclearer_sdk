@@ -14,16 +14,22 @@ def standardise_uniclass_objects_table_columns(
         UNICLASS2015_OBJECT_TABLE_NAME
     ]
 
-    uniclass_objects_table[OBJECT_NAME_COLUMN_NAME] = uniclass_objects_table[
+    uniclass_objects_table[
+        OBJECT_NAME_COLUMN_NAME
+    ] = uniclass_objects_table[
         CODE_COLUMN_NAME
     ]
 
-    uniclass_objects_table[PARENT_NAMES_COLUMN_NAME] = ""
+    uniclass_objects_table[
+        PARENT_NAMES_COLUMN_NAME
+    ] = ""
 
-    uniclass_objects_table[PARENT_PACKAGE_NAME_COLUMN_NAME] = "UNICLASS Items"
+    uniclass_objects_table[
+        PARENT_PACKAGE_NAME_COLUMN_NAME
+    ] = "UNICLASS Items"
 
-    evolve_stage_7_dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME] = (
-        uniclass_objects_table
-    )
+    evolve_stage_7_dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = uniclass_objects_table
 
     return evolve_stage_7_dictionary_of_dataframes

@@ -63,15 +63,22 @@ def __add_summary_row_if_required(
     source_column_name: str,
     summary_row_name: str,
 ) -> pandas.DataFrame:
-    if source_column_name not in hashified_and_filtered_target_dataframe:
+    if (
+        source_column_name
+        not in hashified_and_filtered_target_dataframe
+    ):
         return summary_hash_dataframe
 
     hash_components = list(
-        hashified_and_filtered_target_dataframe[source_column_name],
+        hashified_and_filtered_target_dataframe[
+            source_column_name
+        ],
     )
 
-    hash_string = create_hash_with_sorted_inputs(
-        inputs=hash_components,
+    hash_string = (
+        create_hash_with_sorted_inputs(
+            inputs=hash_components,
+        )
     )
 
     row_data = {
@@ -79,16 +86,20 @@ def __add_summary_row_if_required(
         HASHES_SUMMARY_COLUMN_NAME: hash_string,
     }
 
-    summary_row_dataframe = pandas.DataFrame([row_data])
+    summary_row_dataframe = (
+        pandas.DataFrame([row_data])
+    )
 
     dataframes = [
         summary_hash_dataframe,
         summary_row_dataframe,
     ]
 
-    summary_hash_dataframe = pandas.concat(
-        dataframes,
-        ignore_index=True,
+    summary_hash_dataframe = (
+        pandas.concat(
+            dataframes,
+            ignore_index=True,
+        )
     )
 
     return summary_hash_dataframe

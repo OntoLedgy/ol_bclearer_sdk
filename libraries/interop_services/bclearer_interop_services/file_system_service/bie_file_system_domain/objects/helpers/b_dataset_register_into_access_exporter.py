@@ -4,7 +4,9 @@ from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporte
 from bclearer_interop_services.file_system_service.new_folder_creator import (
     create_new_folder,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.relational_database_services.access_service.access.all_csv_files_from_folder_to_access_exporter import (
     export_all_csv_files_from_folder_to_access,
 )
@@ -22,7 +24,10 @@ def export_b_dataset_register_into_access(
     register_output_string_name_root: str,
     register_in_b_datasets_format: dict = None,
 ) -> None:
-    register_output_file_base_name = register_output_string_name_root + "_register"
+    register_output_file_base_name = (
+        register_output_string_name_root
+        + "_register"
+    )
 
     register_output_root_folder_path = create_new_folder(
         parent_folder_path=output_folder.absolute_path_string,
@@ -35,7 +40,9 @@ def export_b_dataset_register_into_access(
         absolute_path_string=register_output_root_folder_path,
     )
 
-    if not register_in_b_datasets_format:
+    if (
+        not register_in_b_datasets_format
+    ):
         register_in_b_datasets_format = (
             register_object.export_register_in_b_datasets_format()
         )

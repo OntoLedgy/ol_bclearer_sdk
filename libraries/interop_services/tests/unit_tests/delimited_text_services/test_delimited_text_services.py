@@ -14,15 +14,14 @@ class TestExcelInteropServices:
         )
 
         # Assert that the table is not empty
-        assert not table.empty, "The table is empty."
+        assert (
+            not table.empty
+        ), "The table is empty."
 
         # Assert the shape of the DataFrame (14 rows and 3 columns)
-        assert (
-            table.shape
-            == (
-                14,
-                3,
-            )
+        assert table.shape == (
+            14,
+            3,
         ), f"DataFrame does not have the expected shape. Expected (14, 3), got {table.shape}."
 
         # Optionally: check the column names
@@ -32,7 +31,8 @@ class TestExcelInteropServices:
             "Description",
         ]  # Replace '...' with the actual column names
         assert (
-            list(table.columns) == expected_columns
+            list(table.columns)
+            == expected_columns
         ), f"Unexpected column names: {list(table.columns)}"
 
         # Optionally: check the content of the first row
@@ -42,7 +42,8 @@ class TestExcelInteropServices:
 
         # Optionally: check the content of the last row
         assert (
-            table.iloc[13]["Code"] == "M"
+            table.iloc[13]["Code"]
+            == "M"
         ), "The last row 'Code' column value is not 'M'."
 
         # Print the table to verify the content
@@ -64,15 +65,14 @@ class TestExcelInteropServices:
         )
 
         # Assert that the table is not empty
-        assert not table.empty, "The table is empty."
+        assert (
+            not table.empty
+        ), "The table is empty."
 
         # Assert the shape of the DataFrame (14 rows and 3 columns)
-        assert (
-            table.shape
-            == (
-                14,
-                3,
-            )
+        assert table.shape == (
+            14,
+            3,
         ), f"DataFrame does not have the expected shape. Expected (14, 3), got {table.shape}."
 
         # Optionally: check the column names
@@ -82,7 +82,8 @@ class TestExcelInteropServices:
             "Description",
         ]  # Replace '...' with the actual column names
         assert (
-            list(table.columns) == expected_columns
+            list(table.columns)
+            == expected_columns
         ), f"Unexpected column names: {list(table.columns)}"
 
         # Optionally: check the content of the first row
@@ -92,7 +93,8 @@ class TestExcelInteropServices:
 
         # Optionally: check the content of the last row
         assert (
-            table.iloc[13]["Code"] == "M"
+            table.iloc[13]["Code"]
+            == "M"
         ), "The last row 'Code' column value is not 'M'."
 
         print(table)

@@ -11,9 +11,11 @@ def get_access_database_connection(
         + ";"
     )
 
-    database_connection = pyodbc.connect(
-        database_connection_string,
-        autocommit=True,
+    database_connection = (
+        pyodbc.connect(
+            database_connection_string,
+            autocommit=True,
+        )
     )
 
     return database_connection

@@ -4,7 +4,9 @@ class LoadGmlDataConfigurations:
         gml_data_folder_path: str,
         short_name: str,
     ):
-        self.gml_data_folder_path = gml_data_folder_path
+        self.gml_data_folder_path = (
+            gml_data_folder_path
+        )
 
         self.short_name = short_name
 

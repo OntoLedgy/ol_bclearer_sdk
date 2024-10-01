@@ -35,12 +35,10 @@ def run_visualization_substage_load_gml_data(
         gml_data_folder_name=gml_data_folder_name,
     )
 
-    content_universe_merged_gml_data_universe = (
-        run_boson_1_merge_gml_data_content_operations_substage(
-            ea_tools_session_manager=ea_tools_session_manager,
-            content_universe=content_universe,
-            load_gml_data_configuration=load_gml_data_configuration,
-        )
+    content_universe_merged_gml_data_universe = run_boson_1_merge_gml_data_content_operations_substage(
+        ea_tools_session_manager=ea_tools_session_manager,
+        content_universe=content_universe,
+        load_gml_data_configuration=load_gml_data_configuration,
     )
 
     instrument_and_visualize(

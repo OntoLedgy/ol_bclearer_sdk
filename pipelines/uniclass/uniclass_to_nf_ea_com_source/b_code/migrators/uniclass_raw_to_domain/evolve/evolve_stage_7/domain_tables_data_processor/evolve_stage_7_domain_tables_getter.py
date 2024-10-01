@@ -28,18 +28,14 @@ def get_evolve_stage_7_domain_tables(
         uniclass_ranks_parent_child_file.absolute_path_string,
     )
 
-    uniclass_ranks_table_with_child_uuids_and_names = (
-        add_child_uuids_and_names_to_uniclass_ranks_table(
-            dictionary_of_dataframes=dictionary_of_dataframes,
-            dataframe=uniclass_ranks_parent_child_table,
-        )
+    uniclass_ranks_table_with_child_uuids_and_names = add_child_uuids_and_names_to_uniclass_ranks_table(
+        dictionary_of_dataframes=dictionary_of_dataframes,
+        dataframe=uniclass_ranks_parent_child_table,
     )
 
-    evolve_stage_7_domain_tables = (
-        update_uniclass_ranks_table_in_domain_tables_dictionary(
-            dictionary_of_dataframes=dictionary_of_dataframes,
-            dataframe=uniclass_ranks_table_with_child_uuids_and_names,
-        )
+    evolve_stage_7_domain_tables = update_uniclass_ranks_table_in_domain_tables_dictionary(
+        dictionary_of_dataframes=dictionary_of_dataframes,
+        dataframe=uniclass_ranks_table_with_child_uuids_and_names,
     )
 
     return evolve_stage_7_domain_tables

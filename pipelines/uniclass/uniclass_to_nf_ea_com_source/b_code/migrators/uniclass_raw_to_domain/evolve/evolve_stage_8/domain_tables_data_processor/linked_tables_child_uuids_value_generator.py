@@ -18,15 +18,28 @@ def __add_child_uuids_value(
         table_name_object_tables,
         dataframe_object_tables,
     ) in evolve_8_object_tables.items():
-        if table_name_object_tables != UUIDIFIED_PACKAGES_TABLE_NAME:
+        if (
+            table_name_object_tables
+            != UUIDIFIED_PACKAGES_TABLE_NAME
+        ):
             if (
-                dataframe_linked_table.loc[CHILD_PACKAGE_NAME_COLUMN_NAME]
-                == dataframe_object_tables.loc[PARENT_PACKAGE_NAME_COLUMN_NAME]
-                and dataframe_linked_table.loc[CHILD_NAMES_COLUMN_NAME]
-                == dataframe_object_tables.loc[OBJECT_NAME_COLUMN_NAME]
+                dataframe_linked_table.loc[
+                    CHILD_PACKAGE_NAME_COLUMN_NAME
+                ]
+                == dataframe_object_tables.loc[
+                    PARENT_PACKAGE_NAME_COLUMN_NAME
+                ]
+                and dataframe_linked_table.loc[
+                    CHILD_NAMES_COLUMN_NAME
+                ]
+                == dataframe_object_tables.loc[
+                    OBJECT_NAME_COLUMN_NAME
+                ]
             ):
-                dataframe_linked_table.loc[CHILD_UUIDS_COLUMN_NAME] = (
-                    dataframe_object_tables.loc[UUID_COLUMN_NAME]
-                )
+                dataframe_linked_table.loc[
+                    CHILD_UUIDS_COLUMN_NAME
+                ] = dataframe_object_tables.loc[
+                    UUID_COLUMN_NAME
+                ]
 
     return dataframe_linked_table

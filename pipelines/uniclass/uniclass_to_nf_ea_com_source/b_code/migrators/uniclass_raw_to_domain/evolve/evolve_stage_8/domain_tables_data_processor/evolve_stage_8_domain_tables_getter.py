@@ -44,16 +44,12 @@ def get_evolve_stage_8_domain_tables(
         evolve_stage_7_dictionary_of_dataframes=evolve_stage_7_dictionary_of_dataframes,
     )
 
-    evolve_8_object_input_tables = (
-        load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
-            resource_namespace=EVOLVE_8_OBJECT_TABLES_INPUT_FOLDER_NAMESPACE,
-        )
+    evolve_8_object_input_tables = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
+        resource_namespace=EVOLVE_8_OBJECT_TABLES_INPUT_FOLDER_NAMESPACE,
     )
 
-    evolve_8_linked_input_tables = (
-        load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
-            resource_namespace=EVOLVE_8_LINKED_TABLES_INPUT_FOLDER_NAMESPACE,
-        )
+    evolve_8_linked_input_tables = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
+        resource_namespace=EVOLVE_8_LINKED_TABLES_INPUT_FOLDER_NAMESPACE,
     )
 
     uuidified_evolve_8_linked_input_tables = uuidify_dictionary_of_dataframes(

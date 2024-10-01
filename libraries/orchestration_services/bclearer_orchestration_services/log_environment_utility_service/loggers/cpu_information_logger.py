@@ -63,6 +63,9 @@ def __get_name_values() -> dict:
             interval=1,
         ),
     ):
-        name_values[CPU_INFORMATION_CORE_PREFIX + f" {i}"] = f" {percentage}%"
+        name_values[
+            CPU_INFORMATION_CORE_PREFIX
+            + f" {i}"
+        ] = f" {percentage}%"
 
     return name_values

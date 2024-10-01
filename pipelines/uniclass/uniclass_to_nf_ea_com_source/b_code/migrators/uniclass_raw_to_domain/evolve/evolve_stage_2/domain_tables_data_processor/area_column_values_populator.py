@@ -8,7 +8,11 @@ from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclas
 def populate_area_column(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    for dataframe in dictionary_of_dataframes.values():
+    for (
+        dataframe
+    ) in (
+        dictionary_of_dataframes.values()
+    ):
         __value_to_area_column(
             dataframe=dataframe,
         )
@@ -26,6 +30,8 @@ def __value_to_area_column(
         ] = dataframe.loc[
             index,
             CODE_COLUMN_NAME,
-        ][:2]
+        ][
+            :2
+        ]
 
     return dataframe

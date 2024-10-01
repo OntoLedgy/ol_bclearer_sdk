@@ -32,11 +32,9 @@ def get_null_processed_input_object(
         )
 
         if cell_pandas_is_null_based_string:
-            bie_consumable_object = (
-                convert_non_null_object_to_bie_consumable_object_item(
-                    input_object=input_object,
-                    bie_identity_space=bie_identity_space,
-                )
+            bie_consumable_object = convert_non_null_object_to_bie_consumable_object_item(
+                input_object=input_object,
+                bie_identity_space=bie_identity_space,
             )
 
             return bie_consumable_object
@@ -53,11 +51,19 @@ def __get_bie_consumable_string(
     bie_identity_space: BieIdentitySpaces,
     cell_pandas_null_value_type: PandasNullValueTypes,
 ):
-    null_conversion_prefix = "<RECOGNISED AS NULL OBJECT>"
+    null_conversion_prefix = (
+        "<RECOGNISED AS NULL OBJECT>"
+    )
 
-    if bie_identity_space.null_type_recognition is NullTypeRecognition.FINE_GRAINED:
-        return null_conversion_prefix + str(
-            cell_pandas_null_value_type,
+    if (
+        bie_identity_space.null_type_recognition
+        is NullTypeRecognition.FINE_GRAINED
+    ):
+        return (
+            null_conversion_prefix
+            + str(
+                cell_pandas_null_value_type,
+            )
         )
 
     return null_conversion_prefix + str(

@@ -17,11 +17,9 @@ def orchestrate_evolve_stage_5(
     dictionary_of_dataframes: dict,
     folder_path: str,
 ) -> dict:
-    uniclass2015_object_parent_child_tables_with_uniclass_element = (
-        orchestrate_domain_tables_creation_for_evolve_5(
-            folder_path=folder_path,
-            dictionary_of_dataframes=dictionary_of_dataframes,
-        )
+    uniclass2015_object_parent_child_tables_with_uniclass_element = orchestrate_domain_tables_creation_for_evolve_5(
+        folder_path=folder_path,
+        dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
     evolve_stage_5_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_evolve_stage_5(

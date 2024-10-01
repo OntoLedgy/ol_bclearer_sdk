@@ -1,7 +1,9 @@
 from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.dataframe_to_table_as_dictionary_converter import (
     convert_dataframe_to_table_as_dictionary,
 )
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 from pandas import read_csv
 
 

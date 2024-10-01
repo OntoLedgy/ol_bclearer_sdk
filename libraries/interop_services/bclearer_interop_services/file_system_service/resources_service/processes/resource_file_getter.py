@@ -1,7 +1,9 @@
 import importlib
 import os
 
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 
 
 def get_resource_file(
@@ -12,11 +14,15 @@ def get_resource_file(
         name=resource_namespace,
     )
 
-    module_path_string = module.__path__[0]
+    module_path_string = (
+        module.__path__[0]
+    )
 
-    resource_full_file_name = os.path.join(
-        module_path_string,
-        resource_name,
+    resource_full_file_name = (
+        os.path.join(
+            module_path_string,
+            resource_name,
+        )
     )
 
     resource_file = Files(

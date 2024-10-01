@@ -21,11 +21,15 @@ def get_hierarchy_folder_information_as_b_dataset_row_dictionary(
         hierarchy_file_system_object=hierarchy_folder,
     )
 
-    if not hierarchy_folder.parent_hierarchy_folder:
+    if (
+        not hierarchy_folder.parent_hierarchy_folder
+    ):
         parent_uuid = ""
 
     else:
-        parent_uuid = hierarchy_folder.parent_hierarchy_folder.uuid
+        parent_uuid = (
+            hierarchy_folder.parent_hierarchy_folder.uuid
+        )
 
     hierarchy_folder_as_b_dataset_row_dictionary = {
         "uuid": hierarchy_folder.uuid,

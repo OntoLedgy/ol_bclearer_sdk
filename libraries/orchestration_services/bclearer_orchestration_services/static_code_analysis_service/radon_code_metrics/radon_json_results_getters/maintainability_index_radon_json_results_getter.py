@@ -9,11 +9,15 @@ from radon import cli
 def get_maintainability_index_radon_json_results(
     folders_to_analyse: list,
 ):
-    maintainability_index_configuration = get_maintainability_index_configuration()
+    maintainability_index_configuration = (
+        get_maintainability_index_configuration()
+    )
 
     paths = []
 
-    for folder_to_analyse in folders_to_analyse:
+    for (
+        folder_to_analyse
+    ) in folders_to_analyse:
         paths.append(
             folder_to_analyse.absolute_path_string,
         )

@@ -13,7 +13,9 @@ class HierarchyFileSystemObjects:
         parent_hierarchy_folder: object = None,
     ):
         # TODO: Note - property only created to aid the debugging - could be transformed or removed in the future
-        self.name = file_system_object.base_name
+        self.name = (
+            file_system_object.base_name
+        )
 
         self.uuid = create_new_uuid()
 
@@ -21,13 +23,18 @@ class HierarchyFileSystemObjects:
             HierarchyFolders,
         )
 
-        if parent_hierarchy_folder and not isinstance(
-            parent_hierarchy_folder,
-            HierarchyFolders,
+        if (
+            parent_hierarchy_folder
+            and not isinstance(
+                parent_hierarchy_folder,
+                HierarchyFolders,
+            )
         ):
             raise TypeError
 
-        self.parent_hierarchy_folder = parent_hierarchy_folder
+        self.parent_hierarchy_folder = (
+            parent_hierarchy_folder
+        )
 
         self.relative_path = ""
 
@@ -36,7 +43,9 @@ class HierarchyFileSystemObjects:
     def __add_to_parent_hierarchy_folder(
         self,
     ) -> None:
-        if not self.parent_hierarchy_folder:
+        if (
+            not self.parent_hierarchy_folder
+        ):
             return
 
         self.parent_hierarchy_folder.child_hierarchy_file_system_objects.add(

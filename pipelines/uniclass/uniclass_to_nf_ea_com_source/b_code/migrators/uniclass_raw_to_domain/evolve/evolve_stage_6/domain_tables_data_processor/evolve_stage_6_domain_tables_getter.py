@@ -39,12 +39,12 @@ def get_evolve_stage_6_domain_tables(
         resource_name=EVOLVE_6_UNICLASS_RANKS_FILE_NAME,
     )
 
-    dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME][RANKS_COLUMN_NAME] = nan
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ][RANKS_COLUMN_NAME] = nan
 
-    evolve_stage_6_dictionary_with_uniclass_objects_table_ranks_column_populated = (
-        populate_uniclass_objects_table_ranks_column(
-            dictionary_of_dataframes=dictionary_of_dataframes,
-        )
+    evolve_stage_6_dictionary_with_uniclass_objects_table_ranks_column_populated = populate_uniclass_objects_table_ranks_column(
+        dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
     uuidified_ranks_table = get_uuidified_ranks_table(

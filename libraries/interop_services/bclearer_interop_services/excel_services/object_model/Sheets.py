@@ -1,9 +1,19 @@
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Cells import Cells
-from bclearer_interop_services.excel_services.object_model.Columns import Columns
-from bclearer_interop_services.excel_services.object_model.Ranges import Ranges
-from bclearer_interop_services.excel_services.object_model.Rows import Rows
-from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
+from bclearer_interop_services.excel_services.object_model.Cells import (
+    Cells,
+)
+from bclearer_interop_services.excel_services.object_model.Columns import (
+    Columns,
+)
+from bclearer_interop_services.excel_services.object_model.Ranges import (
+    Ranges,
+)
+from bclearer_interop_services.excel_services.object_model.Rows import (
+    Rows,
+)
+from openpyxl.worksheet.worksheet import (
+    Worksheet as OpenpyxlWorksheet,
+)
 
 
 class Sheets:
@@ -49,13 +59,20 @@ class Sheets:
         self,
         header_row_number: int = 1,
     ) -> pd.DataFrame:
-        data = [[cell.value for cell in row] for row in self.sheet.rows]
+        data = [
+            [cell.value for cell in row]
+            for row in self.sheet.rows
+        ]
 
         if not data:
-            return pd.DataFrame()  # Return an empty DataFrame if there is no data
+            return (
+                pd.DataFrame()
+            )  # Return an empty DataFrame if there is no data
 
         # Convert to 0-based index for internal processing
-        header_index = header_row_number - 1
+        header_index = (
+            header_row_number - 1
+        )
 
         # Check for potential empty or merged rows
         while header_index < len(
@@ -63,7 +80,9 @@ class Sheets:
         ) and not any(
             data[header_index],
         ):
-            header_index += 1  # Skip empty rows
+            header_index += (
+                1  # Skip empty rows
+            )
 
         # Ensure we are within bounds
         if header_index >= len(data):

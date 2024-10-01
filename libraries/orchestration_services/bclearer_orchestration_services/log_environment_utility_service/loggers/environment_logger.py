@@ -5,13 +5,20 @@ from loggers.cpu_information_logger import (
     log_all_cpu_information,
     log_filtered_cpu_information,
 )
-from loggers.disk_information_logger import log_all_disk_information
-from loggers.environ_logger import log_all_environ_items, log_filtered_environ_items
+from loggers.disk_information_logger import (
+    log_all_disk_information,
+)
+from loggers.environ_logger import (
+    log_all_environ_items,
+    log_filtered_environ_items,
+)
 from loggers.memory_information_logger import (
     log_all_memory_information,
     log_filtered_memory_information,
 )
-from loggers.network_information_logger import log_network_information
+from loggers.network_information_logger import (
+    log_network_information,
+)
 from loggers.system_information_logger import (
     log_all_system_items,
     log_filtered_system_items,

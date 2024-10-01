@@ -18,7 +18,9 @@ def render_graph():
             str(value.node_uuid),
         )
 
-        for connected_node in value.connected_nodes:
+        for (
+            connected_node
+        ) in value.connected_nodes:
             directed_graph.edge(
                 str(value.node_uuid),
                 str(

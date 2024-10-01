@@ -7,7 +7,9 @@ from bclearer_orchestration_services.identification_services.uuid_service.uuid_f
 def convert_maintainability_index_radon_json_to_dataframe(
     results_as_json: dict,
 ) -> pandas.DataFrame:
-    maintainability_index_dataframe = __create_empty_maintainability_index_dataframe()
+    maintainability_index_dataframe = (
+        __create_empty_maintainability_index_dataframe()
+    )
 
     if not results_as_json:
         return maintainability_index_dataframe
@@ -22,11 +24,9 @@ def convert_maintainability_index_radon_json_to_dataframe(
             maintainability_index_dataframe=maintainability_index_dataframe,
         )
 
-    ordered_maintainability_index_dataframe = (
-        maintainability_index_dataframe.sort_values(
-            by=["maintainability_index"],
-            ascending=True,
-        )
+    ordered_maintainability_index_dataframe = maintainability_index_dataframe.sort_values(
+        by=["maintainability_index"],
+        ascending=True,
     )
 
     return ordered_maintainability_index_dataframe
@@ -60,10 +60,14 @@ def __append_result_to_dataframe(
         {
             "file_uuid": file_uuid,
             "full_file_path": full_file_path,
-            "maintainability_index": result["mi"],
+            "maintainability_index": result[
+                "mi"
+            ],
             "rank": result["rank"],
         },
         ignore_index=True,
     )
 
-    return maintainability_index_dataframe
+    return (
+        maintainability_index_dataframe
+    )

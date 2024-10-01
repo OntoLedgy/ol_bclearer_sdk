@@ -1,5 +1,7 @@
 import pandas
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -21,17 +23,23 @@ def convert_uniclass_naming_spaces_table_to_attributes_order(
     }
 
     uniclass_naming_spaces_for_attribute_order_filtered_and_renamed = dataframe_filter_and_rename(
-        dataframe=uniclass_dictionary[input_naming_spaces_table_name],
+        dataframe=uniclass_dictionary[
+            input_naming_spaces_table_name
+        ],
         filter_and_rename_dictionary=uniclass_naming_spaces_to_ea_attributes_order_renaming_dictionary,
     )
 
     ea_attributes_order_dataframe = pandas.concat(
         [
             uniclass_naming_spaces_for_attribute_order_filtered_and_renamed,
-            nf_ea_com_dictionary[ea_attributes_order_table_name],
+            nf_ea_com_dictionary[
+                ea_attributes_order_table_name
+            ],
         ],
     )
 
-    nf_ea_com_dictionary[ea_attributes_order_table_name] = ea_attributes_order_dataframe
+    nf_ea_com_dictionary[
+        ea_attributes_order_table_name
+    ] = ea_attributes_order_dataframe
 
     return nf_ea_com_dictionary

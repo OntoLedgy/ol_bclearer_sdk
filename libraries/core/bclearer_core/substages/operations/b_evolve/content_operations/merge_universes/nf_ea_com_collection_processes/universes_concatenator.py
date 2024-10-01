@@ -4,7 +4,9 @@ from bclearer_core.substages.operations.b_evolve.common.universes_merge_register
 from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.collection_type_compliation_constants import (
     LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS,
 )
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -34,7 +36,10 @@ def concat_universe_collections(
         + collection_type.collection_name,
     )
 
-    if collection_type in LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS:
+    if (
+        collection_type
+        in LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS
+    ):
         concatenated_collection = universe_merge_register.primary_universe.nf_ea_com_registry.dictionary_of_collections[
             collection_type
         ].copy()
@@ -56,12 +61,15 @@ def concat_universe_collections(
         inplace=True,
     )
 
-    if NfColumnTypes.NF_UUIDS.column_name in concatenated_collection.columns:
+    if (
+        NfColumnTypes.NF_UUIDS.column_name
+        in concatenated_collection.columns
+    ):
         concatenated_collection.drop_duplicates(
             subset=NfColumnTypes.NF_UUIDS.column_name,
             inplace=True,
         )
 
-    output_universe.nf_ea_com_registry.dictionary_of_collections[collection_type] = (
-        concatenated_collection
-    )
+    output_universe.nf_ea_com_registry.dictionary_of_collections[
+        collection_type
+    ] = concatenated_collection

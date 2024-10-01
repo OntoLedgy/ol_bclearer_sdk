@@ -4,7 +4,9 @@ from enum import Enum, auto
 class FileSystemBIdentityTypes(Enum):
     NOT_SET = auto()
 
-    B_IDENTITY_FILE_SYSTEM_OBJECTS = auto()
+    B_IDENTITY_FILE_SYSTEM_OBJECTS = (
+        auto()
+    )
 
     B_IDENTITY_FOLDERS = auto()
 
@@ -13,7 +15,11 @@ class FileSystemBIdentityTypes(Enum):
     def __b_identity_type_name(
         self,
     ) -> str:
-        b_identity_type_name = app_type_to_name_mapping[self]
+        b_identity_type_name = (
+            app_type_to_name_mapping[
+                self
+            ]
+        )
 
         return b_identity_type_name
 

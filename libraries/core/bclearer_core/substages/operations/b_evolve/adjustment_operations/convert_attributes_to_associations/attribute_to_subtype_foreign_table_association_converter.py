@@ -7,7 +7,9 @@ from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_a
 from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.type_from_attribute_creator import (
     create_type_from_attribute,
 )
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
@@ -58,9 +60,13 @@ def __add_type(
         package_nf_uuid=package_nf_uuid,
     )
 
-    type_nf_uuid = type_dictionary[NfColumnTypes.NF_UUIDS.column_name]
+    type_nf_uuid = type_dictionary[
+        NfColumnTypes.NF_UUIDS.column_name
+    ]
 
-    new_classifiers_dictionary[type_nf_uuid] = type_dictionary
+    new_classifiers_dictionary[
+        type_nf_uuid
+    ] = type_dictionary
 
     return (
         type_nf_uuid,
@@ -80,9 +86,13 @@ def __add_association(
         type_nf_uuid=type_nf_uuid,
     )
 
-    association_nf_uuid = association_dictionary[NfColumnTypes.NF_UUIDS.column_name]
+    association_nf_uuid = association_dictionary[
+        NfColumnTypes.NF_UUIDS.column_name
+    ]
 
-    new_connectors_dictionary[association_nf_uuid] = association_dictionary
+    new_connectors_dictionary[
+        association_nf_uuid
+    ] = association_dictionary
 
     return new_connectors_dictionary
 
@@ -97,8 +107,12 @@ def __add_generalisation(
         type_nf_uuid=type_nf_uuid,
     )
 
-    association_nf_uuid = generalisation_dictionary[NfColumnTypes.NF_UUIDS.column_name]
+    association_nf_uuid = generalisation_dictionary[
+        NfColumnTypes.NF_UUIDS.column_name
+    ]
 
-    new_connectors_dictionary[association_nf_uuid] = generalisation_dictionary
+    new_connectors_dictionary[
+        association_nf_uuid
+    ] = generalisation_dictionary
 
     return new_connectors_dictionary

@@ -11,7 +11,9 @@ from tests.fixtures.paths import *
 def neo4j_connection(
     configurations_folder,
 ):
-    neo4j_configuration_file_name = "neo4j_configuration.json"
+    neo4j_configuration_file_name = (
+        "neo4j_configuration.json"
+    )
 
     neo4j_configuration_file = os.path.normpath(
         os.path.join(
@@ -20,8 +22,10 @@ def neo4j_connection(
         ),
     )
 
-    neo4j_configuration = Neo4jConfigurations(
-        neo4j_configuration_file,
+    neo4j_configuration = (
+        Neo4jConfigurations(
+            neo4j_configuration_file,
+        )
     )
 
     neo4j_connection = Neo4jConnections(

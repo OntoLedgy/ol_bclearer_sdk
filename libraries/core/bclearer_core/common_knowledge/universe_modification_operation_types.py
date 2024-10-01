@@ -1,16 +1,22 @@
 from enum import auto, unique
 
-from bclearer_core.common_knowledge.operation_types import OperationTypes
+from bclearer_core.common_knowledge.operation_types import (
+    OperationTypes,
+)
 
 
 @unique
 class UniverseModificationOperationTypes(
     OperationTypes,
 ):
-    ADD_DEPENDENCY_TO_INSTANCES_OF_TYPE = auto()
+    ADD_DEPENDENCY_TO_INSTANCES_OF_TYPE = (
+        auto()
+    )
 
     def __operation_name(self) -> str:
-        operation_name = operation_name_mapping[self]
+        operation_name = (
+            operation_name_mapping[self]
+        )
 
         return operation_name
 

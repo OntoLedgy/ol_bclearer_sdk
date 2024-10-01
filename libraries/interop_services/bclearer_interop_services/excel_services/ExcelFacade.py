@@ -1,7 +1,9 @@
 from pathlib import Path
 
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Workbooks import Workbooks
+from bclearer_interop_services.excel_services.object_model.Workbooks import (
+    Workbooks,
+)
 
 
 class ExcelFacade:
@@ -24,7 +26,9 @@ class ExcelFacade:
         sheet = self.workbook.sheet(
             sheet_name,
         )
-        cell = sheet.rows[row_index].cells[column_index]
+        cell = sheet.rows[
+            row_index
+        ].cells[column_index]
         return cell.value
 
     def read_sheet_to_dataframe(
@@ -39,17 +43,28 @@ class ExcelFacade:
 
         # Convert the sheet rows into a list of lists (representing rows)
         sheet_dataframe = pd.DataFrame(
-            [[cell.value for cell in row] for row in sheet.rows],
+            [
+                [
+                    cell.value
+                    for cell in row
+                ]
+                for row in sheet.rows
+            ],
         )
 
         # Check if the header row exists and is valid (non-empty)
-        if header_row_number >= sheet_dataframe.shape[0]:
+        if (
+            header_row_number
+            >= sheet_dataframe.shape[0]
+        ):
             raise ValueError(
                 f"Header row number {header_row_number} is out of range for the sheet '{sheet_name}'",
             )
 
         # Extract headers from the specified row
-        headers = sheet_dataframe.iloc[header_row_number]
+        headers = sheet_dataframe.iloc[
+            header_row_number
+        ]
 
         # Ensure no empty or duplicate headers
         if headers.isnull().any():
@@ -62,13 +77,16 @@ class ExcelFacade:
             )
 
         # Set the DataFrame column headers
-        sheet_dataframe.columns = headers
+        sheet_dataframe.columns = (
+            headers
+        )
 
         # Drop the header row and any rows above it
         sheet_dataframe = sheet_dataframe.drop(
             index=list(
                 range(
-                    header_row_number + 1,
+                    header_row_number
+                    + 1,
                 ),
             ),
         )
@@ -91,7 +109,9 @@ class ExcelFacade:
         sheet = self.workbook.sheet(
             sheet_name,
         )
-        sheet.rows[row_index].cells[column_index].value = value
+        sheet.rows[row_index].cells[
+            column_index
+        ].value = value
 
     def update_cell(
         self,
@@ -109,6 +129,8 @@ class ExcelFacade:
 
     def save(self, file_path=None):
         if file_path is None:
-            file_path = self.workbook.file_path
+            file_path = (
+                self.workbook.file_path
+            )
 
         self.workbook.save(file_path)

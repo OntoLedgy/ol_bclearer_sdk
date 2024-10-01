@@ -28,8 +28,10 @@ class PathWrappers:
         self,
         path_extension: str,
     ) -> str:
-        extended_path_string = self.__path.joinpath(
-            path_extension,
+        extended_path_string = (
+            self.__path.joinpath(
+                path_extension,
+            )
         )
 
         return extended_path_string

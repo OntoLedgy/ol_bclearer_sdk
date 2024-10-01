@@ -3,7 +3,9 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledg
 )
 
 
-def create_new_ea_objects_dictionary() -> dict:
+def create_new_ea_objects_dictionary() -> (
+    dict
+):
     new_ea_objects_dictionary = {
         NfEaComCollectionTypes.EA_CLASSIFIERS: dict(),
         NfEaComCollectionTypes.EA_CONNECTORS: dict(),

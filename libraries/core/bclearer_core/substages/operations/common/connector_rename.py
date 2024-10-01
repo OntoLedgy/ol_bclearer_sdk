@@ -1,4 +1,6 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
     EaConnectorTypes,
 )
@@ -46,11 +48,16 @@ def rename_connector(
     ]
 
     connector_nf_uuid = list(
-        connectors_connecting_place_1_and_2_of_type[NfColumnTypes.NF_UUIDS.column_name],
+        connectors_connecting_place_1_and_2_of_type[
+            NfColumnTypes.NF_UUIDS.column_name
+        ],
     )[0]
 
     connectors.loc[
-        connectors[NfColumnTypes.NF_UUIDS.column_name] == connector_nf_uuid,
+        connectors[
+            NfColumnTypes.NF_UUIDS.column_name
+        ]
+        == connector_nf_uuid,
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name,
     ] = connector_name
 

@@ -1,8 +1,12 @@
 from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.dependency_connectors_converter import (
     convert_dependency_connectors,
 )
-from bclearer_source.b_code.common_knowledge.matched_objects import MatchedEaObjects
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from bclearer_source.b_code.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -35,7 +39,11 @@ def convert_to_classifiers(
     root_package_nf_uuid: str,
     matched_association: MatchedEaObjects = None,
 ) -> NfEaComUniverses:
-    os_open_names = os_open_names_dictionary[os_open_names_table_name]
+    os_open_names = (
+        os_open_names_dictionary[
+            os_open_names_table_name
+        ]
+    )
 
     log_message(
         message="converting "
@@ -80,9 +88,9 @@ def __create_new_ea_classifiers(
         filter_and_rename_dictionary=filter_and_rename_dictionary,
     )
 
-    new_ea_classifiers[NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name] = (
-        EaElementTypes.OBJECT.type_name
-    )
+    new_ea_classifiers[
+        NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
+    ] = EaElementTypes.OBJECT.type_name
 
     new_ea_classifiers[
         NfEaComColumnTypes.PACKAGEABLE_OBJECTS_PARENT_EA_ELEMENT.column_name

@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 from bclearer_core.substages.operations.common.connector_adder import (
     add_new_connector_to_dictionary,
 )
@@ -41,14 +43,14 @@ def add_dependency_to_instances_of_type(
         ea_guid=matched_target_object.ea_guid,
     )
 
-    classifiers_instances_of_matched_source_objects_type = (
-        get_instances_nf_uuids_of_matched_type(
-            nf_ea_com_universe=content_universe,
-            matched_type=matched_source_objects_type,
-        )
+    classifiers_instances_of_matched_source_objects_type = get_instances_nf_uuids_of_matched_type(
+        nf_ea_com_universe=content_universe,
+        matched_type=matched_source_objects_type,
     )
 
-    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = (
+        create_new_ea_objects_dictionary()
+    )
 
     for (
         instance_of_source_objects_type

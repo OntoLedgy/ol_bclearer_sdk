@@ -1,4 +1,6 @@
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
     HierarchyFileSystemObjects,
 )
@@ -34,9 +36,7 @@ def get_hierarchy_folder_immutable_stage_hash_sum(
 
         hierarchy_folder_immutable_stage_hash_sum += child_immutable_stage_content_hash
 
-    hierarchy_folder.hierarchy_folder_immutable_stage_hash_sum = (
-        hierarchy_folder_immutable_stage_hash_sum
-    )
+    hierarchy_folder.hierarchy_folder_immutable_stage_hash_sum = hierarchy_folder_immutable_stage_hash_sum
 
     return hierarchy_folder_immutable_stage_hash_sum
 
@@ -53,7 +53,9 @@ def __get_child_immutable_stage_content_hash(
         child_file_system_object,
         Files,
     ):
-        return child_file_system_object.file_immutable_stage_hash
+        return (
+            child_file_system_object.file_immutable_stage_hash
+        )
 
     if isinstance(
         child_hierarchy_file_system_object,

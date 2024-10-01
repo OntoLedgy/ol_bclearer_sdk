@@ -22,10 +22,8 @@ def orchestrate_load_stage_4(
         uniclass_source_data_resource_namespace=uniclass_source_data_resource_namespace,
     )
 
-    load_stage_4_nf_ea_com_tables = (
-        orchestrate_nf_ea_com_tables_creation_for_load_stage_4(
-            dictionary_of_dataframes=uniclass2015_uuidified_dictionary_of_dataframes,
-        )
+    load_stage_4_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_load_stage_4(
+        dictionary_of_dataframes=uniclass2015_uuidified_dictionary_of_dataframes,
     )
 
     orchestrate_export_nf_ea_com(

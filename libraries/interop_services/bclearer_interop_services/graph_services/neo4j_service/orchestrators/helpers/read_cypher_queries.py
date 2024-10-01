@@ -29,7 +29,10 @@ def generate_list_from_text(text):
     result_list = text.split(";")
 
     # Strip any leading/trailing whitespace from each element
-    result_list = [item.strip() for item in result_list]
+    result_list = [
+        item.strip()
+        for item in result_list
+    ]
 
     print(result_list)
     return result_list

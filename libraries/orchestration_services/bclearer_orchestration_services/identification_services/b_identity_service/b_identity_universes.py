@@ -8,7 +8,9 @@ from bclearer_orchestration_services.identification_services.b_identity_service.
 
 class BIdentityUniverses:
     def __init__(self):
-        self.b_identity_registry = BIdentityRegistries(self)
+        self.b_identity_registry = (
+            BIdentityRegistries(self)
+        )
 
         initialise_b_identity_universe(
             b_identity_universe=self,

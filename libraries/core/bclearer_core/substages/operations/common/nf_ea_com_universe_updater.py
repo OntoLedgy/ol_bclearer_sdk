@@ -14,7 +14,9 @@ def update_nf_ea_com_universe_with_dictionary(
     for (
         collection_type,
         new_collection_as_dictionary,
-    ) in new_ea_objects_dictionary.items():
+    ) in (
+        new_ea_objects_dictionary.items()
+    ):
         __update_collection_if_required(
             nf_ea_com_universe=nf_ea_com_universe,
             collection_type=collection_type,

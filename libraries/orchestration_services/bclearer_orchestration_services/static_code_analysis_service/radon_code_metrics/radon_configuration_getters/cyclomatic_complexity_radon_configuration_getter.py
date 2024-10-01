@@ -2,8 +2,12 @@ import radon.complexity as cyclomatic_complexity_module
 from radon import cli
 
 
-def get_cyclomatic_complexity_configuration() -> cli.Config:
-    order = cyclomatic_complexity_module.SCORE
+def get_cyclomatic_complexity_configuration() -> (
+    cli.Config
+):
+    order = (
+        cyclomatic_complexity_module.SCORE
+    )
 
     configuration = cli.Config(
         min="A",

@@ -1,4 +1,6 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -33,7 +35,11 @@ def convert_uniclass_items_parent_child_table_to_stereotype_usage(
         filter_and_rename_dictionary=ea_stereotype_usage_dataframe_filter_and_renaming_dictionary,
     )
 
-    ea_stereotypes_table = uniclass_dictionary[input_stereotypes_table_name]
+    ea_stereotypes_table = (
+        uniclass_dictionary[
+            input_stereotypes_table_name
+        ]
+    )
 
     stereotype_type_of_nf_uuid = (
         ea_stereotypes_table.loc[
@@ -47,7 +53,9 @@ def convert_uniclass_items_parent_child_table_to_stereotype_usage(
         .strip()
     )
 
-    ea_stereotype_usage_dataframe["stereotype_nf_uuids"] = stereotype_type_of_nf_uuid
+    ea_stereotype_usage_dataframe[
+        "stereotype_nf_uuids"
+    ] = stereotype_type_of_nf_uuid
 
     nf_ea_com_dictionary = append_nf_ea_com_table(
         nf_ea_com_dictionary=nf_ea_com_dictionary,

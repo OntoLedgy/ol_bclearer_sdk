@@ -46,7 +46,9 @@ def __run_operation(
     for (
         content_collection_type,
         content_collection_table,
-    ) in content_collections_dictionary.items():
+    ) in (
+        content_collections_dictionary.items()
+    ):
         __process_content_collection(
             content_collection_type=content_collection_type,
             content_collection_table=content_collection_table,
@@ -75,34 +77,38 @@ def __process_content_collection(
         output_universe.nf_ea_com_registry.dictionary_of_collections
     )
 
-    list_of_attribute_ea_guids_to_be_removed = (
-        __get_list_of_attribute_ea_guids_to_be_removed(
-            adjustment_universe=adjustment_universe,
-        )
+    list_of_attribute_ea_guids_to_be_removed = __get_list_of_attribute_ea_guids_to_be_removed(
+        adjustment_universe=adjustment_universe,
     )
 
-    if content_collection_type == NfEaComCollectionTypes.EA_ATTRIBUTES:
-        output_collections_dictionary[content_collection_type] = (
-            __get_filtered_collection(
-                list_of_attribute_ea_guids_to_be_removed=list_of_attribute_ea_guids_to_be_removed,
-                content_collection_table=content_collection_table,
-                ea_guid_column_name=NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name,
-            )
+    if (
+        content_collection_type
+        == NfEaComCollectionTypes.EA_ATTRIBUTES
+    ):
+        output_collections_dictionary[
+            content_collection_type
+        ] = __get_filtered_collection(
+            list_of_attribute_ea_guids_to_be_removed=list_of_attribute_ea_guids_to_be_removed,
+            content_collection_table=content_collection_table,
+            ea_guid_column_name=NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name,
         )
 
-    elif content_collection_type == NfEaComCollectionTypes.STEREOTYPE_USAGE:
-        output_collections_dictionary[content_collection_type] = (
-            __get_filtered_collection(
-                list_of_attribute_ea_guids_to_be_removed=list_of_attribute_ea_guids_to_be_removed,
-                content_collection_table=content_collection_table,
-                ea_guid_column_name=EaTXrefColumnTypes.T_XREF_CLIENT_EA_GUIDS.nf_column_name,
-            )
+    elif (
+        content_collection_type
+        == NfEaComCollectionTypes.STEREOTYPE_USAGE
+    ):
+        output_collections_dictionary[
+            content_collection_type
+        ] = __get_filtered_collection(
+            list_of_attribute_ea_guids_to_be_removed=list_of_attribute_ea_guids_to_be_removed,
+            content_collection_table=content_collection_table,
+            ea_guid_column_name=EaTXrefColumnTypes.T_XREF_CLIENT_EA_GUIDS.nf_column_name,
         )
 
     else:
-        output_collections_dictionary[content_collection_type] = (
-            content_collection_table
-        )
+        output_collections_dictionary[
+            content_collection_type
+        ] = content_collection_table
 
 
 def __get_list_of_attribute_ea_guids_to_be_removed(
@@ -129,7 +135,9 @@ def __get_filtered_collection(
     ea_guid_column_name: str,
 ) -> DataFrame:
     filtered_collection = content_collection_table[
-        ~content_collection_table[ea_guid_column_name].isin(
+        ~content_collection_table[
+            ea_guid_column_name
+        ].isin(
             list_of_attribute_ea_guids_to_be_removed,
         )
     ]

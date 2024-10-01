@@ -16,9 +16,12 @@ class Files(FileSystemObjects):
             Folders,
         )
 
-        if parent_folder and not isinstance(
-            parent_folder,
-            Folders,
+        if (
+            parent_folder
+            and not isinstance(
+                parent_folder,
+                Folders,
+            )
         ):
             raise TypeError
 
@@ -41,7 +44,9 @@ class Files(FileSystemObjects):
         if parent_folder is None:
             return
 
-        self.parent_folder = parent_folder
+        self.parent_folder = (
+            parent_folder
+        )
 
         parent_folder.add_to_child_files(
             self,

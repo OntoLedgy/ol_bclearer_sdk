@@ -12,7 +12,9 @@ from bclearer_interop_services.file_system_service.first_level_deep_file_system_
 from bclearer_interop_services.file_system_service.objects.file_system_objects import (
     FileSystemObjects,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.child_path_to_hierarchy_adder import (
     add_child_path_to_hierarchy,
 )
@@ -40,11 +42,17 @@ class HierarchyFileSystemObjectRegisters:
         root_file_system_object: FileSystemObjects,
         root_hierarchy_folder: HierarchyFolders,
     ):
-        self.owning_object = owning_object
+        self.owning_object = (
+            owning_object
+        )
 
-        self.root = root_hierarchy_folder
+        self.root = (
+            root_hierarchy_folder
+        )
 
-        self.hierarchy_objects_to_file_system_objects_mapping = dict()
+        self.hierarchy_objects_to_file_system_objects_mapping = (
+            dict()
+        )
 
         self.add_hierarchy_object_to_file_system_object_map_to_register(
             hierarchy_file_system_object=root_hierarchy_folder,
@@ -72,9 +80,7 @@ class HierarchyFileSystemObjectRegisters:
             hierarchy_folder_immutable_stage_hash_sum=hierarchy_folder_immutable_stage_hash_sum,
         )
 
-        hierarchy_folder.b_identity_component_immutable_stage_sum = (
-            hierarchy_folder_immutable_stage_hash_sum
-        )
+        hierarchy_folder.b_identity_component_immutable_stage_sum = hierarchy_folder_immutable_stage_hash_sum
 
     @run_and_log_function
     def __add_hierarchy_to_root(
@@ -97,7 +103,9 @@ class HierarchyFileSystemObjectRegisters:
             extension_to_filter="",
         )
 
-        for child_path in first_level_children_paths:
+        for (
+            child_path
+        ) in first_level_children_paths:
             add_child_path_to_hierarchy(
                 hierarchy_file_system_object_register=self,
                 child_path=child_path,
@@ -133,8 +141,13 @@ class HierarchyFileSystemObjectRegisters:
         for (
             hierarchy_file_system_object,
             file_system_object,
-        ) in self.hierarchy_objects_to_file_system_objects_mapping.items():
-            if input_file_system_object == file_system_object:
+        ) in (
+            self.hierarchy_objects_to_file_system_objects_mapping.items()
+        ):
+            if (
+                input_file_system_object
+                == file_system_object
+            ):
                 return hierarchy_file_system_object
 
     @run_and_log_function
@@ -144,7 +157,9 @@ class HierarchyFileSystemObjectRegisters:
         for (
             hierarchy_file_system_object,
             file_system_object,
-        ) in self.hierarchy_objects_to_file_system_objects_mapping.items():
+        ) in (
+            self.hierarchy_objects_to_file_system_objects_mapping.items()
+        ):
             if isinstance(
                 file_system_object,
                 Folders,
@@ -154,7 +169,9 @@ class HierarchyFileSystemObjectRegisters:
     def export_register_in_b_datasets_format(
         self,
     ) -> dict:
-        hierarchy_file_system_object_register_in_b_datasets_format = dict()
+        hierarchy_file_system_object_register_in_b_datasets_format = (
+            dict()
+        )
 
         if isinstance(
             self.root,

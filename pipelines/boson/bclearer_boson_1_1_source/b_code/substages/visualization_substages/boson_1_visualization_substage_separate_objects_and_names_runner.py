@@ -34,12 +34,10 @@ def run_visualization_substage_separate_objects_and_names(
         output_folder_name=output_folder_name,
     )
 
-    separated_gml_file_objects_and_names_universe = (
-        __separate_gml_file_objects_and_names(
-            ea_tools_session_manager=ea_tools_session_manager,
-            content_universe=separated_uml_objects_and_names_universe,
-            output_folder_name=output_folder_name,
-        )
+    separated_gml_file_objects_and_names_universe = __separate_gml_file_objects_and_names(
+        ea_tools_session_manager=ea_tools_session_manager,
+        content_universe=separated_uml_objects_and_names_universe,
+        output_folder_name=output_folder_name,
     )
 
     return separated_gml_file_objects_and_names_universe

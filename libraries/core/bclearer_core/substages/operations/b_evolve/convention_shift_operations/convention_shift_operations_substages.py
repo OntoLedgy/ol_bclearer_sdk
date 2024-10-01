@@ -49,13 +49,15 @@ class ConventionShiftOperationsSubstages:
         convention_shift_operation_configuration: ConventionShiftOperationConfigurations,
         content_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = ea_tools_session_manager
-
-        self.convention_shift_operation_configuration = (
-            convention_shift_operation_configuration
+        self.ea_tools_session_manager = (
+            ea_tools_session_manager
         )
 
-        self.content_universe = content_universe
+        self.convention_shift_operation_configuration = convention_shift_operation_configuration
+
+        self.content_universe = (
+            content_universe
+        )
 
     def __enter__(self):
         return self

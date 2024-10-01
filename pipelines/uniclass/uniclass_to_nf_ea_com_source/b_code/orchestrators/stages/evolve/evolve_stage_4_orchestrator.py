@@ -22,10 +22,8 @@ def orchestrate_evolve_stage_4(
         dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
-    evolve_stage_4_nf_ea_com_tables = (
-        orchestrate_nf_ea_com_tables_creation_for_evolve_stage_4(
-            dictionary_of_dataframes=evolve_stage_4_domain_tables,
-        )
+    evolve_stage_4_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_evolve_stage_4(
+        dictionary_of_dataframes=evolve_stage_4_domain_tables,
     )
 
     orchestrate_export_nf_ea_com(

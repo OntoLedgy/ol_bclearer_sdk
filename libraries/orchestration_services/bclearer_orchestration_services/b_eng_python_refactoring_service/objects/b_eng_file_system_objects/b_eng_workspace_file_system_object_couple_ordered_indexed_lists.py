@@ -8,7 +8,9 @@ class BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists:
         self,
         ordered_indexed_list: dict,
     ):
-        self.__ordered_indexed_list = ordered_indexed_list
+        self.__ordered_indexed_list = (
+            ordered_indexed_list
+        )
 
     def get_ordered_iterator(
         self,
@@ -25,6 +27,10 @@ class BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists:
         self,
         index: int,
     ) -> BEngWorkspaceFileSystemObjectCouples:
-        path_couple = self.__ordered_indexed_list[index]
+        path_couple = (
+            self.__ordered_indexed_list[
+                index
+            ]
+        )
 
         return path_couple

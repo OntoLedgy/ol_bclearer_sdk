@@ -1,13 +1,17 @@
 from enum import auto, unique
 
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 
 
 @unique
 class BclearerMatchedEaObjects(
     MatchedEaObjects,
 ):
-    BCLEARER_FOUNDATION_COMMON_RESERVED_NAMES = auto()
+    BCLEARER_FOUNDATION_COMMON_RESERVED_NAMES = (
+        auto()
+    )
 
     NAMES = auto()
 
@@ -21,14 +25,18 @@ class BclearerMatchedEaObjects(
 
     NAMED_BY_STEREOTYPE = auto()
 
-    NAME_TYPES_INSTANCES_STEREOTYPE = auto()
+    NAME_TYPES_INSTANCES_STEREOTYPE = (
+        auto()
+    )
 
     EXEMPLIFIED_BY_STEREOTYPE = auto()
 
     NAME_EXEMPLAR_STEREOTYPE = auto()
 
     def __object_name(self) -> str:
-        object_name = object_name_mapping[self]
+        object_name = (
+            object_name_mapping[self]
+        )
 
         return object_name
 

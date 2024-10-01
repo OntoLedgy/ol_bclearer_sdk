@@ -54,7 +54,9 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.
 def orchestrate_nf_ea_com_tables_creation_for_evolve_stage_8(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    nf_ea_com_dictionary = initialise_nf_ea_com_dictionary()
+    nf_ea_com_dictionary = (
+        initialise_nf_ea_com_dictionary()
+    )
 
     nf_ea_com_dictionary = __convert_domain(
         nf_ea_com_dictionary=nf_ea_com_dictionary,
@@ -115,7 +117,9 @@ def __convert_packages(
     nf_ea_com_dictionary: dict,
     uniclass_dictionary: dict,
 ) -> dict:
-    nf_ea_com_dictionary[NfEaComCollectionTypes.EA_PACKAGES] = uniclass_dictionary[
+    nf_ea_com_dictionary[
+        NfEaComCollectionTypes.EA_PACKAGES
+    ] = uniclass_dictionary[
         UUIDIFIED_PACKAGES_TABLE_NAME
     ]
 
@@ -127,7 +131,9 @@ def __convert_classifiers(
     uniclass_dictionary: dict,
 ) -> dict:
     nf_ea_com_dictionary = convert_uniclass_table_to_classifiers_in_common_package(
-        uniclass_table=uniclass_dictionary[UNICLASS2015_OBJECT_TABLE_NAME],
+        uniclass_table=uniclass_dictionary[
+            UNICLASS2015_OBJECT_TABLE_NAME
+        ],
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         nf_ea_com_classifiers_collection_type=NfEaComCollectionTypes.EA_CLASSIFIERS,
     )
@@ -142,9 +148,7 @@ def __convert_classifiers(
         CLASSIFICATION_RANKS_NAMES_TABLE_NAME,
     ]
 
-    for (
-        evolve_8_standard_object_table_name
-    ) in evolve_8_list_of_standard_object_table_names:
+    for evolve_8_standard_object_table_name in evolve_8_list_of_standard_object_table_names:
         nf_ea_com_dictionary = convert_standard_object_table_to_classifiers(
             standard_table_dictionary=uniclass_dictionary,
             nf_ea_com_dictionary=nf_ea_com_dictionary,
@@ -177,7 +181,9 @@ def __convert_connectors(
         "linked_table_uniclass_item_to_object",
     ]
 
-    for evolve_8_linked_table_names in evolve_8_list_of_standard_linked_table_names:
+    for (
+        evolve_8_linked_table_names
+    ) in evolve_8_list_of_standard_linked_table_names:
         nf_ea_com_dictionary = convert_standard_linked_table_to_connectors(
             standard_table_dictionary=uniclass_dictionary,
             nf_ea_com_dictionary=nf_ea_com_dictionary,
@@ -258,20 +264,16 @@ def __convert_connectors_connecting_connectors(
     nf_ea_com_dictionary: dict,
     uniclass_dictionary: dict,
 ) -> dict:
-    nf_ea_com_dictionary = (
-        __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(
-            uniclass_dictionary=uniclass_dictionary,
-            nf_ea_com_dictionary=nf_ea_com_dictionary,
-            input_linked_table_name="uniclass2015_parent_child_link_table",
-        )
+    nf_ea_com_dictionary = __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(
+        uniclass_dictionary=uniclass_dictionary,
+        nf_ea_com_dictionary=nf_ea_com_dictionary,
+        input_linked_table_name="uniclass2015_parent_child_link_table",
     )
 
-    nf_ea_com_dictionary = (
-        __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(
-            uniclass_dictionary=uniclass_dictionary,
-            nf_ea_com_dictionary=nf_ea_com_dictionary,
-            input_linked_table_name="linked_table_uniclass_items_to_ranks",
-        )
+    nf_ea_com_dictionary = __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(
+        uniclass_dictionary=uniclass_dictionary,
+        nf_ea_com_dictionary=nf_ea_com_dictionary,
+        input_linked_table_name="linked_table_uniclass_items_to_ranks",
     )
 
     return nf_ea_com_dictionary

@@ -65,7 +65,11 @@ def __get_new_objects(
     new_connectors_dictionary = {}
 
     # TODO: Add the cardinality to the connector's data
-    for attribute_to_convert_tuple in attributes_to_convert.itertuples():
+    for (
+        attribute_to_convert_tuple
+    ) in (
+        attributes_to_convert.itertuples()
+    ):
         (
             new_classifiers_dictionary,
             new_connectors_dictionary,
@@ -132,11 +136,17 @@ def __update_nf_ea_com_dictionary(
     ea_object_map: dict,
     nf_ea_collection_type: NfEaComCollectionTypes,
 ):
-    nf_ea_collection = nf_ea_com_dictionary[nf_ea_collection_type]
+    nf_ea_collection = (
+        nf_ea_com_dictionary[
+            nf_ea_collection_type
+        ]
+    )
 
-    converted_nf_ea_collection = pandas.DataFrame.from_dict(
-        data=ea_object_map,
-        orient="index",
+    converted_nf_ea_collection = (
+        pandas.DataFrame.from_dict(
+            data=ea_object_map,
+            orient="index",
+        )
     )
 
     all_ea_objects = pandas.concat(
@@ -148,4 +158,6 @@ def __update_nf_ea_com_dictionary(
         verify_integrity=False,
     )
 
-    nf_ea_com_dictionary[nf_ea_collection_type] = all_ea_objects
+    nf_ea_com_dictionary[
+        nf_ea_collection_type
+    ] = all_ea_objects

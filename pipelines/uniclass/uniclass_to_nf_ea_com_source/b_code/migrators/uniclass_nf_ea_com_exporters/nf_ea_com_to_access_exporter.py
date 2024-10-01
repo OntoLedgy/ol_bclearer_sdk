@@ -16,7 +16,9 @@ def export_nf_ea_com_to_access(
     nf_ea_com_universe: NfEaComUniverses,
     folder_path: str,
 ):
-    bclearer_stage = nf_ea_com_universe.ea_repository.short_name
+    bclearer_stage = (
+        nf_ea_com_universe.ea_repository.short_name
+    )
 
     current_stage_nf_ea_com_export_folder_path = os.path.join(
         folder_path,
@@ -32,7 +34,8 @@ def export_nf_ea_com_to_access(
         )
 
     log_message(
-        "STARTING NF EA COM ACCESS EXPORT FOR " + bclearer_stage,
+        "STARTING NF EA COM ACCESS EXPORT FOR "
+        + bclearer_stage,
     )
 
     ea_tools_session_manager.nf_ea_com_endpoint_manager.nf_ea_com_universe_manager.export_all_registries(
@@ -40,5 +43,6 @@ def export_nf_ea_com_to_access(
     )
 
     log_message(
-        "NF EA COM ACCESS EXPORT DONE - " + bclearer_stage,
+        "NF EA COM ACCESS EXPORT DONE - "
+        + bclearer_stage,
     )

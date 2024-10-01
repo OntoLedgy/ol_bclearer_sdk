@@ -1,6 +1,8 @@
 from sqlite3 import connect
 
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 from pandas import DataFrame
 
 

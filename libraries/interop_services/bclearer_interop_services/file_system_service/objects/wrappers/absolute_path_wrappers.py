@@ -18,7 +18,9 @@ class AbsolutePathWrappers(
     def absolute_path_string(
         self,
     ) -> str:
-        absolute_path_string = self.path_string
+        absolute_path_string = (
+            self.path_string
+        )
 
         return absolute_path_string
 

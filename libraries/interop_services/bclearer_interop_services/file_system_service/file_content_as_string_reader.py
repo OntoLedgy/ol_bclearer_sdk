@@ -4,6 +4,8 @@ def read_file_content_as_string(
     with open(
         file_path,
     ) as current_file:
-        file_content_as_string = current_file.read()
+        file_content_as_string = (
+            current_file.read()
+        )
 
     return file_content_as_string

@@ -1,9 +1,15 @@
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 class BEngFiles(Files):
-    registry_keyed_on_full_paths = dict()
+    registry_keyed_on_full_paths = (
+        dict()
+    )
 
     def __init__(
         self,
@@ -16,9 +22,13 @@ class BEngFiles(Files):
             parent_folder=parent_folder,
         )
 
-        self.alternative_name = alternative_name
+        self.alternative_name = (
+            alternative_name
+        )
 
-        BEngFiles.registry_keyed_on_full_paths[absolute_path_string] = self
+        BEngFiles.registry_keyed_on_full_paths[
+            absolute_path_string
+        ] = self
 
         self.uses = []
 
@@ -28,16 +38,22 @@ class BEngFiles(Files):
     def bitbucket_team_name(
         self,
     ) -> str:
-        return self.parent_folder.bitbucket_team_name
+        return (
+            self.parent_folder.bitbucket_team_name
+        )
 
     @property
     def bitbucket_project_name(
         self,
     ) -> str:
-        return self.parent_folder.bitbucket_project_name
+        return (
+            self.parent_folder.bitbucket_project_name
+        )
 
     @property
     def git_repository_name(
         self,
     ) -> str:
-        return self.parent_folder.git_repository_name
+        return (
+            self.parent_folder.git_repository_name
+        )

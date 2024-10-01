@@ -4,7 +4,9 @@ from pathlib import Path
 from bclearer_interop_services.file_system_service.objects.file_system_objects import (
     FileSystemObjects,
 )
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 
 
 class Folders(FileSystemObjects):
@@ -17,9 +19,12 @@ class Folders(FileSystemObjects):
             absolute_path_string=absolute_path_string,
         )
 
-        if parent_folder and not isinstance(
-            parent_folder,
-            Folders,
+        if (
+            parent_folder
+            and not isinstance(
+                parent_folder,
+                Folders,
+            )
         ):
             raise TypeError
 
@@ -75,7 +80,9 @@ class Folders(FileSystemObjects):
 
         file_descendant_lengths = list()
 
-        for descendant_path in descendants_list:
+        for (
+            descendant_path
+        ) in descendants_list:
             if os.path.isfile(
                 descendant_path,
             ):
@@ -95,21 +102,31 @@ class Folders(FileSystemObjects):
         self,
         b_dataset_format_dictionary: dict,
     ) -> dict:
-        b_dataset_format_dictionary[self.uuid] = (
+        b_dataset_format_dictionary[
+            self.uuid
+        ] = (
             self.get_folder_information_as_b_dataset_row_dictionary()
         )
 
-        for child_file in self.child_files:
-            b_dataset_format_dictionary[child_file.uuid] = (
+        for (
+            child_file
+        ) in self.child_files:
+            b_dataset_format_dictionary[
+                child_file.uuid
+            ] = (
                 child_file.get_file_as_b_dataset_row_dictionary()
             )
 
-        for child_folder in self.child_folders:
+        for (
+            child_folder
+        ) in self.child_folders:
             child_folder.add_folder_to_b_dataset_format(
                 b_dataset_format_dictionary=b_dataset_format_dictionary,
             )
 
-        return b_dataset_format_dictionary
+        return (
+            b_dataset_format_dictionary
+        )
 
     def get_folder_information_as_b_dataset_row_dictionary(
         self,
@@ -120,7 +137,9 @@ class Folders(FileSystemObjects):
             relative_path = ""
 
         else:
-            parent_uuid = self.parent_folder.uuid
+            parent_uuid = (
+                self.parent_folder.uuid
+            )
 
             relative_path = self.absolute_path_string.replace(
                 self.parent_folder.absolute_path_string,

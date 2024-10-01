@@ -1,7 +1,11 @@
 import os
 
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
     HierarchyFileSystemObjects,
 )
@@ -59,10 +63,8 @@ def __add_child_file_path_to_hierarchy(
         file_system_object=child_file,
     )
 
-    child_hierarchy_file.relative_path = (
-        hierarchy_file_system_object_register.get_relative_path(
-            hierarchy_file_system_object=child_hierarchy_file,
-        )
+    child_hierarchy_file.relative_path = hierarchy_file_system_object_register.get_relative_path(
+        hierarchy_file_system_object=child_hierarchy_file,
     )
 
 
@@ -85,10 +87,8 @@ def __add_child_folder_path_to_hierarchy(
         file_system_object=child_folder,
     )
 
-    child_hierarchy_folder.relative_path = (
-        hierarchy_file_system_object_register.get_relative_path(
-            hierarchy_file_system_object=child_hierarchy_folder,
-        )
+    child_hierarchy_folder.relative_path = hierarchy_file_system_object_register.get_relative_path(
+        hierarchy_file_system_object=child_hierarchy_folder,
     )
 
     hierarchy_file_system_object_register.add_hierarchy_folder_to_hierarchy(

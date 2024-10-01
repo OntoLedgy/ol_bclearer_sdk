@@ -1,11 +1,15 @@
-from bclearer_source.b_code.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_source.b_code.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 from bclearer_source.b_code.substages.operations.common.intersection_getter import (
     get_intersection_of_dependency_and_association_linked,
 )
 from bclearer_source.b_code.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
 )
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -80,7 +84,9 @@ def __create_new_ea_connectors(
         filter_and_rename_dictionary=filter_and_rename_dictionary,
     )
 
-    new_ea_connectors[NfColumnTypes.NF_UUIDS.column_name] = new_ea_connectors.apply(
+    new_ea_connectors[
+        NfColumnTypes.NF_UUIDS.column_name
+    ] = new_ea_connectors.apply(
         lambda row: create_new_uuid(),
         axis=1,
     )
@@ -89,7 +95,9 @@ def __create_new_ea_connectors(
         NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS.column_name
     ] = classifier_type_nf_uuid
 
-    new_ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name] = (
+    new_ea_connectors[
+        NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+    ] = (
         EaConnectorTypes.DEPENDENCY.type_name
     )
 

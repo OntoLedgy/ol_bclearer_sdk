@@ -35,7 +35,9 @@ from nf_common_source.code.constants.standard_constants import (
     DEFAULT_FOREIGN_TABLE_SUFFIX,
     DEFAULT_MASTER_TABLE_SUFFIX,
 )
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
@@ -91,12 +93,12 @@ def __separate_names_and_instances(
         package_name=package_name,
     )
 
-    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = (
+        create_new_ea_objects_dictionary()
+    )
 
-    attributes_grouped_by_naming_space_dictionary = (
-        __get_attributes_grouped_by_naming_space_dictionary(
-            nf_ea_com_universe=nf_ea_com_universe,
-        )
+    attributes_grouped_by_naming_space_dictionary = __get_attributes_grouped_by_naming_space_dictionary(
+        nf_ea_com_universe=nf_ea_com_universe,
     )
 
     digitalisation_level_stereotype_nf_uuid = get_nf_uuid_from_ea_guid_from_collection(
@@ -108,7 +110,9 @@ def __separate_names_and_instances(
     for (
         naming_space_nf_uuid,
         attributes,
-    ) in attributes_grouped_by_naming_space_dictionary.items():
+    ) in (
+        attributes_grouped_by_naming_space_dictionary.items()
+    ):
         __separate_naming_space_instances(
             nf_ea_com_universe=nf_ea_com_universe,
             naming_space_nf_uuid=naming_space_nf_uuid,
@@ -132,16 +136,23 @@ def __separate_naming_space_instances(
     package_nf_uuid: str,
     digitalisation_level_stereotype_nf_uuid: str,
 ):
-    ea_classifiers = nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
+    ea_classifiers = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
+    )
 
     naming_space_name = ea_classifiers.at[
-        ea_classifiers[NfColumnTypes.NF_UUIDS.column_name]
+        ea_classifiers[
+            NfColumnTypes.NF_UUIDS.column_name
+        ]
         .eq(naming_space_nf_uuid)
         .idxmax(),
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name,
     ]
 
-    name_instance_type_name = naming_space_name[:-1] + " Instances"
+    name_instance_type_name = (
+        naming_space_name[:-1]
+        + " Instances"
+    )
 
     name_instance_type_nf_uuid = create_name_instance_type(
         nf_ea_com_universe=nf_ea_com_universe,
@@ -158,7 +169,9 @@ def __separate_naming_space_instances(
         ea_guid=BclearerMatchedEaObjects.NAME_TYPES_INSTANCES_STEREOTYPE.ea_guid,
     )
 
-    for ea_attribute_tuple in ea_attributes.itertuples():
+    for (
+        ea_attribute_tuple
+    ) in ea_attributes.itertuples():
         create_name_instance(
             new_ea_objects_dictionary=new_ea_objects_dictionary,
             package_nf_uuid=package_nf_uuid,
@@ -177,17 +190,25 @@ def __separate_naming_space_instances(
 def __get_attributes_grouped_by_naming_space_dictionary(
     nf_ea_com_universe: NfEaComUniverses,
 ) -> dict:
-    ea_attributes = nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    ea_attributes = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    )
 
     standard_name_instance_attributes = ea_attributes[
-        ea_attributes[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name]
+        ea_attributes[
+            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name
+        ]
         == NAME_INSTANCE_ATTRIBUTE_NAME
     ]
 
-    ea_connectors = nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    ea_connectors = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    )
 
     ea_dependencies = ea_connectors[
-        ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        ea_connectors[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.DEPENDENCY.type_name
     ]
 
@@ -209,7 +230,9 @@ def __get_attributes_grouped_by_naming_space_dictionary(
         },
     )
 
-    ea_classifiers = nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
+    ea_classifiers = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
+    )
 
     extended_standard_name_instance_attributes = left_merge_dataframes(
         master_dataframe=extended_standard_name_instance_attributes,
@@ -235,9 +258,13 @@ def __get_attributes_grouped_by_naming_space_dictionary(
         ],
     )
 
-    attributes_grouped_by_name_space_dictionary = {}
+    attributes_grouped_by_name_space_dictionary = (
+        {}
+    )
 
-    for naming_space_nf_uuid in naming_space_nf_uuids:
+    for (
+        naming_space_nf_uuid
+    ) in naming_space_nf_uuids:
         naming_space_ea_attributes = extended_standard_name_instance_attributes[
             extended_standard_name_instance_attributes[
                 BclearerAdditionalColumnTypes.NAMING_SPACE_NF_UUIDS.column_name
@@ -245,8 +272,8 @@ def __get_attributes_grouped_by_naming_space_dictionary(
             == naming_space_nf_uuid
         ]
 
-        attributes_grouped_by_name_space_dictionary[naming_space_nf_uuid] = (
-            naming_space_ea_attributes
-        )
+        attributes_grouped_by_name_space_dictionary[
+            naming_space_nf_uuid
+        ] = naming_space_ea_attributes
 
     return attributes_grouped_by_name_space_dictionary

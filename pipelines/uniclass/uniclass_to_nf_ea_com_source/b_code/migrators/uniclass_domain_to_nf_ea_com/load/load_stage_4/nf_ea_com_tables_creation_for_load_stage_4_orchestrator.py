@@ -15,7 +15,9 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.
 def orchestrate_nf_ea_com_tables_creation_for_load_stage_4(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    nf_ea_com_dictionary = initialise_nf_ea_com_dictionary()
+    nf_ea_com_dictionary = (
+        initialise_nf_ea_com_dictionary()
+    )
 
     nf_ea_com_dictionary = __convert_domain_load_stage_4(
         nf_ea_com_dictionary=nf_ea_com_dictionary,

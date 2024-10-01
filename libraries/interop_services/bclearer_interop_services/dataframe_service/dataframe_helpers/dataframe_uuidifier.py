@@ -8,9 +8,13 @@ def uuidify_dataframe(
     dataframe: DataFrame,
     uuid_column_name: str,
 ) -> DataFrame:
-    uuidified_dataframe = dataframe.copy()
+    uuidified_dataframe = (
+        dataframe.copy()
+    )
 
-    uuidified_dataframe[uuid_column_name] = uuidified_dataframe.apply(
+    uuidified_dataframe[
+        uuid_column_name
+    ] = uuidified_dataframe.apply(
         lambda row: create_new_uuid(),
         axis=1,
     )

@@ -9,12 +9,18 @@ import pyodbc as odbc_library
 from bclearer_interop_services.excel_services.interop.excel_write import (
     save_table_in_excel,
 )
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import (
     load_database_with_table,
 )
-from nf_common.code.nf.types.collection_types import CollectionTypes
-from nf_common.code.nf.types.common_collection_types import CommonCollectionTypes
+from nf_common.code.nf.types.collection_types import (
+    CollectionTypes,
+)
+from nf_common.code.nf.types.common_collection_types import (
+    CommonCollectionTypes,
+)
 from pandas import DataFrame, concat
 
 # TODO: make this database agnostic, use a generic database wrapper class
@@ -22,7 +28,9 @@ from pandas import DataFrame, concat
 
 class NfRegistries:
     def __init__(self):
-        self.dictionary_of_collections = {}
+        self.dictionary_of_collections = (
+            {}
+        )
 
     def __enter__(self):
         return self
@@ -46,9 +54,13 @@ class NfRegistries:
             output_folder_name,
         )
 
-        output_database_folder = output_folder.joinpath(
-            short_name,
-            short_name + "_" + database_basename,
+        output_database_folder = (
+            output_folder.joinpath(
+                short_name,
+                short_name
+                + "_"
+                + database_basename,
+            )
         )
 
         output_csv_folder = output_database_folder.joinpath(
@@ -75,16 +87,25 @@ class NfRegistries:
             name="nf_common.resources.templates",
         )
 
-        module_path_string = module.__path__._path[0]
-
-        resource_full_file_name = os.path.join(
-            module_path_string,
-            "empty.accdb",
+        module_path_string = (
+            module.__path__._path[0]
         )
 
-        target_full_file_name = os.path.join(
-            output_database_folder,
-            short_name + "_" + database_basename + ".accdb",
+        resource_full_file_name = (
+            os.path.join(
+                module_path_string,
+                "empty.accdb",
+            )
+        )
+
+        target_full_file_name = (
+            os.path.join(
+                output_database_folder,
+                short_name
+                + "_"
+                + database_basename
+                + ".accdb",
+            )
         )
 
         shutil.copy(
@@ -99,9 +120,11 @@ class NfRegistries:
             + ";"
         )
 
-        db_connection = odbc_library.connect(
-            db_connection_string,
-            autocommit=True,
+        db_connection = (
+            odbc_library.connect(
+                db_connection_string,
+                autocommit=True,
+            )
         )
 
         filenames = [
@@ -151,7 +174,9 @@ class NfRegistries:
         for (
             collection_type,
             dataframe,
-        ) in self.dictionary_of_collections.items():
+        ) in (
+            self.dictionary_of_collections.items()
+        ):
             NfRegistries.__export_dataframe_as_csv_and_xlsx(
                 collection_type=collection_type,
                 short_name=short_name,
@@ -174,13 +199,29 @@ class NfRegistries:
         ):
             raise TypeError
 
-        collection_name = collection_type.collection_name
+        collection_name = (
+            collection_type.collection_name
+        )
 
-        if len(collection_name) + len(short_name) > 59:
-            collection_name = collection_name[0 : 59 - len(short_name)]
+        if (
+            len(collection_name)
+            + len(short_name)
+            > 59
+        ):
+            collection_name = (
+                collection_name[
+                    0 : 59
+                    - len(short_name)
+                ]
+            )
 
-        csv_filepath = output_csv_folder.joinpath(
-            short_name + "_" + str(collection_name) + ".csv",
+        csv_filepath = (
+            output_csv_folder.joinpath(
+                short_name
+                + "_"
+                + str(collection_name)
+                + ".csv",
+            )
         )
 
         dataframe.to_csv(
@@ -192,8 +233,13 @@ class NfRegistries:
             escapechar="\\",
         )
 
-        xlsx_filepath = output_xlsx_folder.joinpath(
-            short_name + "_" + str(collection_name) + ".xlsx",
+        xlsx_filepath = (
+            output_xlsx_folder.joinpath(
+                short_name
+                + "_"
+                + str(collection_name)
+                + ".xlsx",
+            )
         )
 
         save_table_in_excel(
@@ -223,7 +269,9 @@ class NfRegistries:
         for (
             collection_type,
             dataframe,
-        ) in self.dictionary_of_collections.items():
+        ) in (
+            self.dictionary_of_collections.items()
+        ):
             if not isinstance(
                 collection_type,
                 CollectionTypes,
@@ -249,17 +297,26 @@ class NfRegistries:
         table: DataFrame,
         collection_type: CollectionTypes,
     ):
-        self.dictionary_of_collections[collection_type] = table
+        self.dictionary_of_collections[
+            collection_type
+        ] = table
 
     def get_collection(
         self,
         collection_type: CollectionTypes,
         collection_factory,
     ):
-        if collection_type in self.dictionary_of_collections:
-            return self.dictionary_of_collections[collection_type]
+        if (
+            collection_type
+            in self.dictionary_of_collections
+        ):
+            return self.dictionary_of_collections[
+                collection_type
+            ]
 
-        collection = collection_factory.create()
+        collection = (
+            collection_factory.create()
+        )
 
         self.add_table(
             table=collection,
@@ -286,7 +343,9 @@ class NfRegistries:
         for (
             collection_type,
             table,
-        ) in self.dictionary_of_collections.items():
+        ) in (
+            self.dictionary_of_collections.items()
+        ):
             if not isinstance(
                 collection_type,
                 CollectionTypes,
@@ -311,21 +370,28 @@ class NfRegistries:
             columns=summary_table_columns,
         )
 
-        self.dictionary_of_collections[CommonCollectionTypes.SUMMARY_TABLE] = (
-            summary_table
-        )
+        self.dictionary_of_collections[
+            CommonCollectionTypes.SUMMARY_TABLE
+        ] = summary_table
 
     def update(
         self,
         collection_type: CollectionTypes,
         new_collection: DataFrame,
     ):
-        if collection_type not in self.dictionary_of_collections.keys():
-            self.dictionary_of_collections[collection_type] = new_collection
+        if (
+            collection_type
+            not in self.dictionary_of_collections.keys()
+        ):
+            self.dictionary_of_collections[
+                collection_type
+            ] = new_collection
 
             return
 
-        current_collection = self.dictionary_of_collections[collection_type]
+        current_collection = self.dictionary_of_collections[
+            collection_type
+        ]
 
         merged_collections = concat(
             objs=[
@@ -336,7 +402,9 @@ class NfRegistries:
             verify_integrity=True,
         )
 
-        self.dictionary_of_collections[collection_type] = merged_collections
+        self.dictionary_of_collections[
+            collection_type
+        ] = merged_collections
 
     @staticmethod
     def __add_counts_to_dictionary(
@@ -344,7 +412,9 @@ class NfRegistries:
         collection_type: CollectionTypes,
         table: DataFrame,
     ) -> dict:
-        summary_dictionary[collection_type] = [
+        summary_dictionary[
+            collection_type
+        ] = [
             collection_type.collection_name,
             table.shape[1],
             table.shape[0],

@@ -1,4 +1,6 @@
-from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
 from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
@@ -33,7 +35,10 @@ def get_dataframe_focus_minus_matched_other(
     )
 
     focus_minus_matched_other_dataframe = focus_minus_matched_other_dataframe.loc[
-        focus_minus_matched_other_dataframe["nullable"] == DEFAULT_NULL_VALUE
+        focus_minus_matched_other_dataframe[
+            "nullable"
+        ]
+        == DEFAULT_NULL_VALUE
     ]
 
     focus_minus_matched_other_dataframe.drop(

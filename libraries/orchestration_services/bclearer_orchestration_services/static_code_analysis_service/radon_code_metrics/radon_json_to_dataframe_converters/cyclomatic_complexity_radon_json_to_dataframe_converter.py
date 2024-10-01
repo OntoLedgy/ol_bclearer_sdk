@@ -7,7 +7,9 @@ from bclearer_orchestration_services.identification_services.uuid_service.uuid_f
 def convert_cyclomatic_complexity_radon_json_to_dataframe(
     results_as_json: dict,
 ) -> pandas.DataFrame:
-    cyclomatic_complexity_dataframe = __create_empty_cyclomatic_complexity_dataframe()
+    cyclomatic_complexity_dataframe = (
+        __create_empty_cyclomatic_complexity_dataframe()
+    )
 
     if not results_as_json:
         return cyclomatic_complexity_dataframe
@@ -16,19 +18,15 @@ def convert_cyclomatic_complexity_radon_json_to_dataframe(
         full_file_path,
         list_of_results,
     ) in results_as_json.items():
-        cyclomatic_complexity_dataframe = (
-            __append_list_of_results_from_file_to_dataframe(
-                full_file_path=full_file_path,
-                list_of_results=list_of_results,
-                cyclomatic_complexity_dataframe=cyclomatic_complexity_dataframe,
-            )
+        cyclomatic_complexity_dataframe = __append_list_of_results_from_file_to_dataframe(
+            full_file_path=full_file_path,
+            list_of_results=list_of_results,
+            cyclomatic_complexity_dataframe=cyclomatic_complexity_dataframe,
         )
 
-    ordered_cyclomatic_complexity_dataframe = (
-        cyclomatic_complexity_dataframe.sort_values(
-            by=["complexity"],
-            ascending=False,
-        )
+    ordered_cyclomatic_complexity_dataframe = cyclomatic_complexity_dataframe.sort_values(
+        by=["complexity"],
+        ascending=False,
     )
 
     return ordered_cyclomatic_complexity_dataframe
@@ -46,7 +44,9 @@ def __append_list_of_results_from_file_to_dataframe(
             cyclomatic_complexity_dataframe=cyclomatic_complexity_dataframe,
         )
 
-    return cyclomatic_complexity_dataframe
+    return (
+        cyclomatic_complexity_dataframe
+    )
 
 
 def __create_empty_cyclomatic_complexity_dataframe():
@@ -84,13 +84,21 @@ def __append_result_to_dataframe(
             "full_file_path": full_file_path,
             "type": result["type"],
             "rank": result["rank"],
-            "complexity": result["complexity"],
+            "complexity": result[
+                "complexity"
+            ],
             "name": result["name"],
             "lineno": result["lineno"],
-            "col_offset": result["col_offset"],
-            "endline": result["endline"],
+            "col_offset": result[
+                "col_offset"
+            ],
+            "endline": result[
+                "endline"
+            ],
         },
         ignore_index=True,
     )
 
-    return cyclomatic_complexity_dataframe
+    return (
+        cyclomatic_complexity_dataframe
+    )

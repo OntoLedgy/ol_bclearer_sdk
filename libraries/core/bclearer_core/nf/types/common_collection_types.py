@@ -1,6 +1,8 @@
 from enum import auto, unique
 
-from nf_common.code.nf.types.collection_types import CollectionTypes
+from nf_common.code.nf.types.collection_types import (
+    CollectionTypes,
+)
 
 
 @unique
@@ -10,7 +12,11 @@ class CommonCollectionTypes(
     SUMMARY_TABLE = auto()
 
     def __collection_name(self) -> str:
-        collection_name = collection_name_mapping[self]
+        collection_name = (
+            collection_name_mapping[
+                self
+            ]
+        )
 
         return collection_name
 

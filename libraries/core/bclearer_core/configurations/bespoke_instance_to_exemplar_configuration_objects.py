@@ -1,4 +1,6 @@
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 
 
 class BespokeInstanceToExemplarConfigurationObjects:
@@ -9,7 +11,9 @@ class BespokeInstanceToExemplarConfigurationObjects:
     ):
         self.matched_name_instance_instance = matched_name_instance_instance
 
-        self.name_exemplar_attribute_name = name_exemplar_attribute_name
+        self.name_exemplar_attribute_name = (
+            name_exemplar_attribute_name
+        )
 
     def __enter__(self):
         return self

@@ -23,11 +23,11 @@ class UniverseModificationOperationConfigurations(
             operation_type=universe_modification_operation_type,
         )
 
-        self.output_universe_short_name = output_universe_short_name
-
-        self.universe_modification_configuration_object = (
-            universe_modification_configuration_object
+        self.output_universe_short_name = (
+            output_universe_short_name
         )
+
+        self.universe_modification_configuration_object = universe_modification_configuration_object
 
         self.package_name = package_name
 

@@ -56,12 +56,10 @@ def orchestrate_boson_1_evolve_stage(
         content_universe=generalised_names_universe,
     )
 
-    separated_objects_and_names_universe = (
-        run_visualization_substage_separate_objects_and_names(
-            ea_tools_session_manager=ea_tools_session_manager,
-            output_folder_name=output_folder_name,
-            content_universe=added_gml_data_universe,
-        )
+    separated_objects_and_names_universe = run_visualization_substage_separate_objects_and_names(
+        ea_tools_session_manager=ea_tools_session_manager,
+        output_folder_name=output_folder_name,
+        content_universe=added_gml_data_universe,
     )
 
     generalised_names_universe = run_visualization_substage_generalise_names(
@@ -70,20 +68,16 @@ def orchestrate_boson_1_evolve_stage(
         content_universe=separated_objects_and_names_universe,
     )
 
-    separated_names_and_instances_universe = (
-        run_visualization_substage_separate_names_and_instances(
-            ea_tools_session_manager=ea_tools_session_manager,
-            output_folder_name=output_folder_name,
-            content_universe=generalised_names_universe,
-        )
+    separated_names_and_instances_universe = run_visualization_substage_separate_names_and_instances(
+        ea_tools_session_manager=ea_tools_session_manager,
+        output_folder_name=output_folder_name,
+        content_universe=generalised_names_universe,
     )
 
-    separated_instances_and_exemplars_universe = (
-        run_visualization_substage_separate_instances_and_exemplars(
-            ea_tools_session_manager=ea_tools_session_manager,
-            output_folder_name=output_folder_name,
-            content_universe=separated_names_and_instances_universe,
-        )
+    separated_instances_and_exemplars_universe = run_visualization_substage_separate_instances_and_exemplars(
+        ea_tools_session_manager=ea_tools_session_manager,
+        output_folder_name=output_folder_name,
+        content_universe=separated_names_and_instances_universe,
     )
 
     return separated_instances_and_exemplars_universe

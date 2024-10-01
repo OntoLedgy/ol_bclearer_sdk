@@ -10,7 +10,9 @@ def move_file_or_folder_and_create_sub_folders(
     source_object: BEngWorkspaceFileSystemObjects,
     target_object: BEngWorkspaceFileSystemObjects,
 ):
-    container_folder_string = target_object.parent_absolute_path_string
+    container_folder_string = (
+        target_object.parent_absolute_path_string
+    )
 
     if not os.path.exists(
         container_folder_string,

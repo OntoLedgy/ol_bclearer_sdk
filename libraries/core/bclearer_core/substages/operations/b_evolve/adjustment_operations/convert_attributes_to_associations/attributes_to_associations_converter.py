@@ -113,7 +113,9 @@ def __copy_collections(
     for (
         content_collection_type,
         content_collection_table,
-    ) in content_collections_dictionary.items():
-        output_collections_dictionary[content_collection_type] = (
-            content_collection_table
-        )
+    ) in (
+        content_collections_dictionary.items()
+    ):
+        output_collections_dictionary[
+            content_collection_type
+        ] = content_collection_table

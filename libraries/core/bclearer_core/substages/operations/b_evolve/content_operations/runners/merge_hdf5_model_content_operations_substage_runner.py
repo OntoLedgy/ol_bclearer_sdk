@@ -35,6 +35,8 @@ def run_merge_hdf5_model_content_operations_substage(
         content_2_universe=content_universe_from_hdf5,
         content_operation_configuration=content_operation_configuration,
     ) as content_operations_substage:
-        content_operations_substage_output_universe = content_operations_substage.run()
+        content_operations_substage_output_universe = (
+            content_operations_substage.run()
+        )
 
         return content_operations_substage_output_universe

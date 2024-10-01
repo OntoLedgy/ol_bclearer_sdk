@@ -12,19 +12,25 @@ class PandasNullValueSwapBetweenTypes(
 
     EMPTY_STRING_TO_EMPTY_CELL = auto()
 
-    UPPER_NUMPY_NAN_CELL_TO_EMPTY_CELL = auto()
+    UPPER_NUMPY_NAN_CELL_TO_EMPTY_CELL = (
+        auto()
+    )
 
     def __from_pandas_null_value(
         self,
     ) -> PandasNullValueTypes:
-        from_to = pandas_null_value_type_to_string_mapping[self]
+        from_to = pandas_null_value_type_to_string_mapping[
+            self
+        ]
 
         return from_to[0]
 
     def __to_pandas_null_value(
         self,
     ) -> PandasNullValueTypes:
-        from_to = pandas_null_value_type_to_string_mapping[self]
+        from_to = pandas_null_value_type_to_string_mapping[
+            self
+        ]
 
         return from_to[1]
 

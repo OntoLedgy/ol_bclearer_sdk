@@ -1,6 +1,8 @@
 import math
 
-from storage_interop_services_source.code.constants import DEFAULT_NULL_VALUE
+from storage_interop_services_source.code.constants import (
+    DEFAULT_NULL_VALUE,
+)
 
 magnitude_order_to_suffix_conversion_map = {
     0: "B",
@@ -36,7 +38,11 @@ def convert_bytes_to_byte_units(
         bytes_exponent_value=bytes_exponent_value,
     )
 
-    byte_units = bytes_unit_value + " " + byte_unit_suffix
+    byte_units = (
+        bytes_unit_value
+        + " "
+        + byte_unit_suffix
+    )
 
     return byte_units
 
@@ -48,10 +54,15 @@ def __get_byte_unit_suffix(
         bytes_exponent_value // 10,
     )
 
-    if bytes_magnitude_order not in magnitude_order_to_suffix_conversion_map:
+    if (
+        bytes_magnitude_order
+        not in magnitude_order_to_suffix_conversion_map
+    ):
         return "OUT OF RANGE"
 
-    byte_unit_suffix = magnitude_order_to_suffix_conversion_map[bytes_magnitude_order]
+    byte_unit_suffix = magnitude_order_to_suffix_conversion_map[
+        bytes_magnitude_order
+    ]
 
     return byte_unit_suffix
 
@@ -64,11 +75,16 @@ def __get_byte_unit_value(
         bytes_exponent_value // 10,
     )
 
-    bytes_multiple_value = bytes / (2 ** (10 * bytes_magnitude_order))
+    bytes_multiple_value = bytes / (
+        2
+        ** (10 * bytes_magnitude_order)
+    )
 
-    rounded_bytes_multiple_value = round(
-        bytes_multiple_value,
-        round_digit_number,
+    rounded_bytes_multiple_value = (
+        round(
+            bytes_multiple_value,
+            round_digit_number,
+        )
     )
 
     byte_unit_value = str(

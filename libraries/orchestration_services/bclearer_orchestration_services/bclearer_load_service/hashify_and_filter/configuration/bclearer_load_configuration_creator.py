@@ -57,15 +57,24 @@ def __get_list_from_configuration(
     key_name: str,
 ) -> list:
     if key_name not in set(
-        configuration_dataframe[KEY_NAMES_CONFIGURATION_COLUMN_NAME],
+        configuration_dataframe[
+            KEY_NAMES_CONFIGURATION_COLUMN_NAME
+        ],
     ):
         return list()
 
     configuration_value = configuration_dataframe.loc[
-        configuration_dataframe[KEY_NAMES_CONFIGURATION_COLUMN_NAME] == key_name,
+        configuration_dataframe[
+            KEY_NAMES_CONFIGURATION_COLUMN_NAME
+        ]
+        == key_name,
         VALUES_CONFIGURATION_COLUMN_NAME,
-    ].iloc[0]
+    ].iloc[
+        0
+    ]
 
-    configuration_list = configuration_value.split(",")
+    configuration_list = (
+        configuration_value.split(",")
+    )
 
     return configuration_list

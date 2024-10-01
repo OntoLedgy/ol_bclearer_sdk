@@ -16,7 +16,9 @@ class TestIdentityService:
     def test_bidentity_universe_initialisation(
         self,
     ):
-        bie_universe = BIdentityUniverses()
+        bie_universe = (
+            BIdentityUniverses()
+        )
 
         initialise_b_identity_universe(
             bie_universe,

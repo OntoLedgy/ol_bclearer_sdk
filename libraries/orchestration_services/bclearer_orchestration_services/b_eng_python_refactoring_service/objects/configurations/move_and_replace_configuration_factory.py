@@ -39,8 +39,10 @@ def create_move_and_replace_configuration(
     commit_changes_flag: bool,
     commit_message: str,
 ) -> MoveAndReplaceConfigurations:
-    b_eng_workspace_folder = BEngWorkspaceFolders(
-        workspace_path_string,
+    b_eng_workspace_folder = (
+        BEngWorkspaceFolders(
+            workspace_path_string,
+        )
     )
 
     path_couples_ordered_indexed_list = get_path_couples_ordered_indexed_list(
@@ -74,7 +76,9 @@ def create_move_and_replace_configuration(
         commit_message=commit_message,
     )
 
-    return move_and_replace_configuration
+    return (
+        move_and_replace_configuration
+    )
 
 
 def get_path_couples_ordered_indexed_list(
@@ -86,22 +90,28 @@ def get_path_couples_ordered_indexed_list(
     for (
         index,
         relative_path_string_couple,
-    ) in dictionary_of_relative_path_string_couples.items():
-        ordered_indexed_list[index] = BEngWorkspaceFileSystemObjectCouples(
-            place_1_b_eng_workspace_file_system_object=BEngWorkspaceFileSystemObjects(
-                b_eng_workspace_folder=b_eng_workspace_folder,
-                relative_path_from_workspace_string=relative_path_string_couple[0],
-            ),
-            place_2_b_eng_workspace_file_system_object=BEngWorkspaceFileSystemObjects(
-                b_eng_workspace_folder=b_eng_workspace_folder,
-                relative_path_from_workspace_string=relative_path_string_couple[1],
-            ),
+    ) in (
+        dictionary_of_relative_path_string_couples.items()
+    ):
+        ordered_indexed_list[index] = (
+            BEngWorkspaceFileSystemObjectCouples(
+                place_1_b_eng_workspace_file_system_object=BEngWorkspaceFileSystemObjects(
+                    b_eng_workspace_folder=b_eng_workspace_folder,
+                    relative_path_from_workspace_string=relative_path_string_couple[
+                        0
+                    ],
+                ),
+                place_2_b_eng_workspace_file_system_object=BEngWorkspaceFileSystemObjects(
+                    b_eng_workspace_folder=b_eng_workspace_folder,
+                    relative_path_from_workspace_string=relative_path_string_couple[
+                        1
+                    ],
+                ),
+            )
         )
 
-    path_couples_ordered_indexed_list = (
-        BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists(
-            ordered_indexed_list=ordered_indexed_list,
-        )
+    path_couples_ordered_indexed_list = BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists(
+        ordered_indexed_list=ordered_indexed_list,
     )
 
     return path_couples_ordered_indexed_list
@@ -113,7 +123,9 @@ def get_in_scope_b_eng_project_list(
 ) -> BEngProjectFolderLists:
     list_of_b_eng_project_folders = []
 
-    for in_scope_b_eng_project_name in list_of_in_scope_b_eng_project_names:
+    for (
+        in_scope_b_eng_project_name
+    ) in list_of_in_scope_b_eng_project_names:
         list_of_b_eng_project_folders.append(
             BEngProjectFolders(
                 b_eng_workspace_folder=b_eng_workspace_folder,

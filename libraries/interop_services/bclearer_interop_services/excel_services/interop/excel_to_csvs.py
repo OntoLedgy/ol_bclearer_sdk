@@ -42,7 +42,8 @@ def convert_excel_to_csv(
             tables_folder_path,
         )
         for f in filenames
-        if os.path.splitext(f)[1] == ".XLSX"
+        if os.path.splitext(f)[1]
+        == ".XLSX"
     ]
 
     for file_path in file_paths:

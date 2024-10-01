@@ -19,8 +19,8 @@ def add_areas_to_top_item_links_to_uniclass_parent_child_link_table(
         ],
     )
 
-    dictionary_of_dataframes[UNICLASS_PARENT_CHILD_LINK_TABLE_NAME] = (
-        uniclass_parent_child_link_table_with_areas_linked_to_top_item
-    )
+    dictionary_of_dataframes[
+        UNICLASS_PARENT_CHILD_LINK_TABLE_NAME
+    ] = uniclass_parent_child_link_table_with_areas_linked_to_top_item
 
     return dictionary_of_dataframes

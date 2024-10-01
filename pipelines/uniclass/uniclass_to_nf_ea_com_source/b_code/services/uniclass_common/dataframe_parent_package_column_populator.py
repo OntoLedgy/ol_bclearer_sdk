@@ -18,7 +18,10 @@ def populate_parent_package_uuid_column_in_dataframe(
     dataframe: DataFrame,
     uuidified_packages_dataframe: DataFrame,
 ) -> DataFrame:
-    if dataframe_name == UUIDIFIED_PACKAGES_TABLE_NAME:
+    if (
+        dataframe_name
+        == UUIDIFIED_PACKAGES_TABLE_NAME
+    ):
         return dataframe
 
     dataframe_with_parent_package_column_populated = left_merge_dataframes(
@@ -36,13 +39,11 @@ def populate_parent_package_uuid_column_in_dataframe(
         },
     )
 
-    dataframe_with_parent_package_column_populated_columns_renamed = (
-        dataframe_with_parent_package_column_populated.rename(
-            columns={
-                PARENT_PACKAGE_UUID_COLUMN_NAME: PARENT_PACKAGE_UUID2_COLUMN_NAME,
-                PARENT_PACKAGE_UUID1_COLUMN_NAME: PARENT_PACKAGE_UUID_COLUMN_NAME,
-            },
-        )
+    dataframe_with_parent_package_column_populated_columns_renamed = dataframe_with_parent_package_column_populated.rename(
+        columns={
+            PARENT_PACKAGE_UUID_COLUMN_NAME: PARENT_PACKAGE_UUID2_COLUMN_NAME,
+            PARENT_PACKAGE_UUID1_COLUMN_NAME: PARENT_PACKAGE_UUID_COLUMN_NAME,
+        },
     )
 
     dataframe_with_parent_package_column_populated_columns_renamed.drop(

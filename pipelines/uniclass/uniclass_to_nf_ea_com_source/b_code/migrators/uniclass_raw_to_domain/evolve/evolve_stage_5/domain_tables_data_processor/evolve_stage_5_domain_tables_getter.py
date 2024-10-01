@@ -24,16 +24,12 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve
 def get_evolve_stage_5_domain_tables(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    evolve_stage_5_domain_tables_with_top_item_added_to_objects_table = (
-        __add_top_element_row_to_uniclass_objects_table(
-            dictionary_of_dataframes=dictionary_of_dataframes,
-        )
+    evolve_stage_5_domain_tables_with_top_item_added_to_objects_table = __add_top_element_row_to_uniclass_objects_table(
+        dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
-    areas_to_top_item_temporary_link_table = (
-        __create_areas_to_top_item_temporary_link_table(
-            dictionary_of_dataframes=dictionary_of_dataframes,
-        )
+    areas_to_top_item_temporary_link_table = __create_areas_to_top_item_temporary_link_table(
+        dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
     evolve_stage_5_domain_tables = add_areas_to_top_item_links_to_uniclass_parent_child_link_table(
@@ -47,7 +43,9 @@ def get_evolve_stage_5_domain_tables(
 def __add_top_element_row_to_uniclass_objects_table(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass_item_uuid = create_new_uuid()
+    uniclass_item_uuid = (
+        create_new_uuid()
+    )
 
     object_table_top_element_row = {
         UUID_COLUMN_NAME: uniclass_item_uuid,
@@ -55,7 +53,9 @@ def __add_top_element_row_to_uniclass_objects_table(
         TITLE_COLUMN_NAME: UNICLASS_ITEM_NAME,
     }
 
-    dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME] = dictionary_of_dataframes[
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = dictionary_of_dataframes[
         UNICLASS2015_OBJECT_TABLE_NAME
     ].append(
         object_table_top_element_row,
@@ -68,18 +68,25 @@ def __add_top_element_row_to_uniclass_objects_table(
 def __create_areas_to_top_item_temporary_link_table(
     dictionary_of_dataframes: dict,
 ) -> DataFrame:
-    object_table = dictionary_of_dataframes[UNICLASS2015_OBJECT_TABLE_NAME]
+    object_table = dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ]
 
     uniclass_item_uuid = (
         object_table.loc[
-            object_table[TITLE_COLUMN_NAME] == UNICLASS_ITEM_NAME,
+            object_table[
+                TITLE_COLUMN_NAME
+            ]
+            == UNICLASS_ITEM_NAME,
             UUID_COLUMN_NAME,
         ]
         .to_string(index=False)
         .strip()
     )
 
-    areas_to_top_item_temporary_link_table = DataFrame()
+    areas_to_top_item_temporary_link_table = (
+        DataFrame()
+    )
 
     for index in object_table.index:
         if (

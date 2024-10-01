@@ -3,7 +3,9 @@ class ContentOperationsSubstageConfigurations:
         self,
         operation_configurations: set,
     ):
-        self.operation_configurations = operation_configurations
+        self.operation_configurations = (
+            operation_configurations
+        )
 
     def __enter__(self):
         return self

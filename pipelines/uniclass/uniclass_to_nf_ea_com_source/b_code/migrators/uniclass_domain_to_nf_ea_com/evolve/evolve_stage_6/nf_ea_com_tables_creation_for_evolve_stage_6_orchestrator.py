@@ -42,7 +42,9 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.
 def orchestrate_nf_ea_com_tables_creation_for_evolve_stage_6(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    nf_ea_com_dictionary = initialise_nf_ea_com_dictionary()
+    nf_ea_com_dictionary = (
+        initialise_nf_ea_com_dictionary()
+    )
 
     nf_ea_com_dictionary = __convert_domain_evolve_stage_6(
         nf_ea_com_dictionary=nf_ea_com_dictionary,
@@ -98,7 +100,9 @@ def __convert_packages(
     nf_ea_com_dictionary: dict,
     uniclass_dictionary: dict,
 ) -> dict:
-    nf_ea_com_dictionary[NfEaComCollectionTypes.EA_PACKAGES] = uniclass_dictionary[
+    nf_ea_com_dictionary[
+        NfEaComCollectionTypes.EA_PACKAGES
+    ] = uniclass_dictionary[
         UUIDIFIED_PACKAGES_TABLE_NAME
     ]
 
@@ -110,7 +114,9 @@ def __convert_classifiers(
     uniclass_dictionary: dict,
 ) -> dict:
     nf_ea_com_dictionary = convert_uniclass_table_to_classifiers_in_common_package(
-        uniclass_table=uniclass_dictionary[UNICLASS2015_OBJECT_TABLE_NAME],
+        uniclass_table=uniclass_dictionary[
+            UNICLASS2015_OBJECT_TABLE_NAME
+        ],
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         nf_ea_com_classifiers_collection_type=NfEaComCollectionTypes.EA_CLASSIFIERS,
     )

@@ -10,15 +10,19 @@ class Neo4jWrapper:
         external_driver: Driver = None,
     ):
         if external_driver is None:
-            self.driver = GraphDatabase.driver(
-                uri,
-                auth=(
-                    user,
-                    password,
-                ),
+            self.driver = (
+                GraphDatabase.driver(
+                    uri,
+                    auth=(
+                        user,
+                        password,
+                    ),
+                )
             )
         else:
-            self.driver = external_driver
+            self.driver = (
+                external_driver
+            )
 
     def close(self):
         self.driver.close()

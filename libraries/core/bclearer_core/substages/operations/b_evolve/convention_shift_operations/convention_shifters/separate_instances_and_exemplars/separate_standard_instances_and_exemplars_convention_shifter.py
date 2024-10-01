@@ -80,12 +80,12 @@ def __separate_instances_and_exemplars(
         package_name=package_name,
     )
 
-    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = (
+        create_new_ea_objects_dictionary()
+    )
 
-    attributes_grouped_by_name_instance_type_dictionary = (
-        __get_attributes_grouped_by_name_instance_type_dictionary(
-            nf_ea_com_universe=nf_ea_com_universe,
-        )
+    attributes_grouped_by_name_instance_type_dictionary = __get_attributes_grouped_by_name_instance_type_dictionary(
+        nf_ea_com_universe=nf_ea_com_universe,
     )
 
     digitalisation_level_stereotype_nf_uuid = get_nf_uuid_from_ea_guid_from_collection(
@@ -97,7 +97,9 @@ def __separate_instances_and_exemplars(
     for (
         name_instance_type_nf_uuid,
         ea_attributes,
-    ) in attributes_grouped_by_name_instance_type_dictionary.items():
+    ) in (
+        attributes_grouped_by_name_instance_type_dictionary.items()
+    ):
         separate_instances_and_exemplars(
             nf_ea_com_universe=nf_ea_com_universe,
             name_instance_type_nf_uuid=name_instance_type_nf_uuid,
@@ -116,17 +118,25 @@ def __separate_instances_and_exemplars(
 def __get_attributes_grouped_by_name_instance_type_dictionary(
     nf_ea_com_universe: NfEaComUniverses,
 ) -> dict:
-    ea_attributes = nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    ea_attributes = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
+    )
 
     standard_name_exemplar_attributes = ea_attributes[
-        ea_attributes[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name]
+        ea_attributes[
+            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name
+        ]
         == NAME_EXEMPLAR_ATTRIBUTE_NAME
     ]
 
-    ea_connectors = nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    ea_connectors = (
+        nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
+    )
 
     ea_dependencies = ea_connectors[
-        ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
+        ea_connectors[
+            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
+        ]
         == EaConnectorTypes.DEPENDENCY.type_name
     ]
 
@@ -154,9 +164,13 @@ def __get_attributes_grouped_by_name_instance_type_dictionary(
         ],
     )
 
-    attributes_grouped_by_name_instance_type_dictionary = dict()
+    attributes_grouped_by_name_instance_type_dictionary = (
+        dict()
+    )
 
-    for name_instance_type_nf_uuid in name_instance_type_nf_uuids:
+    for (
+        name_instance_type_nf_uuid
+    ) in name_instance_type_nf_uuids:
         name_instance_type_ea_attributes = extended_standard_name_exemplar_attributes[
             extended_standard_name_exemplar_attributes[
                 BclearerAdditionalColumnTypes.NAME_INSTANCE_TYPE_NF_UUIDS.column_name

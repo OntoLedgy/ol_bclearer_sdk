@@ -16,9 +16,13 @@ def replace_references_in_python_code(
     source_target_path_couple: BEngWorkspaceFileSystemObjectCouples,
     in_scope_b_eng_project_folder_list: BEngProjectFolderLists,
 ):
-    source_reference = source_target_path_couple.place_1_b_eng_workspace_file_system_object.get_reference_from_b_eng_workspace_file_system_object()
+    source_reference = (
+        source_target_path_couple.place_1_b_eng_workspace_file_system_object.get_reference_from_b_eng_workspace_file_system_object()
+    )
 
-    target_reference = source_target_path_couple.place_2_b_eng_workspace_file_system_object.get_reference_from_b_eng_workspace_file_system_object()
+    target_reference = (
+        source_target_path_couple.place_2_b_eng_workspace_file_system_object.get_reference_from_b_eng_workspace_file_system_object()
+    )
 
     log_message("Updating references:")
 

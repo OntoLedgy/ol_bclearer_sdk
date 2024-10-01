@@ -1,6 +1,8 @@
 from enum import auto, unique
 
-from nf_common.code.nf.types.column_types import ColumnTypes
+from nf_common.code.nf.types.column_types import (
+    ColumnTypes,
+)
 
 
 @unique
@@ -12,7 +14,9 @@ class NfColumnTypes(ColumnTypes):
     COLLECTION_TYPES = auto()
 
     def __column_name(self) -> str:
-        column_name = column_name_mapping[self]
+        column_name = (
+            column_name_mapping[self]
+        )
 
         return column_name
 

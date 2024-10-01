@@ -19,7 +19,9 @@ def convert_xml_to_list_of_dictionaries(
             " ",
         )
 
-        for xml_tag_member in xml_tag_members:
+        for (
+            xml_tag_member
+        ) in xml_tag_members:
             if xml_tag_member.startswith(
                 "xsc",
             ):
@@ -34,7 +36,11 @@ def convert_xml_to_list_of_dictionaries(
                 xml_tag_member_splitter_value,
             )
 
-            members_dictionary[xml_tag_member_key_value[0]] = xml_tag_member_key_value[
+            members_dictionary[
+                xml_tag_member_key_value[
+                    0
+                ]
+            ] = xml_tag_member_key_value[
                 1
             ]
 

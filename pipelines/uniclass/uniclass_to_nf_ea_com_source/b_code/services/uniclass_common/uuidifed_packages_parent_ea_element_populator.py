@@ -42,7 +42,9 @@ def populate_uuidified_packages_parent_uuids_column(
             PARENT_EA_ELEMENT_NAME_COLUMN_NAME,
         ],
         merge_suffixes=["1", "2"],
-        foreign_key_dataframe=dictionary_of_dataframes[UUIDIFIED_PACKAGES_TABLE_NAME],
+        foreign_key_dataframe=dictionary_of_dataframes[
+            UUIDIFIED_PACKAGES_TABLE_NAME
+        ],
         foreign_key_dataframe_fk_columns=[
             EA_OBJECT_NAME_COLUMN_NAME,
         ],
@@ -58,32 +60,30 @@ def populate_uuidified_packages_parent_uuids_column(
         inplace=True,
     )
 
-    uuidified_packages_dataframe_columns_reorder = (
-        uuidified_packages_dataframe_with_ea_element_column_populated[
-            [
-                EA_GUIDS_COLUMN_NAME,
-                EA_PACKAGE_PATH_COLUMN_NAME,
-                PARENT_PACKAGE_EA_GUID_COLUMN_NAME,
-                PARENT_PACKAGE_NAME_COLUMN_NAME,
-                NF_UUIDS_COLUMN_NAME,
-                CONTAINED_EA_PACKAGES_COLUMN_NAME,
-                EA_OBJECT_TYPE_COLUMN_NAME,
-                SUPPLIER_PLACE1_END_CONNECTORS_COLUMN_NAME,
-                CLIENT_PLACE2_END_CONNECTORS_COLUMN_NAME,
-                CONTAINED_EA_DIAGRAMS_COLUMN_NAME,
-                CONTAINED_EA_CLASSIFIERS_COLUMN_NAME,
-                PARENT_EA_ELEMENT_COLUMN_NAME,
-                EA_OBJECT_STEREOTYPES_COLUMN_NAME,
-                EA_REPOSITORY_COLUMN_NAME,
-                EA_OBJECT_NAME_COLUMN_NAME,
-                EA_OBJECT_NOTES_COLUMN_NAME,
-                EA_GUID_COLUMN_NAME,
-            ]
+    uuidified_packages_dataframe_columns_reorder = uuidified_packages_dataframe_with_ea_element_column_populated[
+        [
+            EA_GUIDS_COLUMN_NAME,
+            EA_PACKAGE_PATH_COLUMN_NAME,
+            PARENT_PACKAGE_EA_GUID_COLUMN_NAME,
+            PARENT_PACKAGE_NAME_COLUMN_NAME,
+            NF_UUIDS_COLUMN_NAME,
+            CONTAINED_EA_PACKAGES_COLUMN_NAME,
+            EA_OBJECT_TYPE_COLUMN_NAME,
+            SUPPLIER_PLACE1_END_CONNECTORS_COLUMN_NAME,
+            CLIENT_PLACE2_END_CONNECTORS_COLUMN_NAME,
+            CONTAINED_EA_DIAGRAMS_COLUMN_NAME,
+            CONTAINED_EA_CLASSIFIERS_COLUMN_NAME,
+            PARENT_EA_ELEMENT_COLUMN_NAME,
+            EA_OBJECT_STEREOTYPES_COLUMN_NAME,
+            EA_REPOSITORY_COLUMN_NAME,
+            EA_OBJECT_NAME_COLUMN_NAME,
+            EA_OBJECT_NOTES_COLUMN_NAME,
+            EA_GUID_COLUMN_NAME,
         ]
-    )
+    ]
 
-    dictionary_of_dataframes[UUIDIFIED_PACKAGES_TABLE_NAME] = (
-        uuidified_packages_dataframe_columns_reorder
-    )
+    dictionary_of_dataframes[
+        UUIDIFIED_PACKAGES_TABLE_NAME
+    ] = uuidified_packages_dataframe_columns_reorder
 
     return dictionary_of_dataframes

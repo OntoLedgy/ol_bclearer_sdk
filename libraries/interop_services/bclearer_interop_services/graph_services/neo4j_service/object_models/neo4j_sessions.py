@@ -67,11 +67,16 @@ class Neo4jSession:
             )
 
             df = pd.DataFrame(
-                [r.values() for r in result],
+                [
+                    r.values()
+                    for r in result
+                ],
                 columns=result.keys(),
             )
 
-            results_summary = result.consume()
+            results_summary = (
+                result.consume()
+            )
 
             if df.size > 0:
                 if bShowSummary:
@@ -87,7 +92,9 @@ class Neo4jSession:
                         + "ms",
                     )
 
-        summary_counters = results_summary.counters
+        summary_counters = (
+            results_summary.counters
+        )
 
         df2 = pd.DataFrame(
             columns=[
@@ -98,62 +105,98 @@ class Neo4jSession:
 
         show = True
 
-        if summary_counters.nodes_created > 0:
+        if (
+            summary_counters.nodes_created
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "nodes created",
                 summary_counters.nodes_created,
             ]
-        if summary_counters.nodes_deleted > 0:
+        if (
+            summary_counters.nodes_deleted
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "nodes deleted",
                 summary_counters.nodes_deleted,
             ]
-        if summary_counters.relationships_created > 0:
+        if (
+            summary_counters.relationships_created
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "relationships created",
                 summary_counters.relationships_created,
             ]
-        if summary_counters.relationships_deleted > 0:
+        if (
+            summary_counters.relationships_deleted
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "relationships deleted",
                 summary_counters.relationships_deleted,
             ]
-        if summary_counters.properties_set > 0:
+        if (
+            summary_counters.properties_set
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "properties set",
                 summary_counters.properties_set,
             ]
-        if summary_counters.labels_added > 0:
+        if (
+            summary_counters.labels_added
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "labels added",
                 summary_counters.labels_added,
             ]
-        if summary_counters.labels_removed > 0:
+        if (
+            summary_counters.labels_removed
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "labels removed",
                 summary_counters.labels_removed,
             ]
-        if summary_counters.indexes_added > 0:
+        if (
+            summary_counters.indexes_added
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "indexes added",
                 summary_counters.indexes_added,
             ]
-        if summary_counters.indexes_removed > 0:
+        if (
+            summary_counters.indexes_removed
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "indexes removed",
                 summary_counters.indexes_removed,
             ]
-        if summary_counters.constraints_added > 0:
+        if (
+            summary_counters.constraints_added
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "constraints added",
                 summary_counters.constraints_added,
             ]
-        if summary_counters.constraints_removed > 0:
+        if (
+            summary_counters.constraints_removed
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "constraints removed",
                 summary_counters.constraints_removed,
             ]
-        if summary_counters.system_updates > 0:
+        if (
+            summary_counters.system_updates
+            > 0
+        ):
             df2.loc[len(df2.index)] = [
                 "system updates",
                 summary_counters.system_updates,

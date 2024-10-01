@@ -1,27 +1,45 @@
 from enum import auto, unique
 
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
 
 
 @unique
 class DigitalisationLevelStereotypeMatchedEaObjects(
     MatchedEaObjects,
 ):
-    DIGITALISATION_LEVEL_1_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_1_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_2_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_2_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_3_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_3_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_4_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_4_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_5_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_5_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_6_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_6_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_7_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_7_CLASS_STEREOTYPE = (
+        auto()
+    )
 
-    DIGITALISATION_LEVEL_8_CLASS_STEREOTYPE = auto()
+    DIGITALISATION_LEVEL_8_CLASS_STEREOTYPE = (
+        auto()
+    )
 
     @classmethod
     def get_ea_guids(cls) -> set:
@@ -32,7 +50,9 @@ class DigitalisationLevelStereotypeMatchedEaObjects(
         return ea_guids
 
     def __object_name(self) -> str:
-        object_name = object_name_mapping[self]
+        object_name = (
+            object_name_mapping[self]
+        )
 
         return object_name
 
@@ -42,7 +62,11 @@ class DigitalisationLevelStereotypeMatchedEaObjects(
         return ea_guid
 
     def __style(self) -> str:
-        style = digitalisation_level_styles[self]
+        style = (
+            digitalisation_level_styles[
+                self
+            ]
+        )
 
         return style
 

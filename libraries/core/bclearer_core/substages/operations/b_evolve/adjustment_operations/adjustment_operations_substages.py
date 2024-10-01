@@ -40,13 +40,15 @@ class AdjustmentOperationsSubstages:
         adjustment_operations_substage_configuration: AdjustmentOperationsSubstageConfigurations,
         content_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = ea_tools_session_manager
-
-        self.adjustment_operations_substage_configuration = (
-            adjustment_operations_substage_configuration
+        self.ea_tools_session_manager = (
+            ea_tools_session_manager
         )
 
-        self.content_universe = content_universe
+        self.adjustment_operations_substage_configuration = adjustment_operations_substage_configuration
+
+        self.content_universe = (
+            content_universe
+        )
 
     def __enter__(self):
         return self
@@ -60,17 +62,21 @@ class AdjustmentOperationsSubstages:
         pass
 
     def run(self) -> NfEaComUniverses:
-        current_content_universe = self.content_universe
+        current_content_universe = (
+            self.content_universe
+        )
 
-        for (
-            adjustment_operation_configuration
-        ) in self.adjustment_operations_substage_configuration.operation_configurations:
+        for adjustment_operation_configuration in (
+            self.adjustment_operations_substage_configuration.operation_configurations
+        ):
             current_output_universe = self.__run_operation(
                 content_universe=current_content_universe,
                 adjustment_operation_configuration=adjustment_operation_configuration,
             )
 
-            current_content_universe = current_output_universe
+            current_content_universe = (
+                current_output_universe
+            )
 
         return current_content_universe
 

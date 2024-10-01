@@ -1,5 +1,7 @@
 import pandas
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
@@ -54,7 +56,9 @@ def __convert_uniclass_table_to_classifiers_in_package(
     nf_ea_com_dictionary: dict,
     nf_ea_com_classifiers_collection_type: NfEaComCollectionTypes,
 ) -> dict:
-    ea_packages_dataframe = nf_ea_com_dictionary[NfEaComCollectionTypes.EA_PACKAGES]
+    ea_packages_dataframe = nf_ea_com_dictionary[
+        NfEaComCollectionTypes.EA_PACKAGES
+    ]
 
     uniclass_items_package_nf_uuid = (
         ea_packages_dataframe.loc[
@@ -68,7 +72,9 @@ def __convert_uniclass_table_to_classifiers_in_package(
         .strip()
     )
 
-    uniclass_table_columns = uniclass_table.columns.tolist()
+    uniclass_table_columns = (
+        uniclass_table.columns.tolist()
+    )
 
     if (
         StandardObjectTableColumnTypes.UML_OBJECT_NAMES.column_name
@@ -99,11 +105,15 @@ def __convert_uniclass_table_to_classifiers_in_package(
 
     nf_ea_com_collection = pandas.concat(
         [
-            nf_ea_com_dictionary[nf_ea_com_classifiers_collection_type],
+            nf_ea_com_dictionary[
+                nf_ea_com_classifiers_collection_type
+            ],
             uniclass_table_filtered_and_renamed,
         ],
     )
 
-    nf_ea_com_dictionary[nf_ea_com_classifiers_collection_type] = nf_ea_com_collection
+    nf_ea_com_dictionary[
+        nf_ea_com_classifiers_collection_type
+    ] = nf_ea_com_collection
 
     return nf_ea_com_dictionary

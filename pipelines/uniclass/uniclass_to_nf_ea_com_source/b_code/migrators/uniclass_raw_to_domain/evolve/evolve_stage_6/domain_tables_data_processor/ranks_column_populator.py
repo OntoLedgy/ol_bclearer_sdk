@@ -20,7 +20,11 @@ def populate_uniclass_objects_table_ranks_column(
         UNICLASS2015_OBJECT_TABLE_NAME
     ]
 
-    for index in uniclass_2015_objects_table.index:
+    for (
+        index
+    ) in (
+        uniclass_2015_objects_table.index
+    ):
         __populate_ranks_column_cell(
             uniclass_2015_objects_table=uniclass_2015_objects_table,
             index=index,

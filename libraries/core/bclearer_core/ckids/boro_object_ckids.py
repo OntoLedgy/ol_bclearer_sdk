@@ -34,11 +34,21 @@ class BoroObjectCkIds(Enum):
     DescribingSpaces = 1009
     Descriptions = 1010
     FixedArityTupleTypes = 1011
-    HomogenousFiniteCountTypeTypes = 1012
-    IntendedCharacterEquivalentStringNames = 1013
-    IntendedDistinctCharactersNamingSpaces = 1014
-    IntendedReservedCharactersNamingSpaces = 1015
-    IntendedUniqueCharactersNamingSpaces = 1016
+    HomogenousFiniteCountTypeTypes = (
+        1012
+    )
+    IntendedCharacterEquivalentStringNames = (
+        1013
+    )
+    IntendedDistinctCharactersNamingSpaces = (
+        1014
+    )
+    IntendedReservedCharactersNamingSpaces = (
+        1015
+    )
+    IntendedUniqueCharactersNamingSpaces = (
+        1016
+    )
     IntransitiveCoupleTypes = 1017
     IrreflexiveCouples = 1018
     IrreflexiveCoupleTypes = 1019
@@ -51,7 +61,9 @@ class BoroObjectCkIds(Enum):
     NfCommonReservedNames = 1026
     NfEarCommonReservedNames = 1027
     NonWellFoundedTypesInstances = 1028
-    NumberOfFiniteCountTypesInstancesTypes = 1029
+    NumberOfFiniteCountTypesInstancesTypes = (
+        1029
+    )
     PartialOrderCoupleTypes = 1030
     PowerTypesInstances = 1031
     ProximalSuperSubTypes = 1032
@@ -82,7 +94,9 @@ class BoroObjectCkIds(Enum):
     # region Agentology
 
     DefaultNfMentionFormulaNames = 2001
-    DefaultObjectSignStoreFormulaNames = 2002
+    DefaultObjectSignStoreFormulaNames = (
+        2002
+    )
     ObjectSignRepositoryIndices = 2003
     ThisNfAgent = 2004
     TnfaCommonReservedNames = 2005
@@ -115,16 +129,24 @@ def get_composition_couple_types_ck_ids():
         BoroObjectCkIds.PowerTypesInstances,
     }
 
-    return composition_couple_types_ck_ids
+    return (
+        composition_couple_types_ck_ids
+    )
 
 
 def is_immutable_tuple_infrastructure_subtype_reflexive(
     boroObjectCkId,
 ):
-    if boroObjectCkId == BoroObjectCkIds.SuperSubTypes:
+    if (
+        boroObjectCkId
+        == BoroObjectCkIds.SuperSubTypes
+    ):
         return True
 
-    if boroObjectCkId == BoroObjectCkIds.WholesParts:
+    if (
+        boroObjectCkId
+        == BoroObjectCkIds.WholesParts
+    ):
         return True
 
     return False

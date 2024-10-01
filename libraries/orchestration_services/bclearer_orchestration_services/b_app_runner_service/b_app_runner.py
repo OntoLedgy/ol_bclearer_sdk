@@ -1,6 +1,8 @@
 # from code import end_logging, initialise_logger
 
-from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 from bclearer_orchestration_services.b_app_runner_service.logging.logger_initialiser import (
     initialise_logger,
 )
@@ -47,12 +49,14 @@ def __run_app_startup_hard_crash_catch_wrapper(
 
     except Exception as error:
         log_message(
-            type(error).__name__ + " occurred when running app",
+            type(error).__name__
+            + " occurred when running app",
         )
 
         if str(error):
             log_message(
-                "Error message:" + str(error),
+                "Error message:"
+                + str(error),
             )
 
         end_logging()

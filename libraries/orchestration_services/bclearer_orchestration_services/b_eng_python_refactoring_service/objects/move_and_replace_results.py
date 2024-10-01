@@ -13,9 +13,7 @@ class MoveAndReplaceResults:
         result_type: EnumMoveAndReplaceResultTypes,
         reason: str,
     ):
-        self.b_eng_workspace_file_system_object_couple = (
-            b_eng_workspace_file_system_object_couple
-        )
+        self.b_eng_workspace_file_system_object_couple = b_eng_workspace_file_system_object_couple
 
         self.result_type = result_type
 
