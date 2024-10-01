@@ -36,6 +36,10 @@ jobs:
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
 
+    - name: Ensure Poetry Cache Directory Exists
+      run: |
+        mkdir -p ~/.cache/pypoetry
+
     - name: Cache Poetry dependencies
       uses: actions/cache@v3
       with:
