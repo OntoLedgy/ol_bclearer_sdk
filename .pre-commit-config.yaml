@@ -1,9 +1,4 @@
 repos:
-  # - repo: https://github.com/astral-sh/ruff-pre-commit
-  #   rev: v0.6.8  # Check the latest version on Ruff GitHub page
-  #   hooks:
-  #     #- id: ruff
-  #     - id: ruff-format
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -19,22 +14,19 @@ repos:
     hooks:
       - id: black
 
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+
+
   # - repo: https://github.com/asottile/blacken-docs
   #   rev: 1.18.0
   #   hooks:
   #     - id: blacken-docs
   #       additional_dependencies: [black==23.1.0]
 
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.10.1
-    hooks:
-      - id: isort
 
-  # - repo: https://github.com/pre-commit/mirrors-mypy
-  #   rev: v1.11.2
-  #   hooks:
-  #     - id: mypy
-  #       args: ['--exclude', '^(tests|build|dist|.venv|pipelines)/.*$']
   # - repo: local
   #   hooks:
   #   - id: pytest-check
@@ -45,3 +37,15 @@ repos:
   #     language: system
   #     pass_filenames: false
   #     always_run: true
+
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.11.2
+  #   hooks:
+  #     - id: mypy
+  #       args: ['--exclude', '^(tests|build|dist|.venv|pipelines)/.*$']
+
+  # - repo: https://github.com/astral-sh/ruff-pre-commit
+  #   rev: v0.6.8  # Check the latest version on Ruff GitHub page
+  #   hooks:
+  #     #- id: ruff
+  #     - id: ruff-format
