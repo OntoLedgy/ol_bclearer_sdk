@@ -1,10 +1,3 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
 from bclearer_core.configurations.bespoke_name_to_instance_configuration_objects import (
     BespokeNameToInstanceConfigurationObjects,
 )
@@ -16,6 +9,12 @@ from bclearer_core.substages.operations.b_evolve.convention_shift_operations.con
 )
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.names_and_instances_separator import (
     separate_names_and_instances,
+)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
 )
 
 
@@ -33,9 +32,7 @@ def shift_convention_separate_bespoke_names_and_instances(
         content_universe.nf_ea_com_registry.dictionary_of_collections.copy()
     )
 
-    for (
-        configuration_object
-    ) in list_of_configuration_objects:
+    for configuration_object in list_of_configuration_objects:
         __separate_names(
             configuration_object=configuration_object,
             nf_ea_com_universe=output_universe,
@@ -59,10 +56,7 @@ def __separate_names(
         package_name=package_name,
     )
 
-    if (
-        configuration_object.matched_name_instance_type
-        is None
-    ):
+    if configuration_object.matched_name_instance_type is None:
         separate_names_and_instances(
             nf_ea_com_universe=nf_ea_com_universe,
             matched_naming_space_type=configuration_object.matched_naming_space_type,

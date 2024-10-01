@@ -11,14 +11,9 @@ def get_table_as_dictionary_column_values_as_strings(
         row_index,
         row_dictionary,
     ) in table_as_dictionary.items():
-        if (
-            column_name.casefold()
-            in row_dictionary
-        ):
+        if column_name.casefold() in row_dictionary:
             column_values.append(
-                row_dictionary[
-                    column_name
-                ],
+                row_dictionary[column_name],
             )
 
         else:

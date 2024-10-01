@@ -1,6 +1,4 @@
-from bclearer_core.common_knowledge.content_operation_types import (
-    ContentOperationTypes,
-)
+from bclearer_core.common_knowledge.content_operation_types import ContentOperationTypes
 from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
     DigitalisationLevelStereotypeMatchedEaObjects,
 )
@@ -22,11 +20,11 @@ class ContentOperationConfigurations(
             operation_type=content_operation_type,
         )
 
-        self.output_universe_short_name = (
-            output_universe_short_name
-        )
+        self.output_universe_short_name = output_universe_short_name
 
-        self.default_digitalisation_level_stereotype = default_digitalisation_level_stereotype
+        self.default_digitalisation_level_stereotype = (
+            default_digitalisation_level_stereotype
+        )
 
     def __enter__(self):
         return self

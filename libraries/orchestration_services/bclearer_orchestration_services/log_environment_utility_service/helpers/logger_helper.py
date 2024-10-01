@@ -11,16 +11,13 @@ def print_header(
     header_title: str,
 ) -> None:
     log_message(
-        message="=" * 40
-        + " "
-        + header_title
-        + " "
-        + "=" * 40,
+        message="=" * 40 + " " + header_title + " " + "=" * 40,
     )
 
 
 def log_environment_name_value_pair(
-    name: str, value: str,
+    name: str,
+    value: str,
 ) -> None:
     message_list = [
         ENVIRONMENT_PREFIX,
@@ -52,7 +49,8 @@ def log_environment_section(
 
 
 def __log_environment_name_if_required(
-    name: str, name_values: dict,
+    name: str,
+    name_values: dict,
 ) -> None:
     if name not in name_values:
         return

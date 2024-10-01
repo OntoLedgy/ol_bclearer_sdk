@@ -11,11 +11,7 @@ def replace_python_reference_in_b_eng_projects(
     target_reference: str,
     in_scope_b_eng_project_folder_list: BEngProjectFolderLists,
 ):
-    for (
-        b_eng_project_folder
-    ) in (
-        in_scope_b_eng_project_folder_list.list
-    ):
+    for b_eng_project_folder in in_scope_b_eng_project_folder_list.list:
         replace_python_reference_in_b_eng_project(
             source_reference=source_reference,
             target_reference=target_reference,

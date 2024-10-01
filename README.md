@@ -1,4 +1,4 @@
-# bclearer development libraries 
+# bclearer development libraries
 
 **bclearer_libraries** is a modular SDK providing services for core functionality, interop services, and orchestration services. This SDK is designed to offer seamless integration and extendability for the bclearer platform, enabling effective orchestration, data interoperability, and core utilities.
 
@@ -17,14 +17,13 @@ This module includes utilities for configuration management and core functionali
 
 - **Configuration Managers**: Handles configuration setup and management.
 - **Constants**: Provides a centralized location for constant values used across services.
-  
+
 Usage example:
 ```python
 from bclearer_libraries.core.bclearer_core import SomeCoreClass
 
 core_instance = SomeCoreClass()
 core_instance.do_something()
-
 ```
 
 ### 2. Interop Services (bclearer_libraries.interop_services)
@@ -34,8 +33,9 @@ bclearer_interop_services: Contains services for interacting with external syste
 Usage example:
 
 ```python
-
-from bclearer_libraries.interop_services.bclearer_interop_services import SomeInteropClass
+from bclearer_libraries.interop_services.bclearer_interop_services import (
+    SomeInteropClass,
+)
 
 interop_instance = SomeInteropClass()
 interop_instance.integrate_with_service()
@@ -48,8 +48,9 @@ bclearer_orchestration_services: Contains utilities for managing and orchestrati
 Usage example:
 
 ```python
-
-from bclearer_libraries.orchestration_services.bclearer_orchestration_services import SomeOrchestrationClass
+from bclearer_libraries.orchestration_services.bclearer_orchestration_services import (
+    SomeOrchestrationClass,
+)
 
 orchestration_instance = SomeOrchestrationClass()
 orchestration_instance.manage_workflow()
@@ -70,10 +71,13 @@ Usage
 After installation, you can start using the SDK by importing the relevant modules:
 
 ``` python
-
 from bclearer_libraries.core.bclearer_core import SomeCoreClass
-from bclearer_libraries.interop_services.bclearer_interop_services import SomeInteropClass
-from bclearer_libraries.orchestration_services.bclearer_orchestration_services import SomeOrchestrationClass
+from bclearer_libraries.interop_services.bclearer_interop_services import (
+    SomeInteropClass,
+)
+from bclearer_libraries.orchestration_services.bclearer_orchestration_services import (
+    SomeOrchestrationClass,
+)
 ```
 
 Each module has its own set of features and functionality, so refer to the documentation or the module-specific sections above for detailed usage instructions.

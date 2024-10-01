@@ -4,7 +4,6 @@
 def read_cypher_query_from_file(
     file_path,
 ):
-
     try:
         with open(file_path) as file:
             query = file.read()
@@ -23,7 +22,6 @@ def read_cypher_query_from_file(
 
 
 def generate_list_from_text(text):
-
     if not text:
         return []
 
@@ -31,10 +29,7 @@ def generate_list_from_text(text):
     result_list = text.split(";")
 
     # Strip any leading/trailing whitespace from each element
-    result_list = [
-        item.strip()
-        for item in result_list
-    ]
+    result_list = [item.strip() for item in result_list]
 
     print(result_list)
     return result_list

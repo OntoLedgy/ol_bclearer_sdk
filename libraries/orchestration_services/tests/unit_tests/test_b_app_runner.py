@@ -1,10 +1,7 @@
-from code import run_b_app
-
 import pytest
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_orchestration_services.log_environment_utility_service.common_knowledge import (
+from bclearer_interop_services.file_system_service.objects.folders import Folders
+from bclearer_orchestration_services.b_app_runner_service.b_app_runner import run_b_app
+from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.environment_log_level_types import (
     EnvironmentLogLevelTypes,
 )
 
@@ -19,7 +16,8 @@ class TestBAppRunner:
         pass
 
     def test_app_runner(
-        self, test_message,
+        self,
+        test_message,
     ):
         run_b_app(
             app_startup_method=app_runner_method,

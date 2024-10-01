@@ -11,14 +11,8 @@ def left_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
-    if (
-        foreign_key_dataframe_other_column_rename_dictionary
-        is None
-    ):
-        foreign_key_dataframe_other_column_rename_dictionary = (
-            dict()
-        )
+    if foreign_key_dataframe_other_column_rename_dictionary is None:
+        foreign_key_dataframe_other_column_rename_dictionary = dict()
 
     return merge_dataframes(
         master_dataframe,
@@ -39,14 +33,8 @@ def inner_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
-    if (
-        foreign_key_dataframe_other_column_rename_dictionary
-        is None
-    ):
-        foreign_key_dataframe_other_column_rename_dictionary = (
-            dict()
-        )
+    if foreign_key_dataframe_other_column_rename_dictionary is None:
+        foreign_key_dataframe_other_column_rename_dictionary = dict()
 
     return merge_dataframes(
         master_dataframe,
@@ -67,14 +55,8 @@ def outer_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
-    if (
-        foreign_key_dataframe_other_column_rename_dictionary
-        is None
-    ):
-        foreign_key_dataframe_other_column_rename_dictionary = (
-            dict()
-        )
+    if foreign_key_dataframe_other_column_rename_dictionary is None:
+        foreign_key_dataframe_other_column_rename_dictionary = dict()
 
     return merge_dataframes(
         master_dataframe,
@@ -96,22 +78,12 @@ def merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
+    if foreign_key_dataframe_other_column_rename_dictionary is None:
+        foreign_key_dataframe_other_column_rename_dictionary = dict()
 
-    if (
-        foreign_key_dataframe_other_column_rename_dictionary
-        is None
-    ):
-        foreign_key_dataframe_other_column_rename_dictionary = (
-            dict()
-        )
+    master_dataframe_copy = master_dataframe.copy()
 
-    master_dataframe_copy = (
-        master_dataframe.copy()
-    )
-
-    foreign_key_dataframe_copy = (
-        foreign_key_dataframe.copy()
-    )
+    foreign_key_dataframe_copy = foreign_key_dataframe.copy()
 
     stringified_master_dataframe_key_columns = stringify_columns_in_dataframe(
         master_dataframe_key_columns,
@@ -160,22 +132,16 @@ def stringify_columns_in_dataframe(
     columns: list,
     dataframe: pandas.DataFrame,
 ):
-
     stringified_columns = list()
 
     for column in columns:
-        stringified_column = (
-            column
-            + STRINGIFIED_COLUMN_SUFFIX
-        )
+        stringified_column = column + STRINGIFIED_COLUMN_SUFFIX
 
         stringified_columns.append(
             stringified_column,
         )
 
-        dataframe[
-            stringified_column
-        ] = dataframe[column].astype(
+        dataframe[stringified_column] = dataframe[column].astype(
             str,
         )
 

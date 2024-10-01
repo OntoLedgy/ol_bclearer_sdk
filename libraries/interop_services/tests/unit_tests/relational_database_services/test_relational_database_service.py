@@ -7,11 +7,10 @@ from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.ha
 
 
 class TestRelationalDatabaseInteropInteropServices:
-
     def test_database_connection_and_read(
-        self, db_connection,
+        self,
+        db_connection,
     ):
-
         results = db_connection.fetch_results(
             "SELECT * FROM transactions",
         )
@@ -20,9 +19,10 @@ class TestRelationalDatabaseInteropInteropServices:
             print(row)
 
     def test_database_write_dataframe(
-        self, db_connection, csv_file,
+        self,
+        db_connection,
+        csv_file,
     ):
-
         custom_header = [
             "date",
             "description",
@@ -40,9 +40,9 @@ class TestRelationalDatabaseInteropInteropServices:
         )
 
     def test_database_read_hashify_write(
-        self, db_connection,
+        self,
+        db_connection,
     ):
-
         results = db_connection.fetch_results(
             "SELECT * FROM transactions",
         )

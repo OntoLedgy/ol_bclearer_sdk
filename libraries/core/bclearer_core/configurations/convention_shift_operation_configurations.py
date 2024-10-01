@@ -20,9 +20,7 @@ class ConventionShiftOperationConfigurations(
             operation_type=convention_shift_operation_type,
         )
 
-        self.output_universe_short_name = (
-            output_universe_short_name
-        )
+        self.output_universe_short_name = output_universe_short_name
 
         self.list_of_configuration_objects = list_of_configuration_objects
 

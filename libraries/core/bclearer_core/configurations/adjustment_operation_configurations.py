@@ -22,11 +22,11 @@ class AdjustmentOperationConfigurations(
             operation_type=adjustment_operation_type,
         )
 
-        self.adjustment_universe_load_hdf5_model_configuration = adjustment_universe_load_hdf5_model_configuration
-
-        self.output_universe_short_name = (
-            output_universe_short_name
+        self.adjustment_universe_load_hdf5_model_configuration = (
+            adjustment_universe_load_hdf5_model_configuration
         )
+
+        self.output_universe_short_name = output_universe_short_name
 
     def __enter__(self):
         return self

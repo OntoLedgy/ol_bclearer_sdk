@@ -1,11 +1,3 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from pandas import DataFrame
-
 from bclearer_core.substages.operations.b_evolve.common.universe_align_reporter import (
     report_collection_with_different_columns,
     report_universes_with_different_collection_types,
@@ -16,6 +8,13 @@ from bclearer_core.substages.operations.b_evolve.content_operations.merge_univer
 from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.nf_uuid_mapping_creator import (
     create_aligned_to_primary_universe_nf_uuids_map,
 )
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from pandas import DataFrame
 
 
 def align_universes(
@@ -61,10 +60,7 @@ def __set_alignment_scope(
         universe_merge_register.aligned_universe.nf_ea_com_registry.dictionary_of_collections.keys(),
     )
 
-    if (
-        collection_types_in_primary_universe
-        != collection_types_in_aligned_universe
-    ):
+    if collection_types_in_primary_universe != collection_types_in_aligned_universe:
         report_universes_with_different_collection_types(
             collection_types_in_primary_universe=collection_types_in_primary_universe,
             collection_types_in_aligned_universe=collection_types_in_aligned_universe,
@@ -79,25 +75,23 @@ def __align_universe_registries(
     universe_merge_register,
     alignment_scope: set,
 ):
-    for (
-        collection_type
-    ) in alignment_scope:
+    for collection_type in alignment_scope:
         __check_column_consistency_in_alignment(
             collection_type=collection_type,
             universe_merge_register=universe_merge_register,
         )
 
-    universe_merge_register.aligned_to_primary_universe_nf_uuids_map = create_aligned_to_primary_universe_nf_uuids_map(
-        primary_universe=universe_merge_register.primary_universe,
-        aligned_universe=universe_merge_register.aligned_universe,
+    universe_merge_register.aligned_to_primary_universe_nf_uuids_map = (
+        create_aligned_to_primary_universe_nf_uuids_map(
+            primary_universe=universe_merge_register.primary_universe,
+            aligned_universe=universe_merge_register.aligned_universe,
+        )
     )
 
     for (
         collection_type,
         collection,
-    ) in (
-        universe_merge_register.aligned_universe.nf_ea_com_registry.dictionary_of_collections.items()
-    ):
+    ) in universe_merge_register.aligned_universe.nf_ea_com_registry.dictionary_of_collections.items():
         __align_collection_in_universe(
             collection=collection,
             collection_type=collection_type,
@@ -125,10 +119,7 @@ def __check_column_consistency_in_alignment(
         aligned_universe_collection.columns,
     )
 
-    if (
-        primary_universe_collection_columns
-        != aligned_universe_collection_columns
-    ):
+    if primary_universe_collection_columns != aligned_universe_collection_columns:
         report_collection_with_different_columns(
             primary_universe_collection_columns=primary_universe_collection_columns,
             aligned_universe_collection_columns=aligned_universe_collection_columns,
@@ -141,9 +132,7 @@ def __align_collection_in_universe(
     collection: DataFrame,
     collection_type: NfEaComCollectionTypes,
 ):
-    updated_collection = (
-        collection.copy()
-    )
+    updated_collection = collection.copy()
 
     for column in collection.columns:
         updated_collection = replace_nf_uuids_in_collection(

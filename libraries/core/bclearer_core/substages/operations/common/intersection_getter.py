@@ -32,8 +32,7 @@ def get_intersection_of_dependency_and_association_linked(
     )
 
     intersection = list(
-        connected_by_dependency_set
-        & connected_by_association_set,
+        connected_by_dependency_set & connected_by_association_set,
     )
 
     if len(intersection) == 1:
@@ -55,23 +54,15 @@ def get_connected_classifiers(
     ]
 
     connections = ea_connectors[
-        ea_connectors[
-            connected_end_type.column_name
-        ]
-        == classifier_nf_uuid
+        ea_connectors[connected_end_type.column_name] == classifier_nf_uuid
     ]
 
     connections_by_type = connections[
-        connections[
-            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
-        ]
+        connections[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
         == connection_type.type_name
     ]
 
-    if (
-        connected_end_type
-        == NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS
-    ):
+    if connected_end_type == NfEaComColumnTypes.ELEMENTS_CLIENT_PLACE2_END_CONNECTORS:
         connected_classifiers = set(
             connections_by_type[
                 NfEaComColumnTypes.ELEMENTS_SUPPLIER_PLACE1_END_CONNECTORS.column_name
@@ -79,8 +70,7 @@ def get_connected_classifiers(
         )
 
     elif (
-        connected_end_type
-        == NfEaComColumnTypes.ELEMENTS_SUPPLIER_PLACE1_END_CONNECTORS
+        connected_end_type == NfEaComColumnTypes.ELEMENTS_SUPPLIER_PLACE1_END_CONNECTORS
     ):
         connected_classifiers = set(
             connections_by_type[
@@ -90,8 +80,7 @@ def get_connected_classifiers(
 
     else:
         raise TypeError(
-            "Invalid connector end column: "
-            + connected_end_type.column_name,
+            "Invalid connector end column: " + connected_end_type.column_name,
         )
 
     return connected_classifiers

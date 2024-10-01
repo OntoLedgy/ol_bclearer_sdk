@@ -26,12 +26,16 @@ class DatabaseFacade(ABC):
 
     @abstractmethod
     def execute_query(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ):
         pass
 
     @abstractmethod
     def fetch_results(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ):
         pass

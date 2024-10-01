@@ -43,9 +43,7 @@ def __run_operation(
     for (
         content_collection_type,
         content_collection_table,
-    ) in (
-        content_collections_dictionary.items()
-    ):
+    ) in content_collections_dictionary.items():
         __process_content_collection(
             content_collection_type=content_collection_type,
             content_collection_table=content_collection_table,
@@ -70,41 +68,32 @@ def __process_content_collection(
         output_universe.nf_ea_com_registry.dictionary_of_collections
     )
 
-    if (
-        content_collection_type
-        == NfEaComCollectionTypes.EA_CLASSIFIERS
-    ):
+    if content_collection_type == NfEaComCollectionTypes.EA_CLASSIFIERS:
         __convert_objects_to_classes(
             output_collections_dictionary=output_collections_dictionary,
             ea_classifiers=content_collection_table,
         )
 
     else:
-        output_collections_dictionary[
-            content_collection_type
-        ] = content_collection_table
+        output_collections_dictionary[content_collection_type] = (
+            content_collection_table
+        )
 
 
 def __convert_objects_to_classes(
     output_collections_dictionary: dict,
     ea_classifiers: DataFrame,
 ) -> None:
-    ea_object_type_column_name = (
-        NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
-    )
+    ea_object_type_column_name = NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
 
     number_of_objects_before_conversion = len(
         ea_classifiers[
-            ea_classifiers[
-                ea_object_type_column_name
-            ]
+            ea_classifiers[ea_object_type_column_name]
             == EaElementTypes.OBJECT.type_name
         ].index,
     )
 
-    ea_classifiers[
-        ea_object_type_column_name
-    ].replace(
+    ea_classifiers[ea_object_type_column_name].replace(
         to_replace=EaElementTypes.OBJECT.type_name,
         value=EaElementTypes.CLASS.type_name,
         inplace=True,
@@ -112,16 +101,13 @@ def __convert_objects_to_classes(
 
     number_of_objects_after_conversion = len(
         ea_classifiers[
-            ea_classifiers[
-                ea_object_type_column_name
-            ]
+            ea_classifiers[ea_object_type_column_name]
             == EaElementTypes.OBJECT.type_name
         ].index,
     )
 
     number_of_objects_converted_to_classes = (
-        number_of_objects_before_conversion
-        - number_of_objects_after_conversion
+        number_of_objects_before_conversion - number_of_objects_after_conversion
     )
 
     log_message(
@@ -131,6 +117,6 @@ def __convert_objects_to_classes(
         ),
     )
 
-    output_collections_dictionary[
-        NfEaComCollectionTypes.EA_CLASSIFIERS
-    ] = ea_classifiers
+    output_collections_dictionary[NfEaComCollectionTypes.EA_CLASSIFIERS] = (
+        ea_classifiers
+    )

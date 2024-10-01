@@ -7,7 +7,8 @@ def create_b_identity_from_sorted_list_of_b_identities(
     b_identities: list,
 ) -> int:
     sorted_b_identities = sorted(
-        b_identities, key=int,
+        b_identities,
+        key=int,
     )
 
     sorted_b_identities_as_str = str(

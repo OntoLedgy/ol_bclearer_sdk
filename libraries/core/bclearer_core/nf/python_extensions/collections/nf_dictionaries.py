@@ -8,27 +8,18 @@ class NfDictionaries(dict):
         dict.__init__(self)
 
     def try_get_value(
-        self, key,
+        self,
+        key,
     ) -> NfDictionaryTryGetResults:
-        nf_dictionary_try_get_result = (
-            NfDictionaryTryGetResults()
-        )
+        nf_dictionary_try_get_result = NfDictionaryTryGetResults()
 
-        nf_dictionary_try_get_result.key_exists = (
-            key in self.keys()
-        )
+        nf_dictionary_try_get_result.key_exists = key in self.keys()
 
-        if (
-            nf_dictionary_try_get_result.key_exists
-        ):
+        if nf_dictionary_try_get_result.key_exists:
             nf_dictionary_try_get_result.value = self.get(
                 key,
             )
         else:
-            nf_dictionary_try_get_result.value = (
-                None
-            )
+            nf_dictionary_try_get_result.value = None
 
-        return (
-            nf_dictionary_try_get_result
-        )
+        return nf_dictionary_try_get_result

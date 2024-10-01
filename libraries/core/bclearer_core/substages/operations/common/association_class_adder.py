@@ -1,9 +1,8 @@
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
-    EaElementTypes,
-)
-
 from bclearer_core.substages.operations.common.classifier_adder import (
     add_new_classifier_to_dictionary,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
+    EaElementTypes,
 )
 
 

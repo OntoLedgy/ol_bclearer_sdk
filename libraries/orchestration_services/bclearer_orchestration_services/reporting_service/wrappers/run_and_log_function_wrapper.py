@@ -33,7 +33,8 @@ def run_and_log_function(function):
         __log_start(function=function)
 
         return_value = function(
-            *args, **kwargs,
+            *args,
+            **kwargs,
         )
 
         __log_finish(
@@ -60,17 +61,17 @@ def __log_start(function):
 
 
 def __log_finish(
-    start_time: time, function,
+    start_time: time,
+    function,
 ):
     message_list = __get_standard_list(
-        action="end", function=function,
+        action="end",
+        function=function,
     )
 
     end_time = time.time()
 
-    duration = (
-        f"{end_time - start_time:.2f}"
-    )
+    duration = f"{end_time - start_time:.2f}"
 
     message_list.append(duration)
 
@@ -82,12 +83,10 @@ def __log_finish(
 
 
 def __get_standard_list(
-    action: str, function,
+    action: str,
+    function,
 ):
-
-    total_cpu_usage = (
-        f"{psutil.cpu_percent()}%"
-    )
+    total_cpu_usage = f"{psutil.cpu_percent()}%"
 
     svmem = psutil.virtual_memory()
 
@@ -111,8 +110,6 @@ def __get_standard_list(
 
 
 def __get_gigabytes(byte_count: int):
-    gigabytes = (
-        byte_count / 1024 / 1024 / 1024
-    )
+    gigabytes = byte_count / 1024 / 1024 / 1024
 
     return gigabytes

@@ -1,18 +1,21 @@
 import csv
 import os
 
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
+from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
+    DigitalisationLevelStereotypeMatchedEaObjects,
 )
+from bclearer_core.configurations.run_configurations import RunConfigurations
+from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
+    get_nf_uuid_from_ea_guid_from_collection,
+)
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
-from nf_common_source.code.services.file_system_service.objects.files import (
-    Files,
-)
+from nf_common_source.code.services.file_system_service.objects.files import Files
 from nf_common_source.code.services.input_output_service.delimited_text.dataframe_dictionary_to_csv_files_writer import (
     write_dataframe_dictionary_to_csv_files,
 )
@@ -48,16 +51,6 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_unive
 )
 from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.nf_ea_com_to_domain_migration.processes.nf_ea_com_to_standard_tables_dictionary_converter import (
     convert_nf_ea_com_to_standard_tables_dictionary,
-)
-
-from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
-    DigitalisationLevelStereotypeMatchedEaObjects,
-)
-from bclearer_core.configurations.run_configurations import (
-    RunConfigurations,
-)
-from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
-    get_nf_uuid_from_ea_guid_from_collection,
 )
 
 
@@ -104,48 +97,19 @@ def __report_summary(
     ]
 
     summary_table_by_type_filtered = summary_table_by_type.loc[
-        (
-            summary_table_by_type[
-                "minor_types"
-            ]
-            == EaConnectorTypes.ASSOCIATION.type_name
-        )
+        (summary_table_by_type["minor_types"] == EaConnectorTypes.ASSOCIATION.type_name)
+        | (summary_table_by_type["minor_types"] == "Attribute")
         | (
-            summary_table_by_type[
-                "minor_types"
-            ]
-            == "Attribute"
-        )
-        | (
-            summary_table_by_type[
-                "minor_types"
-            ]
+            summary_table_by_type["minor_types"]
             == EaConnectorTypes.DEPENDENCY.type_name
         )
         | (
-            summary_table_by_type[
-                "minor_types"
-            ]
+            summary_table_by_type["minor_types"]
             == EaConnectorTypes.GENERALIZATION.type_name
         )
-        | (
-            summary_table_by_type[
-                "minor_types"
-            ]
-            == EaElementTypes.CLASS.type_name
-        )
-        | (
-            summary_table_by_type[
-                "minor_types"
-            ]
-            == EaElementTypes.OBJECT.type_name
-        )
-        | (
-            summary_table_by_type[
-                "minor_types"
-            ]
-            == "Stereotype_usage"
-        )
+        | (summary_table_by_type["minor_types"] == EaElementTypes.CLASS.type_name)
+        | (summary_table_by_type["minor_types"] == EaElementTypes.OBJECT.type_name)
+        | (summary_table_by_type["minor_types"] == "Stereotype_usage")
     ]
 
     visualization_substage_folder_path = os.path.join(
@@ -171,11 +135,7 @@ def __report_summary(
         quoting=csv.QUOTE_ALL,
     )
 
-    for (
-        summary_tuple
-    ) in (
-        summary_table_by_type_filtered.itertuples()
-    ):
+    for summary_tuple in summary_table_by_type_filtered.itertuples():
         main_type = get_tuple_attribute_value_if_required(
             owning_tuple=summary_tuple,
             attribute_name="main_types",
@@ -216,13 +176,9 @@ def __report_digitalisation_levels_population(
         DigitalisationLevelStereotypeMatchedEaObjects.get_ea_guids()
     )
 
-    digitalisation_level_nf_uuids = (
-        list()
-    )
+    digitalisation_level_nf_uuids = list()
 
-    for (
-        digitalisation_level_guid
-    ) in digitalisation_level_guids_set:
+    for digitalisation_level_guid in digitalisation_level_guids_set:
         digitalisation_level_nf_uuids.append(
             get_nf_uuid_from_ea_guid_from_collection(
                 nf_ea_com_universe=visualization_substage_output_universe,
@@ -232,20 +188,18 @@ def __report_digitalisation_levels_population(
         )
 
     digitalisation_levels_stereotype_usages = output_universe_stereotype_usages[
-        output_universe_stereotype_usages[
-            "stereotype_nf_uuids"
-        ].isin(
+        output_universe_stereotype_usages["stereotype_nf_uuids"].isin(
             digitalisation_level_nf_uuids,
         )
     ]
 
-    digitalisation_levels_stereotype_usages_summary = digitalisation_levels_stereotype_usages.groupby(
-        ["stereotype_nf_uuids"],
-    ).count()
+    digitalisation_levels_stereotype_usages_summary = (
+        digitalisation_levels_stereotype_usages.groupby(
+            ["stereotype_nf_uuids"],
+        ).count()
+    )
 
-    digitalisation_levels_stereotype_usages_summary[
-        "stereotype_nf_uuids"
-    ] = (
+    digitalisation_levels_stereotype_usages_summary["stereotype_nf_uuids"] = (
         digitalisation_levels_stereotype_usages_summary.index
     )
 
@@ -305,9 +259,7 @@ def __report_dependency_depth(
     log_message(
         message="The type-instance depth of this model is: "
         + str(
-            dependency_depths_table[
-                "level_depth"
-            ].max(),
+            dependency_depths_table["level_depth"].max(),
         ),
     )
 
@@ -327,10 +279,7 @@ def __write_hdf5_file(
         visualization_substage_identifier_code,
     )
 
-    hdf5_file_name = (
-        visualization_substage_identifier_code
-        + "_hdf5_export.hdf5"
-    )
+    hdf5_file_name = visualization_substage_identifier_code + "_hdf5_export.hdf5"
 
     hdf5_file_path = os.path.join(
         hdf5_directory_path,
@@ -352,8 +301,10 @@ def __export_to_csv(
     output_folder_name: str,
     visualization_substage_output_universe: NfEaComUniverses,
 ) -> None:
-    universe_as_standard_tables_dictionary = convert_nf_ea_com_to_standard_tables_dictionary(
-        nf_ea_com_universe=visualization_substage_output_universe,
+    universe_as_standard_tables_dictionary = (
+        convert_nf_ea_com_to_standard_tables_dictionary(
+            nf_ea_com_universe=visualization_substage_output_universe,
+        )
     )
 
     visualization_substage_identifier_code = (

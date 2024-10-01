@@ -13,16 +13,15 @@ def sheet_summariser(
 ):
     # remove_empty_rows
     def remove_empty_rows(sheet):
-
         for row in sheet:
             remove_empty_cells(
-                sheet, row,
+                sheet,
+                row,
             )
 
             # remove_empty_cells
 
     def remove_empty_cells(sheet, row):
-
         for cell in row:
             if cell.value != None:
                 return
@@ -32,7 +31,6 @@ def sheet_summariser(
         # get_excel_columns
 
     def get_excel_columns(sheet_data):
-
         list_with_values = []
 
         for cell in sheet_data[1]:
@@ -44,10 +42,10 @@ def sheet_summariser(
 
     # csv_sheet_summariser
     def csv_sheet_summariser(file_name):
-
         csv_data = pd.read_csv(
             os.path.join(
-                path, file_name,
+                path,
+                file_name,
             ),
             encoding="latin-1",
         )
@@ -72,37 +70,25 @@ def sheet_summariser(
         workbook,
         file_extension,
     ) -> pd.DataFrame:
-
-        sheet = workbook[
-            f"{sheet_name}"
-        ]
+        sheet = workbook[f"{sheet_name}"]
 
         remove_empty_rows(sheet)
 
-        if (
-            file_extension == ".xlsx"
-            or file_extension == ".xlsm"
-        ):
+        if file_extension == ".xlsx" or file_extension == ".xlsm":
             sheet_data = sheet.values
             sheet_rows = sheet.max_row
         else:
             sheet_rows = sheet.nrows
-            sheet_data = (
-                workbook.sheet_by_name(
-                    sheet_name,
-                )
+            sheet_data = workbook.sheet_by_name(
+                sheet_name,
             )
 
         if sheet_rows > 0:
-            column_list = (
-                get_excel_columns(sheet)
-            )
+            column_list = get_excel_columns(sheet)
 
-            sheet_data_dataframe = (
-                pd.DataFrame(
-                    sheet_data,
-                    columns=column_list,
-                )
+            sheet_data_dataframe = pd.DataFrame(
+                sheet_data,
+                columns=column_list,
             )
 
             sheet_data_dataframe = sheet_data_dataframe.dropna(
@@ -111,9 +97,7 @@ def sheet_summariser(
                 drop=True,
             )
 
-            dim = (
-                sheet_data_dataframe.shape
-            )
+            dim = sheet_data_dataframe.shape
 
             number_of_rows = dim[0]
 
@@ -155,27 +139,17 @@ def sheet_summariser(
     sheet_summary_df = pd.DataFrame()
 
     if file_extension == ".csv":
-
-        csv_sheet_summary_df = (
-            csv_sheet_summariser(
-                file_path_and_name,
-            )
+        csv_sheet_summary_df = csv_sheet_summariser(
+            file_path_and_name,
         )
 
-        sheet_summary_df = (
-            csv_sheet_summary_df
-        )
-        sheet_summary_df[
-            "sheet_names"
-        ] = os.path.basename(
+        sheet_summary_df = csv_sheet_summary_df
+        sheet_summary_df["sheet_names"] = os.path.basename(
             file_path_and_name,
         )
 
     else:
-        if (
-            file_extension == ".xlsx"
-            or file_extension == ".xlsm"
-        ):
+        if file_extension == ".xlsx" or file_extension == ".xlsm":
             workbook = load_workbook(
                 os.path.join(
                     path,
@@ -183,9 +157,7 @@ def sheet_summariser(
                 ),
             )
 
-            sheet_names_list = (
-                workbook.sheetnames
-            )
+            sheet_names_list = workbook.sheetnames
 
             number_of_sheets = len(
                 sheet_names_list,
@@ -199,31 +171,19 @@ def sheet_summariser(
                 ),
             )
 
-            sheet_names_list = (
-                workbook.sheet_names()
+            sheet_names_list = workbook.sheet_names()
+
+            number_of_sheets = workbook.nsheets
+
+        for sheet_name in sheet_names_list:
+            excel_sheet_summary = excel_sheet_summariser(
+                sheet_name,
+                workbook,
+                file_extension,
             )
 
-            number_of_sheets = (
-                workbook.nsheets
-            )
-
-        for (
-            sheet_name
-        ) in sheet_names_list:
-            excel_sheet_summary = (
-                excel_sheet_summariser(
-                    sheet_name,
-                    workbook,
-                    file_extension,
-                )
-            )
-
-            excel_sheet_summary[
-                "sheet_names"
-            ] = sheet_name.title()
-            excel_sheet_summary[
-                "number_of_sheets"
-            ] = number_of_sheets
+            excel_sheet_summary["sheet_names"] = sheet_name.title()
+            excel_sheet_summary["number_of_sheets"] = number_of_sheets
 
             sheet_summary_df = pd.concat(
                 [
@@ -243,15 +203,9 @@ def get_sheet_summary_from_directory(
     valid_file_extensions,
 ):
     for file_name in files:
+        _, file_extension = os.path.splitext(file_name)
 
-        _, file_extension = (
-            os.path.splitext(file_name)
-        )
-
-        if (
-            file_extension
-            in valid_file_extensions
-        ):
+        if file_extension in valid_file_extensions:
             print(
                 f"*********summarising file {file_name} in {parent_directory_path}**********\n",
             )
@@ -262,13 +216,9 @@ def get_sheet_summary_from_directory(
                 file_extension,
             )
 
-            sheet_summary[
-                "file_names"
-            ] = file_name
+            sheet_summary["file_names"] = file_name
 
-            sheet_summary[
-                "parent_directory_paths"
-            ] = parent_directory_path
+            sheet_summary["parent_directory_paths"] = parent_directory_path
 
             summary_dataframe = pd.concat(
                 [
@@ -316,6 +266,4 @@ def summarise_sheet_files_in_directory(
             valid_file_extensions,
         )
 
-    return (
-        sheet_summary_report_dataframe
-    )
+    return sheet_summary_report_dataframe

@@ -13,46 +13,35 @@ def fetch_data_in_chunks(
     csv_file_path: str,
     chunk_size=5,
 ):
-
     columns_written = False
 
     for i in range(
-        0, len(filter_list), chunk_size,
+        0,
+        len(filter_list),
+        chunk_size,
     ):
-
-        chunk = filter_list[
-            i : i + chunk_size
-        ]
+        chunk = filter_list[i : i + chunk_size]
 
         filter_tuple = tuple(chunk)
 
-        placeholders = ", ".join(
-            "?" for _ in filter_tuple
-        )
-        query = (
-            base_query
-            + f" IN ({placeholders})"
-        )
+        placeholders = ", ".join("?" for _ in filter_tuple)
+        query = base_query + f" IN ({placeholders})"
 
         cursor.execute(
-            query, filter_tuple,
+            query,
+            filter_tuple,
         )
 
-        columns = [
-            column[0]
-            for column in cursor.description
-        ]
+        columns = [column[0] for column in cursor.description]
 
         results = cursor.fetchall()
 
-        df_chunk = (
-            pd.DataFrame.from_records(
-                results, columns=columns,
-            )
+        df_chunk = pd.DataFrame.from_records(
+            results,
+            columns=columns,
         )
 
         if not columns_written:
-
             df_chunk.to_csv(
                 csv_file_path,
                 index=False,
@@ -63,7 +52,6 @@ def fetch_data_in_chunks(
             columns_written = True
 
         else:
-
             print("wrote chunk to csv")
 
             df_chunk.to_csv(
@@ -83,28 +71,18 @@ with open(
         configuration_file,
     )
 
-relational_database_client = (
-    RelationalDatabaseClient(
-        configuration[
-            "connection_string"
-        ],
-    )
+relational_database_client = RelationalDatabaseClient(
+    configuration["connection_string"],
 )
 
-cursor = (
-    relational_database_client.cursor
-)
+cursor = relational_database_client.cursor
 
 lubricants_sharepoint_sites_sheet = pd.read_excel(
     r"C:\Apps\S\bclearer_common_services\relational_database_interop_services\source\data\PTX-T sites - Finalize.xlsx",
     "PTXT Data",
 )
 
-lubricants_site_filter_list = (
-    lubricants_sharepoint_sites_sheet[
-        "WebURl"
-    ].tolist()
-)
+lubricants_site_filter_list = lubricants_sharepoint_sites_sheet["WebURl"].tolist()
 
 print(
     "searching for data in the following sites: ",

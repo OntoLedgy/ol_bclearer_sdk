@@ -27,9 +27,7 @@ def report_relations():
 def __add_folder_relations_to_relations(
     relations_table: pandas.DataFrame,
 ):
-    folders = (
-        BEngFolders.registry_keyed_on_full_paths.values()
-    )
+    folders = BEngFolders.registry_keyed_on_full_paths.values()
 
     for folder in folders:
         relations_table = __add_relation_to_relations(
@@ -45,9 +43,7 @@ def __add_folder_relations_to_relations(
 def __add_file_relations_to_relations(
     relations_table: pandas.DataFrame,
 ):
-    files = (
-        BEngFiles.registry_keyed_on_full_paths.values()
-    )
+    files = BEngFiles.registry_keyed_on_full_paths.values()
 
     for file in files:
         relations_table = __add_relation_to_relations(

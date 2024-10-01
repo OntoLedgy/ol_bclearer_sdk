@@ -6,7 +6,9 @@ from nf_common.code.services.reporting_service.reporters.log_with_datetime impor
 
 
 def rename_all_files_and_folders(
-    folder: str, old: str, new: str,
+    folder: str,
+    old: str,
+    new: str,
 ):
     rename_all_folders(folder, old, new)
 
@@ -14,16 +16,20 @@ def rename_all_files_and_folders(
 
 
 def rename_all_folders(
-    root_folder: str, old: str, new: str,
+    root_folder: str,
+    old: str,
+    new: str,
 ):
     all_renames_were_successes = True
 
     for path, folders, files in os.walk(
-        top=root_folder, topdown=False,
+        top=root_folder,
+        topdown=False,
     ):
         for folder in folders:
             folder_path = os.path.join(
-                path, folder,
+                path,
+                folder,
             )
 
             rename_was_success = rename_filesystem_element(
@@ -34,25 +40,30 @@ def rename_all_folders(
             )
 
             all_renames_were_successes = (
-                all_renames_were_successes
-                and rename_was_success
+                all_renames_were_successes and rename_was_success
             )
 
     if not all_renames_were_successes:
         rename_all_folders(
-            root_folder, old, new,
+            root_folder,
+            old,
+            new,
         )
 
 
 def rename_all_files(
-    root_folder: str, old: str, new: str,
+    root_folder: str,
+    old: str,
+    new: str,
 ):
     for path, folders, files in os.walk(
-        top=root_folder, topdown=False,
+        top=root_folder,
+        topdown=False,
     ):
         for file in files:
             file_path = os.path.join(
-                path, file,
+                path,
+                file,
             )
 
             rename_filesystem_element(
@@ -69,27 +80,18 @@ def rename_filesystem_element(
     old: str,
     new: str,
 ) -> bool:
-    if (
-        old
-        not in filesystem_element_name
-    ):
+    if old not in filesystem_element_name:
         return True
 
-    old_filesystem_element = (
-        filesystem_element_path
-    )
+    old_filesystem_element = filesystem_element_path
 
-    new_filesystem_element = (
-        filesystem_element_path.replace(
-            old, new,
-        )
+    new_filesystem_element = filesystem_element_path.replace(
+        old,
+        new,
     )
 
     log_message(
-        message="Renaming "
-        + old_filesystem_element
-        + " to "
-        + new_filesystem_element,
+        message="Renaming " + old_filesystem_element + " to " + new_filesystem_element,
     )
 
     try:

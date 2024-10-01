@@ -27,15 +27,12 @@ def collect_child_folders_structure(
     child_folder_names = [
         child_folder_name
         for child_folder_name in glob.glob(
-            parent_folder.absolute_path_string
-            + "/**/",
+            parent_folder.absolute_path_string + "/**/",
             recursive=False,
         )
     ]
 
-    for (
-        child_folder_name
-    ) in child_folder_names:
+    for child_folder_name in child_folder_names:
         __collect_folder_if_required(
             child_folder_name=child_folder_name,
             parent_folder=parent_folder,
@@ -74,18 +71,12 @@ def __collect_folder_if_required(
         alternative_name=alternative_name,
     )
 
-    if (
-        b_eng_folder_type
-        == EnumBEngFolderTypes.CODE_FOLDER
-    ):
+    if b_eng_folder_type == EnumBEngFolderTypes.CODE_FOLDER:
         b_eng_python_reference_dictionary.add_b_eng_folder_reference(
             b_eng_folder=folder,
         )
 
-    if (
-        b_eng_folder_type
-        == EnumBEngFolderTypes.REPOSITORY_ROOT_FOLDER
-    ):
+    if b_eng_folder_type == EnumBEngFolderTypes.REPOSITORY_ROOT_FOLDER:
         b_eng_python_reference_dictionary.add_b_eng_folder_reference(
             b_eng_folder=folder,
         )
@@ -116,10 +107,8 @@ def __check_is_required(
         return False
 
     if (
-        parent_folder.b_eng_folder_type
-        == EnumBEngFolderTypes.BITBUCKET_PROJECT
-        and b_eng_folder_type
-        != EnumBEngFolderTypes.GIT_REPOSITORIES
+        parent_folder.b_eng_folder_type == EnumBEngFolderTypes.BITBUCKET_PROJECT
+        and b_eng_folder_type != EnumBEngFolderTypes.GIT_REPOSITORIES
     ):
         return False
 

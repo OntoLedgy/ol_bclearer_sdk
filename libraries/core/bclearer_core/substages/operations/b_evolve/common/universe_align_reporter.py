@@ -22,10 +22,7 @@ def report_universes_with_different_collection_types(
         message="Universes cannot be fully aligned because they keep different collections.",
     )
 
-    if (
-        len(primary_to_aligned_delta)
-        > 0
-    ):
+    if len(primary_to_aligned_delta) > 0:
         log_message(
             message="Primary minus aligned "
             + repr(
@@ -33,10 +30,7 @@ def report_universes_with_different_collection_types(
             ),
         )
 
-    if (
-        len(aligned_to_primary_delta)
-        > 0
-    ):
+    if len(aligned_to_primary_delta) > 0:
         log_message(
             message="Aligned minus primary "
             + repr(
@@ -63,10 +57,7 @@ def report_collection_with_different_columns(
         + " collection type has different columns in the universes being merged.",
     )
 
-    if (
-        len(primary_to_aligned_delta)
-        > 0
-    ):
+    if len(primary_to_aligned_delta) > 0:
         log_message(
             message="Primary minus aligned "
             + repr(
@@ -74,10 +65,7 @@ def report_collection_with_different_columns(
             ),
         )
 
-    if (
-        len(aligned_to_primary_delta)
-        > 0
-    ):
+    if len(aligned_to_primary_delta) > 0:
         log_message(
             message="Aligned minus primary "
             + repr(

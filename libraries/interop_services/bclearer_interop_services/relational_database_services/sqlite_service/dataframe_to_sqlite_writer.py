@@ -1,10 +1,7 @@
 from sqlite3 import connect
 
+from bclearer_interop_services.file_system_service.objects.files import Files
 from pandas import DataFrame
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
 
 
 def write_dataframe_to_sqlite(

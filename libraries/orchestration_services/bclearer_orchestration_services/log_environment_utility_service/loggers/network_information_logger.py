@@ -29,9 +29,7 @@ def log_network_information():
         interface_name,
         interface_addresses,
     ) in if_addrs.items():
-        for (
-            address
-        ) in interface_addresses:
+        for address in interface_addresses:
             log_message(
                 message=ENVIRONMENT_PREFIX
                 + " "
@@ -40,10 +38,7 @@ def log_network_information():
                 + NAME_VALUE_DELIMITER
                 + f" {interface_name} ===",
             )
-            if (
-                str(address.family)
-                == "AddressFamily.AF_INET"
-            ):
+            if str(address.family) == "AddressFamily.AF_INET":
                 log_message(
                     message=ENVIRONMENT_PREFIX
                     + " "
@@ -71,10 +66,7 @@ def log_network_information():
                     + f" {address.broadcast}",
                 )
 
-            elif (
-                str(address.family)
-                == "AddressFamily.AF_PACKET"
-            ):
+            elif str(address.family) == "AddressFamily.AF_PACKET":
                 log_message(
                     message=ENVIRONMENT_PREFIX
                     + " "

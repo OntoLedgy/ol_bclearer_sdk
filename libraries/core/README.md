@@ -42,11 +42,10 @@ To use the core functionalities, import the desired module. For example:
 from bclearer_core import configurations
 
 # Example usage
-config = configurations.load_configuration(config_path='path/to/config.yaml')
+config = configurations.load_configuration(config_path="path/to/config.yaml")
 print(config)
 ```
 
 ## Contributions
 
 Contributions are highly appreciated! Feel free to submit issues, pull requests, or feature requests to enhance the core functionality.
-

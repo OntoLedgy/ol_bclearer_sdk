@@ -1,6 +1,5 @@
 import pandas as pd
 import psycopg2
-
 from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import (
     DatabaseFacade,
 )
@@ -8,13 +7,11 @@ from bclearer_interop_services.relational_database_services.RelationaDatabaseFac
 
 class PostgresqlFacade(DatabaseFacade):
     def connect(self):
-        self.connection = (
-            psycopg2.connect(
-                host=self.host,
-                database=self.database,
-                user=self.user,
-                password=self.password,
-            )
+        self.connection = psycopg2.connect(
+            host=self.host,
+            database=self.database,
+            user=self.user,
+            password=self.password,
         )
 
     def disconnect(self):
@@ -22,67 +19,67 @@ class PostgresqlFacade(DatabaseFacade):
             self.connection.close()
 
     def execute_query(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ):
         with self.connection.cursor() as cursor:
             cursor.execute(
-                query, params,
+                query,
+                params,
             )
             self.connection.commit()
 
     def fetch_results(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ) -> pd.DataFrame:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                query, params,
+                query,
+                params,
             )
-            columns = [
-                desc[0]
-                for desc in cursor.description
-            ]
+            columns = [desc[0] for desc in cursor.description]
             results = cursor.fetchall()
         return pd.DataFrame(
-            results, columns=columns,
+            results,
+            columns=columns,
         )
 
     def store_dataframe(
-        self, dataframe, table_name,
+        self,
+        dataframe,
+        table_name,
     ):
-        cursor = (
-            self.connection.cursor()
-        )
+        cursor = self.connection.cursor()
 
         # Check if table exists
         cursor.execute(
             """
             SELECT EXISTS (
-                SELECT FROM information_schema.tables 
-                WHERE table_schema = 'public' 
+                SELECT FROM information_schema.tables
+                WHERE table_schema = 'public'
                 AND table_name = %s
             );
         """,
             (table_name,),
         )
 
-        table_exists = (
-            cursor.fetchone()[0]
-        )
+        table_exists = cursor.fetchone()[0]
 
         if table_exists:
             # Check schema conformity
             cursor.execute(
                 """
-                SELECT column_name, data_type 
-                FROM information_schema.columns 
+                SELECT column_name, data_type
+                FROM information_schema.columns
                 WHERE table_name = %s;
             """,
                 (table_name,),
             )
 
-            db_schema = (
-                cursor.fetchall()
-            )
+            db_schema = cursor.fetchall()
             df_schema = [
                 (col, str(dtype))
                 for col, dtype in zip(
@@ -91,28 +88,18 @@ class PostgresqlFacade(DatabaseFacade):
                 )
             ]
 
-            db_schema_dict = {
-                col: dtype
-                for col, dtype in db_schema
-            }
-            df_schema_dict = {
-                col: dtype
-                for col, dtype in df_schema
-            }
+            db_schema_dict = {col: dtype for col, dtype in db_schema}
+            df_schema_dict = {col: dtype for col, dtype in df_schema}
 
-            if (
-                db_schema_dict
-                != df_schema_dict
-            ):
+            if db_schema_dict != df_schema_dict:
                 raise ValueError(
                     "Schema of DataFrame does not match schema of the table.",
                 )
 
             # Insert DataFrame into the existing table
-            for (
-                row
-            ) in dataframe.itertuples(
-                index=False, name=None,
+            for row in dataframe.itertuples(
+                index=False,
+                name=None,
             ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",
@@ -133,10 +120,9 @@ class PostgresqlFacade(DatabaseFacade):
                 f"CREATE TABLE {table_name} ({col_defs});",
             )
 
-            for (
-                row
-            ) in dataframe.itertuples(
-                index=False, name=None,
+            for row in dataframe.itertuples(
+                index=False,
+                name=None,
             ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",

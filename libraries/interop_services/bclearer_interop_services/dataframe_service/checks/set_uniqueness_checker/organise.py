@@ -1,6 +1,4 @@
-from bclearer_core.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 from pandas import DataFrame
 
 
@@ -9,14 +7,9 @@ def run_organise(
     identity_set_indices: list,
     identification_indices: list,
 ) -> DataFrame:
-    set_table_duplicates_copy = (
-        set_table_duplicates.copy()
-    )
+    set_table_duplicates_copy = set_table_duplicates.copy()
 
-    filtered_column_names = (
-        identity_set_indices
-        + identification_indices
-    )
+    filtered_column_names = identity_set_indices + identification_indices
 
     filtered_set_table_duplicates = set_table_duplicates_copy.filter(
         items=filtered_column_names,
@@ -35,21 +28,15 @@ def run_organise(
         .rename(columns={0: "count"})
     )
 
-    grouped_set_table_duplicates[
-        "parameter_names"
-    ] = ", ".join(filtered_column_names)
+    grouped_set_table_duplicates["parameter_names"] = ", ".join(filtered_column_names)
 
     filtered_columns = grouped_set_table_duplicates.filter(
         items=filtered_column_names,
     )
 
-    grouped_set_table_duplicates[
-        "parameter_values"
-    ] = filtered_columns.apply(
+    grouped_set_table_duplicates["parameter_values"] = filtered_columns.apply(
         lambda x: ", ".join(
-            x.astype(str)
-            .dropna()
-            .values.tolist(),
+            x.astype(str).dropna().values.tolist(),
         ),
         axis=1,
     )

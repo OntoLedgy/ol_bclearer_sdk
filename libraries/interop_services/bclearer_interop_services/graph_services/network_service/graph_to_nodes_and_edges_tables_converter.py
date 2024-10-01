@@ -1,23 +1,21 @@
-from networkx import to_pandas_edgelist
-from pandas import DataFrame
-
 from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import (
     convert_table_as_dictionary_to_dataframe,
 )
+from networkx import to_pandas_edgelist
+from pandas import DataFrame
 
 
 def convert_graph_to_nodes_and_edges_tables(
-    graph, node_id_column_name: str,
+    graph,
+    node_id_column_name: str,
 ) -> tuple:
     nodes_table = extract_nodes_table_from_graph(
         graph=graph,
         node_id_column_name_to_be=node_id_column_name,
     )
 
-    edges_table = (
-        convert_graph_to_edges_table(
-            graph=graph,
-        )
+    edges_table = convert_graph_to_edges_table(
+        graph=graph,
     )
 
     return nodes_table, edges_table
@@ -62,9 +60,7 @@ def extract_nodes_table_as_dictionary_of_rows_from_graph(
     for (
         graph_nodes_dictionary_key,
         graph_nodes_dictionary_row,
-    ) in (
-        graph_nodes_dictionary_raw.items()
-    ):
+    ) in graph_nodes_dictionary_raw.items():
         __add_node_id_column_to_nodes_dictionary(
             node_id_column_name=node_id_column_name_to_be,
             graph_nodes_dictionary_key=graph_nodes_dictionary_key,
@@ -89,6 +85,6 @@ def __add_node_id_column_to_nodes_dictionary(
         graph_nodes_dictionary_row,
     )
 
-    output_graph_nodes_dictionary[
-        graph_nodes_dictionary_key
-    ] = new_graph_nodes_dictionary_row
+    output_graph_nodes_dictionary[graph_nodes_dictionary_key] = (
+        new_graph_nodes_dictionary_row
+    )

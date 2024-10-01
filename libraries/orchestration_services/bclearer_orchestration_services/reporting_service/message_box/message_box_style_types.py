@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class MessageBoxStyleTypes(Enum):
-
     Ok = 0
     OkCancel = 1
     AbortRetryIgnore = 2

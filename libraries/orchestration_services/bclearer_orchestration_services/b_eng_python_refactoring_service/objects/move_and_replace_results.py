@@ -7,14 +7,15 @@ from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file
 
 
 class MoveAndReplaceResults:
-
     def __init__(
         self,
         b_eng_workspace_file_system_object_couple: BEngWorkspaceFileSystemObjectCouples,
         result_type: EnumMoveAndReplaceResultTypes,
         reason: str,
     ):
-        self.b_eng_workspace_file_system_object_couple = b_eng_workspace_file_system_object_couple
+        self.b_eng_workspace_file_system_object_couple = (
+            b_eng_workspace_file_system_object_couple
+        )
 
         self.result_type = result_type
 

@@ -22,20 +22,14 @@ class PandasNullValueTypes(Enum):
 
     NULL_AS_STRING_VALUE = auto()
 
-    NUMPY_DATETIME_64_EMPTY_CELL = (
-        auto()
-    )
+    NUMPY_DATETIME_64_EMPTY_CELL = auto()
 
-    NUMPY_DATETIME_64_AS_STRING_VALUE = (
-        auto()
-    )
+    NUMPY_DATETIME_64_AS_STRING_VALUE = auto()
 
     def __data_policy_value(
         self,
     ) -> str:
-        data_policy_value = data_policy_name_to_value_mapping[
-            self
-        ]
+        data_policy_value = data_policy_name_to_value_mapping[self]
 
         return data_policy_value
 

@@ -7,9 +7,10 @@ from bclearer_interop_services.graph_services.neo4j_service.orchestrators import
 
 
 def test_neo4j_to_csv_load_orchestation(
-    self, nodes_info, edges_info,
+    self,
+    nodes_info,
+    edges_info,
 ):
-
     # Instantiate the wrapper and orchestrator
     neo4j_wrapper = Neo4jWrapper(
         "bolt://localhost:7687",
@@ -23,7 +24,8 @@ def test_neo4j_to_csv_load_orchestation(
 
     # Load the data
     orchestrator.load_data(
-        nodes_info, edges_info,
+        nodes_info,
+        edges_info,
     )
 
     # Close the connection

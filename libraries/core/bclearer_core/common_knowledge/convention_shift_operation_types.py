@@ -1,8 +1,6 @@
 from enum import auto, unique
 
-from bclearer_core.common_knowledge.operation_types import (
-    OperationTypes,
-)
+from bclearer_core.common_knowledge.operation_types import OperationTypes
 
 
 @unique
@@ -11,30 +9,16 @@ class ConventionShiftOperationTypes(
 ):
     OBJECTS_TO_CLASSES = auto()
     UML_NAME_TO_NAMED_OBJECT = auto()
-    ATTRIBUTE_NAME_TO_NAMED_OBJECT = (
-        auto()
-    )
+    ATTRIBUTE_NAME_TO_NAMED_OBJECT = auto()
     GENERALISE_NAMES = auto()
-    SEPARATE_STANDARD_NAMES_AND_INSTANCES = (
-        auto()
-    )
-    SEPARATE_BESPOKE_NAMES_AND_INSTANCES = (
-        auto()
-    )
-    SEPARATE_STANDARD_INSTANCES_AND_EXEMPLARS = (
-        auto()
-    )
-    SEPARATE_BESPOKE_INSTANCES_AND_EXEMPLARS = (
-        auto()
-    )
-    UNIVERSE_TO_SEMANTICALLY_GROUNDED_DIGITALISATION_LEVEL = (
-        auto()
-    )
+    SEPARATE_STANDARD_NAMES_AND_INSTANCES = auto()
+    SEPARATE_BESPOKE_NAMES_AND_INSTANCES = auto()
+    SEPARATE_STANDARD_INSTANCES_AND_EXEMPLARS = auto()
+    SEPARATE_BESPOKE_INSTANCES_AND_EXEMPLARS = auto()
+    UNIVERSE_TO_SEMANTICALLY_GROUNDED_DIGITALISATION_LEVEL = auto()
 
     def __operation_name(self) -> str:
-        operation_name = (
-            operation_name_mapping[self]
-        )
+        operation_name = operation_name_mapping[self]
 
         return operation_name
 

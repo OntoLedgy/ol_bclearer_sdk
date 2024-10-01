@@ -10,12 +10,11 @@ def create_b_identity_base_from_bytes(
         digest_size=digest_size,
     )
 
-    hash_as_hex_string = (
-        hash_blake2b.hexdigest()
-    )
+    hash_as_hex_string = hash_blake2b.hexdigest()
 
     hash_as_integer = int(
-        hash_as_hex_string, 16,
+        hash_as_hex_string,
+        16,
     )
 
     return hash_as_integer

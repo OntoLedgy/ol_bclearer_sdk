@@ -1,12 +1,9 @@
 from pathlib import Path
 
 import pandas as pd
+from bclearer_interop_services.excel_services.object_model.Sheets import Sheets
 from openpyxl import Workbook as OpenpyxlWorkbook
 from openpyxl import load_workbook
-
-from bclearer_interop_services.excel_services.object_model.Sheets import (
-    Sheets,
-)
 
 
 class Workbooks:
@@ -15,22 +12,16 @@ class Workbooks:
         file_path: str = None,
         file_extension: str = "xlsx",
     ):
-
         self.file_path = file_path
 
         self.sheets = {}
 
         if file_path:
-            if (
-                file_extension
-                == ".xlsx"
-            ):
+            if file_extension == ".xlsx":
                 self._load_xlsx(
                     file_path,
                 )
-            elif (
-                file_extension == ".xls"
-            ):
+            elif file_extension == ".xls":
                 self._load_xls(
                     file_path,
                 )
@@ -39,7 +30,6 @@ class Workbooks:
                     f"Unsupported file extension: {file_extension}",
                 )
         else:
-
             self.wb = OpenpyxlWorkbook()
 
             self.sheets = {
@@ -61,30 +51,28 @@ class Workbooks:
             )
 
             # Add the sheet to the Sheets object
-            self.sheets[sheet.title] = (
-                Sheets(sheet)
-            )
+            self.sheets[sheet.title] = Sheets(sheet)
 
     def _load_xls(self, file_path):
-
         xls = pd.ExcelFile(
-            file_path, engine="xlrd",
+            file_path,
+            engine="xlrd",
         )
 
-        for (
-            sheet_name
-        ) in xls.sheet_names:
+        for sheet_name in xls.sheet_names:
             df = xls.parse(
-                sheet_name, header=0,
+                sheet_name,
+                header=0,
             )
-            self.sheets[sheet_name] = (
-                self._convert_df_to_sheet(
-                    df, sheet_name,
-                )
+            self.sheets[sheet_name] = self._convert_df_to_sheet(
+                df,
+                sheet_name,
             )
 
     def _convert_df_to_sheet(
-        self, dataframe, sheet_name,
+        self,
+        dataframe,
+        sheet_name,
     ):
         """Converts a pandas DataFrame to the internal Sheets object for .xls files."""
         openpyxl_sheet = OpenpyxlWorkbook().create_sheet(
@@ -111,21 +99,18 @@ class Workbooks:
             values_only=True,
         ):
             # If the row is completely empty (all None values), remove the row
-            if all(
-                cell is None
-                for cell in row
-            ):
+            if all(cell is None for cell in row):
                 # Get the index of the row to remove
-                row_index = (
-                    sheet.max_row
-                )
+                row_index = sheet.max_row
                 # Delete the row from the sheet
                 sheet.delete_rows(
-                    row_index, 1,
+                    row_index,
+                    1,
                 )
 
     def save(
-        self, file_path: str = None,
+        self,
+        file_path: str = None,
     ):
         if file_path is None:
             file_path = self.file_path
@@ -147,20 +132,15 @@ class Workbooks:
 
     def _save_xls(self, file_path):
         with pd.ExcelWriter(
-            file_path, engine="xlwt",
+            file_path,
+            engine="xlwt",
         ) as writer:
             for (
                 sheet_name,
                 sheet,
             ) in self.sheets.items():
                 dataframe = pd.DataFrame(
-                    [
-                        [
-                            cell.value
-                            for cell in row
-                        ]
-                        for row in sheet.sheet.rows
-                    ],
+                    [[cell.value for cell in row] for row in sheet.sheet.rows],
                 )
                 dataframe.to_excel(
                     writer,
@@ -170,9 +150,7 @@ class Workbooks:
 
     def sheet(self, sheet_name: str):
         if sheet_name in self.sheets:
-            return self.sheets[
-                sheet_name
-            ]
+            return self.sheets[sheet_name]
         raise ValueError(
             f"Sheet {sheet_name} does not exist",
         )
@@ -183,29 +161,22 @@ class Workbooks:
                 f"Sheet {title} already exists",
             )
 
-        openpyxl_sheet = (
-            self.wb.create_sheet(
-                title=title,
-            )
+        openpyxl_sheet = self.wb.create_sheet(
+            title=title,
         )
         sheet = Sheets(openpyxl_sheet)
         self.sheets[title] = sheet
         return sheet
 
     def remove_sheet(
-        self, sheet_name: str,
+        self,
+        sheet_name: str,
     ):
-        if (
-            sheet_name
-            not in self.sheets
-        ):
+        if sheet_name not in self.sheets:
             raise ValueError(
                 f"Sheet {sheet_name} does not exist",
             )
 
-        if (
-            sheet_name
-            in self.wb.sheetnames
-        ):
+        if sheet_name in self.wb.sheetnames:
             del self.wb[sheet_name]
         del self.sheets[sheet_name]

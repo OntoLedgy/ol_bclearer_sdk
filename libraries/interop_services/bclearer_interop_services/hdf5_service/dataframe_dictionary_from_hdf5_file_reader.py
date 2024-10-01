@@ -29,8 +29,6 @@ def __add_dataframe_to_dictionary(
 ) -> dict:
     dataframe = hdf_store.select(key)
 
-    dataframes_dictionary[key] = (
-        dataframe
-    )
+    dataframes_dictionary[key] = dataframe
 
     return dataframes_dictionary

@@ -5,18 +5,14 @@ from bclearer_interop_services.graph_services.neo4j_service.object_models.cypher
 
 
 class TestCypherServices:
-
     @pytest.fixture(autouse=True)
     def setup_method(self):
-        self.cypher_wrapper = (
-            CypherQueryWrapper()
-        )
+        self.cypher_wrapper = CypherQueryWrapper()
 
     # Example usage:
     def test_cypher_wrapper_read_write(
         self,
     ):
-
         # Read query from a file
         self.cypher_wrapper.read_from_file(
             "./data/input/graph/query_list.cyp",
@@ -33,7 +29,6 @@ class TestCypherServices:
     def test_cypher_wrapper_generate(
         self,
     ):
-
         find_nodes_query = CypherQueryWrapper.generate_find_all_nodes(
             "Person",
         )

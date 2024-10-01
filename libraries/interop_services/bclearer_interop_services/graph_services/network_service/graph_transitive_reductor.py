@@ -1,13 +1,9 @@
 import sys
 
-from networkx import (
-    DiGraph,
-    transitive_reduction,
-)
-
 from bclearer_interop_services.graph_services.network_service.directed_graph_cycles_checker import (
     check_directed_graph_cycles,
 )
+from networkx import DiGraph, transitive_reduction
 
 
 def transitively_reduce_graph(
@@ -43,7 +39,8 @@ def transitively_reduce_graph(
             source,
             target,
             directed_graph.edges[
-                source, target,
+                source,
+                target,
             ],
         )
         for source, target in transitively_reduced_directed_graph.edges

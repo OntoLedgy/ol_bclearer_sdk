@@ -1,6 +1,7 @@
 # list_tree_node_superiors
 def list_tree_node_superiors(
-    tree_node, superior_node_list,
+    tree_node,
+    superior_node_list,
 ):
     """For a functional location, recursively search for all superior functional location
     Args:
@@ -12,20 +13,10 @@ def list_tree_node_superiors(
             list of superior functional locations
 
     """
-    if (
-        tree_node
-        in superior_node_list.keys()
-    ):
+    if tree_node in superior_node_list.keys():
+        parent = superior_node_list[tree_node]
 
-        parent = superior_node_list[
-            tree_node
-        ]
-
-        if (
-            parent
-            and len(str(parent)) > 3
-        ):
-
+        if parent and len(str(parent)) > 3:
             list_of_superior_tree_nodes = [
                 parent,
             ] + list_tree_node_superiors(
@@ -57,17 +48,11 @@ def report_tree_node_level(
 
     """
     tree_node_superior = pd.Series(
-        tree_dataframe[
-            superior_node_column_name
-        ].values,
-        index=tree_dataframe[
-            tree_node_column_name
-        ],
+        tree_dataframe[superior_node_column_name].values,
+        index=tree_dataframe[tree_node_column_name],
     ).to_dict()
 
-    tree_dataframe[
-        "list_of_superior_nodes"
-    ] = tree_dataframe[
+    tree_dataframe["list_of_superior_nodes"] = tree_dataframe[
         tree_node_column_name
     ].apply(
         lambda x: list_tree_node_superiors(
@@ -75,9 +60,7 @@ def report_tree_node_level(
             superior_node_list=tree_node_superior,
         ),
     )
-    tree_dataframe[
-        "num_list_superior_nodes"
-    ] = tree_dataframe[
+    tree_dataframe["num_list_superior_nodes"] = tree_dataframe[
         "list_superior_nodes"
     ].apply(
         len,

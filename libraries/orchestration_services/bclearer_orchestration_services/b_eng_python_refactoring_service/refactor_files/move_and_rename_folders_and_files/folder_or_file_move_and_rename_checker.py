@@ -15,9 +15,7 @@ from nf_common.code.services.reporting_service.reporters.log_with_datetime impor
 def move_and_rename_file_or_folder_checks(
     source_target_b_eng_workspace_file_system_object_couple: BEngWorkspaceFileSystemObjectCouples,
 ) -> bool:
-    source_b_eng_workspace_file_system_object = (
-        source_target_b_eng_workspace_file_system_object_couple.place_1_b_eng_workspace_file_system_object
-    )
+    source_b_eng_workspace_file_system_object = source_target_b_eng_workspace_file_system_object_couple.place_1_b_eng_workspace_file_system_object
 
     source_exists = __check_b_eng_workspace_file_system_object_exists(
         b_eng_workspace_file_system_object=source_b_eng_workspace_file_system_object,
@@ -36,9 +34,7 @@ def __check_b_eng_workspace_file_system_object_exists(
         b_eng_workspace_file_system_object.exists()
     )
 
-    if (
-        not b_eng_workspace_file_system_object_exists
-    ):
+    if not b_eng_workspace_file_system_object_exists:
         __report_file_system_object_does_not_exist(
             type_name="bEng workspace file system object",
             file_system_object=b_eng_workspace_file_system_object,
@@ -51,10 +47,6 @@ def __report_file_system_object_does_not_exist(
     type_name: str,
     file_system_object: FileSystemObjects,
 ):
-    message = (
-        type_name
-        + " does not exist: "
-        + file_system_object.absolute_path_string
-    )
+    message = type_name + " does not exist: " + file_system_object.absolute_path_string
 
     log_message(message)

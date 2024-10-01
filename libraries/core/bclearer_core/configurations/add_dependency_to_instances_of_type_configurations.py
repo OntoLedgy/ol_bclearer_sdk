@@ -22,13 +22,9 @@ class AddDependencyToInstancesOfTypeConfigurations(
             operation_type=add_dependency_to_instances_of_type_operation_type,
         )
 
-        self.configuration_object = (
-            configuration_object
-        )
+        self.configuration_object = configuration_object
 
-        self.output_universe_short_name = (
-            output_universe_short_name
-        )
+        self.output_universe_short_name = output_universe_short_name
 
     def __enter__(self):
         return self

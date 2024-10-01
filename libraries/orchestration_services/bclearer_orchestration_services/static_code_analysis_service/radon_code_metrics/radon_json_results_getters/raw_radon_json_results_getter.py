@@ -9,15 +9,11 @@ from radon import cli
 def get_raw_radon_json_results(
     folders_to_analyse: list,
 ):
-    raw_configuration = (
-        get_raw_configuration()
-    )
+    raw_configuration = get_raw_configuration()
 
     paths = []
 
-    for (
-        folder_to_analyse
-    ) in folders_to_analyse:
+    for folder_to_analyse in folders_to_analyse:
         paths.append(
             folder_to_analyse.absolute_path_string,
         )
@@ -27,9 +23,7 @@ def get_raw_radon_json_results(
         config=raw_configuration,
     )
 
-    raw_results_as_json_string = (
-        raw_havester.as_json()
-    )
+    raw_results_as_json_string = raw_havester.as_json()
 
     raw_results_as_json = json.loads(
         s=raw_results_as_json_string,

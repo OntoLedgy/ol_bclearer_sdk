@@ -1,17 +1,12 @@
 import os.path
 
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.file_system_service.relative_path_to_absolute_converter import (
     convert_relative_path_to_absolute,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 
@@ -33,7 +28,8 @@ def get_file_system_objects_from_paths(
         )
 
         if not isinstance(
-            file_system_object, Folders,
+            file_system_object,
+            Folders,
         ):
             raise TypeError
 
@@ -51,7 +47,8 @@ def get_file_system_objects_from_paths(
 
 
 def get_file_system_object_from_path(
-    path: str, base_root_path: str = "",
+    path: str,
+    base_root_path: str = "",
 ):
     absolute_path = convert_relative_path_to_absolute(
         input_path=path,
@@ -76,16 +73,14 @@ def get_file_system_object_from_path(
         absolute_path,
     ):
         log_message(
-            message=absolute_path
-            + " - Does not exist",
+            message=absolute_path + " - Does not exist",
         )
 
         return None
 
     else:
         log_message(
-            message=absolute_path
-            + " - Is not a file nor a folder",
+            message=absolute_path + " - Is not a file nor a folder",
         )
 
         return None

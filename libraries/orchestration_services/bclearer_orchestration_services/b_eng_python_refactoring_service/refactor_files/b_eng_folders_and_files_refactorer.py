@@ -37,9 +37,7 @@ def move_and_rename_files_or_folders_then_find_and_replace_references_in_python_
         in_scope_b_eng_project_folder_list=move_and_replace_configuration.in_scope_b_eng_project_folder_list,
     )
 
-    if (
-        move_and_replace_configuration.move_and_replace_configuration_flag_set.commit_changes_flag
-    ):
+    if move_and_replace_configuration.move_and_replace_configuration_flag_set.commit_changes_flag:
         commit_refactors(
             branch_name=move_and_replace_configuration.branch_name,
             in_scope_b_eng_project_folder_list=move_and_replace_configuration.in_scope_b_eng_project_folder_list,
@@ -57,17 +55,13 @@ def __iterate_through_path_couples_in_index_order(
     b_eng_workspace_with_file_system_object_couples_ordered_indexed_list: BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists,
     in_scope_b_eng_project_folder_list: BEngProjectFolderLists,
 ):
-    path_couples_ordered_indexed_list = (
-        b_eng_workspace_with_file_system_object_couples_ordered_indexed_list.b_eng_workspace_file_system_object_couples_ordered_indexed_list
-    )
+    path_couples_ordered_indexed_list = b_eng_workspace_with_file_system_object_couples_ordered_indexed_list.b_eng_workspace_file_system_object_couples_ordered_indexed_list
 
     path_couples_index_ordered_iterator = (
         path_couples_ordered_indexed_list.get_ordered_iterator()
     )
 
-    for (
-        path_couples_index
-    ) in path_couples_index_ordered_iterator:
+    for path_couples_index in path_couples_index_ordered_iterator:
         __process_path_couples_index(
             workspace_path_couples_ordered_indexed_list=b_eng_workspace_with_file_system_object_couples_ordered_indexed_list,
             path_couples_index=path_couples_index,
@@ -81,8 +75,7 @@ def __process_path_couples_index(
     in_scope_bitbucket_project_list: BEngProjectFolderLists,
 ):
     log_message(
-        "Processing index:"
-        + str(path_couples_index),
+        "Processing index:" + str(path_couples_index),
     )
 
     source_target_path_couple = workspace_path_couples_ordered_indexed_list.get_indexed_file_system_object_couple(

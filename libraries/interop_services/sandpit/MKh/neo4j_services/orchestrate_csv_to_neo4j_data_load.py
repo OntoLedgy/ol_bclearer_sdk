@@ -10,7 +10,6 @@ from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jL
 
 
 def synchronized(func):
-
     func.__lock__ = threading.Lock()
 
     def synced_func(*args, **kws):
@@ -37,11 +36,7 @@ class ProgressOutput:
             prefix = "|"
         if self.points == self.mod:
             print(
-                prefix
-                + s
-                + " ("
-                + str(self.counter)
-                + ")",
+                prefix + s + " (" + str(self.counter) + ")",
             )
             self.points = 0
         else:
@@ -50,19 +45,13 @@ class ProgressOutput:
 
     def finished(self, cntr):
         print(
-            " finished ("
-            + str(cntr)
-            + ")",
+            " finished (" + str(cntr) + ")",
         )
 
 
 def makeEmptyNull(aRow):
     for key in aRow.keys():
-        if (
-            aRow[key] is not None
-            and type(aRow[key]) == str
-            and aRow[key] == ""
-        ):
+        if aRow[key] is not None and type(aRow[key]) == str and aRow[key] == "":
             aRow[key] = None
     return aRow
 
@@ -81,10 +70,8 @@ def orchestrate_csv_to_neo4j_load(
     emptyIsNull=True,
     debug=False,
 ):
-
     print(
-        "loadCSVToNeo4j started file: "
-        + csv_file_name_and_path,
+        "loadCSVToNeo4j started file: " + csv_file_name_and_path,
     )
     print(
         f"               concurrency: {concurrency}",
@@ -121,7 +108,6 @@ def orchestrate_csv_to_neo4j_load(
         csv_file_name_and_path,
         encoding=csv_file_encoding,
     ) as csv_file:
-
         csv_reader = csv.DictReader(
             csv_file,
             delimiter=csv_file_delimiter,
@@ -135,11 +121,9 @@ def orchestrate_csv_to_neo4j_load(
         for thread_index in range(
             concurrency,
         ):
-
             neo4j_loader_thread = Neo4jLoader(
                 threadID=thread_index,
-                name="neo4j loader "
-                + str(thread_index),
+                name="neo4j loader " + str(thread_index),
                 neo4j_connection=neo4j_connection,
                 cypher_query=cypher_load_query,
                 batchSize=batch_size,
@@ -173,20 +157,12 @@ def orchestrate_csv_to_neo4j_load(
                         row,
                     )
 
-                neo4jLoadThreads[
-                    threadIndex
-                ].addRow(row)
+                neo4jLoadThreads[threadIndex].addRow(row)
 
                 if concurrency > 1:
-                    if (
-                        threadIndex
-                        < maxC
-                    ):
+                    if threadIndex < maxC:
                         threadIndex += 1
-                    elif (
-                        threadIndex
-                        == maxC
-                    ):
+                    elif threadIndex == maxC:
                         threadIndex = 0
 
         except KeyboardInterrupt:
@@ -198,40 +174,19 @@ def orchestrate_csv_to_neo4j_load(
         for loader in neo4jLoadThreads:
             loader.finish()
             loader.join()
-            labelsCreated += (
-                loader.labelsCreated
-            )
-            nodesCreated += (
-                loader.nodesCreated
-            )
-            propertiesSet += (
-                loader.propertiesSet
-            )
-            relationshipsCreated += (
-                loader.relationshipsCreated
-            )
+            labelsCreated += loader.labelsCreated
+            nodesCreated += loader.nodesCreated
+            propertiesSet += loader.propertiesSet
+            relationshipsCreated += loader.relationshipsCreated
 
         # reporting duration result is an interge due to the usage of //
 
-        duration = (
-            time.perf_counter_ns()
-            - tStart
-        ) // 1000000
+        duration = (time.perf_counter_ns() - tStart) // 1000000
         if duration == 0:
             duration = 1
-        nplusr = (
-            nodesCreated
-            + relationshipsCreated
-        )
+        nplusr = nodesCreated + relationshipsCreated
         nrPerSecond = math.floor(
-            (
-                (
-                    nodesCreated
-                    + relationshipsCreated
-                )
-                / duration
-            )
-            * 1000,
+            ((nodesCreated + relationshipsCreated) / duration) * 1000,
         )
         out.finished(str(pcnt))
 

@@ -1,13 +1,3 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
-    create_empty_nf_ea_universe,
-)
-
 from bclearer_core.common_knowledge.convention_shift_operation_types import (
     ConventionShiftOperationTypes,
 )
@@ -41,6 +31,15 @@ from bclearer_core.substages.operations.b_evolve.convention_shift_operations.con
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.uml_names_to_named_objects_convention_shifter import (
     shift_convention_uml_names_to_named_objects,
 )
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+    EaToolsSessionManagers,
+)
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
+    create_empty_nf_ea_universe,
+)
 
 
 class ConventionShiftOperationsSubstages:
@@ -50,15 +49,13 @@ class ConventionShiftOperationsSubstages:
         convention_shift_operation_configuration: ConventionShiftOperationConfigurations,
         content_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = (
-            ea_tools_session_manager
+        self.ea_tools_session_manager = ea_tools_session_manager
+
+        self.convention_shift_operation_configuration = (
+            convention_shift_operation_configuration
         )
 
-        self.convention_shift_operation_configuration = convention_shift_operation_configuration
-
-        self.content_universe = (
-            content_universe
-        )
+        self.content_universe = content_universe
 
     def __enter__(self):
         return self

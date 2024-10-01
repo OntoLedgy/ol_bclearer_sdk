@@ -1,6 +1,4 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from nf_common.code.services.datetime_service.time_helpers.time_getter import (
     now_time_as_string_yyyymmddhhmm,
 )
@@ -24,18 +22,13 @@ from nf_common.code.services.static_code_analysis_service.radon_code_metrics.con
 def get_static_code_configuration(
     paths_of_code_to_analyse: list,
     results_folder: Folders,
-) -> (
-    StaticCodeAnalysisFlowConfigurations
-):
+) -> StaticCodeAnalysisFlowConfigurations:
     log_message(
         message="Getting configuration for flow of static analysis.",
     )
 
     output_database_name = (
-        "static_code_analysis"
-        + "_"
-        + now_time_as_string_yyyymmddhhmm()
-        + ".accdb"
+        "static_code_analysis" + "_" + now_time_as_string_yyyymmddhhmm() + ".accdb"
     )
 
     database_template_folder_relative_path = "nf_common.resources.static_code_analysis"
@@ -61,6 +54,4 @@ def get_static_code_configuration(
         flow_common_configuration=common_configuration,
     )
 
-    return (
-        static_code_flow_configuration
-    )
+    return static_code_flow_configuration

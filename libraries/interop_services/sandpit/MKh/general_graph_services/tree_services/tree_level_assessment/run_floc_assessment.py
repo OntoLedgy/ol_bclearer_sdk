@@ -10,7 +10,6 @@ def orchestrate_tree_level_reporting(
     parent_node_column_name,
     output_file_name,
 ):
-
     file_read = pd.read_excel(
         tree_data_file_name,
     )

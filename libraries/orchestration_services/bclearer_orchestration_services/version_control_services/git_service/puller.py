@@ -13,9 +13,7 @@ def pull_git_repository(
     log_message(
         message="Pulling: "
         + str(
-            repository_folder_path.parts[
-                -1
-            ],
+            repository_folder_path.parts[-1],
         ),
     )
 
@@ -23,14 +21,9 @@ def pull_git_repository(
         str(repository_folder_path),
     )
 
-    active_branch_is_required_branch = (
-        repository.active_branch.name
-        == branch_name
-    )
+    active_branch_is_required_branch = repository.active_branch.name == branch_name
 
-    if (
-        not active_branch_is_required_branch
-    ):
+    if not active_branch_is_required_branch:
         return
 
     pull_command = "git pull"

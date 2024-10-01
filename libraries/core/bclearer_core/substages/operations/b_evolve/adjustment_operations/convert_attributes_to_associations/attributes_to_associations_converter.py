@@ -1,13 +1,3 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
-    EaAssociationDirectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
 from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
     AttributeToAssociationOperationSubtypes,
 )
@@ -22,6 +12,15 @@ from bclearer_core.substages.operations.b_evolve.adjustment_operations.remove_at
 )
 from bclearer_core.substages.operations.b_evolve.common.new_root_package_creator import (
     create_root_package,
+)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
+    EaAssociationDirectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
 )
 
 
@@ -114,9 +113,7 @@ def __copy_collections(
     for (
         content_collection_type,
         content_collection_table,
-    ) in (
-        content_collections_dictionary.items()
-    ):
-        output_collections_dictionary[
-            content_collection_type
-        ] = content_collection_table
+    ) in content_collections_dictionary.items():
+        output_collections_dictionary[content_collection_type] = (
+            content_collection_table
+        )

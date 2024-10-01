@@ -1,12 +1,8 @@
 from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import (
     get_all_files_of_extension_from_folder,
 )
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.relational_database_services.access_service import (
     get_access_database_connection,
 )
@@ -45,9 +41,7 @@ def export_all_xlsx_files_from_folder_to_access(
         absolute_path_string=access_database_full_path,
     )
 
-    for (
-        xlsx_file
-    ) in xlsx_files_to_export:
+    for xlsx_file in xlsx_files_to_export:
         load_xlsx_file_to_access(
             temporary_csv_folder=xlsx_folder,
             database_file=database_file,

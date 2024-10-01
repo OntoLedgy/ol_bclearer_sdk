@@ -21,9 +21,7 @@ class GeneraliseNamesConfigurations(
 
         self.list_of_configuration_objects = list_of_configuration_objects
 
-        self.output_universe_short_name = (
-            output_universe_short_name
-        )
+        self.output_universe_short_name = output_universe_short_name
 
     def __enter__(self):
         return self

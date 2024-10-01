@@ -9,7 +9,9 @@ class BclearerLoadConfigurations:
     ) -> None:
         self.identity_hash_configuration_list = identity_hash_configuration_list
 
-        self.alternative_identity_hash_configuration_list = alternative_identity_hash_configuration_list
+        self.alternative_identity_hash_configuration_list = (
+            alternative_identity_hash_configuration_list
+        )
 
         self.core_content_hash_configuration_list = core_content_hash_configuration_list
 

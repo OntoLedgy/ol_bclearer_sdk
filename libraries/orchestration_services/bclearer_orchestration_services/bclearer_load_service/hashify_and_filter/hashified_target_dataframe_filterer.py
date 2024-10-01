@@ -11,9 +11,7 @@ def filter_hashified_target_dataframe(
     hashified_target_dataframe: pandas.DataFrame,
     columns_in_scope_configuration_list: list,
 ) -> pandas.DataFrame:
-    hashified_and_filtered_target_dataframe = (
-        hashified_target_dataframe.copy()
-    )
+    hashified_and_filtered_target_dataframe = hashified_target_dataframe.copy()
 
     hashified_and_filtered_target_dataframe = __filter_columns(
         hashified_and_filtered_target_dataframe=hashified_and_filtered_target_dataframe,
@@ -27,9 +25,7 @@ def __filter_columns(
     hashified_and_filtered_target_dataframe: pandas.DataFrame,
     columns_in_scope_configuration_list: list,
 ) -> pandas.DataFrame:
-    if (
-        not columns_in_scope_configuration_list
-    ):
+    if not columns_in_scope_configuration_list:
         return hashified_and_filtered_target_dataframe
 
     hash_column_names = [
@@ -39,13 +35,12 @@ def __filter_columns(
         CONTENT_HASHES_CONFIGURATION_NAME,
     ]
 
-    column_names = (
-        columns_in_scope_configuration_list
-        + hash_column_names
-    )
+    column_names = columns_in_scope_configuration_list + hash_column_names
 
-    hashified_and_filtered_target_dataframe = hashified_and_filtered_target_dataframe.filter(
-        items=column_names,
+    hashified_and_filtered_target_dataframe = (
+        hashified_and_filtered_target_dataframe.filter(
+            items=column_names,
+        )
     )
 
     return hashified_and_filtered_target_dataframe

@@ -9,12 +9,7 @@ def filter_table_as_dictionary_by_column_values_list_not_matching(
         key,
         row_dictionary,
     ) in table_as_dictionary.items():
-        if (
-            row_dictionary[column_name]
-            not in column_values_are_not
-        ):
-            filtered_dictionary[key] = (
-                row_dictionary
-            )
+        if row_dictionary[column_name] not in column_values_are_not:
+            filtered_dictionary[key] = row_dictionary
 
     return filtered_dictionary

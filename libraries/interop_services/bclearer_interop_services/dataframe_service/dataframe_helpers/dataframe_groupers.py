@@ -1,7 +1,5 @@
 import pandas
-from pandas.core.groupby import (
-    SeriesGroupBy,
-)
+from pandas.core.groupby import SeriesGroupBy
 
 
 def group_and_sum_dataframe(
@@ -16,11 +14,9 @@ def group_and_sum_dataframe(
         column_to_group_name=column_to_sum_name,
     )
 
-    grouped_dataframe = (
-        group_by_series.agg(
-            {result_column_name: "sum"},
-        ).reset_index()
-    )
+    grouped_dataframe = group_by_series.agg(
+        {result_column_name: "sum"},
+    ).reset_index()
 
     return grouped_dataframe
 

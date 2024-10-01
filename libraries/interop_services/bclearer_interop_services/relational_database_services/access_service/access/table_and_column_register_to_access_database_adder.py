@@ -1,16 +1,8 @@
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
-
 from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import (
     export_table_as_dictionary_to_csv,
 )
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.relational_database_services.access_service import (
     get_access_database_connection,
 )
@@ -23,6 +15,7 @@ from bclearer_interop_services.relational_database_services.access_service.colum
 from bclearer_interop_services.relational_database_services.access_service.table_names_from_access_database_getter import (
     get_table_names_from_access_database,
 )
+from nf_common.code.services.reporting_service.reporters.log_file import LogFiles
 
 
 # TODO: OXi - Still to be reviewed
@@ -33,9 +26,7 @@ def add_table_and_column_register_to_access_database(
         target_database_file=target_database_file,
     )
 
-    table_and_column_register_dictionary = (
-        dict()
-    )
+    table_and_column_register_dictionary = dict()
 
     for (
         table_index,
@@ -46,9 +37,7 @@ def add_table_and_column_register_to_access_database(
             table_name=table_name,
         )
 
-        table_and_column_register_dictionary[
-            table_name
-        ] = current_table_column_names
+        table_and_column_register_dictionary[table_name] = current_table_column_names
 
     table_as_dictionary = dict()
 
@@ -57,24 +46,16 @@ def add_table_and_column_register_to_access_database(
     for (
         table_name,
         column_names,
-    ) in (
-        table_and_column_register_dictionary.items()
-    ):
+    ) in table_and_column_register_dictionary.items():
         for column_name in column_names:
-            table_as_dictionary[
-                table_as_dictionary_index
-            ] = {
+            table_as_dictionary[table_as_dictionary_index] = {
                 "table_names": table_name,
                 "column_names": column_name,
             }
 
-            table_as_dictionary_index += (
-                1
-            )
+            table_as_dictionary_index += 1
 
-    output_csv_file_name = (
-        "table_register"
-    )
+    output_csv_file_name = "table_register"
 
     output_csv_folder = Folders(
         absolute_path_string=target_database_file.parent_absolute_path_string,
@@ -96,7 +77,6 @@ def add_table_and_column_register_to_access_database(
 
     load_database_with_table(
         db_connection=database_connection,
-        table_name=output_csv_file_name
-        + ".csv",
+        table_name=output_csv_file_name + ".csv",
         csv_folder=output_csv_folder,
     )

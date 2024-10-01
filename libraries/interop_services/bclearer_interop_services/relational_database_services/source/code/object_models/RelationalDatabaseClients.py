@@ -3,7 +3,8 @@ import pyodbc
 
 class RelationalDatabaseClient:
     def __init__(
-        self, connection_string,
+        self,
+        connection_string,
     ):
         self.conn = pyodbc.connect(
             connection_string,
@@ -14,7 +15,6 @@ class RelationalDatabaseClient:
         self,
         query_string,
     ):
-
         self.cursor.execute(
             query_string,
         )
@@ -24,5 +24,4 @@ class RelationalDatabaseClient:
         return rows
 
         def close(self):
-
             self.conn.close()

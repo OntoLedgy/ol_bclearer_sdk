@@ -1,28 +1,7 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
 from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
     BclearerMatchedEaObjects,
 )
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
 from bclearer_core.substages.operations.common.connector_adder import (
     add_new_connector_to_dictionary,
 )
@@ -42,6 +21,22 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
 )
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
 
 
 @run_and_log_function
@@ -49,18 +44,14 @@ def annotate_names_and_instances(
     nf_ea_com_universe: NfEaComUniverses,
     matched_name_instance_type: MatchedEaObjects,
 ):
-    new_ea_objects_dictionary = (
-        create_new_ea_objects_dictionary()
-    )
+    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
 
     name_instance_instances = get_instances_nf_uuids_of_matched_type(
         nf_ea_com_universe=nf_ea_com_universe,
         matched_type=matched_name_instance_type,
     )
 
-    for (
-        name_instance_instance_nf_uuid
-    ) in name_instance_instances:
+    for name_instance_instance_nf_uuid in name_instance_instances:
         __annotate_naming_space_instances(
             nf_ea_com_universe=nf_ea_com_universe,
             name_instance_instance_nf_uuid=name_instance_instance_nf_uuid,
@@ -117,14 +108,10 @@ def __add_stereotype_usages(
         ea_guid=BclearerMatchedEaObjects.NAME_TYPES_INSTANCES_STEREOTYPE.ea_guid,
     )
 
-    ea_connectors = (
-        nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
-    )
+    ea_connectors = nf_ea_com_universe.nf_ea_com_registry.get_ea_connectors()
 
     ea_associations = ea_connectors[
-        ea_connectors[
-            NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name
-        ]
+        ea_connectors[NfEaComColumnTypes.CONNECTORS_ELEMENT_TYPE_NAME.column_name]
         == EaConnectorTypes.ASSOCIATION.type_name
     ]
 
@@ -135,14 +122,10 @@ def __add_stereotype_usages(
     ]
 
     association_nf_uuids = set(
-        filtered_associations[
-            NfColumnTypes.NF_UUIDS.column_name
-        ],
+        filtered_associations[NfColumnTypes.NF_UUIDS.column_name],
     )
 
-    for (
-        association_nf_uuid
-    ) in association_nf_uuids:
+    for association_nf_uuid in association_nf_uuids:
         add_new_stereotype_usage_to_dictionary(
             new_stereotype_usage_dictionary=new_ea_objects_dictionary[
                 NfEaComCollectionTypes.STEREOTYPE_USAGE

@@ -1,6 +1,4 @@
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
 
 
 class AttributeNameToNameObjectConfigurationObjects:
@@ -8,7 +6,6 @@ class AttributeNameToNameObjectConfigurationObjects:
         self,
         matched_naming_space_instance: MatchedEaObjects,
     ):
-
         self.matched_naming_space_instance = matched_naming_space_instance
 
     def __enter__(self):

@@ -18,11 +18,9 @@ def get_b_eng_folder_alternative_name(
 
     name_list = [folder_base_name]
 
-    b_eng_folder_alternative_name = (
-        __get_alternative_name(
-            name_list=name_list,
-            parent_folder=parent_folder,
-        )
+    b_eng_folder_alternative_name = __get_alternative_name(
+        name_list=name_list,
+        parent_folder=parent_folder,
     )
 
     return b_eng_folder_alternative_name
@@ -34,11 +32,9 @@ def get_b_eng_file_alternative_name(
 ) -> str:
     name_list = [file_name[:-3]]
 
-    b_eng_folder_alternative_name = (
-        __get_alternative_name(
-            name_list=name_list,
-            parent_folder=parent_folder,
-        )
+    b_eng_folder_alternative_name = __get_alternative_name(
+        name_list=name_list,
+        parent_folder=parent_folder,
     )
 
     return b_eng_folder_alternative_name
@@ -48,10 +44,7 @@ def __get_alternative_name(
     name_list: list,
     parent_folder: BEngFolders,
 ) -> str:
-    if (
-        parent_folder.b_eng_folder_type
-        == EnumBEngFolderTypes.WORKSPACE
-    ):
+    if parent_folder.b_eng_folder_type == EnumBEngFolderTypes.WORKSPACE:
         return ""
 
     alternative_name_reverse_list = __get_alternative_name_reverse_list(
@@ -74,16 +67,10 @@ def __get_alternative_name_reverse_list(
     name_list: list,
     parent_folder: BEngFolders,
 ) -> list:
-    if (
-        parent_folder.b_eng_folder_type
-        == EnumBEngFolderTypes.CODE_REPOSITORY
-    ):
+    if parent_folder.b_eng_folder_type == EnumBEngFolderTypes.CODE_REPOSITORY:
         return name_list
 
-    if (
-        parent_folder.b_eng_folder_type
-        == EnumBEngFolderTypes.WORKSPACE
-    ):
+    if parent_folder.b_eng_folder_type == EnumBEngFolderTypes.WORKSPACE:
         return []
 
     name_list.append(

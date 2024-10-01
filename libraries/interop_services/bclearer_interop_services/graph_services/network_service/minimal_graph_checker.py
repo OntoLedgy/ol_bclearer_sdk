@@ -1,14 +1,9 @@
-from networkx import (
-    DiGraph,
-    difference,
-    is_isomorphic,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-
 from bclearer_interop_services.graph_services.network_service.graph_transitive_reductor import (
     transitively_reduce_graph,
+)
+from networkx import DiGraph, difference, is_isomorphic
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 
@@ -33,9 +28,7 @@ def is_graph_minimal(
         ).edges(),
     )
 
-    if (
-        not graph_and_reduction_are_isomorphic
-    ):
+    if not graph_and_reduction_are_isomorphic:
         __try_logging_message(
             message="WARNING: GRAPH '"
             + graph_name

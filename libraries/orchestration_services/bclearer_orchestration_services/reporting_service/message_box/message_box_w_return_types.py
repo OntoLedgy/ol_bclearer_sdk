@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class MessageBoxWReturnTypes(Enum):
-
     Ok = 1
     Cancel = 2
     Abort = 3

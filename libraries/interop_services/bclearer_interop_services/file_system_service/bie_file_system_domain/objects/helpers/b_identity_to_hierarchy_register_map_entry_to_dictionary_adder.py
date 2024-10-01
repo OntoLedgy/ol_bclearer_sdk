@@ -7,12 +7,8 @@ from bclearer_interop_services.file_system_service.bie_file_system_domain.object
 from bclearer_interop_services.file_system_service.objects.file_system_objects import (
     FileSystemObjects,
 )
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
     HierarchyFileSystemObjects,
 )
@@ -46,7 +42,8 @@ def add_b_identity_to_hierarchy_register_map_entry_to_dictionary(
         hierarchy_file_system_object,
         HierarchyFolders,
     ) and isinstance(
-        file_system_object, Folders,
+        file_system_object,
+        Folders,
     ):
         b_identity_file_system_object = BIdentityFolders(
             folder=file_system_object,
@@ -62,7 +59,8 @@ def add_b_identity_to_hierarchy_register_map_entry_to_dictionary(
         )
 
     elif isinstance(
-        file_system_object, Files,
+        file_system_object,
+        Files,
     ):
         b_identity_file_system_object = BIdentityFiles(
             file=file_system_object,

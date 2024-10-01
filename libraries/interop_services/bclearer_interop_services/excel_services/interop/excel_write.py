@@ -6,7 +6,6 @@ def save_table_in_excel(
     full_filename: str,
     sheet_name: str,
 ):
-
     writer = python_data_analysis_library.ExcelWriter(
         path=full_filename,
         engine="xlsxwriter",

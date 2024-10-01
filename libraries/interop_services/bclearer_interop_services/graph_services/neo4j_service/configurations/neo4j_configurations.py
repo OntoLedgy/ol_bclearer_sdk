@@ -16,17 +16,9 @@ class Neo4jConfigurations:
         ) as file:
             json_model = json.load(file)
             self.uri = json_model["uri"]
-            self.database_name = (
-                json_model[
-                    "database_name"
-                ]
-            )
-            self.username = json_model[
-                "username"
-            ]
-            self.password = json_model[
-                "password"
-            ]
+            self.database_name = json_model["database_name"]
+            self.username = json_model["username"]
+            self.password = json_model["password"]
 
 
 example_configuration = {

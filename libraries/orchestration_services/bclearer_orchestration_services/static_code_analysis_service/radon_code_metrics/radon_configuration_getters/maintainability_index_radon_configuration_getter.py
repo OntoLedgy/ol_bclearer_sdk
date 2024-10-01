@@ -1,9 +1,7 @@
 from radon import cli
 
 
-def get_maintainability_index_configuration() -> (
-    cli.Config
-):
+def get_maintainability_index_configuration() -> cli.Config:
     configuration = cli.Config(
         min="A",
         max="C",

@@ -4,9 +4,7 @@ import chardet
 def detect(file_name: str):
     file = open(file_name, "rb")
 
-    detector = (
-        chardet.UniversalDetector()
-    )
+    detector = chardet.UniversalDetector()
 
     line = file.readline()
 
@@ -20,13 +18,9 @@ def detect(file_name: str):
 
     detector.close()
 
-    file_encoding = detector.result[
-        "encoding"
-    ]
+    file_encoding = detector.result["encoding"]
 
-    file_encoding_confidence = (
-        detector.result["confidence"]
-    )
+    file_encoding_confidence = detector.result["confidence"]
 
     print(
         "For file "

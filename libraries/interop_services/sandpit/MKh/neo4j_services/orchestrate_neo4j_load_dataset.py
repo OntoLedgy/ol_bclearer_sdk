@@ -12,9 +12,9 @@ from bclearer_interop_services.graph_services.neo4j_service.orchestrators.prepar
 
 
 def orchestrate_neo4j_load_dataset(
-    root_folder, neo4j_connection,
+    root_folder,
+    neo4j_connection,
 ):
-
     load_data_dictionary = generate_load_dataset_from_folder(
         root_folder,
     )
@@ -27,25 +27,19 @@ def orchestrate_neo4j_load_dataset(
     for pair in load_dataset:
         csv_path = pair["data"]
         cypher_path = pair["cypher"]
-        csv_absolute_path = (
-            os.path.join(
-                root_folder,
-                "load_files",
-                csv_path,
-            )
+        csv_absolute_path = os.path.join(
+            root_folder,
+            "load_files",
+            csv_path,
         )
-        cypher_absolute_path = (
-            os.path.join(
-                root_folder,
-                "queries",
-                cypher_path,
-            )
+        cypher_absolute_path = os.path.join(
+            root_folder,
+            "queries",
+            cypher_path,
         )
 
-        load_cypher_query = (
-            read_cypher_query_from_file(
-                cypher_absolute_path,
-            )
+        load_cypher_query = read_cypher_query_from_file(
+            cypher_absolute_path,
         )
 
         print(
@@ -84,17 +78,9 @@ def iterate_structure(structure):
             value,
         ) in structure.items():
             if isinstance(value, dict):
-                if (
-                    "data" in value
-                    and "cypher"
-                    in value
-                ):
-                    csv_path = value[
-                        "data"
-                    ]
-                    cypher_path = value[
-                        "cypher"
-                    ]
+                if "data" in value and "cypher" in value:
+                    csv_path = value["data"]
+                    cypher_path = value["cypher"]
                     result.append(
                         {
                             "data": csv_path,

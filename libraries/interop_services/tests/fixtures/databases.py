@@ -9,7 +9,6 @@ from storage_interop_services_source.code.configuration_managers.configuration_l
 
 @pytest.fixture(scope="module")
 def db_connection_postgresql():
-
     db_type = "postgresql"
     configuration = load_configuration(
         "../../configurations/postgresql_configuration.json",
@@ -17,13 +16,9 @@ def db_connection_postgresql():
     db = DatabaseFactory.get_database(
         db_type,
         host=configuration["host"],
-        database=configuration[
-            "database"
-        ],
+        database=configuration["database"],
         user=configuration["user"],
-        password=configuration[
-            "password"
-        ],
+        password=configuration["password"],
     )
     db.connect()
     yield db

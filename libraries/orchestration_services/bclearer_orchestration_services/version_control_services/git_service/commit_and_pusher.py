@@ -14,9 +14,7 @@ def add_commit_and_push_local_repository(
     log_message(
         message="Adding, Committing and Pushing: "
         + str(
-            repository_folder_path.parts[
-                -1
-            ],
+            repository_folder_path.parts[-1],
         ),
     )
 
@@ -24,14 +22,9 @@ def add_commit_and_push_local_repository(
         str(repository_folder_path),
     )
 
-    active_branch_is_required_branch = (
-        repository.active_branch.name
-        == branch_name
-    )
+    active_branch_is_required_branch = repository.active_branch.name == branch_name
 
-    if (
-        not active_branch_is_required_branch
-    ):
+    if not active_branch_is_required_branch:
         return
 
     __add_all_files_to_stage(
@@ -63,11 +56,7 @@ def __commit_stage(
     repository: git.Repo,
     commit_message: str,
 ):
-    commit_command = (
-        'git commit -am "'
-        + commit_message
-        + '"'
-    )
+    commit_command = 'git commit -am "' + commit_message + '"'
 
     try:
         repository.git.execute(
@@ -76,10 +65,7 @@ def __commit_stage(
 
     except Exception as exception:
         log_message(
-            message="Cannot commit "
-            + str(repository)
-            + " because "
-            + str(exception),
+            message="Cannot commit " + str(repository) + " because " + str(exception),
         )
 
 
@@ -87,13 +73,7 @@ def __push_stage(
     repository: git.Repo,
     branch_name: str,
 ):
-    add_push_command = (
-        "git push -u "
-        + " origin "
-        + " "
-        + branch_name
-        + " "
-    )
+    add_push_command = "git push -u " + " origin " + " " + branch_name + " "
 
     repository.git.execute(
         add_push_command,

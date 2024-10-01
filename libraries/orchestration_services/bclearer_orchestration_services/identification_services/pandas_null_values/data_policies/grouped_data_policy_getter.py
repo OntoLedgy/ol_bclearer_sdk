@@ -7,11 +7,7 @@ def get_grouped_data_policy(
 ) -> DataFrame:
     grouped_dictionaries = list()
 
-    for (
-        column_name
-    ) in (
-        data_policy_counts_as_table.columns
-    ):
+    for column_name in data_policy_counts_as_table.columns:
         __add_grouped_dictionary(
             grouped_dictionaries=grouped_dictionaries,
             data_policy_counts_as_table=data_policy_counts_as_table,
@@ -30,25 +26,14 @@ def __add_grouped_dictionary(
     data_policy_counts_as_table: DataFrame,
     column_name: str,
 ):
-    unique_data_policy_names = (
-        data_policy_counts_as_table[
-            column_name
-        ].unique()
-    )
+    unique_data_policy_names = data_policy_counts_as_table[column_name].unique()
 
-    for (
-        unique_data_policy_name
-    ) in unique_data_policy_names:
+    for unique_data_policy_name in unique_data_policy_names:
         count = len(
             list(
                 data_policy_counts_as_table[
-                    data_policy_counts_as_table[
-                        column_name
-                    ]
-                    == unique_data_policy_name
-                ][
-                    column_name
-                ],
+                    data_policy_counts_as_table[column_name] == unique_data_policy_name
+                ][column_name],
             ),
         )
 

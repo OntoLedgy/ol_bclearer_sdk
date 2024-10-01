@@ -30,14 +30,12 @@ def replace_string_in_file(
         return
 
     log_message(
-        "count: "
-        + str(find_count)
-        + " in file: "
-        + str(file_path),
+        "count: " + str(find_count) + " in file: " + str(file_path),
     )
 
     file_content = file_content.replace(
-        source_string, target_string,
+        source_string,
+        target_string,
     )
 
     file = open(str(file_path), "w")

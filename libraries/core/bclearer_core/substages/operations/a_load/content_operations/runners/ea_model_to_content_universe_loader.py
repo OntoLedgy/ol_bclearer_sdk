@@ -1,3 +1,6 @@
+from bclearer_core.configurations.load_ea_model_configurations import (
+    LoadEaModelConfigurations,
+)
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -15,10 +18,6 @@ from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_se
 )
 from nf_ea_common_tools_source.b_code.services.session.processes.creators.new_nf_ea_com_universe_using_file_creator import (
     create_new_nf_ea_com_universe_using_file,
-)
-
-from bclearer_core.configurations.load_ea_model_configurations import (
-    LoadEaModelConfigurations,
 )
 
 

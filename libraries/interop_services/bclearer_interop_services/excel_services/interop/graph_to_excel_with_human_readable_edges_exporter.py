@@ -6,9 +6,7 @@ from bclearer_interop_services.dataframe_service.dataframe_mergers import (
 from bclearer_interop_services.excel_services.interop.excel_write import (
     save_table_in_excel,
 )
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.graph_services.network_service.graph_to_nodes_and_edges_tables_converter import (
     convert_graph_to_nodes_and_edges_tables,
 )
@@ -24,32 +22,21 @@ def export_graph_to_excel_with_human_readable_edges(
     edge_source_column_name: str = "bclearer_interop_services",
     edge_target_column_name: str = "target",
 ) -> None:
-    nodes_table, edges_table = (
-        convert_graph_to_nodes_and_edges_tables(
-            graph=graph,
-            node_id_column_name=node_id_column_name,
-        )
+    nodes_table, edges_table = convert_graph_to_nodes_and_edges_tables(
+        graph=graph,
+        node_id_column_name=node_id_column_name,
     )
 
-    graph_full_filename_root = (
-        output_folder.absolute_path_string
-        + os.sep
-        + graph_name
-    )
+    graph_full_filename_root = output_folder.absolute_path_string + os.sep + graph_name
 
     if export_also_nodes_table:
         save_table_in_excel(
             table=nodes_table,
-            full_filename=graph_full_filename_root
-            + "_nodes.xlsx",
-            sheet_name=graph_name[:23]
-            + "_nodes",
+            full_filename=graph_full_filename_root + "_nodes.xlsx",
+            sheet_name=graph_name[:23] + "_nodes",
         )
 
-    source_name_column_name = (
-        "source_"
-        + node_name_column_name
-    )
+    source_name_column_name = "source_" + node_name_column_name
 
     human_readable_edges_table = left_merge_dataframes(
         master_dataframe=edges_table,
@@ -66,10 +53,7 @@ def export_graph_to_excel_with_human_readable_edges(
         },
     )
 
-    target_name_column_name = (
-        "target_"
-        + node_name_column_name
-    )
+    target_name_column_name = "target_" + node_name_column_name
 
     human_readable_edges_table = left_merge_dataframes(
         master_dataframe=human_readable_edges_table,
@@ -88,8 +72,6 @@ def export_graph_to_excel_with_human_readable_edges(
 
     save_table_in_excel(
         table=human_readable_edges_table,
-        full_filename=graph_full_filename_root
-        + "_edges_hr.xlsx",
-        sheet_name=graph_name[:20]
-        + "_edges_hr",
+        full_filename=graph_full_filename_root + "_edges_hr.xlsx",
+        sheet_name=graph_name[:20] + "_edges_hr",
     )

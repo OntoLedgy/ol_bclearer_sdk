@@ -1,23 +1,3 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
-    get_tuple_attribute_value_if_required,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from pandas import DataFrame
-
 from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
     BclearerMatchedEaObjects,
 )
@@ -36,6 +16,23 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
 )
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
+    get_tuple_attribute_value_if_required,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from pandas import DataFrame
 
 
 def separate_instances_and_exemplars(
@@ -46,32 +43,23 @@ def separate_instances_and_exemplars(
     package_nf_uuid: str,
     digitalisation_level_stereotype_nf_uuid: str,
 ):
-    ea_classifiers = (
-        nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
-    )
+    ea_classifiers = nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
 
     name_instance_type_name = ea_classifiers.at[
-        ea_classifiers[
-            NfColumnTypes.NF_UUIDS.column_name
-        ]
+        ea_classifiers[NfColumnTypes.NF_UUIDS.column_name]
         .eq(name_instance_type_nf_uuid)
         .idxmax(),
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name,
     ]
 
-    if (
-        "Instances"
-        in name_instance_type_name
-    ):
+    if "Instances" in name_instance_type_name:
         name_exemplar_type_name = name_instance_type_name.replace(
-            "Instances", "Exemplars",
+            "Instances",
+            "Exemplars",
         )
 
     else:
-        name_exemplar_type_name = (
-            name_instance_type_name
-            + " Exemplars"
-        )
+        name_exemplar_type_name = name_instance_type_name + " Exemplars"
 
     name_exemplar_type_nf_uuid = __create_name_exemplar_type(
         nf_ea_com_universe=nf_ea_com_universe,
@@ -102,9 +90,7 @@ def separate_instances_and_exemplars(
         ea_guid=BclearerMatchedEaObjects.NAME_EXEMPLAR_STEREOTYPE.ea_guid,
     )
 
-    for (
-        ea_attribute_tuple
-    ) in ea_attributes.itertuples():
+    for ea_attribute_tuple in ea_attributes.itertuples():
         __create_name_exemplar(
             new_ea_objects_dictionary=new_ea_objects_dictionary,
             package_nf_uuid=package_nf_uuid,

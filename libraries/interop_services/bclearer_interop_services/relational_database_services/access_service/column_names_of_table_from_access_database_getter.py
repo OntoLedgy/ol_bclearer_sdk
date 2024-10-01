@@ -1,6 +1,4 @@
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
 from bclearer_interop_services.relational_database_services.access_service.access_database_connection_getter import (
     get_access_database_connection,
 )
@@ -15,9 +13,7 @@ def get_column_names_of_table_from_access_database(
         database_full_file_path=database_file.absolute_path_string,
     )
 
-    database_cursor = (
-        database_connection.cursor()
-    )
+    database_cursor = database_connection.cursor()
 
     column_names = [
         row.column_name

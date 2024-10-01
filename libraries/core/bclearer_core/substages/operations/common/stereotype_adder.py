@@ -18,29 +18,14 @@ def add_new_stereotype_usage_to_dictionary(
     client_collection_type: NfEaComCollectionTypes,
     stereotype_nf_uuid: str,
 ) -> None:
-    if (
-        client_collection_type
-        == NfEaComCollectionTypes.EA_CLASSIFIERS
-    ):
-        property_type = (
-            EaPropertyTypes.ELEMENT_PROPERTY.type_name
-        )
+    if client_collection_type == NfEaComCollectionTypes.EA_CLASSIFIERS:
+        property_type = EaPropertyTypes.ELEMENT_PROPERTY.type_name
 
-    elif (
-        client_collection_type
-        == NfEaComCollectionTypes.EA_CONNECTORS
-    ):
-        property_type = (
-            EaPropertyTypes.CONNECTOR_PROPERTY.type_name
-        )
+    elif client_collection_type == NfEaComCollectionTypes.EA_CONNECTORS:
+        property_type = EaPropertyTypes.CONNECTOR_PROPERTY.type_name
 
-    elif (
-        client_collection_type
-        == NfEaComCollectionTypes.EA_ATTRIBUTES
-    ):
-        property_type = (
-            EaPropertyTypes.ATTRIBUTE_PROPERTY.type_name
-        )
+    elif client_collection_type == NfEaComCollectionTypes.EA_ATTRIBUTES:
+        property_type = EaPropertyTypes.ATTRIBUTE_PROPERTY.type_name
 
     else:
         raise NotImplementedError
@@ -51,6 +36,4 @@ def add_new_stereotype_usage_to_dictionary(
         NfEaComColumnTypes.STEREOTYPE_PROPERTY_TYPE.column_name: property_type,
     }
 
-    new_stereotype_usage_dictionary[
-        create_new_uuid()
-    ] = stereotype_usage_row_dictionary
+    new_stereotype_usage_dictionary[create_new_uuid()] = stereotype_usage_row_dictionary

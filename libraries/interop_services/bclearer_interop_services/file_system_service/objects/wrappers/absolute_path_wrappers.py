@@ -6,9 +6,9 @@ from bclearer_interop_services.file_system_service.objects.wrappers.path_wrapper
 class AbsolutePathWrappers(
     PathWrappers,
 ):
-
     def __init__(
-        self, absolute_path_string: str,
+        self,
+        absolute_path_string: str,
     ):
         super().__init__(
             absolute_path_string,
@@ -18,9 +18,7 @@ class AbsolutePathWrappers(
     def absolute_path_string(
         self,
     ) -> str:
-        absolute_path_string = (
-            self.path_string
-        )
+        absolute_path_string = self.path_string
 
         return absolute_path_string
 

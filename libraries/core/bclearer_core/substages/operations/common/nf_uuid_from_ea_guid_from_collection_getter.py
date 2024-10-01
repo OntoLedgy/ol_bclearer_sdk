@@ -1,6 +1,4 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
 from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
@@ -22,9 +20,7 @@ def get_nf_uuid_from_ea_guid_from_collection(
     ]
 
     nf_uuid = collection.at[
-        collection[
-            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
-        ]
+        collection[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name]
         .eq(ea_guid)
         .idxmax(),
         NfColumnTypes.NF_UUIDS.column_name,

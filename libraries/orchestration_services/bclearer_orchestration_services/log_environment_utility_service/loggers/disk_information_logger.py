@@ -43,9 +43,7 @@ def __get_name_values() -> dict:
         DISK_INFORMATION_TOTAL_WRITE: f"{convert_units(disk_io.write_bytes)}",
     }
 
-    partitions = (
-        psutil.disk_partitions()
-    )
+    partitions = psutil.disk_partitions()
 
     for partition in partitions:
         __add_partition_name_values(
@@ -57,27 +55,18 @@ def __get_name_values() -> dict:
 
 
 def __add_partition_name_values(
-    name_values: dict, partition,
+    name_values: dict,
+    partition,
 ) -> dict:
-    mountpoint = (
-        f"{partition.mountpoint}"
-    )
+    mountpoint = f"{partition.mountpoint}"
 
     fstype = f"{partition.fstype}"
 
-    prefix = (
-        "("
-        + mountpoint
-        + " "
-        + fstype
-        + ")"
-    )
+    prefix = "(" + mountpoint + " " + fstype + ")"
 
     try:
-        partition_usage = (
-            psutil.disk_usage(
-                partition.mountpoint,
-            )
+        partition_usage = psutil.disk_usage(
+            partition.mountpoint,
         )
     except PermissionError:
         return name_values
@@ -86,15 +75,9 @@ def __add_partition_name_values(
         prefix
         + " "
         + DISK_INFORMATION_TOTAL_SIZE: f"{convert_units(partition_usage.total)}",
-        prefix
-        + " "
-        + DISK_INFORMATION_USED: f"{convert_units(partition_usage.used)}",
-        prefix
-        + " "
-        + DISK_INFORMATION_FREE: f"{convert_units(partition_usage.free)}",
-        prefix
-        + " "
-        + DISK_INFORMATION_PERCENTAGE: f"{partition_usage.percent}%",
+        prefix + " " + DISK_INFORMATION_USED: f"{convert_units(partition_usage.used)}",
+        prefix + " " + DISK_INFORMATION_FREE: f"{convert_units(partition_usage.free)}",
+        prefix + " " + DISK_INFORMATION_PERCENTAGE: f"{partition_usage.percent}%",
     }
 
     name_values.update(

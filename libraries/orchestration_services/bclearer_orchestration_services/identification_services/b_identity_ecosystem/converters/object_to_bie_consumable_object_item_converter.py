@@ -19,16 +19,11 @@ def convert_object_to_bie_consumable_object_item(
     input_object: object,
     bie_identity_space: BieIdentitySpaces,
 ) -> str:
-    cell_pandas_null_value_type = (
-        get_cell_pandas_null_value_type(
-            cell=input_object,
-        )
+    cell_pandas_null_value_type = get_cell_pandas_null_value_type(
+        cell=input_object,
     )
 
-    if (
-        cell_pandas_null_value_type
-        == PandasNullValueTypes.NOT_SET
-    ):
+    if cell_pandas_null_value_type == PandasNullValueTypes.NOT_SET:
         return convert_non_null_object_to_bie_consumable_object_item(
             input_object=input_object,
             bie_identity_space=bie_identity_space,

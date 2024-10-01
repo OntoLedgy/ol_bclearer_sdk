@@ -5,13 +5,9 @@ class LoadEaModelConfigurations:
         resource_name: str,
         short_name: str,
     ):
-        self.resource_namespace = (
-            resource_namespace
-        )
+        self.resource_namespace = resource_namespace
 
-        self.resource_name = (
-            resource_name
-        )
+        self.resource_name = resource_name
 
         self.short_name = short_name
 

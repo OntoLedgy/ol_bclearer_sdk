@@ -1,8 +1,7 @@
-from neo4j import GraphDatabase
-
 from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_sessions import (
     Neo4jSession,
 )
+from neo4j import GraphDatabase
 
 
 class Neo4jConnections:
@@ -15,24 +14,17 @@ class Neo4jConnections:
         max_connection_pool_size=None,
         external_driver=None,  # New parameter to accept an existing driver
     ):
-
         self.uri = uri
         self.auth = (
             user_name,
             password,
         )
-        self.database_name = (
-            database_name
-        )
-        self.external_driver = (
-            external_driver
-        )
+        self.database_name = database_name
+        self.external_driver = external_driver
 
         # Use the external driver if provided, otherwise create a new one
         if self.external_driver:
-            self.driver = (
-                self.external_driver
-            )
+            self.driver = self.external_driver
         else:
             self.driver = self.get_driver(
                 max_connection_pool_size,
@@ -52,7 +44,8 @@ class Neo4jConnections:
         return self.driver
 
     def get_new_session(
-        self, database_name=None,
+        self,
+        database_name=None,
     ):
         # Use the driver (whether external or created internally)
         if database_name:

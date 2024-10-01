@@ -6,23 +6,15 @@ class BIdentityTypes(Enum):
 
     DATA_ITEM_IDENTITIES = auto()
 
-    DATA_ITEM_IMMUTABLE_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATA_ITEM_IMMUTABLE_STAGE_IDENTITIES = auto()
 
-    DATA_ITEM_B_UNIT_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATA_ITEM_B_UNIT_STAGE_IDENTITIES = auto()
 
     DATASET_IDENTITIES = auto()
 
-    DATASET_IMMUTABLE_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATASET_IMMUTABLE_STAGE_IDENTITIES = auto()
 
-    DATASET_B_UNIT_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATASET_B_UNIT_STAGE_IDENTITIES = auto()
 
     B_UNIT_STAGE_IDENTITIES = auto()
 
@@ -30,22 +22,14 @@ class BIdentityTypes(Enum):
 
     DATA_IDENTITIES = auto()
 
-    DATA_IMMUTABLE_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATA_IMMUTABLE_STAGE_IDENTITIES = auto()
 
-    DATA_B_UNIT_STAGE_IDENTITIES = (
-        auto()
-    )
+    DATA_B_UNIT_STAGE_IDENTITIES = auto()
 
     def __b_identity_type_name(
         self,
     ) -> str:
-        app_type_name = (
-            app_type_to_name_mapping[
-                self
-            ]
-        )
+        app_type_name = app_type_to_name_mapping[self]
 
         return app_type_name
 

@@ -10,7 +10,6 @@ from nf_common.code.services.b_eng_python_refactoring_service.objects.configurat
 
 
 class MoveAndReplaceConfigurations:
-
     def __init__(
         self,
         b_eng_workspace_with_file_system_object_couples_ordered_indexed_list: BEngWorkspaceWithFileSystemObjectCouplesOrderedIndexedLists,
@@ -19,14 +18,16 @@ class MoveAndReplaceConfigurations:
         in_scope_b_eng_project_folder_list: BEngProjectFolderLists,
         commit_message: str,
     ):
-        self.b_eng_workspace_with_file_system_object_couples_ordered_indexed_list = b_eng_workspace_with_file_system_object_couples_ordered_indexed_list
+        self.b_eng_workspace_with_file_system_object_couples_ordered_indexed_list = (
+            b_eng_workspace_with_file_system_object_couples_ordered_indexed_list
+        )
 
         self.branch_name = branch_name
 
-        self.move_and_replace_configuration_flag_set = move_and_replace_configuration_flag_set
+        self.move_and_replace_configuration_flag_set = (
+            move_and_replace_configuration_flag_set
+        )
 
         self.in_scope_b_eng_project_folder_list = in_scope_b_eng_project_folder_list
 
-        self.commit_message = (
-            commit_message
-        )
+        self.commit_message = commit_message

@@ -1,16 +1,3 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
 from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
     DigitalisationLevelStereotypeMatchedEaObjects,
 )
@@ -28,6 +15,16 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 )
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
+)
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
 )
 
 
@@ -48,21 +45,17 @@ def add_default_digitalisation_level_stereotype(
 def __add_streotypes_if_required(
     nf_ea_com_universe: NfEaComUniverses,
 ) -> None:
-    new_ea_objects_dictionary = (
-        create_new_ea_objects_dictionary()
-    )
+    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
 
-    ea_stereotypes = (
-        nf_ea_com_universe.nf_ea_com_registry.get_ea_stereotypes()
-    )
+    ea_stereotypes = nf_ea_com_universe.nf_ea_com_registry.get_ea_stereotypes()
 
     ea_stereotype_ea_guids = set(
-        ea_stereotypes[
-            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
-        ],
+        ea_stereotypes[NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name],
     )
 
-    for digitalisation_level_stereotype_matched_ea_object in DigitalisationLevelStereotypeMatchedEaObjects:
+    for (
+        digitalisation_level_stereotype_matched_ea_object
+    ) in DigitalisationLevelStereotypeMatchedEaObjects:
         __add_stereotype_if_required(
             new_ea_objects_dictionary=new_ea_objects_dictionary,
             digitalisation_level_stereotype_matched_ea_object=digitalisation_level_stereotype_matched_ea_object,
@@ -101,29 +94,23 @@ def __add_stereotype_usage(
     nf_ea_com_universe: NfEaComUniverses,
     default_digitalisation_level_stereotype: DigitalisationLevelStereotypeMatchedEaObjects,
 ) -> None:
-    new_ea_objects_dictionary = (
-        create_new_ea_objects_dictionary()
+    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
+
+    default_digitalisation_level_stereotype_nf_uuid = (
+        get_nf_uuid_from_ea_guid_from_collection(
+            nf_ea_com_universe=nf_ea_com_universe,
+            collection_type=NfEaComCollectionTypes.EA_STEREOTYPES,
+            ea_guid=default_digitalisation_level_stereotype.ea_guid,
+        )
     )
 
-    default_digitalisation_level_stereotype_nf_uuid = get_nf_uuid_from_ea_guid_from_collection(
-        nf_ea_com_universe=nf_ea_com_universe,
-        collection_type=NfEaComCollectionTypes.EA_STEREOTYPES,
-        ea_guid=default_digitalisation_level_stereotype.ea_guid,
-    )
-
-    ea_classifiers = (
-        nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
-    )
+    ea_classifiers = nf_ea_com_universe.nf_ea_com_registry.get_ea_classifiers()
 
     ea_classifier_nf_uuids = set(
-        ea_classifiers[
-            NfColumnTypes.NF_UUIDS.column_name
-        ],
+        ea_classifiers[NfColumnTypes.NF_UUIDS.column_name],
     )
 
-    for (
-        ea_classifier_nf_uuid
-    ) in ea_classifier_nf_uuids:
+    for ea_classifier_nf_uuid in ea_classifier_nf_uuids:
         add_new_stereotype_usage_to_dictionary(
             new_stereotype_usage_dictionary=new_ea_objects_dictionary[
                 NfEaComCollectionTypes.STEREOTYPE_USAGE

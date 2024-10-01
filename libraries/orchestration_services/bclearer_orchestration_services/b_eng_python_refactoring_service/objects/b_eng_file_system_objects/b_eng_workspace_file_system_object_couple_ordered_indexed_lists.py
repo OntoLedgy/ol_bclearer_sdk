@@ -4,13 +4,11 @@ from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file
 
 
 class BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists:
-
     def __init__(
-        self, ordered_indexed_list: dict,
+        self,
+        ordered_indexed_list: dict,
     ):
-        self.__ordered_indexed_list = (
-            ordered_indexed_list
-        )
+        self.__ordered_indexed_list = ordered_indexed_list
 
     def get_ordered_iterator(
         self,
@@ -24,12 +22,9 @@ class BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists:
         return ordered_iterator
 
     def get_path_couple_with_index(
-        self, index: int,
+        self,
+        index: int,
     ) -> BEngWorkspaceFileSystemObjectCouples:
-        path_couple = (
-            self.__ordered_indexed_list[
-                index
-            ]
-        )
+        path_couple = self.__ordered_indexed_list[index]
 
         return path_couple

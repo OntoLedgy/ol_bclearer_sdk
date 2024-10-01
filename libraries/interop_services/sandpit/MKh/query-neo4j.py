@@ -11,11 +11,9 @@ class Neo4jConnection:
         user,
         password,
     ):
-        self._driver = (
-            GraphDatabase.driver(
-                uri,
-                auth=(user, password),
-            )
+        self._driver = GraphDatabase.driver(
+            uri,
+            auth=(user, password),
         )
         self._dbname = dbname
 
@@ -23,7 +21,10 @@ class Neo4jConnection:
         return self
 
     def __exit__(
-        self, exc_type, exc_val, exc_tb,
+        self,
+        exc_type,
+        exc_val,
+        exc_tb,
     ):
         self._driver.close()
 
@@ -43,12 +44,13 @@ def orchestrate_neo4j_cyper_query_execution():
     uri = config["neo4j"]["uri"]
     dbname = config["neo4j"]["dbname"]
     user = config["neo4j"]["user"]
-    password = config["neo4j"][
-        "password"
-    ]
+    password = config["neo4j"]["password"]
 
     with Neo4jConnection(
-        uri, dbname, user, password,
+        uri,
+        dbname,
+        user,
+        password,
     ) as connection:
         while True:
             query = input(
@@ -58,10 +60,8 @@ def orchestrate_neo4j_cyper_query_execution():
             if query == "exit":
                 break
 
-            records = (
-                connection.run_query(
-                    query,
-                )
+            records = connection.run_query(
+                query,
             )
 
             for record in records:

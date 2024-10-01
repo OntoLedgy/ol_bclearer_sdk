@@ -12,14 +12,14 @@ def get_pandas_dataframe_data_policy_report(
     table_configuration,
     table: DataFrame,
 ) -> DataFrame:
-    data_policy_counts_as_table = (
-        pandas.DataFrame()
-    )
+    data_policy_counts_as_table = pandas.DataFrame()
 
-    data_policy_counts_as_table = __get_pandas_dataframe_data_policy_report_hard_crash_wrapper(
-        data_policy_counts_as_table=data_policy_counts_as_table,
-        table_configuration=table_configuration,
-        pandas_dataframe=table,
+    data_policy_counts_as_table = (
+        __get_pandas_dataframe_data_policy_report_hard_crash_wrapper(
+            data_policy_counts_as_table=data_policy_counts_as_table,
+            table_configuration=table_configuration,
+            pandas_dataframe=table,
+        )
     )
 
     return data_policy_counts_as_table
@@ -46,9 +46,7 @@ def __get_pandas_dataframe_data_policy_report_hard_crash_wrapper(
             drop=True,
         )
 
-        return (
-            data_policy_counts_as_table
-        )
+        return data_policy_counts_as_table
 
     except Exception as error:
         log_message(

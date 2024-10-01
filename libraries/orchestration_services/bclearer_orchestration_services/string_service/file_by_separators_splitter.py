@@ -1,9 +1,5 @@
-from bclearer_interop_services.file_system_service import (
-    read_file_content_as_string,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
+from bclearer_interop_services.file_system_service import read_file_content_as_string
+from bclearer_interop_services.file_system_service.objects.files import Files
 from nf_common.code.services.string_service.string_by_separators_splitter import (
     split_string_by_separators,
 )

@@ -9,14 +9,9 @@ def delete_dataframe_from_dataframe_dictionary_in_hdf5_file(
         hdf_store_filename,
     )
 
-    prefixed_dataframe_name = (
-        "/" + dataframe_name
-    )
+    prefixed_dataframe_name = "/" + dataframe_name
 
-    if (
-        prefixed_dataframe_name
-        not in hdf_store.keys()
-    ):
+    if prefixed_dataframe_name not in hdf_store.keys():
         print(
             "No dataframe with name "
             + prefixed_dataframe_name

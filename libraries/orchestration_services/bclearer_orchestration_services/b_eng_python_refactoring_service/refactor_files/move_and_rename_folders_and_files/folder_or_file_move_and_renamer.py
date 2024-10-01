@@ -25,24 +25,18 @@ def move_and_rename_file_or_folder(
     if not check_results:
         return
 
-    source_object = (
-        source_target_b_eng_workspace_file_system_object_couple.place_1_b_eng_workspace_file_system_object
-    )
+    source_object = source_target_b_eng_workspace_file_system_object_couple.place_1_b_eng_workspace_file_system_object
 
-    target_object = (
-        source_target_b_eng_workspace_file_system_object_couple.place_2_b_eng_workspace_file_system_object
-    )
+    target_object = source_target_b_eng_workspace_file_system_object_couple.place_2_b_eng_workspace_file_system_object
 
     log_message("Moving:")
 
     log_message(
-        "\t  from: "
-        + source_object.absolute_path_string,
+        "\t  from: " + source_object.absolute_path_string,
     )
 
     log_message(
-        "\t    to: "
-        + target_object.absolute_path_string,
+        "\t    to: " + target_object.absolute_path_string,
     )
 
     move_file_or_folder_and_create_sub_folders(

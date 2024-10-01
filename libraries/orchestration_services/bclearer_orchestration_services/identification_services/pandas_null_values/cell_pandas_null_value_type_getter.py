@@ -12,16 +12,13 @@ def get_cell_pandas_null_value_type(
 ) -> PandasNullValueTypes:
     try:
         if isinstance(
-            cell, numpy.ndarray,
+            cell,
+            numpy.ndarray,
         ) or isinstance(cell, list):
-            return (
-                PandasNullValueTypes.NOT_SET
-            )
+            return PandasNullValueTypes.NOT_SET
 
-        null_data_policy = (
-            __get_null_data_policy(
-                cell=cell,
-            )
+        null_data_policy = __get_null_data_policy(
+            cell=cell,
         )
         return null_data_policy
 
@@ -29,29 +26,19 @@ def get_cell_pandas_null_value_type(
         log_message(
             message=f"ERROR occurred trying to process a data policy for cell value: {cell!s} - {error!s}",
         )
-        return (
-            PandasNullValueTypes.NOT_SET
-        )
+        return PandasNullValueTypes.NOT_SET
 
 
 def __get_null_data_policy(
     cell,
 ) -> PandasNullValueTypes:
-    for (
-        null_data_policy
-    ) in PandasNullValueTypes:
-        if (
-            null_data_policy
-            is PandasNullValueTypes.NOT_SET
-            or not isinstance(
-                null_data_policy,
-                PandasNullValueTypes,
-            )
+    for null_data_policy in PandasNullValueTypes:
+        if null_data_policy is PandasNullValueTypes.NOT_SET or not isinstance(
+            null_data_policy,
+            PandasNullValueTypes,
         ):
             continue
-        null_data_policy_value_type = (
-            type(null_data_policy.value)
-        )
+        null_data_policy_value_type = type(null_data_policy.value)
         # TODO: Need to check we can capture all the null data policies
         if isinstance(
             cell,
@@ -59,16 +46,11 @@ def __get_null_data_policy(
         ):
             match null_data_policy_value_type.__name__:
                 case "str":
-                    if (
-                        cell.casefold()
-                        == null_data_policy.value
-                    ):
+                    if cell.casefold() == null_data_policy.value:
                         return null_data_policy
 
                 case "NoneType":
-                    return (
-                        null_data_policy
-                    )
+                    return null_data_policy
 
                 case "float":
                     if numpy.isnan(

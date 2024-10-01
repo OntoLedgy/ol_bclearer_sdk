@@ -25,7 +25,8 @@ def create_b_identity_sum_from_strings(
 
 
 def __add_string_to_b_identities(
-    b_identities: list, string: str,
+    b_identities: list,
+    string: str,
 ) -> None:
     if not isinstance(string, str):
         raise TypeError

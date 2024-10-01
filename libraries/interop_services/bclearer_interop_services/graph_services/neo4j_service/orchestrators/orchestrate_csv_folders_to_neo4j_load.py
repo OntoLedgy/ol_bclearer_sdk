@@ -31,7 +31,6 @@ def orchestrate_csv_folders_to_neo4j_load(
     neo4j_loader_configuration_path,
     neo4j_connection,
 ):
-
     neo4j_loader_configuration = Neo4jLoaderConfigurations(
         configuration_file=neo4j_loader_configuration_path,
     )
@@ -64,11 +63,7 @@ def orchestrate_graph_object_load(
     graph_object_load_dataset,
     graph_object_type: GraphObjectTypes,
 ):
-
-    for (
-        pair
-    ) in graph_object_load_dataset:
-
+    for pair in graph_object_load_dataset:
         csv_relative_path = os.path.join(
             LoaderDataFolderNames.DATA,
             pair["data"],
@@ -80,7 +75,8 @@ def orchestrate_graph_object_load(
         )
 
         print(
-            "loading dataset: \n", pair,
+            "loading dataset: \n",
+            pair,
         )
 
         neo4j_loader_configuration.load_data_and_query_configurations(

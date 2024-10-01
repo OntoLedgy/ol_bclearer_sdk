@@ -1,14 +1,8 @@
-from networkx import (
-    DiGraph,
-    simple_cycles,
-)
-
 from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import (
     export_table_as_dictionary_to_csv,
 )
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
+from networkx import DiGraph, simple_cycles
 
 
 def check_directed_graph_cycles(
@@ -38,17 +32,14 @@ def __export_cycle_nodes_list(
     simple_cycles_dictionary = dict()
 
     for cycle_nodes in cycle_nodes_list:
-        simple_cycles_dictionary[
-            str(cycle_nodes)
-        ] = {
+        simple_cycles_dictionary[str(cycle_nodes)] = {
             "cycle_nodes": cycle_nodes,
         }
 
     export_table_as_dictionary_to_csv(
         table_as_dictionary=simple_cycles_dictionary,
         output_folder=output_folder,
-        output_file_base_name=graph_name
-        + "_simple_cycles_report",
+        output_file_base_name=graph_name + "_simple_cycles_report",
     )
 
 

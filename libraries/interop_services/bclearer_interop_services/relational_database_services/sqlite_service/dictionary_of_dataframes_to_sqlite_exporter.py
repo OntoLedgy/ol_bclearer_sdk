@@ -1,18 +1,13 @@
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.relational_database_services.sqlite_service.dataframe_to_sqlite_writer import (
     write_dataframe_to_sqlite,
 )
 from bclearer_interop_services.relational_database_services.sqlite_service.sqlite_database_creator import (
     create_sqlite_database,
+)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 
@@ -52,9 +47,7 @@ def __export_dataframes_to_sqlite_database(
     for (
         table_name,
         dataframe,
-    ) in (
-        dictionary_of_dataframes.items()
-    ):
+    ) in dictionary_of_dataframes.items():
         write_dataframe_to_sqlite(
             dataframe=dataframe,
             table_name=table_name,

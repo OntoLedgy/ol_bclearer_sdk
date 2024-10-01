@@ -11,9 +11,7 @@ from nf_common.code.services.reporting_service.reporters.log_with_datetime impor
 def add_init_files_if_required(
     target_object: BEngWorkspaceFileSystemObjects,
 ):
-    code_folders = (
-        target_object.get_code_folders()
-    )
+    code_folders = target_object.get_code_folders()
 
     for code_folder in code_folders:
         __add_init_file_in_required(
@@ -24,9 +22,7 @@ def add_init_files_if_required(
 def __add_init_file_in_required(
     b_eng_workspace_file_system_object: BEngWorkspaceFileSystemObjects,
 ):
-    if (
-        not b_eng_workspace_file_system_object.exists()
-    ):
+    if not b_eng_workspace_file_system_object.exists():
         return
 
     init_file_path = b_eng_workspace_file_system_object.extend_path(
@@ -44,8 +40,7 @@ def __add_init_file_in_required(
     )
 
     log_message(
-        "\tadding: "
-        + str(init_file_path),
+        "\tadding: " + str(init_file_path),
     )
 
     init_file.close()

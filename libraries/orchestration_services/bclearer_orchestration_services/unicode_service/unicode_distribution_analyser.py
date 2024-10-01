@@ -10,8 +10,10 @@ def run_unicode_point_distribution(
         unicode_code_points=unicode_code_points,
     )
 
-    unicode_point_distribution_dataframe = __convert_unicode_point_distribution_dictionary_to_dataframe(
-        unicode_point_distribution_dictionary=unicode_point_distribution_dictionary,
+    unicode_point_distribution_dataframe = (
+        __convert_unicode_point_distribution_dictionary_to_dataframe(
+            unicode_point_distribution_dictionary=unicode_point_distribution_dictionary,
+        )
     )
 
     unicode_point_distribution_dataframe = __add_human_readable_columns(
@@ -69,75 +71,63 @@ def __convert_unicode_point_distribution_dictionary_to_dataframe(
 def __add_human_readable_columns(
     unicode_point_distribution_dataframe: pandas.DataFrame,
 ) -> pandas.DataFrame:
-    unicode_point_distribution_dataframe[
-        "unicode_characters"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_point_codes"
-    ]
-
-    unicode_point_distribution_dataframe[
-        "unicode_characters"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_characters"
-    ].apply(
-        lambda code: chr(code),
+    unicode_point_distribution_dataframe["unicode_characters"] = (
+        unicode_point_distribution_dataframe["unicode_point_codes"]
     )
 
-    unicode_point_distribution_dataframe[
-        "unicode_point_names"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_point_codes"
-    ]
-
-    unicode_point_distribution_dataframe[
-        "unicode_point_names"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_point_names"
-    ].apply(
-        lambda code: (
-            unicodedata.name(
-                eval(
-                    'u"\\u%04x"' % code,
-                ),
-                "-",
-            )
-            if unicodedata.name(
-                eval(
-                    'u"\\u%04x"' % code,
-                ),
-                "-",
-            )
-            != "-"
-            else ""
-        ),
+    unicode_point_distribution_dataframe["unicode_characters"] = (
+        unicode_point_distribution_dataframe["unicode_characters"].apply(
+            lambda code: chr(code),
+        )
     )
 
-    unicode_point_distribution_dataframe[
-        "unicode_categories"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_point_codes"
-    ]
+    unicode_point_distribution_dataframe["unicode_point_names"] = (
+        unicode_point_distribution_dataframe["unicode_point_codes"]
+    )
 
-    unicode_point_distribution_dataframe[
-        "unicode_categories"
-    ] = unicode_point_distribution_dataframe[
-        "unicode_categories"
-    ].apply(
-        lambda code: (
-            unicodedata.category(
-                eval(
-                    'u"\\u%04x"' % code,
-                ),
-            )
-            if unicodedata.name(
-                eval(
-                    'u"\\u%04x"' % code,
-                ),
-                "-",
-            )
-            != "-"
-            else ""
-        ),
+    unicode_point_distribution_dataframe["unicode_point_names"] = (
+        unicode_point_distribution_dataframe["unicode_point_names"].apply(
+            lambda code: (
+                unicodedata.name(
+                    eval(
+                        'u"\\u%04x"' % code,
+                    ),
+                    "-",
+                )
+                if unicodedata.name(
+                    eval(
+                        'u"\\u%04x"' % code,
+                    ),
+                    "-",
+                )
+                != "-"
+                else ""
+            ),
+        )
+    )
+
+    unicode_point_distribution_dataframe["unicode_categories"] = (
+        unicode_point_distribution_dataframe["unicode_point_codes"]
+    )
+
+    unicode_point_distribution_dataframe["unicode_categories"] = (
+        unicode_point_distribution_dataframe["unicode_categories"].apply(
+            lambda code: (
+                unicodedata.category(
+                    eval(
+                        'u"\\u%04x"' % code,
+                    ),
+                )
+                if unicodedata.name(
+                    eval(
+                        'u"\\u%04x"' % code,
+                    ),
+                    "-",
+                )
+                != "-"
+                else ""
+            ),
+        )
     )
 
     return unicode_point_distribution_dataframe

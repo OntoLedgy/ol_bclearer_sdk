@@ -11,7 +11,8 @@ def get_file_absolute_path(
     ):
         if file_name in files:
             return os.path.join(
-                root, file_name,
+                root,
+                file_name,
             )
 
     return None

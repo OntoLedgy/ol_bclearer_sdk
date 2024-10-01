@@ -26,7 +26,6 @@ def orchestrate_csv_to_neo4j_data_load(
     neo4j_loader_configuration: Neo4jLoaderConfigurations,
     object_type: GraphObjectTypes,
 ):
-
     load_object_information = get_graph_object_load_information(
         csv_file_path=neo4j_loader_configuration.csv_configurations.csv_path,
         query_file_path=neo4j_loader_configuration.cypher_query_path,

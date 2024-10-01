@@ -1,11 +1,7 @@
-RFC_4648_SYMBOL_SET_BASE32_CHARS = (
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
-)
+RFC_4648_SYMBOL_SET_BASE32_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
 
-RFC_4648_SYMBOL_SET_BASE32_ALPHABET = (
-    list(
-        RFC_4648_SYMBOL_SET_BASE32_CHARS,
-    )
+RFC_4648_SYMBOL_SET_BASE32_ALPHABET = list(
+    RFC_4648_SYMBOL_SET_BASE32_CHARS,
 )
 
 
@@ -19,10 +15,10 @@ def convert_int_to_base32(
     )
 
     return "".join(
-        RFC_4648_SYMBOL_SET_BASE32_ALPHABET[
-            int(binary[i : i + 5], 2)
-        ]
+        RFC_4648_SYMBOL_SET_BASE32_ALPHABET[int(binary[i : i + 5], 2)]
         for i in range(
-            0, len(binary), 5,
+            0,
+            len(binary),
+            5,
         )
     )

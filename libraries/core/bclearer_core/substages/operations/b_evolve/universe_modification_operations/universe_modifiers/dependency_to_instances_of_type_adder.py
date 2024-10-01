@@ -1,16 +1,4 @@
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
 from bclearer_core.substages.operations.common.connector_adder import (
     add_new_connector_to_dictionary,
 )
@@ -25,6 +13,15 @@ from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import
 )
 from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
 )
 
 
@@ -44,14 +41,14 @@ def add_dependency_to_instances_of_type(
         ea_guid=matched_target_object.ea_guid,
     )
 
-    classifiers_instances_of_matched_source_objects_type = get_instances_nf_uuids_of_matched_type(
-        nf_ea_com_universe=content_universe,
-        matched_type=matched_source_objects_type,
+    classifiers_instances_of_matched_source_objects_type = (
+        get_instances_nf_uuids_of_matched_type(
+            nf_ea_com_universe=content_universe,
+            matched_type=matched_source_objects_type,
+        )
     )
 
-    new_ea_objects_dictionary = (
-        create_new_ea_objects_dictionary()
-    )
+    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
 
     for (
         instance_of_source_objects_type

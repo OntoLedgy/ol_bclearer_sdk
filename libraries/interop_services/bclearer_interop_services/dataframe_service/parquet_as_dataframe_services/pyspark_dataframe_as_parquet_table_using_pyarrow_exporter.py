@@ -1,12 +1,9 @@
 import os
 
 import pyspark
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_orchestration_services.identification_services.hash_service.hash_creator import (
     create_identity_hash_string,
-)
-
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
 )
 
 
@@ -26,9 +23,7 @@ def export_pyspark_dataframe_as_parquet_table_using_pyarrow(
             output_root_folder.absolute_path_string,
         )
 
-    pandas_dataframe = (
-        pyspark_dataframe.toPandas()
-    )
+    pandas_dataframe = pyspark_dataframe.toPandas()
 
     pandas_dataframe.to_parquet(
         path=output_root_folder.absolute_path_string

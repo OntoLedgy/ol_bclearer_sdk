@@ -1,13 +1,3 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
-    create_empty_nf_ea_universe,
-)
-
 from bclearer_core.common_knowledge.adjustment_operation_types import (
     AdjustmentOperationTypes,
 )
@@ -32,6 +22,15 @@ from bclearer_core.substages.operations.b_evolve.adjustment_operations.remove_at
 from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import (
     UniversesMergeRegisters,
 )
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+    EaToolsSessionManagers,
+)
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
+    create_empty_nf_ea_universe,
+)
 
 
 class AdjustmentOperationsSubstages:
@@ -41,15 +40,13 @@ class AdjustmentOperationsSubstages:
         adjustment_operations_substage_configuration: AdjustmentOperationsSubstageConfigurations,
         content_universe: NfEaComUniverses,
     ):
-        self.ea_tools_session_manager = (
-            ea_tools_session_manager
+        self.ea_tools_session_manager = ea_tools_session_manager
+
+        self.adjustment_operations_substage_configuration = (
+            adjustment_operations_substage_configuration
         )
 
-        self.adjustment_operations_substage_configuration = adjustment_operations_substage_configuration
-
-        self.content_universe = (
-            content_universe
-        )
+        self.content_universe = content_universe
 
     def __enter__(self):
         return self
@@ -63,21 +60,17 @@ class AdjustmentOperationsSubstages:
         pass
 
     def run(self) -> NfEaComUniverses:
-        current_content_universe = (
-            self.content_universe
-        )
+        current_content_universe = self.content_universe
 
-        for adjustment_operation_configuration in (
-            self.adjustment_operations_substage_configuration.operation_configurations
-        ):
+        for (
+            adjustment_operation_configuration
+        ) in self.adjustment_operations_substage_configuration.operation_configurations:
             current_output_universe = self.__run_operation(
                 content_universe=current_content_universe,
                 adjustment_operation_configuration=adjustment_operation_configuration,
             )
 
-            current_content_universe = (
-                current_output_universe
-            )
+            current_content_universe = current_output_universe
 
         return current_content_universe
 

@@ -1,6 +1,4 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
     HierarchyFileSystemObjects,
 )
@@ -19,13 +17,9 @@ class HierarchyFolders(
             parent_hierarchy_folder=parent_hierarchy_folder,
         )
 
-        self.child_hierarchy_file_system_objects = (
-            set()
-        )
+        self.child_hierarchy_file_system_objects = set()
 
-        self.hierarchy_folder_immutable_stage_hash_sum = (
-            0
-        )
+        self.hierarchy_folder_immutable_stage_hash_sum = 0
 
     # TODO: To be deprecated? - Is not being used
     # def add_child_hierarchy_file_system_object(

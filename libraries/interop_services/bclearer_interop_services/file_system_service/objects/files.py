@@ -7,7 +7,6 @@ from bclearer_interop_services.file_system_service.objects.file_system_objects i
 
 
 class Files(FileSystemObjects):
-
     def __init__(
         self,
         absolute_path_string: str,
@@ -17,11 +16,9 @@ class Files(FileSystemObjects):
             Folders,
         )
 
-        if (
-            parent_folder
-            and not isinstance(
-                parent_folder, Folders,
-            )
+        if parent_folder and not isinstance(
+            parent_folder,
+            Folders,
         ):
             raise TypeError
 
@@ -38,14 +35,13 @@ class Files(FileSystemObjects):
         )
 
     def __add_to_parent(
-        self, parent_folder: "Folders",
+        self,
+        parent_folder: "Folders",
     ):
         if parent_folder is None:
             return
 
-        self.parent_folder = (
-            parent_folder
-        )
+        self.parent_folder = parent_folder
 
         parent_folder.add_to_child_files(
             self,

@@ -4,9 +4,7 @@ def get_table_as_dictionary_unique_values_of_column(
 ) -> list:
     unique_values = list()
 
-    for (
-        row_dictionary
-    ) in table_as_dictionary.values():
+    for row_dictionary in table_as_dictionary.values():
         __add_column_value_to_list_if_unique(
             unique_values=unique_values,
             row_dictionary=row_dictionary,
@@ -21,14 +19,9 @@ def __add_column_value_to_list_if_unique(
     row_dictionary: dict,
     column_name: str,
 ) -> None:
-    current_column_value = (
-        row_dictionary[column_name]
-    )
+    current_column_value = row_dictionary[column_name]
 
-    if (
-        current_column_value
-        not in unique_values
-    ):
+    if current_column_value not in unique_values:
         unique_values.append(
             current_column_value,
         )

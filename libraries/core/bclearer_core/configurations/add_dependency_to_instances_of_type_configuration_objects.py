@@ -1,6 +1,4 @@
-from bclearer_core.common_knowledge.matched_objects import (
-    MatchedEaObjects,
-)
+from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
 from bclearer_core.configurations.universe_modification_configuration_objects import (
     UniverseModificationConfigurationObjects,
 )
@@ -16,13 +14,9 @@ class AddDependencyToInstancesOfTypeConfigurationObjects(
     ):
         super().__init__()
 
-        self.matched_target_type = (
-            matched_target_type
-        )
+        self.matched_target_type = matched_target_type
 
-        self.matched_source_objects_type = (
-            matched_source_objects_type
-        )
+        self.matched_source_objects_type = matched_source_objects_type
 
     def get_matched_target_type(
         self,

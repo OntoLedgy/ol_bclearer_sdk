@@ -1,9 +1,13 @@
 import importlib
 from pathlib import Path
 
-from nf_common_source.code.services.file_system_service.objects.files import (
-    Files,
+from bclearer_core.configurations.load_hdf5_model_configurations import (
+    LoadHdf5ModelConfigurations,
 )
+from bclearer_core.substages.operations.a_load.content_operations.digitalisation_levels.default_digitalisation_level_stereotype_adder import (
+    add_default_digitalisation_level_stereotype,
+)
+from nf_common_source.code.services.file_system_service.objects.files import Files
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
@@ -18,13 +22,6 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.model_loader.hdf5_l
 )
 from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
-)
-
-from bclearer_core.configurations.load_hdf5_model_configurations import (
-    LoadHdf5ModelConfigurations,
-)
-from bclearer_core.substages.operations.a_load.content_operations.digitalisation_levels.default_digitalisation_level_stereotype_adder import (
-    add_default_digitalisation_level_stereotype,
 )
 
 
@@ -50,9 +47,7 @@ def load_hdf5_model_to_content_universe(
         short_name=load_hdf5_model_configuration.universe_short_name,
     )
 
-    if (
-        load_hdf5_model_configuration.default_digitalisation_level_stereotype
-    ):
+    if load_hdf5_model_configuration.default_digitalisation_level_stereotype:
         add_default_digitalisation_level_stereotype(
             nf_ea_com_universe=output_universe,
             default_digitalisation_level_stereotype=load_hdf5_model_configuration.default_digitalisation_level_stereotype,
@@ -90,24 +85,18 @@ def __get_hdf5_file(
     resource_namespace: str,
     resource_file_name: str,
 ) -> Files:
-    resource_namespace_module = (
-        importlib.import_module(
-            name=resource_namespace,
-        )
+    resource_namespace_module = importlib.import_module(
+        name=resource_namespace,
     )
 
-    resource_namespace_folder_name = resource_namespace_module.__path__[
-        0
-    ]
+    resource_namespace_folder_name = resource_namespace_module.__path__[0]
 
     resource_folder_path = Path(
         resource_namespace_folder_name,
     )
 
-    hdf5_file_name = (
-        resource_folder_path.joinpath(
-            resource_file_name,
-        )
+    hdf5_file_name = resource_folder_path.joinpath(
+        resource_file_name,
     )
 
     hdf5_file = Files(

@@ -1,10 +1,6 @@
 import pandas
-from bclearer_interop_services.delimited_text import (
-    write_dataframe_to_csv_file,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.delimited_text import write_dataframe_to_csv_file
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_orchestration_services.bclearer_load_service.common.output_folder_creator import (
     create_output_folder,
 )

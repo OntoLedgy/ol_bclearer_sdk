@@ -1,6 +1,4 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 
 
 class StaticCodeAnalysisCommonConfigurations:
@@ -11,16 +9,12 @@ class StaticCodeAnalysisCommonConfigurations:
         output_database_name: str,
         output_folder: Folders,
     ):
-        self.input_file_system_objects = (
-            input_file_system_objects
+        self.input_file_system_objects = input_file_system_objects
+
+        self.database_template_folder_relative_path = (
+            database_template_folder_relative_path
         )
 
-        self.database_template_folder_relative_path = database_template_folder_relative_path
+        self.output_database_name = output_database_name
 
-        self.output_database_name = (
-            output_database_name
-        )
-
-        self.output_folder = (
-            output_folder
-        )
+        self.output_folder = output_folder

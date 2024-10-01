@@ -1,12 +1,8 @@
 import glob
 import os.path
 
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 
 
 def get_all_files_of_extension_from_folder(
@@ -16,11 +12,7 @@ def get_all_files_of_extension_from_folder(
 ) -> list:
     list_of_files_of_extension = list()
 
-    recursive_globs_pattern = (
-        "/**/*"
-        if looks_into_subfolders
-        else "/*"
-    )
+    recursive_globs_pattern = "/**/*" if looks_into_subfolders else "/*"
 
     file_system_object_paths = glob.glob(
         pathname=folder.absolute_path_string
@@ -29,9 +21,7 @@ def get_all_files_of_extension_from_folder(
         recursive=True,
     )
 
-    for (
-        file_system_object_path
-    ) in file_system_object_paths:
+    for file_system_object_path in file_system_object_paths:
         list_of_files_of_extension = __add_file_of_specific_extension(
             file_system_object_path=file_system_object_path,
             dot_extension_string=dot_extension_string,
@@ -49,9 +39,7 @@ def __add_file_of_specific_extension(
     if not file_system_object_path.endswith(
         dot_extension_string,
     ):
-        return (
-            list_of_files_of_extension
-        )
+        return list_of_files_of_extension
 
     if not os.path.isdir(
         file_system_object_path,

@@ -19,6 +19,4 @@ def __add_static_column_value_to_row(
     column_name: str,
     static_string_value,
 ) -> None:
-    row_as_dictionary[column_name] = (
-        static_string_value
-    )
+    row_as_dictionary[column_name] = static_string_value

@@ -10,17 +10,12 @@ from bclearer_orchestration_services.reporting_service.reporters.nf_kafka_produc
 
 
 def log_message(message: str):
-    date_stamped_message = (
-        now_time_as_string()
-        + ": "
-        + message
-    )
+    date_stamped_message = now_time_as_string() + ": " + message
 
     print(date_stamped_message)
 
     LogFiles.write_to_log_file(
-        message=date_stamped_message
-        + "\n",
+        message=date_stamped_message + "\n",
     )
 
     NfKafkaProducers.log_to_kafka_producer(

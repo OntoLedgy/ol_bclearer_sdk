@@ -48,16 +48,12 @@ def __convert_dictionary_to_keyed_on_name_string(
     analysis_dataframes_dictionary: dict,
     enum_code_analysis_types_to_table_names_mapping: dict,
 ) -> dict:
-    dataframes_dictionary_keyed_on_name_string = (
-        {}
-    )
+    dataframes_dictionary_keyed_on_name_string = {}
 
     for (
         code_analysis_type,
         dataframe,
-    ) in (
-        analysis_dataframes_dictionary.items()
-    ):
+    ) in analysis_dataframes_dictionary.items():
         __add_dataframe_to_dictionary(
             dataframes_dictionary_keyed_on_name_string=dataframes_dictionary_keyed_on_name_string,
             enum_code_analysis_types_to_table_names_mapping=enum_code_analysis_types_to_table_names_mapping,
@@ -74,10 +70,6 @@ def __add_dataframe_to_dictionary(
     code_analysis_type: EnumCodeAnalysisTypes,
     dataframe: pandas.DataFrame,
 ):
-    dataframe_name = enum_code_analysis_types_to_table_names_mapping[
-        code_analysis_type
-    ]
+    dataframe_name = enum_code_analysis_types_to_table_names_mapping[code_analysis_type]
 
-    dataframes_dictionary_keyed_on_name_string[
-        dataframe_name
-    ] = dataframe
+    dataframes_dictionary_keyed_on_name_string[dataframe_name] = dataframe

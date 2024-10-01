@@ -1,6 +1,4 @@
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from bclearer_orchestration_services.b_app_runner_service.logging.output_folder_and_logger_set_upper import (
     set_up_output_folder_and_logger,
 )
@@ -51,19 +49,13 @@ def __log_initial_logs(
     log_timing_header()
 
     match environment_log_level_type:
-        case (
-            EnvironmentLogLevelTypes.FILTERED,
-        ):
+        case (EnvironmentLogLevelTypes.FILTERED,):
             log_filtered_environment()
 
-        case (
-            EnvironmentLogLevelTypes.FULL,
-        ):
+        case (EnvironmentLogLevelTypes.FULL,):
             log_full_environment()
 
-        case (
-            EnvironmentLogLevelTypes.NONE,
-        ):
+        case (EnvironmentLogLevelTypes.NONE,):
             pass
 
         case _:

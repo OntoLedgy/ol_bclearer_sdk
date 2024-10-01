@@ -14,13 +14,9 @@ def collect_structure_and_content(
 ) -> list:
     workspace_root_folders = []
 
-    b_eng_python_reference_dictionary = (
-        BEngPythonReferenceDictionaries()
-    )
+    b_eng_python_reference_dictionary = BEngPythonReferenceDictionaries()
 
-    for (
-        workspace_path
-    ) in workspace_paths:
+    for workspace_path in workspace_paths:
         workspace_root_folders.append(
             collect_structure(
                 workspace_path=workspace_path,

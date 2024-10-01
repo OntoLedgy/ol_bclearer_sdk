@@ -1,9 +1,6 @@
+from bclearer_interop_services.file_system_service.objects.folders import Folders
 from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
 )
 
 
@@ -12,9 +9,7 @@ def load_database_with_table(
     table_name: str,
     csv_folder: Folders,
 ):
-    full_csv_path = (
-        csv_folder.absolute_path_string
-    )
+    full_csv_path = csv_folder.absolute_path_string
 
     sql_query = (
         "SELECT * INTO "

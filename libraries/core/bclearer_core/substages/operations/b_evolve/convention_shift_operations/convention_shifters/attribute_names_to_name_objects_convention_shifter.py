@@ -1,26 +1,3 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
-    get_tuple_attribute_value_if_required,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from pandas import DataFrame
-
 from bclearer_core.common_knowledge.bclearer_constants import (
     NAME_INSTANCE_ATTRIBUTE_NAME,
 )
@@ -51,6 +28,26 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
 )
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
+    get_tuple_attribute_value_if_required,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from pandas import DataFrame
 
 
 def shift_convention_attribute_names_to_name_objects(
@@ -85,9 +82,7 @@ def shift_convention_attribute_names_to_name_objects(
         ].isin(
             naming_space_instances_ea_guids,
         )
-    ][
-        NfColumnTypes.NF_UUIDS.column_name
-    ]
+    ][NfColumnTypes.NF_UUIDS.column_name]
 
     output_universe_name_attributes = output_universe_ea_attributes[
         output_universe_ea_attributes[
@@ -109,23 +104,15 @@ def shift_convention_attribute_names_to_name_objects(
         ea_guid=BclearerMatchedEaObjects.CHARACTER_STRINGS.ea_guid,
     )
 
-    new_ea_objects_dictionary = (
-        create_new_ea_objects_dictionary()
-    )
+    new_ea_objects_dictionary = create_new_ea_objects_dictionary()
 
     output_universe_ea_classifiers = (
         output_universe.nf_ea_com_registry.get_ea_classifiers()
     )
 
-    output_universe_ea_packages = (
-        output_universe.nf_ea_com_registry.get_ea_packages()
-    )
+    output_universe_ea_packages = output_universe.nf_ea_com_registry.get_ea_packages()
 
-    for (
-        name_attribute_tuple
-    ) in (
-        output_universe_name_attributes.itertuples()
-    ):
+    for name_attribute_tuple in output_universe_name_attributes.itertuples():
         __convert_name_attribute_into_name_object(
             output_universe=output_universe,
             output_universe_ea_classifiers=output_universe_ea_classifiers,
@@ -153,11 +140,9 @@ def __update_collection_with_dictionary(
     dictionary: dict,
     collection_type: NfEaComCollectionTypes,
 ) -> None:
-    new_collection = (
-        DataFrame.from_dict(
-            data=dictionary,
-            orient="index",
-        )
+    new_collection = DataFrame.from_dict(
+        data=dictionary,
+        orient="index",
     )
 
     output_universe.nf_ea_com_registry.update(
@@ -181,15 +166,9 @@ def __convert_name_attribute_into_name_object(
     )
 
     attributed_object_package_nf_uuid = output_universe_ea_classifiers[
-        output_universe_ea_classifiers[
-            NfColumnTypes.NF_UUIDS.column_name
-        ]
+        output_universe_ea_classifiers[NfColumnTypes.NF_UUIDS.column_name]
         == attributed_object_nf_uuid
-    ][
-        NfEaComColumnTypes.PACKAGEABLE_OBJECTS_PARENT_EA_ELEMENT.column_name
-    ].values[
-        0
-    ]
+    ][NfEaComColumnTypes.PACKAGEABLE_OBJECTS_PARENT_EA_ELEMENT.column_name].values[0]
 
     name_type_nf_uuid = get_tuple_attribute_value_if_required(
         owning_tuple=name_attribute_tuple,
@@ -206,11 +185,7 @@ def __convert_name_attribute_into_name_object(
         attribute_name=NfEaComColumnTypes.ELEMENT_COMPONENTS_TYPE.column_name,
     )
 
-    name_object_name = (
-        name_attribute_name
-        + " "
-        + name_attribute_type[:-1]
-    )
+    name_object_name = name_attribute_name + " " + name_attribute_type[:-1]
 
     name_object_nf_uuid = __create_name_object(
         output_universe_ea_packages=output_universe_ea_packages,
@@ -299,15 +274,10 @@ def __remove_attribute(
     nf_ea_com_universe: NfEaComUniverses,
     attribute_nf_uuid: str,
 ):
-    ea_attributes = (
-        nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
-    )
+    ea_attributes = nf_ea_com_universe.nf_ea_com_registry.get_ea_attributes()
 
     updated_ea_attributes = ea_attributes[
-        ea_attributes[
-            NfColumnTypes.NF_UUIDS.column_name
-        ]
-        != attribute_nf_uuid
+        ea_attributes[NfColumnTypes.NF_UUIDS.column_name] != attribute_nf_uuid
     ]
 
     nf_ea_com_universe.nf_ea_com_registry.replace_collection(

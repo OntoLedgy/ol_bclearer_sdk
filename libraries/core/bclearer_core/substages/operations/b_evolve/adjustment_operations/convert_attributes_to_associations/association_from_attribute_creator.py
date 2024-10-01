@@ -1,9 +1,8 @@
-from nf_common_source.code.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
+from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
+    create_ea_guid_from_nf_uuid,
 )
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
+from nf_common_source.code.constants.standard_constants import DEFAULT_NULL_VALUE
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
@@ -20,10 +19,6 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledg
     NfEaComColumnTypes,
 )
 
-from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
-    create_ea_guid_from_nf_uuid,
-)
-
 
 def create_association_from_attribute(
     attribute_to_convert_tuple: tuple,
@@ -31,14 +26,10 @@ def create_association_from_attribute(
     type_nf_uuid: str,
     attribute_name: str = DEFAULT_NULL_VALUE,
 ) -> dict:
-    association_nf_uuid = (
-        create_new_uuid()
-    )
+    association_nf_uuid = create_new_uuid()
 
-    association_ea_guid = (
-        create_ea_guid_from_nf_uuid(
-            nf_uuid=association_nf_uuid,
-        )
+    association_ea_guid = create_ea_guid_from_nf_uuid(
+        nf_uuid=association_nf_uuid,
     )
 
     association_owner_nf_uuid = get_tuple_attribute_value_if_required(
@@ -46,26 +37,15 @@ def create_association_from_attribute(
         attribute_name=NfEaComColumnTypes.ELEMENT_COMPONENTS_CONTAINING_EA_CLASSIFIER.column_name,
     )
 
-    if (
-        direction
-        == EaAssociationDirectionTypes.FORWARD
-    ):
-        association_client_nf_uuid = (
-            type_nf_uuid
-        )
+    if direction == EaAssociationDirectionTypes.FORWARD:
+        association_client_nf_uuid = type_nf_uuid
 
-        association_supplier_nf_uuid = (
-            association_owner_nf_uuid
-        )
+        association_supplier_nf_uuid = association_owner_nf_uuid
 
     else:
-        association_client_nf_uuid = (
-            association_owner_nf_uuid
-        )
+        association_client_nf_uuid = association_owner_nf_uuid
 
-        association_supplier_nf_uuid = (
-            type_nf_uuid
-        )
+        association_supplier_nf_uuid = type_nf_uuid
 
     association_client_cardinality = __get_connector_client_cardinality(
         attribute_to_convert_tuple=attribute_to_convert_tuple,
@@ -102,19 +82,12 @@ def __get_connector_client_cardinality(
         attribute_name=NfEaComColumnTypes.ATTRIBUTES_UPPER_BOUNDS.column_name,
     )
 
-    if (
-        attribute_lower_bound
-        != attribute_upper_bound
-    ):
+    if attribute_lower_bound != attribute_upper_bound:
         connector_client_cardinality = (
-            attribute_lower_bound
-            + ".."
-            + attribute_upper_bound
+            attribute_lower_bound + ".." + attribute_upper_bound
         )
 
     else:
-        connector_client_cardinality = (
-            attribute_lower_bound
-        )
+        connector_client_cardinality = attribute_lower_bound
 
     return connector_client_cardinality

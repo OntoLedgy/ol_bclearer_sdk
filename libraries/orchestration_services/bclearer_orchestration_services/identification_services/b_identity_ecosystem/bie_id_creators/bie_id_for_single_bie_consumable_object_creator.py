@@ -17,7 +17,8 @@ def create_bie_id_for_single_bie_consumable_object(
     bie_identity_space: BieIdentitySpaces = BieIdentitySpaces(),
 ) -> BieIds:
     if not isinstance(
-        bie_consumable_object_item, str,
+        bie_consumable_object_item,
+        str,
     ):
         raise TypeError
 

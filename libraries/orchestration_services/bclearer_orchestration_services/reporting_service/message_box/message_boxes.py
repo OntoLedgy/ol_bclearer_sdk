@@ -14,7 +14,10 @@ def message_box_dialog(
     style: MessageBoxStyleTypes,
 ):
     return_value = ctypes.windll.user32.MessageBoxW(
-        0, text, title, style.value,
+        0,
+        text,
+        title,
+        style.value,
     )
 
     return MessageBoxWReturnTypes(

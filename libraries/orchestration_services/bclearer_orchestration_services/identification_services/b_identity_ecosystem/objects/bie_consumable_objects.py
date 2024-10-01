@@ -11,16 +11,13 @@ class BieConsumableObjects:
         self,
         bie_identity_space: BieIdentitySpaces,
     ):
-        self.bie_consumable_object_list = (
-            list()
-        )
+        self.bie_consumable_object_list = list()
 
-        self.bie_identity_space = (
-            bie_identity_space
-        )
+        self.bie_identity_space = bie_identity_space
 
     def add_to_bie_consumable_object(
-        self, input_object: object,
+        self,
+        input_object: object,
     ) -> None:
         bie_consumable_object_item = convert_object_to_bie_consumable_object_item(
             input_object=input_object,

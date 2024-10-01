@@ -17,14 +17,10 @@ class BieIdentitySpaces:
         data_type_recognition: DataTypeRecognition = DataTypeRecognition.DO_NOT_INCLUDE_DATA_TYPES_IN_BIE_CALCULATION,
         digest_size: int = 8,
     ):
-        self.null_type_recognition = (
-            null_type_recognition
-        )
+        self.null_type_recognition = null_type_recognition
 
         self.string_based_null_type_recognition = string_based_null_type_recognition
 
         self.digest_size = digest_size
 
-        self.data_type_recognition = (
-            data_type_recognition
-        )
+        self.data_type_recognition = data_type_recognition

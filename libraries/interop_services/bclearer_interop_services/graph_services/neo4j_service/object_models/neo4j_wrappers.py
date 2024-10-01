@@ -10,25 +10,22 @@ class Neo4jWrapper:
         self,
         neo4jconnection: Neo4jConnections,
     ):
-
-        self.driver = (
-            neo4jconnection.driver
-        )
-        self.neo4jconnection = (
-            neo4jconnection
-        )
+        self.driver = neo4jconnection.driver
+        self.neo4jconnection = neo4jconnection
 
     def close(self):
         self.driver.close()
 
     def run_query(
-        self, query, parameters=None,
+        self,
+        query,
+        parameters=None,
     ):
-
         with self.driver.session(
             database=self.neo4jconnection.database_name,
         ) as session:
             result = session.run(
-                query, parameters,
+                query,
+                parameters,
             )
             return result

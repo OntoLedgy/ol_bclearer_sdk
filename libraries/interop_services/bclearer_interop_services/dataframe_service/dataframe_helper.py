@@ -1,22 +1,17 @@
 import uuid
 
 import pandas
-from bclearer_core.constants.nf_common_global_constants import (
-    UUIDS_COLUMN_NAME,
-)
+from bclearer_core.constants.nf_common_global_constants import UUIDS_COLUMN_NAME
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_uuid_from_canonical_format_string,
 )
 
-PARENT_DATAFRAME_SUFFIX = (
-    "_merge_parent"
-)
+PARENT_DATAFRAME_SUFFIX = "_merge_parent"
 
 
 def drop_duplicated_parent_columns(
     dataframe: pandas.DataFrame,
 ):
-
     drop_columns_by_marker(
         dataframe,
         PARENT_DATAFRAME_SUFFIX,
@@ -27,9 +22,7 @@ def drop_columns_by_marker(
     dataframe: pandas.DataFrame,
     drop_marker: str,
 ):
-    for (
-        column
-    ) in dataframe.columns.values:
+    for column in dataframe.columns.values:
         if drop_marker in column:
             dataframe.drop(
                 column,
@@ -46,7 +39,6 @@ def add_fk_uuids(
     fk_uuid_column: str,
     remove_fk_after_uuidification,
 ):
-
     base_dataframe_columns = list(
         base_dataframe.columns,
     )
@@ -71,14 +63,10 @@ def add_fk_uuids(
         fk_uuid_column,
     )
 
-    if (
-        UUIDS_COLUMN_NAME
-        in base_dataframe_columns
-    ):
+    if UUIDS_COLUMN_NAME in base_dataframe_columns:
         merged_dataframe.rename(
             columns={
-                UUIDS_COLUMN_NAME
-                + PARENT_DATAFRAME_SUFFIX: fk_uuid_column,
+                UUIDS_COLUMN_NAME + PARENT_DATAFRAME_SUFFIX: fk_uuid_column,
             },
             inplace=True,
         )
@@ -90,11 +78,10 @@ def add_fk_uuids(
             inplace=True,
         )
 
-    fk_uuidified_dataframe = (
-        merged_dataframe.loc[
-            :, base_dataframe_columns,
-        ]
-    )
+    fk_uuidified_dataframe = merged_dataframe.loc[
+        :,
+        base_dataframe_columns,
+    ]
 
     return fk_uuidified_dataframe
 
@@ -105,7 +92,6 @@ def add_parent_table_columns(
     base_column_foreign_keys: list,
     parent_column_keys: list,
 ):
-
     merged_dataframe = base_dataframe.merge(
         right=parent_register_dataframe,
         how="left",
@@ -130,7 +116,6 @@ def add_type_column_to_dataframe(
     col_position,
     default_value: uuid,
 ):
-
     dataframe.insert(
         col_position,
         col_name,
@@ -154,7 +139,8 @@ def move_uuid_col_to_front(
     )
 
     dataframe = dataframe.loc[
-        :, columns,
+        :,
+        columns,
     ]
 
     return dataframe
@@ -167,13 +153,9 @@ def deduplicate(
     stringified_columns = list()
 
     for column in columns:
-        stringified_column = (
-            "stringified_" + column
-        )
+        stringified_column = "stringified_" + column
 
-        dataframe[
-            stringified_column
-        ] = dataframe[column].astype(
+        dataframe[stringified_column] = dataframe[column].astype(
             str,
         )
 
@@ -197,20 +179,15 @@ def stringify_uuid_columns(
     columns: list,
 ):
     for column in columns:
-        dataframe[column] = dataframe[
-            column
-        ].astype(str)
+        dataframe[column] = dataframe[column].astype(str)
 
 
 def unstringify_uuid_columns(
     dataframe: pandas.DataFrame,
     columns: list,
 ):
-
     for column in columns:
-        dataframe[column] = dataframe[
-            column
-        ].apply(
+        dataframe[column] = dataframe[column].apply(
             lambda x: create_uuid_from_canonical_format_string(
                 x,
             ),
@@ -233,8 +210,7 @@ def drop_empty_columns(
     # Step 1: Drop columns with completely empty headers (None or empty string)
     df = df.loc[
         :,
-        df.columns.notna()
-        & (df.columns != ""),
+        df.columns.notna() & (df.columns != ""),
     ]
 
     # Step 2: Drop columns where all values are NaN or None

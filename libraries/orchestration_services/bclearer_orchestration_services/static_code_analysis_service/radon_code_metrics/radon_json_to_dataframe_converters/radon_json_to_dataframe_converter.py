@@ -22,20 +22,24 @@ def convert_radon_json_to_dataframes(
         message="\tConverting cyclomatic complexity results",
     )
 
-    cyclomatic_complexity_radon_dataframe = convert_cyclomatic_complexity_radon_json_to_dataframe(
-        results_as_json=results_as_json[
-            EnumRadonCodeMetricsTypes.CYCLOMATIC_COMPLEXITY
-        ],
+    cyclomatic_complexity_radon_dataframe = (
+        convert_cyclomatic_complexity_radon_json_to_dataframe(
+            results_as_json=results_as_json[
+                EnumRadonCodeMetricsTypes.CYCLOMATIC_COMPLEXITY
+            ],
+        )
     )
 
     log_message(
         message="\tConverting maintainability index results",
     )
 
-    maintainability_index_radon_dataframe = convert_maintainability_index_radon_json_to_dataframe(
-        results_as_json=results_as_json[
-            EnumRadonCodeMetricsTypes.MAINTAINABILITY_INDEX
-        ],
+    maintainability_index_radon_dataframe = (
+        convert_maintainability_index_radon_json_to_dataframe(
+            results_as_json=results_as_json[
+                EnumRadonCodeMetricsTypes.MAINTAINABILITY_INDEX
+            ],
+        )
     )
 
     log_message(
@@ -43,9 +47,7 @@ def convert_radon_json_to_dataframes(
     )
 
     raw_radon_dataframe = convert_raw_radon_json_to_dataframe(
-        results_as_json=results_as_json[
-            EnumRadonCodeMetricsTypes.RAW
-        ],
+        results_as_json=results_as_json[EnumRadonCodeMetricsTypes.RAW],
     )
 
     radon_dataframes = {

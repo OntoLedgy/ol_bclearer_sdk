@@ -1,4 +1,13 @@
 import pandas
+from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
+    AttributeToAssociationOperationSubtypes,
+)
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_direct_foreign_table_association_converter import (
+    convert_attribute_to_direct_foreign_table_association,
+)
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_subtype_foreign_table_association_converter import (
+    convert_attribute_to_subtype_foreign_table_association,
+)
 from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
@@ -9,16 +18,6 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_unive
     NfEaComUniverses,
 )
 from pandas import DataFrame
-
-from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
-    AttributeToAssociationOperationSubtypes,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_direct_foreign_table_association_converter import (
-    convert_attribute_to_direct_foreign_table_association,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_subtype_foreign_table_association_converter import (
-    convert_attribute_to_subtype_foreign_table_association,
-)
 
 
 def convert_attributes(
@@ -66,11 +65,7 @@ def __get_new_objects(
     new_connectors_dictionary = {}
 
     # TODO: Add the cardinality to the connector's data
-    for (
-        attribute_to_convert_tuple
-    ) in (
-        attributes_to_convert.itertuples()
-    ):
+    for attribute_to_convert_tuple in attributes_to_convert.itertuples():
         (
             new_classifiers_dictionary,
             new_connectors_dictionary,
@@ -137,17 +132,11 @@ def __update_nf_ea_com_dictionary(
     ea_object_map: dict,
     nf_ea_collection_type: NfEaComCollectionTypes,
 ):
-    nf_ea_collection = (
-        nf_ea_com_dictionary[
-            nf_ea_collection_type
-        ]
-    )
+    nf_ea_collection = nf_ea_com_dictionary[nf_ea_collection_type]
 
-    converted_nf_ea_collection = (
-        pandas.DataFrame.from_dict(
-            data=ea_object_map,
-            orient="index",
-        )
+    converted_nf_ea_collection = pandas.DataFrame.from_dict(
+        data=ea_object_map,
+        orient="index",
     )
 
     all_ea_objects = pandas.concat(
@@ -159,6 +148,4 @@ def __update_nf_ea_com_dictionary(
         verify_integrity=False,
     )
 
-    nf_ea_com_dictionary[
-        nf_ea_collection_type
-    ] = all_ea_objects
+    nf_ea_com_dictionary[nf_ea_collection_type] = all_ea_objects

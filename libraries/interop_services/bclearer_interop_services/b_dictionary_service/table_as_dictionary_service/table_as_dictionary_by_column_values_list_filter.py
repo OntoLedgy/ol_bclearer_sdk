@@ -9,12 +9,7 @@ def filter_table_as_dictionary_by_column_values_list(
         key,
         row_dictionary,
     ) in table_as_dictionary.items():
-        if (
-            row_dictionary[column_name]
-            in column_values
-        ):
-            filtered_dictionary[key] = (
-                row_dictionary
-            )
+        if row_dictionary[column_name] in column_values:
+            filtered_dictionary[key] = row_dictionary
 
     return filtered_dictionary

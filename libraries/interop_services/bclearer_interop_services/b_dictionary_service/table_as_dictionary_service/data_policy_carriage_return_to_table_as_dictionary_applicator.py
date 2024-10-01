@@ -32,12 +32,9 @@ def __apply_data_policy_carriage_return_to_cell_value(
     row_as_dictionary: dict,
 ) -> None:
     if isinstance(cell_value, str):
-        cleaned_cell = (
-            cell_value.replace(
-                "\r\n", "\n",
-            )
+        cleaned_cell = cell_value.replace(
+            "\r\n",
+            "\n",
         )
 
-        row_as_dictionary[
-            column_name
-        ] = cleaned_cell
+        row_as_dictionary[column_name] = cleaned_cell

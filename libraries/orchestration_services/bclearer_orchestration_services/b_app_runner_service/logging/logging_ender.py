@@ -1,5 +1,8 @@
-from code import LogFiles
+# from code import LogFiles
 
+from bclearer_orchestration_services.reporting_service.reporters.log_file import (
+    LogFiles,
+)
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )

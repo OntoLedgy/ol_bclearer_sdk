@@ -19,11 +19,7 @@ def create_bie_id_from_bie_consumable_object(
 ) -> BieIds:
     bie_ids = list()
 
-    for (
-        bie_consumable_object_item
-    ) in (
-        bie_consumable_object.bie_consumable_object_list
-    ):
+    for bie_consumable_object_item in bie_consumable_object.bie_consumable_object_list:
         __add_bie_consumable_object_to_bie_ids(
             bie_ids=bie_ids,
             bie_consumable_object_item=bie_consumable_object_item,

@@ -37,12 +37,8 @@ def add_b_identity_columns_to_register_in_b_dataset_format(
         hierarchy_file_system_object=hierarchy_file_system_object.parent_hierarchy_folder,
     )
 
-    if (
-        not parent_b_identity_file_system_object
-    ):
-        parent_id_b_identity_file_system_object = (
-            ""
-        )
+    if not parent_b_identity_file_system_object:
+        parent_id_b_identity_file_system_object = ""
 
     else:
         parent_id_b_identity_file_system_object = (
@@ -85,6 +81,6 @@ def add_b_identity_columns_to_register_in_b_dataset_format(
         hierarchy_file_system_object_row_dictionary,
     )
 
-    register_in_b_datasets_format[
-        b_identity_file_system_object.id_b_identity
-    ] = universe_in_b_datasets_format_row_dictionary
+    register_in_b_datasets_format[b_identity_file_system_object.id_b_identity] = (
+        universe_in_b_datasets_format_row_dictionary
+    )

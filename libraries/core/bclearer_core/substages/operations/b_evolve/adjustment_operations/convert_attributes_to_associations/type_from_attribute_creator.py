@@ -1,6 +1,7 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
+from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
+    create_ea_guid_from_nf_uuid,
 )
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
@@ -14,10 +15,6 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledg
     NfEaComColumnTypes,
 )
 
-from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
-    create_ea_guid_from_nf_uuid,
-)
-
 
 def create_type_from_attribute(
     attribute_to_convert_tuple: tuple,
@@ -25,10 +22,8 @@ def create_type_from_attribute(
 ) -> dict:
     new_type_nf_uuid = create_new_uuid()
 
-    new_type_ea_guid = (
-        create_ea_guid_from_nf_uuid(
-            nf_uuid=new_type_nf_uuid,
-        )
+    new_type_ea_guid = create_ea_guid_from_nf_uuid(
+        nf_uuid=new_type_nf_uuid,
     )
 
     new_type_name = get_tuple_attribute_value_if_required(

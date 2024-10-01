@@ -1,6 +1,4 @@
-from storage_interop_services_source.code.constants import (
-    UTF_8_ENCODING_NAME,
-)
+from storage_interop_services_source.code.constants import UTF_8_ENCODING_NAME
 
 
 def convert_bie_consumable_object_to_bie_encoding(
