@@ -100,26 +100,26 @@ ignore = [
     "W291",  #trailing-whitespace*
     "N999",  #invalid-module-name
     "S101",  #assert
-    #"RUF013",  #implicit-optional*
+    "RUF013",  #implicit-optional*
     "B007",  #unused-loop-control-variable*
     "F821",  #undefined-name
     "FBT002",  #boolean-default-value-positional-argument
-    #"FA100",  #future-rewritable-type-annotation
+    "FA100",  #future-rewritable-type-annotation
     "PTH110",  #os-path-exists
     "TRY003",  #raise-vanilla-args
     "BLE001",  #blind-except
     "F403",  #undefined-local-with-import-star
-    #"PERF401",  #manual-list-comprehension
+    "PERF401",  #manual-list-comprehension
     "N816",  #mixed-case-variable-in-global-scope
     "ANN205",  #missing-return-type-static-method
-    #"PERF102",  #incorrect-dict-iterator*
+    "PERF102",  #incorrect-dict-iterator*
     "PTH113",  #os-path-isfile
     "F841",  #unused-variable*
     "EM102",  #f-string-in-exception*
     "SIM118",  #in-dict-keys*
     "C901",  #complex-structure
     "PD901",  #pandas-df-variable-name
-    #"TD004",  #missing-todo-colon
+    "TD004",  #missing-todo-colon
     "E712",  #true-false-comparison*
     "SIM115",  #open-file-with-context-handler
     "ARG002",  #unused-method-argument
@@ -137,9 +137,9 @@ ignore = [
     "A002",  #builtin-argument-shadowing
     "G004",  #logging-f-string
     "RET503",  #implicit-return*
-    #"PTH207",  #glob
-    #"PERF403",  #manual-dict-comprehension
-    #"W293",  #blank-line-with-whitespace*
+    "PTH207",  #glob
+    "PERF403",  #manual-dict-comprehension
+    "W293",  #blank-line-with-whitespace*
     "D401",  #non-imperative-mood
     "TRY300",  #try-consider-else
     "S608",  #hardcoded-sql-expression
