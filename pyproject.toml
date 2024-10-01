@@ -226,6 +226,7 @@ ignore = [
     "E402", #Module level import not at top of file
     "A003", #Class attribute `range` is shadowing a python builtin
     "RET505", #Unnecessary `else` after `return` statement
+    "FA102" #future-required-type-annotation
 ]
 
 [tool.black]

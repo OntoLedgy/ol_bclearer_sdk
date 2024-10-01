@@ -56,14 +56,14 @@ jobs:
       run: |
         poetry install
 
+    # Step 4: Run linters and code formatters (ruff)
+    - name: Lint with ruff
+      run: |
+        poetry run ruff check .
+
     - name: Test CI Trigger
       run: echo "triggered successfully checked out"
 
-#    # Step 4: Run linters and code formatters (ruff)
-#    - name: Lint with ruff
-#      run: |
-#        poetry run ruff .
-#
 #    # Step 5: Run tests
 #    - name: Run tests with pytest
 #      run: |

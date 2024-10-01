@@ -225,7 +225,7 @@ def drop_empty_columns(
     Args:
         df (pd.DataFrame): The input DataFrame.
 
-    Returns
+    Returns:
     -------
         pd.DataFrame: A DataFrame with the empty or unnamed columns removed.
 

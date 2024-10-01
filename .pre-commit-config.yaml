@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.245  # Check the latest version on Ruff GitHub page
+    rev: v0.6.8  # Check the latest version on Ruff GitHub page
     hooks:
       - id: ruff
-        args: ["--fix"]
+        #args: ["--fix"]

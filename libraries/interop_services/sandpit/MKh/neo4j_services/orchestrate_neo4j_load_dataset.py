@@ -71,7 +71,7 @@ def iterate_structure(structure):
     Args:
     structure (dict): The input nested dictionary structure
 
-    Returns
+    Returns:
     -------
     list: A list of dictionaries with 'data' and 'cypher' keys.
 
