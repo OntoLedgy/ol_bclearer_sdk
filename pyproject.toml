@@ -152,43 +152,43 @@ ignore = [
     "RUF005",  #collection-literal-concatenation*
     "RUF004",  #Keyword argument must come after starred arguments
     "ANN002",  #missing-type-args
-    #"S307",  #suspicious-eval-usage
+    "S307",  #suspicious-eval-usage
     "B006",  #mutable-argument-default*
     "SIM112",  #uncapitalized-environment-variables
     "E101",  #mixed-spaces-and-tabs
     "UP031",  #printf-string-formatting*
-    #"RUF012",  #mutable-class-default
+    "RUF012",  #mutable-class-default
     "A001",  #builtin-variable-shadowing
     "C416",  #unnecessary-comprehension*
     "ISC003",  #explicit-string-concatenation
     "INP001",  #implicit-namespace-package
     "PTH119",  #os-path-basename
-    #"PTH202",  #os-path-getsize
+    "PTH202",  #os-path-getsize
     "PD008",  #pandas-use-of-dot-at
-    #"PERF203",  #try-except-in-loop
+    "PERF203",  #try-except-in-loop
     "D404",  #docstring-starts-with-this
-    #"PLR1714",  #repeated-equality-comparison*
+    "PLR1714",  #repeated-equality-comparison*
     "ANN206",  #missing-return-type-class-method
-    #"S603",  #subprocess-without-shell-equals-true
-    #"PYI024",  #collections-named-tuple
+    "S603",  #subprocess-without-shell-equals-true
+    "PYI024",  #collections-named-tuple
     "PT009",  #pytest-unittest-assertion*
     "SIM117",  #multiple-with-statements
     "PTH100",  #os-path-abspath
     "PTH107",  #os-remove
     "PTH120",  #os-path-dirname
     "PTH122",  #os-path-splitext
-    #"FLY002",  #static-join-to-f-string*
+    "FLY002",  #static-join-to-f-string*
     "E721",  #type-comparison
     "E722",  #bare-except
     "D200",  #fits-on-one-line*
     "PLR0911",  #too-many-return-statements
-    #"PLW2901",  #redefined-loop-name
-    #"TRY401",  #verbose-log-message
+    "PLW2901",  #redefined-loop-name
+    "TRY401",  #verbose-log-message
     "S105",  #hardcoded-password-string
     "S110",  #try-except-pass
-    #"S320",  #suspicious-xmle-tree-usage
+    "S320",  #suspicious-xmle-tree-usage
     "S324",  #hashlib-insecure-hash-function
-    #"S607",  #start-process-with-partial-path
+    "S607",  #start-process-with-partial-path
     "B026",  #star-arg-unpacking-after-keyword-arg
     "ISC002",  #multi-line-implicit-string-concatenation
     "G003",  #logging-string-concat
@@ -201,20 +201,20 @@ ignore = [
     "PTH101",  #os-chmod
     "PTH104",  #os-rename
     "PTH108",  #os-unlink
-    #"PTH203",  #os-path-getatime
-    #"PTH204",  #os-path-getmtime
-    #"PTH205",  #os-path-getctime
-    #"PTH206",  #os-sep-split
+    "PTH203",  #os-path-getatime
+    "PTH204",  #os-path-getmtime
+    "PTH205",  #os-path-getctime
+    "PTH206",  #os-sep-split
     "N805",  #invalid-first-argument-name-for-method*
     "PD003",  #pandas-use-of-dot-is-null
-    #"PERF402",  #manual-list-copy
+    "PERF402",  #manual-list-copy
     "E711",  #none-comparison*
     "F401",  #unused-import
     "F811",  #redefined-while-unused
-    #"PLE0704",  #misplaced-bare-raise
+    "PLE0704",  #misplaced-bare-raise
     "PLR1722",  #sys-exit-alias*
     "RUF001",  #ambiguous-unicode-character-string
-    #"RUF015",  #unnecessary-iterable-allocation-for-first-element*
+    "RUF015",  #unnecessary-iterable-allocation-for-first-element*
     "TRY002",  #raise-vanilla-class
     "PGH001", #No builtin `eval()` allowed
     "TCH003", # Move standard library import  into a type-checking block
