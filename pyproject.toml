@@ -73,7 +73,7 @@ ignore = [
     "D103",  #undocumented-public-function
     "ANN201",  #missing-return-type-undocumented-public-function
     "RET504",  #unnecessary-assign*
-    #"W191",  #tab-indentation
+    "W191",  #tab-indentation
     "D102",  #undocumented-public-method
     "D104",  #undocumented-public-package
     "T201",  #print*
