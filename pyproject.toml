@@ -46,8 +46,9 @@ bclearer-interop-services = "^0.1.0"
 #bclearer_orchestration_services = "^0.1.0"
 
 
-
-
+[tool.pytest.ini_options]
+testpaths = "tests"
+python_files = "test_*.py"
 
 
 [build-system]

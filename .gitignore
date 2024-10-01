@@ -1,3 +1,4 @@
+#IDE specific files
 .vs/
 .vscode/
 .idea/
@@ -7,11 +8,27 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
 
-#wheel related
-*.egg-info
+# Distribution and build directories
+*.egg-info/
+/dist/
 
+#github
+.github/
+
+
+# log files
+*.log
+*.tmp
+*.bak
+
+#Example Pipelines
 
 pipelines
 
+# Test data
+tests/configurations/
+tests/data/logs/
 tests/data/output/
