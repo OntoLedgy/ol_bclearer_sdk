@@ -43,6 +43,7 @@ class MongoDBWrapper:
                     documents,
                 )
             )
+            return result.inserted_ids
 
         else:
             result = (
@@ -50,12 +51,7 @@ class MongoDBWrapper:
                     documents,
                 )
             )
-
-        inserted_ids = (
-            result.inserted_id
-        )
-
-        return inserted_ids
+            return result.inserted_id
 
     def insert_documents_from_json(
         self,

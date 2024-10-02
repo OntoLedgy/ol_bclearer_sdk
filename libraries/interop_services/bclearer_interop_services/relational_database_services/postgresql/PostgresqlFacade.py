@@ -91,8 +91,25 @@ class PostgresqlFacade(DatabaseFacade):
             db_schema = (
                 cursor.fetchall()
             )
+
+            # Define a mapping from pandas dtype to SQL data type
+            pandas_to_sql_dtype_map = {
+                "object": "text",  # assuming 'object' type in pandas corresponds to 'text' in SQL
+                "int64": "integer",
+                "float64": "float",
+                "bool": "boolean",
+                # add other mappings as necessary
+            }
+
+            # Convert DataFrame schema to a dictionary with mapped SQL types
             df_schema = [
-                (col, str(dtype))
+                (
+                    col,
+                    pandas_to_sql_dtype_map.get(
+                        str(dtype),
+                        str(dtype),
+                    ),
+                )  # Map pandas dtypes to SQL equivalent
                 for col, dtype in zip(
                     dataframe.columns,
                     dataframe.dtypes,
@@ -103,6 +120,7 @@ class PostgresqlFacade(DatabaseFacade):
                 col: dtype
                 for col, dtype in db_schema
             }
+
             df_schema_dict = {
                 col: dtype
                 for col, dtype in df_schema
