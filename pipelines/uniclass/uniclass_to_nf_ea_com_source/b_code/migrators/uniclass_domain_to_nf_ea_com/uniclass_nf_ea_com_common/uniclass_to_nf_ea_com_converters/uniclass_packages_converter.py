@@ -12,18 +12,21 @@ from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.processes.dataf
 
 
 def convert_dictionary_keys_to_packages(
-        uniclass_dictionary: dict,
-        nf_ea_com_dictionary: dict,
-        nf_ea_com_packages_collection_type: NfEaComCollectionTypes) \
-        -> dict:
-    nf_uuids_column_name = \
+    uniclass_dictionary: dict,
+    nf_ea_com_dictionary: dict,
+    nf_ea_com_packages_collection_type: NfEaComCollectionTypes,
+) -> dict:
+    nf_uuids_column_name = (
         NfColumnTypes.NF_UUIDS.column_name
+    )
 
-    ea_object_type_column_name = \
+    ea_object_type_column_name = (
         NfEaComColumnTypes.ELEMENTS_EA_OBJECT_TYPE.column_name
+    )
 
-    ea_object_name_column_name = \
+    ea_object_name_column_name = (
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name
+    )
 
     nf_uuids_list = []
 
@@ -31,34 +34,39 @@ def convert_dictionary_keys_to_packages(
 
     object_names_list = []
 
-    for dataframe_key in uniclass_dictionary.keys():
+    for (
+        dataframe_key
+    ) in uniclass_dictionary.keys():
         nf_uuids_list.append(
-                create_new_uuid())
+            create_new_uuid(),
+        )
 
         object_types_list.append(
-                'Package')
+            "Package",
+        )
 
         object_names_list.append(
-                dataframe_key)
+            dataframe_key,
+        )
 
     ea_packages_dataframe_values_dictionary = {
         nf_uuids_column_name: nf_uuids_list,
         ea_object_type_column_name: object_types_list,
-        ea_object_name_column_name: object_names_list
+        ea_object_name_column_name: object_names_list,
     }
 
-    ea_packages_dataframe_values = \
-        pandas.DataFrame(
-            data=ea_packages_dataframe_values_dictionary)
+    ea_packages_dataframe_values = pandas.DataFrame(
+        data=ea_packages_dataframe_values_dictionary,
+    )
 
-    ea_packages_dataframe_values[NfEaComColumnTypes.PACKAGEABLE_OBJECTS_PARENT_EA_ELEMENT.column_name] = \
-        numpy.nan
+    ea_packages_dataframe_values[
+        NfEaComColumnTypes.PACKAGEABLE_OBJECTS_PARENT_EA_ELEMENT.column_name
+    ] = numpy.nan
 
-    nf_ea_com_dictionary = \
-        append_nf_ea_com_table(
-            nf_ea_com_dictionary=nf_ea_com_dictionary,
-            new_nf_ea_com_collection=ea_packages_dataframe_values,
-            nf_ea_com_collection_type=nf_ea_com_packages_collection_type)
+    nf_ea_com_dictionary = append_nf_ea_com_table(
+        nf_ea_com_dictionary=nf_ea_com_dictionary,
+        new_nf_ea_com_collection=ea_packages_dataframe_values,
+        nf_ea_com_collection_type=nf_ea_com_packages_collection_type,
+    )
 
-    return \
-        nf_ea_com_dictionary
+    return nf_ea_com_dictionary

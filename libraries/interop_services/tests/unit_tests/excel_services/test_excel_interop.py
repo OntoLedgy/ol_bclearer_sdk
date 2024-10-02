@@ -1,12 +1,9 @@
 import pandas as pd
 import pytest
-from bclearer_interop_services.excel_services.ExcelFacade import (
-    ExcelFacade,
-)
+from bclearer_interop_services.excel_services.ExcelFacade import ExcelFacade
 
 
 class TestExcelInteropServices:
-
     @pytest.fixture(autouse=True)
     def setup_method(
         self,
@@ -54,7 +51,10 @@ class TestExcelInteropServices:
 
             assert (
                 cfi_categories_dataframe.shape
-                == (14, 5)
+                == (
+                    14,
+                    5,
+                )
             ), "DataFrame does not have the expected shape (14, 5)."
 
             assert (
@@ -119,7 +119,10 @@ class TestExcelInteropServices:
 
             assert (
                 cfi_categories_dataframe.shape
-                == (14, 5)
+                == (
+                    14,
+                    5,
+                )
             ), "DataFrame does not have the expected shape (14, 5)."
 
             assert (

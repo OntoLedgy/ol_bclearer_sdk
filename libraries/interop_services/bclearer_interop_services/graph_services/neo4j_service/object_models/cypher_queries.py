@@ -28,7 +28,8 @@ class CypherQueryWrapper:
     def write_to_file(self, file_path):
         try:
             with open(
-                file_path, "w",
+                file_path,
+                "w",
             ) as file:
                 file.write(self.query)
             print(
@@ -68,7 +69,8 @@ class CypherQueryWrapper:
     # Generate Cypher query to create a node with properties
     @staticmethod
     def generate_create_node(
-        label, properties,
+        label,
+        properties,
     ):
         prop_string = ", ".join(
             [

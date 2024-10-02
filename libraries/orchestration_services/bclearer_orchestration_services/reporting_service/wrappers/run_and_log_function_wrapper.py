@@ -2,9 +2,8 @@ import time
 
 import psutil
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import *
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def log_timing_header():
@@ -33,7 +32,8 @@ def run_and_log_function(function):
         __log_start(function=function)
 
         return_value = function(
-            *args, **kwargs,
+            *args,
+            **kwargs,
         )
 
         __log_finish(
@@ -60,10 +60,12 @@ def __log_start(function):
 
 
 def __log_finish(
-    start_time: time, function,
+    start_time: time,
+    function,
 ):
     message_list = __get_standard_list(
-        action="end", function=function,
+        action="end",
+        function=function,
     )
 
     end_time = time.time()
@@ -82,9 +84,9 @@ def __log_finish(
 
 
 def __get_standard_list(
-    action: str, function,
+    action: str,
+    function,
 ):
-
     total_cpu_usage = (
         f"{psutil.cpu_percent()}%"
     )

@@ -1,40 +1,27 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
-from bclearer_core.configurations.generalise_names_configuration_objects import (
-    GeneraliseNamesConfigurationObjects,
-)
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.generalise_names.stereotype_instances_associations_adder import (
-    add_stereotype_to_instances_associations,
-)
-from bclearer_core.substages.operations.common.connector_adder import (
-    add_new_connector_to_dictionary,
-)
-from bclearer_core.substages.operations.common.connector_rename import (
-    rename_connector,
-)
-from bclearer_core.substages.operations.common.intersection_getter import (
-    get_intersection_of_dependency_and_association_linked,
-)
-from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import (
-    create_new_ea_objects_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import (
-    update_nf_ea_com_universe_with_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
-    get_nf_uuid_from_ea_guid_from_collection,
-)
+from bclearer_core.configurations.generalise_names_configuration_objects import \
+    GeneraliseNamesConfigurationObjects
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.generalise_names.stereotype_instances_associations_adder import \
+    add_stereotype_to_instances_associations
+from bclearer_core.substages.operations.common.connector_adder import \
+    add_new_connector_to_dictionary
+from bclearer_core.substages.operations.common.connector_rename import \
+    rename_connector
+from bclearer_core.substages.operations.common.intersection_getter import \
+    get_intersection_of_dependency_and_association_linked
+from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import \
+    create_new_ea_objects_dictionary
+from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import \
+    update_nf_ea_com_universe_with_dictionary
+from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import \
+    get_nf_uuid_from_ea_guid_from_collection
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import \
+    EaConnectorTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 
 
 def shift_convention_generalise_names(

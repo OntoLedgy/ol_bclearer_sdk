@@ -1,9 +1,7 @@
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import (
-    create_b_identity_base_from_string,
-)
-from bclearer_orchestration_services.identification_services.b_identity_service.common_knowledge.b_identity_types import (
-    BIdentityTypes,
-)
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import \
+    create_b_identity_base_from_string
+from bclearer_orchestration_services.identification_services.b_identity_service.common_knowledge.b_identity_types import \
+    BIdentityTypes
 
 
 def create_b_identity_types_table() -> (

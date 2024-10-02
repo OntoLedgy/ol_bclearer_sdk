@@ -1,6 +1,5 @@
-from bclearer_interop_services.relational_database_services.postgresql.PostgresqlFacade import (
-    PostgresqlFacade,
-)
+from bclearer_interop_services.relational_database_services.postgresql.PostgresqlFacade import \
+    PostgresqlFacade
 
 
 # Factory class to get the correct database implementation

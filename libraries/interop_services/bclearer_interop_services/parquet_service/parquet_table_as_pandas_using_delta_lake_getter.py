@@ -1,8 +1,6 @@
 import pandas
-
-from bclearer_interop_services.parquet_service.parquet_table_as_delta_table_using_delta_lake_getter import (
-    get_parquet_table_as_delta_table_using_delta_lake,
-)
+from bclearer_interop_services.parquet_service.parquet_table_as_delta_table_using_delta_lake_getter import \
+    get_parquet_table_as_delta_table_using_delta_lake
 
 
 def get_parquet_table_as_pandas_using_delta_lake(

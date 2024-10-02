@@ -5,16 +5,16 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve
 
 
 def get_evolve_stage_1_domain_tables(
-        dictionary_of_dataframes: dict) \
-        -> dict:
+    dictionary_of_dataframes: dict,
+) -> dict:
+    uuidified_dataframe_dictionary_with_top_level_table = add_top_level_item_rows_to_dictionary_of_dataframes(
+        dictionary_of_dataframes=dictionary_of_dataframes,
+    )
 
-    uuidified_dataframe_dictionary_with_top_level_table = \
-        add_top_level_item_rows_to_dictionary_of_dataframes(
-            dictionary_of_dataframes=dictionary_of_dataframes)
+    top_level_dataframe_dictionary = remove_top_level_items_table_from_dataframes_dictionary(
+        dataframe_dictionary=uuidified_dataframe_dictionary_with_top_level_table,
+    )
 
-    top_level_dataframe_dictionary = \
-        remove_top_level_items_table_from_dataframes_dictionary(
-            dataframe_dictionary=uuidified_dataframe_dictionary_with_top_level_table)
-
-    return \
+    return (
         top_level_dataframe_dictionary
+    )

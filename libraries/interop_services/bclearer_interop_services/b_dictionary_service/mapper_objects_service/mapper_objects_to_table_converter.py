@@ -1,8 +1,6 @@
+from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import \
+    convert_table_as_dictionary_to_dataframe
 from pandas import DataFrame
-
-from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import (
-    convert_table_as_dictionary_to_dataframe,
-)
 
 
 def convert_mapper_objects_to_table(
@@ -24,7 +22,8 @@ def convert_mapper_objects_to_table(
     )
 
     table_as_dataframe.drop_duplicates(
-        inplace=True, ignore_index=True,
+        inplace=True,
+        ignore_index=True,
     )
 
     return table_as_dataframe

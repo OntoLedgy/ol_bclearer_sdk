@@ -1,8 +1,6 @@
+from bclearer_interop_services.graph_services.network_service.object_model.Nodes import \
+    Node
 from graphviz import Digraph
-
-from bclearer_interop_services.graph_services.network_service.object_model.Nodes import (
-    Node,
-)
 
 
 def render_graph():
@@ -22,7 +20,6 @@ def render_graph():
         for (
             connected_node
         ) in value.connected_nodes:
-
             directed_graph.edge(
                 str(value.node_uuid),
                 str(

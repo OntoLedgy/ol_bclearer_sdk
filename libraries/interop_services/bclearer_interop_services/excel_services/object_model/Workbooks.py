@@ -1,12 +1,9 @@
 from pathlib import Path
 
 import pandas as pd
+from bclearer_interop_services.excel_services.object_model.Sheets import Sheets
 from openpyxl import Workbook as OpenpyxlWorkbook
 from openpyxl import load_workbook
-
-from bclearer_interop_services.excel_services.object_model.Sheets import (
-    Sheets,
-)
 
 
 class Workbooks:
@@ -15,7 +12,6 @@ class Workbooks:
         file_path: str = None,
         file_extension: str = "xlsx",
     ):
-
         self.file_path = file_path
 
         self.sheets = {}
@@ -39,7 +35,6 @@ class Workbooks:
                     f"Unsupported file extension: {file_extension}",
                 )
         else:
-
             self.wb = OpenpyxlWorkbook()
 
             self.sheets = {
@@ -66,25 +61,29 @@ class Workbooks:
             )
 
     def _load_xls(self, file_path):
-
         xls = pd.ExcelFile(
-            file_path, engine="xlrd",
+            file_path,
+            engine="xlrd",
         )
 
         for (
             sheet_name
         ) in xls.sheet_names:
             df = xls.parse(
-                sheet_name, header=0,
+                sheet_name,
+                header=0,
             )
             self.sheets[sheet_name] = (
                 self._convert_df_to_sheet(
-                    df, sheet_name,
+                    df,
+                    sheet_name,
                 )
             )
 
     def _convert_df_to_sheet(
-        self, dataframe, sheet_name,
+        self,
+        dataframe,
+        sheet_name,
     ):
         """Converts a pandas DataFrame to the internal Sheets object for .xls files."""
         openpyxl_sheet = OpenpyxlWorkbook().create_sheet(
@@ -121,11 +120,13 @@ class Workbooks:
                 )
                 # Delete the row from the sheet
                 sheet.delete_rows(
-                    row_index, 1,
+                    row_index,
+                    1,
                 )
 
     def save(
-        self, file_path: str = None,
+        self,
+        file_path: str = None,
     ):
         if file_path is None:
             file_path = self.file_path
@@ -147,7 +148,8 @@ class Workbooks:
 
     def _save_xls(self, file_path):
         with pd.ExcelWriter(
-            file_path, engine="xlwt",
+            file_path,
+            engine="xlwt",
         ) as writer:
             for (
                 sheet_name,
@@ -193,7 +195,8 @@ class Workbooks:
         return sheet
 
     def remove_sheet(
-        self, sheet_name: str,
+        self,
+        sheet_name: str,
     ):
         if (
             sheet_name

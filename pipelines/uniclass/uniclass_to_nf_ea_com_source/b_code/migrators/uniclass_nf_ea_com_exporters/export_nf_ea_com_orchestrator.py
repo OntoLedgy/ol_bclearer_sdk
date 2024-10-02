@@ -11,25 +11,28 @@ from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.
 
 
 def orchestrate_export_nf_ea_com(
-        nf_ea_com_dictionary: dict,
-        output_folder_path: str,
-        bclearer_stage: str):
+    nf_ea_com_dictionary: dict,
+    output_folder_path: str,
+    bclearer_stage: str,
+):
     with EaToolsSessionManagers() as ea_tools_session_manager:
-        nf_ea_com_universe = \
-            convert_nf_ea_com_dictionary_to_nf_ea_com_universe(
-                ea_tools_session_manager=ea_tools_session_manager,
-                nf_ea_com_dictionary=nf_ea_com_dictionary,
-                short_name=bclearer_stage)
+        nf_ea_com_universe = convert_nf_ea_com_dictionary_to_nf_ea_com_universe(
+            ea_tools_session_manager=ea_tools_session_manager,
+            nf_ea_com_dictionary=nf_ea_com_dictionary,
+            short_name=bclearer_stage,
+        )
 
         export_nf_ea_com_to_access(
             ea_tools_session_manager=ea_tools_session_manager,
             nf_ea_com_universe=nf_ea_com_universe,
-            folder_path=output_folder_path)
+            folder_path=output_folder_path,
+        )
 
         export_nf_ea_com_to_ea(
             ea_tools_session_manager=ea_tools_session_manager,
             nf_ea_com_universe=nf_ea_com_universe,
-            folder_path=output_folder_path)
+            folder_path=output_folder_path,
+        )
 
         # export_nf_ea_com_to_hdf5(
         #     nf_ea_com_universe=nf_ea_com_universe,

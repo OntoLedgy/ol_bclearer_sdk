@@ -48,7 +48,7 @@ from bclearer_orchestration_services import b_app_runner_service
 
 # Example usage
 runner = b_app_runner_service.AppRunner()
-runner.run_application(app_name='example_app')
+runner.run_application(app_name="example_app")
 ```
 
 ## Contributions

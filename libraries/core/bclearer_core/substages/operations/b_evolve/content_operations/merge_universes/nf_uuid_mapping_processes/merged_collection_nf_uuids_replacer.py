@@ -1,9 +1,6 @@
-from pandas import DataFrame
-
 from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.uuid_columns_lists_constants import (
-    LIST_OF_NF_UUID_COLUMN_NAMES,
-    LIST_OF_NF_UUID_LISTS_COLUMN_NAMES,
-)
+    LIST_OF_NF_UUID_COLUMN_NAMES, LIST_OF_NF_UUID_LISTS_COLUMN_NAMES)
+from pandas import DataFrame
 
 
 def replace_nf_uuids_in_collection(
@@ -125,7 +122,8 @@ def __replace_list_of_uuids(
     list_of_new_uuids = []
 
     if not isinstance(
-        list_of_uuids, list,
+        list_of_uuids,
+        list,
     ):
         return list_of_new_uuids
 

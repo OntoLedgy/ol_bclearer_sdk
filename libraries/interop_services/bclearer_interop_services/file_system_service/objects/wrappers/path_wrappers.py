@@ -2,9 +2,9 @@ from pathlib import Path
 
 
 class PathWrappers:
-
     def __init__(
-        self, path_string: str,
+        self,
+        path_string: str,
     ):
         self.__path = Path(path_string)
 
@@ -25,7 +25,8 @@ class PathWrappers:
         return self.__path.parent
 
     def extend_path(
-        self, path_extension: str,
+        self,
+        path_extension: str,
     ) -> str:
         extended_path_string = (
             self.__path.joinpath(

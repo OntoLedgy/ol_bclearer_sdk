@@ -1,14 +1,10 @@
 import concurrent
 import logging
 import time
-from concurrent.futures import (
-    ThreadPoolExecutor,
-)
+from concurrent.futures import ThreadPoolExecutor
 
 import pandas as pd
-from neo4j_object_models.Neo4jWrapper import (
-    Neo4jWrapper,
-)
+from neo4j_object_models.Neo4jWrapper import Neo4jWrapper
 
 
 class EdgeLoader:
@@ -19,7 +15,6 @@ class EdgeLoader:
         max_retries=3,
         retry_delay=1,
     ):
-
         self.neo4j_wrapper = (
             neo4j_wrapper
         )
@@ -32,7 +27,6 @@ class EdgeLoader:
         edge_data: pd.DataFrame,
         mapping_query: str,
     ):
-
         with ThreadPoolExecutor() as executor:
             # Splitting the dataframe into batches
 
@@ -56,18 +50,16 @@ class EdgeLoader:
             )
 
     def _load_edge_batch(
-        self, batch_df, mapping_query,
+        self,
+        batch_df,
+        mapping_query,
     ):
-
         for attempt in range(
             self.max_retries,
         ):
             try:
-
-                batch = (
-                    batch_df.to_dict(
-                        orient="records",
-                    )
+                batch = batch_df.to_dict(
+                    orient="records",
                 )
 
                 logging.debug(
@@ -95,7 +87,6 @@ class EdgeLoader:
                         < self.max_retries
                         - 1
                     ):
-
                         logging.warning(
                             f"Deadlock detected. Retrying in {self.retry_delay} seconds...",
                         )

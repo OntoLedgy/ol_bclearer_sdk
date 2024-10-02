@@ -1,9 +1,7 @@
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import (
-    BEngFiles,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_python_reference_dictionaries import (
-    BEngPythonReferenceDictionaries,
-)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import \
+    BEngFiles
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_python_reference_dictionaries import \
+    BEngPythonReferenceDictionaries
 
 
 def collect_content(
@@ -55,7 +53,6 @@ def __add_references_from_file(
 
 
 def __get_lines(file_path):
-
     file_content = open(file_path, "r+")
 
     file_content_lines = (

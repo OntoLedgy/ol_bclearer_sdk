@@ -1,19 +1,12 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
-    EaAssociationDirectionTypes,
-)
-
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.association_from_attribute_creator import (
-    create_association_from_attribute,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.generalisation_from_attribute_creator import (
-    create_generalisation_from_attribute_to_type,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.type_from_attribute_creator import (
-    create_type_from_attribute,
-)
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.association_from_attribute_creator import \
+    create_association_from_attribute
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.generalisation_from_attribute_creator import \
+    create_generalisation_from_attribute_to_type
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.type_from_attribute_creator import \
+    create_type_from_attribute
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import \
+    EaAssociationDirectionTypes
 
 
 def convert_attribute_to_subtype_foreign_table_association(

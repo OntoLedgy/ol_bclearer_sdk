@@ -1,26 +1,23 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.creators.file_b_identity_immutable_stage_base_creator import (
-    create_file_b_identity_immutable_stage_base,
-)
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.creators.file_b_identity_immutable_stage_base_creator import \
+    create_file_b_identity_immutable_stage_base
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
 
 
 class Files(FileSystemObjects):
-
     def __init__(
         self,
         absolute_path_string: str,
         parent_folder: object = None,
     ):
-        from bclearer_interop_services.file_system_service.objects.folders import (
-            Folders,
-        )
+        from bclearer_interop_services.file_system_service.objects.folders import \
+            Folders
 
         if (
             parent_folder
             and not isinstance(
-                parent_folder, Folders,
+                parent_folder,
+                Folders,
             )
         ):
             raise TypeError
@@ -38,7 +35,8 @@ class Files(FileSystemObjects):
         )
 
     def __add_to_parent(
-        self, parent_folder: "Folders",
+        self,
+        parent_folder: "Folders",
     ):
         if parent_folder is None:
             return

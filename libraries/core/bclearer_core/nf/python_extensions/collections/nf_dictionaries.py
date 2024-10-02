@@ -1,6 +1,5 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionary_try_get_results import (
-    NfDictionaryTryGetResults,
-)
+from nf_common.code.nf.python_extensions.collections.nf_dictionary_try_get_results import \
+    NfDictionaryTryGetResults
 
 
 class NfDictionaries(dict):
@@ -8,7 +7,8 @@ class NfDictionaries(dict):
         dict.__init__(self)
 
     def try_get_value(
-        self, key,
+        self,
+        key,
     ) -> NfDictionaryTryGetResults:
         nf_dictionary_try_get_result = (
             NfDictionaryTryGetResults()

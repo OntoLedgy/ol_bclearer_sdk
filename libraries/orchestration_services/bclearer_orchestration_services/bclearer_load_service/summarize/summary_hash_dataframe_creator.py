@@ -2,18 +2,12 @@ import pandas
 from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import (
     ALTERNATIVE_IDENTITY_HASH_SET_CONTENT_HASH_NAME,
     ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME,
-    CONTENT_HASH_SET_CONTENT_HASH_NAME,
-    CONTENT_HASHES_CONFIGURATION_NAME,
-    CORE_CONTENT_HASHES_CONFIGURATION_NAME,
-    CORE_CONTENT_SET_CONTENT_HASH_NAME,
-    HASHES_SUMMARY_COLUMN_NAME,
-    IDENTITY_HASH_SET_CONTENT_HASH_NAME,
-    IDENTITY_HASHES_CONFIGURATION_NAME,
-    NAMES_SUMMARY_COLUMN_NAME,
-)
-from bclearer_orchestration_services.identification_services.hash_service.hash_creator import (
-    create_hash_with_sorted_inputs,
-)
+    CONTENT_HASH_SET_CONTENT_HASH_NAME, CONTENT_HASHES_CONFIGURATION_NAME,
+    CORE_CONTENT_HASHES_CONFIGURATION_NAME, CORE_CONTENT_SET_CONTENT_HASH_NAME,
+    HASHES_SUMMARY_COLUMN_NAME, IDENTITY_HASH_SET_CONTENT_HASH_NAME,
+    IDENTITY_HASHES_CONFIGURATION_NAME, NAMES_SUMMARY_COLUMN_NAME)
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import \
+    create_hash_with_sorted_inputs
 
 
 def create_summary_hash_dataframe(

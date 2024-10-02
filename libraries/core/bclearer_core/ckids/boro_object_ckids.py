@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class BoroObjectCkIds(Enum):
-
     NotSet = 0
 
     # region Top Ontology
@@ -109,7 +108,6 @@ class BoroObjectCkIds(Enum):
 
 
 def get_immutable_tuple_infrastructure_subtype_ck_ids():
-
     immutable_tuple_infrastructure_subtype_ck_ids = {
         BoroObjectCkIds.Tuples,
         BoroObjectCkIds.SuperSubTypes,
@@ -124,7 +122,6 @@ def get_immutable_tuple_infrastructure_subtype_ck_ids():
 
 
 def get_composition_couple_types_ck_ids():
-
     composition_couple_types_ck_ids = {
         BoroObjectCkIds.SuperSubTypes,
         BoroObjectCkIds.WholesParts,
@@ -140,7 +137,6 @@ def get_composition_couple_types_ck_ids():
 def is_immutable_tuple_infrastructure_subtype_reflexive(
     boroObjectCkId,
 ):
-
     if (
         boroObjectCkId
         == BoroObjectCkIds.SuperSubTypes

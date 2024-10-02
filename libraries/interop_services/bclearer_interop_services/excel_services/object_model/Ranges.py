@@ -1,8 +1,5 @@
+from bclearer_interop_services.excel_services.object_model.Cells import Cells
 from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
-
-from bclearer_interop_services.excel_services.object_model.Cells import (
-    Cells,
-)
 
 
 class Ranges:

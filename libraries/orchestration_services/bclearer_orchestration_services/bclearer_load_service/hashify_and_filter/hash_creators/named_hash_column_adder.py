@@ -1,7 +1,6 @@
 import pandas
-from bclearer_orchestration_services.identification_services.hash_service.hash_creator import (
-    create_hash_with_sorted_inputs,
-)
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import \
+    create_hash_with_sorted_inputs
 
 
 def add_named_hash_column(
@@ -13,14 +12,16 @@ def add_named_hash_column(
         column_name
     ] = hashified_target_dataframe.apply(
         lambda row: __get_hash(
-            row, configuration_list,
+            row,
+            configuration_list,
         ),
         axis=1,
     )
 
 
 def __get_hash(
-    row, configuration_list,
+    row,
+    configuration_list,
 ) -> str:
     hash_components = list()
 

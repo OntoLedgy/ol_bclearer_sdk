@@ -10,7 +10,8 @@ class NfDictionaryTryGetResults:
         return key_exists
 
     def __set_key_exists(
-        self, key_exists: bool,
+        self,
+        key_exists: bool,
     ):
         self.__key_exists = key_exists
 

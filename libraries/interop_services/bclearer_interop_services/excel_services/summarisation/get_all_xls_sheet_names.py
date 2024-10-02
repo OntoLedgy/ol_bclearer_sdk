@@ -9,14 +9,13 @@ from io import BytesIO
 from pathlib import Path
 
 import pandas as pd
-from src.blob_storage_helper import (
-    BlobStorageHelper,
-)
+from src.blob_storage_helper import BlobStorageHelper
 from src.utils import read_yaml
 
 
 def get_sheet_name(
-    blob_helper, blob_name,
+    blob_helper,
+    blob_name,
 ):
     input_blob = (
         blob_helper.download_blob(
@@ -47,12 +46,15 @@ def save_append(df, output_path):
         )
     else:
         df.to_csv(
-            output_path, index=False,
+            output_path,
+            index=False,
         )
 
 
 def read_sheet_names(
-    row, blob_helper, output_path,
+    row,
+    blob_helper,
+    output_path,
 ):
     blob_path = row["path"]
     [sheet_names, err] = get_sheet_name(
@@ -136,7 +138,9 @@ if __name__ == "__main__":
     )
 
     for i in range(
-        0, len(df_xls), batch_size,
+        0,
+        len(df_xls),
+        batch_size,
     ):
         print(
             f"Processing position {i}...",

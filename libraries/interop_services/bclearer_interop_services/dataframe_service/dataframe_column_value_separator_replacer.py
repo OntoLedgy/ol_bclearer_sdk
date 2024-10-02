@@ -10,7 +10,8 @@ def replace_column_value_separator_in_dataframe_column(
     dataframe[column_name] = dataframe[
         column_name
     ].str.replace(
-        old_separator, new_separator,
+        old_separator,
+        new_separator,
     )
 
     return dataframe

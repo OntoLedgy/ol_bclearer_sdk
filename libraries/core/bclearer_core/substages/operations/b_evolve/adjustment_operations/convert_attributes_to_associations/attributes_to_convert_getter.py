@@ -1,23 +1,16 @@
-from nf_common_source.code.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.content_adjustment_universes_nf_uuids_mapper import \
+    get_mapped_nf_uuid_from_mapped_universe
+from nf_common_source.code.constants.standard_constants import \
+    DEFAULT_NULL_VALUE
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
+    NfEaComColumnTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 from pandas import DataFrame
-
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.content_adjustment_universes_nf_uuids_mapper import (
-    get_mapped_nf_uuid_from_mapped_universe,
-)
 
 
 def get_attributes_to_convert(

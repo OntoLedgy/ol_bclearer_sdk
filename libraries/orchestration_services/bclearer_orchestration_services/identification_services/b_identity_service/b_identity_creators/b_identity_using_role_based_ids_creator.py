@@ -1,12 +1,9 @@
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import (
-    create_b_identity_base_from_string,
-)
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_from_sorted_list_of_b_identities_creator import (
-    create_b_identity_from_sorted_list_of_b_identities,
-)
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_b_identities_creator import (
-    create_b_identity_sum_from_b_identities,
-)
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import \
+    create_b_identity_base_from_string
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_from_sorted_list_of_b_identities_creator import \
+    create_b_identity_from_sorted_list_of_b_identities
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_b_identities_creator import \
+    create_b_identity_sum_from_b_identities
 
 
 def create_b_identity_using_role_based_ids(

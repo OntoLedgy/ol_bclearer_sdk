@@ -1,9 +1,7 @@
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import (
-    EdgeLoader,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import (
-    NodeLoader,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import \
+    EdgeLoader
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import \
+    NodeLoader
 
 
 class DataLoaderOrchestrator:
@@ -19,7 +17,9 @@ class DataLoaderOrchestrator:
         )
 
     def load_data(
-        self, nodes_info, edges_info,
+        self,
+        nodes_info,
+        edges_info,
     ):
         for node in nodes_info:
             self.node_loader.load_nodes(

@@ -1,10 +1,7 @@
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import (
-    ENVIRONMENT_PREFIX,
-    NAME_VALUE_DELIMITER,
-)
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+    ENVIRONMENT_PREFIX, NAME_VALUE_DELIMITER)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def print_header(
@@ -20,7 +17,8 @@ def print_header(
 
 
 def log_environment_name_value_pair(
-    name: str, value: str,
+    name: str,
+    value: str,
 ) -> None:
     message_list = [
         ENVIRONMENT_PREFIX,
@@ -52,7 +50,8 @@ def log_environment_section(
 
 
 def __log_environment_name_if_required(
-    name: str, name_values: dict,
+    name: str,
+    name_values: dict,
 ) -> None:
     if name not in name_values:
         return

@@ -2,10 +2,12 @@ from pathlib import Path
 
 
 def convert_relative_path_to_absolute(
-    input_path: str, base_root_path: str,
+    input_path: str,
+    base_root_path: str,
 ) -> str:
     if is_relative_to_base_root(
-        input_path, base_root_path,
+        input_path,
+        base_root_path,
     ):
         absolute_path = str(
             Path(base_root_path)
@@ -18,7 +20,8 @@ def convert_relative_path_to_absolute(
 
 
 def is_relative_to_base_root(
-    input_path: str, base_root_path: str,
+    input_path: str,
+    base_root_path: str,
 ) -> bool:
     input_path_instance = Path(
         input_path,

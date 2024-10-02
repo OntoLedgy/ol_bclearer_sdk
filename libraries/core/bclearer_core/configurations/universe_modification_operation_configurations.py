@@ -1,12 +1,9 @@
-from bclearer_core.common_knowledge.universe_modification_operation_types import (
-    UniverseModificationOperationTypes,
-)
-from bclearer_core.configurations.operation_configurations import (
-    OperationConfigurations,
-)
-from bclearer_core.configurations.universe_modification_configuration_objects import (
-    UniverseModificationConfigurationObjects,
-)
+from bclearer_core.common_knowledge.universe_modification_operation_types import \
+    UniverseModificationOperationTypes
+from bclearer_core.configurations.operation_configurations import \
+    OperationConfigurations
+from bclearer_core.configurations.universe_modification_configuration_objects import \
+    UniverseModificationConfigurationObjects
 
 
 class UniverseModificationOperationConfigurations(

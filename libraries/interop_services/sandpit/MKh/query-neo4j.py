@@ -23,7 +23,10 @@ class Neo4jConnection:
         return self
 
     def __exit__(
-        self, exc_type, exc_val, exc_tb,
+        self,
+        exc_type,
+        exc_val,
+        exc_tb,
     ):
         self._driver.close()
 
@@ -48,7 +51,10 @@ def orchestrate_neo4j_cyper_query_execution():
     ]
 
     with Neo4jConnection(
-        uri, dbname, user, password,
+        uri,
+        dbname,
+        user,
+        password,
     ) as connection:
         while True:
             query = input(

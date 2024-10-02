@@ -1,13 +1,9 @@
-from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_configurations import (
-    Neo4jConfigurations,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
-    read_cypher_query_from_file,
-)
-
+from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_configurations import \
+    Neo4jConfigurations
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import \
+    read_cypher_query_from_file
 from tests.fixtures.paths import *
 
 
@@ -15,7 +11,6 @@ from tests.fixtures.paths import *
 def neo4j_connection(
     configurations_folder,
 ):
-
     neo4j_configuration_file_name = (
         "neo4j_configuration.json"
     )
@@ -61,7 +56,6 @@ def neo4j_loader_configuration_path(
 
 @pytest.fixture(scope="session")
 def node_info():
-
     test_data = [
         {"name": "Node1"},
         {"name": "Node2"},
@@ -129,7 +123,6 @@ def nodes_info(
 def edges_info(
     data_input_folder_absolute_path,
 ):
-
     csv_file = os.path.join(
         data_input_folder_absolute_path,
         "graph\\cypher_data\\02_edges\\r_01_neo4j_sheets_to_workbooks_edges_all.csv",
@@ -156,7 +149,6 @@ def edges_info(
 
 @pytest.fixture(scope="session")
 def graph_info(nodes_info, edges_info):
-
     graph_info = {
         "nodes_info": nodes_info,
         "edges_info": edges_info,

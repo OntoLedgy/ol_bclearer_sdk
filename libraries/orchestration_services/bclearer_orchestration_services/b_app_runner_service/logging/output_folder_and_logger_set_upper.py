@@ -1,15 +1,12 @@
 import os
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
-from bclearer_orchestration_services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
+from bclearer_orchestration_services.reporting_service.reporters.log_file import \
+    LogFiles
 
 
 def set_up_output_folder_and_logger(
@@ -24,7 +21,8 @@ def set_up_output_folder_and_logger(
     )
 
     Path(output_folder_path).mkdir(
-        parents=True, exist_ok=True,
+        parents=True,
+        exist_ok=True,
     )
 
     LogFiles.open_log_file(

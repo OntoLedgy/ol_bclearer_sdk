@@ -1,18 +1,13 @@
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import (
-    BEngProjectFolderLists,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import (
-    BEngProjectFolders,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import (
-    BEngWorkspaceFolders,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import \
+    BEngProjectFolderLists
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import \
+    BEngProjectFolders
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import \
+    BEngWorkspaceFolders
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def b_eng_folders_and_files_refactor_checks(

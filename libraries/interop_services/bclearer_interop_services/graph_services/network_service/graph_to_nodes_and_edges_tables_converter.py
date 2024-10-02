@@ -1,13 +1,12 @@
+from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import \
+    convert_table_as_dictionary_to_dataframe
 from networkx import to_pandas_edgelist
 from pandas import DataFrame
 
-from bclearer_interop_services.b_dictionary_service.table_as_dictionary_service.table_as_dictionary_to_dataframe_converter import (
-    convert_table_as_dictionary_to_dataframe,
-)
-
 
 def convert_graph_to_nodes_and_edges_tables(
-    graph, node_id_column_name: str,
+    graph,
+    node_id_column_name: str,
 ) -> tuple:
     nodes_table = extract_nodes_table_from_graph(
         graph=graph,

@@ -46,22 +46,22 @@ isort = "^5.13.2"
 pymongo = "^4.10.0"
 
 [tool.poetry.group.dev.dependencies]
-#bclearer_core = { path = "libraries/core/", develop = true }
+bclearer_core = "^0.1.0"
 bclearer-interop-services = "^0.1.0"
-#bclearer_orchestration_services = "^0.1.0"
+bclearer_orchestration_services = "^0.1.0"
 
 
 [tool.pytest.ini_options]
 testpaths = "tests"
 python_files = "test_*.py"
-
+addopts = "--import-mode=importlib"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
-fix = true
+fix = false
 
 select = ["ALL"]
 exclude = ["build", "dist"]
@@ -150,7 +150,7 @@ ignore = [
     "PTH102",  #os-mkdir
     "PTH112",  #os-path-isdir
     "RUF005",  #collection-literal-concatenation*
-    "RUF004",  #Keyword argument must come after starred arguments
+    "B026",  #Keyword argument must come after starred arguments
     "ANN002",  #missing-type-args
     "S307",  #suspicious-eval-usage
     "B006",  #mutable-argument-default*
@@ -216,7 +216,7 @@ ignore = [
     "RUF001",  #ambiguous-unicode-character-string
     "RUF015",  #unnecessary-iterable-allocation-for-first-element*
     "TRY002",  #raise-vanilla-class
-    "PGH001", #No builtin `eval()` allowed
+    "S307", #No builtin `eval()` allowed
     "TCH003", # Move standard library import  into a type-checking block
     "PT004", #Fixture does not return anything, add leading underscore
     "TCH001", #Move application import  into a type-checking block
@@ -226,8 +226,12 @@ ignore = [
     "E402", #Module level import not at top of file
     "A003", #Class attribute `range` is shadowing a python builtin
     "RET505", #Unnecessary `else` after `return` statement
-    "FA102" #future-required-type-annotation
+    "FA102", #future-required-type-annotation
+    "PD004" #`.notna` is preferred to `.notnull`; functionality is equivalent
 ]
 
 [tool.black]
 line-length = 40  # Black's default is 88, but you can adjust it here
+
+[tool.mypy]
+exclude = '^(tests|build|dist|.venv|pipelines)/.*$'

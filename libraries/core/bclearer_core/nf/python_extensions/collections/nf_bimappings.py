@@ -1,17 +1,17 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionaries import (
-    NfDictionaries,
-)
+from nf_common.code.nf.python_extensions.collections.nf_dictionaries import \
+    NfDictionaries
 
 
 class NfBimappings:
-
     def __init__(self, map: dict):
         NfBimappings.__populate_internal_dictionaries(
-            self, map=map,
+            self,
+            map=map,
         )
 
     def try_get_range_using_domain(
-        self, domain_key,
+        self,
+        domain_key,
     ):
         range_value = self.__range_keyed_on_domain.try_get_value(
             key=domain_key,
@@ -20,7 +20,8 @@ class NfBimappings:
         return range_value
 
     def try_get_domain_using_range(
-        self, range_key,
+        self,
+        range_key,
     ):
         domain_value = self.__domain_keyed_on_range.try_get_value(
             key=range_key,
@@ -57,7 +58,8 @@ class NfBimappings:
         return domain_keyed_on_range
 
     def __populate_internal_dictionaries(
-        self, map: dict,
+        self,
+        map: dict,
     ):
         self.__domain_keyed_on_range = (
             NfDictionaries()
@@ -77,7 +79,9 @@ class NfBimappings:
             )
 
     def add_mapping(
-        self, domain_value, range_value,
+        self,
+        domain_value,
+        range_value,
     ):
         self.__domain_keyed_on_range[
             range_value

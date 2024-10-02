@@ -1,9 +1,8 @@
 import json
 
 import pandas as pd
-from storage_interop_services_source.code.object_models.RelationalDatabaseClients import (
-    RelationalDatabaseClient,
-)
+from storage_interop_services_source.code.object_models.RelationalDatabaseClients import \
+    RelationalDatabaseClient
 
 
 def fetch_data_in_chunks(
@@ -13,13 +12,13 @@ def fetch_data_in_chunks(
     csv_file_path: str,
     chunk_size=5,
 ):
-
     columns_written = False
 
     for i in range(
-        0, len(filter_list), chunk_size,
+        0,
+        len(filter_list),
+        chunk_size,
     ):
-
         chunk = filter_list[
             i : i + chunk_size
         ]
@@ -35,7 +34,8 @@ def fetch_data_in_chunks(
         )
 
         cursor.execute(
-            query, filter_tuple,
+            query,
+            filter_tuple,
         )
 
         columns = [
@@ -47,12 +47,12 @@ def fetch_data_in_chunks(
 
         df_chunk = (
             pd.DataFrame.from_records(
-                results, columns=columns,
+                results,
+                columns=columns,
             )
         )
 
         if not columns_written:
-
             df_chunk.to_csv(
                 csv_file_path,
                 index=False,
@@ -63,7 +63,6 @@ def fetch_data_in_chunks(
             columns_written = True
 
         else:
-
             print("wrote chunk to csv")
 
             df_chunk.to_csv(

@@ -1,24 +1,17 @@
 import pandas
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
-    EaAssociationDirectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
+from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import \
+    AttributeToAssociationOperationSubtypes
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_direct_foreign_table_association_converter import \
+    convert_attribute_to_direct_foreign_table_association
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_subtype_foreign_table_association_converter import \
+    convert_attribute_to_subtype_foreign_table_association
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import \
+    EaAssociationDirectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 from pandas import DataFrame
-
-from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
-    AttributeToAssociationOperationSubtypes,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_direct_foreign_table_association_converter import (
-    convert_attribute_to_direct_foreign_table_association,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attribute_to_subtype_foreign_table_association_converter import (
-    convert_attribute_to_subtype_foreign_table_association,
-)
 
 
 def convert_attributes(

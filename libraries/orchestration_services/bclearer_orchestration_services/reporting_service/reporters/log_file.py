@@ -1,8 +1,7 @@
 from os import path
 
-from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
+from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
 
 
 class LogFiles:
@@ -32,11 +31,13 @@ class LogFiles:
         )
 
         file_path = path.join(
-            folder_path, file_name,
+            folder_path,
+            file_name,
         )
 
         LogFiles.log_file = open(
-            file_path, "w+",
+            file_path,
+            "w+",
         )
 
     @staticmethod
@@ -51,7 +52,8 @@ class LogFiles:
     ):
         if LogFiles.log_file is None:
             LogFiles.open_log_file(
-                folder_path, now_time,
+                folder_path,
+                now_time,
             )
 
         LogFiles.log_file.write(message)

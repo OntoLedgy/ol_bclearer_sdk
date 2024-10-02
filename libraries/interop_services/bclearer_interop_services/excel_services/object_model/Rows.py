@@ -1,8 +1,5 @@
+from bclearer_interop_services.excel_services.object_model.Cells import Cells
 from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
-
-from bclearer_interop_services.excel_services.object_model.Cells import (
-    Cells,
-)
 
 
 class Rows:
@@ -15,7 +12,8 @@ class Rows:
         self.index = index
 
     def __getitem__(
-        self, col_index: int,
+        self,
+        col_index: int,
     ):
         return Cells(
             self.sheet.cell(

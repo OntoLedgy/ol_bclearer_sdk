@@ -1,6 +1,7 @@
 # list_tree_node_superiors
 def list_tree_node_superiors(
-    tree_node, superior_node_list,
+    tree_node,
+    superior_node_list,
 ):
     """For a functional location, recursively search for all superior functional location
     Args:
@@ -16,7 +17,6 @@ def list_tree_node_superiors(
         tree_node
         in superior_node_list.keys()
     ):
-
         parent = superior_node_list[
             tree_node
         ]
@@ -25,7 +25,6 @@ def list_tree_node_superiors(
             parent
             and len(str(parent)) > 3
         ):
-
             list_of_superior_tree_nodes = [
                 parent,
             ] + list_tree_node_superiors(

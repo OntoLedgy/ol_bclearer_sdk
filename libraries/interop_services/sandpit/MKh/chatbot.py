@@ -65,7 +65,8 @@ def answer(question):
     password = os.getenv("password")
 
     with GraphDatabase.driver(
-        uri, auth=(username, password),
+        uri,
+        auth=(username, password),
     ) as driver:
         with driver.session() as session:
             result = session.run(query)

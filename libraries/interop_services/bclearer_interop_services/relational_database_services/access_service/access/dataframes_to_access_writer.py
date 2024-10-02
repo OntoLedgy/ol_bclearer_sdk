@@ -1,17 +1,11 @@
 import pyodbc
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-
-from bclearer_interop_services.delimited_text.dataframe_dictionary_to_csv_files_writer import (
-    write_dataframe_dictionary_to_csv_files,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.delimited_text.dataframe_dictionary_to_csv_files_writer import \
+    write_dataframe_dictionary_to_csv_files
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def write_dataframes_to_access(

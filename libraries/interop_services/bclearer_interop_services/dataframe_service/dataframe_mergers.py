@@ -11,7 +11,6 @@ def left_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
     if (
         foreign_key_dataframe_other_column_rename_dictionary
         is None
@@ -39,7 +38,6 @@ def inner_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
     if (
         foreign_key_dataframe_other_column_rename_dictionary
         is None
@@ -67,7 +65,6 @@ def outer_merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
     if (
         foreign_key_dataframe_other_column_rename_dictionary
         is None
@@ -96,7 +93,6 @@ def merge_dataframes(
     foreign_key_dataframe_fk_columns: list,
     foreign_key_dataframe_other_column_rename_dictionary=None,
 ):
-
     if (
         foreign_key_dataframe_other_column_rename_dictionary
         is None
@@ -160,7 +156,6 @@ def stringify_columns_in_dataframe(
     columns: list,
     dataframe: pandas.DataFrame,
 ):
-
     stringified_columns = list()
 
     for column in columns:

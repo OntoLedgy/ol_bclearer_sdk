@@ -9,7 +9,8 @@ def merge_tables_as_dictionaries_on_index(
     )
 
     for index in range(
-        1, len(tables_to_merge),
+        1,
+        len(tables_to_merge),
     ):
         __merge_table(
             merged_table=merged_table,

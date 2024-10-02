@@ -6,21 +6,15 @@ from os.path import isfile, join
 from pathlib import Path
 
 import pyodbc as odbc_library
-from bclearer_interop_services.excel_services.interop.excel_write import (
-    save_table_in_excel,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import (
-    load_database_with_table,
-)
-from nf_common.code.nf.types.collection_types import (
-    CollectionTypes,
-)
-from nf_common.code.nf.types.common_collection_types import (
-    CommonCollectionTypes,
-)
+from bclearer_interop_services.excel_services.interop.excel_write import \
+    save_table_in_excel
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import \
+    load_database_with_table
+from nf_common.code.nf.types.collection_types import CollectionTypes
+from nf_common.code.nf.types.common_collection_types import \
+    CommonCollectionTypes
 from pandas import DataFrame, concat
 
 # TODO: make this database agnostic, use a generic database wrapper class
@@ -134,7 +128,8 @@ class NfRegistries:
             )
             if isfile(
                 join(
-                    output_csv_folder, f,
+                    output_csv_folder,
+                    f,
                 ),
             )
         ]
@@ -157,7 +152,8 @@ class NfRegistries:
         short_name: str,
     ):
         output_csv_folder.mkdir(
-            parents=True, exist_ok=True,
+            parents=True,
+            exist_ok=True,
         )
 
         output_xlsx_folder = output_database_folder.joinpath(
@@ -165,7 +161,8 @@ class NfRegistries:
         )
 
         output_xlsx_folder.mkdir(
-            parents=True, exist_ok=True,
+            parents=True,
+            exist_ok=True,
         )
 
         for (
@@ -259,7 +256,8 @@ class NfRegistries:
         )
 
         output_folder.mkdir(
-            parents=True, exist_ok=True,
+            parents=True,
+            exist_ok=True,
         )
 
         for (

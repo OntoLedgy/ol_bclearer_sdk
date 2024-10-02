@@ -1,18 +1,13 @@
-from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import (
-    get_all_files_of_extension_from_folder,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.relational_database_services.access_service import (
-    get_access_database_connection,
-)
-from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import (
-    load_database_with_table,
-)
-from bclearer_interop_services.relational_database_services.access_service.access_database_creator import (
-    create_access_database_in_folder,
-)
+from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import \
+    get_all_files_of_extension_from_folder
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.relational_database_services.access_service import \
+    get_access_database_connection
+from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import \
+    load_database_with_table
+from bclearer_interop_services.relational_database_services.access_service.access_database_creator import \
+    create_access_database_in_folder
 
 
 def export_all_csv_files_from_folder_to_access(

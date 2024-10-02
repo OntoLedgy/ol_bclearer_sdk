@@ -1,13 +1,11 @@
 import pytest
-from bclearer_interop_services.document_store_services.mongo_db_service.mongo_db_wrapper import (
-    MongoDBWrapper,
-)
+from bclearer_interop_services.document_store_services.mongo_db_service.mongo_db_wrapper import \
+    MongoDBWrapper
 
 
 class TestMongoDBService:
     @pytest.fixture(autouse=True)
     def setup_method(self):
-
         self.mongo_wrapper = MongoDBWrapper(
             uri="mongodb://192.168.0.3:27017",
             database_name="default",
@@ -58,7 +56,6 @@ class TestMongoDBService:
         )
 
     def test_mongo_db_read(self):
-
         docs = self.mongo_wrapper.find_documents(
             "configuration",
         )

@@ -4,13 +4,11 @@ import sys
 import threading
 import time
 
-from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jLoader import (
-    Neo4jLoader,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.Neo4jLoader import \
+    Neo4jLoader
 
 
 def synchronized(func):
-
     func.__lock__ = threading.Lock()
 
     def synced_func(*args, **kws):
@@ -81,7 +79,6 @@ def orchestrate_csv_to_neo4j_load(
     emptyIsNull=True,
     debug=False,
 ):
-
     print(
         "loadCSVToNeo4j started file: "
         + csv_file_name_and_path,
@@ -121,7 +118,6 @@ def orchestrate_csv_to_neo4j_load(
         csv_file_name_and_path,
         encoding=csv_file_encoding,
     ) as csv_file:
-
         csv_reader = csv.DictReader(
             csv_file,
             delimiter=csv_file_delimiter,
@@ -135,7 +131,6 @@ def orchestrate_csv_to_neo4j_load(
         for thread_index in range(
             concurrency,
         ):
-
             neo4j_loader_thread = Neo4jLoader(
                 threadID=thread_index,
                 name="neo4j loader "

@@ -1,10 +1,7 @@
 import gzip
 
+from bclearer_interop_services.file_system_service.objects.files import Files
 from lxml import etree
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
 
 
 def read_xml_gz_file(

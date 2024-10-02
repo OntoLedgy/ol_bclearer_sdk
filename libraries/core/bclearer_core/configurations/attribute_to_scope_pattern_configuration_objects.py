@@ -8,7 +8,6 @@ class AttributeToScopePatternConfigurationObjects:
         scoping_type: str,
         scoping_type_name: str,
     ):
-
         self.attributed_type_name = (
             attributed_type_name
         )

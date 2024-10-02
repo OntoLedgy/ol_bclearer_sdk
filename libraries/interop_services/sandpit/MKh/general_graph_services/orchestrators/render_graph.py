@@ -19,7 +19,6 @@ def render_graph():
         for (
             connectednode
         ) in value.connected_nodes:
-
             directedSameAsGraph.edge(
                 str(value.node_uuid),
                 str(

@@ -1,17 +1,12 @@
 import pandas as pd
-
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import (
-    EdgeLoader,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import (
-    NodeLoader,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_wrappers import (
-    Neo4jWrapper,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import \
+    EdgeLoader
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import \
+    NodeLoader
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_wrappers import \
+    Neo4jWrapper
 
 
 class Neo4jDataLoadOrchestrator:
@@ -20,7 +15,6 @@ class Neo4jDataLoadOrchestrator:
         neo4j_connection: Neo4jConnections,
         batch_size: int = 1000,
     ):
-
         self.neo4j_wrapper = (
             Neo4jWrapper(
                 neo4j_connection,
@@ -41,12 +35,13 @@ class Neo4jDataLoadOrchestrator:
         nodes_info=None,
         edges_info=None,
     ):
-
         if nodes_info:
             for node in nodes_info:
                 node_dataframe = (
                     pd.read_csv(
-                        node["csv_file"],
+                        node[
+                            "csv_file"
+                        ],
                     )
                 )
 
@@ -61,11 +56,12 @@ class Neo4jDataLoadOrchestrator:
                 )
 
         if edges_info:
-
             for edge in edges_info:
                 edge_dataframe = (
                     pd.read_csv(
-                        edge["csv_file"],
+                        edge[
+                            "csv_file"
+                        ],
                     )
                 )
 
@@ -80,9 +76,9 @@ class Neo4jDataLoadOrchestrator:
                 )
 
     def orchestrate_neo4j_data_load_from_csv(
-        self, object_info,
+        self,
+        object_info,
     ):
-
         # Determine the type of information provided (nodes, edges, or both)
         nodes_info = object_info.get(
             "nodes_info",

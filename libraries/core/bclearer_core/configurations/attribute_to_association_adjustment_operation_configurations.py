@@ -1,19 +1,13 @@
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
-    EaAssociationDirectionTypes,
-)
-
-from bclearer_core.common_knowledge.adjustment_operation_types import (
-    AdjustmentOperationTypes,
-)
-from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
-    AttributeToAssociationOperationSubtypes,
-)
-from bclearer_core.configurations.adjustment_operation_configurations import (
-    AdjustmentOperationConfigurations,
-)
-from bclearer_core.configurations.load_hdf5_model_configurations import (
-    LoadHdf5ModelConfigurations,
-)
+from bclearer_core.common_knowledge.adjustment_operation_types import \
+    AdjustmentOperationTypes
+from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import \
+    AttributeToAssociationOperationSubtypes
+from bclearer_core.configurations.adjustment_operation_configurations import \
+    AdjustmentOperationConfigurations
+from bclearer_core.configurations.load_hdf5_model_configurations import \
+    LoadHdf5ModelConfigurations
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import \
+    EaAssociationDirectionTypes
 
 
 class AttributeToAssociationAdjustmentOperationConfigurations(

@@ -1,13 +1,9 @@
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
+    Neo4jConnections
 from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import (
-    get_load_dataset,
-    get_load_dataset_by_graph_object_type,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
-    generate_list_from_text,
-)
+    get_load_dataset, get_load_dataset_by_graph_object_type)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import \
+    generate_list_from_text
 
 
 class TestNeo4jStandardOperations:
@@ -15,7 +11,6 @@ class TestNeo4jStandardOperations:
         self,
         neo4j_connection: Neo4jConnections,
     ):
-
         self.cypher_query = (
             "MATCH (n) DETACH DELETE n"
         )
@@ -29,9 +24,9 @@ class TestNeo4jStandardOperations:
         )
 
     def test_standard_query_execution(
-        self, neo4j_connection,
+        self,
+        neo4j_connection,
     ):
-
         self.cypher_query = "CREATE INDEX index_name_for_cell_value FOR (cv:CellValue) ON (cv.uuid);"
 
         records = neo4j_connection.execute_cypher_query(
@@ -41,9 +36,9 @@ class TestNeo4jStandardOperations:
         print(records)
 
     def test_query_list_execution(
-        self, neo4j_connection,
+        self,
+        neo4j_connection,
     ):
-
         self.cypher_queries = "CREATE INDEX index_name_for_column FOR (column:Column) ON (column.column_uuids);\
                                 CREATE INDEX index_name_for_row FOR (row:Row) ON (row.row_uuids);\
                                 CREATE INDEX index_name_for_cell_value FOR (cv:CellValue) ON (cv.uuid);\
@@ -66,7 +61,6 @@ class TestNeo4jStandardOperations:
                     neo4j_connection.database_name,
                 ) as session:
                     if len(item) > 0:
-
                         records = session.execute_cypher_query(
                             item,
                         )
@@ -78,7 +72,6 @@ class TestNeo4jStandardOperations:
     def test_load_dataset_generation(
         self,
     ):
-
         data_input_folder_absolute_path = r"C:\Users\Mesbah.Khan\OneDrive - Shell\bCLEARerProjects\RDL\Datasheets\05 - Reuse\Data\all_data\neo4j"
 
         load_dataset = get_load_dataset(
@@ -92,7 +85,6 @@ class TestNeo4jStandardOperations:
     def test_load_dataset_by_category_generation(
         self,
     ):
-
         data_input_folder_absolute_path = r"C:\Users\Mesbah.Khan\OneDrive - Shell\bCLEARerProjects\RDL\Datasheets\05 - Reuse\Data\all_data\neo4j"
 
         load_dataset = get_load_dataset_by_graph_object_type(

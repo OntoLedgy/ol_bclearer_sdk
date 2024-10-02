@@ -1,11 +1,9 @@
 import copy
 
-from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_between_null_values_in_dataframe_swapper import (
-    swap_between_pandas_null_values_in_dataframe,
-)
-from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_swap_between_types import (
-    PandasNullValueSwapBetweenTypes,
-)
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_between_null_values_in_dataframe_swapper import \
+    swap_between_pandas_null_values_in_dataframe
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_swap_between_types import \
+    PandasNullValueSwapBetweenTypes
 from pandas import DataFrame
 
 

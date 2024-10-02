@@ -1,9 +1,7 @@
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import (
-    create_b_identity_base_from_string,
-)
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_b_identities_creator import (
-    create_b_identity_sum_from_b_identities,
-)
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import \
+    create_b_identity_base_from_string
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_sum_from_b_identities_creator import \
+    create_b_identity_sum_from_b_identities
 
 
 def create_b_identity_sum_from_strings(
@@ -25,7 +23,8 @@ def create_b_identity_sum_from_strings(
 
 
 def __add_string_to_b_identities(
-    b_identities: list, string: str,
+    b_identities: list,
+    string: str,
 ) -> None:
     if not isinstance(string, str):
         raise TypeError

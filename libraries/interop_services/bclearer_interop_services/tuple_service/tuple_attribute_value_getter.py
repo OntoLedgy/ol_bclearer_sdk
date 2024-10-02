@@ -1,6 +1,4 @@
-from bclearer_core.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 
 
 def get_tuple_attribute_value_if_required(
@@ -14,12 +12,14 @@ def get_tuple_attribute_value_if_required(
         return DEFAULT_NULL_VALUE
 
     if not hasattr(
-        owning_tuple, attribute_name,
+        owning_tuple,
+        attribute_name,
     ):
         return DEFAULT_NULL_VALUE
 
     tuple_attribute_value = getattr(
-        owning_tuple, attribute_name,
+        owning_tuple,
+        attribute_name,
     )
 
     return tuple_attribute_value

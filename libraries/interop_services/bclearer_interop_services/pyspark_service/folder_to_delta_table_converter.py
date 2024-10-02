@@ -1,12 +1,9 @@
 import pyspark.sql
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.pyspark_service.pyspark_delta_catalog_session_getter import \
+    get_pyspark_delta_catalog_session
 from delta.tables import DeltaTable
-
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.pyspark_service.pyspark_delta_catalog_session_getter import (
-    get_pyspark_delta_catalog_session,
-)
 
 
 def convert_folder_to_delta_table(

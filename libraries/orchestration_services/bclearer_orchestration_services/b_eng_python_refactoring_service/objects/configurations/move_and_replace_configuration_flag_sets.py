@@ -1,5 +1,4 @@
 class MoveAndReplaceConfigurationFlagSets:
-
     def __init__(
         self,
         create_new_folders_flag: bool,

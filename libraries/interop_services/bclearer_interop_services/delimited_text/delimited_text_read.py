@@ -4,20 +4,21 @@ import sys
 from typing import List, Optional, Union
 
 import pandas
-
-from bclearer_interop_services.file_system_service.encoding.file_encoding_detector import (
-    detect,
-)
+from bclearer_interop_services.file_system_service.encoding.file_encoding_detector import \
+    detect
 
 
 def get_table_from_csv_with_header(
-    relative_filename: str | os.PathLike,
+    relative_filename: (
+        str | os.PathLike
+    ),
     file_encoding: str,
     sep: str = ",",
-    custom_header: list[str] | None = None,
+    custom_header: (
+        list[str] | None
+    ) = None,
     na_values: list[str] | None = None,
 ):
-
     if na_values is None:
         na_values = [""]
 
@@ -50,9 +51,10 @@ def get_table_from_csv_with_header(
 
 def get_table_from_csv_with_header_with_encoding_detection(
     relative_filename: str,
-    custom_header: list[str] | None = None,
+    custom_header: (
+        list[str] | None
+    ) = None,
 ):
-
     file_encoding = detect(
         relative_filename,
     )
@@ -75,7 +77,8 @@ def __check_if_read_was_successful(
     sep: str,
 ):
     read_file_relative_filename = source_relative_filename.replace(
-        ".csv", "_read.csv",
+        ".csv",
+        "_read.csv",
     )
 
     dataframe.to_csv(

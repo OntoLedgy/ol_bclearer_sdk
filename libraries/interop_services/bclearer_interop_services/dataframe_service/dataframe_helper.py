@@ -1,12 +1,10 @@
 import uuid
 
 import pandas
-from bclearer_core.constants.nf_common_global_constants import (
-    UUIDS_COLUMN_NAME,
-)
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_uuid_from_canonical_format_string,
-)
+from bclearer_core.constants.nf_common_global_constants import \
+    UUIDS_COLUMN_NAME
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
+    create_uuid_from_canonical_format_string
 
 PARENT_DATAFRAME_SUFFIX = (
     "_merge_parent"
@@ -16,7 +14,6 @@ PARENT_DATAFRAME_SUFFIX = (
 def drop_duplicated_parent_columns(
     dataframe: pandas.DataFrame,
 ):
-
     drop_columns_by_marker(
         dataframe,
         PARENT_DATAFRAME_SUFFIX,
@@ -46,7 +43,6 @@ def add_fk_uuids(
     fk_uuid_column: str,
     remove_fk_after_uuidification,
 ):
-
     base_dataframe_columns = list(
         base_dataframe.columns,
     )
@@ -92,7 +88,8 @@ def add_fk_uuids(
 
     fk_uuidified_dataframe = (
         merged_dataframe.loc[
-            :, base_dataframe_columns,
+            :,
+            base_dataframe_columns,
         ]
     )
 
@@ -105,7 +102,6 @@ def add_parent_table_columns(
     base_column_foreign_keys: list,
     parent_column_keys: list,
 ):
-
     merged_dataframe = base_dataframe.merge(
         right=parent_register_dataframe,
         how="left",
@@ -130,7 +126,6 @@ def add_type_column_to_dataframe(
     col_position,
     default_value: uuid,
 ):
-
     dataframe.insert(
         col_position,
         col_name,
@@ -154,7 +149,8 @@ def move_uuid_col_to_front(
     )
 
     dataframe = dataframe.loc[
-        :, columns,
+        :,
+        columns,
     ]
 
     return dataframe
@@ -206,7 +202,6 @@ def unstringify_uuid_columns(
     dataframe: pandas.DataFrame,
     columns: list,
 ):
-
     for column in columns:
         dataframe[column] = dataframe[
             column

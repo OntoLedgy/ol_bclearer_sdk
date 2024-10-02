@@ -1,6 +1,4 @@
-from bclearer_core.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
 from pandas import DataFrame
 
 filling_up_map = {
@@ -22,7 +20,9 @@ def fill_up_all_empty_cells_with_default_null_value(
         )
 
         dataframe = __fill_up_all_cells_in_column_with_default_null_value(
-            dataframe, column, col_type,
+            dataframe,
+            column,
+            col_type,
         )
 
     return dataframe

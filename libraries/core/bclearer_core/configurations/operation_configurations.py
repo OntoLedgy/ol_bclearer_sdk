@@ -1,6 +1,4 @@
-from bclearer_core.common_knowledge.operation_types import (
-    OperationTypes,
-)
+from bclearer_core.common_knowledge.operation_types import OperationTypes
 
 
 class OperationConfigurations:

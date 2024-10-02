@@ -1,20 +1,15 @@
 import os
 
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from nf_common.code.services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
-from nf_common.code.services.log_environment_utility_service.common_loggers import (
-    CommonLoggers,
-)
-from nf_common.code.services.log_environment_utility_service.getters.set_up_logger_and_output_folder_getter import (
-    get_set_up_logger_and_output_folder,
-)
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
+from nf_common.code.services.log_environment_utility_service.common_loggers import \
+    CommonLoggers
+from nf_common.code.services.log_environment_utility_service.getters.set_up_logger_and_output_folder_getter import \
+    get_set_up_logger_and_output_folder
+from nf_common.code.services.reporting_service.reporters.log_file import \
+    LogFiles
 
 
 def get_common_logger(

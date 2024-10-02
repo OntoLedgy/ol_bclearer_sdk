@@ -1,9 +1,7 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_objects import (
-    BIdentityFileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_objects import \
+    BIdentityFileSystemObjects
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
 
 
 class BIdentityFolders(

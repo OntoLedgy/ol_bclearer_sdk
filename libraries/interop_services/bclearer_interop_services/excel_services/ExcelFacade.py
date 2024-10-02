@@ -1,10 +1,8 @@
 from pathlib import Path
 
 import pandas as pd
-
-from bclearer_interop_services.excel_services.object_model.Workbooks import (
-    Workbooks,
-)
+from bclearer_interop_services.excel_services.object_model.Workbooks import \
+    Workbooks
 
 
 class ExcelFacade:
@@ -37,7 +35,6 @@ class ExcelFacade:
         sheet_name: str,
         header_row_number: int = 0,
     ) -> pd.DataFrame:
-
         # Get the sheet from the workbook
         sheet = self.workbook.sheet(
             sheet_name,
@@ -95,7 +92,8 @@ class ExcelFacade:
 
         # Reset the index after dropping the rows
         sheet_dataframe.reset_index(
-            drop=True, inplace=True,
+            drop=True,
+            inplace=True,
         )
 
         return sheet_dataframe

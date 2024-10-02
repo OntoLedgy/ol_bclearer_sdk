@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from nf_common.code.services.reporting_service.reporters.log_file import (
-    LogFiles,
-)
+from nf_common.code.services.reporting_service.reporters.log_file import \
+    LogFiles
 
 
 def get_set_up_logger_and_output_folder(
@@ -14,7 +13,8 @@ def get_set_up_logger_and_output_folder(
     )
 
     output_folder.mkdir(
-        parents=True, exist_ok=True,
+        parents=True,
+        exist_ok=True,
     )
 
     LogFiles.open_log_file(

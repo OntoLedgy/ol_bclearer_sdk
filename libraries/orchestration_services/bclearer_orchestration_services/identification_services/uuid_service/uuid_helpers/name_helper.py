@@ -1,7 +1,5 @@
 from bclearer_orchestration_services.identification_services.uuid_service.constants.uuidification_constants import (
-    UUID_COLUMN_NAME_SEPARATOR,
-    UUIDIFIED_DATAFRAME_PREFIX,
-)
+    UUID_COLUMN_NAME_SEPARATOR, UUIDIFIED_DATAFRAME_PREFIX)
 
 
 def get_uuidified_dataframe_name(
@@ -18,11 +16,13 @@ def get_uuidified_dataframe_name(
 
 
 def get_common_uuidification_table_name(
-    prefix: str, table_type_name: str,
+    prefix: str,
+    table_type_name: str,
 ):
     common_uuidification_table_name = (
         __get_separated_uuid_column(
-            prefix, table_type_name,
+            prefix,
+            table_type_name,
         )
     )
 
@@ -32,7 +32,8 @@ def get_common_uuidification_table_name(
 
 
 def __get_separated_uuid_column(
-    prefix: str, suffix: str,
+    prefix: str,
+    suffix: str,
 ):
     separated_uuid_column = (
         prefix

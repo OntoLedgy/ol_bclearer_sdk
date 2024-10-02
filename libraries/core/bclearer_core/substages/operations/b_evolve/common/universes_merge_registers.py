@@ -1,10 +1,7 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
-from bclearer_core.substages.operations.b_evolve.common.universe_aligner import (
-    align_universes,
-)
+from bclearer_core.substages.operations.b_evolve.common.universe_aligner import \
+    align_universes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 
 ALIGNED_UNIVERSE_SHORT_NAME_SUFFIX = (
     "_aligned"

@@ -1,15 +1,13 @@
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-    HierarchyFolders,
-)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+    HierarchyFolders
 
 
 def get_hierarchy_folder_information_as_b_dataset_row_dictionary(
     hierarchy_file_system_object_register,
     hierarchy_folder: HierarchyFolders,
 ) -> dict:
-    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import (
-        HierarchyFileSystemObjectRegisters,
-    )
+    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import \
+        HierarchyFileSystemObjectRegisters
 
     if not isinstance(
         hierarchy_file_system_object_register,

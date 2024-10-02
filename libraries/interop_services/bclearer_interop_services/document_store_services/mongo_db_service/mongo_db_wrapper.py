@@ -10,7 +10,6 @@ class MongoDBWrapper:
         uri="mongodb://localhost:27017",
         database_name="default",
     ):
-
         self.client = MongoClient(uri)
 
         self.db = self.client[
@@ -18,9 +17,9 @@ class MongoDBWrapper:
         ]
 
     def access_collection(
-        self, collection_name,
+        self,
+        collection_name,
     ):
-
         collection = self.db[
             collection_name
         ]
@@ -28,9 +27,10 @@ class MongoDBWrapper:
         return collection
 
     def insert_documents(
-        self, collection_name, documents,
+        self,
+        collection_name,
+        documents,
     ):
-
         collection = (
             self.access_collection(
                 collection_name,
@@ -63,15 +63,15 @@ class MongoDBWrapper:
         json_file,
         encoding="utf-8",
     ):
-
         with open(
-            json_file, encoding=encoding,
+            json_file,
+            encoding=encoding,
         ) as file:
-
             documents = json.load(file)
 
         result = self.insert_documents(
-            collection_name, documents,
+            collection_name,
+            documents,
         )
 
         return result
@@ -83,11 +83,10 @@ class MongoDBWrapper:
         primary_key_field="_id",
         encoding="utf-8",
     ):
-
         with open(
-            json_file, encoding=encoding,
+            json_file,
+            encoding=encoding,
         ) as file:
-
             documents = json.load(file)
 
         result = self.upsert_documents(
@@ -104,7 +103,6 @@ class MongoDBWrapper:
         document,
         primary_key_field,
     ):
-
         collection = (
             self.access_collection(
                 collection_name,
@@ -143,7 +141,6 @@ class MongoDBWrapper:
         documents,
         primary_key_field,
     ):
-
         collection = (
             self.access_collection(
                 collection_name,
@@ -170,9 +167,10 @@ class MongoDBWrapper:
         return True
 
     def find_documents(
-        self, collection_name, query={},
+        self,
+        collection_name,
+        query={},
     ):
-
         collection = (
             self.access_collection(
                 collection_name,
@@ -191,13 +189,14 @@ class MongoDBWrapper:
         query={},
         output_file="output.json",
     ):
-
         documents = self.find_documents(
-            collection_name, query,
+            collection_name,
+            query,
         )
 
         with open(
-            output_file, "w",
+            output_file,
+            "w",
         ) as file:
             json.dump(
                 documents,
@@ -211,9 +210,10 @@ class MongoDBWrapper:
         )
 
     def run_aggregation(
-        self, collection_name, pipeline,
+        self,
+        collection_name,
+        pipeline,
     ):
-
         collection = (
             self.access_collection(
                 collection_name,
@@ -233,7 +233,6 @@ class MongoDBWrapper:
         file_path,
         file_type="json",
     ):
-
         if file_type == "json":
             with open(
                 file_path,
@@ -256,7 +255,8 @@ class MongoDBWrapper:
         return pipeline
 
     def _get_group_by_field(
-        self, pipeline,
+        self,
+        pipeline,
     ):
         # Loop through the pipeline stages
         for stage in pipeline:
@@ -271,7 +271,8 @@ class MongoDBWrapper:
                 )
                 # Clean up the group by field to remove the leading "$"
                 if isinstance(
-                    group_by_field, str,
+                    group_by_field,
+                    str,
                 ) and group_by_field.startswith(
                     "$",
                 ):
@@ -297,7 +298,8 @@ class MongoDBWrapper:
         )
 
         results = self.run_aggregation(
-            collection_name, pipeline,
+            collection_name,
+            pipeline,
         )
 
         return results, group_by_field
@@ -307,7 +309,6 @@ class MongoDBWrapper:
         results,
         output_file="output.csv",
     ):
-
         if not results:
             print(
                 "No results to export.",
@@ -331,7 +332,8 @@ class MongoDBWrapper:
             encoding="utf-8",
         ) as file:
             writer = csv.DictWriter(
-                file, fieldnames=keys,
+                file,
+                fieldnames=keys,
             )
             writer.writeheader()
             for doc in results:
@@ -342,5 +344,4 @@ class MongoDBWrapper:
         )
 
     def close_connection(self):
-
         self.client.close()

@@ -1,16 +1,12 @@
 import os
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from bclearer_interop_services.file_system_service.objects.files import Files
 
 
 class Folders(FileSystemObjects):
-
     def __init__(
         self,
         absolute_path_string: str,
@@ -23,7 +19,8 @@ class Folders(FileSystemObjects):
         if (
             parent_folder
             and not isinstance(
-                parent_folder, Folders,
+                parent_folder,
+                Folders,
             )
         ):
             raise TypeError
@@ -53,7 +50,8 @@ class Folders(FileSystemObjects):
         )
 
     def __add_to_parent(
-        self, parent_folder: "Folders",
+        self,
+        parent_folder: "Folders",
     ):
         if parent_folder is None:
             return

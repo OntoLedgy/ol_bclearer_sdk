@@ -1,21 +1,15 @@
 from typing import Optional
 
-from nf_common.code.services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
-
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import (
-    BIdentityFileSystemObjectUniverseRegisters,
-)
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import (
-    BIdentityFolders,
-)
-from bclearer_interop_services.file_system_service.new_folder_creator import (
-    create_new_folder,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import \
+    BIdentityFileSystemObjectUniverseRegisters
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import \
+    BIdentityFolders
+from bclearer_interop_services.file_system_service.new_folder_creator import \
+    create_new_folder
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from nf_common.code.services.datetime_service.time_helpers.time_getter import \
+    now_time_as_string_for_files
 
 
 class BIdentityFileSystemObjectUniverses:
@@ -33,7 +27,9 @@ class BIdentityFileSystemObjectUniverses:
             root_b_identity_folder=root_b_identity_folder,
         )
 
-        self.universe_output_root_folder: Folders | None = None
+        self.universe_output_root_folder: (
+            Folders | None
+        ) = None
 
     def export_universe_in_b_datasets_format(
         self,

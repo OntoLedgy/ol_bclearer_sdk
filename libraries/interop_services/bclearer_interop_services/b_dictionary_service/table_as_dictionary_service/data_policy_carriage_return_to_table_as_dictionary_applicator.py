@@ -34,7 +34,8 @@ def __apply_data_policy_carriage_return_to_cell_value(
     if isinstance(cell_value, str):
         cleaned_cell = (
             cell_value.replace(
-                "\r\n", "\n",
+                "\r\n",
+                "\n",
             )
         )
 

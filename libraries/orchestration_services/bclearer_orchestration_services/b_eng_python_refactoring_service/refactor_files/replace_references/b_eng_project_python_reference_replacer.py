@@ -1,12 +1,10 @@
 import os
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.file_content_replacer import (
-    replace_string_in_file,
-)
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import (
-    BEngProjectFolders,
-)
+from bclearer_interop_services.file_system_service.file_content_replacer import \
+    replace_string_in_file
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import \
+    BEngProjectFolders
 
 
 def replace_python_reference_in_b_eng_project(
@@ -47,7 +45,8 @@ def __replace_reference_in_folder(
     for file_name in files:
         __replace_reference_in_file(
             file_path=Path(
-                path, file_name,
+                path,
+                file_name,
             ),
             source_reference=source_reference,
             target_reference=target_reference,

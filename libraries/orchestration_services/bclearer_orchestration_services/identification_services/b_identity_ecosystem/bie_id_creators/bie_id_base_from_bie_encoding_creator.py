@@ -1,8 +1,7 @@
 import hashlib
 
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import (
-    BieIds,
-)
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_ids import \
+    BieIds
 
 
 def create_bie_id_base_from_bie_encoding(
@@ -19,7 +18,8 @@ def create_bie_id_base_from_bie_encoding(
     )
 
     hash_as_integer = int(
-        hash_as_hex_string, 16,
+        hash_as_hex_string,
+        16,
     )
 
     bie_id = BieIds(

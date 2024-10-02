@@ -6,23 +6,23 @@ def build_structure(
     structure=None,
     relative_path="",
 ):
-
     if structure is None:
         structure = {}
 
     for item in os.listdir(root_dir):
         item_path = os.path.join(
-            root_dir, item,
+            root_dir,
+            item,
         )
 
         item_relative_path = (
             os.path.join(
-                relative_path, item,
+                relative_path,
+                item,
             )
         )
 
         if os.path.isdir(item_path):
-
             if item not in structure:
                 structure[item] = {}
             build_structure(
@@ -33,14 +33,14 @@ def build_structure(
 
         elif os.path.isfile(item_path):
             key = item.replace(
-                ".csv", "",
+                ".csv",
+                "",
             ).replace(".cypher", "")
 
             if key not in structure:
                 structure[key] = {}
 
             if item.endswith(".csv"):
-
                 structure[key][
                     "data"
                 ] = item_relative_path
@@ -48,7 +48,6 @@ def build_structure(
             elif item.endswith(
                 ".cypher",
             ):
-
                 structure[key][
                     "cypher"
                 ] = item_relative_path
@@ -63,20 +62,20 @@ def merge_structures(
     merged_structure = {}
 
     def merge_recursive(
-        load_dict, query_dict,
+        load_dict,
+        query_dict,
     ):
-
         merged = {}
         for key in load_dict:
             merged[key] = {}
             if key in query_dict:
                 if isinstance(
-                    load_dict[key], dict,
+                    load_dict[key],
+                    dict,
                 ) and isinstance(
                     query_dict[key],
                     dict,
                 ):
-
                     merged[key] = (
                         merge_recursive(
                             load_dict[
@@ -92,7 +91,8 @@ def merge_structures(
                         "data": load_dict[
                             key
                         ].get(
-                            "data", None,
+                            "data",
+                            None,
                         ),
                         "cypher": query_dict[
                             key
@@ -123,12 +123,13 @@ def merge_structures(
 def generate_load_dataset_from_folder(
     parent_folder,
 ):
-
     load_files_dir = os.path.join(
-        parent_folder, "load_files",
+        parent_folder,
+        "load_files",
     )
     queries_dir = os.path.join(
-        parent_folder, "queries",
+        parent_folder,
+        "queries",
     )
 
     load_files_structure = (
@@ -211,7 +212,8 @@ def categorize_structure(structure):
         ) in structure.items():
             if isinstance(value, dict):
                 new_path = os.path.join(
-                    path, key,
+                    path,
+                    key,
                 )
                 if (
                     "data" in value
@@ -239,13 +241,13 @@ def categorize_structure(structure):
                         "02_edges"
                         in new_path
                     ):
-
                         edges.append(
                             pair,
                         )
                 else:
                     recurse(
-                        value, new_path,
+                        value,
+                        new_path,
                     )
 
     recurse(structure)
@@ -265,7 +267,6 @@ def get_load_dataset(parent_folder):
 def get_load_dataset_by_graph_object_type(
     parent_folder,
 ):
-
     structure = generate_load_dataset_from_folder(
         parent_folder,
     )

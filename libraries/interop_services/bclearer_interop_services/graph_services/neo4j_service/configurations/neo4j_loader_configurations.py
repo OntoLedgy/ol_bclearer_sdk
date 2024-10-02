@@ -1,9 +1,8 @@
 import json
 import os
 
-from neo4j_orchestrator_helpers.read_cypher_queries import (
-    read_cypher_query_from_file,
-)
+from neo4j_orchestrator_helpers.read_cypher_queries import \
+    read_cypher_query_from_file
 
 
 class CSVConfigurations:
@@ -30,7 +29,8 @@ class CSVConfigurations:
         self.csv_escape_character: (
             str
         ) = config.get(
-            "csv_escape_character", "\\",
+            "csv_escape_character",
+            "\\",
         )
 
 
@@ -39,19 +39,20 @@ class Neo4jLoaderConfigurations:
         self,
         configuration_file: str,
     ):
-
         with open(
             configuration_file,
         ) as file:
             json_model = json.load(file)
             self.batch_size: int = (
                 json_model.get(
-                    "batch_size", 1000,
+                    "batch_size",
+                    1000,
                 )
             )
             self.concurrency: int = (
                 json_model.get(
-                    "concurrency", 4,
+                    "concurrency",
+                    4,
                 )
             )
             self.data_input_folder_absolute_path = json_model.get(
@@ -68,12 +69,14 @@ class Neo4jLoaderConfigurations:
             )
             self.emptyIsNull: bool = (
                 json_model.get(
-                    "emptyIsNull", False,
+                    "emptyIsNull",
+                    False,
                 )
             )
             self.debug: bool = (
                 json_model.get(
-                    "debug", False,
+                    "debug",
+                    False,
                 )
             )
 
@@ -82,7 +85,6 @@ class Neo4jLoaderConfigurations:
         data_csv,
         cypher_query_file,
     ):
-
         self.csv_configurations.csv_path = os.path.join(
             self.data_input_folder_absolute_path,
             data_csv,

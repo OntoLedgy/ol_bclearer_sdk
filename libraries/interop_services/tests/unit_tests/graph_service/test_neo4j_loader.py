@@ -8,9 +8,7 @@ from unittest.mock import Mock, patch
 class TestNeo4jLoader(
     unittest.TestCase,
 ):
-
     def setUp(self):
-
         self.mock_session = Mock()
         self.mock_connection = Mock(
             return_value=self.mock_session,
@@ -48,7 +46,6 @@ class TestNeo4jLoader(
         )
 
     def test_add_row_and_run(self):
-
         for row in self.test_data:
             self.loader.addRow(row)
 
@@ -56,7 +53,8 @@ class TestNeo4jLoader(
         self.loader.finish()
 
         self.assertEqual(
-            len(self.loader.rows), 0,
+            len(self.loader.rows),
+            0,
         )
 
     def test_finish(self):

@@ -13,10 +13,12 @@ def get_hash_sum_from_hash_string_list(
 
 
 def __add_hash_string_to_hash_sum(
-    hash_string: str, hash_sum: int,
+    hash_string: str,
+    hash_sum: int,
 ) -> int:
     hash_integer = int(
-        hash_string, base=16,
+        hash_string,
+        base=16,
     )
 
     hash_sum += hash_integer

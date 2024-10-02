@@ -1,14 +1,11 @@
 import psutil
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import *
-from bclearer_orchestration_services.log_environment_utility_service.helpers.logger_helper import (
-    log_environment_section,
-)
-from bclearer_orchestration_services.log_environment_utility_service.helpers.units_converter import (
-    convert_units,
-)
-from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
+from bclearer_orchestration_services.log_environment_utility_service.helpers.logger_helper import \
+    log_environment_section
+from bclearer_orchestration_services.log_environment_utility_service.helpers.units_converter import \
+    convert_units
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
 
 
 @run_and_log_function
@@ -57,7 +54,8 @@ def __get_name_values() -> dict:
 
 
 def __add_partition_name_values(
-    name_values: dict, partition,
+    name_values: dict,
+    partition,
 ) -> dict:
     mountpoint = (
         f"{partition.mountpoint}"

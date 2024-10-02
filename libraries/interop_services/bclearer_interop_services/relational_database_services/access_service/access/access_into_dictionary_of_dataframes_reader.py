@@ -1,15 +1,10 @@
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.relational_database_services.access_service import \
+    get_access_database_connection
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 from pandas import read_sql_query
 from pyodbc import Connection
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.relational_database_services.access_service import (
-    get_access_database_connection,
-)
 
 
 def read_access_into_dictionary_of_dataframes(

@@ -1,10 +1,7 @@
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
-
-from bclearer_interop_services.file_system_service.objects.file_system_objects import (
-    FileSystemObjects,
-)
+from bclearer_interop_services.file_system_service.objects.file_system_objects import \
+    FileSystemObjects
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
+    create_new_uuid
 
 
 class HierarchyFileSystemObjects:
@@ -20,9 +17,8 @@ class HierarchyFileSystemObjects:
 
         self.uuid = create_new_uuid()
 
-        from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
-            HierarchyFolders,
-        )
+        from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
+            HierarchyFolders
 
         if (
             parent_hierarchy_folder

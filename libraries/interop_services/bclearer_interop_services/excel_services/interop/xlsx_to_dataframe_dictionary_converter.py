@@ -1,8 +1,5 @@
+from bclearer_interop_services.file_system_service.objects.files import Files
 from pandas import read_excel
-
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
 
 
 def covert_xlxs_to_dataframe_dictionary(

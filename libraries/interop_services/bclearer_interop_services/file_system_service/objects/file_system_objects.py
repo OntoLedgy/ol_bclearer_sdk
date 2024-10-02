@@ -1,15 +1,11 @@
 import os
 
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
-
-from bclearer_interop_services.file_system_service.objects.path_properties import (
-    PathProperties,
-)
-from bclearer_interop_services.file_system_service.objects.wrappers.absolute_path_wrappers import (
-    AbsolutePathWrappers,
-)
+from bclearer_interop_services.file_system_service.objects.path_properties import \
+    PathProperties
+from bclearer_interop_services.file_system_service.objects.wrappers.absolute_path_wrappers import \
+    AbsolutePathWrappers
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
+    create_new_uuid
 
 
 class FileSystemObjects:
@@ -18,14 +14,14 @@ class FileSystemObjects:
         absolute_path_string: str,
         parent_folder: object = None,
     ):
-        from bclearer_interop_services.file_system_service.objects.folders import (
-            Folders,
-        )
+        from bclearer_interop_services.file_system_service.objects.folders import \
+            Folders
 
         if (
             parent_folder
             and not isinstance(
-                parent_folder, Folders,
+                parent_folder,
+                Folders,
             )
         ):
             raise TypeError
@@ -75,7 +71,8 @@ class FileSystemObjects:
         return str(self.__path.parent)
 
     def extend_path(
-        self, path_extension: str,
+        self,
+        path_extension: str,
     ) -> str:
         return self.__path.extend_path(
             path_extension,

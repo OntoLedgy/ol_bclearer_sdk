@@ -1,8 +1,6 @@
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_sessions import \
+    Neo4jSession
 from neo4j import GraphDatabase
-
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_sessions import (
-    Neo4jSession,
-)
 
 
 class Neo4jConnections:
@@ -15,7 +13,6 @@ class Neo4jConnections:
         max_connection_pool_size=None,
         external_driver=None,  # New parameter to accept an existing driver
     ):
-
         self.uri = uri
         self.auth = (
             user_name,
@@ -52,7 +49,8 @@ class Neo4jConnections:
         return self.driver
 
     def get_new_session(
-        self, database_name=None,
+        self,
+        database_name=None,
     ):
         # Use the driver (whether external or created internally)
         if database_name:

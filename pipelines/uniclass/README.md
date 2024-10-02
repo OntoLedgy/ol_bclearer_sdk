@@ -51,17 +51,17 @@ The program needs some external resources to run:
 
 #### Background
 
-The Agile Manifesto prefers “working software over comprehensive documentation”. Robert C. Martin, one of the original authors of the Agile Manifesto, is also the author of the book Clean Code.  
+The Agile Manifesto prefers “working software over comprehensive documentation”. Robert C. Martin, one of the original authors of the Agile Manifesto, is also the author of the book Clean Code.
 
-In this book, he makes a strong case for code being self-documenting: saying things such as "always try to explain yourself in code." 
+In this book, he makes a strong case for code being self-documenting: saying things such as "always try to explain yourself in code."
 
-He suggests that the goal of every programmer should be to write code so clean and expressive that code comments are unnecessary. 
+He suggests that the goal of every programmer should be to write code so clean and expressive that code comments are unnecessary.
 
 When a programmer writes a comment, it will usually mean that they have failed to write code that was expressive enough. At the extreme, he suggests, maybe a little rhetorically, that "comments are always failures".
 
 #### The BORO documentation policy
 
-To aim to write code so clean and expressive that code comments are unnecessary. 
+To aim to write code so clean and expressive that code comments are unnecessary.
 
 ## Contributing
 

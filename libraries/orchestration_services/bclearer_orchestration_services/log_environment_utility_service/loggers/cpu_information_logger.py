@@ -1,11 +1,9 @@
 import psutil
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import *
-from bclearer_orchestration_services.log_environment_utility_service.helpers.logger_helper import (
-    log_environment_section,
-)
-from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
+from bclearer_orchestration_services.log_environment_utility_service.helpers.logger_helper import \
+    log_environment_section
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import \
+    run_and_log_function
 
 
 @run_and_log_function
@@ -59,7 +57,8 @@ def __get_name_values() -> dict:
 
     for i, percentage in enumerate(
         psutil.cpu_percent(
-            percpu=True, interval=1,
+            percpu=True,
+            interval=1,
         ),
     ):
         name_values[

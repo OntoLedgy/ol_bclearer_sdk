@@ -9,7 +9,6 @@ class Neo4jWrapper:
         password=None,
         external_driver: Driver = None,
     ):
-
         if external_driver is None:
             self.driver = (
                 GraphDatabase.driver(
@@ -29,11 +28,13 @@ class Neo4jWrapper:
         self.driver.close()
 
     def run_query(
-        self, query, parameters=None,
+        self,
+        query,
+        parameters=None,
     ):
-
         with self.driver.session() as session:
             result = session.run(
-                query, parameters,
+                query,
+                parameters,
             )
             return result

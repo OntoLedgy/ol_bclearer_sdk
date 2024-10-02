@@ -1,12 +1,8 @@
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_interop_services.file_system_service.objects.folders import (
-    Folders,
-)
-from bclearer_interop_services.file_system_service.resources_service.processes.resource_copier import (
-    copy_resource_and_rename,
-)
+from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.folders import \
+    Folders
+from bclearer_interop_services.file_system_service.resources_service.processes.resource_copier import \
+    copy_resource_and_rename
 
 
 def create_results_database_file(

@@ -3,21 +3,19 @@ from neo4j import Driver
 
 
 class Neo4jSession:
-
     def __init__(
         self,
         driver: Driver,
         database_name: str,
     ):
-
         self.session = driver.session(
             database=database_name,
         )
 
     def execute_cypher_query(
-        self, query,
+        self,
+        query,
     ):
-
         with self.session as session:
             result = session.run(query)
             records = list(result)
@@ -29,7 +27,6 @@ class Neo4jSession:
         params={},
         output="all",
     ):
-
         if output not in [
             "all",
             "none",
@@ -52,7 +49,8 @@ class Neo4jSession:
         if len(qq) > 50:
             qq = (
                 qq[0:76].replace(
-                    "\n", "",
+                    "\n",
+                    "",
                 )
                 + "..."
             )
@@ -64,7 +62,8 @@ class Neo4jSession:
             database=self._dbname,
         ) as session:
             result = session.run(
-                query.strip(), params,
+                query.strip(),
+                params,
             )
 
             df = pd.DataFrame(
@@ -98,7 +97,10 @@ class Neo4jSession:
         )
 
         df2 = pd.DataFrame(
-            columns=["counter", "value"],
+            columns=[
+                "counter",
+                "value",
+            ],
         )
 
         show = True
@@ -218,6 +220,9 @@ class Neo4jSession:
         return self
 
     def __exit__(
-        self, exc_type, exc_val, exc_tb,
+        self,
+        exc_type,
+        exc_val,
+        exc_tb,
     ):
         self.session.close()

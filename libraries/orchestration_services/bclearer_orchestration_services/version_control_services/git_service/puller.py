@@ -1,9 +1,8 @@
 from pathlib import Path
 
 import git
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def pull_git_repository(

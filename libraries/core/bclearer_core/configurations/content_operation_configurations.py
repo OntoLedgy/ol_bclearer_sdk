@@ -1,12 +1,9 @@
-from bclearer_core.common_knowledge.content_operation_types import (
-    ContentOperationTypes,
-)
-from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
-    DigitalisationLevelStereotypeMatchedEaObjects,
-)
-from bclearer_core.configurations.operation_configurations import (
-    OperationConfigurations,
-)
+from bclearer_core.common_knowledge.content_operation_types import \
+    ContentOperationTypes
+from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import \
+    DigitalisationLevelStereotypeMatchedEaObjects
+from bclearer_core.configurations.operation_configurations import \
+    OperationConfigurations
 
 
 class ContentOperationConfigurations(

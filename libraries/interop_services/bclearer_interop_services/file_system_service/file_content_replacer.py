@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 
 
 def replace_string_in_file(
@@ -37,7 +36,8 @@ def replace_string_in_file(
     )
 
     file_content = file_content.replace(
-        source_string, target_string,
+        source_string,
+        target_string,
     )
 
     file = open(str(file_path), "w")

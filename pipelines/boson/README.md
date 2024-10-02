@@ -47,7 +47,7 @@ If this is unsuccessful, run the command: `git config --global core.longpaths tr
 
 #### Requirements
 
-* Microsoft Visual C++ 14.0 or greater is required. 
+* Microsoft Visual C++ 14.0 or greater is required.
     * A free version of "Microsoft C++ Build Tools" can be downloaded from [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
     * During the installation, check the Desktop development with C++ and untick all the optional products from the Installation details
 
@@ -57,7 +57,7 @@ If this is unsuccessful, run the command: `git config --global core.longpaths tr
 * Create a folder that contains the GML files that are to be processed
 * Run the start-up file: **bclearer_boson_1_source\b_code\a_startup\boson_1_bclearer_runner.py**
 * This code runs as a standalone application that can be cloned to your Python IDE of preference
-* When run the code asks for two folders: 
+* When run the code asks for two folders:
     * first, the output folder - this will store a timestamped folder that contains the substage folders, the XML output and the logging
     * second, the data folder - this is the input folder that contains the GML files that are to be processed
 
@@ -65,17 +65,17 @@ If this is unsuccessful, run the command: `git config --global core.longpaths tr
 
 #### Background
 
-The Agile Manifesto prefers “working software over comprehensive documentation”. Robert C. Martin, one of the original authors of the Agile Manifesto, is also the author of the book Clean Code.  
+The Agile Manifesto prefers “working software over comprehensive documentation”. Robert C. Martin, one of the original authors of the Agile Manifesto, is also the author of the book Clean Code.
 
-In this book, he makes a strong case for code being self-documenting: saying things such as "always try to explain yourself in code." 
+In this book, he makes a strong case for code being self-documenting: saying things such as "always try to explain yourself in code."
 
-He suggests that the goal of every programmer should be to write code so clean and expressive that code comments are unnecessary. 
+He suggests that the goal of every programmer should be to write code so clean and expressive that code comments are unnecessary.
 
 When a programmer writes a comment, it will usually mean that they have failed to write code that was expressive enough. At the extreme, he suggests, maybe a little rhetorically, that "comments are always failures".
 
 #### The BORO documentation policy
 
-To aim to write code so clean and expressive that code comments are unnecessary. 
+To aim to write code so clean and expressive that code comments are unnecessary.
 
 ## Contributing
 

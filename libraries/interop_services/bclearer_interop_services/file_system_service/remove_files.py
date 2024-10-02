@@ -8,7 +8,8 @@ def remove_all_files_from_folder(
         folder_name,
     ):
         file_path = os.path.join(
-            folder_name, file_name,
+            folder_name,
+            file_name,
         )
         try:
             if os.path.isfile(

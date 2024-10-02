@@ -1,43 +1,28 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-
-from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
-    DigitalisationLevelStereotypeMatchedEaObjects,
-)
-from bclearer_core.substages.operations.b_evolve.common.digitalisation_level_stereotypes_usages_getter import (
-    get_digitalisation_level_stereotypes_usages,
-)
-from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import (
-    UniversesMergeRegisters,
-)
-from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.universes_concatenator import (
-    concat_universe_collections,
-)
-from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import (
-    create_new_ea_objects_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import (
-    update_nf_ea_com_universe_with_dictionary,
-)
-from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
-    get_nf_uuid_from_ea_guid_from_collection,
-)
-from bclearer_core.substages.operations.common.stereotype_adder import (
-    add_new_stereotype_usage_to_dictionary,
-)
+from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import \
+    DigitalisationLevelStereotypeMatchedEaObjects
+from bclearer_core.substages.operations.b_evolve.common.digitalisation_level_stereotypes_usages_getter import \
+    get_digitalisation_level_stereotypes_usages
+from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import \
+    UniversesMergeRegisters
+from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.universes_concatenator import \
+    concat_universe_collections
+from bclearer_core.substages.operations.common.new_ea_objects_dictionary_creator import \
+    create_new_ea_objects_dictionary
+from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import \
+    update_nf_ea_com_universe_with_dictionary
+from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import \
+    get_nf_uuid_from_ea_guid_from_collection
+from bclearer_core.substages.operations.common.stereotype_adder import \
+    add_new_stereotype_usage_to_dictionary
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
+    NfEaComCollectionTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
+    NfEaComColumnTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
 
 
 def merge_universes(

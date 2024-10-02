@@ -1,37 +1,25 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
-    create_empty_nf_ea_universe,
-)
-
-from bclearer_core.common_knowledge.adjustment_operation_types import (
-    AdjustmentOperationTypes,
-)
-from bclearer_core.configurations.adjustment_operation_configurations import (
-    AdjustmentOperationConfigurations,
-)
-from bclearer_core.configurations.adjustment_operations_substage_configurations import (
-    AdjustmentOperationsSubstageConfigurations,
-)
-from bclearer_core.configurations.attribute_to_association_adjustment_operation_configurations import (
-    AttributeToAssociationAdjustmentOperationConfigurations,
-)
-from bclearer_core.substages.operations.a_load.content_operations.runners.hdf5_to_content_universe_loader import (
-    load_hdf5_model_to_content_universe,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attributes_to_associations_converter import (
-    convert_attributes_to_associations,
-)
-from bclearer_core.substages.operations.b_evolve.adjustment_operations.remove_attributes.attribute_remover import (
-    remove_attributes,
-)
-from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import (
-    UniversesMergeRegisters,
-)
+from bclearer_core.common_knowledge.adjustment_operation_types import \
+    AdjustmentOperationTypes
+from bclearer_core.configurations.adjustment_operation_configurations import \
+    AdjustmentOperationConfigurations
+from bclearer_core.configurations.adjustment_operations_substage_configurations import \
+    AdjustmentOperationsSubstageConfigurations
+from bclearer_core.configurations.attribute_to_association_adjustment_operation_configurations import \
+    AttributeToAssociationAdjustmentOperationConfigurations
+from bclearer_core.substages.operations.a_load.content_operations.runners.hdf5_to_content_universe_loader import \
+    load_hdf5_model_to_content_universe
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.attributes_to_associations_converter import \
+    convert_attributes_to_associations
+from bclearer_core.substages.operations.b_evolve.adjustment_operations.remove_attributes.attribute_remover import \
+    remove_attributes
+from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import \
+    UniversesMergeRegisters
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import \
+    create_empty_nf_ea_universe
 
 
 class AdjustmentOperationsSubstages:

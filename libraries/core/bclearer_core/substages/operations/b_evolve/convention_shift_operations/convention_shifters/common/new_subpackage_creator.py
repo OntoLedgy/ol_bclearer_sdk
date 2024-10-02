@@ -1,23 +1,15 @@
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.ea_t.ea_t_package_column_types import (
-    EaTPackageColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
-    EaElementTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
+from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import \
+    create_ea_guid_from_nf_uuid
+from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
+from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
+    create_new_uuid
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.ea_t.ea_t_package_column_types import \
+    EaTPackageColumnTypes
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import \
+    EaElementTypes
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
+    NfEaComColumnTypes
 from pandas import DataFrame, set_option
-
-from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator import (
-    create_ea_guid_from_nf_uuid,
-)
 
 
 def create_new_subpackage_if_not_exist(
@@ -187,7 +179,8 @@ def __add_new_package_row(
     # Note: Pandas truncates long strings. The following instructions prevents pandas from doing that.
     # TODO: Consider to move this option higher in the hierarchy
     set_option(
-        "display.max_colwidth", None,
+        "display.max_colwidth",
+        None,
     )
 
     parent_package_ea_package_path = (

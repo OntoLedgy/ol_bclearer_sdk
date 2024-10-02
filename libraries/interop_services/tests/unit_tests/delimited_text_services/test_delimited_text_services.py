@@ -1,11 +1,11 @@
-from bclearer_interop_services.delimited_text.delimited_text_read import (
-    get_table_from_csv_with_header_with_encoding_detection,
-)
+from bclearer_interop_services.delimited_text.delimited_text_read import \
+    get_table_from_csv_with_header_with_encoding_detection
 
 
 class TestExcelInteropServices:
     def test_read_csv_with_encoding_detection(
-        self, csv_file_name_and_path,
+        self,
+        csv_file_name_and_path,
     ):
         # Call the function that reads the CSV with encoding detection
         table = get_table_from_csv_with_header_with_encoding_detection(

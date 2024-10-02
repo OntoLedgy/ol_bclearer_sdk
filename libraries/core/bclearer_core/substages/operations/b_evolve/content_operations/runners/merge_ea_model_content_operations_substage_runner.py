@@ -1,22 +1,15 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
-    EaToolsSessionManagers,
-)
-
-from bclearer_core.configurations.content_operation_configurations import (
-    ContentOperationConfigurations,
-)
-from bclearer_core.configurations.load_ea_model_configurations import (
-    LoadEaModelConfigurations,
-)
-from bclearer_core.substages.operations.a_load.content_operations.runners.ea_model_to_content_universe_loader import (
-    load_ea_model_to_content_universe,
-)
-from bclearer_core.substages.operations.b_evolve.content_operations.content_operations_substages import (
-    ContentOperationsSubstages,
-)
+from bclearer_core.configurations.content_operation_configurations import \
+    ContentOperationConfigurations
+from bclearer_core.configurations.load_ea_model_configurations import \
+    LoadEaModelConfigurations
+from bclearer_core.substages.operations.a_load.content_operations.runners.ea_model_to_content_universe_loader import \
+    load_ea_model_to_content_universe
+from bclearer_core.substages.operations.b_evolve.content_operations.content_operations_substages import \
+    ContentOperationsSubstages
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
+    NfEaComUniverses
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
+    EaToolsSessionManagers
 
 
 def run_merge_ea_model_content_operations_substage(

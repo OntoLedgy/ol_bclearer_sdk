@@ -1,14 +1,12 @@
-from bclearer_core.constants.standard_constants import (
-    DEFAULT_NULL_VALUE,
-)
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
+from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
+    log_message
 from pandas import read_excel
 
 
 def convert_sheet_with_header_to_dataframe(
-    file_name: str, sheet_name: str,
+    file_name: str,
+    sheet_name: str,
 ):
     try:
         dataframe = read_excel(

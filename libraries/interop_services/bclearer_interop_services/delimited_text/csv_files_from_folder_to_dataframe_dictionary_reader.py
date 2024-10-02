@@ -43,11 +43,13 @@ def __add_dataframe(
     dataframe_dictionary: dict,
 ) -> dict:
     dataframe_name = csv_file.replace(
-        ".csv", "",
+        ".csv",
+        "",
     )
 
     csv_path = os.path.join(
-        folder_name, csv_file,
+        folder_name,
+        csv_file,
     )
 
     dataframe = pandas.read_csv(

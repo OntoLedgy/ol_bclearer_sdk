@@ -1,10 +1,8 @@
 import pytest
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import (
-    Neo4jDataLoadOrchestrator,
-)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_folders_to_neo4j_load import (
-    orchestrate_csv_folders_to_neo4j_load,
-)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import \
+    Neo4jDataLoadOrchestrator
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_folders_to_neo4j_load import \
+    orchestrate_csv_folders_to_neo4j_load
 
 
 class TestNeo4jInteropServices:
@@ -33,7 +31,6 @@ class TestNeo4jInteropServices:
         neo4j_connection,
         object_info,
     ):
-
         self.neo4j_data_orchestrator.orchestrate_neo4j_data_load_from_csv(
             neo4j_connection=neo4j_connection,
             object_info=object_info,
@@ -44,7 +41,6 @@ class TestNeo4jInteropServices:
         neo4j_connection,
         neo4j_loader_configuration_path,
     ):
-
         orchestrate_csv_folders_to_neo4j_load(
             neo4j_loader_configuration_path=neo4j_loader_configuration_path,
             neo4j_connection=neo4j_connection,

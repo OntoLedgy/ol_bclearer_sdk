@@ -1,9 +1,7 @@
 import pandas as pd
 import psycopg2
-
-from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import (
-    DatabaseFacade,
-)
+from bclearer_interop_services.relational_database_services.RelationaDatabaseFacade import \
+    DatabaseFacade
 
 
 class PostgresqlFacade(DatabaseFacade):
@@ -22,20 +20,26 @@ class PostgresqlFacade(DatabaseFacade):
             self.connection.close()
 
     def execute_query(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ):
         with self.connection.cursor() as cursor:
             cursor.execute(
-                query, params,
+                query,
+                params,
             )
             self.connection.commit()
 
     def fetch_results(
-        self, query, params=None,
+        self,
+        query,
+        params=None,
     ) -> pd.DataFrame:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                query, params,
+                query,
+                params,
             )
             columns = [
                 desc[0]
@@ -43,11 +47,14 @@ class PostgresqlFacade(DatabaseFacade):
             ]
             results = cursor.fetchall()
         return pd.DataFrame(
-            results, columns=columns,
+            results,
+            columns=columns,
         )
 
     def store_dataframe(
-        self, dataframe, table_name,
+        self,
+        dataframe,
+        table_name,
     ):
         cursor = (
             self.connection.cursor()
@@ -57,8 +64,8 @@ class PostgresqlFacade(DatabaseFacade):
         cursor.execute(
             """
             SELECT EXISTS (
-                SELECT FROM information_schema.tables 
-                WHERE table_schema = 'public' 
+                SELECT FROM information_schema.tables
+                WHERE table_schema = 'public'
                 AND table_name = %s
             );
         """,
@@ -73,8 +80,8 @@ class PostgresqlFacade(DatabaseFacade):
             # Check schema conformity
             cursor.execute(
                 """
-                SELECT column_name, data_type 
-                FROM information_schema.columns 
+                SELECT column_name, data_type
+                FROM information_schema.columns
                 WHERE table_name = %s;
             """,
                 (table_name,),
@@ -112,7 +119,8 @@ class PostgresqlFacade(DatabaseFacade):
             for (
                 row
             ) in dataframe.itertuples(
-                index=False, name=None,
+                index=False,
+                name=None,
             ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",
@@ -136,7 +144,8 @@ class PostgresqlFacade(DatabaseFacade):
             for (
                 row
             ) in dataframe.itertuples(
-                index=False, name=None,
+                index=False,
+                name=None,
             ):
                 cursor.execute(
                     f"INSERT INTO {table_name} ({', '.join(dataframe.columns)}) VALUES ({', '.join(['%s'] * len(dataframe.columns))})",

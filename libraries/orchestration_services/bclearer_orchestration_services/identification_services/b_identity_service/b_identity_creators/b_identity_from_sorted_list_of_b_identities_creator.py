@@ -1,13 +1,13 @@
-from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import (
-    create_b_identity_base_from_string,
-)
+from bclearer_orchestration_services.identification_services.b_identity_service.b_identity_creators.b_identity_base_from_string_creator import \
+    create_b_identity_base_from_string
 
 
 def create_b_identity_from_sorted_list_of_b_identities(
     b_identities: list,
 ) -> int:
     sorted_b_identities = sorted(
-        b_identities, key=int,
+        b_identities,
+        key=int,
     )
 
     sorted_b_identities_as_str = str(

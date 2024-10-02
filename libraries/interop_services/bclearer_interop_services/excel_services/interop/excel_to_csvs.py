@@ -4,11 +4,11 @@ import pandas as pd
 
 
 def convert_to_csv(xlsx_path):
-
     print(f"Reading {xlsx_path}")
 
     csv_path = xlsx_path.replace(
-        ".XLSX", ".csv",
+        ".XLSX",
+        ".csv",
     )
 
     if not os.path.isfile(csv_path):
@@ -17,7 +17,8 @@ def convert_to_csv(xlsx_path):
                 xlsx_path,
             )
             df.to_csv(
-                csv_path, index=False,
+                csv_path,
+                index=False,
             )
             print(
                 f"Converted {xlsx_path} to csv.",
@@ -35,7 +36,6 @@ def convert_to_csv(xlsx_path):
 def convert_excel_to_csv(
     tables_folder_path,
 ):
-
     file_paths = [
         os.path.join(dp, f)
         for dp, dn, filenames in os.walk(

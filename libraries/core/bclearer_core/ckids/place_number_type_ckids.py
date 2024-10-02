@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class PlaceNumberTypeCkIds(Enum):
-
     NotSet = 0
 
     PlaceNumberOnes = 1

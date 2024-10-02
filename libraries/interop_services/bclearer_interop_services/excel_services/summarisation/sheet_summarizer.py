@@ -13,16 +13,15 @@ def sheet_summariser(
 ):
     # remove_empty_rows
     def remove_empty_rows(sheet):
-
         for row in sheet:
             remove_empty_cells(
-                sheet, row,
+                sheet,
+                row,
             )
 
             # remove_empty_cells
 
     def remove_empty_cells(sheet, row):
-
         for cell in row:
             if cell.value != None:
                 return
@@ -32,7 +31,6 @@ def sheet_summariser(
         # get_excel_columns
 
     def get_excel_columns(sheet_data):
-
         list_with_values = []
 
         for cell in sheet_data[1]:
@@ -44,10 +42,10 @@ def sheet_summariser(
 
     # csv_sheet_summariser
     def csv_sheet_summariser(file_name):
-
         csv_data = pd.read_csv(
             os.path.join(
-                path, file_name,
+                path,
+                file_name,
             ),
             encoding="latin-1",
         )
@@ -72,7 +70,6 @@ def sheet_summariser(
         workbook,
         file_extension,
     ) -> pd.DataFrame:
-
         sheet = workbook[
             f"{sheet_name}"
         ]
@@ -155,7 +152,6 @@ def sheet_summariser(
     sheet_summary_df = pd.DataFrame()
 
     if file_extension == ".csv":
-
         csv_sheet_summary_df = (
             csv_sheet_summariser(
                 file_path_and_name,
@@ -243,7 +239,6 @@ def get_sheet_summary_from_directory(
     valid_file_extensions,
 ):
     for file_name in files:
-
         _, file_extension = (
             os.path.splitext(file_name)
         )

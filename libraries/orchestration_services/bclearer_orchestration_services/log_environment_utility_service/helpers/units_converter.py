@@ -1,5 +1,6 @@
 def convert_units(
-    byte_count, suffix="B",
+    byte_count,
+    suffix="B",
 ):
     factor = 1024
 

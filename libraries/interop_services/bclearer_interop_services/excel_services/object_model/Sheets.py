@@ -1,30 +1,24 @@
 import pandas as pd
+from bclearer_interop_services.excel_services.object_model.Cells import Cells
+from bclearer_interop_services.excel_services.object_model.Columns import \
+    Columns
+from bclearer_interop_services.excel_services.object_model.Ranges import Ranges
+from bclearer_interop_services.excel_services.object_model.Rows import Rows
 from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
-
-from bclearer_interop_services.excel_services.object_model.Cells import (
-    Cells,
-)
-from bclearer_interop_services.excel_services.object_model.Columns import (
-    Columns,
-)
-from bclearer_interop_services.excel_services.object_model.Ranges import (
-    Ranges,
-)
-from bclearer_interop_services.excel_services.object_model.Rows import (
-    Rows,
-)
 
 
 class Sheets:
     def __init__(
-        self, sheet: OpenpyxlWorksheet,
+        self,
+        sheet: OpenpyxlWorksheet,
     ):
         self.sheet = sheet
 
     def cell(self, row: int, col: int):
         return Cells(
             self.sheet.cell(
-                row=row, column=col,
+                row=row,
+                column=col,
             ),
         )
 
@@ -33,7 +27,8 @@ class Sheets:
 
     def column(self, index: int):
         return Columns(
-            self.sheet, index,
+            self.sheet,
+            index,
         )
 
     def range(
@@ -52,7 +47,8 @@ class Sheets:
         )
 
     def read_to_dataframe(
-        self, header_row_number: int = 1,
+        self,
+        header_row_number: int = 1,
     ) -> pd.DataFrame:
         data = [
             [cell.value for cell in row]
@@ -93,7 +89,8 @@ class Sheets:
 
         # Create the DataFrame with the identified headers and data below
         return pd.DataFrame(
-            data, columns=headers,
+            data,
+            columns=headers,
         )
 
 

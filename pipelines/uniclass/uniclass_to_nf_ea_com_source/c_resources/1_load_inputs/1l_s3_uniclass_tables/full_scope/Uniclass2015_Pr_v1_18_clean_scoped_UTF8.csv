@@ -151,7 +151,7 @@ Pr_20_29_08_04,20,29,08,04,Anchor bolts
 Pr_20_29_08_07,20,29,08,07,Black hexagon nuts and bolts
 Pr_20_29_08_08,20,29,08,08,Bolt boxes
 Pr_20_29_08_11,20,29,08,11,Carbon steel hexagon headed nuts and bolts
-Pr_20_29_08_12,20,29,08,12,Carbon steel hook bolts (J-bolts) 
+Pr_20_29_08_12,20,29,08,12,Carbon steel hook bolts (J-bolts)
 Pr_20_29_08_15,20,29,08,15,Coach (carriage) bolts and nuts
 Pr_20_29_08_18,20,29,08,18,Crossing bolts
 Pr_20_29_08_26,20,29,08,26,Elevator bolts
@@ -169,7 +169,7 @@ Pr_20_29_08_70,20,29,08,70,Rail securing bolts
 Pr_20_29_08_78,20,29,08,78,Shoulder bolts
 Pr_20_29_08_83,20,29,08,83,Stainless steel gutter bolts
 Pr_20_29_08_84,20,29,08,84,Stainless steel hexagon headed nuts and bolts
-Pr_20_29_08_85,20,29,08,85,Stainless steel hook bolts (J-bolts) 
+Pr_20_29_08_85,20,29,08,85,Stainless steel hook bolts (J-bolts)
 Pr_20_29_08_86,20,29,08,86,Stud bolts
 Pr_20_29_08_92,20,29,08,92,U-bolts
 Pr_20_29_10,20,29,10,,Bridge suspension cable accessories
@@ -791,7 +791,7 @@ Pr_20_76_63,20,76,63,,Plastics sections
 Pr_20_76_63_30,20,76,63,30,Flexible foam rods
 Pr_20_76_63_33,20,76,63,33,Glass-reinforced plastics (GRP) angle sections
 Pr_20_76_63_35,20,76,63,35,Glass-reinforced plastics (GRP) box sections
-Pr_20_76_63_37,20,76,63,37,Glass-reinforced plastics (GRP) channel sections 
+Pr_20_76_63_37,20,76,63,37,Glass-reinforced plastics (GRP) channel sections
 Pr_20_76_63_63,20,76,63,63,Plastics mullions and transoms
 Pr_20_76_63_65,20,76,63,65,Plastics palisades
 Pr_20_76_63_85,20,76,63,85,Structural plastics sections
@@ -960,7 +960,7 @@ Pr_20_85_08_83,20,85,08,83,Stainless steel structural beams
 Pr_20_85_08_84,20,85,08,84,Structural wood-composite box beams
 Pr_20_85_08_85,20,85,08,85,Structural wood-composite I-beams
 Pr_20_85_08_86,20,85,08,86,Structural wood-composite I-joists
-Pr_20_85_08_87,20,85,08,87,Structural wood composites 
+Pr_20_85_08_87,20,85,08,87,Structural wood composites
 Pr_20_85_09,20,85,09,,Brackets
 Pr_20_85_09_01,20,85,09,01,Above-ground drainage pipe brackets
 Pr_20_85_09_02,20,85,09,02,Aluminium brackets
@@ -1352,7 +1352,7 @@ Pr_20_93_52_74,20,93,52,74,Replacement natural dimensioned stones
 Pr_20_93_52_75,20,93,52,75,Salvaged natural stones
 Pr_20_93_52_87,20,93,52,87,Terracotta units
 Pr_20_93_52_89,20,93,52,89,Thin joint autoclaved aerated concrete (AAC) blocks
-Pr_20_93_71,20,93,71,,Retaining wall units 
+Pr_20_93_71,20,93,71,,Retaining wall units
 Pr_20_93_71_11,20,93,71,11,Carbon steel spreader plates
 Pr_20_93_71_15,20,93,71,15,Concrete interlocking blocks
 Pr_20_93_71_16,20,93,71,16,Concrete crib wall units
@@ -1992,7 +1992,7 @@ Pr_25_71_57_44,25,71,57,44,Jet blast deflectors
 Pr_25_71_57_60,25,71,57,60,Partition panels
 Pr_25_71_57_61,25,71,57,61,Partition screens
 Pr_25_71_57_62,25,71,57,62,Plastics framed panels
-Pr_25_71_57_63,25,71,57,63,Plastics panels 
+Pr_25_71_57_63,25,71,57,63,Plastics panels
 Pr_25_71_57_64,25,71,57,64,Plastics panel fence tops
 Pr_25_71_57_65,25,71,57,65,Plywood framed panels
 Pr_25_71_57_73,25,71,57,73,Room divider panels
@@ -2421,7 +2421,7 @@ Pr_30_59_01_96,30,59,01,96,Wheelchair ramps
 Pr_30_59_07,30,59,07,,Blinds and shading devices
 Pr_30_59_07_02,30,59,07,02,Aluminium shutters
 Pr_30_59_07_03,30,59,07,03,Anti-glare screens
-Pr_30_59_07_05,30,59,07,05,Awnings 
+Pr_30_59_07_05,30,59,07,05,Awnings
 Pr_30_59_07_07,30,59,07,07,Blackout blinds
 Pr_30_59_07_26,30,59,07,26,External roller blinds
 Pr_30_59_07_27,30,59,07,27,External venetian blinds
@@ -3142,7 +3142,7 @@ Pr_35_90_09_27,35,90,09,27,Elastomeric expansion joint in metal runners
 Pr_35_90_09_28,35,90,09,28,Elastomeric pads
 Pr_35_90_09_71,35,90,09,71,Reinforced elastomeric expansion joints
 Pr_35_90_09_85,35,90,09,85,Supported expansion joints
-Pr_35_90_15,35,90,15,,Concrete construction joint accessories 
+Pr_35_90_15,35,90,15,,Concrete construction joint accessories
 Pr_35_90_15_04,35,90,15,04,Armoured joints
 Pr_35_90_15_08,35,90,15,08,Bottom-of-slab plastics crack inducers
 Pr_35_90_15_11,35,90,15,11,Carbon steel arris armourings
@@ -4399,7 +4399,7 @@ Pr_40_70_22_86,40,70,22,86,Sweets dispensers
 Pr_40_70_22_88,40,70,22,88,Ticket dispensers
 Pr_40_70_22_90,40,70,22,90,Toilet paper dispensers
 Pr_40_70_22_92,40,70,22,92,Tool dispensers
-Pr_40_70_23,40,70,23,,Display and service catering products 
+Pr_40_70_23,40,70,23,,Display and service catering products
 Pr_40_70_23_06,40,70,23,06,Bains-marie
 Pr_40_70_23_24,40,70,23,24,Drink chillers
 Pr_40_70_23_27,40,70,23,27,Espresso machines
@@ -4685,7 +4685,7 @@ Pr_45_30_10_10,45,30,10,10,Bulbs
 Pr_45_30_10_15,45,30,10,15,Corms
 Pr_45_30_10_62,45,30,10,62,Perennial roots
 Pr_45_30_10_63,45,30,10,63,Perennial tubers
-Pr_45_30_36,45,30,36,,Herbaceous and aquatic plants 
+Pr_45_30_36,45,30,36,,Herbaceous and aquatic plants
 Pr_45_30_36_02,45,30,36,02,Annual plugs
 Pr_45_30_36_03,45,30,36,03,Aquatic plant bare roots and clumps
 Pr_45_30_36_04,45,30,36,04,Aquatic plant bunches
@@ -4879,7 +4879,7 @@ Pr_60_45_03,60,45,03,,Air blower products
 Pr_60_45_03_12,60,45,03,12,Centrifugal blowers
 Pr_60_45_03_55,60,45,03,55,Multicore blowers
 Pr_60_45_03_72,60,45,03,72,Rotary lobe air blowers
-Pr_60_45_03_73,60,45,03,73,Rotary screw blowers 
+Pr_60_45_03_73,60,45,03,73,Rotary screw blowers
 Pr_60_45_03_78,60,45,03,78,Side channel blowers
 Pr_60_45_03_90,60,45,03,90,Turbo blowers
 Pr_60_45_07,60,45,07,,Biological filtration wastewater treatment products
@@ -5717,7 +5717,7 @@ Pr_65_53_96_51,65,53,96,51,Magnetic drive pumps
 Pr_65_53_96_55,65,53,96,55,Multistage centrifugal pumps
 Pr_65_53_96_63,65,53,96,63,Peristaltic pumps
 Pr_65_53_96_64,65,53,96,64,Positive displacement pumps
-Pr_65_53_96_65,65,53,96,65,Positive inlet pressure booster sets 
+Pr_65_53_96_65,65,53,96,65,Positive inlet pressure booster sets
 Pr_65_53_96_66,65,53,96,66,Progressing cavity pumps
 Pr_65_53_96_70,65,53,96,70,Ram pumps
 Pr_65_53_96_72,65,53,96,72,Rotary gear pumps
@@ -6423,7 +6423,7 @@ Pr_65_80_28_36,65,80,28,36,Escalator and moving walk handrails
 Pr_65_80_28_38,65,80,28,38,Escalator hand winding devices
 Pr_65_80_28_41,65,80,28,41,Escalator and moving walk inspection covers
 Pr_65_80_28_46,65,80,28,46,Escalator and moving walk landing floor plates
-Pr_65_80_28_52,65,80,28,52,Moving walks 
+Pr_65_80_28_52,65,80,28,52,Moving walks
 Pr_65_80_28_58,65,80,28,58,Escalator and moving walk operational brakes
 Pr_65_80_28_60,65,80,28,60,Escalator pallets
 Pr_65_80_28_78,65,80,28,78,Escalator and moving walk skirtings
@@ -7241,7 +7241,7 @@ Pr_75_75_42_41,75,75,42,41,Intruder alarm panels
 Pr_75_75_42_42,75,75,42,42,Intruder alarm remote keypads
 Pr_75_75_42_52,75,75,42,52,Microwave detectors
 Pr_75_75_42_60,75,75,42,60,Passive infrared detectors
-Pr_75_75_42_67,75,75,42,67,Protective switches 
+Pr_75_75_42_67,75,75,42,67,Protective switches
 Pr_75_75_42_77,75,75,42,77,Security fog devices
 Pr_75_75_42_92,75,75,42,92,Ultrasonic movement detectors
 Pr_75_75_42_94,75,75,42,94,Vibrating intruder alarm pagers
@@ -7381,7 +7381,7 @@ Pr_80_51_85,80,51,85,,Structural instrumentation and monitoring products
 Pr_80_51_85_01,80,51,85,01,Accelerometers
 Pr_80_51_85_18,80,51,85,18,Crack gauges
 Pr_80_51_85_21,80,51,85,21,Data loggers
-Pr_80_51_85_27,80,51,85,27,Electrolevel sensor and microelectromechanical units 
+Pr_80_51_85_27,80,51,85,27,Electrolevel sensor and microelectromechanical units
 Pr_80_51_85_28,80,51,85,28,Extensometers
 Pr_80_51_85_41,80,51,85,41,Inclinometers
 Pr_80_51_85_45,80,51,85,45,Linear movement detectors
