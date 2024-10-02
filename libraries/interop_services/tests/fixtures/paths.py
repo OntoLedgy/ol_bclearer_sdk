@@ -70,12 +70,24 @@ def excel_file_name_and_path_xls():
 
 
 @pytest.fixture(scope="session")
-def csv_file_name_and_path():
-    csv_file_path_relative_path = "./data/input/delimited_text/cfi-20210507-current.csv"
-    return csv_file_path_relative_path
+def csv_file_name_and_path(
+    data_input_folder_absolute_path,
+):
+    csv_file_path_relative_path = "delimited_text/cfi-20210507-current.csv"
+    csv_file_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        csv_file_path_relative_path,
+    )
+    return csv_file_absolute_path
 
 
 @pytest.fixture(scope="session")
-def csv_file_name_and_path_no_header():
-    csv_file_path_relative_path = "./data/input/delimited_text/cfi-20210507-current_no_header.csv"
-    return csv_file_path_relative_path
+def csv_file_name_and_path_no_header(
+    data_input_folder_absolute_path,
+):
+    csv_file_path_relative_path = "delimited_text/cfi-20210507-current_no_header.csv"
+    csv_file_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        csv_file_path_relative_path,
+    )
+    return csv_file_absolute_path

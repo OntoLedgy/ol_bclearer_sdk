@@ -52,6 +52,11 @@ bclearer_orchestration_services = "^0.1.0"
 
 
 [tool.pytest.ini_options]
+pythonpath=[
+    "libraries",
+    "./libraries/core/tests/",
+    "./libraries/interop_services/tests/",
+    "./libraries/orchestration_services/tests/"]
 testpaths = "tests"
 python_files = "test_*.py"
 addopts = "--import-mode=importlib"
