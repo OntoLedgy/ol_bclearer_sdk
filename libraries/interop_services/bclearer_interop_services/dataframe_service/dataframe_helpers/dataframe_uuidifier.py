@@ -1,5 +1,6 @@
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
-    create_new_uuid
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
+)
 from pandas import DataFrame
 
 

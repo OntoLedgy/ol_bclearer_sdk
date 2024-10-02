@@ -2,8 +2,9 @@ import time
 
 import psutil
 from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.constants import *
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import \
-    log_message
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 
 
 def log_timing_header():

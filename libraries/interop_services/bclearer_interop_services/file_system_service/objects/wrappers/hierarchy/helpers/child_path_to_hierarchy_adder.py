@@ -1,12 +1,17 @@
 import os
 
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
-    HierarchyFileSystemObjects
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
-    HierarchyFolders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
+    HierarchyFileSystemObjects,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
+    HierarchyFolders,
+)
 
 
 def add_child_path_to_hierarchy(
@@ -14,8 +19,9 @@ def add_child_path_to_hierarchy(
     child_path: str,
     parent_hierarchy_folder: HierarchyFolders,
 ) -> None:
-    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import \
-        HierarchyFileSystemObjectRegisters
+    from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_object_registers import (
+        HierarchyFileSystemObjectRegisters,
+    )
 
     if not isinstance(
         hierarchy_file_system_object_register,

@@ -1,8 +1,10 @@
 import pytest
-from bclearer_interop_services.relational_database_services.DatabaseFactory import \
-    DatabaseFactory
-from storage_interop_services_source.code.configuration_managers.configuration_loader import \
-    load_configuration
+from bclearer_interop_services.relational_database_services.DatabaseFactory import (
+    DatabaseFactory,
+)
+from storage_interop_services_source.code.configuration_managers.configuration_loader import (
+    load_configuration,
+)
 
 
 @pytest.fixture(scope="module")

@@ -1,7 +1,8 @@
 import json
 
-from nf_common.code.services.static_code_analysis_service.radon_code_metrics.radon_configuration_getters.cyclomatic_complexity_radon_configuration_getter import \
-    get_cyclomatic_complexity_configuration
+from nf_common.code.services.static_code_analysis_service.radon_code_metrics.radon_configuration_getters.cyclomatic_complexity_radon_configuration_getter import (
+    get_cyclomatic_complexity_configuration,
+)
 from radon import cli
 
 

@@ -1,9 +1,11 @@
 import ctypes
 
-from nf_common.code.services.reporting_service.message_box.message_box_style_types import \
-    MessageBoxStyleTypes
-from nf_common.code.services.reporting_service.message_box.message_box_w_return_types import \
-    MessageBoxWReturnTypes
+from nf_common.code.services.reporting_service.message_box.message_box_style_types import (
+    MessageBoxStyleTypes,
+)
+from nf_common.code.services.reporting_service.message_box.message_box_w_return_types import (
+    MessageBoxWReturnTypes,
+)
 
 
 def message_box_dialog(

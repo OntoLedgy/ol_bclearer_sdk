@@ -1,12 +1,17 @@
 import os.path
 
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.file_system_service.relative_path_to_absolute_converter import \
-    convert_relative_path_to_absolute
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import \
-    log_message
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.file_system_service.relative_path_to_absolute_converter import (
+    convert_relative_path_to_absolute,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 
 
 def get_file_system_objects_from_paths(

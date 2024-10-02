@@ -1,9 +1,16 @@
 import os.path
-from sqlite3 import Error, connect, version
+from sqlite3 import (
+    Error,
+    connect,
+    version,
+)
 
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 def create_sqlite_database(

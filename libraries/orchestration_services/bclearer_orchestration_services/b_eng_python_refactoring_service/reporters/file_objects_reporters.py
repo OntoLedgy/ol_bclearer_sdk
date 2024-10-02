@@ -1,10 +1,13 @@
 import pandas
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import \
-    BEngFiles
-from nf_common.code.services.b_eng_python_refactoring_service.reporters.levelled_uuids_getters import \
-    get_levelled_uuids
-from nf_common.code.services.b_eng_python_refactoring_service.reporters.node_adders import \
-    add_object_to_objects
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import (
+    BEngFiles,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.reporters.levelled_uuids_getters import (
+    get_levelled_uuids,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.reporters.node_adders import (
+    add_object_to_objects,
+)
 
 
 def add_files_to_nodes(

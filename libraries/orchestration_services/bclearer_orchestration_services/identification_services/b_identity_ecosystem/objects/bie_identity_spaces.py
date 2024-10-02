@@ -1,9 +1,12 @@
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import \
-    DataTypeRecognition
-from bclearer_orchestration_services.identification_services.pandas_null_values.null_type_recognition import \
-    NullTypeRecognition
-from bclearer_orchestration_services.identification_services.pandas_null_values.string_based_null_type_recognition import \
-    StringBasedNullTypeRecognition
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import (
+    DataTypeRecognition,
+)
+from bclearer_orchestration_services.identification_services.pandas_null_values.null_type_recognition import (
+    NullTypeRecognition,
+)
+from bclearer_orchestration_services.identification_services.pandas_null_values.string_based_null_type_recognition import (
+    StringBasedNullTypeRecognition,
+)
 
 
 class BieIdentitySpaces:

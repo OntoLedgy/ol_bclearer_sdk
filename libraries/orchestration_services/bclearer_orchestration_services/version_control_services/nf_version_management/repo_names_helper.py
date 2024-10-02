@@ -1,9 +1,12 @@
-from nf_common.code.services.version_control_services.nf_version_management.constants import \
-    FILE_NAME_COMPONENTS_SEPARATOR
-from nf_common.code.services.version_control_services.nf_version_management.data_types import \
-    DataTypes
-from nf_common.code.services.version_control_services.nf_version_management.maturity_types import \
-    MaturityTypes
+from nf_common.code.services.version_control_services.nf_version_management.constants import (
+    FILE_NAME_COMPONENTS_SEPARATOR,
+)
+from nf_common.code.services.version_control_services.nf_version_management.data_types import (
+    DataTypes,
+)
+from nf_common.code.services.version_control_services.nf_version_management.maturity_types import (
+    MaturityTypes,
+)
 
 
 def get_repository_name_adapted_to_data_type_and_maturity_type(

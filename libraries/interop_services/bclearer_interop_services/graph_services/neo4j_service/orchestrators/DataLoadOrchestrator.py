@@ -1,12 +1,16 @@
 import pandas as pd
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
-    Neo4jConnections
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import \
-    EdgeLoader
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import \
-    NodeLoader
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_wrappers import \
-    Neo4jWrapper
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
+    Neo4jConnections,
+)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import (
+    EdgeLoader,
+)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import (
+    NodeLoader,
+)
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_wrappers import (
+    Neo4jWrapper,
+)
 
 
 class Neo4jDataLoadOrchestrator:

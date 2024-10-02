@@ -1,9 +1,12 @@
 import os
 from pathlib import Path
 
-from bclearer_interop_services.file_system_service.objects.file_system_objects import \
-    FileSystemObjects
-from bclearer_interop_services.file_system_service.objects.files import Files
+from bclearer_interop_services.file_system_service.objects.file_system_objects import (
+    FileSystemObjects,
+)
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 
 
 class Folders(FileSystemObjects):

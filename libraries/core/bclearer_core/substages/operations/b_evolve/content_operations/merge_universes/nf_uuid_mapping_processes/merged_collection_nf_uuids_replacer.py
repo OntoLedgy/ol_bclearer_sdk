@@ -1,5 +1,7 @@
 from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.uuid_columns_lists_constants import (
-    LIST_OF_NF_UUID_COLUMN_NAMES, LIST_OF_NF_UUID_LISTS_COLUMN_NAMES)
+    LIST_OF_NF_UUID_COLUMN_NAMES,
+    LIST_OF_NF_UUID_LISTS_COLUMN_NAMES,
+)
 from pandas import DataFrame
 
 

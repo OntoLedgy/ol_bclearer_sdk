@@ -1,7 +1,8 @@
 import glob
 
-from bclearer_interop_services.file_system_service.objects.file_system_objects import \
-    FileSystemObjects
+from bclearer_interop_services.file_system_service.objects.file_system_objects import (
+    FileSystemObjects,
+)
 
 
 # TODO: To be promoted to somewhere else?

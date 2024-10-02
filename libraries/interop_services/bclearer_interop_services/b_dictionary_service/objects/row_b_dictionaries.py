@@ -1,5 +1,6 @@
-from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import \
-    BDictionaries
+from bclearer_interop_services.b_dictionary_service.objects.b_dictionaries import (
+    BDictionaries,
+)
 
 
 class RowBDictionaries(BDictionaries):

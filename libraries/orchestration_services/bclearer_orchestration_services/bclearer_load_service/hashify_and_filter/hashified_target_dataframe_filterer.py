@@ -1,8 +1,10 @@
 import pandas
 from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import (
     ALTERNATIVE_IDENTITY_HASHES_CONFIGURATION_NAME,
-    CONTENT_HASHES_CONFIGURATION_NAME, CORE_CONTENT_HASHES_CONFIGURATION_NAME,
-    IDENTITY_HASHES_CONFIGURATION_NAME)
+    CONTENT_HASHES_CONFIGURATION_NAME,
+    CORE_CONTENT_HASHES_CONFIGURATION_NAME,
+    IDENTITY_HASHES_CONFIGURATION_NAME,
+)
 
 
 def filter_hashified_target_dataframe(

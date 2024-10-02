@@ -1,7 +1,8 @@
 import json
 
-from nf_common.code.services.static_code_analysis_service.radon_code_metrics.radon_configuration_getters.raw_radon_configuration_getter import \
-    get_raw_configuration
+from nf_common.code.services.static_code_analysis_service.radon_code_metrics.radon_configuration_getters.raw_radon_configuration_getter import (
+    get_raw_configuration,
+)
 from radon import cli
 
 

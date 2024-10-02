@@ -1,7 +1,9 @@
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_files import \
-    BIdentityFiles
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import \
-    BIdentityFolders
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_files import (
+    BIdentityFiles,
+)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_folders import (
+    BIdentityFolders,
+)
 
 
 def add_b_identity_columns_to_register_in_b_dataset_format(
@@ -10,8 +12,9 @@ def add_b_identity_columns_to_register_in_b_dataset_format(
     hierarchy_file_system_object_row_dictionary: dict,
     hierarchy_file_system_object_uuid: str,
 ) -> None:
-    from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import \
-        BIdentityFileSystemObjectUniverseRegisters
+    from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.b_identity_file_system_object_universe_registers import (
+        BIdentityFileSystemObjectUniverseRegisters,
+    )
 
     if not isinstance(
         b_identity_file_system_object_universe_register,

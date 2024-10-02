@@ -1,14 +1,19 @@
 import pandas
-from bclearer_interop_services.relational_database_services.access_service.access import \
-    write_dataframes_to_access
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import \
-    StaticCodeAnalysisCommonConfigurations
-from nf_common.code.services.static_code_analysis_service.common_knowledge.enum_code_analysis_types import \
-    EnumCodeAnalysisTypes
-from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_results_database_creator import \
-    create_results_database_file
+from bclearer_interop_services.relational_database_services.access_service.access import (
+    write_dataframes_to_access,
+)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import (
+    StaticCodeAnalysisCommonConfigurations,
+)
+from nf_common.code.services.static_code_analysis_service.common_knowledge.enum_code_analysis_types import (
+    EnumCodeAnalysisTypes,
+)
+from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_results_database_creator import (
+    create_results_database_file,
+)
 
 
 def export_analysis_dataframes_to_access(

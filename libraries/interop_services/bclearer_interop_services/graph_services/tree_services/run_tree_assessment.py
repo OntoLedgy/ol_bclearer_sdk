@@ -1,6 +1,7 @@
 import pandas as pd
-from graph_service.source.code.general_graph_services.tree_services.tree_level_assessment.tree_level_reporter import \
-    check_tree_level
+from graph_service.source.code.general_graph_services.tree_services.tree_level_assessment.tree_level_reporter import (
+    check_tree_level,
+)
 
 
 def orchestrate_tree_level_reporting(

@@ -1,10 +1,13 @@
 import pandas
-from bclearer_interop_services.dataframe_service.checks.set_uniqueness_checker.check import \
-    run_check
-from bclearer_interop_services.dataframe_service.checks.set_uniqueness_checker.organise import \
-    run_organise
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
+from bclearer_interop_services.dataframe_service.checks.set_uniqueness_checker.check import (
+    run_check,
+)
+from bclearer_interop_services.dataframe_service.checks.set_uniqueness_checker.organise import (
+    run_organise,
+)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 
 
 def run_check_set_uniqueness(

@@ -1,14 +1,21 @@
-from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import \
-    UniversesMergeRegisters
-from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.collection_type_compliation_constants import \
-    LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
-    NfEaComCollectionTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
+from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import (
+    UniversesMergeRegisters,
+)
+from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.collection_type_compliation_constants import (
+    LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
 from pandas import concat
 
 

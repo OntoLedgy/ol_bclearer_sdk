@@ -1,9 +1,12 @@
-from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_dataframes_access_exporter import \
-    export_analysis_dataframes_to_access
-from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_analysers.pylint_analyser import \
-    analyse_code_using_pylint
-from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_configurations import \
-    PylintConfigurations
+from nf_common.code.services.static_code_analysis_service.common_processes.analysis_results_exporters.analysis_dataframes_access_exporter import (
+    export_analysis_dataframes_to_access,
+)
+from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_analysers.pylint_analyser import (
+    analyse_code_using_pylint,
+)
+from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_configurations import (
+    PylintConfigurations,
+)
 
 
 def orchestrate_pylint_analysis(

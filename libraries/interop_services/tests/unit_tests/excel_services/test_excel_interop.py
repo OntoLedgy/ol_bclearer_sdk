@@ -1,6 +1,8 @@
 import pandas as pd
 import pytest
-from bclearer_interop_services.excel_services.ExcelFacade import ExcelFacade
+from bclearer_interop_services.excel_services.ExcelFacade import (
+    ExcelFacade,
+)
 
 
 class TestExcelInteropServices:

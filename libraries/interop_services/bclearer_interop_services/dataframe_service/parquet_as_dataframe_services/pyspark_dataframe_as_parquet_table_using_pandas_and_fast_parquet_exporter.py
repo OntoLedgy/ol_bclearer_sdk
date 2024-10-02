@@ -2,8 +2,9 @@ import os.path
 
 import fastparquet
 import pyspark.sql
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 # TODO: to further work of collapsing the similar methods and parametrize the engine and the compression (for example)

@@ -1,12 +1,15 @@
 import os
 from pathlib import Path
 
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import \
-    BEngProjectFolderLists
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import \
-    BEngProjectFolders
-from nf_common.code.services.version_control_services.git_service.commit_and_pusher import \
-    add_commit_and_push_local_repository
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folder_lists import (
+    BEngProjectFolderLists,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_project_folders import (
+    BEngProjectFolders,
+)
+from nf_common.code.services.version_control_services.git_service.commit_and_pusher import (
+    add_commit_and_push_local_repository,
+)
 
 
 def commit_refactors(

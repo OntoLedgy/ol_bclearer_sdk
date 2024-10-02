@@ -1,5 +1,6 @@
-from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_uuidifier import \
-    uuidify_dataframe
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_uuidifier import (
+    uuidify_dataframe,
+)
 
 
 def uuidify_dictionary_of_dataframes(

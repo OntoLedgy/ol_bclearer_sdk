@@ -1,6 +1,9 @@
-from bclearer_core.common_knowledge.matched_objects import MatchedEaObjects
-from bclearer_core.configurations.universe_modification_configuration_objects import \
-    UniverseModificationConfigurationObjects
+from bclearer_core.common_knowledge.matched_objects import (
+    MatchedEaObjects,
+)
+from bclearer_core.configurations.universe_modification_configuration_objects import (
+    UniverseModificationConfigurationObjects,
+)
 
 
 class AddDependencyToInstancesOfTypeConfigurationObjects(

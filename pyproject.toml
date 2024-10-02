@@ -235,3 +235,11 @@ line-length = 40  # Black's default is 88, but you can adjust it here
 
 [tool.mypy]
 exclude = '^(tests|build|dist|.venv|pipelines)/.*$'
+
+
+[tool.isort]
+profile = "black"  # To ensure compatibility with Black, if you're using it
+known_third_party = ["pandas", "numpy", "pytest"]  # Add external libraries
+src_paths = ["libraries"]  # Path to your libraries
+line_length = 40  # Match Black's default, or set your desired length
+multi_line_output = 3  # Vertical hanging indentation for imports

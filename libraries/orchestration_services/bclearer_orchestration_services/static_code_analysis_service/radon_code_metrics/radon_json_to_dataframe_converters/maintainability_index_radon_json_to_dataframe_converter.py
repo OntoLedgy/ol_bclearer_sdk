@@ -1,6 +1,7 @@
 import pandas
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_from_list_factory import \
-    create_uuid_from_list
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_from_list_factory import (
+    create_uuid_from_list,
+)
 
 
 def convert_maintainability_index_radon_json_to_dataframe(

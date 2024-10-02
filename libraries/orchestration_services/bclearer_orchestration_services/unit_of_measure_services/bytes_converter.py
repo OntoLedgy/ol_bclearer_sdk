@@ -1,6 +1,8 @@
 import math
 
-from storage_interop_services_source.code.constants import DEFAULT_NULL_VALUE
+from storage_interop_services_source.code.constants import (
+    DEFAULT_NULL_VALUE,
+)
 
 magnitude_order_to_suffix_conversion_map = {
     0: "B",

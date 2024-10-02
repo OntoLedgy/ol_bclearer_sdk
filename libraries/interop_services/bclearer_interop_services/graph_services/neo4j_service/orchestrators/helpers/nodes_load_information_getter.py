@@ -1,6 +1,9 @@
-from neo4j_service.constants.GraphDataObjectTypes import GraphObjectTypes
-from neo4j_service.orchestrators.helpers.read_cypher_queries import \
-    read_cypher_query_from_file
+from neo4j_service.constants.GraphDataObjectTypes import (
+    GraphObjectTypes,
+)
+from neo4j_service.orchestrators.helpers.read_cypher_queries import (
+    read_cypher_query_from_file,
+)
 
 
 def get_graph_object_load_information(

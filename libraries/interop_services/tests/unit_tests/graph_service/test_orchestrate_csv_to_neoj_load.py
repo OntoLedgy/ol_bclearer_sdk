@@ -1,8 +1,10 @@
 import pytest
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import \
-    Neo4jDataLoadOrchestrator
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_folders_to_neo4j_load import \
-    orchestrate_csv_folders_to_neo4j_load
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import (
+    Neo4jDataLoadOrchestrator,
+)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orchestrate_csv_folders_to_neo4j_load import (
+    orchestrate_csv_folders_to_neo4j_load,
+)
 
 
 class TestNeo4jInteropServices:

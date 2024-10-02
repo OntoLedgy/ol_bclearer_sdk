@@ -1,9 +1,13 @@
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
-    Neo4jConnections
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
+    Neo4jConnections,
+)
 from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.prepare_dataset_dictionary_from_folder import (
-    get_load_dataset, get_load_dataset_by_graph_object_type)
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import \
-    generate_list_from_text
+    get_load_dataset,
+    get_load_dataset_by_graph_object_type,
+)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
+    generate_list_from_text,
+)
 
 
 class TestNeo4jStandardOperations:

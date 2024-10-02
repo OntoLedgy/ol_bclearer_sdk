@@ -1,11 +1,15 @@
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import \
-    StaticCodeAnalysisCommonConfigurations
-from nf_common.code.services.static_code_analysis_service.radon_code_metrics.configuration.objects.radon_configurations import \
-    RadonConfigurations
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import (
+    StaticCodeAnalysisCommonConfigurations,
+)
+from nf_common.code.services.static_code_analysis_service.radon_code_metrics.configuration.objects.radon_configurations import (
+    RadonConfigurations,
+)
 
 
 def get_b_radon_configuration(

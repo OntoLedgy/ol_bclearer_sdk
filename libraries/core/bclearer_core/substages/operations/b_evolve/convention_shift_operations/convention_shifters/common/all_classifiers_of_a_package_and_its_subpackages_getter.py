@@ -1,14 +1,21 @@
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.common.list_of_contained_packages_of_a_package_getter import \
-    get_list_of_all_contained_packages_of_package
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import \
-    EaElementTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
-    NfEaComColumnTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.common.list_of_contained_packages_of_a_package_getter import (
+    get_list_of_all_contained_packages_of_package,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
+    EaElementTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
 from pandas import DataFrame
 
 

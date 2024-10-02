@@ -1,10 +1,12 @@
 import os
 
 import pandas
-from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.column_value_null_data_policy_checker import \
-    check_column_value_null_data_policy
-from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.grouped_data_policy_getter import \
-    get_grouped_data_policy
+from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.column_value_null_data_policy_checker import (
+    check_column_value_null_data_policy,
+)
+from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.grouped_data_policy_getter import (
+    get_grouped_data_policy,
+)
 from pandas import DataFrame
 
 

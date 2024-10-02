@@ -1,10 +1,12 @@
 import uuid
 
 import pandas
-from bclearer_core.constants.nf_common_global_constants import \
-    UUIDS_COLUMN_NAME
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
-    create_uuid_from_canonical_format_string
+from bclearer_core.constants.nf_common_global_constants import (
+    UUIDS_COLUMN_NAME,
+)
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_uuid_from_canonical_format_string,
+)
 
 PARENT_DATAFRAME_SUFFIX = (
     "_merge_parent"

@@ -1,9 +1,11 @@
 import os
 
-from nf_common.code.services.b_eng_python_refactoring_service.common_knowledge.enum_b_eng_folder_types import \
-    EnumBEngFolderTypes
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import \
-    BEngFolders
+from nf_common.code.services.b_eng_python_refactoring_service.common_knowledge.enum_b_eng_folder_types import (
+    EnumBEngFolderTypes,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import (
+    BEngFolders,
+)
 
 
 def get_b_eng_folder_alternative_name(

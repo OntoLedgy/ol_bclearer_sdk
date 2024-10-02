@@ -1,7 +1,9 @@
 import base64
 
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_uuid_from_base85_string, create_uuid_from_canonical_format_string)
+    create_uuid_from_base85_string,
+    create_uuid_from_canonical_format_string,
+)
 
 
 def convert_base85_to_canonical_format(

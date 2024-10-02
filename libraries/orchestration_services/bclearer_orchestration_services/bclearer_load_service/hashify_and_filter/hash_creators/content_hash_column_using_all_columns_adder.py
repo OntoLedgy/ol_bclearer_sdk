@@ -1,8 +1,10 @@
 import pandas
-from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import \
-    CONTENT_HASHES_CONFIGURATION_NAME
-from bclearer_orchestration_services.identification_services.hash_service.hash_creator import \
-    create_hash_with_sorted_inputs
+from bclearer_orchestration_services.bclearer_load_service.common_knowledge.bclearer_load_constants import (
+    CONTENT_HASHES_CONFIGURATION_NAME,
+)
+from bclearer_orchestration_services.identification_services.hash_service.hash_creator import (
+    create_hash_with_sorted_inputs,
+)
 
 
 def add_content_hash_column_using_all_columns(

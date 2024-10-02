@@ -1,7 +1,9 @@
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import \
-    DataTypeRecognition
-from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import \
-    BieIdentitySpaces
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.common_knowledge.data_type_recognition import (
+    DataTypeRecognition,
+)
+from bclearer_orchestration_services.identification_services.b_identity_ecosystem.objects.bie_identity_spaces import (
+    BieIdentitySpaces,
+)
 
 
 def convert_non_null_object_to_bie_consumable_object_item(

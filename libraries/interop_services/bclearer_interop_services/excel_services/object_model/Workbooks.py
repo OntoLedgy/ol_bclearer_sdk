@@ -1,8 +1,12 @@
 from pathlib import Path
 
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Sheets import Sheets
-from openpyxl import Workbook as OpenpyxlWorkbook
+from bclearer_interop_services.excel_services.object_model.Sheets import (
+    Sheets,
+)
+from openpyxl import (
+    Workbook as OpenpyxlWorkbook,
+)
 from openpyxl import load_workbook
 
 

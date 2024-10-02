@@ -1,9 +1,12 @@
-from bclearer_core.common_knowledge.adjustment_operation_types import \
-    AdjustmentOperationTypes
-from bclearer_core.configurations.load_hdf5_model_configurations import \
-    LoadHdf5ModelConfigurations
-from bclearer_core.configurations.operation_configurations import \
-    OperationConfigurations
+from bclearer_core.common_knowledge.adjustment_operation_types import (
+    AdjustmentOperationTypes,
+)
+from bclearer_core.configurations.load_hdf5_model_configurations import (
+    LoadHdf5ModelConfigurations,
+)
+from bclearer_core.configurations.operation_configurations import (
+    OperationConfigurations,
+)
 
 
 class AdjustmentOperationConfigurations(

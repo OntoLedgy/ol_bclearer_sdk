@@ -1,27 +1,38 @@
 import os.path
 
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_access_exporter import \
-    export_b_dataset_register_into_access
-from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_sqlite_exporter import \
-    export_register_into_sqlite
-from bclearer_interop_services.file_system_service.first_level_deep_file_system_objects_getter import \
-    get_first_level_children_file_system_object_paths
-from bclearer_interop_services.file_system_service.objects.file_system_objects import \
-    FileSystemObjects
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.child_path_to_hierarchy_adder import \
-    add_child_path_to_hierarchy
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_immutable_stage_hash_sum_getter import \
-    get_hierarchy_folder_immutable_stage_hash_sum
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_to_b_dataset_format_adder import \
-    add_hierarchy_folder_to_b_dataset_format
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
-    HierarchyFileSystemObjects
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import \
-    HierarchyFolders
-from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import \
-    run_and_log_function
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_access_exporter import (
+    export_b_dataset_register_into_access,
+)
+from bclearer_interop_services.file_system_service.bie_file_system_domain.objects.helpers.b_dataset_register_into_sqlite_exporter import (
+    export_register_into_sqlite,
+)
+from bclearer_interop_services.file_system_service.first_level_deep_file_system_objects_getter import (
+    get_first_level_children_file_system_object_paths,
+)
+from bclearer_interop_services.file_system_service.objects.file_system_objects import (
+    FileSystemObjects,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.child_path_to_hierarchy_adder import (
+    add_child_path_to_hierarchy,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_immutable_stage_hash_sum_getter import (
+    get_hierarchy_folder_immutable_stage_hash_sum,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.helpers.hierarchy_folder_to_b_dataset_format_adder import (
+    add_hierarchy_folder_to_b_dataset_format,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
+    HierarchyFileSystemObjects,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_folders import (
+    HierarchyFolders,
+)
+from nf_common.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
+)
 
 
 class HierarchyFileSystemObjectRegisters:

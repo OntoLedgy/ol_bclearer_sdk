@@ -1,4 +1,6 @@
-from bclearer_core.constants.standard_constants import UTF_8_ENCODING_NAME
+from bclearer_core.constants.standard_constants import (
+    UTF_8_ENCODING_NAME,
+)
 from kafka import KafkaProducer
 
 

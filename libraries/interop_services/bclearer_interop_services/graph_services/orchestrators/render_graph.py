@@ -1,5 +1,6 @@
-from bclearer_interop_services.graph_services.network_service.object_model.Nodes import \
-    Node
+from bclearer_interop_services.graph_services.network_service.object_model.Nodes import (
+    Node,
+)
 from graphviz import Digraph
 
 

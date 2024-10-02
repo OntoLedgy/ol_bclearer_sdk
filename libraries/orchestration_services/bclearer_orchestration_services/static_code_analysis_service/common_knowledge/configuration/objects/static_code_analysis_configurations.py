@@ -1,5 +1,6 @@
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import \
-    StaticCodeAnalysisCommonConfigurations
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import (
+    StaticCodeAnalysisCommonConfigurations,
+)
 
 
 class StaticCodeAnalysisConfigurations:

@@ -1,9 +1,12 @@
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import \
-    StaticCodeAnalysisCommonConfigurations
-from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_configurations import \
-    StaticCodeAnalysisConfigurations
-from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_analysis_type_to_table_names_mapping import \
-    PYLINT_ANALYSIS_TYPES_TO_TABLE_NAMES_MAPPING
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_common_configurations import (
+    StaticCodeAnalysisCommonConfigurations,
+)
+from nf_common.code.services.static_code_analysis_service.common_knowledge.configuration.objects.static_code_analysis_configurations import (
+    StaticCodeAnalysisConfigurations,
+)
+from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_analysis_type_to_table_names_mapping import (
+    PYLINT_ANALYSIS_TYPES_TO_TABLE_NAMES_MAPPING,
+)
 
 
 class PylintConfigurations(

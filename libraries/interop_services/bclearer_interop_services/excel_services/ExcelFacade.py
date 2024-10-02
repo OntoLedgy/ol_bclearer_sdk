@@ -1,8 +1,9 @@
 from pathlib import Path
 
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Workbooks import \
-    Workbooks
+from bclearer_interop_services.excel_services.object_model.Workbooks import (
+    Workbooks,
+)
 
 
 class ExcelFacade:

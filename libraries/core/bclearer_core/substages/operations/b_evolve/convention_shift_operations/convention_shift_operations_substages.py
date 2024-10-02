@@ -1,31 +1,45 @@
-from bclearer_core.common_knowledge.convention_shift_operation_types import \
-    ConventionShiftOperationTypes
-from bclearer_core.configurations.convention_shift_operation_configurations import \
-    ConventionShiftOperationConfigurations
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.attribute_names_to_name_objects_convention_shifter import \
-    shift_convention_attribute_names_to_name_objects
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.digitalisation_levels.universe_to_semantically_grounded_convention_shifter import \
-    shift_convention_universe_to_semantically_grounded
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.generalise_names.generalise_names_convention_shifter import \
-    shift_convention_generalise_names
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.objects_to_classes_convention_shifter import \
-    shift_convention_objects_to_classes
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.separate_bespoke_instances_and_exemplars_convention_shifter import \
-    shift_convention_separate_bespoke_instances_and_exemplars
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.separate_standard_instances_and_exemplars_convention_shifter import \
-    shift_convention_separate_standard_instances_and_exemplars
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.separate_bespoke_names_and_instances_convention_shifter import \
-    shift_convention_separate_bespoke_names_and_instances
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.separate_standard_names_and_instances_convention_shifter import \
-    shift_convention_separate_standard_names_and_instances
-from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.uml_names_to_named_objects_convention_shifter import \
-    shift_convention_uml_names_to_named_objects
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
-    EaToolsSessionManagers
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import \
-    create_empty_nf_ea_universe
+from bclearer_core.common_knowledge.convention_shift_operation_types import (
+    ConventionShiftOperationTypes,
+)
+from bclearer_core.configurations.convention_shift_operation_configurations import (
+    ConventionShiftOperationConfigurations,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.attribute_names_to_name_objects_convention_shifter import (
+    shift_convention_attribute_names_to_name_objects,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.digitalisation_levels.universe_to_semantically_grounded_convention_shifter import (
+    shift_convention_universe_to_semantically_grounded,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.generalise_names.generalise_names_convention_shifter import (
+    shift_convention_generalise_names,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.objects_to_classes_convention_shifter import (
+    shift_convention_objects_to_classes,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.separate_bespoke_instances_and_exemplars_convention_shifter import (
+    shift_convention_separate_bespoke_instances_and_exemplars,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_instances_and_exemplars.separate_standard_instances_and_exemplars_convention_shifter import (
+    shift_convention_separate_standard_instances_and_exemplars,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.separate_bespoke_names_and_instances_convention_shifter import (
+    shift_convention_separate_bespoke_names_and_instances,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.separate_standard_names_and_instances_convention_shifter import (
+    shift_convention_separate_standard_names_and_instances,
+)
+from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.uml_names_to_named_objects_convention_shifter import (
+    shift_convention_uml_names_to_named_objects,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+    EaToolsSessionManagers,
+)
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
+    create_empty_nf_ea_universe,
+)
 
 
 class ConventionShiftOperationsSubstages:

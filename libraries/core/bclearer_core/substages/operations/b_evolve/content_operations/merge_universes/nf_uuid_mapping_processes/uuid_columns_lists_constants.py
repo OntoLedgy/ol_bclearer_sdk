@@ -1,6 +1,9 @@
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
-    NfEaComColumnTypes
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
 
 LIST_OF_NF_UUID_COLUMN_NAMES = [
     NfColumnTypes.NF_UUIDS.column_name,

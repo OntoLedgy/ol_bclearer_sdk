@@ -1,14 +1,19 @@
 from bclearer_core.substages.operations.b_evolve.common.universe_align_reporter import (
     report_collection_with_different_columns,
-    report_universes_with_different_collection_types)
-from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.merged_collection_nf_uuids_replacer import \
-    replace_nf_uuids_in_collection
-from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.nf_uuid_mapping_creator import \
-    create_aligned_to_primary_universe_nf_uuids_map
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
-    NfEaComCollectionTypes
+    report_universes_with_different_collection_types,
+)
+from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.merged_collection_nf_uuids_replacer import (
+    replace_nf_uuids_in_collection,
+)
+from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_uuid_mapping_processes.nf_uuid_mapping_creator import (
+    create_aligned_to_primary_universe_nf_uuids_map,
+)
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
 from pandas import DataFrame
 
 

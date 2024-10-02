@@ -1,5 +1,6 @@
-from bclearer_interop_services.file_system_service.objects.wrappers.path_wrappers import \
-    PathWrappers
+from bclearer_interop_services.file_system_service.objects.wrappers.path_wrappers import (
+    PathWrappers,
+)
 
 
 class AbsolutePathWrappers(

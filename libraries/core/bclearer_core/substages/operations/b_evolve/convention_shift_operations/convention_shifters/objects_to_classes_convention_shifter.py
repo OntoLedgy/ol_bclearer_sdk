@@ -1,13 +1,18 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import \
-    EaElementTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
-    NfEaComCollectionTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
-    NfEaComColumnTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
+from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
+    EaElementTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
 from pandas import DataFrame
 
 

@@ -1,8 +1,7 @@
 import time
 
-import pytest
-
 import docker
+import pytest
 
 
 @pytest.fixture(scope="session")
@@ -112,8 +111,9 @@ def neo4j_shutdown_container():
 def neo4j_docker_connection(
     neo4j_docker_driver,
 ):
-    from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import \
-        Neo4jConnections
+    from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
+        Neo4jConnections,
+    )
 
     neo4j_connection = Neo4jConnections(
         external_driver=neo4j_docker_driver,

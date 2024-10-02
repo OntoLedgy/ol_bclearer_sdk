@@ -1,9 +1,12 @@
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import \
-    BEngFolders
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import \
-    BEngWorkspaceFolders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import (
+    BEngFolders,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import (
+    BEngWorkspaceFolders,
+)
 
 
 class BEngProjectFolders(BEngFolders):

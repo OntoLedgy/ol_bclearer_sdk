@@ -1,4 +1,6 @@
-from bclearer_core.constants.standard_constants import DEFAULT_NULL_VALUE
+from bclearer_core.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
 from pandas import DataFrame
 
 filling_up_map = {

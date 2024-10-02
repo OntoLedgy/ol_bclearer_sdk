@@ -1,11 +1,14 @@
 import os
 
-from bclearer_interop_services.file_system_service.new_folder_if_required_creator import \
-    create_new_folder_if_required
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from nf_common.code.services.datetime_service.time_helpers.time_getter import \
-    now_time_as_string_for_files
+from bclearer_interop_services.file_system_service.new_folder_if_required_creator import (
+    create_new_folder_if_required,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from nf_common.code.services.datetime_service.time_helpers.time_getter import (
+    now_time_as_string_for_files,
+)
 
 
 def create_timestamped_subfolder_into_output_folder(

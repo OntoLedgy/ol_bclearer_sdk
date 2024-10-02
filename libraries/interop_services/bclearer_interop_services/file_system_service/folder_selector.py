@@ -1,7 +1,8 @@
 from tkinter import Tk, filedialog
 
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
 
 
 def select_folder(

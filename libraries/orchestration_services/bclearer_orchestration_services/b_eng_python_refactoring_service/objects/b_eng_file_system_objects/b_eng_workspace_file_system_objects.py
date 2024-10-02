@@ -1,9 +1,12 @@
-from bclearer_interop_services.file_system_service.objects.file_system_objects import \
-    FileSystemObjects
-from nf_common.code.services.b_eng_python_refactoring_service.constants.b_eng_file_system_constants import \
-    RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import \
-    BEngWorkspaceFolders
+from bclearer_interop_services.file_system_service.objects.file_system_objects import (
+    FileSystemObjects,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.constants.b_eng_file_system_constants import (
+    RELATIVE_PATH_ROOT_CODE_FOLDER_POSITION,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import (
+    BEngWorkspaceFolders,
+)
 
 
 class BEngWorkspaceFileSystemObjects(

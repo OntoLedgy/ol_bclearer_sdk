@@ -1,5 +1,6 @@
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import \
-    BEngWorkspaceFileSystemObjectCouples
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_file_system_object_couples import (
+    BEngWorkspaceFileSystemObjectCouples,
+)
 
 
 class BEngWorkspaceFileSystemObjectCouplesOrderedIndexedLists:

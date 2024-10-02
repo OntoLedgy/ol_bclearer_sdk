@@ -1,12 +1,15 @@
 import json
 
 import pandas
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.common_knowledge.enum_pylint_code_analysis_types import \
-    EnumPylintCodeAnalysisTypes
-from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_configurations import \
-    PylintConfigurations
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.common_knowledge.enum_pylint_code_analysis_types import (
+    EnumPylintCodeAnalysisTypes,
+)
+from nf_common.code.services.static_code_analysis_service.pylint_code_analysis.pylint_configuration.objects.pylint_configurations import (
+    PylintConfigurations,
+)
 from pylint import epylint
 
 

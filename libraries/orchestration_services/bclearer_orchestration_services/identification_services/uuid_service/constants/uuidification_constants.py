@@ -1,4 +1,6 @@
-from storage_interop_services_source.code.constants import UUIDS_COLUMN_NAME
+from storage_interop_services_source.code.constants import (
+    UUIDS_COLUMN_NAME,
+)
 
 UUID_COLUMN_NAME_SEPARATOR = "_"
 

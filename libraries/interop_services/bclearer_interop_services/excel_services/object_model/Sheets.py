@@ -1,10 +1,19 @@
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Cells import Cells
-from bclearer_interop_services.excel_services.object_model.Columns import \
-    Columns
-from bclearer_interop_services.excel_services.object_model.Ranges import Ranges
-from bclearer_interop_services.excel_services.object_model.Rows import Rows
-from openpyxl.worksheet.worksheet import Worksheet as OpenpyxlWorksheet
+from bclearer_interop_services.excel_services.object_model.Cells import (
+    Cells,
+)
+from bclearer_interop_services.excel_services.object_model.Columns import (
+    Columns,
+)
+from bclearer_interop_services.excel_services.object_model.Ranges import (
+    Ranges,
+)
+from bclearer_interop_services.excel_services.object_model.Rows import (
+    Rows,
+)
+from openpyxl.worksheet.worksheet import (
+    Worksheet as OpenpyxlWorksheet,
+)
 
 
 class Sheets:

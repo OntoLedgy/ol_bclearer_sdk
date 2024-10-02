@@ -1,11 +1,14 @@
 import os
 
-from bclearer_interop_services.file_system_service.objects.path_properties import \
-    PathProperties
-from bclearer_interop_services.file_system_service.objects.wrappers.absolute_path_wrappers import \
-    AbsolutePathWrappers
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
-    create_new_uuid
+from bclearer_interop_services.file_system_service.objects.path_properties import (
+    PathProperties,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.absolute_path_wrappers import (
+    AbsolutePathWrappers,
+)
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
+)
 
 
 class FileSystemObjects:
@@ -14,8 +17,9 @@ class FileSystemObjects:
         absolute_path_string: str,
         parent_folder: object = None,
     ):
-        from bclearer_interop_services.file_system_service.objects.folders import \
-            Folders
+        from bclearer_interop_services.file_system_service.objects.folders import (
+            Folders,
+        )
 
         if (
             parent_folder

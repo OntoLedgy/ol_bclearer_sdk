@@ -1,7 +1,8 @@
 from enum import Enum, auto
 
-from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import \
-    PandasNullValueTypes
+from bclearer_orchestration_services.identification_services.pandas_null_values.pandas_null_value_types import (
+    PandasNullValueTypes,
+)
 
 
 class PandasNullValueSwapBetweenTypes(

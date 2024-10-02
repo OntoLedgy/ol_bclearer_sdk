@@ -1,6 +1,7 @@
 import pyspark
-from bclearer_interop_services.parquet_service.parquet_table_as_pyspark_dataframe_getter import \
-    get_parquet_table_as_pyspark_dataframe
+from bclearer_interop_services.parquet_service.parquet_table_as_pyspark_dataframe_getter import (
+    get_parquet_table_as_pyspark_dataframe,
+)
 
 
 def get_reduced_parquet_table_as_pyspark_dataframe(

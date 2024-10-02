@@ -1,13 +1,18 @@
-from bclearer_interop_services.dataframe_service.parquet_as_dataframe_services.pyspark_dataframe_as_parquet_table_using_pandas_exporter import \
-    export_pyspark_dataframe_as_parquet_table_using_pandas
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.parquet_service.reducer.reduced_parquet_table_as_pyspark_dataframe_getter import \
-    get_reduced_parquet_table_as_pyspark_dataframe
-from bclearer_interop_services.pyspark_service.folder_to_delta_table_converter import \
-    convert_folder_to_delta_table
-from bclearer_interop_services.pyspark_service.pyspark_delta_catalog_session_getter import \
-    get_pyspark_delta_catalog_session
+from bclearer_interop_services.dataframe_service.parquet_as_dataframe_services.pyspark_dataframe_as_parquet_table_using_pandas_exporter import (
+    export_pyspark_dataframe_as_parquet_table_using_pandas,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.parquet_service.reducer.reduced_parquet_table_as_pyspark_dataframe_getter import (
+    get_reduced_parquet_table_as_pyspark_dataframe,
+)
+from bclearer_interop_services.pyspark_service.folder_to_delta_table_converter import (
+    convert_folder_to_delta_table,
+)
+from bclearer_interop_services.pyspark_service.pyspark_delta_catalog_session_getter import (
+    get_pyspark_delta_catalog_session,
+)
 
 
 def reduce_and_export_parquet_table_as_pyspark_dataframe_using_pandas(

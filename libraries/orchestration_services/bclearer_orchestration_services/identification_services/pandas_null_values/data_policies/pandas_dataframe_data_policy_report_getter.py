@@ -1,8 +1,10 @@
 import pandas
-from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.data_policies_values_checker import \
-    check_data_policies_values
-from nf_common.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
+from bclearer_orchestration_services.identification_services.pandas_null_values.data_policies.data_policies_values_checker import (
+    check_data_policies_values,
+)
+from nf_common.code.services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 from pandas import DataFrame
 
 

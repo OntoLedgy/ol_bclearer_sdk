@@ -1,13 +1,17 @@
 import os
 
-from nf_common.code.services.b_eng_python_refactoring_service.b_eng_structure_and_contents.b_eng_structure.b_eng_file_system_alternative_name_getters import \
-    get_b_eng_file_alternative_name
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import \
-    BEngFiles
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import \
-    BEngFolders
-from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_python_reference_dictionaries import \
-    BEngPythonReferenceDictionaries
+from nf_common.code.services.b_eng_python_refactoring_service.b_eng_structure_and_contents.b_eng_structure.b_eng_file_system_alternative_name_getters import (
+    get_b_eng_file_alternative_name,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_files import (
+    BEngFiles,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_folders import (
+    BEngFolders,
+)
+from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_python_reference_dictionaries import (
+    BEngPythonReferenceDictionaries,
+)
 
 
 def collect_child_files_structure(

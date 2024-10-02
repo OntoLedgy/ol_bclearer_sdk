@@ -1,10 +1,13 @@
 import pytest
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_orchestration_services.b_app_runner_service.b_app_runner import \
-    run_b_app
-from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.environment_log_level_types import \
-    EnvironmentLogLevelTypes
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_orchestration_services.b_app_runner_service.b_app_runner import (
+    run_b_app,
+)
+from bclearer_orchestration_services.log_environment_utility_service.common_knowledge.environment_log_level_types import (
+    EnvironmentLogLevelTypes,
+)
 
 
 def app_runner_method(message):

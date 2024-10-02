@@ -1,18 +1,27 @@
-from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import \
-    export_table_as_dictionary_to_csv
-from bclearer_interop_services.file_system_service.objects.files import Files
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.relational_database_services.access_service import \
-    get_access_database_connection
-from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import \
-    load_database_with_table
-from bclearer_interop_services.relational_database_services.access_service.column_names_of_table_from_access_database_getter import \
-    get_column_names_of_table_from_access_database
-from bclearer_interop_services.relational_database_services.access_service.table_names_from_access_database_getter import \
-    get_table_names_from_access_database
-from nf_common.code.services.reporting_service.reporters.log_file import \
-    LogFiles
+from bclearer_interop_services.delimited_text.table_as_dictionary_to_csv_exporter import (
+    export_table_as_dictionary_to_csv,
+)
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.relational_database_services.access_service import (
+    get_access_database_connection,
+)
+from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import (
+    load_database_with_table,
+)
+from bclearer_interop_services.relational_database_services.access_service.column_names_of_table_from_access_database_getter import (
+    get_column_names_of_table_from_access_database,
+)
+from bclearer_interop_services.relational_database_services.access_service.table_names_from_access_database_getter import (
+    get_table_names_from_access_database,
+)
+from nf_common.code.services.reporting_service.reporters.log_file import (
+    LogFiles,
+)
 
 
 # TODO: OXi - Still to be reviewed

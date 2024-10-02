@@ -1,7 +1,9 @@
 import hashlib
 import uuid
 
-from storage_interop_services_source.code.constants import UTF_8_ENCODING_NAME
+from storage_interop_services_source.code.constants import (
+    UTF_8_ENCODING_NAME,
+)
 
 
 def create_uuid_from_list(

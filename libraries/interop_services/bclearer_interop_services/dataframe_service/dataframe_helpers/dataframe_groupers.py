@@ -1,5 +1,7 @@
 import pandas
-from pandas.core.groupby import SeriesGroupBy
+from pandas.core.groupby import (
+    SeriesGroupBy,
+)
 
 
 def group_and_sum_dataframe(

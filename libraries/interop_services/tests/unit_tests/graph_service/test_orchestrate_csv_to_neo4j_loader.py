@@ -1,7 +1,9 @@
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_databases import \
-    Neo4jWrapper
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators import \
-    DataLoadOrchestrator
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_databases import (
+    Neo4jWrapper,
+)
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators import (
+    DataLoadOrchestrator,
+)
 
 
 def test_neo4j_to_csv_load_orchestation(

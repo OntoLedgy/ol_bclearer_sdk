@@ -1,6 +1,7 @@
 import pytest
-from bclearer_interop_services.graph_services.neo4j_service.object_models.cypher_queries import \
-    CypherQueryWrapper
+from bclearer_interop_services.graph_services.neo4j_service.object_models.cypher_queries import (
+    CypherQueryWrapper,
+)
 
 
 class TestCypherServices:

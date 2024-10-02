@@ -1,7 +1,9 @@
-from bclearer_interop_services.file_system_service.objects.folders import \
-    Folders
-from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import \
-    HierarchyFileSystemObjects
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from bclearer_interop_services.file_system_service.objects.wrappers.hierarchy.hierarchy_file_system_objects import (
+    HierarchyFileSystemObjects,
+)
 
 
 class HierarchyFolders(
