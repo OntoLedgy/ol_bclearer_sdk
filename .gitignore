@@ -31,6 +31,6 @@ __pycache__/
 pipelines
 
 # Test data
-tests/configurations/
-tests/data/logs/
-tests/data/output/
+/tests/configurations/
+/tests/data/logs/
+/tests/data/output/
