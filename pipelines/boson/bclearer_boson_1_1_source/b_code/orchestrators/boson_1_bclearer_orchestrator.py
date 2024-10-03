@@ -1,6 +1,6 @@
 import os
 
-from bnop_source.b_code.bnop_facades import (
+from bnop.bnop_facades import (
     BnopFacades,
 )
 from nf_common_source.code.services.datetime_service.time_helpers.time_getter import (
