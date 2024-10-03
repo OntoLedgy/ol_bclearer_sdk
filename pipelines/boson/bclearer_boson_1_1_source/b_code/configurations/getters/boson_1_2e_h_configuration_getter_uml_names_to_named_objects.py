@@ -1,7 +1,7 @@
-from bclearer_source.b_code.common_knowledge.bclearer_matched_ea_objects import (
+from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
     BclearerMatchedEaObjects,
 )
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import (
+from bclearer_core.common_knowledge.convention_shift_operation_types import (
     ConventionShiftOperationTypes,
 )
 from bclearer_source.b_code.configurations.attribute_name_to_name_object_configuration_objects import (

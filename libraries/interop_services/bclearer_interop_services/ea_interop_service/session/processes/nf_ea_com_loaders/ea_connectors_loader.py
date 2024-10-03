@@ -4,29 +4,29 @@ from bclearer_core.constants.standard_constants import (
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
+from bclearer_interop_services.ea_interop_service.factories.i_dual_connector_factory import (
+    create_i_dual_connector,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
-from bclearer_interop_services.ea_interop_service.session.processes.nf_ea_com_loaders.ea_stereotypes_load_helper import (
-    get_ea_stereotype_ex,
-)
-from ea_interop_service_source.b_code.factories.i_dual_connector_factory import (
-    create_i_dual_connector,
-)
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_connector import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_connector import (
     IConnector,
 )
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_dual_connector import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_dual_connector import (
     IDualConnector,
 )
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_null_connector import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_null_connector import (
     INullConnector,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
     IDualElement,
+)
+from bclearer_interop_services.ea_interop_service.session.processes.nf_ea_com_loaders.ea_stereotypes_load_helper import (
+    get_ea_stereotype_ex,
 )
 from pandas import DataFrame
 from tqdm import tqdm

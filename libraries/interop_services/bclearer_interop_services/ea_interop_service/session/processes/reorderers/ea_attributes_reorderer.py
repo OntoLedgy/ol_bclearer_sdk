@@ -1,10 +1,10 @@
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
-from ea_interop_service_source.b_code.i_dual_objects.attributes.i_dual_attribute import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.attributes.i_dual_attribute import (
     IDualAttribute,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
     IDualElement,
 )
 

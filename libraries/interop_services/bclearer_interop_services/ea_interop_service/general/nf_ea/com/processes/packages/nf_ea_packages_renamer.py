@@ -1,6 +1,12 @@
 from bclearer_core.constants.standard_constants import (
     DEFAULT_NULL_VALUE,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_dual_package import (
+    IDualPackage,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_null_package import (
+    INullPackage,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
@@ -9,12 +15,6 @@ from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers 
 )
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_dual_package import (
-    IDualPackage,
-)
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_null_package import (
-    INullPackage,
 )
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,

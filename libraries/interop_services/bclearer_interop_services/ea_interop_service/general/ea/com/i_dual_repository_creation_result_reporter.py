@@ -1,13 +1,13 @@
 import sys
 
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from ea_interop_service_source.b_code.return_results.i_dual_repository_creation_result_types import (
+from bclearer_interop_services.ea_interop_service.return_results.i_dual_repository_creation_result_types import (
     IDualRepositoryCreationResultTypes,
 )
-from ea_interop_service_source.b_code.return_results.i_dual_repository_creation_results import (
+from bclearer_interop_services.ea_interop_service.return_results.i_dual_repository_creation_results import (
     IDualRepositoryCreationResults,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 

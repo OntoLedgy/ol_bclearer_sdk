@@ -1,4 +1,4 @@
-from bclearer_source.b_code.common_knowledge.adjustment_operation_types import (
+from bclearer_core.common_knowledge.adjustment_operation_types import (
     AdjustmentOperationTypes,
 )
 from bclearer_source.b_code.configurations.adjustment_operation_configurations import (

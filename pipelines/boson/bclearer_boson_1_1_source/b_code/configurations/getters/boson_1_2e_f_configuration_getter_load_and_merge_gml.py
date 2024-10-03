@@ -1,4 +1,4 @@
-from bclearer_source.b_code.common_knowledge.content_operation_types import (
+from bclearer_core.common_knowledge.content_operation_types import (
     ContentOperationTypes,
 )
 from bclearer_source.b_code.configurations.content_operation_configurations import (

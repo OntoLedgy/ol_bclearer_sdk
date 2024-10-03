@@ -1,19 +1,19 @@
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
+from bclearer_interop_services.ea_interop_service.factories.i_dual_element_factory import (
+    create_i_dual_element,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
-from ea_interop_service_source.b_code.factories.i_dual_element_factory import (
-    create_i_dual_element,
-)
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_dual_connector import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_dual_connector import (
     IDualConnector,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
     IDualElement,
 )
 from pandas import DataFrame

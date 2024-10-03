@@ -1,4 +1,4 @@
-from bclearer_source.b_code.common_knowledge.matched_objects import (
+from bclearer_core.common_knowledge.matched_objects import (
     MatchedEaObjects,
 )
 from nf_common_source.code.nf.types.nf_column_types import (

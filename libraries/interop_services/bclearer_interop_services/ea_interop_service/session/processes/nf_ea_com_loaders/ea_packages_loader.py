@@ -4,19 +4,19 @@ from bclearer_core.constants.standard_constants import (
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
+from bclearer_interop_services.ea_interop_service.common_knowledge.package_view_types import (
+    PackageViewTypes,
+)
+from bclearer_interop_services.ea_interop_service.factories.i_dual_package_factory import (
+    create_i_dual_package,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
-from ea_interop_service_source.b_code.common_knowledge.package_view_types import (
-    PackageViewTypes,
-)
-from ea_interop_service_source.b_code.factories.i_dual_package_factory import (
-    create_i_dual_package,
-)
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_dual_package import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_dual_package import (
     IDualPackage,
 )
 from pandas import DataFrame

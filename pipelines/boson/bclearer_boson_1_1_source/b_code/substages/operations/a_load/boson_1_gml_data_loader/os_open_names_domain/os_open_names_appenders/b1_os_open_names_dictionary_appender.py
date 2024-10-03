@@ -1,9 +1,9 @@
 import untangle
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
 from nf_common_source.code.nf.types.nf_column_types import (
     NfColumnTypes,
-)
-from nf_common_source.code.services.file_system_service.objects.files import (
-    Files,
 )
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,

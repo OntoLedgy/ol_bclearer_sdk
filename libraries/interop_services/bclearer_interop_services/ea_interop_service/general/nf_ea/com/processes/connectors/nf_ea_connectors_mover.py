@@ -7,6 +7,15 @@ from bclearer_core.nf.types.nf_column_types import (
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_dual_connector import (
+    IDualConnector,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
+    IDualElement,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
@@ -15,15 +24,6 @@ from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers 
 )
 from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
-)
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_dual_connector import (
-    IDualConnector,
-)
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
-    IDualElement,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
 )
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,

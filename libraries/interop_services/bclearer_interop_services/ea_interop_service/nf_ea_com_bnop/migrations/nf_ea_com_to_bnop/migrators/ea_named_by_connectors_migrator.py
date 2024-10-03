@@ -1,6 +1,9 @@
 from bclearer_core.ckids.boro_object_ckids import (
     BoroObjectCkIds,
 )
+from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
+    BclearerMatchedEaObjects,
+)
 from bclearer_core.constants.standard_constants import (
     DEFAULT_NULL_VALUE,
 )
@@ -21,9 +24,6 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_un
 )
 from bclearer_interop_services.ea_interop_service.nf_ea_com_bnop.migrations.nf_ea_com_to_bnop.filters.ea_connector_filter import (
     filter_connectors_by_stereotype,
-)
-from bclearer_source.b_code.common_knowledge.bclearer_matched_ea_objects import (
-    BclearerMatchedEaObjects,
 )
 from bnop.bnop_facades import (
     BnopFacades,

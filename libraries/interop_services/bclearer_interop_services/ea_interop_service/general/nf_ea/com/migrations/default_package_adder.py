@@ -4,6 +4,9 @@ from bclearer_core.constants.standard_constants import (
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
+from bclearer_interop_services.ea_interop_service.common_knowledge.package_view_types import (
+    PackageViewTypes,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
@@ -18,9 +21,6 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
 )
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
-)
-from ea_interop_service_source.b_code.common_knowledge.package_view_types import (
-    PackageViewTypes,
 )
 
 

@@ -4,14 +4,14 @@ from bclearer_core.nf.types.nf_column_types import (
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
+    IDualElement,
+)
 from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
-    IDualElement,
 )
 from pandas import DataFrame, Series
 

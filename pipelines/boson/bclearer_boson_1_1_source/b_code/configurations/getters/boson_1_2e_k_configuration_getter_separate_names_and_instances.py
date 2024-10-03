@@ -1,4 +1,4 @@
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import (
+from bclearer_core.common_knowledge.convention_shift_operation_types import (
     ConventionShiftOperationTypes,
 )
 from bclearer_source.b_code.configurations.bespoke_name_to_instance_configuration_objects import (

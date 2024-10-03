@@ -10,6 +10,12 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowl
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.maps.nf_uuids_to_com_objects_mappings import (
     NfUuidsToIDualObjectsMappings,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_dual_package import (
+    IDualPackage,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
@@ -21,12 +27,6 @@ from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools
 )
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
-)
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_dual_package import (
-    IDualPackage,
 )
 from pandas import DataFrame, Series
 

@@ -1,23 +1,23 @@
 from bclearer_core.constants.standard_constants import (
     DEFAULT_NULL_VALUE,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.collections.i_dual_connector_collection import (
+    IDualConnectorCollection,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_dual_connector import (
+    IDualConnector,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
+    IDualElement,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
 from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers import (
     EaRepositoryMappers,
-)
-from ea_interop_service_source.b_code.i_dual_objects.collections.i_dual_connector_collection import (
-    IDualConnectorCollection,
-)
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_dual_connector import (
-    IDualConnector,
-)
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
-    IDualElement,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
 )
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,

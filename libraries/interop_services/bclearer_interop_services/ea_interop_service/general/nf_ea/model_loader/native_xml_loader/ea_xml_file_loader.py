@@ -1,3 +1,15 @@
+from bclearer_interop_services.ea_interop_service.i_dual_objects.collections.i_dual_collection import (
+    IDualCollection,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_dual_package import (
+    IDualPackage,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.projects.i_dual_project import (
+    IDualProject,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_element_types import (
     EaElementTypes,
 )
@@ -9,18 +21,6 @@ from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers 
 )
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.collections.i_dual_collection import (
-    IDualCollection,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
-)
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_dual_package import (
-    IDualPackage,
-)
-from ea_interop_service_source.b_code.i_dual_objects.projects.i_dual_project import (
-    IDualProject,
 )
 
 

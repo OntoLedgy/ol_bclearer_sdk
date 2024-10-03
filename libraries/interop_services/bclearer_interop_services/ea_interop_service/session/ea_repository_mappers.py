@@ -1,11 +1,11 @@
 from bclearer_core.nf.python_extensions.collections.nf_bimappings import (
     NfBimappings,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
 )
 
 

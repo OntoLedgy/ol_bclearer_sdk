@@ -25,6 +25,9 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.ea_
 from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.ea_interop_loader.object_loaders.ea_stereotypes_loader import (
     map_and_load_ea_stereotypes,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
+    IDualRepository,
+)
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
@@ -33,9 +36,6 @@ from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers 
 )
 from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
-    IDualRepository,
 )
 
 

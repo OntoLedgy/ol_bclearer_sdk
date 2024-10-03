@@ -1,11 +1,11 @@
 from bclearer_interop_services.ea_interop_service.general.ea.com.ea_com_universes import (
     EaComUniverses,
 )
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_null_element import (
+    INullElement,
+)
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_null_element import (
-    INullElement,
 )
 
 

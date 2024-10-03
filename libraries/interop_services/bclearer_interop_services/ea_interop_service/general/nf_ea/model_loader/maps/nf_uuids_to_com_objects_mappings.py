@@ -1,13 +1,13 @@
-from ea_interop_service_source.b_code.i_dual_objects.connectors.i_dual_connector import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.connectors.i_dual_connector import (
     IDualConnector,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
     IDualElement,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_null_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_null_element import (
     INullElement,
 )
-from ea_interop_service_source.b_code.i_dual_objects.packages.i_dual_package import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.packages.i_dual_package import (
     IDualPackage,
 )
 

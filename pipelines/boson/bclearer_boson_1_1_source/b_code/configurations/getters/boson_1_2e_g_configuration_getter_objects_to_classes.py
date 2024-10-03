@@ -1,7 +1,9 @@
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import \
-    ConventionShiftOperationTypes
-from bclearer_source.b_code.configurations.convention_shift_operation_configurations import \
-    ConventionShiftOperationConfigurations
+from bclearer_core.common_knowledge.convention_shift_operation_types import (
+    ConventionShiftOperationTypes,
+)
+from bclearer_source.b_code.configurations.convention_shift_operation_configurations import (
+    ConventionShiftOperationConfigurations,
+)
 
 
 def get_boson_1_2e_g1_configuration_objects_to_classes() -> (

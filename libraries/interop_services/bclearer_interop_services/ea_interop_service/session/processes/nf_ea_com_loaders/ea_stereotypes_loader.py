@@ -1,17 +1,17 @@
+from bclearer_interop_services.ea_interop_service.factories.i_dual_stereotype_factory import (
+    create_i_dual_stereotype,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.i_dual_objects.stereotypes.i_dual_stereotype import (
+    IDualStereotype,
 )
 from bclearer_interop_services.ea_interop_service.nf_ea_common.objects.ea_repositories import (
     EaRepositories,
 )
 from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers import (
     EaRepositoryMappers,
-)
-from ea_interop_service_source.b_code.factories.i_dual_stereotype_factory import (
-    create_i_dual_stereotype,
-)
-from ea_interop_service_source.b_code.i_dual_objects.stereotypes.i_dual_stereotype import (
-    IDualStereotype,
 )
 from pandas import DataFrame
 from tqdm import tqdm

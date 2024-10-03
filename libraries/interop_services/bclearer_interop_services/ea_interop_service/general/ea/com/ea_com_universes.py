@@ -3,14 +3,14 @@ import sys
 from bclearer_interop_services.ea_interop_service.general.ea.com.i_dual_repository_creation_result_reporter import (
     report_i_dual_repository_creation_result,
 )
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
     IDualRepository,
 )
-from ea_interop_service_source.b_code.processes.i_dual_repository_creation_result_getter import (
+from bclearer_interop_services.ea_interop_service.processes.i_dual_repository_creation_result_getter import (
     get_i_dual_repository_creation_result,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 

@@ -1,20 +1,20 @@
-from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from ea_interop_service_source.b_code.i_dual_objects.attributes.i_dual_attribute import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.attributes.i_dual_attribute import (
     IDualAttribute,
 )
-from ea_interop_service_source.b_code.i_dual_objects.collections.i_dual_attribute_collection import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.collections.i_dual_attribute_collection import (
     IDualAttributeCollection,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_dual_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_dual_element import (
     IDualElement,
 )
-from ea_interop_service_source.b_code.i_dual_objects.elements.i_element import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.elements.i_element import (
     IElement,
 )
-from ea_interop_service_source.b_code.i_dual_objects.i_dual_repository import (
+from bclearer_interop_services.ea_interop_service.i_dual_objects.i_dual_repository import (
     IDualRepository,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 

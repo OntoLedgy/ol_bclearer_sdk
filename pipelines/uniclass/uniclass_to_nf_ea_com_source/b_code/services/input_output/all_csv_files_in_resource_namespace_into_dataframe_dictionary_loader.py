@@ -2,14 +2,18 @@ import importlib
 from os.path import basename, splitext
 
 import pandas
-from nf_common_source.code.services.file_system_service.files_of_extension_from_folder_getter import \
-    get_all_files_of_extension_from_folder
-from nf_common_source.code.services.file_system_service.objects.files import \
-    Files
-from nf_common_source.code.services.file_system_service.objects.folders import \
-    Folders
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
-    CSV_EXTENSION_FILE_NAME
+from bclearer_interop_services.file_system_service.files_of_extension_from_folder_getter import (
+    get_all_files_of_extension_from_folder,
+)
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_interop_services.file_system_service.objects.folders import (
+    Folders,
+)
+from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    CSV_EXTENSION_FILE_NAME,
+)
 
 
 def load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
