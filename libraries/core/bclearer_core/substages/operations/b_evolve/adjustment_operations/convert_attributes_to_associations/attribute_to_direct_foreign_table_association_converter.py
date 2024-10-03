@@ -4,14 +4,14 @@ from bclearer_core.nf.types.nf_column_types import (
 from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.association_from_attribute_creator import (
     create_association_from_attribute,
 )
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
-    get_tuple_attribute_value_if_required,
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
 )
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
+from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
+    get_tuple_attribute_value_if_required,
 )
 
 

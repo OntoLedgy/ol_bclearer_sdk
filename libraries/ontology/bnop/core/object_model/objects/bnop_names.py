@@ -1,8 +1,8 @@
+from bclearer_core.ckids.boro_object_ckids import (
+    BoroObjectCkIds,
+)
 from bnop.core.object_model.objects.bnop_representations import (
     BnopRepresentations,
-)
-from boro_common_source.ckids.boro_object_ckids import (
-    BoroObjectCkIds,
 )
 
 

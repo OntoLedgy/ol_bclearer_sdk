@@ -4,10 +4,10 @@ from bclearer_core.configurations.convention_shift_operation_configurations impo
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shift_operations_substages import (
     ConventionShiftOperationsSubstages,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
 )
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
 

@@ -10,7 +10,7 @@ from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_a
 from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.type_from_attribute_creator import (
     create_type_from_attribute,
 )
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
 

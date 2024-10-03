@@ -1,3 +1,6 @@
+from bclearer_core.ckids.boro_object_ckids import (
+    BoroObjectCkIds,
+)
 from bnop.core.object_model.objects.bnop_names import (
     BnopNames,
 )
@@ -6,9 +9,6 @@ from bnop.migrations.bnop_to_xml_migration.adders.bnop_object_xml_adder import (
 )
 from bnop.migrations.bnop_to_xml_migration.common_knowledge.bnop_to_xml_migration_configurations import (
     BnopToXmlMigrationConfigurations,
-)
-from boro_common_source.ckids.boro_object_ckids import (
-    BoroObjectCkIds,
 )
 from lxml import etree
 from lxml.etree import Element

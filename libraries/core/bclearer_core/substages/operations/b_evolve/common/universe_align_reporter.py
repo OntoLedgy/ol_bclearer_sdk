@@ -1,8 +1,8 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 

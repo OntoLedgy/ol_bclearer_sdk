@@ -1,4 +1,4 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionaries import (
+from bclearer_core.nf.python_extensions.collections.nf_dictionaries import (
     NfDictionaries,
 )
 

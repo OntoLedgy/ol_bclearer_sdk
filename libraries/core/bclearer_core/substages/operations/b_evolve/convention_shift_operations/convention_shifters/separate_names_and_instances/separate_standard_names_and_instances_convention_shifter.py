@@ -10,6 +10,10 @@ from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
 from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
     DigitalisationLevelStereotypeMatchedEaObjects,
 )
+from bclearer_core.constants.standard_constants import (
+    DEFAULT_FOREIGN_TABLE_SUFFIX,
+    DEFAULT_MASTER_TABLE_SUFFIX,
+)
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
@@ -34,27 +38,23 @@ from bclearer_core.substages.operations.common.nf_ea_com_universe_updater import
 from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
 )
-from nf_common_source.code.constants.standard_constants import (
-    DEFAULT_FOREIGN_TABLE_SUFFIX,
-    DEFAULT_MASTER_TABLE_SUFFIX,
-)
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 from pandas import DataFrame
 

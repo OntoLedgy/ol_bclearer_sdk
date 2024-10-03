@@ -1,18 +1,18 @@
-from bclearer_core.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.constants.standard_constants import (
+from bclearer_core.constants.standard_constants import (
     DEFAULT_FOREIGN_TABLE_SUFFIX,
     DEFAULT_MASTER_TABLE_SUFFIX,
     DEFAULT_NULL_VALUE,
 )
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     inner_merge_dataframes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
 

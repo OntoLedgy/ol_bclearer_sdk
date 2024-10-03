@@ -1,11 +1,11 @@
 from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
+)
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
 )
 
 

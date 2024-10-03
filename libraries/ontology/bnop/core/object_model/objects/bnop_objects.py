@@ -1,4 +1,4 @@
-from boro_common_source.ckids.boro_object_ckids import (
+from bclearer_core.ckids.boro_object_ckids import (
     BoroObjectCkIds,
 )
 

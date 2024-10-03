@@ -1,11 +1,11 @@
+from bclearer_core.ckids.boro_object_ckids import (
+    BoroObjectCkIds,
+)
 from bnop.core.object_model.objects.bnop_types import (
     BnopTypes,
 )
 from bnop.core.object_model.objects.places.bnop_placed_types_dictionaries import (
     BnopPlacedTypesDictionaries,
-)
-from boro_common_source.ckids.boro_object_ckids import (
-    BoroObjectCkIds,
 )
 
 

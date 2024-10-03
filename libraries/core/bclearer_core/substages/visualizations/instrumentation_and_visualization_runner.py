@@ -13,14 +13,41 @@ from bclearer_core.nf.types.nf_column_types import (
 from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
 )
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,
 )
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
-from nf_common_source.code.services.file_system_service.objects.files import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.nf_ea_com_to_domain_migration.processes.nf_ea_com_to_standard_tables_dictionary_converter import (
+    convert_nf_ea_com_to_standard_tables_dictionary,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
+    StandardObjectTableColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_element_types import (
+    EaElementTypes,
+)
+from bclearer_interop_services.file_system_service.objects.files import (
     Files,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
 )
 from nf_common_source.code.services.input_output_service.delimited_text.dataframe_dictionary_to_csv_files_writer import (
     write_dataframe_dictionary_to_csv_files,
@@ -28,35 +55,8 @@ from nf_common_source.code.services.input_output_service.delimited_text.datafram
 from nf_common_source.code.services.log_environment_utility_service.common_knowledge.constants import (
     NAME_VALUE_DELIMITER,
 )
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
-    StandardObjectTableColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
-    EaElementTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
-    NfEaComCollectionTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
-    NfEaComColumnTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
-    NfEaComUniverses,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.nf_ea_com_to_domain_migration.processes.nf_ea_com_to_standard_tables_dictionary_converter import (
-    convert_nf_ea_com_to_standard_tables_dictionary,
 )
 
 

@@ -26,20 +26,20 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
 )
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
-    EaConnectorTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
 )
 
 

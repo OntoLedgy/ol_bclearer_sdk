@@ -1,4 +1,4 @@
-from nf_common.code.nf.python_extensions.collections.nf_dictionary_try_get_results import (
+from bclearer_core.nf.python_extensions.collections.nf_dictionary_try_get_results import (
     NfDictionaryTryGetResults,
 )
 

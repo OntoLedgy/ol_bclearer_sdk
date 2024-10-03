@@ -1,14 +1,14 @@
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_property_types import (
-    EaPropertyTypes,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_property_types import (
+    EaPropertyTypes,
+)
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
 )
 
 

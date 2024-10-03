@@ -10,7 +10,7 @@ from bclearer_core.configurations.adjustment_operation_configurations import (
 from bclearer_core.configurations.load_hdf5_model_configurations import (
     LoadHdf5ModelConfigurations,
 )
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
 

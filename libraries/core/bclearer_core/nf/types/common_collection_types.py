@@ -1,6 +1,6 @@
 from enum import auto, unique
 
-from nf_common.code.nf.types.collection_types import (
+from bclearer_core.nf.types.collection_types import (
     CollectionTypes,
 )
 

@@ -7,23 +7,23 @@ from bclearer_core.configurations.load_hdf5_model_configurations import (
 from bclearer_core.substages.operations.a_load.content_operations.digitalisation_levels.default_digitalisation_level_stereotype_adder import (
     add_default_digitalisation_level_stereotype,
 )
-from nf_common_source.code.services.file_system_service.objects.files import (
-    Files,
-)
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.model_loader.hdf5_loader.hdf5_to_nf_ea_com_universe_loader import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.model_loader.hdf5_loader.hdf5_to_nf_ea_com_universe_loader import (
     load_hdf5_to_nf_ea_com_universe,
 )
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
+)
+from bclearer_interop_services.file_system_service.objects.files import (
+    Files,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
 )
 
 

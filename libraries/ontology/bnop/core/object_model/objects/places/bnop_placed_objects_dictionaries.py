@@ -1,8 +1,8 @@
+from bclearer_core.ckids.place_number_type_ckids import (
+    PlaceNumberTypeCkIds,
+)
 from bnop.core.object_model.objects.bnop_objects import (
     BnopObjects,
-)
-from boro_common_source.ckids.place_number_type_ckids import (
-    PlaceNumberTypeCkIds,
 )
 
 

@@ -6,6 +6,12 @@ from os.path import isfile, join
 from pathlib import Path
 
 import pyodbc as odbc_library
+from bclearer_core.nf.types.collection_types import (
+    CollectionTypes,
+)
+from bclearer_core.nf.types.common_collection_types import (
+    CommonCollectionTypes,
+)
 from bclearer_interop_services.excel_services.interop.excel_write import (
     save_table_in_excel,
 )
@@ -14,12 +20,6 @@ from bclearer_interop_services.file_system_service.objects.folders import (
 )
 from bclearer_interop_services.relational_database_services.access_service.access.csv_folder_to_database_loader import (
     load_database_with_table,
-)
-from nf_common.code.nf.types.collection_types import (
-    CollectionTypes,
-)
-from nf_common.code.nf.types.common_collection_types import (
-    CommonCollectionTypes,
 )
 from pandas import DataFrame, concat
 

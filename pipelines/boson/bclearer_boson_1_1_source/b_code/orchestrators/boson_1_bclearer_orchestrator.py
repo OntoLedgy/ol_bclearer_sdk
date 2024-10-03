@@ -1,19 +1,19 @@
 import os
 
-from bnop.bnop_facades import (
-    BnopFacades,
-)
-from nf_common_source.code.services.datetime_service.time_helpers.time_getter import (
-    now_time_as_string_for_files,
-)
-from nf_common_source.code.services.file_system_service.folder_selector import (
-    select_folder,
-)
-from nf_ea_com_bnop_source.b_code.nf_ea_com_bnop_facades import (
+from bclearer_interop_services.ea_interop_service.nf_ea_com_bnop.nf_ea_com_bnop_facades import (
     NfEaComBnopFacades,
 )
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
+)
+from bclearer_interop_services.file_system_service.folder_selector import (
+    select_folder,
+)
+from bclearer_orchestration_services.datetime_service.time_helpers.time_getter import (
+    now_time_as_string_for_files,
+)
+from bnop.bnop_facades import (
+    BnopFacades,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.orchestrators.boson_1_bclearer_stages_orchestrator import (
     orchestrate_boson_1_bclearer_stages,

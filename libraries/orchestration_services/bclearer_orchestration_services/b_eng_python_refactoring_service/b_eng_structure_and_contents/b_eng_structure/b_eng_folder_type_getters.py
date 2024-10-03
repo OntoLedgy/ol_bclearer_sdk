@@ -1,3 +1,10 @@
+from bclearer_core.constants.standard_constants import (
+    CODE_FOLDER_NAME,
+    EXECUTABLES_FOLDER_NAME,
+    FOLDER_DELIMITER,
+    LOCAL_GIT_REPOSITORY_FOLDER_NAME,
+    SANDPIT_FOLDER_NAME,
+)
 from nf_common.code.services.b_eng_python_refactoring_service.common_knowledge.enum_b_eng_folder_types import (
     EnumBEngFolderTypes,
 )
@@ -6,13 +13,6 @@ from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file
 )
 from nf_common.code.services.b_eng_python_refactoring_service.objects.b_eng_file_system_objects.b_eng_workspace_folders import (
     BEngWorkspaceFolders,
-)
-from storage_interop_services_source.code.constants import (
-    CODE_FOLDER_NAME,
-    EXECUTABLES_FOLDER_NAME,
-    FOLDER_DELIMITER,
-    LOCAL_GIT_REPOSITORY_FOLDER_NAME,
-    SANDPIT_FOLDER_NAME,
 )
 
 

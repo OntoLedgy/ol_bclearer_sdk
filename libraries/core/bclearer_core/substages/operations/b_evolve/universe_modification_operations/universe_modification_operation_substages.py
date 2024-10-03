@@ -10,13 +10,13 @@ from bclearer_core.configurations.universe_modification_operation_configurations
 from bclearer_core.substages.operations.b_evolve.universe_modification_operations.universe_modifiers.dependency_to_instances_of_type_adder import (
     add_dependency_to_instances_of_type,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
 )
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
+from bclearer_interop_services.ea_interop_service.session.processes.creators.empty_nf_ea_com_universe_creator import (
     create_empty_nf_ea_universe,
 )
 

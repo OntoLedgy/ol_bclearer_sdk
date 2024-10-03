@@ -1,11 +1,11 @@
+from bclearer_core.ckids.boro_object_ckids import (
+    BoroObjectCkIds,
+)
 from bnop.core.object_model.objects.bnop_objects import (
     BnopObjects,
 )
 from bnop.migrations.bnop_to_xml_migration.xml_bnop_registers import (
     XmlBnopRegisters,
-)
-from boro_common_source.ckids.boro_object_ckids import (
-    BoroObjectCkIds,
 )
 
 

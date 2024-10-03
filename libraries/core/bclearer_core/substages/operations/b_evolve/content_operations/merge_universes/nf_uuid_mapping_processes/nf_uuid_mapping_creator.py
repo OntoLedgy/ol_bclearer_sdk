@@ -1,15 +1,15 @@
-from bclearer_core.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.constants.standard_constants import (
+from bclearer_core.constants.standard_constants import (
     DEFAULT_FOREIGN_TABLE_SUFFIX,
     DEFAULT_MASTER_TABLE_SUFFIX,
     DEFAULT_NULL_VALUE,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
     NfEaComColumnTypes,
 )
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
 )
 from pandas import (

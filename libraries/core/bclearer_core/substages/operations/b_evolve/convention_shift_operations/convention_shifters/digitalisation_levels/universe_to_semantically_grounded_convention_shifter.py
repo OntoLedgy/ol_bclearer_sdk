@@ -4,11 +4,11 @@ from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_
 from bclearer_core.substages.operations.a_load.content_operations.digitalisation_levels.digitalisation_level_stereotype_replacer import (
     replace_digitalisation_level_stereotype,
 )
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
-    log_message,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
 )
 
 

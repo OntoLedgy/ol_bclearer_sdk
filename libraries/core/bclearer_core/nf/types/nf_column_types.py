@@ -1,6 +1,6 @@
 from enum import auto, unique
 
-from nf_common.code.nf.types.column_types import (
+from bclearer_core.nf.types.column_types import (
     ColumnTypes,
 )
 

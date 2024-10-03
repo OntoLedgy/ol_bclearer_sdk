@@ -1,4 +1,4 @@
-from storage_interop_services_source.code.constants import (
+from bclearer_core.constants.standard_constants import (
     UTF_8_ENCODING_NAME,
 )
 
