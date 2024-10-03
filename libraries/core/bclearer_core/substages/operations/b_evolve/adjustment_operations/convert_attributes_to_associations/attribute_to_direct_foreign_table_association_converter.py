@@ -1,8 +1,8 @@
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.adjustment_operations.convert_attributes_to_associations.association_from_attribute_creator import (
     create_association_from_attribute,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,

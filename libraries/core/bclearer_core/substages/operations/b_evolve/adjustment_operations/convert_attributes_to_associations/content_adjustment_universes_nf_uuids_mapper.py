@@ -1,10 +1,10 @@
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from nf_common_source.code.constants.standard_constants import (
     DEFAULT_FOREIGN_TABLE_SUFFIX,
     DEFAULT_MASTER_TABLE_SUFFIX,
     DEFAULT_NULL_VALUE,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
     inner_merge_dataframes,

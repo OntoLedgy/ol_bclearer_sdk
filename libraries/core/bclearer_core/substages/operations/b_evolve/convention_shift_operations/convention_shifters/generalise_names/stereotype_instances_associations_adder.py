@@ -1,4 +1,4 @@
-from nf_common_source.code.nf.types.nf_column_types import (
+from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (

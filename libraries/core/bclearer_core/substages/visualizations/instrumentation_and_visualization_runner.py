@@ -7,11 +7,11 @@ from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_
 from bclearer_core.configurations.run_configurations import (
     RunConfigurations,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collection_getter import (
     get_nf_uuid_from_ea_guid_from_collection,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
     dataframe_filter_and_rename,

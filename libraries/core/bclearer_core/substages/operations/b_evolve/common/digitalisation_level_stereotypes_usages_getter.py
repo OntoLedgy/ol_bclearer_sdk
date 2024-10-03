@@ -1,7 +1,7 @@
 from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_objects import (
     DigitalisationLevelStereotypeMatchedEaObjects,
 )
-from nf_common_source.code.nf.types.nf_column_types import (
+from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
 from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (

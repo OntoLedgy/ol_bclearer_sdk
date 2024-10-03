@@ -1,6 +1,9 @@
 from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
     BclearerMatchedEaObjects,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.ea_attribute_remover import (
     remove_ea_attributes,
 )
@@ -15,9 +18,6 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 )
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,

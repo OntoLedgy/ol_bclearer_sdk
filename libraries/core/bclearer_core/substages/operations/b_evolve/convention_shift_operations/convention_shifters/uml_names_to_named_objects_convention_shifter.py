@@ -1,6 +1,9 @@
 from bclearer_core.configurations.uml_name_to_named_object_configuration_objects import (
     UmlNameToNamedObjectConfigurationObjects,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.common.all_classifiers_of_a_package_and_its_subpackages_getter import (
     get_all_package_and_subpackages_classifiers,
 )
@@ -12,9 +15,6 @@ from bclearer_core.substages.operations.common.ea_guid_from_nf_uuid_creator impo
 )
 from nf_common_source.code.constants.standard_constants import (
     DEFAULT_NULL_VALUE,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,

@@ -1,4 +1,4 @@
-from nf_common_source.code.nf.types.nf_column_types import (
+from bclearer_core.nf.types.nf_column_types import (
     NfColumnTypes,
 )
 from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (

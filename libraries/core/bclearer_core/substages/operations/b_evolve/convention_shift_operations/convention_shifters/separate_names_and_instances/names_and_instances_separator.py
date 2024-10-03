@@ -10,6 +10,9 @@ from bclearer_core.common_knowledge.digitialisation_level_stereotype_matched_ea_
 from bclearer_core.common_knowledge.matched_objects import (
     MatchedEaObjects,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.separate_names_and_instances.ea_attribute_remover import (
     remove_ea_attributes,
 )
@@ -34,9 +37,6 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 from nf_common_source.code.constants.standard_constants import (
     DEFAULT_FOREIGN_TABLE_SUFFIX,
     DEFAULT_MASTER_TABLE_SUFFIX,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,

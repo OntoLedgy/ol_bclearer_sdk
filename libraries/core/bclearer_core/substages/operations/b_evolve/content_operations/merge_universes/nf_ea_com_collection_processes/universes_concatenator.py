@@ -1,11 +1,11 @@
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.common.universes_merge_registers import (
     UniversesMergeRegisters,
 )
 from bclearer_core.substages.operations.b_evolve.content_operations.merge_universes.nf_ea_com_collection_processes.collection_type_compliation_constants import (
     LIST_OF_COLLECTION_TYPES_OF_OBJECTS_WITHOUT_EA_GUIDS,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,

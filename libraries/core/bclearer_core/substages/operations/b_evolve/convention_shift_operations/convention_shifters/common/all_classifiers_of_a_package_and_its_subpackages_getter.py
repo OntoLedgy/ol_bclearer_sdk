@@ -1,8 +1,8 @@
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.b_evolve.convention_shift_operations.convention_shifters.common.list_of_contained_packages_of_a_package_getter import (
     get_list_of_all_contained_packages_of_package,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import (
     log_message,

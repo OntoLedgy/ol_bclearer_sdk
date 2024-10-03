@@ -4,6 +4,9 @@ from bclearer_core.common_knowledge.bclearer_matched_ea_objects import (
 from bclearer_core.common_knowledge.matched_objects import (
     MatchedEaObjects,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
 from bclearer_core.substages.operations.common.connector_adder import (
     add_new_connector_to_dictionary,
 )
@@ -22,9 +25,6 @@ from bclearer_core.substages.operations.common.nf_uuid_from_ea_guid_from_collect
 )
 from bclearer_core.substages.operations.common.stereotype_adder import (
     add_new_stereotype_usage_to_dictionary,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
 )
 from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
     run_and_log_function,
