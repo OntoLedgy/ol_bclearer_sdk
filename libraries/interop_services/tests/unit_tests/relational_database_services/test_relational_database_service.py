@@ -9,9 +9,9 @@ from bclearer_orchestration_services.bclearer_load_service.hashify_and_filter.ha
 class TestRelationalDatabaseInteropInteropServices:
     def test_database_connection_and_read(
         self,
-        db_connection_postgresql,
+        postgres_docker,
     ):
-        results = db_connection_postgresql.fetch_results(
+        results = postgres_docker.fetch_results(
             "SELECT * FROM transactions",
         )
 
@@ -20,8 +20,8 @@ class TestRelationalDatabaseInteropInteropServices:
 
     def test_database_write_dataframe(
         self,
-        db_connection_postgresql,
-        csv_file,
+        postgres_docker,
+        sample_transactions_csv_file,
     ):
         custom_header = [
             "date",
@@ -30,20 +30,20 @@ class TestRelationalDatabaseInteropInteropServices:
         ]
 
         table = get_table_from_csv_with_header_with_encoding_detection(
-            csv_file,
+            sample_transactions_csv_file,
             custom_header=custom_header,
         )
 
-        db_connection_postgresql.store_dataframe(
+        postgres_docker.store_dataframe(
             table,
             "load_database_transactions",
         )
 
     def test_database_read_hashify_write(
         self,
-        db_connection_postgresql,
+        postgres_docker,
     ):
-        results = db_connection_postgresql.fetch_results(
+        results = postgres_docker.fetch_results(
             "SELECT * FROM transactions",
         )
 
@@ -51,7 +51,7 @@ class TestRelationalDatabaseInteropInteropServices:
             results,
         )
 
-        db_connection_postgresql.store_dataframe(
+        postgres_docker.store_dataframe(
             results,
             "load_database_transactions_hashed",
         )

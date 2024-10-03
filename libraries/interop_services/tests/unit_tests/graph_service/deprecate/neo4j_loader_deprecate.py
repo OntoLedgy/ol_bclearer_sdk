@@ -1,6 +1,3 @@
-# from bclearer_interop_services.graph_services.neo4j_service.object_models. import Neo4jLoader
-# from neo4j_service.object_models.neo4j_connections import Neo4jConnection
-
 import unittest
 from unittest.mock import Mock, patch
 

@@ -19,13 +19,6 @@ from bclearer_interop_services.graph_services.neo4j_service.orchestrators.orches
     orchestrate_csv_to_neo4j_data_load,
 )
 
-# from neo4j_constants import LoaderDataFolderNames
-# from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
-# from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
-# from neo4j_object_models.neo4j_connections import Neo4jConnection
-# from neo4j_orchestrators.orchestrate_csv_file_to_neo4j_data_load import orchestrate_csv_to_neo4j_data_load
-# from neo4j_orchestrators.helpers.prepare_dataset_dictionary_from_folder import get_load_dataset_by_graph_object_type
-
 
 def orchestrate_csv_folders_to_neo4j_load(
     neo4j_loader_configuration_path,

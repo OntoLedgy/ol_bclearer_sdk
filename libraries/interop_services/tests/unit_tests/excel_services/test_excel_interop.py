@@ -11,7 +11,7 @@ class TestExcelInteropServices:
         self,
         excel_file_name_and_path_xlsx,
     ):
-        self.excel_file_name_and_path_xls = r"D:\S\bclearer_projects\bank_transactions\bank_transactions\code\tests\data\collect\santander_current_account_20240817.xls"
+        self.excel_file_name_and_path_xls = r"../data/input/excel/cfi-20210507-current.xls"
 
     def test_excel_interop_reading_xlsx(
         self,

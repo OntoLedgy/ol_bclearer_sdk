@@ -52,17 +52,17 @@ def __log_initial_logs(
 
     match environment_log_level_type:
         case (
-            EnvironmentLogLevelTypes.FILTERED,
+            EnvironmentLogLevelTypes.FILTERED
         ):
             log_filtered_environment()
 
         case (
-            EnvironmentLogLevelTypes.FULL,
+            EnvironmentLogLevelTypes.FULL
         ):
             log_full_environment()
 
         case (
-            EnvironmentLogLevelTypes.NONE,
+            EnvironmentLogLevelTypes.NONE
         ):
             pass
 

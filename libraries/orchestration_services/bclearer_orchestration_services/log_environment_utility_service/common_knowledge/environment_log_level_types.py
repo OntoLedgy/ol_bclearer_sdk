@@ -2,10 +2,10 @@ from enum import Enum, auto
 
 
 class EnvironmentLogLevelTypes(Enum):
-    NOT_SET = auto()
+    NOT_SET = 1
 
-    NONE = auto()
+    NONE = 2
 
-    FULL = auto()
+    FULL = 3
 
-    FILTERED = auto()
+    FILTERED = 4

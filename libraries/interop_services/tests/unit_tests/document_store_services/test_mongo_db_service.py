@@ -50,11 +50,12 @@ class TestMongoDBService:
 
     def test_mongo_db_insert_from_json(
         self,
+        mongo_db_configuration_file_path,
     ):
         # Insert the sample data into the collection
         self.mongo_wrapper.insert_documents_from_json(
             "configuration",
-            "./data/input/mongodb/configuration.json",
+            mongo_db_configuration_file_path,
         )
 
     def test_mongo_db_read(self):
@@ -64,11 +65,14 @@ class TestMongoDBService:
         for doc in docs:
             print(doc)
 
-    def test_mongo_db_export(self):
+    def test_mongo_db_export(
+        self,
+        mongo_db_output_folder_absolute_path,
+    ):
         self.mongo_wrapper.export_documents_to_json(
             "sample_collection",
             {"age": {"$gt": 25}},
-            "./data/output/mongodb/exported_data.json",
+            mongo_db_output_folder_absolute_path,
         )
 
     def test_mongodb_insert(

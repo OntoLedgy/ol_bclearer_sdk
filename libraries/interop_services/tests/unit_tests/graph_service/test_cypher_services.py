@@ -14,10 +14,12 @@ class TestCypherServices:
     # Example usage:
     def test_cypher_wrapper_read_write(
         self,
+        output_cypher_query_path,
+        input_cypher_query_path,
     ):
         # Read query from a file
         self.cypher_wrapper.read_from_file(
-            "./data/input/graph/query_list.cyp",
+            input_cypher_query_path,
         )
 
         # Validate the query
@@ -25,7 +27,7 @@ class TestCypherServices:
 
         # Write query to a file
         self.cypher_wrapper.write_to_file(
-            "./data/output/graph/output_query.cypher",
+            output_cypher_query_path,
         )
 
     def test_cypher_wrapper_generate(

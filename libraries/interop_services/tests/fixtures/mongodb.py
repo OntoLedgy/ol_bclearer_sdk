@@ -1,3 +1,4 @@
+import os
 import time
 
 import docker
@@ -8,6 +9,32 @@ from bclearer_interop_services.document_store_services.mongo_db_service.mongo_db
 from pymongo.errors import (
     ConnectionFailure,
 )
+
+
+@pytest.fixture(scope="session")
+def mongo_db_configuration_file_path(
+    data_input_folder_absolute_path,
+):
+    mongo_configuration_file_relative_path = (
+        "mongodb/configuration.json"
+    )
+    mongo_configuration_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        mongo_configuration_file_relative_path,
+    )
+    return mongo_configuration_absolute_path
+
+
+@pytest.fixture(scope="session")
+def mongo_db_output_folder_absolute_path(
+    data_folder_absolute_path,
+):
+    mongo_db_output_relative_path = "output/mongodb/exported_data.json"
+    mongo_db_output_absolute_path = os.path.join(
+        data_folder_absolute_path,
+        mongo_db_output_relative_path,
+    )
+    return mongo_db_output_absolute_path
 
 
 @pytest.fixture(scope="session")

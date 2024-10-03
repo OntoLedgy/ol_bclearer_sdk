@@ -4,19 +4,51 @@ import pytest
 
 
 @pytest.fixture(scope="session")
-def data_input_folder_absolute_path():
-    data_input_relative_path = (
-        "../data/input"
-    )
+def data_folder_absolute_path():
+    data_input_relative_path = "../data"
     base_path = os.path.dirname(
         os.path.abspath(__file__),
     )
-    data_input_folder_absolute_path = os.path.normpath(
+    data_folder_absolute_path = os.path.normpath(
         os.path.join(
             base_path,
             data_input_relative_path,
         ),
     )
+    return data_folder_absolute_path
+
+
+@pytest.fixture(scope="session")
+def data_input_folder_absolute_path(
+    data_folder_absolute_path,
+):
+    data_input_relative_path = "input"
+
+    data_input_folder_absolute_path = (
+        os.path.join(
+            data_folder_absolute_path,
+            data_input_relative_path,
+        )
+    )
+
+    return (
+        data_input_folder_absolute_path
+    )
+
+
+@pytest.fixture(scope="session")
+def data_output_folder_absolute_path(
+    data_folder_absolute_path,
+):
+    data_output_relative_path = "output"
+
+    data_input_folder_absolute_path = (
+        os.path.join(
+            data_folder_absolute_path,
+            data_output_relative_path,
+        )
+    )
+
     return (
         data_input_folder_absolute_path
     )
@@ -40,12 +72,17 @@ def configurations_folder():
 
 
 @pytest.fixture(scope="session")
-def log_folder():
-    log_folder_relative_path = (
-        "./data/logs"
+def log_folder(
+    data_folder_absolute_path,
+):
+    log_folder_relative_path = "logs"
+    log_folder_absolute_path = (
+        os.path.join(
+            data_folder_absolute_path,
+            log_folder_relative_path,
+        )
     )
-
-    return log_folder_relative_path
+    return log_folder_absolute_path
 
 
 @pytest.fixture(scope="session")
@@ -58,15 +95,29 @@ def storage_interop_services_source_folder():
 
 
 @pytest.fixture(scope="session")
-def excel_file_name_and_path_xlsx():
-    excel_file_path_relative_path = "./data/input/excel/cfi-20210507-current.xlsx"
-    return excel_file_path_relative_path
+def excel_file_name_and_path_xlsx(
+    data_input_folder_absolute_path,
+):
+    excel_file_path_relative_path = "excel/cfi-20210507-current.xlsx"
+    excel_file_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        excel_file_path_relative_path,
+    )
+    return excel_file_absolute_path
 
 
 @pytest.fixture(scope="session")
-def excel_file_name_and_path_xls():
-    excel_file_path_relative_path = "./data/input/excel/cfi-20210507-current.xls"
-    return excel_file_path_relative_path
+def excel_file_name_and_path_xls(
+    data_input_folder_absolute_path,
+):
+    excel_file_path_relative_path = (
+        "excel/cfi-20210507-current.xls"
+    )
+    excel_file_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        excel_file_path_relative_path,
+    )
+    return excel_file_absolute_path
 
 
 @pytest.fixture(scope="session")

@@ -6,25 +6,23 @@ from concurrent.futures import (
 )
 
 import pandas as pd
-from neo4j_object_models.Neo4jWrapper import (
-    Neo4jWrapper,
-)
 
 
 class EdgeLoader:
     def __init__(
         self,
-        neo4j_wrapper: Neo4jWrapper,
+        neo4j_database,
         batch_size=1000,
         max_retries=3,
         retry_delay=1,
     ):
-        self.neo4j_wrapper = (
-            neo4j_wrapper
+
+        self.neo4j_database = (
+            neo4j_database
         )
         self.batch_size = batch_size
         self.max_retries = max_retries
-        self.retru_delay = retry_delay
+        self.retry_delay = retry_delay
 
     def load_edges(
         self,
@@ -32,7 +30,6 @@ class EdgeLoader:
         mapping_query: str,
     ):
         with ThreadPoolExecutor() as executor:
-            # Splitting the dataframe into batches
 
             futures = [
                 executor.submit(
@@ -70,7 +67,7 @@ class EdgeLoader:
                     f"Executing batch query with {len(batch)} rows.",
                 )
 
-                self.neo4j_wrapper.run_query(
+                self.neo4j_database.run_query(
                     mapping_query,
                     parameters={
                         "batch": batch,
@@ -106,3 +103,24 @@ class EdgeLoader:
                         raise
                 else:
                     raise
+
+    def _load_edge(
+        self,
+        row,
+        edge_label,
+        mapping_query,
+    ):
+        try:
+            # query = mapping_query.format(
+            #     **row)
+            print(
+                f"Executing query: {mapping_query}"
+            )
+            self.neo4j_database.run_query(
+                query=mapping_query,
+                parameters=row,
+            )
+        except Exception as e:
+            print(
+                f"Error loading edge with data {row}: {e}"
+            )

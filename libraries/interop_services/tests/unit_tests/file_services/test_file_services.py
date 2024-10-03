@@ -28,14 +28,30 @@ class TestFileSystemServices:
 
     def test_get_all_files_from_file_system_object_paths(
         self,
-        storage_interop_services_source_folder,
+        data_input_folder_absolute_path,
     ):
         all_files = get_all_files_from_file_system_object_paths(
             self.paths,
-            storage_interop_services_source_folder,
+            data_input_folder_absolute_path,
             ".py",
         )
 
         print("found these files")
         print(all_files)
         assert len(all_files) > 0
+
+    def test_environment_log_level_types(
+        self,
+    ):
+        assert (
+            EnvironmentLogLevelTypes.FULL
+            == EnvironmentLogLevelTypes.FULL
+        )
+        assert (
+            EnvironmentLogLevelTypes.NONE
+            == EnvironmentLogLevelTypes.NONE
+        )
+        assert (
+            EnvironmentLogLevelTypes.FILTERED
+            == EnvironmentLogLevelTypes.FILTERED
+        )

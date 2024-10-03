@@ -4,6 +4,9 @@ from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j
 from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
     Neo4jConnections,
 )
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
+    read_cypher_query_from_file,
+)
 from tests.fixtures.paths import *
 
 
@@ -39,24 +42,16 @@ def neo4j_connection(
 
 
 @pytest.fixture(scope="session")
-def nodes_indo():
-    nodes_info = [
-        {
-            "csv_file": "path_to_nodes_csv.csv",
-            "label": "Person",
-            "query": "CREATE (n:Person {{name: '{name}', age: {age}}})",
-        },
-    ]
-    return nodes_info
-
-
-@pytest.fixture(scope="session")
-def nodes_indo():
-    edges_info = [
-        {
-            "csv_file": "path_to_edges_csv.csv",
-            "label": "FRIEND",
-            "query": "MATCH (a:Person {{name: '{start_name}'}}), (b:Person {{name: '{end_name}'}}) CREATE (a)-[:FRIEND]->(b)",
-        },
-    ]
-    return edges_info
+def neo4j_loader_configuration_path(
+    configurations_folder,
+):
+    neo4j_loader_configuration_file_name = (
+        "csv_loader_configuration.json"
+    )
+    neo4j_loader_configuration_file_absolute_path = os.path.normpath(
+        os.path.join(
+            configurations_folder,
+            neo4j_loader_configuration_file_name,
+        ),
+    )
+    return neo4j_loader_configuration_file_absolute_path

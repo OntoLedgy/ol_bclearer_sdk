@@ -19,6 +19,18 @@ repos:
     hooks:
       - id: isort
 
+  # - repo: local
+  #   hooks:
+  #   - id: pytest-check
+  #     name: pytest-check
+  #     stages: [commit]
+  #     types: [python]
+  #     entry:  poetry run pytest ".\libraries\interop_services\tests\unit_tests" "-s"
+  #     language: system
+  #     pass_filenames: false
+  #     always_run: true
+
+
 
   # - repo: https://github.com/asottile/blacken-docs
   #   rev: 1.18.0
@@ -27,16 +39,7 @@ repos:
   #       additional_dependencies: [black==23.1.0]
 
 
-  # - repo: local
-  #   hooks:
-  #   - id: pytest-check
-  #     name: pytest-check
-  #     stages: [commit]
-  #     types: [python]
-  #     entry: pytest
-  #     language: system
-  #     pass_filenames: false
-  #     always_run: true
+
 
   # - repo: https://github.com/pre-commit/mirrors-mypy
   #   rev: v1.11.2

@@ -7,18 +7,12 @@ from bclearer_interop_services.graph_services.neo4j_service.constants.GraphDataO
 from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
     Neo4jConnections,
 )
-from bclearer_interop_services.graph_services.neo4j_service.orchestrators.DataLoadOrchestrator import (
-    Neo4jDataLoadOrchestrator,
-)
 from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.nodes_load_information_getter import (
     get_graph_object_load_information,
 )
-
-# from neo4j_constants.GraphDataObjectTypes import GraphObjectTypes
-# from neo4j_object_models.neo4j_connections import Neo4jConnection
-# from neo4j_configurations.Neo4jLoaderConfigurations import Neo4jLoaderConfigurations
-# from neo4j_orchestrators.DataLoadOrchestrator import Neo4jDataLoadOrchestrator
-# from neo4j_orchestrators.helpers.nodes_load_information_getter import get_graph_object_load_information
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.neo4j_data_load_orchestrators import (
+    Neo4jDataLoadOrchestrators,
+)
 
 
 def orchestrate_csv_to_neo4j_data_load(
@@ -32,7 +26,7 @@ def orchestrate_csv_to_neo4j_data_load(
         graph_object_type=object_type,
     )
 
-    data_load_orchestrator = Neo4jDataLoadOrchestrator(
+    data_load_orchestrator = Neo4jDataLoadOrchestrators(
         neo4j_connection=neo4j_connection,
         batch_size=1000,
     )

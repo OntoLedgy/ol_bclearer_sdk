@@ -1,37 +1,30 @@
 import pandas as pd
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
+from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_databases import (
+    Neo4jDatabases,
 )
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_edge_loaders import (
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.neo4j_edge_loaders import (
     EdgeLoader,
 )
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_node_loaders import (
+from bclearer_interop_services.graph_services.neo4j_service.orchestrators.neo4j_node_loaders import (
     NodeLoader,
 )
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_wrappers import (
-    Neo4jWrapper,
-)
 
 
-class Neo4jDataLoadOrchestrator:
+class Neo4jDataLoadOrchestrators:
+
     def __init__(
         self,
-        neo4j_connection: Neo4jConnections,
-        batch_size: int = 1000,
+        neo4j_database: Neo4jDatabases,
     ):
-        self.neo4j_wrapper = (
-            Neo4jWrapper(
-                neo4j_connection,
-            )
+        self.neo4j_database = (
+            neo4j_database
         )
 
         self.node_loader = NodeLoader(
-            neo4j_wrapper=self.neo4j_wrapper,
-            batch_size=batch_size,
+            neo4j_database=self.neo4j_database
         )
         self.edge_loader = EdgeLoader(
-            neo4j_wrapper=self.neo4j_wrapper,
-            batch_size=batch_size,
+            neo4j_database=self.neo4j_database
         )
 
     def load_data(
@@ -39,8 +32,15 @@ class Neo4jDataLoadOrchestrator:
         nodes_info=None,
         edges_info=None,
     ):
-        if nodes_info:
-            for node in nodes_info:
+
+        if (
+            nodes_info
+            and "nodes_info"
+            in nodes_info
+        ):
+            for node in nodes_info[
+                "nodes_info"
+            ]:
                 node_dataframe = (
                     pd.read_csv(
                         node[
@@ -60,7 +60,9 @@ class Neo4jDataLoadOrchestrator:
                 )
 
         if edges_info:
-            for edge in edges_info:
+            for edge in edges_info[
+                "edges_info"
+            ]:
                 edge_dataframe = (
                     pd.read_csv(
                         edge[
@@ -98,4 +100,4 @@ class Neo4jDataLoadOrchestrator:
         )
 
         # Close the connection
-        self.neo4j_wrapper.close()
+        self.neo4j_database.close()
