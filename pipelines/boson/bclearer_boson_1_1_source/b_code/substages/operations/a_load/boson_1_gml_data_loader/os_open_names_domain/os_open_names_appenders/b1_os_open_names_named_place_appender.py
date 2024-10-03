@@ -1,13 +1,19 @@
 import untangle
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_gml_identifier_appender import \
-    append_gml_identifier
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_gn_inspire_id_appender import \
-    append_gn_inspire_id
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_name_appender import \
-    append_gn_name
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
-    create_new_uuid
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_gml_identifier_appender import (
+    append_gml_identifier,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_gn_inspire_id_appender import (
+    append_gn_inspire_id,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_name_appender import (
+    append_gn_name,
+)
 
 
 def append_named_place(

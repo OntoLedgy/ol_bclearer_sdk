@@ -1,16 +1,21 @@
 import os
 from pathlib import Path
 
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.common.b1_dataframes_dictionary_summeriser import \
-    summarise_dataframes_dictionary
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.b1_os_open_names_dictionary_dictionary_to_dataframe_dictionary_converter import \
-    convert_os_open_names_dictionary_dictionary_to_dataframe_dictionary
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.b1_os_open_names_initialiser import \
-    initialise_os_open_names_dictionary
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_dictionary_appender import \
-    append_os_open_names_dictionary
-from nf_common_source.code.services.file_system_service.objects.files import \
-    Files
+from nf_common_source.code.services.file_system_service.objects.files import (
+    Files,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.common.b1_dataframes_dictionary_summeriser import (
+    summarise_dataframes_dictionary,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.b1_os_open_names_dictionary_dictionary_to_dataframe_dictionary_converter import (
+    convert_os_open_names_dictionary_dictionary_to_dataframe_dictionary,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.b1_os_open_names_initialiser import (
+    initialise_os_open_names_dictionary,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_dictionary_appender import (
+    append_os_open_names_dictionary,
+)
 
 
 def create_os_open_names_domain_tables(

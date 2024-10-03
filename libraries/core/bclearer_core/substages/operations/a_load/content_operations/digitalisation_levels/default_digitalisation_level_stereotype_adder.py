@@ -34,7 +34,7 @@ def add_default_digitalisation_level_stereotype(
     nf_ea_com_universe: NfEaComUniverses,
     default_digitalisation_level_stereotype: DigitalisationLevelStereotypeMatchedEaObjects,
 ) -> None:
-    __add_streotypes_if_required(
+    __add_stereotypes_if_required(
         nf_ea_com_universe=nf_ea_com_universe,
     )
 
@@ -44,7 +44,7 @@ def add_default_digitalisation_level_stereotype(
     )
 
 
-def __add_streotypes_if_required(
+def __add_stereotypes_if_required(
     nf_ea_com_universe: NfEaComUniverses,
 ) -> None:
     new_ea_objects_dictionary = (

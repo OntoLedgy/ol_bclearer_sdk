@@ -1,29 +1,42 @@
-from bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import \
-    InspireMatchedEaObjects
-from bclearer_boson_1_1_source.b_code.common_knowledge.os_matched_ea_objects import \
-    OsMatchedEaObjects
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.common.b1_dataframes_dictionary_summeriser import \
-    summarise_dataframes_dictionary
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.attributes_converter import \
-    convert_to_attributes
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.classifiers_converter import \
-    convert_to_classifiers
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.one_to_many_connectors_converter import \
-    convert_one_to_many_to_connectors
-from bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.to_name_attributes_converter import \
-    convert_to_name_attributes
-from bclearer_source.b_code.substages.operations.b_evolve.common.new_root_package_creator import \
-    create_root_package
-from nf_common_source.code.constants.standard_constants import \
-    DEFAULT_NULL_VALUE
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import \
-    EaConnectorTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
-    EaToolsSessionManagers
-from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import \
-    create_empty_nf_ea_universe
+from bclearer_source.b_code.substages.operations.b_evolve.common.new_root_package_creator import (
+    create_root_package,
+)
+from nf_common_source.code.constants.standard_constants import (
+    DEFAULT_NULL_VALUE,
+)
+from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_connector_types import (
+    EaConnectorTypes,
+)
+from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+    EaToolsSessionManagers,
+)
+from nf_ea_common_tools_source.b_code.services.session.processes.creators.empty_nf_ea_com_universe_creator import (
+    create_empty_nf_ea_universe,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import (
+    InspireMatchedEaObjects,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.common_knowledge.os_matched_ea_objects import (
+    OsMatchedEaObjects,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.common.b1_dataframes_dictionary_summeriser import (
+    summarise_dataframes_dictionary,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.attributes_converter import (
+    convert_to_attributes,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.classifiers_converter import (
+    convert_to_classifiers,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.one_to_many_connectors_converter import (
+    convert_one_to_many_to_connectors,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.to_name_attributes_converter import (
+    convert_to_name_attributes,
+)
 
 
 def orchestrate_os_open_names_domain_to_nf_ea_com(

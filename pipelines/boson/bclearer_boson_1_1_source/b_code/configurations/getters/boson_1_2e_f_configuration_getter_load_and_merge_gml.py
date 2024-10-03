@@ -1,9 +1,12 @@
-from bclearer_boson_1_1_source.b_code.configurations.objects.load_gml_data_configurations import \
-    LoadGmlDataConfigurations
-from bclearer_source.b_code.common_knowledge.content_operation_types import \
-    ContentOperationTypes
-from bclearer_source.b_code.configurations.content_operation_configurations import \
-    ContentOperationConfigurations
+from bclearer_source.b_code.common_knowledge.content_operation_types import (
+    ContentOperationTypes,
+)
+from bclearer_source.b_code.configurations.content_operation_configurations import (
+    ContentOperationConfigurations,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.configurations.objects.load_gml_data_configurations import (
+    LoadGmlDataConfigurations,
+)
 
 
 def get_boson_1_2e_f1_configuration_load_gml_data(

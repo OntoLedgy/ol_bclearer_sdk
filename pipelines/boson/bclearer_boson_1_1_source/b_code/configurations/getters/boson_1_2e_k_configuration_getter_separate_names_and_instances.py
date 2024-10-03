@@ -1,11 +1,15 @@
-from bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import \
-    InspireMatchedEaObjects
-from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import \
-    ConventionShiftOperationTypes
-from bclearer_source.b_code.configurations.bespoke_name_to_instance_configuration_objects import \
-    BespokeNameToInstanceConfigurationObjects
-from bclearer_source.b_code.configurations.convention_shift_operation_configurations import \
-    ConventionShiftOperationConfigurations
+from bclearer_source.b_code.common_knowledge.convention_shift_operation_types import (
+    ConventionShiftOperationTypes,
+)
+from bclearer_source.b_code.configurations.bespoke_name_to_instance_configuration_objects import (
+    BespokeNameToInstanceConfigurationObjects,
+)
+from bclearer_source.b_code.configurations.convention_shift_operation_configurations import (
+    ConventionShiftOperationConfigurations,
+)
+from pipelines.boson.bclearer_boson_1_1_source.b_code.common_knowledge.inspire_matched_ea_objects import (
+    InspireMatchedEaObjects,
+)
 
 
 def get_boson_1_2e_k1_configuration_separate_standard_names_and_instances() -> (
