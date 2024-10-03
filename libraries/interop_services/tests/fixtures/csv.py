@@ -25,7 +25,7 @@ def sample_transactions_csv_file(
     data_input_folder_absolute_path,
 ):
 
-    input_csv_file_relative_path = r"delimited_text/sample_transactions.csv"
+    input_csv_file_relative_path = r"delimited_text/generated_files/sample_transactions.csv"
     # Initialize Faker for generating random data
     fake = Faker()
 
