@@ -1,60 +1,37 @@
-from bclearer_interop_services.graph_services.neo4j_service.configurations.neo4j_configurations import (
-    Neo4jConfigurations,
-)
-from bclearer_interop_services.graph_services.neo4j_service.object_models.neo4j_connections import (
-    Neo4jConnections,
-)
+import os
+
+import pytest
 from bclearer_interop_services.graph_services.neo4j_service.orchestrators.helpers.read_cypher_queries import (
     read_cypher_query_from_file,
 )
-from tests.fixtures.paths import *
 
 
 @pytest.fixture(scope="session")
-def neo4j_connection(
-    configurations_folder,
+def output_cypher_query_path(
+    data_output_folder_absolute_path,
 ):
-    neo4j_configuration_file_name = (
-        "neo4j_configuration.json"
+    query_relative_path = (
+        "graph/output_query.cyp"
     )
-
-    neo4j_configuration_file = os.path.normpath(
-        os.path.join(
-            configurations_folder,
-            neo4j_configuration_file_name,
-        ),
+    query_absolute_path = os.path.join(
+        data_output_folder_absolute_path,
+        query_relative_path,
     )
-
-    neo4j_configuration = (
-        Neo4jConfigurations(
-            neo4j_configuration_file,
-        )
-    )
-
-    neo4j_connection = Neo4jConnections(
-        uri=neo4j_configuration.uri,
-        database_name=neo4j_configuration.database_name,
-        user_name=neo4j_configuration.username,
-        password=neo4j_configuration.password,
-    )
-
-    return neo4j_connection
+    return query_absolute_path
 
 
 @pytest.fixture(scope="session")
-def neo4j_loader_configuration_path(
-    configurations_folder,
+def input_cypher_query_path(
+    data_input_folder_absolute_path,
 ):
-    neo4j_loader_configuration_file_name = (
-        "csv_loader_configuration.json"
+    query_relative_path = (
+        "graph/query_list.cyp"
     )
-    neo4j_loader_configuration_file_absolute_path = os.path.normpath(
-        os.path.join(
-            configurations_folder,
-            neo4j_loader_configuration_file_name,
-        ),
+    query_absolute_path = os.path.join(
+        data_input_folder_absolute_path,
+        query_relative_path,
     )
-    return neo4j_loader_configuration_file_absolute_path
+    return query_absolute_path
 
 
 @pytest.fixture(scope="session")
@@ -79,11 +56,11 @@ def nodes_info(
 ):
     csv_file_1 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_data\\01_nodes\\r_01_neo4j_workbooks_nodes_all.csv",
+        "graph\\synthetic_nodes.csv",
     )
     query_file_path_1 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_queries\\01_nodes\\r_01_neo4j_workbooks_nodes_all.cypher",
+        "graph\\node_load.cyp",
     )
     query_1 = (
         read_cypher_query_from_file(
@@ -93,15 +70,15 @@ def nodes_info(
 
     csv_file_2 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_data\\01_nodes\\r_02_neo4j_sheets_nodes_all.csv",
+        "graph\\synthetic_nodes.csv",
     )
     query_file_path_2 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_queries\\01_nodes\\r_02_neo4j_sheets_nodes_all.cypher",
+        "graph\\node_load.cyp",
     )
     query_2 = (
         read_cypher_query_from_file(
-            query_file_path_1,
+            query_file_path_2,
         )
     )
 
@@ -109,12 +86,12 @@ def nodes_info(
         "nodes_info": [
             {
                 "csv_file": csv_file_1,
-                "label": "workbooks",
+                "label": "object",
                 "query": query_1,
             },
             {
                 "csv_file": csv_file_2,
-                "label": "sheets",
+                "label": "object",
                 "query": query_2,
             },
         ],
@@ -128,11 +105,11 @@ def edges_info(
 ):
     csv_file = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_data\\02_edges\\r_01_neo4j_sheets_to_workbooks_edges_all.csv",
+        "graph\\synthetic_edges.csv",
     )
     query_file_path = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\cypher_queries\\02_edges\\r_01_neo4j_sheets_to_workbooks_edges_all.cypher",
+        "graph\\edge_load.cyp",
     )
     query = read_cypher_query_from_file(
         query_file_path,
@@ -142,7 +119,7 @@ def edges_info(
         "edges_info": [
             {
                 "csv_file": csv_file,
-                "label": "sheet_is_from_workbook",
+                "label": "related",
                 "query": query,
             },
         ],

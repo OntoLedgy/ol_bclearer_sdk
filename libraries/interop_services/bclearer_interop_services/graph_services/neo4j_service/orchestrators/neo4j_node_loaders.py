@@ -5,27 +5,25 @@ from concurrent.futures import (
     ThreadPoolExecutor,
 )
 
-from neo4j_object_models.Neo4jWrapper import (
-    Neo4jWrapper,
-)
-
-logging.basicConfig(level=logging.DEBUG)
+import pandas as pd
 
 
 class NodeLoader:
+
     def __init__(
         self,
-        neo4j_wrapper: Neo4jWrapper,
-        batch_size=1000,
+        neo4j_database,
         max_retries=3,
         retry_delay=1,
+        batch_size=1000,
     ):
-        self.neo4j_wrapper = (
-            neo4j_wrapper
-        )
         self.batch_size = batch_size
+
         self.max_retries = max_retries
-        self.retru_delay = retry_delay
+        self.retry_delay = retry_delay
+        self.neo4j_wrapper = (
+            neo4j_database
+        )
 
     def load_nodes(
         self,
@@ -107,5 +105,23 @@ class NodeLoader:
                 else:
                     raise
 
-    def load_node(self, node_info):
-        pass
+    def _load_node(
+        self,
+        row,
+        node_label,
+        mapping_query,
+    ):
+        try:
+            # query = mapping_query.format(
+            #     **row)
+            print(
+                f"Executing query: {mapping_query}"
+            )
+            self.neo4j_wrapper.run_query(
+                query=mapping_query,
+                parameters=row,
+            )
+        except Exception as e:
+            print(
+                f"Error loading node with data {row}: {e}"
+            )
