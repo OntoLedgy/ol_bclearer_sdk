@@ -32,7 +32,8 @@ pipelines
 
 # Test data
 
-/libraries/interop_services/tests/data/input/delimited_text/generated_files
+
 /libraries/interop_services/tests/data/logs/
 /libraries/interop_services/tests/data/output/
 /libraries/interop_services/tests/configurations/
+/libraries/interop_services/tests/data/input/delimited_text/generated_files/
