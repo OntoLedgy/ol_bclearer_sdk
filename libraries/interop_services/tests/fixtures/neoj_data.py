@@ -56,11 +56,11 @@ def nodes_info(
 ):
     csv_file_1 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\synthetic_nodes.csv",
+        "graph/synthetic_nodes.csv",
     )
     query_file_path_1 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\node_load.cyp",
+        "graph/node_load.cyp",
     )
     query_1 = (
         read_cypher_query_from_file(
