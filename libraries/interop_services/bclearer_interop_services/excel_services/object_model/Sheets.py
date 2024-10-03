@@ -55,6 +55,45 @@ class Sheets:
             max_col,
         )
 
+    def get_merged_ranges(self):
+        """
+        Returns a dictionary of all merged cell ranges in the sheet.
+        The keys are the string representations of the ranges (e.g., "A1:B2").
+        The values are instances of the Ranges class.
+        """
+        merged_ranges = {}
+        for (
+            merged_range
+        ) in (
+            self.sheet.merged_cells.ranges
+        ):
+            # Convert the merged range into its coordinates
+            (
+                min_row,
+                min_col,
+                max_row,
+                max_col,
+            ) = (
+                merged_range.min_row,
+                merged_range.min_col,
+                merged_range.max_row,
+                merged_range.max_col,
+            )
+            # Create a Ranges object for each merged range
+            ranges_obj = Ranges(
+                self.sheet,
+                min_row,
+                min_col,
+                max_row,
+                max_col,
+            )
+            # Use the string representation of the range as the dictionary key
+            merged_ranges[
+                str(merged_range)
+            ] = ranges_obj
+
+        return merged_ranges
+
     def read_to_dataframe(
         self,
         header_row_number: int = 1,
@@ -101,34 +140,3 @@ class Sheets:
             data,
             columns=headers,
         )
-
-
-# TODO - retire these sheets
-
-# import pandas as pd
-# import os
-
-# class Sheets:
-#     def __init__(
-#         self,
-#         file_name_and_path,
-#         sheet_name):
-
-#         if file_name_and_path.lower().endswith(".csv"):
-
-#             self.sheet_data_dataframe = self.load_csv(file_name_and_path)
-#             self.sheet_name = os.path.basename(file_name_and_path)
-
-#         else:
-#             self.sheet_data_dataframe = self.load_excel(file_name_and_path,sheet_name)
-
-#     def load_csv(self,file_name_and_path) -> pd.DataFrame:
-
-#         self.sheet_name = file_name_and_path
-
-#         sheet_data_dataframe = pd.read_csv(os.path.join(file_name_and_path, sheet_data_dataframe), encoding='latin-1')
-
-#         return sheet_data_dataframe
-
-#     def load_excel(self,file_name_and_path,sheet_name) -> pd.DataFrame:
-#         pass

@@ -11,7 +11,7 @@ class TestExcelInteropServices:
         self,
         excel_file_name_and_path_xlsx,
     ):
-        self.excel_file_name_and_path_xls = r"../data/input/excel/cfi-20210507-current.xls"
+        pass
 
     def test_excel_interop_reading_xlsx(
         self,
@@ -148,3 +148,32 @@ class TestExcelInteropServices:
             pytest.fail(
                 f"An error occurred during the test: {e!s}",
             )
+
+    # TODO: need to add more fine grained tests
+    def test_excel_interop_reading_ranges(
+        self,
+        excel_file_name_and_path_xlsx,
+    ):
+        sheet_name = "ESXXXX"
+
+        try:
+            excel_facade = ExcelFacade(
+                excel_file_name_and_path_xlsx,
+            )
+            print(
+                f"Successfully initialized ExcelFacade with file: {excel_file_name_and_path_xlsx}",
+            )
+
+            cfi_categories = excel_facade.workbook.sheet(
+                sheet_name
+            )
+
+        except Exception as e:
+            pytest.fail(
+                f"An error occurred during the test: {e!s}",
+            )
+
+    def test_excel_interop_reading_cells(
+        self,
+    ):
+        pass

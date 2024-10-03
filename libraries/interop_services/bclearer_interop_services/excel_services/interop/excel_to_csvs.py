@@ -55,9 +55,3 @@ def convert_excel_to_csv(
             print(
                 f"Found non excel file {file_path}",
             )
-
-
-if __name__ == "__main__":
-    folder_path = r""
-
-    convert_excel_to_csv()
