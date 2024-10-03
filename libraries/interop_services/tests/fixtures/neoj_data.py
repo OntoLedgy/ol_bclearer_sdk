@@ -70,11 +70,11 @@ def nodes_info(
 
     csv_file_2 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\synthetic_nodes.csv",
+        "graph/synthetic_nodes.csv",
     )
     query_file_path_2 = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\node_load.cyp",
+        "graph/node_load.cyp",
     )
     query_2 = (
         read_cypher_query_from_file(
@@ -105,11 +105,11 @@ def edges_info(
 ):
     csv_file = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\synthetic_edges.csv",
+        "graph/synthetic_edges.csv",
     )
     query_file_path = os.path.join(
         data_input_folder_absolute_path,
-        "graph\\edge_load.cyp",
+        "graph/edge_load.cyp",
     )
     query = read_cypher_query_from_file(
         query_file_path,
