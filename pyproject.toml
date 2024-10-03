@@ -7,7 +7,8 @@ readme = "README.md"
 packages = [
     {include = "bclearer_core",from = "libraries/core"  },
     {include = "bclearer_interop_services",from = "libraries/interop_services"},
-    {include = "bclearer_orchestration_services", from = "libraries/orchestration_services"}
+    {include = "bclearer_orchestration_services", from = "libraries/orchestration_services"},
+    {include = "bnop", from ="libraries/ontology"}
 ]
 
 [tool.poetry.dependencies]
@@ -52,7 +53,7 @@ pyyaml = "^6.0.2"
 bclearer_core = "^0.1.0"
 bclearer-interop-services = "^0.1.0"
 bclearer_orchestration_services = "^0.1.0"
-
+bnop = "^0.1.0"
 
 
 [tool.pytest.ini_options]
