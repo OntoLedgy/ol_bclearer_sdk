@@ -1,6 +1,8 @@
 import csv
 import json
+import os
 
+import yaml
 from pymongo import MongoClient
 
 
@@ -188,6 +190,13 @@ class MongoDBWrapper:
         documents = self.find_documents(
             collection_name,
             query,
+        )
+
+        os.makedirs(
+            os.path.dirname(
+                output_file
+            ),
+            exist_ok=True,
         )
 
         with open(

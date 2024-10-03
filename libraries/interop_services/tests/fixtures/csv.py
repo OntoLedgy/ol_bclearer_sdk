@@ -26,6 +26,7 @@ def sample_transactions_csv_file(
 ):
 
     input_csv_file_relative_path = r"delimited_text/generated_files/sample_transactions.csv"
+
     # Initialize Faker for generating random data
     fake = Faker()
 
@@ -57,6 +58,11 @@ def sample_transactions_csv_file(
     csv_file_path = os.path.join(
         data_input_folder_absolute_path,
         input_csv_file_relative_path,
+    )
+
+    os.makedirs(
+        os.path.dirname(csv_file_path),
+        exist_ok=True,
     )
 
     df_transactions.to_csv(
