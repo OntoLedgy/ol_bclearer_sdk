@@ -50,6 +50,7 @@ faker = "^30.1.0"
 pyyaml = "^6.0.2"
 tqdm = "^4.66.5"
 untangle = "^1.2.1"
+sqlalchemy = "^2.0.35"
 
 [tool.poetry.group.dev.dependencies]
 bclearer_core = "^0.1.0"

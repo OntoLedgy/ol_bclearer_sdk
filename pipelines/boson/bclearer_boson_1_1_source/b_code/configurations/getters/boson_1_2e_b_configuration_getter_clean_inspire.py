@@ -90,7 +90,7 @@ def get_boson_1_2e_b_configuration_clean_inspire() -> (
         output_universe_short_name="2e_b1_output_convert",
         direction=EaAssociationDirectionTypes.BACKWARD,
         package_name="2e_b1_new_objects",
-        attribute_to_association_operation_subtype=AttributeToAssociationOperationSubtypes.SUBTYPE_OF_FOREIGN_TABLE,  # TODO: check this mod
+        attribute_to_association_operation_subtype=AttributeToAssociationOperationSubtypes.DIRECT_FOREIGN_TABLE,  # TODO: check this mod
     )
 
     remove_attributes_adjustment_operation_configuration = AdjustmentOperationConfigurations(

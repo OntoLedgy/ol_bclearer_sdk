@@ -119,12 +119,21 @@ def __add_nf_uuids_to_ea_guids_if_required(
         != DEFAULT_NULL_VALUE
     ]
 
-    universe_nf_uuids_to_ea_guids_table = concat(
-        [
-            universe_nf_uuids_to_ea_guids_table,
-            new_mappings,
-        ],
-    )
+    # Check if both DataFrames are non-empty before concatenating
+    if (
+        not new_mappings.empty
+        and not universe_nf_uuids_to_ea_guids_table.empty
+    ):
+        universe_nf_uuids_to_ea_guids_table = concat(
+            [
+                universe_nf_uuids_to_ea_guids_table,
+                new_mappings,
+            ],
+        )
+    elif not new_mappings.empty:
+        universe_nf_uuids_to_ea_guids_table = (
+            new_mappings
+        )
 
     universe_nf_uuids_to_ea_guids_table = (
         universe_nf_uuids_to_ea_guids_table.drop_duplicates()
@@ -136,6 +145,57 @@ def __add_nf_uuids_to_ea_guids_if_required(
     )
 
     return universe_nf_uuids_to_ea_guids_table
+
+
+# TODO: patched, needs to b removed
+
+# def __add_nf_uuids_to_ea_guids_if_required(
+#     universe_nf_uuids_to_ea_guids_table: DataFrame,
+#     collection: DataFrame,
+# ) -> DataFrame:
+#     if (
+#         NfColumnTypes.NF_UUIDS.column_name
+#         not in collection.columns
+#     ):
+#         return universe_nf_uuids_to_ea_guids_table
+#
+#     if (
+#         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
+#         not in collection.columns
+#     ):
+#         return universe_nf_uuids_to_ea_guids_table
+#
+#     new_mappings = collection.filter(
+#         items=[
+#             NfColumnTypes.NF_UUIDS.column_name,
+#             NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name,
+#         ],
+#     )
+#
+#     new_mappings = new_mappings.loc[
+#         new_mappings[
+#             NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name
+#         ]
+#         != DEFAULT_NULL_VALUE
+#     ]
+#
+#     universe_nf_uuids_to_ea_guids_table = concat(
+#         [
+#             universe_nf_uuids_to_ea_guids_table,
+#             new_mappings,
+#         ],
+#     )
+#
+#     universe_nf_uuids_to_ea_guids_table = (
+#         universe_nf_uuids_to_ea_guids_table.drop_duplicates()
+#     )
+#
+#     universe_nf_uuids_to_ea_guids_table.reset_index(
+#         drop=True,
+#         inplace=True,
+#     )
+#
+#     return universe_nf_uuids_to_ea_guids_table
 
 
 def __get_secondary_to_primary_universe_nf_uuids_map(

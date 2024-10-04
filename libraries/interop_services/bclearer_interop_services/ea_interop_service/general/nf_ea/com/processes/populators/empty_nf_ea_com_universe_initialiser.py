@@ -137,18 +137,27 @@ def __import_table_names_list_from_database(
         )
     )
 
-    table_names_dataframe = (
-        read_sql_query(
-            select_query,
-            database_connection,
-        )
+    # table_names_dataframe = (
+    #     read_sql_query(
+    #         select_query,
+    #         database_connection,
+    #     )
+    # )
+    #
+    # list_of_table_names = (
+    #     table_names_dataframe[
+    #         "name"
+    #     ].tolist()
+    # )
+    cursor = (
+        database_connection.cursor()
     )
+    cursor.execute(select_query)
+    rows = cursor.fetchall()
 
-    list_of_table_names = (
-        table_names_dataframe[
-            "name"
-        ].tolist()
-    )
+    list_of_table_names = [
+        row[0] for row in rows
+    ]
 
     return list_of_table_names
 
@@ -158,14 +167,43 @@ def __import_dataframe_from_database(
     database_connection: pyodbc.Connection,
 ) -> DataFrame:
     select_query = (
-        "SELECT * FROM {}".format(
-            table_name
-        )
+        f"SELECT * FROM {table_name}"
     )
 
-    dataframe = read_sql_query(
-        select_query,
-        database_connection,
+    # Execute the query using pyodbc
+    cursor = (
+        database_connection.cursor()
+    )
+    cursor.execute(select_query)
+
+    # Fetch the data and column names
+    rows = cursor.fetchall()
+    columns = [
+        column[0]
+        for column in cursor.description
+    ]
+
+    # Convert to a pandas DataFrame
+    dataframe = DataFrame.from_records(
+        rows, columns=columns
     )
 
     return dataframe
+
+
+# def __import_dataframe_from_database(
+#     table_name: str,
+#     database_connection: pyodbc.Connection,
+# ) -> DataFrame:
+#     select_query = (
+#         "SELECT * FROM {}".format(
+#             table_name
+#         )
+#     )
+#
+#     dataframe = read_sql_query(
+#         select_query,
+#         database_connection,
+#     )
+#
+#     return dataframe

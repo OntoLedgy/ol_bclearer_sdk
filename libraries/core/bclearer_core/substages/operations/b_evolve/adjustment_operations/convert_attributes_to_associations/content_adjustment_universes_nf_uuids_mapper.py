@@ -45,7 +45,7 @@ def get_mapped_nf_uuid_from_mapped_universe(
             ea_guid_column_name,
             nf_uuids_column_name,
         ]
-    ]
+    ].copy()
 
     ea_guids_to_nf_uuids_source_universe.rename(
         columns={
@@ -61,7 +61,7 @@ def get_mapped_nf_uuid_from_mapped_universe(
             ea_guid_column_name,
             nf_uuids_column_name,
         ]
-    ]
+    ].copy()
 
     ea_guids_to_nf_uuids_mapped_universe.rename(
         columns={

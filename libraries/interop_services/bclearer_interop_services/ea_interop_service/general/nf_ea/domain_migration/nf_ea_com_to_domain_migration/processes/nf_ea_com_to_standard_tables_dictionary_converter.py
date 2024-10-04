@@ -102,14 +102,41 @@ def __remove_null_values_from_dataframe_dictionary(
     return dataframe_dictionary
 
 
+# def __remove_null_values_from_dataframe(
+#     dataframe: DataFrame,
+# ) -> DataFrame:
+#     for column in dataframe.columns:
+#         dataframe[column].replace(
+#             to_replace=DEFAULT_NULL_VALUE,
+#             value="",
+#             inplace=True,
+#         )
+#
+#     return dataframe
+
+
 def __remove_null_values_from_dataframe(
     dataframe: DataFrame,
+    null_value=None,
 ) -> DataFrame:
+    null_value = (
+        null_value
+        if null_value is not None
+        else DEFAULT_NULL_VALUE
+    )
+
     for column in dataframe.columns:
-        dataframe[column].replace(
-            to_replace=DEFAULT_NULL_VALUE,
+        # Replace the null values and reassign to the column
+        dataframe[column] = dataframe[
+            column
+        ].replace(
+            to_replace=null_value,
             value="",
-            inplace=True,
         )
+
+        # Also handle NaN values and reassign
+        dataframe[column] = dataframe[
+            column
+        ].fillna("")
 
     return dataframe
