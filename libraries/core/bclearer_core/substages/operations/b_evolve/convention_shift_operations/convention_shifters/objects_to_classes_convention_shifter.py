@@ -101,13 +101,23 @@ def __convert_objects_to_classes(
             == EaElementTypes.OBJECT.type_name
         ].index,
     )
+    # TODO: replaced to address warning from pandas : FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+    #   The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+    # ea_classifiers[
+    #     ea_object_type_column_name
+    # ].replace(
+    #     to_replace=EaElementTypes.OBJECT.type_name,
+    #     value=EaElementTypes.CLASS.type_name,
+    #     inplace=True,
+    # )
 
     ea_classifiers[
+        ea_object_type_column_name
+    ] = ea_classifiers[
         ea_object_type_column_name
     ].replace(
         to_replace=EaElementTypes.OBJECT.type_name,
         value=EaElementTypes.CLASS.type_name,
-        inplace=True,
     )
 
     number_of_objects_after_conversion = len(

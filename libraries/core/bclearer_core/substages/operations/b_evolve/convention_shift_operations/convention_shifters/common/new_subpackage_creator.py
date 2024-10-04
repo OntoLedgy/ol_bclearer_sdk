@@ -48,13 +48,54 @@ def create_new_subpackage_if_not_exist(
         0
     ]
 
+    # Get the first-level contained packages safely
+    filtered_packages = nf_ea_com_universe_ea_packages[
+        nf_ea_com_universe_ea_packages[
+            nf_uuids_column_name
+        ]
+        == package_nf_uuid
+    ]
+
+    if not filtered_packages.empty:
+        contained_packages = filtered_packages[
+            contained_ea_packages_column_name
+        ].tolist()
+
+        # Check if the list is not empty and extract the first element
+        if (
+            contained_packages
+            and contained_packages[0]
+            is not None
+        ):
+            list_of_first_level_contained_packages = contained_packages[
+                0
+            ]
+        else:
+            list_of_first_level_contained_packages = (
+                []
+            )  # Default to an empty list if no contained packages
+    else:
+        list_of_first_level_contained_packages = (
+            []
+        )
+
+    # Now proceed with the next steps
     ea_packages_sliced_to_first_level_contained_packages = nf_ea_com_universe_ea_packages[
         nf_ea_com_universe_ea_packages[
             nf_uuids_column_name
         ].isin(
-            list_of_first_level_contained_packages,
+            list_of_first_level_contained_packages
         )
     ]
+
+    # TODO: review this the new code is correct - patched as a result of fixes to objects_to_classes_conventions_shifter.py
+    # ea_packages_sliced_to_first_level_contained_packages = nf_ea_com_universe_ea_packages[
+    #     nf_ea_com_universe_ea_packages[
+    #         nf_uuids_column_name
+    #     ].isin(
+    #         list_of_first_level_contained_packages,
+    #     )
+    # ]
 
     list_of_first_level_contained_packages_names = ea_packages_sliced_to_first_level_contained_packages[
         object_name_column_name
@@ -121,14 +162,22 @@ def create_new_subpackage_if_not_exist(
         new_subpackage_nf_uuid,
     )
 
-    nf_ea_com_universe_ea_packages[
+    nf_ea_com_universe_ea_packages.loc[
         nf_ea_com_universe_ea_packages[
             nf_uuids_column_name
         ]
-        == package_nf_uuid
-    ][
-        contained_ea_packages_column_name
+        == package_nf_uuid,
+        contained_ea_packages_column_name,
     ] = list_of_first_level_contained_packages_updated
+
+    # nf_ea_com_universe_ea_packages[
+    #     nf_ea_com_universe_ea_packages[
+    #         nf_uuids_column_name
+    #     ]
+    #     == package_nf_uuid
+    # ][
+    #     contained_ea_packages_column_name
+    # ] = list_of_first_level_contained_packages_updated
 
     return new_subpackage_nf_uuid
 

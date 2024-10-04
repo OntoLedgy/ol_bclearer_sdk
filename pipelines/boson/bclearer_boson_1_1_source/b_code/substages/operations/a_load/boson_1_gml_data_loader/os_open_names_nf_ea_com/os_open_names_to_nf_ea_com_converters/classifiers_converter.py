@@ -1,6 +1,12 @@
 from bclearer_core.common_knowledge.matched_objects import (
     MatchedEaObjects,
 )
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
+    dataframe_filter_and_rename,
+)
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
     NfEaComCollectionTypes,
 )
@@ -13,17 +19,11 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_un
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.processes.dataframes.nf_ea_com_table_appender import (
     append_nf_ea_com_table,
 )
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_element_types import (
+    EaElementTypes,
+)
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from nf_common_source.code.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
-    dataframe_filter_and_rename,
-)
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_element_types import (
-    EaElementTypes,
 )
 from pandas import DataFrame
 from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_nf_ea_com.os_open_names_to_nf_ea_com_converters.dependency_connectors_converter import (

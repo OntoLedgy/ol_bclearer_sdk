@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from nf_common_source.code.services.file_system_service.objects.files import (
+from bclearer_interop_services.file_system_service.objects.files import (
     Files,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.common.b1_dataframes_dictionary_summeriser import (
