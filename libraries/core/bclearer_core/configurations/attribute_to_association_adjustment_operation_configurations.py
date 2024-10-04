@@ -25,7 +25,7 @@ class AttributeToAssociationAdjustmentOperationConfigurations(
         output_universe_short_name: str,
         direction: EaAssociationDirectionTypes,
         package_name: str,
-        attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
+        # attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
     ):
         super().__init__(
             adjustment_operation_type=adjustment_operation_type,
@@ -37,7 +37,7 @@ class AttributeToAssociationAdjustmentOperationConfigurations(
 
         self.package_name = package_name
 
-        self.attribute_to_association_operation_subtype = attribute_to_association_operation_subtype
+    #        self.attribute_to_association_operation_subtype = attribute_to_association_operation_subtype
 
     def __enter__(self):
         return self

@@ -7,7 +7,7 @@ from bclearer_core.common_knowledge.matched_objects import (
 
 @unique
 class Boson1MatchedEaObjects(
-    MatchedEaObjects,
+    MatchedEaObjects
 ):
     BOSON_NAMES = auto()
 
@@ -32,7 +32,7 @@ class Boson1MatchedEaObjects(
         return ea_guid
 
     object_name = property(
-        fget=__object_name,
+        fget=__object_name
     )
 
     ea_guid = property(fget=__ea_guid)

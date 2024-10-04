@@ -17,7 +17,7 @@ def get_boson_1_2e_i1_configuration_name_attributes_to_name_objects() -> (
 ):
     list_of_configuration_objects = [
         AttributeNameToNameObjectConfigurationObjects(
-            matched_naming_space_instance=Boson1MatchedEaObjects.GML_FILE_NAMES,
+            matched_naming_space_instance=Boson1MatchedEaObjects.GML_FILE_NAMES
         ),
     ]
 

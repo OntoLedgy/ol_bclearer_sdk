@@ -1,8 +1,8 @@
 import untangle
-from bclearer_core.nf.types.nf_column_types import (
+from nf_common_source.code.nf.types.nf_column_types import (
     NfColumnTypes,
 )
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_gml_identifier_appender import (
@@ -24,8 +24,7 @@ def append_named_place(
     named_place_uuid = create_new_uuid()
 
     if isinstance(
-        named_place.gn_name,
-        list,
+        named_place.gn_name, list
     ):
         presentation_prefix = named_place.gn_name[
             0
@@ -59,8 +58,7 @@ def append_named_place(
     )
 
     if isinstance(
-        named_place.gn_name,
-        list,
+        named_place.gn_name, list
     ):
         for (
             gn_name

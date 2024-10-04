@@ -14,5 +14,5 @@ def summarise_dataframes_dictionary(
             message="dataframe "
             + str(key)
             + " has shape "
-            + str(value.shape),
+            + str(value.shape)
         )

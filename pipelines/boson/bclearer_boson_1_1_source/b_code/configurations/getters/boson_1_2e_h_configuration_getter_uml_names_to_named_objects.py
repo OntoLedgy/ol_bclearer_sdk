@@ -60,16 +60,16 @@ def get_boson_1_2e_h2_configuration_uml_name_attributes_to_name_objects() -> (
 ):
     convention_shift_attribute_names_to_name_objects_list_of_configuration_objects = [
         AttributeNameToNameObjectConfigurationObjects(
-            matched_naming_space_instance=Boson1MatchedEaObjects.INSPIRE_OBJECT_NAMES,
+            matched_naming_space_instance=Boson1MatchedEaObjects.INSPIRE_OBJECT_NAMES
         ),
         AttributeNameToNameObjectConfigurationObjects(
-            matched_naming_space_instance=Boson1MatchedEaObjects.OS_GAZETTEER_OBJECT_NAMES,
+            matched_naming_space_instance=Boson1MatchedEaObjects.OS_GAZETTEER_OBJECT_NAMES
         ),
         AttributeNameToNameObjectConfigurationObjects(
-            matched_naming_space_instance=BclearerMatchedEaObjects.BCLEARER_FOUNDATION_COMMON_RESERVED_NAMES,
+            matched_naming_space_instance=BclearerMatchedEaObjects.BCLEARER_FOUNDATION_COMMON_RESERVED_NAMES
         ),
         AttributeNameToNameObjectConfigurationObjects(
-            matched_naming_space_instance=Boson1MatchedEaObjects.BOSON_NAMES,
+            matched_naming_space_instance=Boson1MatchedEaObjects.BOSON_NAMES
         ),
     ]
 

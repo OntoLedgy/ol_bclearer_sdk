@@ -129,7 +129,7 @@ class AdjustmentOperationsSubstages:
                 output_universe=output_universe,
                 direction=adjustment_operation_configuration.direction,
                 package_name=adjustment_operation_configuration.package_name,
-                attribute_to_association_operation_subtype=adjustment_operation_configuration.attribute_to_association_operation_subtype,
+                # attribute_to_association_operation_subtype=adjustment_operation_configuration.attribute_to_association_operation_subtype,
             )
 
         return output_universe

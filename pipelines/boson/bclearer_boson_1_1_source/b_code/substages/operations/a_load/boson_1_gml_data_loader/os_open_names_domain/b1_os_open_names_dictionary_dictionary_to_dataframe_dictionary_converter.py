@@ -8,7 +8,7 @@ def convert_os_open_names_dictionary_dictionary_to_dataframe_dictionary(
     os_open_names_dictionary_dictionary: dict,
 ) -> dict:
     log_message(
-        message="converting os_open_names_dictionaries to dataframes",
+        message="converting os_open_names_dictionaries to dataframes"
     )
 
     os_open_names_dataframe_dictionary = (
@@ -37,11 +37,11 @@ def __add_os_open_names_dataframe(
 ) -> dict:
     log_message(
         message="converting "
-        + str(dataframe_name),
+        + str(dataframe_name)
     )
 
     os_open_names_dataframe = __convert_os_open_names_dictionary_to_dataframe(
-        os_open_names_dictionary=os_open_names_dictionary,
+        os_open_names_dictionary=os_open_names_dictionary
     )
 
     os_open_names_dataframe_dictionary[
@@ -55,7 +55,7 @@ def __convert_os_open_names_dictionary_to_dataframe(
     os_open_names_dictionary: dict,
 ) -> DataFrame:
     os_open_names_dataframe = DataFrame(
-        os_open_names_dictionary,
+        os_open_names_dictionary
     )
 
     os_open_names_dataframe = (
@@ -63,7 +63,7 @@ def __convert_os_open_names_dictionary_to_dataframe(
     )
 
     os_open_names_dataframe = os_open_names_dataframe.reset_index(
-        drop=True,
+        drop=True
     )
 
     return os_open_names_dataframe

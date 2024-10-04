@@ -7,7 +7,7 @@ from bclearer_core.common_knowledge.matched_objects import (
 
 @unique
 class OsMatchedEaObjects(
-    MatchedEaObjects,
+    MatchedEaObjects
 ):
     NAMED_PLACE = auto()
 
@@ -26,7 +26,7 @@ class OsMatchedEaObjects(
         return ea_guid
 
     object_name = property(
-        fget=__object_name,
+        fget=__object_name
     )
 
     ea_guid = property(fget=__ea_guid)

@@ -30,11 +30,11 @@ def orchestrate_boson1_bclearer():
     )
 
     gml_data_folder = select_folder(
-        title="Select GML folder",
+        title="Select GML folder"
     )
 
     set_up_logger_and_output_folder(
-        output_folder_name=output_root_folder_path,
+        output_folder_name=output_root_folder_path
     )
 
     __process_gml_folder(
@@ -49,7 +49,7 @@ def __get_output_root_folder_path() -> (
     str
 ):
     output_folder = select_folder(
-        title="Select output folder",
+        title="Select output folder"
     )
 
     output_folder_path = (
@@ -60,8 +60,7 @@ def __get_output_root_folder_path() -> (
         output_folder_path,
         "bOSON_1_"
         + now_time_as_string_for_files().replace(
-            "_",
-            "",
+            "_", ""
         ),
     )
 
@@ -75,6 +74,7 @@ def __process_gml_folder(
     gml_data_folder_name: str,
 ) -> None:
     with EaToolsSessionManagers() as ea_tools_session_manager:
+
         evolved_universe = orchestrate_boson_1_bclearer_stages(
             ea_tools_session_manager=ea_tools_session_manager,
             output_folder_name=output_folder_name,
@@ -88,15 +88,14 @@ def __process_gml_folder(
 
 
 def __export_to_xml(
-    evolved_universe,
-    output_folder_name,
+    evolved_universe, output_folder_name
 ) -> None:
     nf_ea_com_bnop_facade = (
         NfEaComBnopFacades()
     )
 
     nf_ea_com_bnop_facade.migrate_nf_ea_com_universe_to_bnop(
-        nf_ea_com_universe=evolved_universe,
+        nf_ea_com_universe=evolved_universe
     )
 
     bnop_facade = BnopFacades()
@@ -107,5 +106,5 @@ def __export_to_xml(
     )
 
     bnop_facade.write_bnop_object_to_xml(
-        xml_file_path=xml_file_path,
+        xml_file_path=xml_file_path
     )

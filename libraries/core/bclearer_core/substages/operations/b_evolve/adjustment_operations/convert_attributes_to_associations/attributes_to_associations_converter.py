@@ -30,7 +30,7 @@ def convert_attributes_to_associations(
     output_universe: NfEaComUniverses,
     direction: EaAssociationDirectionTypes,
     package_name: str,
-    attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
+    # attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
 ) -> None:
     __run_input_checks()
 
@@ -40,7 +40,7 @@ def convert_attributes_to_associations(
         output_universe=output_universe,
         direction=direction,
         package_name=package_name,
-        attribute_to_association_operation_subtype=attribute_to_association_operation_subtype,
+        # attribute_to_association_operation_subtype=attribute_to_association_operation_subtype,
     )
 
 
@@ -54,7 +54,7 @@ def __run_operation(
     output_universe: NfEaComUniverses,
     direction: EaAssociationDirectionTypes,
     package_name: str,
-    attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
+    # attribute_to_association_operation_subtype: AttributeToAssociationOperationSubtypes,
 ):
     log_message(
         message="ADJUSTMENT OPERATION: Convert attributes - started",
@@ -80,7 +80,7 @@ def __run_operation(
         attributes_to_convert=attributes_to_convert,
         direction=direction,
         package_nf_uuid=package_nf_uuid,
-        attribute_to_association_operation_subtype=attribute_to_association_operation_subtype,
+        # attribute_to_association_operation_subtype=attribute_to_association_operation_subtype,
     )
 
     log_message(

@@ -32,7 +32,7 @@ def run_visualization_substage_load_gml_data(
     content_universe: NfEaComUniverses,
 ) -> NfEaComUniverses:
     load_gml_data_configuration = get_boson_1_2e_f1_configuration_load_gml_data(
-        gml_data_folder_name=gml_data_folder_name,
+        gml_data_folder_name=gml_data_folder_name
     )
 
     content_universe_merged_gml_data_universe = run_boson_1_merge_gml_data_content_operations_substage(

@@ -26,11 +26,11 @@ def load_gml_data_into_content_universe(
     log_message(
         message="CONTENT OPERATION: Load GML data to universe - "
         + load_gml_data_configuration.short_name
-        + " - started",
+        + " - started"
     )
 
     os_open_names_dataframe_dictionary = create_os_open_names_domain_tables(
-        folder_path=load_gml_data_configuration.gml_data_folder_path,
+        folder_path=load_gml_data_configuration.gml_data_folder_path
     )
 
     gml_data_content_universe = orchestrate_os_open_names_domain_to_nf_ea_com(
@@ -43,7 +43,7 @@ def load_gml_data_into_content_universe(
     log_message(
         message="CONTENT OPERATION: Load GML data to universe - "
         + load_gml_data_configuration.short_name
-        + " - finished",
+        + " - finished"
     )
 
     return gml_data_content_universe

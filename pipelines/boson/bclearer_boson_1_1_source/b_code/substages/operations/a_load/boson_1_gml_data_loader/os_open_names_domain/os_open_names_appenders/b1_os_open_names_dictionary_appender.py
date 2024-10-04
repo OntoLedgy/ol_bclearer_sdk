@@ -1,15 +1,15 @@
 import untangle
-from bclearer_core.nf.types.nf_column_types import (
-    NfColumnTypes,
-)
-from bclearer_interop_services.file_system_service.objects.files import (
-    Files,
-)
-from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
-    create_new_uuid,
-)
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
+)
+from nf_common_source.code.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from nf_common_source.code.services.file_system_service.objects.files import (
+    Files,
+)
+from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.operations.a_load.boson_1_gml_data_loader.os_open_names_domain.os_open_names_appenders.b1_os_open_names_named_place_appender import (
     append_named_place,
@@ -22,16 +22,16 @@ def append_os_open_names_dictionary(
 ) -> dict:
     log_message(
         message="loading "
-        + file.absolute_path_string,
+        + file.absolute_path_string
     )
 
     data = untangle.parse(
-        file.absolute_path_string,
+        file.absolute_path_string
     )
 
     log_message(
         message="parsing "
-        + file.absolute_path_string,
+        + file.absolute_path_string
     )
 
     gml_feature_member_count = 1
@@ -63,10 +63,9 @@ def append_os_open_names_dictionary(
     log_message(
         message="parsed "
         + str(
-            gml_feature_member_count
-            - 1,
+            gml_feature_member_count - 1
         )
-        + " feature members",
+        + " feature members"
     )
 
     return os_open_names_dictionary

@@ -18,16 +18,15 @@ def set_up_logger_and_output_folder(
     output_folder_name: str,
 ):
     output_folder = Path(
-        output_folder_name,
+        output_folder_name
     )
 
     output_folder.mkdir(
-        parents=True,
-        exist_ok=True,
+        parents=True, exist_ok=True
     )
 
     LogFiles.open_log_file(
-        folder_path=output_folder_name,
+        folder_path=output_folder_name
     )
 
     log_timing_header()

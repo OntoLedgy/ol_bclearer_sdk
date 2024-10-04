@@ -31,7 +31,7 @@ def get_boson_1_2e_l2_configuration_separate_bespoke_instances_and_names() -> (
         BespokeInstanceToExemplarConfigurationObjects(
             matched_name_instance_instance=InspireMatchedEaObjects.SPELLING_OF_NAME,
             name_exemplar_attribute_name=InspireMatchedEaObjects.TEXT_ATTRIBUTE.object_name,
-        ),
+        )
     ]
 
     convention_shift_operation_configuration = ConventionShiftOperationConfigurations(

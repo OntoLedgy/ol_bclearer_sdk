@@ -31,6 +31,7 @@ from bclearer_orchestration_services.identification_services.uuid_service.uuid_h
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
 )
+from pandas import DataFrame, concat
 
 
 def shift_convention_uml_names_to_named_objects(
@@ -165,22 +166,33 @@ def __add_attribute_value_with_naming_space_type_to_output_universe(
         nf_uuid=new_attribute_nf_uuid,
     )
 
-    output_universe_ea_attributes = output_universe_ea_attributes.append(
-        {
-            NfColumnTypes.NF_UUIDS.column_name: new_attribute_nf_uuid,
-            NfEaComColumnTypes.ATTRIBUTES_LOWER_BOUNDS.column_name: "1",
-            NfEaComColumnTypes.ATTRIBUTES_UPPER_BOUNDS.column_name: "1",
-            NfEaComColumnTypes.ELEMENT_COMPONENTS_CONTAINING_EA_CLASSIFIER.column_name: classifier_nf_uuid,
-            NfEaComColumnTypes.ELEMENT_COMPONENTS_CLASSIFYING_EA_CLASSIFIER.column_name: naming_space_nf_uuid,
-            NfEaComColumnTypes.ELEMENT_COMPONENTS_UML_VISIBILITY_KIND.column_name: "Public",
-            NfEaComColumnTypes.ELEMENT_COMPONENTS_TYPE.column_name: naming_space,
-            NfEaComColumnTypes.ELEMENT_COMPONENTS_DEFAULT.column_name: DEFAULT_NULL_VALUE,
-            NfEaComColumnTypes.STEREOTYPEABLE_OBJECTS_EA_OBJECT_STEREOTYPES.column_name: [],
-            NfEaComColumnTypes.REPOSITORIED_OBJECTS_EA_REPOSITORY.column_name: DEFAULT_NULL_VALUE,
-            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name: attribute_value,
-            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NOTES.column_name: DEFAULT_NULL_VALUE,
-            NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name: new_attribute_ea_guid,
-        },
+    # Create a new DataFrame row from the dictionary
+    new_attribute_row = DataFrame(
+        [
+            {
+                NfColumnTypes.NF_UUIDS.column_name: new_attribute_nf_uuid,
+                NfEaComColumnTypes.ATTRIBUTES_LOWER_BOUNDS.column_name: "1",
+                NfEaComColumnTypes.ATTRIBUTES_UPPER_BOUNDS.column_name: "1",
+                NfEaComColumnTypes.ELEMENT_COMPONENTS_CONTAINING_EA_CLASSIFIER.column_name: classifier_nf_uuid,
+                NfEaComColumnTypes.ELEMENT_COMPONENTS_CLASSIFYING_EA_CLASSIFIER.column_name: naming_space_nf_uuid,
+                NfEaComColumnTypes.ELEMENT_COMPONENTS_UML_VISIBILITY_KIND.column_name: "Public",
+                NfEaComColumnTypes.ELEMENT_COMPONENTS_TYPE.column_name: naming_space,
+                NfEaComColumnTypes.ELEMENT_COMPONENTS_DEFAULT.column_name: DEFAULT_NULL_VALUE,
+                NfEaComColumnTypes.STEREOTYPEABLE_OBJECTS_EA_OBJECT_STEREOTYPES.column_name: [],
+                NfEaComColumnTypes.REPOSITORIED_OBJECTS_EA_REPOSITORY.column_name: DEFAULT_NULL_VALUE,
+                NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NAME.column_name: attribute_value,
+                NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_OBJECT_NOTES.column_name: DEFAULT_NULL_VALUE,
+                NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name: new_attribute_ea_guid,
+            }
+        ]
+    )
+
+    # Use pd.concat to append the new row to the existing DataFrame
+    output_universe_ea_attributes = concat(
+        [
+            output_universe_ea_attributes,
+            new_attribute_row,
+        ],
         ignore_index=True,
     )
 
