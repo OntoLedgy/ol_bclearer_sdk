@@ -1,22 +1,25 @@
 from bclearer_core.common_knowledge.adjustment_operation_types import (
     AdjustmentOperationTypes,
 )
-from bclearer_source.b_code.configurations.adjustment_operation_configurations import (
+from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
+    AttributeToAssociationOperationSubtypes,
+)
+from bclearer_core.configurations.adjustment_operation_configurations import (
     AdjustmentOperationConfigurations,
 )
-from bclearer_source.b_code.configurations.adjustment_operations_substage_configurations import (
+from bclearer_core.configurations.adjustment_operations_substage_configurations import (
     AdjustmentOperationsSubstageConfigurations,
 )
-from bclearer_source.b_code.configurations.attribute_to_association_adjustment_operation_configurations import (
+from bclearer_core.configurations.attribute_to_association_adjustment_operation_configurations import (
     AttributeToAssociationAdjustmentOperationConfigurations,
 )
-from bclearer_source.b_code.configurations.load_ea_model_configurations import (
+from bclearer_core.configurations.load_ea_model_configurations import (
     LoadEaModelConfigurations,
 )
-from bclearer_source.b_code.configurations.load_hdf5_model_configurations import (
+from bclearer_core.configurations.load_hdf5_model_configurations import (
     LoadHdf5ModelConfigurations,
 )
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.ea_association_direction_types import (
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_association_direction_types import (
     EaAssociationDirectionTypes,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_filename_constants import (
@@ -87,6 +90,7 @@ def get_boson_1_2e_b_configuration_clean_inspire() -> (
         output_universe_short_name="2e_b1_output_convert",
         direction=EaAssociationDirectionTypes.BACKWARD,
         package_name="2e_b1_new_objects",
+        attribute_to_association_operation_subtype=AttributeToAssociationOperationSubtypes.SUBTYPE_OF_FOREIGN_TABLE,  # TODO: check this mod
     )
 
     remove_attributes_adjustment_operation_configuration = AdjustmentOperationConfigurations(

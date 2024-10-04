@@ -43,11 +43,11 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_un
 from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_connector_types import (
     EaConnectorTypes,
 )
+from bclearer_interop_services.tuple_service.tuple_attribute_value_getter import (
+    get_tuple_attribute_value_if_required,
+)
 from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
     log_message,
-)
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
-    get_tuple_attribute_value_if_required,
 )
 from pandas import DataFrame
 

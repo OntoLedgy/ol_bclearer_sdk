@@ -1,11 +1,16 @@
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
-    left_merge_dataframes
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
+    left_merge_dataframes,
+)
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    EA_OBJECT_NAME_COLUMN_NAME, NF_UUIDS_COLUMN_NAME,
-    PARENT_PACKAGE_NAME_COLUMN_NAME, PARENT_PACKAGE_UUID1_COLUMN_NAME,
-    PARENT_PACKAGE_UUID2_COLUMN_NAME, PARENT_PACKAGE_UUID_COLUMN_NAME,
-    UUIDIFIED_PACKAGES_TABLE_NAME)
+    EA_OBJECT_NAME_COLUMN_NAME,
+    NF_UUIDS_COLUMN_NAME,
+    PARENT_PACKAGE_NAME_COLUMN_NAME,
+    PARENT_PACKAGE_UUID1_COLUMN_NAME,
+    PARENT_PACKAGE_UUID2_COLUMN_NAME,
+    PARENT_PACKAGE_UUID_COLUMN_NAME,
+    UUIDIFIED_PACKAGES_TABLE_NAME,
+)
 
 
 def populate_parent_package_uuid_column_in_dataframe(

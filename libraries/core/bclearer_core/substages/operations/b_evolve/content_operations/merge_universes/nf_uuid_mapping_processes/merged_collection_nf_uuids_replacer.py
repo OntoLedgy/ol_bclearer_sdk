@@ -56,7 +56,8 @@ def __check_column_has_lists(
     dataframe: DataFrame,
 ) -> bool:
     dataframe_of_types = (
-        dataframe.applymap(type)
+        # TODO: fixed
+        dataframe.map(type)
     )
 
     dataframe_of_lists = (

@@ -3,14 +3,14 @@ from pathlib import Path
 from bclearer_interop_services.file_system_service.objects.folders import (
     Folders,
 )
+from bclearer_orchestration_services.log_environment_utility_service.loggers.environment_logger import (
+    log_filtered_environment,
+)
 from bclearer_orchestration_services.reporting_service.reporters.log_file import (
     LogFiles,
 )
 from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
     log_timing_header,
-)
-from nf_common_source.code.services.log_environment_utility_service.loggers.environment_logger import (
-    log_filtered_environment,
 )
 
 

@@ -1,36 +1,54 @@
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
-    NfEaComCollectionTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.processes.nf_ea_com_initialiser import \
-    initialise_nf_ea_com_dictionary
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_attributes_converter import \
-    convert_standard_attribute_table_to_attributes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_converter import \
-    convert_standard_object_table_to_classifiers
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_proxy_connectors_converter import \
-    convert_typed_linked_table_to_classifiers_proxy_connectors
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_connectors_converter import \
-    convert_standard_linked_table_to_connectors
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_connectors_pc_converter import \
-    convert_standard_typed_linked_table_to_connectors_pc
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.processes.nf_ea_com_initialiser import (
+    initialise_nf_ea_com_dictionary,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_attributes_converter import (
+    convert_standard_attribute_table_to_attributes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_converter import (
+    convert_standard_object_table_to_classifiers,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_classifiers_proxy_connectors_converter import (
+    convert_typed_linked_table_to_classifiers_proxy_connectors,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_connectors_converter import (
+    convert_standard_linked_table_to_connectors,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration.domain_to_nf_ea_com_migration.convertors.tables.standard_connectors_pc_converter import (
+    convert_standard_typed_linked_table_to_connectors_pc,
+)
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     BCLEARER_FOUNDATION_OBJECTS_TABLE_NAME,
-    CLASSIFICATION_RANKS_NAMES_TABLE_NAME, ISO_12006_OBJECTS_TABLE_NAME,
-    PARENT_CHILD_SUBTYPES_TABLE_NAME, RELATION_TYPE_UUIDS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS2015_RANKS_TABLE_NAME,
+    CLASSIFICATION_RANKS_NAMES_TABLE_NAME,
+    ISO_12006_OBJECTS_TABLE_NAME,
+    PARENT_CHILD_SUBTYPES_TABLE_NAME,
+    RELATION_TYPE_UUIDS_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS2015_RANKS_TABLE_NAME,
     UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
-    UNICLASS_TOP_LEVEL_CORE_OBJECTS_TABLE_NAME, UUIDIFIED_PACKAGES_TABLE_NAME)
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_converter import \
-    convert_uniclass_naming_spaces_table_to_attributes
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_order_converter import \
-    convert_uniclass_naming_spaces_table_to_attributes_order
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import \
-    convert_uniclass_table_to_classifiers_in_common_package
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_connectors_converter import \
-    convert_uniclass_items_parent_child_table_to_connectors
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_stereotype_usage_converter import \
-    convert_uniclass_items_parent_child_table_to_stereotype_usage
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_stereotypes_converter import \
-    convert_uniclass_stereotypes_table_to_stereotypes
+    UNICLASS_TOP_LEVEL_CORE_OBJECTS_TABLE_NAME,
+    UUIDIFIED_PACKAGES_TABLE_NAME,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_converter import (
+    convert_uniclass_naming_spaces_table_to_attributes,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_attributes_order_converter import (
+    convert_uniclass_naming_spaces_table_to_attributes_order,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import (
+    convert_uniclass_table_to_classifiers_in_common_package,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_connectors_converter import (
+    convert_uniclass_items_parent_child_table_to_connectors,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_stereotype_usage_converter import (
+    convert_uniclass_items_parent_child_table_to_stereotype_usage,
+)
+from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_stereotypes_converter import (
+    convert_uniclass_stereotypes_table_to_stereotypes,
+)
 
 
 def orchestrate_nf_ea_com_tables_creation_for_evolve_stage_8(

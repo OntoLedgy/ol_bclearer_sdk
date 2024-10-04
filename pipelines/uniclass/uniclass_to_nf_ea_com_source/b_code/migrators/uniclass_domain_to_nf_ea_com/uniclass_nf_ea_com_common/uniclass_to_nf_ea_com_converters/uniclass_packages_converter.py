@@ -1,14 +1,20 @@
 import numpy
 import pandas
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_common_source.code.services.identification_services.uuid_service.uuid_helpers.uuid_factory import \
-    create_new_uuid
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import \
-    NfEaComCollectionTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import \
-    NfEaComColumnTypes
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.processes.dataframes.nf_ea_com_table_appender import \
-    append_nf_ea_com_table
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.collection_types.nf_ea_com_collection_types import (
+    NfEaComCollectionTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowledge.column_types.nf_ea_com_column_types import (
+    NfEaComColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.processes.dataframes.nf_ea_com_table_appender import (
+    append_nf_ea_com_table,
+)
+from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
+    create_new_uuid,
+)
 
 
 def convert_dictionary_keys_to_packages(

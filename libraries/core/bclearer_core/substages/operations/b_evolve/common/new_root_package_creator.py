@@ -1,3 +1,5 @@
+# TODO: this should not be needed,need a pandas concat function
+import pandas as pd
 from bclearer_core.constants.standard_constants import (
     DEFAULT_NULL_VALUE,
 )
@@ -65,9 +67,16 @@ def create_root_package(
         NfEaComColumnTypes.EXPLICIT_OBJECTS_EA_GUID.column_name: package_ea_guid,
     }
 
+    new_row_df = pd.DataFrame(
+        [ea_package_dictionary]
+    )
+
     updated_package_collection = (
-        package_collection.append(
-            ea_package_dictionary,
+        pd.concat(
+            [
+                package_collection,
+                new_row_df,
+            ],
             ignore_index=True,
         )
     )

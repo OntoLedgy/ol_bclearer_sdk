@@ -1,21 +1,33 @@
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import \
-    dataframe_filter_and_rename
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_uuidifier import \
-    uuidify_dataframe
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
-    left_merge_dataframes
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import \
-    StandardConnectorTableColumnTypes
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import \
-    StandardObjectTableColumnTypes
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
+    dataframe_filter_and_rename,
+)
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_uuidifier import (
+    uuidify_dataframe,
+)
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
+    left_merge_dataframes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import (
+    StandardConnectorTableColumnTypes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
+    StandardObjectTableColumnTypes,
+)
 from numpy import NaN, nan
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CHILD_UUID_COLUMN_NAME, DEPENDENCY_NAME, LINK_NAMES_COLUMN_NAME,
-    LINK_TYPES_COLUMN_NAME, LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS,
-    NF_UUIDS_COLUMN_NAME, PARENT_UUIDS_COLUMN_NAME, RANKS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS2015_RANKS_TABLE_NAME,
-    UUID_COLUMN_NAME)
+    CHILD_UUID_COLUMN_NAME,
+    DEPENDENCY_NAME,
+    LINK_NAMES_COLUMN_NAME,
+    LINK_TYPES_COLUMN_NAME,
+    LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS,
+    NF_UUIDS_COLUMN_NAME,
+    PARENT_UUIDS_COLUMN_NAME,
+    RANKS_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS2015_RANKS_TABLE_NAME,
+    UUID_COLUMN_NAME,
+)
 
 
 def create_uniclass_items_to_ranks_table_and_add_to_dictionary(

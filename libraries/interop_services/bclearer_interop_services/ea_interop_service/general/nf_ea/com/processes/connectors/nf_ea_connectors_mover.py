@@ -25,7 +25,7 @@ from bclearer_interop_services.ea_interop_service.session.ea_repository_mappers 
 from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
+from bclearer_interop_services.tuple_service.tuple_attribute_value_getter import (
     get_tuple_attribute_value_if_required,
 )
 from pandas import DataFrame

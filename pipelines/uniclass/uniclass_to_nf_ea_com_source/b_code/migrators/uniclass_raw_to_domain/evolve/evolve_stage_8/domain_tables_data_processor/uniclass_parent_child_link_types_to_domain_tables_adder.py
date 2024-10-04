@@ -1,13 +1,20 @@
 import pandas
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
-    left_merge_dataframes
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
+    left_merge_dataframes,
+)
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CODE_COLUMN_NAME, OBJECT_NAME_COLUMN_NAME,
-    PARENT_CHILD_SUBTYPES_TABLE_NAME, PARENT_CODE_COLUMN_NAME,
-    PARENT_RANK_NAME_COLUMN_NAME, RANKS_COLUMN_NAME,
-    RELATION_TYPE_NAMES_COLUMN_NAME, RELATION_TYPE_UUIDS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
-    UUID_COLUMN_NAME)
+    CODE_COLUMN_NAME,
+    OBJECT_NAME_COLUMN_NAME,
+    PARENT_CHILD_SUBTYPES_TABLE_NAME,
+    PARENT_CODE_COLUMN_NAME,
+    PARENT_RANK_NAME_COLUMN_NAME,
+    RANKS_COLUMN_NAME,
+    RELATION_TYPE_NAMES_COLUMN_NAME,
+    RELATION_TYPE_UUIDS_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
+    UUID_COLUMN_NAME,
+)
 
 
 def add_uniclass_parent_child_link_types_to_domain_tables(

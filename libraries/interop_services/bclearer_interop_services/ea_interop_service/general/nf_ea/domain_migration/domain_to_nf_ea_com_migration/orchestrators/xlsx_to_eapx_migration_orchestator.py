@@ -10,6 +10,9 @@ from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools
 from bclearer_interop_services.ea_interop_service.session.processes.exporters.all_universes_exporter import (
     export_all_universes,
 )
+from bclearer_interop_services.excel.xlsx_to_dataframe_dictionary_converter import (
+    covert_xlxs_to_dataframe_dictionary,
+)
 from bclearer_interop_services.file_system_service.objects.files import (
     Files,
 )
@@ -21,9 +24,6 @@ from bclearer_orchestration_services.reporting_service.reporters.log_with_dateti
 )
 from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
     run_and_log_function,
-)
-from nf_common_source.code.services.input_output_service.excel.xlsx_to_dataframe_dictionary_converter import (
-    covert_xlxs_to_dataframe_dictionary,
 )
 
 

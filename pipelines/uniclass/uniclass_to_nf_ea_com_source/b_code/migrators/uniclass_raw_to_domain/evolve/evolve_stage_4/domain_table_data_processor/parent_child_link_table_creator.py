@@ -1,14 +1,24 @@
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_uuidifier import \
-    uuidify_dataframe
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
-    left_merge_dataframes
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_uuidifier import (
+    uuidify_dataframe,
+)
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
+    left_merge_dataframes,
+)
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CHILD_CODE_COLUMN_NAME, CHILD_TITLE_COLUMN_NAME, CHILD_UUID_COLUMN_NAME,
-    CODE_COLUMN_NAME, NF_UUIDS_COLUMN_NAME, PARENT_CODE_COLUMN_NAME,
-    PARENT_TITLE_COLUMN_NAME, PARENT_UUID_COLUMN_NAME, TITLE_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
-    UUID_COLUMN_NAME)
+    CHILD_CODE_COLUMN_NAME,
+    CHILD_TITLE_COLUMN_NAME,
+    CHILD_UUID_COLUMN_NAME,
+    CODE_COLUMN_NAME,
+    NF_UUIDS_COLUMN_NAME,
+    PARENT_CODE_COLUMN_NAME,
+    PARENT_TITLE_COLUMN_NAME,
+    PARENT_UUID_COLUMN_NAME,
+    TITLE_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
+    UUID_COLUMN_NAME,
+)
 
 
 def create_parent_child_link_table(

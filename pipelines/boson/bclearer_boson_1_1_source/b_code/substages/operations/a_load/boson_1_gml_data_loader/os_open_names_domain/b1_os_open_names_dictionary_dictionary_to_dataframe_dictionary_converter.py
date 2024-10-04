@@ -1,5 +1,6 @@
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 from pandas import DataFrame
 
 

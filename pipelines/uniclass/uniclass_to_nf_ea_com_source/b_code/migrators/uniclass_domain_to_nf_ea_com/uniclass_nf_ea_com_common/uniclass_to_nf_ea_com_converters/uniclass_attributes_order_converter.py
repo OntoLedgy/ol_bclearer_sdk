@@ -1,9 +1,13 @@
 import pandas
-from nf_common_source.code.nf.types.nf_column_types import NfColumnTypes
-from nf_common_source.code.services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import \
-    dataframe_filter_and_rename
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import \
-    StandardObjectTableColumnTypes
+from bclearer_core.nf.types.nf_column_types import (
+    NfColumnTypes,
+)
+from bclearer_interop_services.dataframe_service.dataframe_helpers.dataframe_filter_and_renamer import (
+    dataframe_filter_and_rename,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
+    StandardObjectTableColumnTypes,
+)
 
 
 def convert_uniclass_naming_spaces_table_to_attributes_order(

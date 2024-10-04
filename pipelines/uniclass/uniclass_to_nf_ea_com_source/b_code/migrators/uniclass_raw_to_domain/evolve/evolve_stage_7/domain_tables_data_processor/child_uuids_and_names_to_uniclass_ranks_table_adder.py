@@ -1,11 +1,16 @@
-from nf_common_source.code.services.dataframe_service.dataframe_mergers import \
-    left_merge_dataframes
-from nf_ea_common_tools_source.b_code.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import \
-    StandardObjectTableColumnTypes
+from bclearer_interop_services.dataframe_service.dataframe_mergers import (
+    left_merge_dataframes,
+)
+from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
+    StandardObjectTableColumnTypes,
+)
 from pandas import DataFrame
 from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CHILD_RANK_NAME_COLUMN_NAME, CHILD_UUID_COLUMN_NAME,
-    PARENT_RANK_NAME_COLUMN_NAME, UNICLASS2015_RANKS_TABLE_NAME)
+    CHILD_RANK_NAME_COLUMN_NAME,
+    CHILD_UUID_COLUMN_NAME,
+    PARENT_RANK_NAME_COLUMN_NAME,
+    UNICLASS2015_RANKS_TABLE_NAME,
+)
 
 
 def add_child_uuids_and_names_to_uniclass_ranks_table(

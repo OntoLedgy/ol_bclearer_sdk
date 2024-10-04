@@ -1,7 +1,7 @@
 from bclearer_core.common_knowledge.content_operation_types import (
     ContentOperationTypes,
 )
-from bclearer_source.b_code.configurations.content_operation_configurations import (
+from bclearer_core.configurations.content_operation_configurations import (
     ContentOperationConfigurations,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.configurations.objects.load_gml_data_configurations import (

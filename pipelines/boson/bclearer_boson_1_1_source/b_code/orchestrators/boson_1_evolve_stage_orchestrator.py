@@ -1,11 +1,11 @@
-from nf_common_source.code.services.reporting_service.wrappers.run_and_log_function_wrapper import (
-    run_and_log_function,
-)
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import (
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
     NfEaComUniverses,
 )
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import (
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
+)
+from bclearer_orchestration_services.reporting_service.wrappers.run_and_log_function_wrapper import (
+    run_and_log_function,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.substages.visualization_substages.boson_1_visualization_substage_clean_inspire_os_model_runner import (
     run_visualization_substage_clean_inspire_os_model,

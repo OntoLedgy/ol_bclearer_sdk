@@ -27,7 +27,7 @@ def create_empty_nf_ea_com_dictionary_of_collections() -> (
 
 def __get_database_connection():
     module = importlib.import_module(
-        name="nf_ea_common_tools_source.resources.templates"
+        name="bclearer_interop_services.ea_interop_service.resources.templates"
     )
 
     module_path_string = (

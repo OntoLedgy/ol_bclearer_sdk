@@ -13,11 +13,11 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowl
 from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.ea_connector_types import (
     EaConnectorTypes,
 )
+from bclearer_interop_services.tuple_service.tuple_attribute_value_getter import (
+    get_tuple_attribute_value_if_required,
+)
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
-)
-from nf_common_source.code.services.tuple_service.tuple_attribute_value_getter import (
-    get_tuple_attribute_value_if_required,
 )
 
 

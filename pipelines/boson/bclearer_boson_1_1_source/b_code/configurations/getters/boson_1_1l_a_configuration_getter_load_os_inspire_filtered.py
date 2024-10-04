@@ -1,7 +1,7 @@
-from bclearer_source.b_code.configurations.load_ea_model_configurations import (
+from bclearer_core.configurations.load_ea_model_configurations import (
     LoadEaModelConfigurations,
 )
-from bclearer_source.b_code.configurations.load_hdf5_model_configurations import (
+from bclearer_core.configurations.load_hdf5_model_configurations import (
     LoadHdf5ModelConfigurations,
 )
 from pipelines.boson.bclearer_boson_1_1_source.b_code.configurations.resource_constants.resources_filename_constants import (

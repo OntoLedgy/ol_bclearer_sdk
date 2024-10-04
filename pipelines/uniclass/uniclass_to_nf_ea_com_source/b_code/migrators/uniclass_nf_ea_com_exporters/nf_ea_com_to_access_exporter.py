@@ -1,11 +1,14 @@
 import os
 
-from nf_common_source.code.services.reporting_service.reporters.log_with_datetime import \
-    log_message
-from nf_ea_common_tools_source.b_code.services.general.nf_ea.com.nf_ea_com_universes import \
-    NfEaComUniverses
-from nf_ea_common_tools_source.b_code.services.session.orchestrators.ea_tools_session_managers import \
-    EaToolsSessionManagers
+from bclearer_interop_services.ea_interop_service.general.nf_ea.com.nf_ea_com_universes import (
+    NfEaComUniverses,
+)
+from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
+    EaToolsSessionManagers,
+)
+from bclearer_orchestration_services.reporting_service.reporters.log_with_datetime import (
+    log_message,
+)
 
 
 def export_nf_ea_com_to_access(
