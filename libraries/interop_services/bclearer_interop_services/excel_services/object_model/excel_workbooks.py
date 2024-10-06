@@ -18,7 +18,7 @@ class ExcelWorkbooks:
     def __init__(
         self,
         file_path: str = None,
-        file_extension: str = "xlsx",
+        file_extension: str = ".xlsx",
     ):
         self.file_path = PathWrappers(
             file_path
