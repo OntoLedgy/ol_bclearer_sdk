@@ -170,14 +170,20 @@ class ExcelWorkbooks:
         if file_path is None:
             file_path = self.file_path
 
-        if file_type == ".xlsx":
+        if (
+            self.excel_file_type
+            == ".xlsx"
+        ):
             self._save_xlsx(file_path)
 
-        elif file_type == ".xls":
+        elif (
+            self.excel_file_type
+            == ".xls"
+        ):
             self._save_xls(file_path)
         else:
             raise ValueError(
-                f"Unsupported file extension: {file_type}",
+                f"Unsupported file extension: {self.excel_file_type}",
             )
 
     def _save_xlsx(self, file_path):
