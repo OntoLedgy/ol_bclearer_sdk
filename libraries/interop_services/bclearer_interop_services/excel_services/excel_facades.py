@@ -2,17 +2,17 @@ from pathlib import Path
 
 import pandas as pd
 from bclearer_interop_services.excel_services.object_model.excel_workbooks import (
-    Workbooks,
+    ExcelWorkbooks,
 )
 
 
-class ExcelFacade:
+class ExcelFacades:
     def __init__(self, file_path):
         self.file_extension = Path(
             file_path,
         ).suffix.lower()
 
-        self.workbook = Workbooks(
+        self.workbook = ExcelWorkbooks(
             file_path,
             self.file_extension,
         )

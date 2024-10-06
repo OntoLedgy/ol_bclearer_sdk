@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
-from bclearer_interop_services.excel_services.ExcelFacade import (
-    ExcelFacade,
+from bclearer_interop_services.excel_services.excel_facades import (
+    ExcelFacades,
 )
 
 
@@ -20,7 +20,7 @@ class TestExcelInteropServices:
         sheet_name = "Categories"
 
         try:
-            excel_facade = ExcelFacade(
+            excel_facade = ExcelFacades(
                 excel_file_name_and_path_xlsx,
             )
             print(
@@ -88,7 +88,7 @@ class TestExcelInteropServices:
         sheet_name = "Categories"
 
         try:
-            excel_facade = ExcelFacade(
+            excel_facade = ExcelFacades(
                 excel_file_name_and_path_xls,
             )
             print(
@@ -157,7 +157,7 @@ class TestExcelInteropServices:
         sheet_name = "ESXXXX"
 
         try:
-            excel_facade = ExcelFacade(
+            excel_facade = ExcelFacades(
                 excel_file_name_and_path_xlsx,
             )
             print(

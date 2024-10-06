@@ -11,7 +11,7 @@ from openpyxl import (
 from openpyxl import load_workbook
 
 
-class Workbooks:
+class ExcelWorkbooks:
     def __init__(
         self,
         file_path: str = None,
