@@ -5,6 +5,9 @@ import pandas as pd
 from bclearer_interop_services.excel_services.object_model.excel_sheets import (
     ExcelSheets,
 )
+from bclearer_interop_services.file_system_service.objects.wrappers.path_wrappers import (
+    PathWrappers,
+)
 from openpyxl import (
     Workbook as OpenpyxlWorkbook,
 )
@@ -17,29 +20,39 @@ class ExcelWorkbooks:
         file_path: str = None,
         file_extension: str = "xlsx",
     ):
-        self.file_path = file_path
+        self.file_path = PathWrappers(
+            file_path
+        )
 
         self.sheets: Dict[
             str, ExcelSheets
         ] = {}
 
-        if file_path:
+        self._set_excel_file_type(
+            file_extension
+        )
+
+        self._load_excel_workbook()
+
+    def _load_excel_workbook(self):
+        if self.file_path.exists():
             if (
-                file_extension
+                self.excel_file_type
                 == ".xlsx"
             ):
                 self._load_xlsx(
-                    file_path,
+                    self.file_path,
                 )
             elif (
-                file_extension == ".xls"
+                self.excel_file_type
+                == ".xls"
             ):
                 self._load_xls(
-                    file_path,
+                    self.file_path,
                 )
             else:
                 raise ValueError(
-                    f"Unsupported file extension: {file_extension}",
+                    f"Unsupported file extension: {self.excel_file_type}",
                 )
         else:
             self.wb = OpenpyxlWorkbook()
@@ -51,25 +64,42 @@ class ExcelWorkbooks:
                 for sheet in self.wb.worksheets
             }
 
-    def _load_xlsx(self, file_path):
+    def _set_excel_file_type(
+        self, file_extension
+    ):
+        if self.file_path.exists():
+            self.excel_file_type = (
+                self.file_path.suffix().lower()
+            )
+        else:
+            self.excel_file_type = (
+                file_extension
+            )
+
+    def _load_xlsx(
+        self, file_path: PathWrappers
+    ):
+
         self.wb = load_workbook(
-            file_path,
+            file_path.path_string,
         )
 
         for sheet in self.wb.worksheets:
-            # Remove any empty rows
+
             self._remove_empty_rows(
                 sheet,
             )
 
-            # Add the sheet to the Sheets object
             self.sheets[sheet.title] = (
                 ExcelSheets(sheet)
             )
 
-    def _load_xls(self, file_path):
+    def _load_xls(
+        self, file_path: PathWrappers
+    ):
+
         xls = pd.ExcelFile(
-            file_path,
+            file_path.path_string,
             engine="xlrd",
         )
 
@@ -140,11 +170,9 @@ class ExcelWorkbooks:
         if file_path is None:
             file_path = self.file_path
 
-        file_type = Path(
-            file_path,
-        ).suffix.lower()
         if file_type == ".xlsx":
             self._save_xlsx(file_path)
+
         elif file_type == ".xls":
             self._save_xls(file_path)
         else:

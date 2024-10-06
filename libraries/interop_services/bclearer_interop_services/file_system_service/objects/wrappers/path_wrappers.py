@@ -50,3 +50,6 @@ class PathWrappers:
         )
 
         return item_count
+
+    def suffix(self) -> str:
+        return self.__path.suffix
