@@ -1,5 +1,5 @@
-from bclearer_interop_services.excel_services.object_model.Cells import (
-    Cells,
+from bclearer_interop_services.excel_services.object_model.excel_cells import (
+    ExcelCells,
 )
 from openpyxl.worksheet.worksheet import (
     Worksheet as OpenpyxlWorksheet,
@@ -29,6 +29,6 @@ class Ranges:
             max_col=self.max_col,
         ):
             yield [
-                Cells(cell)
+                ExcelCells(cell)
                 for cell in row
             ]

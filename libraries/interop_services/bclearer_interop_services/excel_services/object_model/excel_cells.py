@@ -1,14 +1,23 @@
+from bclearer_interop_services.excel_services.object_model.excel_cell_coordinates import (
+    CellCoordinates,
+)
 from openpyxl.cell.cell import (
     Cell as OpenpyxlCell,
 )
 
 
-class Cells:
+class ExcelCells:
     def __init__(
         self,
         cell: OpenpyxlCell,
+        cell_coordinates: CellCoordinates,
     ):
         self.cell = cell
+        self.cell_value = cell.value
+        self.cell_coordinate = (
+            cell_coordinates
+        )
+        self.cell_row = cell.row
 
     @property
     def value(self):

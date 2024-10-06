@@ -1,8 +1,9 @@
 from pathlib import Path
+from typing import Dict
 
 import pandas as pd
-from bclearer_interop_services.excel_services.object_model.Sheets import (
-    Sheets,
+from bclearer_interop_services.excel_services.object_model.excel_sheets import (
+    ExcelSheets,
 )
 from openpyxl import (
     Workbook as OpenpyxlWorkbook,
@@ -18,7 +19,9 @@ class Workbooks:
     ):
         self.file_path = file_path
 
-        self.sheets = {}
+        self.sheets: Dict[
+            str, ExcelSheets
+        ] = {}
 
         if file_path:
             if (
@@ -42,7 +45,7 @@ class Workbooks:
             self.wb = OpenpyxlWorkbook()
 
             self.sheets = {
-                sheet.title: Sheets(
+                sheet.title: ExcelSheets(
                     sheet,
                 )
                 for sheet in self.wb.worksheets
@@ -61,7 +64,7 @@ class Workbooks:
 
             # Add the sheet to the Sheets object
             self.sheets[sheet.title] = (
-                Sheets(sheet)
+                ExcelSheets(sheet)
             )
 
     def _load_xls(self, file_path):
@@ -105,7 +108,9 @@ class Workbooks:
             openpyxl_sheet.append(
                 row.tolist(),
             )
-        return Sheets(openpyxl_sheet)
+        return ExcelSheets(
+            openpyxl_sheet
+        )
 
     def _remove_empty_rows(self, sheet):
         """Removes empty rows where all cells are None from the openpyxl Worksheet object."""
@@ -194,7 +199,9 @@ class Workbooks:
                 title=title,
             )
         )
-        sheet = Sheets(openpyxl_sheet)
+        sheet = ExcelSheets(
+            openpyxl_sheet
+        )
         self.sheets[title] = sheet
         return sheet
 

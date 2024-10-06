@@ -109,6 +109,8 @@ def __update_nf_ea_com_dictionary(
     ] = all_ea_objects
 
 
+# TODO: review this code that breaks boson pipeline.
+#
 # import pandas
 # from bclearer_core.common_knowledge.attribute_to_associations_operation_subtypes import (
 #     AttributeToAssociationOperationSubtypes,

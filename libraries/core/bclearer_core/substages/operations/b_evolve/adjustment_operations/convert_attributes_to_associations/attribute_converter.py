@@ -15,6 +15,7 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
 )
 
 
+# TODO: added to patch boson pipeline, not there in latest master from BORO.
 def convert_attribute(
     attribute_to_convert_tuple: tuple,
     new_classifiers_dictionary: dict,
