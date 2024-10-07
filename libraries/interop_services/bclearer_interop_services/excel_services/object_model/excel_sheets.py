@@ -127,14 +127,16 @@ class ExcelSheets:
         self.add_columns()
         self.add_cells()
 
-    def cell(self, row: int, col: int):
+    def cell(
+        self, row: int, column: int
+    ):
         # Try to find the cell in self.cells
         for cell in self.cells:
             if (
                 cell.cell_coordinate.row.index
                 == row
                 and cell.cell_coordinate.column.index
-                == col
+                == column
             ):
                 return cell
         # If not found, create new row and column objects if they don't exist
@@ -142,21 +144,21 @@ class ExcelSheets:
             self.rows[row] = ExcelRows(
                 self.sheet, row
             )
-        if col not in self.columns:
-            self.columns[col] = (
+        if column not in self.columns:
+            self.columns[column] = (
                 ExcelColumns(
-                    self.sheet, col
+                    self.sheet, column
                 )
             )
         # Get the Openpyxl cell object
         cell_obj = self.sheet.cell(
-            row=row, column=col
+            row=row, column=column
         )
         # Create cell coordinates
         cell_coordinates = (
             CellCoordinates(
                 self.rows[row],
-                self.columns[col],
+                self.columns[column],
             )
         )
         # Create a new ExcelCells object
@@ -193,7 +195,9 @@ class ExcelSheets:
             max_col,
         )
 
-    def get_merged_ranges(self):
+    def get_merged_ranges(
+        self,
+    ) -> Dict[str, Ranges]:
         """
         Returns a dictionary of all merged cell ranges in the sheet.
         The keys are the string representations of the ranges (e.g., "A1:B2").
@@ -205,18 +209,26 @@ class ExcelSheets:
         ) in (
             self.sheet.merged_cells.ranges
         ):
-            # Convert the merged range into its coordinates
-            (
-                min_row,
-                min_col,
-                max_row,
-                max_col,
-            ) = (
-                merged_range.min_row,
-                merged_range.min_col,
-                merged_range.max_row,
-                merged_range.max_col,
+            # Extract the coordinates of the merged range
+            min_row = (
+                merged_range.min_row
             )
+            min_col = (
+                merged_range.min_col
+            )
+            max_row = (
+                merged_range.max_row
+            )
+            max_col = (
+                merged_range.max_col
+            )
+
+            # Get the value from the top-left cell of the merged range
+            cell_value = self.cell(
+                row=min_row,
+                column=min_col,
+            ).value
+
             # Create a Ranges object for each merged range
             ranges_obj = Ranges(
                 self.sheet,
@@ -224,7 +236,9 @@ class ExcelSheets:
                 min_col,
                 max_row,
                 max_col,
+                cell_value,
             )
+
             # Use the string representation of the range as the dictionary key
             merged_ranges[
                 str(merged_range)
@@ -239,7 +253,7 @@ class ExcelSheets:
         # Create a dictionary to store cell values by their coordinates
         data_dict = {}
 
-        data = self.convert_cells_list_to_data_grid(
+        data = self.__convert_cells_list_to_data_grid(
             data_dict
         )
 
@@ -281,7 +295,7 @@ class ExcelSheets:
             columns=headers,
         )
 
-    def convert_cells_list_to_data_grid(
+    def __convert_cells_list_to_data_grid(
         self, data_dict
     ):
         for cell in self.cells:

@@ -14,12 +14,23 @@ class Ranges:
         min_col: int,
         max_row: int,
         max_col: int,
+        range_cell_value: str = None,
     ):
         self.sheet = sheet
         self.min_row = min_row
         self.min_col = min_col
         self.max_row = max_row
         self.max_col = max_col
+        self._value = range_cell_value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, value):
+
+        self._value = value
 
     def __iter__(self):
         for row in self.sheet.iter_rows(
@@ -27,6 +38,7 @@ class Ranges:
             max_row=self.max_row,
             min_col=self.min_col,
             max_col=self.max_col,
+            values_only=self.value,
         ):
             yield [
                 ExcelCells(cell)

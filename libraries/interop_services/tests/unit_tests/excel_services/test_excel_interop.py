@@ -150,12 +150,15 @@ class TestExcelInteropServices:
                 f"An error occurred during the test: {e!s}",
             )
 
-    # TODO: need to add more fine grained tests
     def test_excel_interop_reading_ranges(
         self,
         excel_file_name_and_path_xlsx,
     ):
         sheet_name = "ESXXXX"
+        expected_value_in_range = (
+            "Second attribute"
+        )
+        test_range = "A7:A9"
 
         try:
             excel_facade = ExcelFacades(
@@ -165,19 +168,29 @@ class TestExcelInteropServices:
                 f"Successfully initialized ExcelFacade with file: {excel_file_name_and_path_xlsx}",
             )
 
-            cfi_categories = excel_facade.workbook.sheet(
+            esxxxx_sheet = excel_facade.workbook.sheet(
                 sheet_name
             )
+
+            merged_ranges = (
+                esxxxx_sheet.get_merged_ranges()
+            )
+
+            value_in_range = (
+                merged_ranges[
+                    test_range
+                ].value
+            )
+
+            assert (
+                value_in_range
+                == expected_value_in_range
+            ), f"value in range:'{value_in_range}' does not match expected value:'{expected_value_in_range}'"
 
         except Exception as e:
             pytest.fail(
                 f"An error occurred during the test: {e!s}",
             )
-
-    def test_excel_interop_reading_cells(
-        self,
-    ):
-        pass
 
     def test_excel_interop_reading_cells(
         self,
