@@ -34,13 +34,13 @@ class TestExcelInteropServices:
             assert (
                 cfi_categories
                 is not None
-            ), f"Sheet {sheet_name} not found in the workbook."
+            ), f"Sheet {self.sheet_name} not found in the workbook."
 
             cfi_categories_dataframe = excel_facade.read_sheet_to_dataframe(
-                sheet_name=sheet_name
+                sheet_name=self.sheet_name
             )
             print(
-                f"DataFrame successfully read from the {sheet_name} sheet:",
+                f"DataFrame successfully read from the {self.sheet_name} sheet:",
             )
 
             assert isinstance(
