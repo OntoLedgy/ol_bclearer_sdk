@@ -1,8 +1,10 @@
-import pandas as pd
+import os
+
 import pytest
 from bclearer_interop_services.excel_services.excel_facades import (
     ExcelFacades,
 )
+from pandas import DataFrame
 
 
 class TestExcelInteropServices:
@@ -11,13 +13,12 @@ class TestExcelInteropServices:
         self,
         excel_file_name_and_path_xlsx,
     ):
-        pass
+        self.sheet_name = "Categories"
 
     def test_excel_interop_reading_xlsx(
         self,
         excel_file_name_and_path_xlsx,
     ):
-        sheet_name = "Categories"
 
         try:
             excel_facade = ExcelFacades(
@@ -28,15 +29,15 @@ class TestExcelInteropServices:
             )
 
             cfi_categories = excel_facade.workbook.sheet(
-                sheet_name,
+                self.sheet_name,
             )
             assert (
                 cfi_categories
                 is not None
             ), f"Sheet {sheet_name} not found in the workbook."
 
-            cfi_categories_dataframe = (
-                cfi_categories.read_to_dataframe()
+            cfi_categories_dataframe = excel_facade.read_sheet_to_dataframe(
+                sheet_name=sheet_name
             )
             print(
                 f"DataFrame successfully read from the {sheet_name} sheet:",
@@ -44,7 +45,7 @@ class TestExcelInteropServices:
 
             assert isinstance(
                 cfi_categories_dataframe,
-                pd.DataFrame,
+                DataFrame,
             ), "The result is not a DataFrame object."
 
             print(
@@ -112,7 +113,7 @@ class TestExcelInteropServices:
 
             assert isinstance(
                 cfi_categories_dataframe,
-                pd.DataFrame,
+                DataFrame,
             ), "The result is not a DataFrame object."
 
             print(
@@ -177,3 +178,59 @@ class TestExcelInteropServices:
         self,
     ):
         pass
+
+    def test_excel_interop_reading_cells(
+        self,
+        excel_file_name_and_path_xlsx,
+        data_output_folder_absolute_path,
+    ):
+        target_output_file_path = os.path.join(
+            data_output_folder_absolute_path,
+            "excel/test_output.xlsx",
+        )
+        test_string = (
+            "Testing Excel Writting"
+        )
+        try:
+
+            excel_facade = ExcelFacades(
+                excel_file_name_and_path_xlsx,
+            )
+
+            print(
+                f"Successfully initialized ExcelFacade with file: {excel_file_name_and_path_xlsx}",
+            )
+
+            excel_facade.write_cell(
+                sheet_name=self.sheet_name,
+                row_index=10,
+                column_index=10,
+                value=test_string,
+            )
+
+            excel_facade.save(
+                file_path=os.path.join(
+                    data_output_folder_absolute_path,
+                    target_output_file_path,
+                ),
+            )
+
+            output_excel_facade = ExcelFacades(
+                target_output_file_path,
+            )
+
+            written_cell_value = output_excel_facade.read_cell(
+                sheet_name=self.sheet_name,
+                row_index=10,
+                column_index=10,
+            )
+
+            assert (
+                written_cell_value,
+                test_string,
+            )
+
+        except Exception as e:
+            pytest.fail(
+                f"An error occurred during the test: {e!s}",
+            )

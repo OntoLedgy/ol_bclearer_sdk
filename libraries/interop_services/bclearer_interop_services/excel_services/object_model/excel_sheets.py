@@ -128,13 +128,42 @@ class ExcelSheets:
         self.add_cells()
 
     def cell(self, row: int, col: int):
-
-        return ExcelCells(
-            self.sheet.cell(
-                row=row,
-                column=col,
-            ),
+        # Try to find the cell in self.cells
+        for cell in self.cells:
+            if (
+                cell.cell_coordinate.row.index
+                == row
+                and cell.cell_coordinate.column.index
+                == col
+            ):
+                return cell
+        # If not found, create new row and column objects if they don't exist
+        if row not in self.rows:
+            self.rows[row] = ExcelRows(
+                self.sheet, row
+            )
+        if col not in self.columns:
+            self.columns[col] = (
+                ExcelColumns(
+                    self.sheet, col
+                )
+            )
+        # Get the Openpyxl cell object
+        cell_obj = self.sheet.cell(
+            row=row, column=col
         )
+        # Create cell coordinates
+        cell_coordinates = (
+            CellCoordinates(
+                self.rows[row],
+                self.columns[col],
+            )
+        )
+        # Create a new ExcelCells object
+        excel_cell = ExcelCells(
+            cell_obj, cell_coordinates
+        )
+        return excel_cell
 
     def row(self, index: int):
 
@@ -209,42 +238,10 @@ class ExcelSheets:
     ) -> pd.DataFrame:
         # Create a dictionary to store cell values by their coordinates
         data_dict = {}
-        for cell in self.cells:
-            row_idx = (
-                cell.cell_coordinate.row.index
-            )
-            col_idx = (
-                cell.cell_coordinate.column.index
-            )
-            if row_idx not in data_dict:
-                data_dict[row_idx] = {}
-            data_dict[row_idx][
-                col_idx
-            ] = cell.value
 
-        # Find the maximum row and column indices
-        max_row_idx = max(
-            data_dict.keys()
+        data = self.convert_cells_list_to_data_grid(
+            data_dict
         )
-        max_col_idx = max(
-            max(row.keys())
-            for row in data_dict.values()
-        )
-
-        # Create a list of lists to represent the DataFrame data
-        data = [
-            [
-                data_dict.get(
-                    row_idx, {}
-                ).get(col_idx, None)
-                for col_idx in range(
-                    1, max_col_idx + 1
-                )
-            ]
-            for row_idx in range(
-                1, max_row_idx + 1
-            )
-        ]
 
         if not data:
             return (
@@ -283,3 +280,42 @@ class ExcelSheets:
             data,
             columns=headers,
         )
+
+    def convert_cells_list_to_data_grid(
+        self, data_dict
+    ):
+        for cell in self.cells:
+            row_idx = (
+                cell.cell_coordinate.row.index
+            )
+            col_idx = (
+                cell.cell_coordinate.column.index
+            )
+            if row_idx not in data_dict:
+                data_dict[row_idx] = {}
+            data_dict[row_idx][
+                col_idx
+            ] = cell.value
+        # Find the maximum row and column indices
+        max_row_idx = max(
+            data_dict.keys()
+        )
+        max_col_idx = max(
+            max(row.keys())
+            for row in data_dict.values()
+        )
+        # Create a list of lists to represent the DataFrame data
+        data = [
+            [
+                data_dict.get(
+                    row_idx, {}
+                ).get(col_idx, None)
+                for col_idx in range(
+                    1, max_col_idx + 1
+                )
+            ]
+            for row_idx in range(
+                1, max_row_idx + 1
+            )
+        ]
+        return data
