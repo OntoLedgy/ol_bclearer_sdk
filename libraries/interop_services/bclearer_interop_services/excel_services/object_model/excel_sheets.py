@@ -35,8 +35,11 @@ class ExcelSheets:
         self.columns: Dict[
             int, ExcelColumns
         ] = {}
+
         self.uuid = uuid.uuid4()
+
         self.sheet = sheet
+
         self.read_sheet_cells()
 
     def add_rows(self):
@@ -204,9 +207,43 @@ class ExcelSheets:
         self,
         header_row_number: int = 1,
     ) -> pd.DataFrame:
+        # Create a dictionary to store cell values by their coordinates
+        data_dict = {}
+        for cell in self.cells:
+            row_idx = (
+                cell.cell_coordinate.row.index
+            )
+            col_idx = (
+                cell.cell_coordinate.column.index
+            )
+            if row_idx not in data_dict:
+                data_dict[row_idx] = {}
+            data_dict[row_idx][
+                col_idx
+            ] = cell.value
+
+        # Find the maximum row and column indices
+        max_row_idx = max(
+            data_dict.keys()
+        )
+        max_col_idx = max(
+            max(row.keys())
+            for row in data_dict.values()
+        )
+
+        # Create a list of lists to represent the DataFrame data
         data = [
-            [cell.value for cell in row]
-            for row in self.sheet.rows
+            [
+                data_dict.get(
+                    row_idx, {}
+                ).get(col_idx, None)
+                for col_idx in range(
+                    1, max_col_idx + 1
+                )
+            ]
+            for row_idx in range(
+                1, max_row_idx + 1
+            )
         ]
 
         if not data:

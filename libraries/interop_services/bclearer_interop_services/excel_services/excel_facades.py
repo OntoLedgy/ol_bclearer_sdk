@@ -4,16 +4,24 @@ import pandas as pd
 from bclearer_interop_services.excel_services.object_model.excel_workbooks import (
     ExcelWorkbooks,
 )
+from bclearer_interop_services.file_system_service.objects.wrappers.path_wrappers import (
+    PathWrappers,
+)
 
 
 class ExcelFacades:
     def __init__(self, file_path):
-        self.file_extension = Path(
-            file_path,
-        ).suffix.lower()
+
+        self.file_path = PathWrappers(
+            file_path
+        )
+
+        self.file_extension = (
+            self.file_path.suffix()
+        )
 
         self.workbook = ExcelWorkbooks(
-            file_path,
+            self.file_path,
             self.file_extension,
         )
 
@@ -26,9 +34,11 @@ class ExcelFacades:
         sheet = self.workbook.sheet(
             sheet_name,
         )
-        cell = sheet.rows[
-            row_index
-        ].cells[column_index]
+
+        cell = sheet.cell(
+            row_index, column_index
+        )
+
         return cell.value
 
     def read_sheet_to_dataframe(
