@@ -14,6 +14,7 @@ from bclearer_interop_services.graph_services.network_service.graph_to_nodes_and
 )
 
 
+# TODO: move to graph services
 def export_graph_to_excel_with_human_readable_edges(
     graph,
     graph_name: str,

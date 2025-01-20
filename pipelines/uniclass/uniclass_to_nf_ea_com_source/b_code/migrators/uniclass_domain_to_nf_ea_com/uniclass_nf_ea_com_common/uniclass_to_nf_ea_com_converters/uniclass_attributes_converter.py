@@ -20,7 +20,7 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.objects.uniclass_namespace_ckids import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.objects.uniclass_namespace_ckids import (
     UniclassNamespaceCkIds,
 )
 

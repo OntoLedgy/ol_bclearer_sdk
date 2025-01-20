@@ -4,6 +4,7 @@ from bclearer_interop_services.file_system_service.objects.files import (
 from pandas import read_excel
 
 
+# TODO:move to excel facade
 def covert_xlxs_to_dataframe_dictionary(
     xlsx_file: Files,
 ) -> dict:

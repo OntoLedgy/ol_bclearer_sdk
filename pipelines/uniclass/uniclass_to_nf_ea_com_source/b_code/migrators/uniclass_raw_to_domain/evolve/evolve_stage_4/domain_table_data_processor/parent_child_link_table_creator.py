@@ -5,7 +5,7 @@ from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CHILD_CODE_COLUMN_NAME,
     CHILD_TITLE_COLUMN_NAME,
     CHILD_UUID_COLUMN_NAME,

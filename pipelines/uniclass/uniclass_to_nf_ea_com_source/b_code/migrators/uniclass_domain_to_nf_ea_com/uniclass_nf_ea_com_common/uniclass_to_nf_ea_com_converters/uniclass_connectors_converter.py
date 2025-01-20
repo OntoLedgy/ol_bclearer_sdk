@@ -14,7 +14,7 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowl
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.processes.dataframes.nf_ea_com_table_appender import (
     append_nf_ea_com_table,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CHILD_UUID_COLUMN_NAME,
     PARENT_UUID_COLUMN_NAME,
 )

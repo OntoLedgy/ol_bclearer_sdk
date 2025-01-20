@@ -1,9 +1,13 @@
 import pandas
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CHILD_NAMES_COLUMN_NAME, CHILD_PACKAGE_NAME_COLUMN_NAME,
-    CHILD_UUIDS_COLUMN_NAME, OBJECT_NAME_COLUMN_NAME,
-    PARENT_PACKAGE_NAME_COLUMN_NAME, UUID_COLUMN_NAME,
-    UUIDIFIED_PACKAGES_TABLE_NAME)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    CHILD_NAMES_COLUMN_NAME,
+    CHILD_PACKAGE_NAME_COLUMN_NAME,
+    CHILD_UUIDS_COLUMN_NAME,
+    OBJECT_NAME_COLUMN_NAME,
+    PARENT_PACKAGE_NAME_COLUMN_NAME,
+    UUID_COLUMN_NAME,
+    UUIDIFIED_PACKAGES_TABLE_NAME,
+)
 
 
 def __add_child_uuids_value(

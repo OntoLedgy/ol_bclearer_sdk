@@ -11,7 +11,7 @@ from bclearer_interop_services.file_system_service.objects.files import (
 from bclearer_interop_services.file_system_service.objects.folders import (
     Folders,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CSV_EXTENSION_FILE_NAME,
 )
 

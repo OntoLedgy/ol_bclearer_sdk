@@ -1,10 +1,10 @@
 from bclearer_interop_services.file_system_service.new_folder_creator import (
     create_new_folder,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     LOAD_STAGE_4_NAME,
 )
-from uniclass_to_nf_ea_com_source.b_code.services.input_output.dataframes_dictionary_to_csv_and_access_exporter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.services.input_output.dataframes_dictionary_to_csv_and_access_exporter import (
     export_dataframes_dictionary_to_csv_and_access,
 )
 

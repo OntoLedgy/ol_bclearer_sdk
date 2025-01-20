@@ -1,7 +1,11 @@
+import pandas as pd
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CODE_COLUMN_NAME, TITLE_COLUMN_NAME, TOP_ITEMS_TABLE_NAME,
-    UUID_COLUMN_NAME)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    CODE_COLUMN_NAME,
+    TITLE_COLUMN_NAME,
+    TOP_ITEMS_TABLE_NAME,
+    UUID_COLUMN_NAME,
+)
 
 
 def add_top_level_item_rows_to_dictionary_of_dataframes(
@@ -75,8 +79,14 @@ def __generate_top_level_row_dataframe(
             TITLE_COLUMN_NAME
         ] = row[TITLE_COLUMN_NAME]
 
-        dataframe = dataframe.append(
-            top_level_row_dictionary,
+        # Create DataFrame for new row
+        new_row_df = pd.DataFrame(
+            [top_level_row_dictionary]
+        )
+
+        # Concatenate new row to existing DataFrame
+        dataframe = pd.concat(
+            [dataframe, new_row_df],
             ignore_index=True,
         )
 

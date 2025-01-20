@@ -1,6 +1,7 @@
 from pandas import DataFrame, concat
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
-    UNICLASS_PARENT_CHILD_LINK_TABLE_NAME
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
+)
 
 
 def add_areas_to_top_item_links_to_uniclass_parent_child_link_table(

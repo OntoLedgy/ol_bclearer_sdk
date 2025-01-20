@@ -1,7 +1,9 @@
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
-    UUIDIFIED_PACKAGES_TABLE_NAME
-from uniclass_to_nf_ea_com_source.b_code.services.uniclass_common.dataframe_parent_package_column_populator import \
-    populate_parent_package_uuid_column_in_dataframe
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    UUIDIFIED_PACKAGES_TABLE_NAME,
+)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.services.uniclass_common.dataframe_parent_package_column_populator import (
+    populate_parent_package_uuid_column_in_dataframe,
+)
 
 
 def populate_dataframes_dictionary_parent_package_columns(

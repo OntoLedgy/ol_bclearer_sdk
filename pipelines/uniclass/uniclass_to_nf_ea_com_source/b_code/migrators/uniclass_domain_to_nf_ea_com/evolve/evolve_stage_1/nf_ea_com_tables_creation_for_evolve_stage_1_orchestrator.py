@@ -4,10 +4,10 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.common_knowl
 from bclearer_interop_services.ea_interop_service.general.nf_ea.com.processes.nf_ea_com_initialiser import (
     initialise_nf_ea_com_dictionary,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_classifiers_converter import (
     convert_uniclass_table_to_classifiers_in_its_own_package,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_packages_converter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_domain_to_nf_ea_com.uniclass_nf_ea_com_common.uniclass_to_nf_ea_com_converters.uniclass_packages_converter import (
     convert_dictionary_keys_to_packages,
 )
 

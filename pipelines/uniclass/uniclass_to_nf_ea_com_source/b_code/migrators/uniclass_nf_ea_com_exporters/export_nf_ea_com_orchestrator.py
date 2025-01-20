@@ -4,13 +4,13 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.com.temporary.nf
 from bclearer_interop_services.ea_interop_service.session.orchestrators.ea_tools_session_managers import (
     EaToolsSessionManagers,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_access_exporter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_access_exporter import (
     export_nf_ea_com_to_access,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_ea_exporter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_ea_exporter import (
     export_nf_ea_com_to_ea,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_hdf5_exporter import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_nf_ea_com_exporters.nf_ea_com_to_hdf5_exporter import (
     export_nf_ea_com_to_hdf5,
 )
 

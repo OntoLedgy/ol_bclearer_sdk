@@ -1,8 +1,9 @@
+import pandas as pd
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CHILD_CODE_COLUMN_NAME,
     CHILD_TITLE_COLUMN_NAME,
     CHILD_UUID_COLUMN_NAME,
@@ -16,7 +17,7 @@ from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclas
     UNICLASS_ITEM_NAME,
     UUID_COLUMN_NAME,
 )
-from uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_5.domain_tables_data_processor.areas_to_top_item_links_to_uniclass_parent_child_link_table_adder import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.migrators.uniclass_raw_to_domain.evolve.evolve_stage_5.domain_tables_data_processor.areas_to_top_item_links_to_uniclass_parent_child_link_table_adder import (
     add_areas_to_top_item_links_to_uniclass_parent_child_link_table,
 )
 
@@ -53,14 +54,26 @@ def __add_top_element_row_to_uniclass_objects_table(
         TITLE_COLUMN_NAME: UNICLASS_ITEM_NAME,
     }
 
-    dictionary_of_dataframes[
+    # Retrieve the existing DataFrame from the dictionary
+    df = dictionary_of_dataframes[
         UNICLASS2015_OBJECT_TABLE_NAME
-    ] = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
-    ].append(
-        object_table_top_element_row,
+    ]
+
+    # Create a new DataFrame for the row you want to add
+    new_row_df = pd.DataFrame(
+        [object_table_top_element_row]
+    )
+
+    # Concatenate the new row to the existing DataFrame
+    df = pd.concat(
+        [df, new_row_df],
         ignore_index=True,
     )
+
+    # Store the updated DataFrame back in the dictionary
+    dictionary_of_dataframes[
+        UNICLASS2015_OBJECT_TABLE_NAME
+    ] = df
 
     return dictionary_of_dataframes
 

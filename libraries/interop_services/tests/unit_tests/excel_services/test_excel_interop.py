@@ -4,6 +4,9 @@ import pytest
 from bclearer_interop_services.excel_services.excel_facades import (
     ExcelFacades,
 )
+from bclearer_interop_services.excel_services.orchestrators.dataframe_from_excel_sheet_extractor import (
+    extract_dataframe_from_excel_sheet,
+)
 from pandas import DataFrame
 
 
@@ -13,16 +16,16 @@ class TestExcelInteropServices:
         self,
         excel_file_name_and_path_xlsx,
     ):
+        self.excel_file_name_and_path_xlsx = excel_file_name_and_path_xlsx
         self.sheet_name = "Categories"
 
     def test_excel_interop_reading_xlsx(
         self,
-        excel_file_name_and_path_xlsx,
     ):
 
         try:
             excel_facade = ExcelFacades(
-                excel_file_name_and_path_xlsx,
+                self.excel_file_name_and_path_xlsx,
             )
             print(
                 f"Successfully initialized ExcelFacade with file: {excel_file_name_and_path_xlsx}",
@@ -31,6 +34,7 @@ class TestExcelInteropServices:
             cfi_categories = excel_facade.workbook.sheet(
                 self.sheet_name,
             )
+
             assert (
                 cfi_categories
                 is not None
@@ -39,6 +43,7 @@ class TestExcelInteropServices:
             cfi_categories_dataframe = excel_facade.read_sheet_to_dataframe(
                 sheet_name=self.sheet_name
             )
+
             print(
                 f"DataFrame successfully read from the {self.sheet_name} sheet:",
             )
@@ -150,6 +155,55 @@ class TestExcelInteropServices:
                 f"An error occurred during the test: {e!s}",
             )
 
+    def test_excel_sheet_to_dataframe_extractor(
+        self,
+    ):
+        try:
+            extracted_dataframe = extract_dataframe_from_excel_sheet(
+                self.excel_file_name_and_path_xlsx,
+                self.sheet_name,
+            )
+
+            assert isinstance(
+                extracted_dataframe,
+                DataFrame,
+            ), "The result is not a DataFrame object."
+
+            print(
+                extracted_dataframe,
+            )
+
+            assert (
+                extracted_dataframe.shape
+                == (
+                    14,
+                    5,
+                )
+            ), "DataFrame does not have the expected shape (14, 5)."
+
+            assert (
+                not extracted_dataframe.empty
+            ), "DataFrame is empty."
+
+            print(
+                f"DataFrame shape: {extracted_dataframe.shape}",
+            )
+
+            assert (
+                extracted_dataframe.iloc[
+                    0
+                ][
+                    "Code"
+                ]
+                == "E"
+            ), "First row 'Code' column value is not 'E' as expected."
+
+        except Exception as e:
+
+            pytest.fail(
+                f"An error occurred during the test: {e!s}",
+            )
+
     def test_excel_interop_reading_ranges(
         self,
         excel_file_name_and_path_xlsx,
@@ -192,7 +246,7 @@ class TestExcelInteropServices:
                 f"An error occurred during the test: {e!s}",
             )
 
-    def test_excel_interop_reading_cells(
+    def test_excel_interop_write_read_cells(
         self,
         excel_file_name_and_path_xlsx,
         data_output_folder_absolute_path,

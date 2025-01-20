@@ -1,6 +1,7 @@
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import \
-    UNICLASS_STEREOTYPES_TYPE_OF_TABLE_NAME
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    UNICLASS_STEREOTYPES_TYPE_OF_TABLE_NAME,
+)
 
 
 def add_stereotypes_table_to_dataframes_dictionary(

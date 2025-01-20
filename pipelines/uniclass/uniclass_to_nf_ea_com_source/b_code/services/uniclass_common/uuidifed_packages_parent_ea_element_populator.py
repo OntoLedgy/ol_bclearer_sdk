@@ -1,7 +1,7 @@
 from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CLIENT_PLACE2_END_CONNECTORS_COLUMN_NAME,
     CONTAINED_EA_CLASSIFIERS_COLUMN_NAME,
     CONTAINED_EA_DIAGRAMS_COLUMN_NAME,
@@ -51,13 +51,23 @@ def populate_uuidified_packages_parent_uuids_column(
         foreign_key_dataframe_other_column_rename_dictionary=uuidified_packages_dataframe_renamed_column,
     )
 
+    # uuidified_packages_dataframe_with_ea_element_column_populated[
+    #     PARENT_EA_ELEMENT_COLUMN_NAME
+    # ].fillna(
+    #     uuidified_packages_dataframe_with_ea_element_column_populated[
+    #         PARENT_EA_ELEMENT1_COLUMN_NAME
+    #     ],
+    #     inplace=True,
+    # )
+
     uuidified_packages_dataframe_with_ea_element_column_populated[
+        PARENT_EA_ELEMENT_COLUMN_NAME
+    ] = uuidified_packages_dataframe_with_ea_element_column_populated[
         PARENT_EA_ELEMENT_COLUMN_NAME
     ].fillna(
         uuidified_packages_dataframe_with_ea_element_column_populated[
             PARENT_EA_ELEMENT1_COLUMN_NAME
-        ],
-        inplace=True,
+        ]
     )
 
     uuidified_packages_dataframe_columns_reorder = uuidified_packages_dataframe_with_ea_element_column_populated[

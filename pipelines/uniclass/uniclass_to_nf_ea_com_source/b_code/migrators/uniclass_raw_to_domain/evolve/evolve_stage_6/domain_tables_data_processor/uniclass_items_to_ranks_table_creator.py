@@ -13,9 +13,9 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
 from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_object_table_column_types import (
     StandardObjectTableColumnTypes,
 )
-from numpy import NaN, nan
+from numpy import nan
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CHILD_UUID_COLUMN_NAME,
     DEPENDENCY_NAME,
     LINK_NAMES_COLUMN_NAME,

@@ -22,7 +22,7 @@ def get_ea_repository_for_empty_ea_model(
     short_name: str,
 ) -> EaRepositories:
     module = importlib.import_module(
-        name="nf_ea_common_tools_source.resources.templates"
+        name="bclearer_interop_services.ea_interop_service.resources.templates"
     )
 
     module_path_string = (

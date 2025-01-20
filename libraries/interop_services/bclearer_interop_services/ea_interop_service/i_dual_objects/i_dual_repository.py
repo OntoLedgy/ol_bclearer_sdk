@@ -82,8 +82,19 @@ class IDualRepository(IRepository):
         self.exit()
 
     def custom_command(self, *args):
+        # Convert any byte arguments to Unicode strings using UTF-8 decoding
+        decoded_args = tuple(
+            (
+                arg.decode("utf-8")
+                if isinstance(
+                    arg, bytes
+                )
+                else arg
+            )
+            for arg in args
+        )
         self.repository.CustomCommand(
-            *args
+            *decoded_args
         )
 
     def get_attribute_by_guid(

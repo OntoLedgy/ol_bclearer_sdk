@@ -11,7 +11,7 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
 from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.column_types.nf_domains.standard_connector_table_column_types import (
     StandardConnectorTableColumnTypes,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     ATTRIBUTE_TABLE_HIGHER_LEVELS_NAME_SPACES_TABLE_NAME,
     ATTRIBUTE_TYPE_NAMES_COLUMN_NAME,
     ATTRIBUTE_TYPE_PACKAGE_NAMES_COLUMN_NAME,

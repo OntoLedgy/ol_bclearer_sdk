@@ -1,8 +1,13 @@
-from numpy import NaN, nan
+from numpy import nan
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    AREA_COLUMN_NAME, CODE_COLUMN_NAME, GROUP_COLUMN_NAME, SECTION_COLUMN_NAME,
-    SUB_GROUP_COLUMN_NAME, UNICLASS2015_OBJECT_TABLE_NAME)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    AREA_COLUMN_NAME,
+    CODE_COLUMN_NAME,
+    GROUP_COLUMN_NAME,
+    SECTION_COLUMN_NAME,
+    SUB_GROUP_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+)
 
 
 def remove_redundant_attributes_from_object_table(

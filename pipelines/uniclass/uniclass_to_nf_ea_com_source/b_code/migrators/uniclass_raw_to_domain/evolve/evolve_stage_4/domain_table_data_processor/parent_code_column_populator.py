@@ -1,7 +1,10 @@
 import numpy as np
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    CODE_COLUMN_NAME, PARENT_CODE_COLUMN_NAME, UNICLASS2015_OBJECT_TABLE_NAME)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    CODE_COLUMN_NAME,
+    PARENT_CODE_COLUMN_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+)
 
 
 def populate_parent_code_column_in_uniclass_object_table(

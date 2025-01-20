@@ -84,11 +84,11 @@ class NfRegistries:
             )
 
         module = importlib.import_module(
-            name="nf_common.resources.templates",
+            name="bclearer_orchestration_services.resources.templates",
         )
 
         module_path_string = (
-            module.__path__._path[0]
+            module.__path__[0]
         )
 
         resource_full_file_name = (

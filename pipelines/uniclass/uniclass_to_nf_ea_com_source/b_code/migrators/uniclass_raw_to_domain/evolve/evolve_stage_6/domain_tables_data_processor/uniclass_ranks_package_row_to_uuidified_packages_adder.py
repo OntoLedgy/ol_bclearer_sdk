@@ -2,7 +2,7 @@ import pandas
 from bclearer_orchestration_services.identification_services.uuid_service.uuid_helpers.uuid_factory import (
     create_new_uuid,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     EA_OBJECT_NAME_COLUMN_NAME,
     EA_OBJECT_TYPE_COLUMN_NAME,
     PACKAGE_NAME,
@@ -48,8 +48,12 @@ def add_uniclass_ranks_package_row_to_uuidified_packages(
         ],
     )
 
-    uuidified_packages = uuidified_packages_table.append(
-        uniclass_rank_item_dataframe,
+    uuidified_packages = pandas.concat(
+        [
+            uuidified_packages_table,
+            uniclass_rank_item_dataframe,
+        ],
+        ignore_index=True,
     )
 
     dictionary_of_dataframes[

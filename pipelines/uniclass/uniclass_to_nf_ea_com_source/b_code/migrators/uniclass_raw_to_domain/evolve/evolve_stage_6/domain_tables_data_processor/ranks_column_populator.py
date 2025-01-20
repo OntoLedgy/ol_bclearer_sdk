@@ -1,8 +1,16 @@
 from pandas import DataFrame
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    AREA_NAME, CODE_COLUMN_NAME, GROUP_NAME, OBJECT_NAME, RANKS_COLUMN_NAME,
-    SECTION_NAME, SUB_GROUP_NAME, TOP_ITEM_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME, UNICLASS_ITEM_NAME)
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+    AREA_NAME,
+    CODE_COLUMN_NAME,
+    GROUP_NAME,
+    OBJECT_NAME,
+    RANKS_COLUMN_NAME,
+    SECTION_NAME,
+    SUB_GROUP_NAME,
+    TOP_ITEM_NAME,
+    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_ITEM_NAME,
+)
 
 
 def populate_uniclass_objects_table_ranks_column(

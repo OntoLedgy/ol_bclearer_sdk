@@ -11,6 +11,7 @@ from bclearer_interop_services.graph_services.network_service.graph_to_nodes_and
 )
 
 
+# TODO: move to graph services
 def export_graph_to_excel(
     graph,
     graph_name: str,

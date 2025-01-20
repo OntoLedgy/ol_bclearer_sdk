@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 from xlrd import open_workbook
 
 
-# sheet_summariser
+# TODO: move to Excel Facade
 def sheet_summariser(
     path,
     file_path_and_name,

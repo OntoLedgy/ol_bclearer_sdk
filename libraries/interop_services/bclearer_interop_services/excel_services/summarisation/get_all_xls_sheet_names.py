@@ -1,5 +1,6 @@
 import sys
 
+# TODO: review for useful code and remove this
 sys.path.append(
     r"..\bclearer_qatar_document_processor",
 )

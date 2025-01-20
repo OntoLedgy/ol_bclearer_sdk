@@ -2,7 +2,7 @@ import pandas
 from bclearer_interop_services.dataframe_service.dataframe_mergers import (
     left_merge_dataframes,
 )
-from uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
+from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CODE_COLUMN_NAME,
     OBJECT_NAME_COLUMN_NAME,
     PARENT_CHILD_SUBTYPES_TABLE_NAME,
