@@ -11,7 +11,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     RANKS_COLUMN_NAME,
     RELATION_TYPE_NAMES_COLUMN_NAME,
     RELATION_TYPE_UUIDS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
     UNICLASS_PARENT_CHILD_LINK_TABLE_NAME,
     UUID_COLUMN_NAME,
 )
@@ -25,7 +25,7 @@ def add_uniclass_parent_child_link_types_to_domain_tables(
     ]
 
     uniclass_objects_table = evolve_8_domain_tables[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     parent_child_subtypes_table = evolve_8_domain_tables[

@@ -13,7 +13,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     PARENT_TITLE_COLUMN_NAME,
     PARENT_UUID_COLUMN_NAME,
     TITLE_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
     UNICLASS_ITEM_NAME,
     UUID_COLUMN_NAME,
 )
@@ -56,7 +56,7 @@ def __add_top_element_row_to_uniclass_objects_table(
 
     # Retrieve the existing DataFrame from the dictionary
     df = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     # Create a new DataFrame for the row you want to add
@@ -72,7 +72,7 @@ def __add_top_element_row_to_uniclass_objects_table(
 
     # Store the updated DataFrame back in the dictionary
     dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ] = df
 
     return dictionary_of_dataframes
@@ -82,7 +82,7 @@ def __create_areas_to_top_item_temporary_link_table(
     dictionary_of_dataframes: dict,
 ) -> DataFrame:
     object_table = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     uniclass_item_uuid = (

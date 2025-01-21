@@ -17,13 +17,13 @@ def orchestrate_evolve_stage_1(
     dictionary_of_dataframes: dict,
     folder_path: str,
 ) -> dict:
-    uniclass2015_dictionary_of_dataframes_with_top_level_row = orchestrate_domain_tables_creation_for_evolve_1(
+    uniclass_2024_dictionary_of_dataframes_with_top_level_row = orchestrate_domain_tables_creation_for_evolve_1(
         folder_path=folder_path,
         dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
     evolve_stage_1_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_evolve_stage_1(
-        dictionary_of_dataframes=uniclass2015_dictionary_of_dataframes_with_top_level_row,
+        dictionary_of_dataframes=uniclass_2024_dictionary_of_dataframes_with_top_level_row,
     )
 
     orchestrate_export_nf_ea_com(
@@ -32,4 +32,4 @@ def orchestrate_evolve_stage_1(
         bclearer_stage="evolve_1",
     )
 
-    return uniclass2015_dictionary_of_dataframes_with_top_level_row
+    return uniclass_2024_dictionary_of_dataframes_with_top_level_row

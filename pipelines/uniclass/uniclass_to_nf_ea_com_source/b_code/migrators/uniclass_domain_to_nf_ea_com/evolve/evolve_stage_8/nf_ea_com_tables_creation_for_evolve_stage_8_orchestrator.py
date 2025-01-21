@@ -25,8 +25,8 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     ISO_12006_OBJECTS_TABLE_NAME,
     PARENT_CHILD_SUBTYPES_TABLE_NAME,
     RELATION_TYPE_UUIDS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
-    UNICLASS2015_RANKS_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
+    UNICLASS_2024_RANKS_TABLE_NAME,
     UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
     UNICLASS_TOP_LEVEL_CORE_OBJECTS_TABLE_NAME,
     UUIDIFIED_PACKAGES_TABLE_NAME,
@@ -132,7 +132,7 @@ def __convert_classifiers(
 ) -> dict:
     nf_ea_com_dictionary = convert_uniclass_table_to_classifiers_in_common_package(
         uniclass_table=uniclass_dictionary[
-            UNICLASS2015_OBJECT_TABLE_NAME
+            UNICLASS_2024_OBJECT_TABLE_NAME
         ],
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         nf_ea_com_classifiers_collection_type=NfEaComCollectionTypes.EA_CLASSIFIERS,
@@ -144,7 +144,7 @@ def __convert_classifiers(
         ISO_12006_OBJECTS_TABLE_NAME,
         PARENT_CHILD_SUBTYPES_TABLE_NAME,
         UNICLASS_TOP_LEVEL_CORE_OBJECTS_TABLE_NAME,
-        UNICLASS2015_RANKS_TABLE_NAME,
+        UNICLASS_2024_RANKS_TABLE_NAME,
         CLASSIFICATION_RANKS_NAMES_TABLE_NAME,
     ]
 
@@ -166,7 +166,7 @@ def __convert_connectors(
     nf_ea_com_dictionary = convert_uniclass_items_parent_child_table_to_connectors(
         uniclass_dictionary=uniclass_dictionary,
         nf_ea_com_dictionary=nf_ea_com_dictionary,
-        input_linked_table_name="uniclass2015_parent_child_link_table",
+        input_linked_table_name="uniclass_2024_parent_child_link_table",
         nf_ea_com_connectors_collection_type=NfEaComCollectionTypes.EA_CONNECTORS,
     )
 
@@ -231,7 +231,7 @@ def __convert_attributes(
         uniclass_dictionary=uniclass_dictionary,
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         input_naming_spaces_table_name="uniclass_naming_spaces_objects",
-        uniclass_items_object_table_name="uniclass2015_object_table",
+        uniclass_items_object_table_name="uniclass_2024_object_table",
         ea_attributes_collection_type=NfEaComCollectionTypes.EA_ATTRIBUTES,
     )
 
@@ -252,7 +252,7 @@ def __convert_stereotype_usage(
     nf_ea_com_dictionary = convert_uniclass_items_parent_child_table_to_stereotype_usage(
         uniclass_dictionary=uniclass_dictionary,
         nf_ea_com_dictionary=nf_ea_com_dictionary,
-        input_uniclass_parent_child_table_name="uniclass2015_parent_child_link_table",
+        input_uniclass_parent_child_table_name="uniclass_2024_parent_child_link_table",
         input_stereotypes_table_name="uniclass_stereotypes_type_of_table",
         nf_ea_com_stereotype_usage_collection_type=NfEaComCollectionTypes.STEREOTYPE_USAGE,
     )
@@ -267,7 +267,7 @@ def __convert_connectors_connecting_connectors(
     nf_ea_com_dictionary = __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(
         uniclass_dictionary=uniclass_dictionary,
         nf_ea_com_dictionary=nf_ea_com_dictionary,
-        input_linked_table_name="uniclass2015_parent_child_link_table",
+        input_linked_table_name="uniclass_2024_parent_child_link_table",
     )
 
     nf_ea_com_dictionary = __convert_typed_linked_table_to_proxy_connectors_and_connectors_pc(

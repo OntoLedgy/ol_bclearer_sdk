@@ -17,13 +17,13 @@ def orchestrate_load_stage_4(
     folder_path: str,
     uniclass_source_data_resource_namespace: str,
 ) -> dict:
-    uniclass2015_uuidified_dictionary_of_dataframes = orchestrate_domain_tables_creation_for_load_stage_4(
+    uniclass_2024_uuidified_dictionary_of_dataframes = orchestrate_domain_tables_creation_for_load_stage_4(
         folder_path=folder_path,
         uniclass_source_data_resource_namespace=uniclass_source_data_resource_namespace,
     )
 
     load_stage_4_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_load_stage_4(
-        dictionary_of_dataframes=uniclass2015_uuidified_dictionary_of_dataframes,
+        dictionary_of_dataframes=uniclass_2024_uuidified_dictionary_of_dataframes,
     )
 
     orchestrate_export_nf_ea_com(
@@ -32,4 +32,4 @@ def orchestrate_load_stage_4(
         bclearer_stage="load_4",
     )
 
-    return uniclass2015_uuidified_dictionary_of_dataframes
+    return uniclass_2024_uuidified_dictionary_of_dataframes

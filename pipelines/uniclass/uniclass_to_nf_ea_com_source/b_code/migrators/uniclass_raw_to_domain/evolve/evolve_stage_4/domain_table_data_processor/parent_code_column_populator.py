@@ -3,30 +3,30 @@ from pandas import DataFrame
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     CODE_COLUMN_NAME,
     PARENT_CODE_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
 )
 
 
 def populate_parent_code_column_in_uniclass_object_table(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass_2015_object_table = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+    uniclass_2024_object_table = dictionary_of_dataframes[
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     for (
         index
     ) in (
-        uniclass_2015_object_table.index
+        uniclass_2024_object_table.index
     ):
         __add_value_to_parent_code_column(
-            dataframe=uniclass_2015_object_table,
+            dataframe=uniclass_2024_object_table,
             index=index,
         )
 
     dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
-    ] = uniclass_2015_object_table
+        UNICLASS_2024_OBJECT_TABLE_NAME
+    ] = uniclass_2024_object_table
 
     return dictionary_of_dataframes
 

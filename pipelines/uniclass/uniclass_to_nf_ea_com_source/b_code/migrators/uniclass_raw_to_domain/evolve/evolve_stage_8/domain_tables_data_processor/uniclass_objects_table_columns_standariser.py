@@ -3,7 +3,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     OBJECT_NAME_COLUMN_NAME,
     PARENT_NAMES_COLUMN_NAME,
     PARENT_PACKAGE_NAME_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
 )
 
 
@@ -11,7 +11,7 @@ def standardise_uniclass_objects_table_columns(
     evolve_stage_7_dictionary_of_dataframes: dict,
 ) -> dict:
     uniclass_objects_table = evolve_stage_7_dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     uniclass_objects_table[
@@ -29,7 +29,7 @@ def standardise_uniclass_objects_table_columns(
     ] = "UNICLASS Items"
 
     evolve_stage_7_dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ] = uniclass_objects_table
 
     return evolve_stage_7_dictionary_of_dataframes

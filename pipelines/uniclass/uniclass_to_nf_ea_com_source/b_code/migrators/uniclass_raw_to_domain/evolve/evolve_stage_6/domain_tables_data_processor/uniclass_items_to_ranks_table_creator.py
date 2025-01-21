@@ -24,8 +24,8 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     NF_UUIDS_COLUMN_NAME,
     PARENT_UUIDS_COLUMN_NAME,
     RANKS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
-    UNICLASS2015_RANKS_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
+    UNICLASS_2024_RANKS_TABLE_NAME,
     UUID_COLUMN_NAME,
 )
 
@@ -57,11 +57,11 @@ def __get_uniclass_items_to_ranks_table(
     )
 
     uniclass_objects_table = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     ranks_table = dictionary_of_dataframes[
-        UNICLASS2015_RANKS_TABLE_NAME
+        UNICLASS_2024_RANKS_TABLE_NAME
     ]
 
     for (

@@ -19,19 +19,19 @@ def orchestrate_domain_tables_creation_for_load_stage_4(
     folder_path: str,
     uniclass_source_data_resource_namespace: str,
 ) -> dict:
-    uniclass2015_dataframe_dictionary = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
+    uniclass_2024_dataframe_dictionary = load_all_csv_files_in_resource_namespace_into_dataframe_dictionary(
         resource_namespace=uniclass_source_data_resource_namespace,
     )
 
-    uniclass2015_uuidified_dataframe_dictionary = uuidify_dictionary_of_dataframes(
-        dictionary_of_dataframes=uniclass2015_dataframe_dictionary,
+    uniclass_2024_uuidified_dataframe_dictionary = uuidify_dictionary_of_dataframes(
+        dictionary_of_dataframes=uniclass_2024_dataframe_dictionary,
         uuid_column_name=StandardObjectTableColumnTypes.NF_UUIDS.column_name,
     )
 
     export_load_stage_4_domain_tables(
         folder_path=folder_path,
-        dictionary_of_dataframes=uniclass2015_uuidified_dataframe_dictionary,
+        dictionary_of_dataframes=uniclass_2024_uuidified_dataframe_dictionary,
         database_name=UNICLASS_LOAD_STAGE_4_DOMAIN_TABLES,
     )
 
-    return uniclass2015_uuidified_dataframe_dictionary
+    return uniclass_2024_uuidified_dataframe_dictionary

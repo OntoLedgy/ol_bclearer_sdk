@@ -8,7 +8,7 @@ from bclearer_interop_services.ea_interop_service.nf_ea_common.common_knowledge.
     StandardObjectTableColumnTypes,
 )
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
 )
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.resource_constants.resources_namespace_constants import (
     EVOLVE_3_INPUT_FOLDER_NAMESPACE,
@@ -24,7 +24,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.services.input_outpu
 def get_evolve_stage_3_domain_tables(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass2015_object_table = concatenate_dictionary_of_dataframes(
+    uniclass_2024_object_table = concatenate_dictionary_of_dataframes(
         dataframe_dictionary=dictionary_of_dataframes,
     )
 
@@ -42,7 +42,7 @@ def get_evolve_stage_3_domain_tables(
     )
 
     evolve_stage_3_domain_tables[
-        UNICLASS2015_OBJECT_TABLE_NAME
-    ] = uniclass2015_object_table
+        UNICLASS_2024_OBJECT_TABLE_NAME
+    ] = uniclass_2024_object_table
 
     return evolve_stage_3_domain_tables

@@ -8,7 +8,7 @@ from bclearer_interop_services.ea_interop_service.general.nf_ea.domain_migration
     convert_standard_object_table_to_classifiers,
 )
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
     UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
     UUIDIFIED_PACKAGES_TABLE_NAME,
 )
@@ -84,7 +84,7 @@ def __convert_classifiers(
 ) -> dict:
     nf_ea_com_dictionary = convert_uniclass_table_to_classifiers_in_common_package(
         uniclass_table=uniclass_dictionary[
-            UNICLASS2015_OBJECT_TABLE_NAME
+            UNICLASS_2024_OBJECT_TABLE_NAME
         ],
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         nf_ea_com_classifiers_collection_type=NfEaComCollectionTypes.EA_CLASSIFIERS,
@@ -122,7 +122,7 @@ def __convert_attributes(
         uniclass_dictionary=uniclass_dictionary,
         nf_ea_com_dictionary=nf_ea_com_dictionary,
         input_naming_spaces_table_name=UNICLASS_NAMING_SPACES_OBJECTS_TABLE_NAME,
-        uniclass_items_object_table_name=UNICLASS2015_OBJECT_TABLE_NAME,
+        uniclass_items_object_table_name=UNICLASS_2024_OBJECT_TABLE_NAME,
         ea_attributes_collection_type=NfEaComCollectionTypes.EA_ATTRIBUTES,
     )
 

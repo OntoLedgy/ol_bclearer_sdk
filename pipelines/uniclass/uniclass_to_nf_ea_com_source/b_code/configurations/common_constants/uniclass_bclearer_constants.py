@@ -188,18 +188,18 @@ PARENT_PACKAGE_UUID2_COLUMN_NAME = (
 
 # table names
 
-TOP_ITEMS_TABLE_NAME = "Uniclass2015_top_level_objects_UTF8_OXi"
-UNICLASS2015_OBJECT_TABLE_NAME = (
-    "uniclass2015_object_table"
+TOP_ITEMS_TABLE_NAME = "uniclass_2024_top_level_objects_UTF8"
+UNICLASS_2024_OBJECT_TABLE_NAME = (
+    "uniclass_2024_object_table"
 )
-UNICLASS_PARENT_CHILD_LINK_TABLE_NAME = "uniclass2015_parent_child_link_table"
+UNICLASS_PARENT_CHILD_LINK_TABLE_NAME = "uniclass_2024_parent_child_link_table"
 UNICLASS_STEREOTYPES_TYPE_OF_TABLE_NAME = (
     "uniclass_stereotypes_type_of_table"
 )
-UNICLASS2015_RANKS_TABLE_NAME = (
-    "uniclass2015_ranks_table"
+UNICLASS_2024_RANKS_TABLE_NAME = (
+    "uniclass_2024_ranks_table"
 )
-UNICLASS2015_TOP_LEVEL_OBJECTS_TABLE_NAME = "Uniclass2015_top_level_objects_UTF8_OXi"
+UNICLASS_2024_TOP_LEVEL_OBJECTS_TABLE_NAME = "uniclass_2024_top_level_objects_UTF8"
 LINKED_TABLE_UNICLASS_ITEMS_TO_RANKS = "linked_table_uniclass_items_to_ranks"
 
 # file extension names
@@ -208,7 +208,7 @@ CSV_EXTENSION_FILE_NAME = ".csv"
 
 # STAGE OUTPUT FILE NAME
 EVOLVE_STAGE_3_OUTPUT_FILE_NAME = (
-    "uniclass2015_concatenated_data"
+    "uniclass_2024_concatenated_data"
 )
 
 # nf com table names

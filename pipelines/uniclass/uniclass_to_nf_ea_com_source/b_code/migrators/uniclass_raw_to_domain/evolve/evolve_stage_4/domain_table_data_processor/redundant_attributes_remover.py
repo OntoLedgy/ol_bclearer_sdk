@@ -6,7 +6,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     GROUP_COLUMN_NAME,
     SECTION_COLUMN_NAME,
     SUB_GROUP_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
 )
 
 
@@ -14,7 +14,7 @@ def remove_redundant_attributes_from_object_table(
     dictionary_of_dataframes: dict,
 ) -> dict:
     uniclass_object_table = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     for (
@@ -26,7 +26,7 @@ def remove_redundant_attributes_from_object_table(
         )
 
     dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ] = uniclass_object_table
 
     return dictionary_of_dataframes

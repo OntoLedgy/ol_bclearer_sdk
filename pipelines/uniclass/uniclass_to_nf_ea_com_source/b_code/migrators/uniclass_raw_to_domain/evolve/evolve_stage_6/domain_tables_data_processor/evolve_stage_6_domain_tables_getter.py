@@ -4,8 +4,8 @@ from bclearer_interop_services.file_system_service.resources_service.processes.r
 from numpy import nan
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.common_constants.uniclass_bclearer_constants import (
     RANKS_COLUMN_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
-    UNICLASS2015_RANKS_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
+    UNICLASS_2024_RANKS_TABLE_NAME,
     UUIDIFIED_PACKAGES_TABLE_NAME,
 )
 from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.resource_constants.resource_file_constants import (
@@ -34,13 +34,13 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.services.uniclass_co
 def get_evolve_stage_6_domain_tables(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass_2015_ranks_table_file = get_resource_file(
+    uniclass_2024_ranks_table_file = get_resource_file(
         resource_namespace=EVOLVE_6_INPUT_FOLDER_NAMESPACE,
         resource_name=EVOLVE_6_UNICLASS_RANKS_FILE_NAME,
     )
 
     dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ][RANKS_COLUMN_NAME] = nan
 
     evolve_stage_6_dictionary_with_uniclass_objects_table_ranks_column_populated = populate_uniclass_objects_table_ranks_column(
@@ -48,7 +48,7 @@ def get_evolve_stage_6_domain_tables(
     )
 
     uuidified_ranks_table = get_uuidified_ranks_table(
-        csv_file_path=uniclass_2015_ranks_table_file.absolute_path_string,
+        csv_file_path=uniclass_2024_ranks_table_file.absolute_path_string,
     )
 
     evolve_stage_6_dictionary_with_uniclass_ranks_added_to_packages = add_uniclass_ranks_package_row_to_uuidified_packages(
@@ -56,7 +56,7 @@ def get_evolve_stage_6_domain_tables(
     )
 
     uuidified_ranks_table = populate_parent_package_uuid_column_in_dataframe(
-        dataframe_name=UNICLASS2015_RANKS_TABLE_NAME,
+        dataframe_name=UNICLASS_2024_RANKS_TABLE_NAME,
         dataframe=uuidified_ranks_table,
         uuidified_packages_dataframe=evolve_stage_6_dictionary_with_uniclass_ranks_added_to_packages[
             UUIDIFIED_PACKAGES_TABLE_NAME
@@ -64,7 +64,7 @@ def get_evolve_stage_6_domain_tables(
     )
 
     evolve_stage_6_dictionary_with_uniclass_ranks_added_to_packages[
-        UNICLASS2015_RANKS_TABLE_NAME
+        UNICLASS_2024_RANKS_TABLE_NAME
     ] = uuidified_ranks_table
 
     evolve_stage_6_domain_tables = create_uniclass_items_to_ranks_table_and_add_to_dictionary(

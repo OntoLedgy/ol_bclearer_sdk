@@ -17,13 +17,13 @@ def orchestrate_evolve_stage_6(
     dictionary_of_dataframes: dict,
     folder_path: str,
 ) -> dict:
-    uniclass2015_object_link_rank_tables = orchestrate_domain_tables_creation_for_evolve_6(
+    uniclass_2024_object_link_rank_tables = orchestrate_domain_tables_creation_for_evolve_6(
         folder_path=folder_path,
         dictionary_of_dataframes=dictionary_of_dataframes,
     )
 
     evolve_stage_6_nf_ea_com_tables = orchestrate_nf_ea_com_tables_creation_for_evolve_stage_6(
-        dictionary_of_dataframes=uniclass2015_object_link_rank_tables,
+        dictionary_of_dataframes=uniclass_2024_object_link_rank_tables,
     )
 
     orchestrate_export_nf_ea_com(
@@ -32,4 +32,4 @@ def orchestrate_evolve_stage_6(
         bclearer_stage="evolve_6",
     )
 
-    return uniclass2015_object_link_rank_tables
+    return uniclass_2024_object_link_rank_tables

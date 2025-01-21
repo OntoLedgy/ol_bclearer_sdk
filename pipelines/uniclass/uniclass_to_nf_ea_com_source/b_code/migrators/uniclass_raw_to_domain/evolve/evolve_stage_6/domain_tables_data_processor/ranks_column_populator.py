@@ -8,7 +8,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     SECTION_NAME,
     SUB_GROUP_NAME,
     TOP_ITEM_NAME,
-    UNICLASS2015_OBJECT_TABLE_NAME,
+    UNICLASS_2024_OBJECT_TABLE_NAME,
     UNICLASS_ITEM_NAME,
 )
 
@@ -16,17 +16,17 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
 def populate_uniclass_objects_table_ranks_column(
     dictionary_of_dataframes: dict,
 ) -> dict:
-    uniclass_2015_objects_table = dictionary_of_dataframes[
-        UNICLASS2015_OBJECT_TABLE_NAME
+    uniclass_2024_objects_table = dictionary_of_dataframes[
+        UNICLASS_2024_OBJECT_TABLE_NAME
     ]
 
     for (
         index
     ) in (
-        uniclass_2015_objects_table.index
+        uniclass_2024_objects_table.index
     ):
         __populate_ranks_column_cell(
-            uniclass_2015_objects_table=uniclass_2015_objects_table,
+            uniclass_2024_objects_table=uniclass_2024_objects_table,
             index=index,
         )
 
@@ -34,24 +34,24 @@ def populate_uniclass_objects_table_ranks_column(
 
 
 def __populate_ranks_column_cell(
-    uniclass_2015_objects_table: DataFrame,
+    uniclass_2024_objects_table: DataFrame,
     index: int,
 ):
     if (
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             CODE_COLUMN_NAME,
         ]
         == UNICLASS_ITEM_NAME
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = TOP_ITEM_NAME
     if (
         len(
             str(
-                uniclass_2015_objects_table.loc[
+                uniclass_2024_objects_table.loc[
                     index,
                     CODE_COLUMN_NAME,
                 ],
@@ -59,14 +59,14 @@ def __populate_ranks_column_cell(
         )
         == 2
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = AREA_NAME
     if (
         len(
             str(
-                uniclass_2015_objects_table.loc[
+                uniclass_2024_objects_table.loc[
                     index,
                     CODE_COLUMN_NAME,
                 ],
@@ -74,14 +74,14 @@ def __populate_ranks_column_cell(
         )
         == 5
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = GROUP_NAME
     if (
         len(
             str(
-                uniclass_2015_objects_table.loc[
+                uniclass_2024_objects_table.loc[
                     index,
                     CODE_COLUMN_NAME,
                 ],
@@ -89,14 +89,14 @@ def __populate_ranks_column_cell(
         )
         == 8
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = SUB_GROUP_NAME
     if (
         len(
             str(
-                uniclass_2015_objects_table.loc[
+                uniclass_2024_objects_table.loc[
                     index,
                     CODE_COLUMN_NAME,
                 ],
@@ -104,14 +104,14 @@ def __populate_ranks_column_cell(
         )
         == 11
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = SECTION_NAME
     if (
         len(
             str(
-                uniclass_2015_objects_table.loc[
+                uniclass_2024_objects_table.loc[
                     index,
                     CODE_COLUMN_NAME,
                 ],
@@ -119,7 +119,7 @@ def __populate_ranks_column_cell(
         )
         == 14
     ):
-        uniclass_2015_objects_table.loc[
+        uniclass_2024_objects_table.loc[
             index,
             RANKS_COLUMN_NAME,
         ] = OBJECT_NAME

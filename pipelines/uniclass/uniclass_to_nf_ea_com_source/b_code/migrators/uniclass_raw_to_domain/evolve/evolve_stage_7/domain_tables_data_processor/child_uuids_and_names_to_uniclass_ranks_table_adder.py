@@ -9,7 +9,7 @@ from pipelines.uniclass.uniclass_to_nf_ea_com_source.b_code.configurations.commo
     CHILD_RANK_NAME_COLUMN_NAME,
     CHILD_UUID_COLUMN_NAME,
     PARENT_RANK_NAME_COLUMN_NAME,
-    UNICLASS2015_RANKS_TABLE_NAME,
+    UNICLASS_2024_RANKS_TABLE_NAME,
 )
 
 
@@ -18,7 +18,7 @@ def add_child_uuids_and_names_to_uniclass_ranks_table(
     dataframe: DataFrame,
 ) -> DataFrame:
     uniclass_ranks_table = dictionary_of_dataframes[
-        UNICLASS2015_RANKS_TABLE_NAME
+        UNICLASS_2024_RANKS_TABLE_NAME
     ].copy()
 
     uniclass_ranks_parent_child_table = (
