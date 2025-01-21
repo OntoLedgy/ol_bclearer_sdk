@@ -16,36 +16,37 @@ class TestExcelInteropServices:
         self,
         excel_file_name_and_path_xlsx,
     ):
-        self.excel_file_name_and_path_xlsx = excel_file_name_and_path_xlsx
+        # self.excel_file_name_and_path_xlsx = excel_file_name_and_path_xlsx
         self.sheet_name = "Categories"
 
     def test_excel_interop_reading_xlsx(
         self,
+        excel_file_name_and_path_xlsx,
     ):
-
+        sheet_name = "Categories"
         try:
             excel_facade = ExcelFacades(
-                self.excel_file_name_and_path_xlsx,
+                excel_file_name_and_path_xlsx,
             )
             print(
                 f"Successfully initialized ExcelFacade with file: {excel_file_name_and_path_xlsx}",
             )
 
             cfi_categories = excel_facade.workbook.sheet(
-                self.sheet_name,
+                sheet_name,
             )
 
             assert (
                 cfi_categories
                 is not None
-            ), f"Sheet {self.sheet_name} not found in the workbook."
+            ), f"Sheet {sheet_name} not found in the workbook."
 
             cfi_categories_dataframe = excel_facade.read_sheet_to_dataframe(
-                sheet_name=self.sheet_name
+                sheet_name=sheet_name
             )
 
             print(
-                f"DataFrame successfully read from the {self.sheet_name} sheet:",
+                f"DataFrame successfully read from the {sheet_name} sheet:",
             )
 
             assert isinstance(
