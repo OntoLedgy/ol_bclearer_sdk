@@ -158,11 +158,13 @@ class TestExcelInteropServices:
 
     def test_excel_sheet_to_dataframe_extractor(
         self,
+        excel_file_name_and_path_xlsx,
     ):
+        sheet_name = "Categories"
         try:
             extracted_dataframe = extract_dataframe_from_excel_sheet(
-                self.excel_file_name_and_path_xlsx,
-                self.sheet_name,
+                excel_file_name_and_path_xlsx,
+                sheet_name,
             )
 
             assert isinstance(
